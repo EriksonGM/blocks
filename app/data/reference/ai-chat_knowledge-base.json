@@ -1,0 +1,2095 @@
+{
+  "label": "Document 6",
+  "path": "/ai-chat/knowledge-base",
+  "appTitle": "",
+  "tree": {
+    "tag": "div",
+    "attrs": {
+      "id": "ai-workspace-content",
+      "class": "flex min-h-0 flex-1 flex-col"
+    },
+    "children": [
+      {
+        "tag": "div",
+        "attrs": {
+          "class": "grid min-h-0 flex-1 grid-cols-1 xl:grid-cols-[280px_minmax(0,1fr)_340px] 2xl:grid-cols-[320px_minmax(0,1fr)_400px]"
+        },
+        "children": [
+          {
+            "tag": "section",
+            "attrs": {
+              "aria-label": "Library",
+              "class": "flex min-h-0 flex-col border-b xl:overflow-y-auto xl:border-r xl:border-b-0"
+            },
+            "children": [
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "shrink-0 p-4 pb-3"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "mb-3 flex items-baseline justify-between"
+                    },
+                    "children": [
+                      {
+                        "tag": "h2",
+                        "attrs": {
+                          "class": "text-sm font-semibold"
+                        },
+                        "children": [
+                          {
+                            "text": "Library",
+                            "key": "root.0.0.0.0.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.0"
+                      },
+                      {
+                        "tag": "span",
+                        "attrs": {
+                          "class": "text-muted-foreground text-xs"
+                        },
+                        "children": [
+                          {
+                            "text": "6",
+                            "key": "root.0.0.0.0.1.0"
+                          },
+                          {
+                            "text": " docs",
+                            "key": "root.0.0.0.0.1.1"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.1"
+                      }
+                    ],
+                    "key": "root.0.0.0.0"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "relative"
+                    },
+                    "children": [
+                      {
+                        "tag": "icon",
+                        "attrs": {
+                          "name": "i-lucide-search",
+                          "class": "lucide lucide-search text-muted-foreground pointer-events-none absolute top-1/2 left-2.5 size-3.5 -translate-y-1/2"
+                        },
+                        "key": "root.0.0.0.1.0"
+                      },
+                      {
+                        "tag": "input",
+                        "attrs": {
+                          "class": "border-input file:text-foreground placeholder:text-muted-foreground focus-visible:ring-ring flex w-full rounded-md border bg-transparent px-3 py-1 shadow-xs transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:ring-1 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 md:text-sm h-9 pl-8 text-[13px]",
+                          "aria-label": "Search the library",
+                          "placeholder": "Search titles, sources…",
+                          "value": ""
+                        },
+                        "children": [],
+                        "key": "root.0.0.0.1.1"
+                      }
+                    ],
+                    "key": "root.0.0.0.1"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "mt-2 flex gap-1",
+                      "role": "tablist",
+                      "aria-label": "Library filter"
+                    },
+                    "children": [
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80 rounded-md h-7 flex-1 px-1 text-xs",
+                          "role": "tab"
+                        },
+                        "children": [
+                          {
+                            "text": "All",
+                            "key": "root.0.0.0.2.0.0"
+                          },
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "text-muted-foreground ml-1 tabular-nums"
+                            },
+                            "children": [
+                              {
+                                "text": "6",
+                                "key": "root.0.0.0.2.0.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.0.2.0.1"
+                          }
+                        ],
+                        "key": "root.0.0.0.2.0"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground rounded-md h-7 flex-1 px-1 text-xs",
+                          "role": "tab"
+                        },
+                        "children": [
+                          {
+                            "text": "Read",
+                            "key": "root.0.0.0.2.1.0"
+                          },
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "text-muted-foreground ml-1 tabular-nums"
+                            },
+                            "children": [
+                              {
+                                "text": "2",
+                                "key": "root.0.0.0.2.1.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.0.2.1.1"
+                          }
+                        ],
+                        "key": "root.0.0.0.2.1"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground rounded-md h-7 flex-1 px-1 text-xs",
+                          "role": "tab"
+                        },
+                        "children": [
+                          {
+                            "text": "Unread",
+                            "key": "root.0.0.0.2.2.0"
+                          },
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "text-muted-foreground ml-1 tabular-nums"
+                            },
+                            "children": [
+                              {
+                                "text": "4",
+                                "key": "root.0.0.0.2.2.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.0.2.2.1"
+                          }
+                        ],
+                        "key": "root.0.0.0.2.2"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground rounded-md h-7 flex-1 px-1 text-xs",
+                          "role": "tab"
+                        },
+                        "children": [
+                          {
+                            "text": "Starred",
+                            "key": "root.0.0.0.2.3.0"
+                          },
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "text-muted-foreground ml-1 tabular-nums"
+                            },
+                            "children": [
+                              {
+                                "text": "2",
+                                "key": "root.0.0.0.2.3.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.0.2.3.1"
+                          }
+                        ],
+                        "key": "root.0.0.0.2.3"
+                      }
+                    ],
+                    "key": "root.0.0.0.2"
+                  }
+                ],
+                "key": "root.0.0.0"
+              },
+              {
+                "tag": "ul",
+                "attrs": {
+                  "class": "min-h-0 flex-1 px-2 pb-4 xl:overflow-y-auto"
+                },
+                "children": [
+                  {
+                    "tag": "li",
+                    "attrs": {
+                      "class": "relative"
+                    },
+                    "children": [
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "hover:bg-muted/60 flex w-full flex-col gap-2 rounded-lg px-3 py-3 pr-9 text-left bg-muted"
+                        },
+                        "children": [
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "flex items-start gap-2.5"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "flex min-w-0 flex-1 flex-col gap-0.5"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "line-clamp-2 text-[13px] leading-5 font-medium break-words"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Refund policy",
+                                        "key": "root.0.0.1.0.0.0.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.0.0.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-muted-foreground truncate text-[11px]"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Support playbook",
+                                        "key": "root.0.0.1.0.0.0.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.0.0.0.1"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-muted-foreground truncate text-[11px]"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "M. Okafor · Support",
+                                        "key": "root.0.0.1.0.0.0.0.2.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.0.0.0.2"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-muted-foreground text-[11px]"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "June 2026",
+                                        "key": "root.0.0.1.0.0.0.0.3.0"
+                                      },
+                                      {
+                                        "text": " · ",
+                                        "key": "root.0.0.1.0.0.0.0.3.1"
+                                      },
+                                      {
+                                        "text": "12",
+                                        "key": "root.0.0.1.0.0.0.0.3.2"
+                                      },
+                                      {
+                                        "text": " pages",
+                                        "key": "root.0.0.1.0.0.0.0.3.3"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.0.0.0.3"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.0.0"
+                          },
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "bg-muted-foreground/15 h-1 overflow-hidden rounded-full"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "bg-foreground block h-full rounded-full",
+                                  "style": "width: 75%;"
+                                },
+                                "children": [],
+                                "key": "root.0.0.1.0.0.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.0.1"
+                          },
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "text-muted-foreground text-[11px]"
+                            },
+                            "children": [
+                              {
+                                "text": "Page",
+                                "key": "root.0.0.1.0.0.2.0"
+                              },
+                              {
+                                "text": "9",
+                                "key": "root.0.0.1.0.0.2.1"
+                              },
+                              {
+                                "text": "/ ",
+                                "key": "root.0.0.1.0.0.2.2"
+                              },
+                              {
+                                "text": "12",
+                                "key": "root.0.0.1.0.0.2.3"
+                              },
+                              {
+                                "text": " · ",
+                                "key": "root.0.0.1.0.0.2.4"
+                              },
+                              {
+                                "text": "2 min left",
+                                "key": "root.0.0.1.0.0.2.5"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.0.2"
+                          }
+                        ],
+                        "key": "root.0.0.1.0.0"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "aria-label": "Unstar Refund policy",
+                          "class": "text-muted-foreground hover:text-foreground absolute top-2.5 right-2.5 rounded p-1"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-bookmark",
+                              "class": "lucide lucide-bookmark size-3.5"
+                            },
+                            "key": "root.0.0.1.0.1.0"
+                          }
+                        ],
+                        "key": "root.0.0.1.0.1"
+                      }
+                    ],
+                    "key": "root.0.0.1.0"
+                  },
+                  {
+                    "tag": "li",
+                    "attrs": {
+                      "class": "relative"
+                    },
+                    "children": [
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "hover:bg-muted/60 flex w-full flex-col gap-2 rounded-lg px-3 py-3 pr-9 text-left"
+                        },
+                        "children": [
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "flex items-start gap-2.5"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "flex min-w-0 flex-1 flex-col gap-0.5"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "line-clamp-2 text-[13px] leading-5 font-medium break-words"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Onboarding runbook",
+                                        "key": "root.0.0.1.1.0.0.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.0.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-muted-foreground truncate text-[11px]"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "People ops",
+                                        "key": "root.0.0.1.1.0.0.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.0.0.1"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-muted-foreground truncate text-[11px]"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "D. Kim · People",
+                                        "key": "root.0.0.1.1.0.0.0.2.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.0.0.2"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-muted-foreground text-[11px]"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "May 2026",
+                                        "key": "root.0.0.1.1.0.0.0.3.0"
+                                      },
+                                      {
+                                        "text": " · ",
+                                        "key": "root.0.0.1.1.0.0.0.3.1"
+                                      },
+                                      {
+                                        "text": "18",
+                                        "key": "root.0.0.1.1.0.0.0.3.2"
+                                      },
+                                      {
+                                        "text": " pages",
+                                        "key": "root.0.0.1.1.0.0.0.3.3"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.0.0.3"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.0.0"
+                          },
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "bg-muted-foreground/15 h-1 overflow-hidden rounded-full"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "bg-foreground block h-full rounded-full",
+                                  "style": "width: 40%;"
+                                },
+                                "children": [],
+                                "key": "root.0.0.1.1.0.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.0.1"
+                          },
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "text-muted-foreground text-[11px]"
+                            },
+                            "children": [
+                              {
+                                "text": "Page",
+                                "key": "root.0.0.1.1.0.2.0"
+                              },
+                              {
+                                "text": "7",
+                                "key": "root.0.0.1.1.0.2.1"
+                              },
+                              {
+                                "text": "/ ",
+                                "key": "root.0.0.1.1.0.2.2"
+                              },
+                              {
+                                "text": "18",
+                                "key": "root.0.0.1.1.0.2.3"
+                              },
+                              {
+                                "text": " · ",
+                                "key": "root.0.0.1.1.0.2.4"
+                              },
+                              {
+                                "text": "8 min left",
+                                "key": "root.0.0.1.1.0.2.5"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.0.2"
+                          }
+                        ],
+                        "key": "root.0.0.1.1.0"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "aria-label": "Star Onboarding runbook",
+                          "class": "text-muted-foreground hover:text-foreground absolute top-2.5 right-2.5 rounded p-1"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-bookmark",
+                              "class": "lucide lucide-bookmark size-3.5"
+                            },
+                            "key": "root.0.0.1.1.1.0"
+                          }
+                        ],
+                        "key": "root.0.0.1.1.1"
+                      }
+                    ],
+                    "key": "root.0.0.1.1"
+                  },
+                  {
+                    "tag": "li",
+                    "attrs": {
+                      "class": "relative"
+                    },
+                    "children": [
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "hover:bg-muted/60 flex w-full flex-col gap-2 rounded-lg px-3 py-3 pr-9 text-left"
+                        },
+                        "children": [
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "flex items-start gap-2.5"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "flex min-w-0 flex-1 flex-col gap-0.5"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "line-clamp-2 text-[13px] leading-5 font-medium break-words"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Security review checklist",
+                                        "key": "root.0.0.1.2.0.0.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.2.0.0.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-muted-foreground truncate text-[11px]"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Engineering",
+                                        "key": "root.0.0.1.2.0.0.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.2.0.0.0.1"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-muted-foreground truncate text-[11px]"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "S. Rao · Engineering",
+                                        "key": "root.0.0.1.2.0.0.0.2.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.2.0.0.0.2"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-muted-foreground text-[11px]"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "July 2026",
+                                        "key": "root.0.0.1.2.0.0.0.3.0"
+                                      },
+                                      {
+                                        "text": " · ",
+                                        "key": "root.0.0.1.2.0.0.0.3.1"
+                                      },
+                                      {
+                                        "text": "9",
+                                        "key": "root.0.0.1.2.0.0.0.3.2"
+                                      },
+                                      {
+                                        "text": " pages",
+                                        "key": "root.0.0.1.2.0.0.0.3.3"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.2.0.0.0.3"
+                                  }
+                                ],
+                                "key": "root.0.0.1.2.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.2.0.0"
+                          },
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "bg-muted-foreground/15 h-1 overflow-hidden rounded-full"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "bg-foreground block h-full rounded-full",
+                                  "style": "width: 100%;"
+                                },
+                                "children": [],
+                                "key": "root.0.0.1.2.0.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.2.0.1"
+                          },
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "text-muted-foreground text-[11px]"
+                            },
+                            "children": [
+                              {
+                                "text": "Page",
+                                "key": "root.0.0.1.2.0.2.0"
+                              },
+                              {
+                                "text": "9",
+                                "key": "root.0.0.1.2.0.2.1"
+                              },
+                              {
+                                "text": "/ ",
+                                "key": "root.0.0.1.2.0.2.2"
+                              },
+                              {
+                                "text": "9",
+                                "key": "root.0.0.1.2.0.2.3"
+                              },
+                              {
+                                "text": " · ",
+                                "key": "root.0.0.1.2.0.2.4"
+                              },
+                              {
+                                "text": "Completed",
+                                "key": "root.0.0.1.2.0.2.5"
+                              }
+                            ],
+                            "key": "root.0.0.1.2.0.2"
+                          }
+                        ],
+                        "key": "root.0.0.1.2.0"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "aria-label": "Star Security review checklist",
+                          "class": "text-muted-foreground hover:text-foreground absolute top-2.5 right-2.5 rounded p-1"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-bookmark",
+                              "class": "lucide lucide-bookmark size-3.5"
+                            },
+                            "key": "root.0.0.1.2.1.0"
+                          }
+                        ],
+                        "key": "root.0.0.1.2.1"
+                      }
+                    ],
+                    "key": "root.0.0.1.2"
+                  },
+                  {
+                    "tag": "li",
+                    "attrs": {
+                      "class": "relative"
+                    },
+                    "children": [
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "hover:bg-muted/60 flex w-full flex-col gap-2 rounded-lg px-3 py-3 pr-9 text-left"
+                        },
+                        "children": [
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "flex items-start gap-2.5"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "flex min-w-0 flex-1 flex-col gap-0.5"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "line-clamp-2 text-[13px] leading-5 font-medium break-words"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Pricing memo",
+                                        "key": "root.0.0.1.3.0.0.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.3.0.0.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-muted-foreground truncate text-[11px]"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Finance",
+                                        "key": "root.0.0.1.3.0.0.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.3.0.0.0.1"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-muted-foreground truncate text-[11px]"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "L. Chen · Finance",
+                                        "key": "root.0.0.1.3.0.0.0.2.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.3.0.0.0.2"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-muted-foreground text-[11px]"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "April 2026",
+                                        "key": "root.0.0.1.3.0.0.0.3.0"
+                                      },
+                                      {
+                                        "text": " · ",
+                                        "key": "root.0.0.1.3.0.0.0.3.1"
+                                      },
+                                      {
+                                        "text": "15",
+                                        "key": "root.0.0.1.3.0.0.0.3.2"
+                                      },
+                                      {
+                                        "text": " pages",
+                                        "key": "root.0.0.1.3.0.0.0.3.3"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.3.0.0.0.3"
+                                  }
+                                ],
+                                "key": "root.0.0.1.3.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.3.0.0"
+                          },
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "bg-muted-foreground/15 h-1 overflow-hidden rounded-full"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "bg-foreground block h-full rounded-full",
+                                  "style": "width: 0%;"
+                                },
+                                "children": [],
+                                "key": "root.0.0.1.3.0.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.3.0.1"
+                          },
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "text-muted-foreground text-[11px]"
+                            },
+                            "children": [
+                              {
+                                "text": "Page",
+                                "key": "root.0.0.1.3.0.2.0"
+                              },
+                              {
+                                "text": "1",
+                                "key": "root.0.0.1.3.0.2.1"
+                              },
+                              {
+                                "text": "/ ",
+                                "key": "root.0.0.1.3.0.2.2"
+                              },
+                              {
+                                "text": "15",
+                                "key": "root.0.0.1.3.0.2.3"
+                              },
+                              {
+                                "text": " · ",
+                                "key": "root.0.0.1.3.0.2.4"
+                              },
+                              {
+                                "text": "Unread",
+                                "key": "root.0.0.1.3.0.2.5"
+                              }
+                            ],
+                            "key": "root.0.0.1.3.0.2"
+                          }
+                        ],
+                        "key": "root.0.0.1.3.0"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "aria-label": "Star Pricing memo",
+                          "class": "text-muted-foreground hover:text-foreground absolute top-2.5 right-2.5 rounded p-1"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-bookmark",
+                              "class": "lucide lucide-bookmark size-3.5"
+                            },
+                            "key": "root.0.0.1.3.1.0"
+                          }
+                        ],
+                        "key": "root.0.0.1.3.1"
+                      }
+                    ],
+                    "key": "root.0.0.1.3"
+                  },
+                  {
+                    "tag": "li",
+                    "attrs": {
+                      "class": "relative"
+                    },
+                    "children": [
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "hover:bg-muted/60 flex w-full flex-col gap-2 rounded-lg px-3 py-3 pr-9 text-left"
+                        },
+                        "children": [
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "flex items-start gap-2.5"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "flex min-w-0 flex-1 flex-col gap-0.5"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "line-clamp-2 text-[13px] leading-5 font-medium break-words"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Checkout outage postmortem",
+                                        "key": "root.0.0.1.4.0.0.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.4.0.0.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-muted-foreground truncate text-[11px]"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Engineering",
+                                        "key": "root.0.0.1.4.0.0.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.4.0.0.0.1"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-muted-foreground truncate text-[11px]"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "S. Rao · Engineering",
+                                        "key": "root.0.0.1.4.0.0.0.2.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.4.0.0.0.2"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-muted-foreground text-[11px]"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "August 2026",
+                                        "key": "root.0.0.1.4.0.0.0.3.0"
+                                      },
+                                      {
+                                        "text": " · ",
+                                        "key": "root.0.0.1.4.0.0.0.3.1"
+                                      },
+                                      {
+                                        "text": "11",
+                                        "key": "root.0.0.1.4.0.0.0.3.2"
+                                      },
+                                      {
+                                        "text": " pages",
+                                        "key": "root.0.0.1.4.0.0.0.3.3"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.4.0.0.0.3"
+                                  }
+                                ],
+                                "key": "root.0.0.1.4.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.4.0.0"
+                          },
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "bg-muted-foreground/15 h-1 overflow-hidden rounded-full"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "bg-foreground block h-full rounded-full",
+                                  "style": "width: 60%;"
+                                },
+                                "children": [],
+                                "key": "root.0.0.1.4.0.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.4.0.1"
+                          },
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "text-muted-foreground text-[11px]"
+                            },
+                            "children": [
+                              {
+                                "text": "Page",
+                                "key": "root.0.0.1.4.0.2.0"
+                              },
+                              {
+                                "text": "7",
+                                "key": "root.0.0.1.4.0.2.1"
+                              },
+                              {
+                                "text": "/ ",
+                                "key": "root.0.0.1.4.0.2.2"
+                              },
+                              {
+                                "text": "11",
+                                "key": "root.0.0.1.4.0.2.3"
+                              },
+                              {
+                                "text": " · ",
+                                "key": "root.0.0.1.4.0.2.4"
+                              },
+                              {
+                                "text": "4 min left",
+                                "key": "root.0.0.1.4.0.2.5"
+                              }
+                            ],
+                            "key": "root.0.0.1.4.0.2"
+                          }
+                        ],
+                        "key": "root.0.0.1.4.0"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "aria-label": "Unstar Checkout outage postmortem",
+                          "class": "text-muted-foreground hover:text-foreground absolute top-2.5 right-2.5 rounded p-1"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-bookmark",
+                              "class": "lucide lucide-bookmark size-3.5"
+                            },
+                            "key": "root.0.0.1.4.1.0"
+                          }
+                        ],
+                        "key": "root.0.0.1.4.1"
+                      }
+                    ],
+                    "key": "root.0.0.1.4"
+                  },
+                  {
+                    "tag": "li",
+                    "attrs": {
+                      "class": "relative"
+                    },
+                    "children": [
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "hover:bg-muted/60 flex w-full flex-col gap-2 rounded-lg px-3 py-3 pr-9 text-left"
+                        },
+                        "children": [
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "flex items-start gap-2.5"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "flex min-w-0 flex-1 flex-col gap-0.5"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "line-clamp-2 text-[13px] leading-5 font-medium break-words"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Expense guidelines",
+                                        "key": "root.0.0.1.5.0.0.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.5.0.0.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-muted-foreground truncate text-[11px]"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Finance",
+                                        "key": "root.0.0.1.5.0.0.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.5.0.0.0.1"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-muted-foreground truncate text-[11px]"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "L. Chen · Finance",
+                                        "key": "root.0.0.1.5.0.0.0.2.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.5.0.0.0.2"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-muted-foreground text-[11px]"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "March 2026",
+                                        "key": "root.0.0.1.5.0.0.0.3.0"
+                                      },
+                                      {
+                                        "text": " · ",
+                                        "key": "root.0.0.1.5.0.0.0.3.1"
+                                      },
+                                      {
+                                        "text": "7",
+                                        "key": "root.0.0.1.5.0.0.0.3.2"
+                                      },
+                                      {
+                                        "text": " pages",
+                                        "key": "root.0.0.1.5.0.0.0.3.3"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.5.0.0.0.3"
+                                  }
+                                ],
+                                "key": "root.0.0.1.5.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.5.0.0"
+                          },
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "bg-muted-foreground/15 h-1 overflow-hidden rounded-full"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "bg-foreground block h-full rounded-full",
+                                  "style": "width: 100%;"
+                                },
+                                "children": [],
+                                "key": "root.0.0.1.5.0.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.5.0.1"
+                          },
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "text-muted-foreground text-[11px]"
+                            },
+                            "children": [
+                              {
+                                "text": "Page",
+                                "key": "root.0.0.1.5.0.2.0"
+                              },
+                              {
+                                "text": "7",
+                                "key": "root.0.0.1.5.0.2.1"
+                              },
+                              {
+                                "text": "/ ",
+                                "key": "root.0.0.1.5.0.2.2"
+                              },
+                              {
+                                "text": "7",
+                                "key": "root.0.0.1.5.0.2.3"
+                              },
+                              {
+                                "text": " · ",
+                                "key": "root.0.0.1.5.0.2.4"
+                              },
+                              {
+                                "text": "Completed",
+                                "key": "root.0.0.1.5.0.2.5"
+                              }
+                            ],
+                            "key": "root.0.0.1.5.0.2"
+                          }
+                        ],
+                        "key": "root.0.0.1.5.0"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "aria-label": "Star Expense guidelines",
+                          "class": "text-muted-foreground hover:text-foreground absolute top-2.5 right-2.5 rounded p-1"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-bookmark",
+                              "class": "lucide lucide-bookmark size-3.5"
+                            },
+                            "key": "root.0.0.1.5.1.0"
+                          }
+                        ],
+                        "key": "root.0.0.1.5.1"
+                      }
+                    ],
+                    "key": "root.0.0.1.5"
+                  }
+                ],
+                "key": "root.0.0.1"
+              }
+            ],
+            "key": "root.0.0"
+          },
+          {
+            "tag": "section",
+            "attrs": {
+              "aria-label": "Document reader",
+              "class": "min-h-0 border-b xl:overflow-y-auto xl:border-b-0"
+            },
+            "children": [
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "mx-auto flex max-w-2xl flex-col gap-5 px-5 py-6 md:px-8 2xl:max-w-3xl"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {},
+                    "children": [
+                      {
+                        "tag": "p",
+                        "attrs": {
+                          "class": "text-muted-foreground mb-2 text-xs"
+                        },
+                        "children": [
+                          {
+                            "text": "Support playbook",
+                            "key": "root.0.1.0.0.0.0"
+                          },
+                          {
+                            "text": " · ",
+                            "key": "root.0.1.0.0.0.1"
+                          },
+                          {
+                            "text": "June 2026",
+                            "key": "root.0.1.0.0.0.2"
+                          },
+                          {
+                            "text": " · ",
+                            "key": "root.0.1.0.0.0.3"
+                          },
+                          {
+                            "text": "12",
+                            "key": "root.0.1.0.0.0.4"
+                          },
+                          {
+                            "text": " pages",
+                            "key": "root.0.1.0.0.0.5"
+                          }
+                        ],
+                        "key": "root.0.1.0.0.0"
+                      },
+                      {
+                        "tag": "h1",
+                        "attrs": {
+                          "class": "text-2xl font-semibold tracking-tight"
+                        },
+                        "children": [
+                          {
+                            "text": "Refund policy",
+                            "key": "root.0.1.0.0.1.0"
+                          }
+                        ],
+                        "key": "root.0.1.0.0.1"
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {
+                          "class": "text-muted-foreground mt-2 text-sm leading-relaxed"
+                        },
+                        "children": [
+                          {
+                            "text": "When money moves back to a customer, speed and clarity matter more than process. This policy sets the window, the approvers, and the exact words to use.",
+                            "key": "root.0.1.0.0.2.0"
+                          }
+                        ],
+                        "key": "root.0.1.0.0.2"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "mt-3 flex flex-wrap gap-1.5"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 font-normal"
+                            },
+                            "children": [
+                              {
+                                "text": "Refunds",
+                                "key": "root.0.1.0.0.3.0.0"
+                              }
+                            ],
+                            "key": "root.0.1.0.0.3.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 font-normal"
+                            },
+                            "children": [
+                              {
+                                "text": "Support",
+                                "key": "root.0.1.0.0.3.1.0"
+                              }
+                            ],
+                            "key": "root.0.1.0.0.3.1"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 font-normal"
+                            },
+                            "children": [
+                              {
+                                "text": "Policy",
+                                "key": "root.0.1.0.0.3.2.0"
+                              }
+                            ],
+                            "key": "root.0.1.0.0.3.2"
+                          }
+                        ],
+                        "key": "root.0.1.0.0.3"
+                      }
+                    ],
+                    "key": "root.0.1.0.0"
+                  },
+                  {
+                    "tag": "figure",
+                    "attrs": {
+                      "class": "rounded-xl border p-4"
+                    },
+                    "children": [
+                      {
+                        "tag": "blockquote",
+                        "attrs": {
+                          "class": "border-l-2 pl-3 text-sm leading-7"
+                        },
+                        "children": [
+                          {
+                            "text": "Refunds within 30 days of purchase are approved automatically up to $500. Anything older or larger needs a lead's sign-off in the ticket, with the reason quoted back to the customer.",
+                            "key": "root.0.1.0.1.0.0"
+                          }
+                        ],
+                        "key": "root.0.1.0.1.0"
+                      },
+                      {
+                        "tag": "figcaption",
+                        "attrs": {
+                          "class": "text-muted-foreground mt-2 text-[11px]"
+                        },
+                        "children": [
+                          {
+                            "text": "Key passage ·",
+                            "key": "root.0.1.0.1.1.0"
+                          },
+                          {
+                            "text": "not highlighted",
+                            "key": "root.0.1.0.1.1.1"
+                          }
+                        ],
+                        "key": "root.0.1.0.1.1"
+                      }
+                    ],
+                    "key": "root.0.1.0.1"
+                  },
+                  {
+                    "tag": "section",
+                    "attrs": {},
+                    "children": [
+                      {
+                        "tag": "h2",
+                        "attrs": {
+                          "class": "mb-2 text-lg font-semibold"
+                        },
+                        "children": [
+                          {
+                            "text": "1. The 30-day window",
+                            "key": "root.0.1.0.2.0.0"
+                          }
+                        ],
+                        "key": "root.0.1.0.2.0"
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {
+                          "class": "text-muted-foreground mb-3 text-sm leading-7"
+                        },
+                        "children": [
+                          {
+                            "text": "The window opens at purchase, not delivery. Digital goods and physical shipments follow the same clock so agents never have to compute two timelines on a live ticket.",
+                            "key": "root.0.1.0.2.1.0"
+                          }
+                        ],
+                        "key": "root.0.1.0.2.1"
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {
+                          "class": "text-muted-foreground mb-3 text-sm leading-7"
+                        },
+                        "children": [
+                          {
+                            "text": "Edge cases — preorders, backorders, gift purchases — anchor to the charge date on the receipt. When the receipt is ambiguous, the newer date wins.",
+                            "key": "root.0.1.0.2.2.0"
+                          }
+                        ],
+                        "key": "root.0.1.0.2.2"
+                      }
+                    ],
+                    "key": "root.0.1.0.2"
+                  },
+                  {
+                    "tag": "section",
+                    "attrs": {},
+                    "children": [
+                      {
+                        "tag": "h2",
+                        "attrs": {
+                          "class": "mb-2 text-lg font-semibold"
+                        },
+                        "children": [
+                          {
+                            "text": "2. Approvals",
+                            "key": "root.0.1.0.3.0.0"
+                          }
+                        ],
+                        "key": "root.0.1.0.3.0"
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {
+                          "class": "text-muted-foreground mb-3 text-sm leading-7"
+                        },
+                        "children": [
+                          {
+                            "text": "Leads approve in the ticket thread, never in a side channel. The approval must quote the reason so a future audit can reconstruct the decision without chasing chat logs.",
+                            "key": "root.0.1.0.3.1.0"
+                          }
+                        ],
+                        "key": "root.0.1.0.3.1"
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {
+                          "class": "text-muted-foreground mb-3 text-sm leading-7"
+                        },
+                        "children": [
+                          {
+                            "text": "Repeat refunds to the same customer within 90 days route to a lead regardless of amount.",
+                            "key": "root.0.1.0.3.2.0"
+                          }
+                        ],
+                        "key": "root.0.1.0.3.2"
+                      }
+                    ],
+                    "key": "root.0.1.0.3"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "flex flex-wrap gap-2"
+                    },
+                    "children": [
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-bot",
+                              "class": "lucide lucide-bot"
+                            },
+                            "key": "root.0.1.0.4.0.0"
+                          },
+                          {
+                            "text": "Explain",
+                            "key": "root.0.1.0.4.0.1"
+                          }
+                        ],
+                        "key": "root.0.1.0.4.0"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-highlighter",
+                              "class": "lucide lucide-highlighter"
+                            },
+                            "key": "root.0.1.0.4.1.0"
+                          },
+                          {
+                            "text": "Highlight",
+                            "key": "root.0.1.0.4.1.1"
+                          }
+                        ],
+                        "key": "root.0.1.0.4.1"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-notebook-pen",
+                              "class": "lucide lucide-notebook-pen"
+                            },
+                            "key": "root.0.1.0.4.2.0"
+                          },
+                          {
+                            "text": "Add Note",
+                            "key": "root.0.1.0.4.2.1"
+                          }
+                        ],
+                        "key": "root.0.1.0.4.2"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-bookmark",
+                              "class": "lucide lucide-bookmark"
+                            },
+                            "key": "root.0.1.0.4.3.0"
+                          },
+                          {
+                            "text": "Saved",
+                            "key": "root.0.1.0.4.3.1"
+                          }
+                        ],
+                        "key": "root.0.1.0.4.3"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-quote",
+                              "class": "lucide lucide-quote"
+                            },
+                            "key": "root.0.1.0.4.4.0"
+                          },
+                          {
+                            "text": "Generate Citation",
+                            "key": "root.0.1.0.4.4.1"
+                          }
+                        ],
+                        "key": "root.0.1.0.4.4"
+                      }
+                    ],
+                    "key": "root.0.1.0.4"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {},
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex gap-1 border-b",
+                          "role": "tablist",
+                          "aria-label": "Reader panel"
+                        },
+                        "children": [
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "role": "tab",
+                              "class": "border-b-2 px-3 py-2 text-[13px] border-foreground font-medium"
+                            },
+                            "children": [
+                              {
+                                "text": "Notes 0",
+                                "key": "root.0.1.0.5.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.1.0.5.0.0"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "role": "tab",
+                              "class": "border-b-2 px-3 py-2 text-[13px] text-muted-foreground border-transparent"
+                            },
+                            "children": [
+                              {
+                                "text": "Highlights 0",
+                                "key": "root.0.1.0.5.0.1.0"
+                              }
+                            ],
+                            "key": "root.0.1.0.5.0.1"
+                          }
+                        ],
+                        "key": "root.0.1.0.5.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "py-3"
+                        },
+                        "children": [
+                          {
+                            "tag": "p",
+                            "attrs": {
+                              "class": "text-muted-foreground py-4 text-center text-xs"
+                            },
+                            "children": [
+                              {
+                                "text": "No notes on this document yet.",
+                                "key": "root.0.1.0.5.1.0.0"
+                              }
+                            ],
+                            "key": "root.0.1.0.5.1.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "mt-2 flex gap-2"
+                            },
+                            "children": [
+                              {
+                                "tag": "input",
+                                "attrs": {
+                                  "class": "border-input file:text-foreground placeholder:text-muted-foreground focus-visible:ring-ring flex w-full rounded-md border bg-transparent px-3 py-1 shadow-xs transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:ring-1 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 md:text-sm h-9 text-[13px]",
+                                  "id": "kb-note-input",
+                                  "aria-label": "Add a note",
+                                  "placeholder": "Add a note…",
+                                  "value": ""
+                                },
+                                "children": [],
+                                "key": "root.0.1.0.5.1.1.0"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 rounded-md px-3 text-xs h-9 shrink-0",
+                                  "disabled": ""
+                                },
+                                "children": [
+                                  {
+                                    "text": "Add",
+                                    "key": "root.0.1.0.5.1.1.1.0"
+                                  }
+                                ],
+                                "key": "root.0.1.0.5.1.1.1"
+                              }
+                            ],
+                            "key": "root.0.1.0.5.1.1"
+                          }
+                        ],
+                        "key": "root.0.1.0.5.1"
+                      }
+                    ],
+                    "key": "root.0.1.0.5"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {},
+                    "children": [
+                      {
+                        "tag": "h2",
+                        "attrs": {
+                          "class": "mb-2 text-sm font-medium"
+                        },
+                        "children": [
+                          {
+                            "text": "Related documents",
+                            "key": "root.0.1.0.6.0.0"
+                          }
+                        ],
+                        "key": "root.0.1.0.6.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex flex-col gap-1"
+                        },
+                        "children": [
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "hover:bg-muted/60 flex items-center justify-between rounded-lg px-3 py-2 text-left text-[13px]"
+                            },
+                            "children": [
+                              {
+                                "text": "Pricing memo",
+                                "key": "root.0.1.0.6.1.0.0"
+                              },
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-link-2",
+                                  "class": "lucide lucide-link2 lucide-link-2 text-muted-foreground size-3.5"
+                                },
+                                "key": "root.0.1.0.6.1.0.1"
+                              }
+                            ],
+                            "key": "root.0.1.0.6.1.0"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "hover:bg-muted/60 flex items-center justify-between rounded-lg px-3 py-2 text-left text-[13px]"
+                            },
+                            "children": [
+                              {
+                                "text": "Checkout outage postmortem",
+                                "key": "root.0.1.0.6.1.1.0"
+                              },
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-link-2",
+                                  "class": "lucide lucide-link2 lucide-link-2 text-muted-foreground size-3.5"
+                                },
+                                "key": "root.0.1.0.6.1.1.1"
+                              }
+                            ],
+                            "key": "root.0.1.0.6.1.1"
+                          }
+                        ],
+                        "key": "root.0.1.0.6.1"
+                      }
+                    ],
+                    "key": "root.0.1.0.6"
+                  },
+                  {
+                    "tag": "p",
+                    "attrs": {
+                      "role": "status",
+                      "class": "text-muted-foreground text-xs"
+                    },
+                    "children": [
+                      {
+                        "text": "All answers quote the document in front of you.",
+                        "key": "root.0.1.0.7.0"
+                      }
+                    ],
+                    "key": "root.0.1.0.7"
+                  }
+                ],
+                "key": "root.0.1.0"
+              }
+            ],
+            "key": "root.0.1"
+          },
+          {
+            "tag": "aside",
+            "attrs": {
+              "aria-label": "Ask the library",
+              "class": "flex min-h-[420px] flex-col border-t xl:min-h-0 xl:border-t-0 xl:border-l"
+            },
+            "children": [
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "flex shrink-0 items-center gap-2 border-b px-4 py-3"
+                },
+                "children": [
+                  {
+                    "tag": "icon",
+                    "attrs": {
+                      "name": "i-lucide-bot",
+                      "class": "lucide lucide-bot size-4"
+                    },
+                    "key": "root.0.2.0.0"
+                  },
+                  {
+                    "tag": "h2",
+                    "attrs": {
+                      "class": "text-sm font-medium"
+                    },
+                    "children": [
+                      {
+                        "text": "Ask the library",
+                        "key": "root.0.2.0.1.0"
+                      }
+                    ],
+                    "key": "root.0.2.0.1"
+                  },
+                  {
+                    "tag": "span",
+                    "attrs": {
+                      "class": "text-muted-foreground ml-auto text-[11px]"
+                    },
+                    "children": [
+                      {
+                        "text": "Local answers · no model",
+                        "key": "root.0.2.0.2.0"
+                      }
+                    ],
+                    "key": "root.0.2.0.2"
+                  }
+                ],
+                "key": "root.0.2.0"
+              },
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "text-muted-foreground shrink-0 border-b px-4 py-2 text-[11px]"
+                },
+                "children": [
+                  {
+                    "text": "Reading:",
+                    "key": "root.0.2.1.0"
+                  },
+                  {
+                    "tag": "span",
+                    "attrs": {
+                      "class": "text-foreground font-medium"
+                    },
+                    "children": [
+                      {
+                        "text": "Refund policy",
+                        "key": "root.0.2.1.1.0"
+                      }
+                    ],
+                    "key": "root.0.2.1.1"
+                  }
+                ],
+                "key": "root.0.2.1"
+              },
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "min-h-0 flex-1 overflow-y-auto px-4 py-4"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "flex flex-col gap-4"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex gap-2.5"
+                        },
+                        "children": [
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "bg-muted flex size-6 shrink-0 items-center justify-center rounded-md"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-bot",
+                                  "class": "lucide lucide-bot size-3.5"
+                                },
+                                "key": "root.0.2.2.0.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.2.2.0.0.0"
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": {
+                              "class": "min-w-0 flex-1 text-[13px] leading-6 break-words"
+                            },
+                            "children": [
+                              {
+                                "text": "This library holds 6 company documents. I answer from the one you are reading — pick a suggested question or ask your own.",
+                                "key": "root.0.2.2.0.0.1.0"
+                              }
+                            ],
+                            "key": "root.0.2.2.0.0.1"
+                          }
+                        ],
+                        "key": "root.0.2.2.0.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {},
+                        "children": [],
+                        "key": "root.0.2.2.0.1"
+                      }
+                    ],
+                    "key": "root.0.2.2.0"
+                  }
+                ],
+                "key": "root.0.2.2"
+              },
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "shrink-0 border-t px-3 pt-2 pb-3"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "mb-2 flex gap-1.5 overflow-x-auto pb-0.5"
+                    },
+                    "children": [
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground rounded-md px-3 h-7 shrink-0 text-xs"
+                        },
+                        "children": [
+                          {
+                            "text": "Refund window?",
+                            "key": "root.0.2.3.0.0.0"
+                          }
+                        ],
+                        "key": "root.0.2.3.0.0"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground rounded-md px-3 h-7 shrink-0 text-xs"
+                        },
+                        "children": [
+                          {
+                            "text": "Repeat refunds?",
+                            "key": "root.0.2.3.0.1.0"
+                          }
+                        ],
+                        "key": "root.0.2.3.0.1"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground rounded-md px-3 h-7 shrink-0 text-xs"
+                        },
+                        "children": [
+                          {
+                            "text": "Preorders?",
+                            "key": "root.0.2.3.0.2.0"
+                          }
+                        ],
+                        "key": "root.0.2.3.0.2"
+                      }
+                    ],
+                    "key": "root.0.2.3.0"
+                  },
+                  {
+                    "tag": "form",
+                    "attrs": {
+                      "class": "flex gap-2"
+                    },
+                    "children": [
+                      {
+                        "tag": "input",
+                        "attrs": {
+                          "class": "border-input file:text-foreground placeholder:text-muted-foreground focus-visible:ring-ring flex w-full rounded-md border bg-transparent px-3 py-1 shadow-xs transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:ring-1 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 md:text-sm h-9 min-w-0 flex-1 text-[13px]",
+                          "aria-label": "Ask about this document",
+                          "placeholder": "Ask about Refund policy…",
+                          "value": ""
+                        },
+                        "children": [],
+                        "key": "root.0.2.3.1.0"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 h-9 w-9 shrink-0",
+                          "type": "submit",
+                          "disabled": "",
+                          "aria-label": "Send question"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-arrow-up",
+                              "class": "lucide lucide-arrow-up"
+                            },
+                            "key": "root.0.2.3.1.1.0"
+                          }
+                        ],
+                        "key": "root.0.2.3.1.1"
+                      }
+                    ],
+                    "key": "root.0.2.3.1"
+                  },
+                  {
+                    "tag": "p",
+                    "attrs": {
+                      "class": "mt-1.5 flex items-center gap-1.5 text-[11px]"
+                    },
+                    "children": [
+                      {
+                        "tag": "icon",
+                        "attrs": {
+                          "name": "i-lucide-check",
+                          "class": "lucide lucide-check size-3 text-emerald-600"
+                        },
+                        "key": "root.0.2.3.2.0"
+                      },
+                      {
+                        "tag": "span",
+                        "attrs": {
+                          "class": "text-muted-foreground"
+                        },
+                        "children": [
+                          {
+                            "text": "Answers quote the document in front of you.",
+                            "key": "root.0.2.3.2.1.0"
+                          }
+                        ],
+                        "key": "root.0.2.3.2.1"
+                      }
+                    ],
+                    "key": "root.0.2.3.2"
+                  }
+                ],
+                "key": "root.0.2.3"
+              }
+            ],
+            "key": "root.0.2"
+          }
+        ],
+        "key": "root.0"
+      }
+    ],
+    "key": "root"
+  },
+  "headings": [
+    "Library",
+    "Refund policy",
+    "1. The 30-day window",
+    "2. Approvals",
+    "Related documents",
+    "Ask the library"
+  ]
+}

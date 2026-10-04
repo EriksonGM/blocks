@@ -1,0 +1,2121 @@
+{
+  "label": "Model details",
+  "path": "/ai-chat/model-detail",
+  "appTitle": "",
+  "tree": {
+    "tag": "div",
+    "attrs": {
+      "id": "ai-workspace-content",
+      "class": "flex min-h-0 flex-1 flex-col"
+    },
+    "children": [
+      {
+        "tag": "div",
+        "attrs": {
+          "class": "min-h-0 flex-1 overflow-y-auto"
+        },
+        "children": [
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "mx-auto max-w-[1480px] px-5 py-8 sm:px-8 lg:px-10"
+            },
+            "children": [
+              {
+                "tag": "header",
+                "attrs": {
+                  "class": "border-b pb-7"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "flex items-center gap-3"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex size-11 shrink-0 items-center justify-center rounded-lg border"
+                        },
+                        "children": [
+                          {
+                            "tag": "svg",
+                            "attrs": {
+                              "stroke": "currentColor",
+                              "fill": "currentColor",
+                              "stroke-width": "0",
+                              "role": "img",
+                              "viewBox": "0 0 24 24",
+                              "class": "size-6",
+                              "height": "100%",
+                              "width": "100%"
+                            },
+                            "children": [
+                              {
+                                "tag": "path",
+                                "attrs": {
+                                  "d": "M17.3041 3.541h-3.6718l6.696 16.918H24Zm-10.6082 0L0 20.459h3.7442l1.3693-3.5527h7.0052l1.3693 3.5528h3.7442L10.5363 3.5409Zm-.3712 10.2232 2.2914-5.9456 2.2914 5.9456Z"
+                                },
+                                "children": [],
+                                "key": "root.0.0.0.0.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.0.0.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {},
+                        "children": [
+                          {
+                            "tag": "p",
+                            "attrs": {
+                              "class": "text-muted-foreground mb-1 text-xs"
+                            },
+                            "children": [
+                              {
+                                "text": "Anthropic",
+                                "key": "root.0.0.0.0.1.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.0.0.1.0"
+                          },
+                          {
+                            "tag": "h1",
+                            "attrs": {
+                              "class": "text-2xl font-semibold tracking-tight"
+                            },
+                            "children": [
+                              {
+                                "text": "Claude Fable 5.1",
+                                "key": "root.0.0.0.0.1.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.0.0.1.1"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.1"
+                      }
+                    ],
+                    "key": "root.0.0.0.0"
+                  },
+                  {
+                    "tag": "button",
+                    "attrs": {
+                      "class": "text-muted-foreground hover:text-foreground mt-4 inline-flex max-w-full items-center gap-2 rounded-sm text-xs focus-visible:outline-2 focus-visible:outline-offset-4",
+                      "aria-label": "Copy model ID"
+                    },
+                    "children": [
+                      {
+                        "tag": "code",
+                        "attrs": {
+                          "class": "truncate"
+                        },
+                        "children": [
+                          {
+                            "text": "anthropic/claude-fable-5.1",
+                            "key": "root.0.0.0.1.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.1.0"
+                      },
+                      {
+                        "tag": "icon",
+                        "attrs": {
+                          "name": "i-lucide-copy",
+                          "class": "lucide lucide-copy size-3.5 shrink-0"
+                        },
+                        "key": "root.0.0.0.1.1"
+                      }
+                    ],
+                    "key": "root.0.0.0.1"
+                  },
+                  {
+                    "tag": "p",
+                    "attrs": {
+                      "class": "text-muted-foreground mt-3 max-w-3xl text-sm leading-6"
+                    },
+                    "children": [
+                      {
+                        "text": "Built for complex coding, long-running agent workflows, and knowledge work. A million-token context window keeps large codebases and lengthy conversations within reach.",
+                        "key": "root.0.0.0.2.0"
+                      }
+                    ],
+                    "key": "root.0.0.0.2"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "text-muted-foreground mt-4 flex flex-wrap gap-x-5 gap-y-2 text-xs"
+                    },
+                    "children": [
+                      {
+                        "tag": "span",
+                        "attrs": {
+                          "class": "inline-flex items-center gap-1.5"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-message-square",
+                              "class": "lucide lucide-message-square size-3.5"
+                            },
+                            "key": "root.0.0.0.3.0.0"
+                          },
+                          {
+                            "text": "Text generation",
+                            "key": "root.0.0.0.3.0.1"
+                          }
+                        ],
+                        "key": "root.0.0.0.3.0"
+                      },
+                      {
+                        "tag": "span",
+                        "attrs": {
+                          "class": "inline-flex items-center gap-1.5"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-eye",
+                              "class": "lucide lucide-eye size-3.5"
+                            },
+                            "key": "root.0.0.0.3.1.0"
+                          },
+                          {
+                            "text": "Vision",
+                            "key": "root.0.0.0.3.1.1"
+                          }
+                        ],
+                        "key": "root.0.0.0.3.1"
+                      },
+                      {
+                        "tag": "span",
+                        "attrs": {
+                          "class": "inline-flex items-center gap-1.5"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-braces",
+                              "class": "lucide lucide-braces size-3.5"
+                            },
+                            "key": "root.0.0.0.3.2.0"
+                          },
+                          {
+                            "text": "Reasoning",
+                            "key": "root.0.0.0.3.2.1"
+                          }
+                        ],
+                        "key": "root.0.0.0.3.2"
+                      },
+                      {
+                        "tag": "span",
+                        "attrs": {
+                          "class": "inline-flex items-center gap-1.5"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-wrench",
+                              "class": "lucide lucide-wrench size-3.5"
+                            },
+                            "key": "root.0.0.0.3.3.0"
+                          },
+                          {
+                            "text": "Tool use",
+                            "key": "root.0.0.0.3.3.1"
+                          }
+                        ],
+                        "key": "root.0.0.0.3.3"
+                      },
+                      {
+                        "tag": "span",
+                        "attrs": {
+                          "class": "inline-flex items-center gap-1.5"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-file-text",
+                              "class": "lucide lucide-file-text size-3.5"
+                            },
+                            "key": "root.0.0.0.3.4.0"
+                          },
+                          {
+                            "text": "File input",
+                            "key": "root.0.0.0.3.4.1"
+                          }
+                        ],
+                        "key": "root.0.0.0.3.4"
+                      }
+                    ],
+                    "key": "root.0.0.0.3"
+                  }
+                ],
+                "key": "root.0.0.0"
+              },
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "grid min-w-0 gap-9 pt-7 lg:grid-cols-[minmax(0,1fr)_240px] xl:grid-cols-[minmax(0,1fr)_260px] xl:gap-10"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "min-w-0 space-y-9"
+                    },
+                    "children": [
+                      {
+                        "tag": "section",
+                        "attrs": {},
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "mb-4 flex items-center justify-between gap-3"
+                            },
+                            "children": [
+                              {
+                                "tag": "h2",
+                                "attrs": {
+                                  "id": "quickstart-title",
+                                  "class": "text-base font-semibold"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Quick start",
+                                    "key": "root.0.0.1.0.0.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.0.0.0"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-muted-foreground text-xs"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Sample requests & responses",
+                                    "key": "root.0.0.1.0.0.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.0.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.0.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "mb-5 grid gap-2 sm:grid-cols-3",
+                              "role": "group",
+                              "aria-label": "Request examples"
+                            },
+                            "children": [
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "class": "relative rounded-lg border p-3 text-left transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 border-foreground/35 bg-muted/40"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "flex items-center justify-between gap-2 text-xs font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "System instructions",
+                                        "key": "root.0.0.1.0.0.1.0.0.0"
+                                      },
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-check",
+                                          "class": "lucide lucide-check size-3.5 shrink-0"
+                                        },
+                                        "key": "root.0.0.1.0.0.1.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.0.1.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-muted-foreground mt-1.5 block text-xs leading-5"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Give your assistant a role and context.",
+                                        "key": "root.0.0.1.0.0.1.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.0.1.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.0.1.0"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "class": "relative rounded-lg border p-3 text-left transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 hover:bg-muted/30"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "flex items-center justify-between gap-2 text-xs font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Multi-turn conversation",
+                                        "key": "root.0.0.1.0.0.1.1.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.0.1.1.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-muted-foreground mt-1.5 block text-xs leading-5"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Build on the context of earlier messages.",
+                                        "key": "root.0.0.1.0.0.1.1.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.0.1.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.0.1.1"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "class": "relative rounded-lg border p-3 text-left transition-colors focus-visible:outline-2 focus-visible:outline-offset-2 hover:bg-muted/30"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "flex items-center justify-between gap-2 text-xs font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Streaming response",
+                                        "key": "root.0.0.1.0.0.1.2.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.0.1.2.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-muted-foreground mt-1.5 block text-xs leading-5"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Deliver the answer as it’s generated.",
+                                        "key": "root.0.0.1.0.0.1.2.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.0.1.2.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.0.1.2"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.0.1"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "grid min-w-0 overflow-hidden rounded-lg border 2xl:grid-cols-2"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "min-w-0 border-b 2xl:border-r 2xl:border-b-0"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "data-orientation": "horizontal"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "bg-background flex min-w-0 flex-col overflow-hidden rounded-none border-0"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "bg-muted/25 flex shrink-0 items-center justify-between gap-2 border-b h-12 px-3"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "flex items-center gap-3"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "span",
+                                                    "attrs": {
+                                                      "class": "text-xs font-medium"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Request",
+                                                        "key": "root.0.0.1.0.0.2.0.0.0.0.0.0.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.1.0.0.2.0.0.0.0.0.0"
+                                                  },
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "role": "tablist",
+                                                      "class": "text-muted-foreground inline-flex items-center justify-center rounded-lg h-7 bg-transparent p-0",
+                                                      "data-orientation": "horizontal",
+                                                      "style": "outline:none"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "button",
+                                                        "attrs": {
+                                                          "type": "button",
+                                                          "role": "tab",
+                                                          "data-state": "active",
+                                                          "id": "radix-_R_1dddbsnpfknmlb_-trigger-typescript",
+                                                          "class": "ring-offset-background focus-visible:ring-ring data-[state=active]:bg-background data-[state=active]:text-foreground inline-flex items-center justify-center rounded-md py-1 font-medium whitespace-nowrap transition-all focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-[state=active]:shadow-sm px-2 text-xs",
+                                                          "data-orientation": "horizontal"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "TypeScript",
+                                                            "key": "root.0.0.1.0.0.2.0.0.0.0.0.1.0.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.1.0.0.2.0.0.0.0.0.1.0"
+                                                      },
+                                                      {
+                                                        "tag": "button",
+                                                        "attrs": {
+                                                          "type": "button",
+                                                          "role": "tab",
+                                                          "data-state": "inactive",
+                                                          "id": "radix-_R_1dddbsnpfknmlb_-trigger-curl",
+                                                          "class": "ring-offset-background focus-visible:ring-ring data-[state=active]:bg-background data-[state=active]:text-foreground inline-flex items-center justify-center rounded-md py-1 font-medium whitespace-nowrap transition-all focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-[state=active]:shadow-sm px-2 text-xs",
+                                                          "data-orientation": "horizontal"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "cURL",
+                                                            "key": "root.0.0.1.0.0.2.0.0.0.0.0.1.1.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.1.0.0.2.0.0.0.0.0.1.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.1.0.0.2.0.0.0.0.0.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.0.0.2.0.0.0.0.0"
+                                              },
+                                              {
+                                                "tag": "button",
+                                                "attrs": {
+                                                  "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground text-muted-foreground size-7",
+                                                  "type": "button",
+                                                  "aria-label": "Copy code"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "icon",
+                                                    "attrs": {
+                                                      "name": "i-lucide-copy",
+                                                      "class": "lucide lucide-copy"
+                                                    },
+                                                    "key": "root.0.0.1.0.0.2.0.0.0.0.1.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.0.0.2.0.0.0.0.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.0.0.2.0.0.0.0"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "bg-background min-h-0 min-w-0 flex-1"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "diffs-container",
+                                                "attrs": {
+                                                  "class": "block min-h-56 min-w-full"
+                                                },
+                                                "children": [],
+                                                "key": "root.0.0.1.0.0.2.0.0.0.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.0.0.2.0.0.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.0.0.2.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.0.2.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.0.2.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "min-w-0"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "data-orientation": "horizontal"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "bg-muted/25 flex h-12 items-center justify-between gap-2 border-b px-3"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "flex items-center gap-3"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "text-xs font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Response",
+                                                    "key": "root.0.0.1.0.0.2.1.0.0.0.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.0.0.2.1.0.0.0.0"
+                                              },
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "role": "tablist",
+                                                  "class": "text-muted-foreground inline-flex items-center justify-center rounded-lg h-7 bg-transparent p-0",
+                                                  "data-orientation": "horizontal",
+                                                  "style": "outline:none"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "button",
+                                                    "attrs": {
+                                                      "type": "button",
+                                                      "role": "tab",
+                                                      "data-state": "active",
+                                                      "id": "radix-_R_2dddbsnpfknmlb_-trigger-output",
+                                                      "class": "ring-offset-background focus-visible:ring-ring data-[state=active]:bg-background data-[state=active]:text-foreground inline-flex items-center justify-center rounded-md py-1 font-medium whitespace-nowrap transition-all focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-[state=active]:shadow-sm px-2 text-xs",
+                                                      "data-orientation": "horizontal"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Output",
+                                                        "key": "root.0.0.1.0.0.2.1.0.0.0.1.0.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.1.0.0.2.1.0.0.0.1.0"
+                                                  },
+                                                  {
+                                                    "tag": "button",
+                                                    "attrs": {
+                                                      "type": "button",
+                                                      "role": "tab",
+                                                      "data-state": "inactive",
+                                                      "id": "radix-_R_2dddbsnpfknmlb_-trigger-json",
+                                                      "class": "ring-offset-background focus-visible:ring-ring data-[state=active]:bg-background data-[state=active]:text-foreground inline-flex items-center justify-center rounded-md py-1 font-medium whitespace-nowrap transition-all focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-[state=active]:shadow-sm px-2 text-xs",
+                                                      "data-orientation": "horizontal"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "JSON",
+                                                        "key": "root.0.0.1.0.0.2.1.0.0.0.1.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.1.0.0.2.1.0.0.0.1.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.0.0.2.1.0.0.0.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.0.0.2.1.0.0.0"
+                                          },
+                                          {
+                                            "tag": "button",
+                                            "attrs": {
+                                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-6",
+                                              "aria-label": "Copy sample response"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "icon",
+                                                "attrs": {
+                                                  "name": "i-lucide-copy",
+                                                  "class": "lucide lucide-copy size-3.5"
+                                                },
+                                                "key": "root.0.0.1.0.0.2.1.0.0.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.0.0.2.1.0.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.0.0.2.1.0.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "data-state": "active",
+                                          "data-orientation": "horizontal",
+                                          "role": "tabpanel",
+                                          "id": "radix-_R_2dddbsnpfknmlb_-content-output",
+                                          "class": "ring-offset-background focus-visible:ring-ring focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden m-0 h-[360px] overflow-auto p-5",
+                                          "style": "animation-duration:0s"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "p",
+                                            "attrs": {
+                                              "class": "text-sm leading-6 whitespace-pre-wrap"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Northstar · Account handoff\n\nGrowth plan · 24 seats\nAccount owner: Maya\nKickoff: Thursday\n\nNext steps\n1. Confirm the SSO requirements with Northstar’s IT contact.\n2. Ask Maya to share the kickoff agenda before Thursday.\n3. Track SSO setup as the remaining onboarding dependency.\n\nThe IT contact and target activation date weren’t included in the handoff. Confirm both before scheduling setup.",
+                                                "key": "root.0.0.1.0.0.2.1.0.1.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.0.0.2.1.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.0.0.2.1.0.1"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "data-state": "inactive",
+                                          "data-orientation": "horizontal",
+                                          "role": "tabpanel",
+                                          "id": "radix-_R_2dddbsnpfknmlb_-content-json",
+                                          "class": "ring-offset-background focus-visible:ring-ring focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden m-0"
+                                        },
+                                        "children": [],
+                                        "key": "root.0.0.1.0.0.2.1.0.2"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.0.2.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.0.2.1"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "bg-muted/15 flex flex-wrap items-center justify-between gap-3 border-t px-3 py-2.5 2xl:col-span-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-muted-foreground text-xs"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Illustrative output · No API request is sent",
+                                        "key": "root.0.0.1.0.0.2.2.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.0.2.2.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-play",
+                                          "class": "lucide lucide-play size-3"
+                                        },
+                                        "key": "root.0.0.1.0.0.2.2.1.0"
+                                      },
+                                      {
+                                        "text": "Replay sample",
+                                        "key": "root.0.0.1.0.0.2.2.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.0.2.2.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.0.2.2"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.0.2"
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": {
+                              "class": "text-muted-foreground mt-3 text-xs leading-5"
+                            },
+                            "children": [
+                              {
+                                "text": "Set API_BASE_URL and API_KEY to use these examples with your workspace’s Messages API.",
+                                "key": "root.0.0.1.0.0.3.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.0.3"
+                          }
+                        ],
+                        "key": "root.0.0.1.0.0"
+                      },
+                      {
+                        "tag": "section",
+                        "attrs": {},
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "data-orientation": "horizontal"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex flex-wrap items-center justify-between gap-3 border-b pb-3"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "h2",
+                                    "attrs": {
+                                      "id": "api-title",
+                                      "class": "text-base font-semibold"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "API reference",
+                                        "key": "root.0.0.1.0.1.0.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.1.0.0.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "role": "tablist",
+                                      "class": "bg-muted text-muted-foreground inline-flex h-9 items-center justify-center rounded-lg p-1",
+                                      "data-orientation": "horizontal",
+                                      "style": "outline:none"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "button",
+                                        "attrs": {
+                                          "type": "button",
+                                          "role": "tab",
+                                          "data-state": "active",
+                                          "id": "radix-_R_2ddbsnpfknmlb_-trigger-parameters",
+                                          "class": "ring-offset-background focus-visible:ring-ring data-[state=active]:bg-background data-[state=active]:text-foreground inline-flex items-center justify-center rounded-md px-3 py-1 text-sm font-medium whitespace-nowrap transition-all focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-[state=active]:shadow-sm",
+                                          "data-orientation": "horizontal"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Parameters",
+                                            "key": "root.0.0.1.0.1.0.0.1.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.0.1.0.0.1.0"
+                                      },
+                                      {
+                                        "tag": "button",
+                                        "attrs": {
+                                          "type": "button",
+                                          "role": "tab",
+                                          "data-state": "inactive",
+                                          "id": "radix-_R_2ddbsnpfknmlb_-trigger-schema",
+                                          "class": "ring-offset-background focus-visible:ring-ring data-[state=active]:bg-background data-[state=active]:text-foreground inline-flex items-center justify-center rounded-md px-3 py-1 text-sm font-medium whitespace-nowrap transition-all focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-[state=active]:shadow-sm",
+                                          "data-orientation": "horizontal"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "JSON schema",
+                                            "key": "root.0.0.1.0.1.0.0.1.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.0.1.0.0.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.1.0.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.1.0.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "data-state": "active",
+                                  "data-orientation": "horizontal",
+                                  "role": "tabpanel",
+                                  "id": "radix-_R_2ddbsnpfknmlb_-content-parameters",
+                                  "class": "ring-offset-background focus-visible:ring-ring focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden mt-0",
+                                  "style": "animation-duration:0s"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "grid gap-7 lg:grid-cols-2"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "tag": "h3",
+                                            "attrs": {
+                                              "class": "py-4 text-sm font-medium"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Input",
+                                                "key": "root.0.0.1.0.1.0.1.0.0.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.0.1.0.1.0.0.0"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "divide-y"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "py-3 first:pt-0"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "flex flex-wrap items-center gap-2"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "code",
+                                                        "attrs": {
+                                                          "class": "text-xs font-medium"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "messages",
+                                                            "key": "root.0.0.1.0.1.0.1.0.0.1.0.0.0.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.1.0.1.0.1.0.0.1.0.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {
+                                                          "class": "text-muted-foreground text-xs"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "object[]",
+                                                            "key": "root.0.0.1.0.1.0.1.0.0.1.0.0.1.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.1.0.1.0.1.0.0.1.0.0.1"
+                                                      },
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {
+                                                          "class": "text-muted-foreground ml-auto text-[11px]"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "Required",
+                                                            "key": "root.0.0.1.0.1.0.1.0.0.1.0.0.2.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.1.0.1.0.1.0.0.1.0.0.2"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.1.0.1.0.1.0.0.1.0.0"
+                                                  },
+                                                  {
+                                                    "tag": "p",
+                                                    "attrs": {
+                                                      "class": "text-muted-foreground mt-1.5 text-xs leading-5"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Conversation history with a role and content for each message.",
+                                                        "key": "root.0.0.1.0.1.0.1.0.0.1.0.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.1.0.1.0.1.0.0.1.0.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.0.1.0.1.0.0.1.0"
+                                              },
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "py-3 first:pt-0"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "flex flex-wrap items-center gap-2"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "code",
+                                                        "attrs": {
+                                                          "class": "text-xs font-medium"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "max_tokens",
+                                                            "key": "root.0.0.1.0.1.0.1.0.0.1.1.0.0.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.1.0.1.0.1.0.0.1.1.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {
+                                                          "class": "text-muted-foreground text-xs"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "number",
+                                                            "key": "root.0.0.1.0.1.0.1.0.0.1.1.0.1.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.1.0.1.0.1.0.0.1.1.0.1"
+                                                      },
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {
+                                                          "class": "text-muted-foreground ml-auto text-[11px]"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "Required",
+                                                            "key": "root.0.0.1.0.1.0.1.0.0.1.1.0.2.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.1.0.1.0.1.0.0.1.1.0.2"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.1.0.1.0.1.0.0.1.1.0"
+                                                  },
+                                                  {
+                                                    "tag": "p",
+                                                    "attrs": {
+                                                      "class": "text-muted-foreground mt-1.5 text-xs leading-5"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Maximum number of tokens to generate in the response.",
+                                                        "key": "root.0.0.1.0.1.0.1.0.0.1.1.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.1.0.1.0.1.0.0.1.1.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.0.1.0.1.0.0.1.1"
+                                              },
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "py-3 first:pt-0"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "flex flex-wrap items-center gap-2"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "code",
+                                                        "attrs": {
+                                                          "class": "text-xs font-medium"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "system",
+                                                            "key": "root.0.0.1.0.1.0.1.0.0.1.2.0.0.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.1.0.1.0.1.0.0.1.2.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {
+                                                          "class": "text-muted-foreground text-xs"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "string",
+                                                            "key": "root.0.0.1.0.1.0.1.0.0.1.2.0.1.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.1.0.1.0.1.0.0.1.2.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.1.0.1.0.1.0.0.1.2.0"
+                                                  },
+                                                  {
+                                                    "tag": "p",
+                                                    "attrs": {
+                                                      "class": "text-muted-foreground mt-1.5 text-xs leading-5"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Instructions that define the assistant’s role and behavior.",
+                                                        "key": "root.0.0.1.0.1.0.1.0.0.1.2.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.1.0.1.0.1.0.0.1.2.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.0.1.0.1.0.0.1.2"
+                                              },
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "py-3 first:pt-0"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "flex flex-wrap items-center gap-2"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "code",
+                                                        "attrs": {
+                                                          "class": "text-xs font-medium"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "stream",
+                                                            "key": "root.0.0.1.0.1.0.1.0.0.1.3.0.0.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.1.0.1.0.1.0.0.1.3.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {
+                                                          "class": "text-muted-foreground text-xs"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "boolean",
+                                                            "key": "root.0.0.1.0.1.0.1.0.0.1.3.0.1.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.1.0.1.0.1.0.0.1.3.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.1.0.1.0.1.0.0.1.3.0"
+                                                  },
+                                                  {
+                                                    "tag": "p",
+                                                    "attrs": {
+                                                      "class": "text-muted-foreground mt-1.5 text-xs leading-5"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Return incremental output as server-sent events.",
+                                                        "key": "root.0.0.1.0.1.0.1.0.0.1.3.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.1.0.1.0.1.0.0.1.3.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.0.1.0.1.0.0.1.3"
+                                              },
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "py-3 first:pt-0"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "flex flex-wrap items-center gap-2"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "code",
+                                                        "attrs": {
+                                                          "class": "text-xs font-medium"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "metadata",
+                                                            "key": "root.0.0.1.0.1.0.1.0.0.1.4.0.0.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.1.0.1.0.1.0.0.1.4.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {
+                                                          "class": "text-muted-foreground text-xs"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "object",
+                                                            "key": "root.0.0.1.0.1.0.1.0.0.1.4.0.1.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.1.0.1.0.1.0.0.1.4.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.1.0.1.0.1.0.0.1.4.0"
+                                                  },
+                                                  {
+                                                    "tag": "p",
+                                                    "attrs": {
+                                                      "class": "text-muted-foreground mt-1.5 text-xs leading-5"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Optional metadata associated with the request.",
+                                                        "key": "root.0.0.1.0.1.0.1.0.0.1.4.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.1.0.1.0.1.0.0.1.4.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.0.1.0.1.0.0.1.4"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.0.1.0.1.0.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.0.1.0.1.0.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "tag": "h3",
+                                            "attrs": {
+                                              "class": "py-4 text-sm font-medium"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Output",
+                                                "key": "root.0.0.1.0.1.0.1.0.1.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.0.1.0.1.0.1.0"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "divide-y"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "py-3 first:pt-0"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "flex items-center gap-2"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "code",
+                                                        "attrs": {
+                                                          "class": "text-xs font-medium"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "id",
+                                                            "key": "root.0.0.1.0.1.0.1.0.1.1.0.0.0.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.1.0.1.0.1.0.1.1.0.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {
+                                                          "class": "text-muted-foreground text-xs"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "string",
+                                                            "key": "root.0.0.1.0.1.0.1.0.1.1.0.0.1.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.1.0.1.0.1.0.1.1.0.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.1.0.1.0.1.0.1.1.0.0"
+                                                  },
+                                                  {
+                                                    "tag": "p",
+                                                    "attrs": {
+                                                      "class": "text-muted-foreground mt-1.5 text-xs leading-5"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Unique identifier for the generated message.",
+                                                        "key": "root.0.0.1.0.1.0.1.0.1.1.0.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.1.0.1.0.1.0.1.1.0.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.0.1.0.1.0.1.1.0"
+                                              },
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "py-3 first:pt-0"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "flex items-center gap-2"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "code",
+                                                        "attrs": {
+                                                          "class": "text-xs font-medium"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "content",
+                                                            "key": "root.0.0.1.0.1.0.1.0.1.1.1.0.0.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.1.0.1.0.1.0.1.1.1.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {
+                                                          "class": "text-muted-foreground text-xs"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "object[]",
+                                                            "key": "root.0.0.1.0.1.0.1.0.1.1.1.0.1.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.1.0.1.0.1.0.1.1.1.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.1.0.1.0.1.0.1.1.1.0"
+                                                  },
+                                                  {
+                                                    "tag": "p",
+                                                    "attrs": {
+                                                      "class": "text-muted-foreground mt-1.5 text-xs leading-5"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "The text and other content blocks returned by the model.",
+                                                        "key": "root.0.0.1.0.1.0.1.0.1.1.1.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.1.0.1.0.1.0.1.1.1.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.0.1.0.1.0.1.1.1"
+                                              },
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "py-3 first:pt-0"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "flex items-center gap-2"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "code",
+                                                        "attrs": {
+                                                          "class": "text-xs font-medium"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "stop_reason",
+                                                            "key": "root.0.0.1.0.1.0.1.0.1.1.2.0.0.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.1.0.1.0.1.0.1.1.2.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {
+                                                          "class": "text-muted-foreground text-xs"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "string | null",
+                                                            "key": "root.0.0.1.0.1.0.1.0.1.1.2.0.1.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.1.0.1.0.1.0.1.1.2.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.1.0.1.0.1.0.1.1.2.0"
+                                                  },
+                                                  {
+                                                    "tag": "p",
+                                                    "attrs": {
+                                                      "class": "text-muted-foreground mt-1.5 text-xs leading-5"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Why the model stopped, such as end_turn or max_tokens.",
+                                                        "key": "root.0.0.1.0.1.0.1.0.1.1.2.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.1.0.1.0.1.0.1.1.2.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.0.1.0.1.0.1.1.2"
+                                              },
+                                              {
+                                                "tag": "details",
+                                                "attrs": {
+                                                  "class": "group py-3"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "summary",
+                                                    "attrs": {
+                                                      "class": "flex cursor-pointer list-none items-center gap-2 text-xs"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "code",
+                                                        "attrs": {
+                                                          "class": "font-medium"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "usage",
+                                                            "key": "root.0.0.1.0.1.0.1.0.1.1.3.0.0.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.1.0.1.0.1.0.1.1.3.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {
+                                                          "class": "text-muted-foreground"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "object",
+                                                            "key": "root.0.0.1.0.1.0.1.0.1.1.3.0.1.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.1.0.1.0.1.0.1.1.3.0.1"
+                                                      },
+                                                      {
+                                                        "tag": "icon",
+                                                        "attrs": {
+                                                          "name": "i-lucide-chevron-down",
+                                                          "class": "lucide lucide-chevron-down ml-auto size-3.5 transition-transform group-open:rotate-180"
+                                                        },
+                                                        "key": "root.0.0.1.0.1.0.1.0.1.1.3.0.2"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.1.0.1.0.1.0.1.1.3.0"
+                                                  },
+                                                  {
+                                                    "tag": "p",
+                                                    "attrs": {
+                                                      "class": "text-muted-foreground mt-1.5 text-xs leading-5"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Token counts for the completed request.",
+                                                        "key": "root.0.0.1.0.1.0.1.0.1.1.3.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.1.0.1.0.1.0.1.1.3.1"
+                                                  },
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "mt-3 space-y-3 border-l pl-3"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "div",
+                                                        "attrs": {
+                                                          "class": "flex justify-between text-xs"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "code",
+                                                            "attrs": {},
+                                                            "children": [
+                                                              {
+                                                                "text": "input_tokens",
+                                                                "key": "root.0.0.1.0.1.0.1.0.1.1.3.2.0.0.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.1.0.1.0.1.0.1.1.3.2.0.0"
+                                                          },
+                                                          {
+                                                            "tag": "span",
+                                                            "attrs": {
+                                                              "class": "text-muted-foreground"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "integer",
+                                                                "key": "root.0.0.1.0.1.0.1.0.1.1.3.2.0.1.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.1.0.1.0.1.0.1.1.3.2.0.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.1.0.1.0.1.0.1.1.3.2.0"
+                                                      },
+                                                      {
+                                                        "tag": "div",
+                                                        "attrs": {
+                                                          "class": "flex justify-between text-xs"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "code",
+                                                            "attrs": {},
+                                                            "children": [
+                                                              {
+                                                                "text": "output_tokens",
+                                                                "key": "root.0.0.1.0.1.0.1.0.1.1.3.2.1.0.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.1.0.1.0.1.0.1.1.3.2.1.0"
+                                                          },
+                                                          {
+                                                            "tag": "span",
+                                                            "attrs": {
+                                                              "class": "text-muted-foreground"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "integer",
+                                                                "key": "root.0.0.1.0.1.0.1.0.1.1.3.2.1.1.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.1.0.1.0.1.0.1.1.3.2.1.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.1.0.1.0.1.0.1.1.3.2.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.1.0.1.0.1.0.1.1.3.2"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.0.1.0.1.0.1.1.3"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.0.1.0.1.0.1.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.0.1.0.1.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.1.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.1.0.1"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "data-state": "inactive",
+                                  "data-orientation": "horizontal",
+                                  "role": "tabpanel",
+                                  "id": "radix-_R_2ddbsnpfknmlb_-content-schema",
+                                  "class": "ring-offset-background focus-visible:ring-ring mt-2 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden"
+                                },
+                                "children": [],
+                                "key": "root.0.0.1.0.1.0.2"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.1.0"
+                          }
+                        ],
+                        "key": "root.0.0.1.0.1"
+                      }
+                    ],
+                    "key": "root.0.0.1.0"
+                  },
+                  {
+                    "tag": "aside",
+                    "attrs": {
+                      "class": "min-w-0 space-y-7 border-t pt-6 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-7"
+                    },
+                    "children": [
+                      {
+                        "tag": "section",
+                        "attrs": {},
+                        "children": [
+                          {
+                            "tag": "h2",
+                            "attrs": {
+                              "class": "text-sm font-semibold"
+                            },
+                            "children": [
+                              {
+                                "text": "Pricing",
+                                "key": "root.0.0.1.1.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.0.0"
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": {
+                              "class": "text-muted-foreground mt-1 text-xs"
+                            },
+                            "children": [
+                              {
+                                "text": "USD per 1M tokens",
+                                "key": "root.0.0.1.1.0.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.0.1"
+                          },
+                          {
+                            "tag": "dl",
+                            "attrs": {
+                              "class": "mt-3 divide-y"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-center justify-between py-3 text-sm"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "dt",
+                                    "attrs": {
+                                      "class": "text-muted-foreground"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Input",
+                                        "key": "root.0.0.1.1.0.2.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.2.0.0"
+                                  },
+                                  {
+                                    "tag": "dd",
+                                    "attrs": {
+                                      "class": "font-medium tabular-nums"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "$10.00",
+                                        "key": "root.0.0.1.1.0.2.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.2.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.0.2.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-center justify-between py-3 text-sm"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "dt",
+                                    "attrs": {
+                                      "class": "text-muted-foreground"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Output",
+                                        "key": "root.0.0.1.1.0.2.1.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.2.1.0"
+                                  },
+                                  {
+                                    "tag": "dd",
+                                    "attrs": {
+                                      "class": "font-medium tabular-nums"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "$50.00",
+                                        "key": "root.0.0.1.1.0.2.1.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.2.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.0.2.1"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-center justify-between py-3 text-sm"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "dt",
+                                    "attrs": {
+                                      "class": "text-muted-foreground"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Cache read",
+                                        "key": "root.0.0.1.1.0.2.2.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.2.2.0"
+                                  },
+                                  {
+                                    "tag": "dd",
+                                    "attrs": {
+                                      "class": "font-medium tabular-nums"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "$0.25",
+                                        "key": "root.0.0.1.1.0.2.2.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.2.2.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.0.2.2"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-center justify-between py-3 text-sm"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "dt",
+                                    "attrs": {
+                                      "class": "text-muted-foreground"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Cache write",
+                                        "key": "root.0.0.1.1.0.2.3.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.2.3.0"
+                                  },
+                                  {
+                                    "tag": "dd",
+                                    "attrs": {
+                                      "class": "font-medium tabular-nums"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "$12.50",
+                                        "key": "root.0.0.1.1.0.2.3.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.2.3.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.0.2.3"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.0.2"
+                          }
+                        ],
+                        "key": "root.0.0.1.1.0"
+                      },
+                      {
+                        "tag": "section",
+                        "attrs": {
+                          "class": "border-t pt-6"
+                        },
+                        "children": [
+                          {
+                            "tag": "h2",
+                            "attrs": {
+                              "class": "text-sm font-semibold"
+                            },
+                            "children": [
+                              {
+                                "text": "Model specifications",
+                                "key": "root.0.0.1.1.1.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.1.0"
+                          },
+                          {
+                            "tag": "dl",
+                            "attrs": {
+                              "class": "mt-4 space-y-4"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "dt",
+                                    "attrs": {
+                                      "class": "text-muted-foreground text-xs"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Context window",
+                                        "key": "root.0.0.1.1.1.1.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.1.1.0.0"
+                                  },
+                                  {
+                                    "tag": "dd",
+                                    "attrs": {
+                                      "class": "mt-1 text-sm"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "1M tokens",
+                                        "key": "root.0.0.1.1.1.1.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.1.1.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.1.1.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "dt",
+                                    "attrs": {
+                                      "class": "text-muted-foreground text-xs"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Maximum output",
+                                        "key": "root.0.0.1.1.1.1.1.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.1.1.1.0"
+                                  },
+                                  {
+                                    "tag": "dd",
+                                    "attrs": {
+                                      "class": "mt-1 text-sm"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "128K tokens",
+                                        "key": "root.0.0.1.1.1.1.1.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.1.1.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.1.1.1"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "dt",
+                                    "attrs": {
+                                      "class": "text-muted-foreground text-xs"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Adaptive thinking",
+                                        "key": "root.0.0.1.1.1.1.2.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.1.1.2.0"
+                                  },
+                                  {
+                                    "tag": "dd",
+                                    "attrs": {
+                                      "class": "mt-1 text-sm"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Supported",
+                                        "key": "root.0.0.1.1.1.1.2.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.1.1.2.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.1.1.2"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "dt",
+                                    "attrs": {
+                                      "class": "text-muted-foreground text-xs"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Architecture",
+                                        "key": "root.0.0.1.1.1.1.3.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.1.1.3.0"
+                                  },
+                                  {
+                                    "tag": "dd",
+                                    "attrs": {
+                                      "class": "mt-1 text-sm"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Transformer",
+                                        "key": "root.0.0.1.1.1.1.3.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.1.1.3.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.1.1.3"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "dt",
+                                    "attrs": {
+                                      "class": "text-muted-foreground text-xs"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "API format",
+                                        "key": "root.0.0.1.1.1.1.4.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.1.1.4.0"
+                                  },
+                                  {
+                                    "tag": "dd",
+                                    "attrs": {
+                                      "class": "mt-1 text-sm"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Messages API",
+                                        "key": "root.0.0.1.1.1.1.4.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.1.1.4.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.1.1.4"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.1.1"
+                          }
+                        ],
+                        "key": "root.0.0.1.1.1"
+                      },
+                      {
+                        "tag": "section",
+                        "attrs": {
+                          "class": "border-t pt-6"
+                        },
+                        "children": [
+                          {
+                            "tag": "h2",
+                            "attrs": {
+                              "class": "mb-3 text-sm font-semibold"
+                            },
+                            "children": [
+                              {
+                                "text": "Resources",
+                                "key": "root.0.0.1.1.2.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.2.0"
+                          },
+                          {
+                            "tag": "a",
+                            "attrs": {
+                              "class": "text-muted-foreground hover:text-foreground flex items-center justify-between gap-2 py-2 text-xs",
+                              "href": "/ai-chat/model-catalog"
+                            },
+                            "children": [
+                              {
+                                "text": "Model catalog",
+                                "key": "root.0.0.1.1.2.1.0"
+                              },
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-arrow-up-right",
+                                  "class": "lucide lucide-arrow-up-right size-3.5"
+                                },
+                                "key": "root.0.0.1.1.2.1.1"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.2.1"
+                          },
+                          {
+                            "tag": "a",
+                            "attrs": {
+                              "class": "text-muted-foreground hover:text-foreground flex items-center justify-between gap-2 py-2 text-xs",
+                              "href": "/ai-chat/model-pricing"
+                            },
+                            "children": [
+                              {
+                                "text": "Compare pricing",
+                                "key": "root.0.0.1.1.2.2.0"
+                              },
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-arrow-up-right",
+                                  "class": "lucide lucide-arrow-up-right size-3.5"
+                                },
+                                "key": "root.0.0.1.1.2.2.1"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.2.2"
+                          },
+                          {
+                            "tag": "a",
+                            "attrs": {
+                              "class": "text-muted-foreground hover:text-foreground flex items-center justify-between gap-2 py-2 text-xs",
+                              "href": "/ai-chat/api-keys"
+                            },
+                            "children": [
+                              {
+                                "text": "Manage API keys",
+                                "key": "root.0.0.1.1.2.3.0"
+                              },
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-arrow-up-right",
+                                  "class": "lucide lucide-arrow-up-right size-3.5"
+                                },
+                                "key": "root.0.0.1.1.2.3.1"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.2.3"
+                          }
+                        ],
+                        "key": "root.0.0.1.1.2"
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {
+                          "class": "text-muted-foreground border-t pt-4 text-[11px] leading-5"
+                        },
+                        "children": [
+                          {
+                            "text": "Pricing snapshot · 19 September 2026. Rates may vary by provider.",
+                            "key": "root.0.0.1.1.3.0"
+                          }
+                        ],
+                        "key": "root.0.0.1.1.3"
+                      }
+                    ],
+                    "key": "root.0.0.1.1"
+                  }
+                ],
+                "key": "root.0.0.1"
+              }
+            ],
+            "key": "root.0.0"
+          }
+        ],
+        "key": "root.0"
+      }
+    ],
+    "key": "root"
+  },
+  "headings": [
+    "Claude Fable 5.1",
+    "Quick start",
+    "API reference",
+    "Input",
+    "Output",
+    "Pricing",
+    "Model specifications",
+    "Resources"
+  ]
+}

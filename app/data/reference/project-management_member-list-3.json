@@ -1,0 +1,1346 @@
+{
+  "label": "Member List 3",
+  "path": "/project-management/member-list-3",
+  "appTitle": "Project Management",
+  "tree": {
+    "tag": "div",
+    "attrs": {
+      "class": "flex h-full flex-col overflow-hidden"
+    },
+    "children": [
+      {
+        "tag": "div",
+        "attrs": {
+          "class": "flex min-h-0 flex-1 flex-col overflow-hidden"
+        },
+        "children": [
+          {
+            "tag": "main",
+            "attrs": {
+              "id": "main-content",
+              "class": "bg-background flex min-h-0 flex-1 flex-col overflow-hidden"
+            },
+            "children": [
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "flex-1 overflow-y-auto px-4 py-6 sm:px-6 lg:px-8"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "mx-auto flex w-full max-w-7xl flex-col gap-8"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex flex-col gap-3"
+                        },
+                        "children": [
+                          {
+                            "tag": "h1",
+                            "attrs": {
+                              "class": "text-2xl font-semibold"
+                            },
+                            "children": [
+                              {
+                                "text": "Members",
+                                "key": "root.0.0.0.0.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.0.0.0.0"
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": {
+                              "class": "text-muted-foreground text-sm"
+                            },
+                            "children": [
+                              {
+                                "text": "Manage team members and invitations",
+                                "key": "root.0.0.0.0.0.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.0.0.0.1"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "bg-card text-card-foreground border rounded-lg shadow-none"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex space-y-1.5 flex-row items-center justify-between gap-4 p-5 sm:p-6"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "text-sm font-medium"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Invite new members by email address",
+                                    "key": "root.0.0.0.0.1.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.1.0.0"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 rounded-md px-3 text-xs h-9",
+                                  "type": "button"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-user-plus",
+                                      "class": "lucide lucide-user-plus"
+                                    },
+                                    "key": "root.0.0.0.0.1.0.1.0"
+                                  },
+                                  {
+                                    "text": "Invite",
+                                    "key": "root.0.0.0.0.1.0.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.1.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.0.0.1.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "data-orientation": "horizontal",
+                              "role": "none",
+                              "class": "bg-border shrink-0 h-[1px] w-full"
+                            },
+                            "children": [],
+                            "key": "root.0.0.0.0.1.1"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex flex-col gap-5 p-5 sm:p-6"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "data-slot": "field-group",
+                                  "class": "group/field-group @container/field-group flex w-full flex-col data-[slot=checkbox-group]:gap-3 *:data-[slot=field-group]:gap-4 gap-4"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "grid gap-3 lg:grid-cols-[minmax(0,1fr)_minmax(220px,1fr)]"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "role": "group",
+                                          "data-slot": "field",
+                                          "data-orientation": "vertical",
+                                          "class": "group/field flex w-full data-[invalid=true]:text-destructive flex-col *:w-full [&>.sr-only]:w-auto gap-2"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "label",
+                                            "attrs": {
+                                              "class": "text-sm font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 group/field-label peer/field-label flex w-fit gap-2 leading-snug group-data-[disabled=true]/field:opacity-50 has-data-checked:border-primary/30 has-data-checked:bg-primary/5 has-[>[data-slot=field]]:rounded-md has-[>[data-slot=field]]:border *:data-[slot=field]:p-3 dark:has-data-checked:border-primary/20 dark:has-data-checked:bg-primary/10 has-[>[data-slot=field]]:w-full has-[>[data-slot=field]]:flex-col",
+                                              "data-slot": "field-label",
+                                              "for": "invite-email-invite-1"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Email Address",
+                                                "key": "root.0.0.0.0.1.2.0.0.0.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.1.2.0.0.0.0"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "data-slot": "input-group",
+                                              "role": "group",
+                                              "class": "group/input-group relative flex h-9 w-full min-w-0 items-center rounded-md border border-input shadow-xs transition-[color,box-shadow] outline-none in-data-[slot=combobox-content]:focus-within:border-inherit in-data-[slot=combobox-content]:focus-within:ring-0 has-[[data-slot=input-group-control]:focus-visible]:border-ring has-[[data-slot=input-group-control]:focus-visible]:ring-3 has-[[data-slot=input-group-control]:focus-visible]:ring-ring/50 has-[[data-slot][aria-invalid=true]]:border-destructive has-[[data-slot][aria-invalid=true]]:ring-3 has-[[data-slot][aria-invalid=true]]:ring-destructive/20 has-[>[data-align=block-end]]:h-auto has-[>[data-align=block-end]]:flex-col has-[>[data-align=block-start]]:h-auto has-[>[data-align=block-start]]:flex-col has-[>textarea]:h-auto dark:bg-input/30 dark:has-[[data-slot][aria-invalid=true]]:ring-destructive/40 has-[>[data-align=block-end]]:[&>input]:pt-3 has-[>[data-align=block-start]]:[&>input]:pb-3 has-[>[data-align=inline-end]]:[&>input]:pr-1.5 has-[>[data-align=inline-start]]:[&>input]:pl-1.5"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "role": "group",
+                                                  "data-slot": "input-group-addon",
+                                                  "class": "flex h-auto cursor-text items-center justify-center gap-2 py-1.5 text-sm font-medium text-muted-foreground select-none group-data-[disabled=true]/input-group:opacity-50 [&>kbd]:rounded-[calc(var(--radius)-5px)] [&>svg:not([class*='size-'])]:size-4 order-first pl-2 has-[>button]:-ml-1 has-[>kbd]:ml-[-0.15rem]"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "icon",
+                                                    "attrs": {
+                                                      "name": "i-lucide-mail",
+                                                      "class": "lucide lucide-mail"
+                                                    },
+                                                    "key": "root.0.0.0.0.1.2.0.0.0.1.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.1.2.0.0.0.1.0"
+                                              },
+                                              {
+                                                "tag": "input",
+                                                "attrs": {
+                                                  "class": "border-input file:text-foreground placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full px-3 py-1 text-base transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 md:text-sm flex-1 rounded-none border-0 bg-transparent shadow-none ring-0 focus-visible:ring-0 aria-invalid:ring-0 dark:bg-transparent",
+                                                  "data-slot": "input-group-control",
+                                                  "id": "invite-email-invite-1",
+                                                  "placeholder": "jane@example.com",
+                                                  "value": ""
+                                                },
+                                                "children": [],
+                                                "key": "root.0.0.0.0.1.2.0.0.0.1.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.1.2.0.0.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.0.1.2.0.0.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "role": "group",
+                                          "data-slot": "field",
+                                          "data-orientation": "vertical",
+                                          "class": "group/field flex w-full data-[invalid=true]:text-destructive flex-col *:w-full [&>.sr-only]:w-auto gap-2"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "label",
+                                            "attrs": {
+                                              "class": "text-sm font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 group/field-label peer/field-label flex w-fit gap-2 leading-snug group-data-[disabled=true]/field:opacity-50 has-data-checked:border-primary/30 has-data-checked:bg-primary/5 has-[>[data-slot=field]]:rounded-md has-[>[data-slot=field]]:border *:data-[slot=field]:p-3 dark:has-data-checked:border-primary/20 dark:has-data-checked:bg-primary/10 has-[>[data-slot=field]]:w-full has-[>[data-slot=field]]:flex-col",
+                                              "data-slot": "field-label"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Role",
+                                                "key": "root.0.0.0.0.1.2.0.0.1.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.1.2.0.0.1.0"
+                                          },
+                                          {
+                                            "tag": "button",
+                                            "attrs": {
+                                              "type": "button",
+                                              "role": "combobox",
+                                              "data-state": "closed",
+                                              "class": "border-input ring-offset-background placeholder:text-muted-foreground focus:ring-ring flex w-full items-center justify-between rounded-md border bg-transparent px-3 py-2 text-sm whitespace-nowrap focus:ring-1 focus:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 h-10 shadow-none"
+                                            },
+                                            "options": [
+                                              "Viewer",
+                                              "Member",
+                                              "Admin"
+                                            ],
+                                            "children": [
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "style": "pointer-events:none"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Member",
+                                                    "key": "root.0.0.0.0.1.2.0.0.1.1.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.1.2.0.0.1.1.0"
+                                              },
+                                              {
+                                                "tag": "icon",
+                                                "attrs": {
+                                                  "name": "i-lucide-chevron-down",
+                                                  "class": "lucide lucide-chevron-down h-4 w-4 opacity-50"
+                                                },
+                                                "key": "root.0.0.0.0.1.2.0.0.1.1.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.1.2.0.0.1.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.0.1.2.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.1.2.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.1.2.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground rounded-md px-3 text-xs h-9",
+                                      "type": "button"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-circle-plus",
+                                          "class": "lucide lucide-circle-plus"
+                                        },
+                                        "key": "root.0.0.0.0.1.2.1.0.0"
+                                      },
+                                      {
+                                        "text": "Add more",
+                                        "key": "root.0.0.0.0.1.2.1.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.1.2.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.1.2.1"
+                              }
+                            ],
+                            "key": "root.0.0.0.0.1.2"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.1"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "data-orientation": "horizontal",
+                          "class": "flex flex-col gap-3"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "overflow-x-auto border-b"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "role": "tablist",
+                                  "class": "text-muted-foreground items-center inline-flex h-auto min-w-max justify-start gap-7 rounded-none bg-transparent p-0 sm:gap-8",
+                                  "data-orientation": "horizontal",
+                                  "style": "outline:none"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "role": "tab",
+                                      "data-state": "active",
+                                      "id": "radix-_R_1lfiv5uknmlb_-trigger-team",
+                                      "class": "ring-offset-background focus-visible:ring-ring data-[state=active]:text-foreground inline-flex items-center justify-center py-1 font-medium whitespace-nowrap transition-all focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-[state=active]:border-foreground shrink-0 rounded-none border-b-2 border-transparent px-0 pb-3 text-sm shadow-none data-[state=active]:bg-transparent data-[state=active]:shadow-none sm:pb-4",
+                                      "data-orientation": "horizontal"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Team Members",
+                                        "key": "root.0.0.0.0.2.0.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.2.0.0.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "role": "tab",
+                                      "data-state": "inactive",
+                                      "id": "radix-_R_1lfiv5uknmlb_-trigger-pending",
+                                      "class": "ring-offset-background focus-visible:ring-ring data-[state=active]:text-foreground inline-flex items-center justify-center py-1 font-medium whitespace-nowrap transition-all focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-[state=active]:border-foreground shrink-0 rounded-none border-b-2 border-transparent px-0 pb-3 text-sm shadow-none data-[state=active]:bg-transparent data-[state=active]:shadow-none sm:pb-4",
+                                      "data-orientation": "horizontal"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Pending Invitations",
+                                        "key": "root.0.0.0.0.2.0.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.2.0.0.1"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "role": "tab",
+                                      "data-state": "inactive",
+                                      "id": "radix-_R_1lfiv5uknmlb_-trigger-suggested",
+                                      "class": "ring-offset-background focus-visible:ring-ring data-[state=active]:text-foreground inline-flex items-center justify-center py-1 font-medium whitespace-nowrap transition-all focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-[state=active]:border-foreground shrink-0 rounded-none border-b-2 border-transparent px-0 pb-3 text-sm shadow-none data-[state=active]:bg-transparent data-[state=active]:shadow-none sm:pb-4",
+                                      "data-orientation": "horizontal"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Suggested Members",
+                                        "key": "root.0.0.0.0.2.0.0.2.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.2.0.0.2"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.2.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.0.0.2.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "grid grid-cols-3 gap-2 lg:grid-cols-[minmax(280px,1fr)_auto_auto_auto] lg:gap-3"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "data-slot": "input-group",
+                                  "role": "group",
+                                  "class": "group/input-group relative flex w-full min-w-0 items-center rounded-md border border-input shadow-xs transition-[color,box-shadow] outline-none in-data-[slot=combobox-content]:focus-within:border-inherit in-data-[slot=combobox-content]:focus-within:ring-0 has-[[data-slot=input-group-control]:focus-visible]:border-ring has-[[data-slot=input-group-control]:focus-visible]:ring-3 has-[[data-slot=input-group-control]:focus-visible]:ring-ring/50 has-[[data-slot][aria-invalid=true]]:border-destructive has-[[data-slot][aria-invalid=true]]:ring-3 has-[[data-slot][aria-invalid=true]]:ring-destructive/20 has-[>[data-align=block-end]]:h-auto has-[>[data-align=block-end]]:flex-col has-[>[data-align=block-start]]:h-auto has-[>[data-align=block-start]]:flex-col has-[>textarea]:h-auto dark:bg-input/30 dark:has-[[data-slot][aria-invalid=true]]:ring-destructive/40 has-[>[data-align=block-end]]:[&>input]:pt-3 has-[>[data-align=block-start]]:[&>input]:pb-3 has-[>[data-align=inline-end]]:[&>input]:pr-1.5 has-[>[data-align=inline-start]]:[&>input]:pl-1.5 col-span-3 h-9 lg:col-span-1 lg:h-10"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "role": "group",
+                                      "data-slot": "input-group-addon",
+                                      "class": "flex h-auto cursor-text items-center justify-center gap-2 py-1.5 text-sm font-medium text-muted-foreground select-none group-data-[disabled=true]/input-group:opacity-50 [&>kbd]:rounded-[calc(var(--radius)-5px)] [&>svg:not([class*='size-'])]:size-4 order-first pl-2 has-[>button]:-ml-1 has-[>kbd]:ml-[-0.15rem]"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-search",
+                                          "class": "lucide lucide-search"
+                                        },
+                                        "key": "root.0.0.0.0.2.1.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.2.1.0.0"
+                                  },
+                                  {
+                                    "tag": "input",
+                                    "attrs": {
+                                      "class": "border-input file:text-foreground placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full px-3 py-1 text-base transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 md:text-sm flex-1 rounded-none border-0 bg-transparent shadow-none ring-0 focus-visible:ring-0 aria-invalid:ring-0 dark:bg-transparent",
+                                      "data-slot": "input-group-control",
+                                      "placeholder": "Filter...",
+                                      "value": ""
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.0.0.2.1.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.2.1.0"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "type": "button",
+                                  "role": "combobox",
+                                  "data-state": "closed",
+                                  "class": "border-input ring-offset-background placeholder:text-muted-foreground focus:ring-ring flex w-full items-center justify-between rounded-md border bg-transparent px-3 py-2 text-sm whitespace-nowrap focus:ring-1 focus:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 relative h-9 min-w-0 shadow-none lg:h-10 lg:min-w-40 pl-8 lg:pl-9"
+                                },
+                                "options": [
+                                  "All Team Roles",
+                                  "Owner",
+                                  "Admin",
+                                  "Member",
+                                  "Viewer"
+                                ],
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-muted-foreground pointer-events-none absolute top-1/2 left-2.5 flex -translate-y-1/2 items-center lg:left-3 [&_svg]:size-3.5 lg:[&_svg]:size-4"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-list-filter",
+                                          "class": "lucide lucide-list-filter"
+                                        },
+                                        "key": "root.0.0.0.0.2.1.1.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.2.1.1.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "style": "pointer-events:none"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "block truncate text-xs lg:text-sm"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "All Team Roles",
+                                            "key": "root.0.0.0.0.2.1.1.1.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.0.2.1.1.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.2.1.1.1"
+                                  },
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-chevron-down",
+                                      "class": "lucide lucide-chevron-down h-4 w-4 opacity-50"
+                                    },
+                                    "key": "root.0.0.0.0.2.1.1.2"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.2.1.1"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "type": "button",
+                                  "role": "combobox",
+                                  "data-state": "closed",
+                                  "class": "border-input ring-offset-background placeholder:text-muted-foreground focus:ring-ring flex w-full items-center justify-between rounded-md border bg-transparent px-3 py-2 text-sm whitespace-nowrap focus:ring-1 focus:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 relative h-9 min-w-0 shadow-none lg:h-10 lg:min-w-40 pl-8 lg:pl-9"
+                                },
+                                "options": [
+                                  "2FA Status",
+                                  "Enabled",
+                                  "Disabled"
+                                ],
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-muted-foreground pointer-events-none absolute top-1/2 left-2.5 flex -translate-y-1/2 items-center lg:left-3 [&_svg]:size-3.5 lg:[&_svg]:size-4"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-shield-check",
+                                          "class": "lucide lucide-shield-check"
+                                        },
+                                        "key": "root.0.0.0.0.2.1.2.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.2.1.2.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "style": "pointer-events:none"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "block truncate text-xs lg:text-sm"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "2FA Status",
+                                            "key": "root.0.0.0.0.2.1.2.1.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.0.2.1.2.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.2.1.2.1"
+                                  },
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-chevron-down",
+                                      "class": "lucide lucide-chevron-down h-4 w-4 opacity-50"
+                                    },
+                                    "key": "root.0.0.0.0.2.1.2.2"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.2.1.2"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "type": "button",
+                                  "role": "combobox",
+                                  "data-state": "closed",
+                                  "class": "border-input ring-offset-background placeholder:text-muted-foreground focus:ring-ring flex w-full items-center justify-between rounded-md border bg-transparent px-3 py-2 text-sm whitespace-nowrap focus:ring-1 focus:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 relative h-9 min-w-0 shadow-none lg:h-10 lg:min-w-40 pl-8 lg:pl-9"
+                                },
+                                "options": [
+                                  "Date",
+                                  "Oldest",
+                                  "Name A-Z",
+                                  "Name Z-A"
+                                ],
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-muted-foreground pointer-events-none absolute top-1/2 left-2.5 flex -translate-y-1/2 items-center lg:left-3 [&_svg]:size-3.5 lg:[&_svg]:size-4"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-arrow-down-up",
+                                          "class": "lucide lucide-arrow-down-up"
+                                        },
+                                        "key": "root.0.0.0.0.2.1.3.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.2.1.3.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "style": "pointer-events:none"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "block truncate text-xs lg:text-sm"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Date",
+                                            "key": "root.0.0.0.0.2.1.3.1.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.0.2.1.3.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.2.1.3.1"
+                                  },
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-chevron-down",
+                                      "class": "lucide lucide-chevron-down h-4 w-4 opacity-50"
+                                    },
+                                    "key": "root.0.0.0.0.2.1.3.2"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.2.1.3"
+                              }
+                            ],
+                            "key": "root.0.0.0.0.2.1"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "data-state": "active",
+                              "data-orientation": "horizontal",
+                              "role": "tabpanel",
+                              "id": "radix-_R_1lfiv5uknmlb_-content-team",
+                              "class": "ring-offset-background focus-visible:ring-ring focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden mt-0",
+                              "style": "animation-duration:0s"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "bg-card overflow-hidden rounded-lg border"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "relative w-full overflow-auto"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "table",
+                                        "attrs": {
+                                          "class": "w-full caption-bottom text-sm"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "thead",
+                                            "attrs": {
+                                              "class": "[&_tr]:border-b"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "tr",
+                                                "attrs": {
+                                                  "class": "group/row data-[state=selected]:bg-muted border-b transition-colors hover:bg-transparent"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "th",
+                                                    "attrs": {
+                                                      "class": "text-muted-foreground h-10 text-left align-middle font-medium [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] w-12 px-4"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "button",
+                                                        "attrs": {
+                                                          "type": "button",
+                                                          "role": "checkbox",
+                                                          "aria-checked": "false",
+                                                          "data-state": "unchecked",
+                                                          "value": "on",
+                                                          "class": "peer border-primary focus-visible:ring-ring data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground h-4 w-4 shrink-0 rounded-sm border shadow-sm focus-visible:ring-1 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50",
+                                                          "aria-label": "Select all visible members"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.0.0.2.2.0.0.0.0.0.0.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.2.0.0.0.0.0.0"
+                                                  },
+                                                  {
+                                                    "tag": "th",
+                                                    "attrs": {
+                                                      "class": "text-muted-foreground h-10 px-2 text-left align-middle font-medium [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] min-w-72"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Select all (2)",
+                                                        "key": "root.0.0.0.0.2.2.0.0.0.0.0.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.2.0.0.0.0.0.1"
+                                                  },
+                                                  {
+                                                    "tag": "th",
+                                                    "attrs": {
+                                                      "class": "text-muted-foreground h-10 px-2 text-left align-middle font-medium [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] hidden w-36 lg:table-cell"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Role",
+                                                        "key": "root.0.0.0.0.2.2.0.0.0.0.0.2.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.2.0.0.0.0.0.2"
+                                                  },
+                                                  {
+                                                    "tag": "th",
+                                                    "attrs": {
+                                                      "class": "text-muted-foreground h-10 px-2 text-left align-middle font-medium [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] hidden w-32 md:table-cell"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Security",
+                                                        "key": "root.0.0.0.0.2.2.0.0.0.0.0.3.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.2.0.0.0.0.0.3"
+                                                  },
+                                                  {
+                                                    "tag": "th",
+                                                    "attrs": {
+                                                      "class": "text-muted-foreground h-10 px-2 align-middle font-medium [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] w-44 text-right"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Access",
+                                                        "key": "root.0.0.0.0.2.2.0.0.0.0.0.4.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.2.0.0.0.0.0.4"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.2.0.0.0.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.2.2.0.0.0.0"
+                                          },
+                                          {
+                                            "tag": "tbody",
+                                            "attrs": {
+                                              "class": "[&_tr:last-child]:border-0"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "tr",
+                                                "attrs": {
+                                                  "class": "group/row hover:bg-muted/50 data-[state=selected]:bg-muted border-b transition-colors"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "td",
+                                                    "attrs": {
+                                                      "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] px-4"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "button",
+                                                        "attrs": {
+                                                          "type": "button",
+                                                          "role": "checkbox",
+                                                          "aria-checked": "false",
+                                                          "data-state": "unchecked",
+                                                          "value": "on",
+                                                          "class": "peer border-primary focus-visible:ring-ring data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground h-4 w-4 shrink-0 rounded-sm border shadow-sm focus-visible:ring-1 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50",
+                                                          "aria-label": "Select Riya Sharma"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.0.0.2.2.0.0.0.1.0.0.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.2.0.0.0.1.0.0"
+                                                  },
+                                                  {
+                                                    "tag": "td",
+                                                    "attrs": {
+                                                      "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "div",
+                                                        "attrs": {
+                                                          "class": "flex min-w-0 items-center gap-3"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "span",
+                                                            "attrs": {
+                                                              "class": "relative flex shrink-0 overflow-hidden rounded-full size-9"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "tag": "img",
+                                                                "attrs": {
+                                                                  "class": "aspect-square h-full w-full",
+                                                                  "alt": "Riya Sharma",
+                                                                  "src": "/reference/5985a55c7498fe2e.png"
+                                                                },
+                                                                "children": [],
+                                                                "key": "root.0.0.0.0.2.2.0.0.0.1.0.1.0.0.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.0.0.2.2.0.0.0.1.0.1.0.0"
+                                                          },
+                                                          {
+                                                            "tag": "div",
+                                                            "attrs": {
+                                                              "class": "min-w-0"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "tag": "div",
+                                                                "attrs": {
+                                                                  "class": "truncate text-sm font-medium"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "Riya Sharma",
+                                                                    "key": "root.0.0.0.0.2.2.0.0.0.1.0.1.0.1.0.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.0.0.0.2.2.0.0.0.1.0.1.0.1.0"
+                                                              },
+                                                              {
+                                                                "tag": "div",
+                                                                "attrs": {
+                                                                  "class": "text-muted-foreground truncate text-sm"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "riya.sharma@shadcnblocks.dev",
+                                                                    "key": "root.0.0.0.0.2.2.0.0.0.1.0.1.0.1.1.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.0.0.0.2.2.0.0.0.1.0.1.0.1.1"
+                                                              },
+                                                              {
+                                                                "tag": "div",
+                                                                "attrs": {
+                                                                  "class": "mt-1 flex flex-wrap items-center gap-2 text-xs lg:hidden"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "tag": "span",
+                                                                    "attrs": {
+                                                                      "class": "text-muted-foreground"
+                                                                    },
+                                                                    "children": [
+                                                                      {
+                                                                        "text": "Viewer",
+                                                                        "key": "root.0.0.0.0.2.2.0.0.0.1.0.1.0.1.2.0.0"
+                                                                      }
+                                                                    ],
+                                                                    "key": "root.0.0.0.0.2.2.0.0.0.1.0.1.0.1.2.0"
+                                                                  },
+                                                                  {
+                                                                    "tag": "span",
+                                                                    "attrs": {
+                                                                      "class": "text-muted-foreground inline-flex items-center gap-1.5 text-sm"
+                                                                    },
+                                                                    "children": [
+                                                                      {
+                                                                        "tag": "icon",
+                                                                        "attrs": {
+                                                                          "name": "i-lucide-shield-check",
+                                                                          "class": "lucide lucide-shield-check text-muted-foreground"
+                                                                        },
+                                                                        "key": "root.0.0.0.0.2.2.0.0.0.1.0.1.0.1.2.1.0"
+                                                                      },
+                                                                      {
+                                                                        "text": "2FA",
+                                                                        "key": "root.0.0.0.0.2.2.0.0.0.1.0.1.0.1.2.1.1"
+                                                                      }
+                                                                    ],
+                                                                    "key": "root.0.0.0.0.2.2.0.0.0.1.0.1.0.1.2.1"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.0.0.0.2.2.0.0.0.1.0.1.0.1.2"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.0.0.2.2.0.0.0.1.0.1.0.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.0.2.2.0.0.0.1.0.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.2.0.0.0.1.0.1"
+                                                  },
+                                                  {
+                                                    "tag": "td",
+                                                    "attrs": {
+                                                      "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-muted-foreground hidden lg:table-cell"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Viewer",
+                                                        "key": "root.0.0.0.0.2.2.0.0.0.1.0.2.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.2.0.0.0.1.0.2"
+                                                  },
+                                                  {
+                                                    "tag": "td",
+                                                    "attrs": {
+                                                      "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] hidden md:table-cell"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {
+                                                          "class": "text-muted-foreground inline-flex items-center gap-1.5 text-sm"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "icon",
+                                                            "attrs": {
+                                                              "name": "i-lucide-shield-check",
+                                                              "class": "lucide lucide-shield-check text-muted-foreground"
+                                                            },
+                                                            "key": "root.0.0.0.0.2.2.0.0.0.1.0.3.0.0"
+                                                          },
+                                                          {
+                                                            "text": "2FA",
+                                                            "key": "root.0.0.0.0.2.2.0.0.0.1.0.3.0.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.0.2.2.0.0.0.1.0.3.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.2.0.0.0.1.0.3"
+                                                  },
+                                                  {
+                                                    "tag": "td",
+                                                    "attrs": {
+                                                      "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "div",
+                                                        "attrs": {
+                                                          "class": "flex items-center justify-end gap-2"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "button",
+                                                            "attrs": {
+                                                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground rounded-md px-3 text-xs h-9",
+                                                              "type": "button"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "Manage Access",
+                                                                "key": "root.0.0.0.0.2.2.0.0.0.1.0.4.0.0.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.0.0.2.2.0.0.0.1.0.4.0.0"
+                                                          },
+                                                          {
+                                                            "tag": "button",
+                                                            "attrs": {
+                                                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-8",
+                                                              "type": "button",
+                                                              "aria-label": "Open actions for Riya Sharma",
+                                                              "id": "radix-_R_1aptlfiv5uknmlb_",
+                                                              "aria-haspopup": "menu",
+                                                              "data-state": "closed"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "tag": "icon",
+                                                                "attrs": {
+                                                                  "name": "i-lucide-ellipsis",
+                                                                  "class": "lucide lucide-ellipsis"
+                                                                },
+                                                                "key": "root.0.0.0.0.2.2.0.0.0.1.0.4.0.1.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.0.0.2.2.0.0.0.1.0.4.0.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.0.2.2.0.0.0.1.0.4.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.2.0.0.0.1.0.4"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.2.0.0.0.1.0"
+                                              },
+                                              {
+                                                "tag": "tr",
+                                                "attrs": {
+                                                  "class": "group/row hover:bg-muted/50 data-[state=selected]:bg-muted border-b transition-colors"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "td",
+                                                    "attrs": {
+                                                      "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] px-4"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "button",
+                                                        "attrs": {
+                                                          "type": "button",
+                                                          "role": "checkbox",
+                                                          "aria-checked": "false",
+                                                          "data-state": "unchecked",
+                                                          "value": "on",
+                                                          "class": "peer border-primary focus-visible:ring-ring data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground h-4 w-4 shrink-0 rounded-sm border shadow-sm focus-visible:ring-1 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50",
+                                                          "aria-label": "Select Ben Lewis"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.0.0.2.2.0.0.0.1.1.0.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.2.0.0.0.1.1.0"
+                                                  },
+                                                  {
+                                                    "tag": "td",
+                                                    "attrs": {
+                                                      "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "div",
+                                                        "attrs": {
+                                                          "class": "flex min-w-0 items-center gap-3"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "span",
+                                                            "attrs": {
+                                                              "class": "relative flex shrink-0 overflow-hidden rounded-full size-9"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "tag": "img",
+                                                                "attrs": {
+                                                                  "class": "aspect-square h-full w-full",
+                                                                  "alt": "Ben Lewis",
+                                                                  "src": "/reference/9310a24e0d573ddb.png"
+                                                                },
+                                                                "children": [],
+                                                                "key": "root.0.0.0.0.2.2.0.0.0.1.1.1.0.0.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.0.0.2.2.0.0.0.1.1.1.0.0"
+                                                          },
+                                                          {
+                                                            "tag": "div",
+                                                            "attrs": {
+                                                              "class": "min-w-0"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "tag": "div",
+                                                                "attrs": {
+                                                                  "class": "truncate text-sm font-medium"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "Ben Lewis",
+                                                                    "key": "root.0.0.0.0.2.2.0.0.0.1.1.1.0.1.0.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.0.0.0.2.2.0.0.0.1.1.1.0.1.0"
+                                                              },
+                                                              {
+                                                                "tag": "div",
+                                                                "attrs": {
+                                                                  "class": "text-muted-foreground truncate text-sm"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "ben.lewis@shadcnblocks.dev",
+                                                                    "key": "root.0.0.0.0.2.2.0.0.0.1.1.1.0.1.1.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.0.0.0.2.2.0.0.0.1.1.1.0.1.1"
+                                                              },
+                                                              {
+                                                                "tag": "div",
+                                                                "attrs": {
+                                                                  "class": "mt-1 flex flex-wrap items-center gap-2 text-xs lg:hidden"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "tag": "span",
+                                                                    "attrs": {
+                                                                      "class": "text-muted-foreground"
+                                                                    },
+                                                                    "children": [
+                                                                      {
+                                                                        "text": "Owner",
+                                                                        "key": "root.0.0.0.0.2.2.0.0.0.1.1.1.0.1.2.0.0"
+                                                                      }
+                                                                    ],
+                                                                    "key": "root.0.0.0.0.2.2.0.0.0.1.1.1.0.1.2.0"
+                                                                  },
+                                                                  {
+                                                                    "tag": "span",
+                                                                    "attrs": {
+                                                                      "class": "text-muted-foreground inline-flex items-center gap-1.5 text-sm"
+                                                                    },
+                                                                    "children": [
+                                                                      {
+                                                                        "tag": "icon",
+                                                                        "attrs": {
+                                                                          "name": "i-lucide-shield-check",
+                                                                          "class": "lucide lucide-shield-check text-muted-foreground"
+                                                                        },
+                                                                        "key": "root.0.0.0.0.2.2.0.0.0.1.1.1.0.1.2.1.0"
+                                                                      },
+                                                                      {
+                                                                        "text": "2FA",
+                                                                        "key": "root.0.0.0.0.2.2.0.0.0.1.1.1.0.1.2.1.1"
+                                                                      }
+                                                                    ],
+                                                                    "key": "root.0.0.0.0.2.2.0.0.0.1.1.1.0.1.2.1"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.0.0.0.2.2.0.0.0.1.1.1.0.1.2"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.0.0.2.2.0.0.0.1.1.1.0.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.0.2.2.0.0.0.1.1.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.2.0.0.0.1.1.1"
+                                                  },
+                                                  {
+                                                    "tag": "td",
+                                                    "attrs": {
+                                                      "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-muted-foreground hidden lg:table-cell"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Owner",
+                                                        "key": "root.0.0.0.0.2.2.0.0.0.1.1.2.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.2.0.0.0.1.1.2"
+                                                  },
+                                                  {
+                                                    "tag": "td",
+                                                    "attrs": {
+                                                      "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] hidden md:table-cell"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {
+                                                          "class": "text-muted-foreground inline-flex items-center gap-1.5 text-sm"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "icon",
+                                                            "attrs": {
+                                                              "name": "i-lucide-shield-check",
+                                                              "class": "lucide lucide-shield-check text-muted-foreground"
+                                                            },
+                                                            "key": "root.0.0.0.0.2.2.0.0.0.1.1.3.0.0"
+                                                          },
+                                                          {
+                                                            "text": "2FA",
+                                                            "key": "root.0.0.0.0.2.2.0.0.0.1.1.3.0.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.0.2.2.0.0.0.1.1.3.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.2.0.0.0.1.1.3"
+                                                  },
+                                                  {
+                                                    "tag": "td",
+                                                    "attrs": {
+                                                      "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "div",
+                                                        "attrs": {
+                                                          "class": "flex items-center justify-end gap-2"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "button",
+                                                            "attrs": {
+                                                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-8",
+                                                              "type": "button",
+                                                              "aria-label": "Open actions for Ben Lewis",
+                                                              "id": "radix-_R_1b9tlfiv5uknmlb_",
+                                                              "aria-haspopup": "menu",
+                                                              "data-state": "closed"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "tag": "icon",
+                                                                "attrs": {
+                                                                  "name": "i-lucide-ellipsis",
+                                                                  "class": "lucide lucide-ellipsis"
+                                                                },
+                                                                "key": "root.0.0.0.0.2.2.0.0.0.1.1.4.0.0.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.0.0.2.2.0.0.0.1.1.4.0.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.0.2.2.0.0.0.1.1.4.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.2.0.0.0.1.1.4"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.2.0.0.0.1.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.2.2.0.0.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.0.2.2.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.2.2.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.2.2.0"
+                              }
+                            ],
+                            "key": "root.0.0.0.0.2.2"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "data-state": "inactive",
+                              "data-orientation": "horizontal",
+                              "role": "tabpanel",
+                              "id": "radix-_R_1lfiv5uknmlb_-content-pending",
+                              "class": "ring-offset-background focus-visible:ring-ring focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden mt-0"
+                            },
+                            "children": [],
+                            "key": "root.0.0.0.0.2.3"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "data-state": "inactive",
+                              "data-orientation": "horizontal",
+                              "role": "tabpanel",
+                              "id": "radix-_R_1lfiv5uknmlb_-content-suggested",
+                              "class": "ring-offset-background focus-visible:ring-ring focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden mt-0"
+                            },
+                            "children": [],
+                            "key": "root.0.0.0.0.2.4"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.2"
+                      },
+                      {
+                        "tag": "span",
+                        "attrs": {
+                          "class": "sr-only"
+                        },
+                        "children": [
+                          {
+                            "text": "Team members ",
+                            "key": "root.0.0.0.0.3.0"
+                          },
+                          {
+                            "text": "2",
+                            "key": "root.0.0.0.0.3.1"
+                          },
+                          {
+                            "text": ", pending invitations",
+                            "key": "root.0.0.0.0.3.2"
+                          },
+                          {
+                            "text": "3",
+                            "key": "root.0.0.0.0.3.3"
+                          },
+                          {
+                            "text": ", suggested members ",
+                            "key": "root.0.0.0.0.3.4"
+                          },
+                          {
+                            "text": "11",
+                            "key": "root.0.0.0.0.3.5"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.3"
+                      }
+                    ],
+                    "key": "root.0.0.0.0"
+                  }
+                ],
+                "key": "root.0.0.0"
+              }
+            ],
+            "key": "root.0.0"
+          }
+        ],
+        "key": "root.0"
+      }
+    ],
+    "key": "root"
+  },
+  "headings": [
+    "Members"
+  ]
+}

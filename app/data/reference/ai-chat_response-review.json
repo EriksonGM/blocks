@@ -1,0 +1,1160 @@
+{
+  "label": "Response review",
+  "path": "/ai-chat/response-review",
+  "appTitle": "",
+  "tree": {
+    "tag": "div",
+    "attrs": {
+      "id": "ai-workspace-content",
+      "class": "flex min-h-0 flex-1 flex-col"
+    },
+    "children": [
+      {
+        "tag": "div",
+        "attrs": {
+          "class": "styles-module__mi3KTG__screen"
+        },
+        "children": [
+          {
+            "tag": "header",
+            "attrs": {
+              "class": "styles-module__mi3KTG__queueHeader"
+            },
+            "children": [
+              {
+                "tag": "div",
+                "attrs": {},
+                "children": [
+                  {
+                    "tag": "a",
+                    "attrs": {
+                      "class": "styles-module__mi3KTG__breadcrumb",
+                      "href": "/ai-chat/evaluations"
+                    },
+                    "children": [
+                      {
+                        "text": "Evaluations ",
+                        "key": "root.0.0.0.0.0"
+                      },
+                      {
+                        "tag": "span",
+                        "attrs": {},
+                        "children": [
+                          {
+                            "text": "/",
+                            "key": "root.0.0.0.0.1.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.1"
+                      },
+                      {
+                        "text": " Review queues",
+                        "key": "root.0.0.0.0.2"
+                      }
+                    ],
+                    "key": "root.0.0.0.0"
+                  },
+                  {
+                    "tag": "h1",
+                    "attrs": {},
+                    "children": [
+                      {
+                        "text": "Support answer quality",
+                        "key": "root.0.0.0.1.0"
+                      },
+                      {
+                        "tag": "span",
+                        "attrs": {
+                          "class": "styles-module__mi3KTG__queueBadge"
+                        },
+                        "children": [
+                          {
+                            "text": "Manual review",
+                            "key": "root.0.0.0.1.1.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.1.1"
+                      }
+                    ],
+                    "key": "root.0.0.0.1"
+                  },
+                  {
+                    "tag": "p",
+                    "attrs": {},
+                    "children": [
+                      {
+                        "text": "Review answers against workspace knowledge before adding them to the support dataset.",
+                        "key": "root.0.0.0.2.0"
+                      }
+                    ],
+                    "key": "root.0.0.0.2"
+                  }
+                ],
+                "key": "root.0.0.0"
+              },
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "styles-module__mi3KTG__progress"
+                },
+                "children": [
+                  {
+                    "tag": "span",
+                    "attrs": {},
+                    "children": [
+                      {
+                        "tag": "strong",
+                        "attrs": {},
+                        "children": [
+                          {
+                            "text": "0",
+                            "key": "root.0.0.1.0.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.1.0.0"
+                      },
+                      {
+                        "text": " of ",
+                        "key": "root.0.0.1.0.1"
+                      },
+                      {
+                        "text": "4",
+                        "key": "root.0.0.1.0.2"
+                      },
+                      {
+                        "text": " reviewed",
+                        "key": "root.0.0.1.0.3"
+                      }
+                    ],
+                    "key": "root.0.0.1.0"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {},
+                    "children": [
+                      {
+                        "tag": "span",
+                        "attrs": {
+                          "style": "width:0%"
+                        },
+                        "children": [],
+                        "key": "root.0.0.1.1.0"
+                      }
+                    ],
+                    "key": "root.0.0.1.1"
+                  }
+                ],
+                "key": "root.0.0.1"
+              }
+            ],
+            "key": "root.0.0"
+          },
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "styles-module__mi3KTG__toolbar"
+            },
+            "children": [
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "styles-module__mi3KTG__caseSelector"
+                },
+                "children": [
+                  {
+                    "tag": "span",
+                    "attrs": {
+                      "class": "styles-module__mi3KTG__label"
+                    },
+                    "children": [
+                      {
+                        "text": "Response",
+                        "key": "root.0.1.0.0.0"
+                      }
+                    ],
+                    "key": "root.0.1.0.0"
+                  },
+                  {
+                    "tag": "select",
+                    "attrs": {
+                      "aria-label": "Select response"
+                    },
+                    "children": [
+                      {
+                        "tag": "option",
+                        "attrs": {
+                          "value": "0"
+                        },
+                        "children": [
+                          {
+                            "text": "RV-1042",
+                            "key": "root.0.1.0.1.0.0"
+                          },
+                          {
+                            "text": " · To review",
+                            "key": "root.0.1.0.1.0.1"
+                          }
+                        ],
+                        "key": "root.0.1.0.1.0"
+                      },
+                      {
+                        "tag": "option",
+                        "attrs": {
+                          "value": "1"
+                        },
+                        "children": [
+                          {
+                            "text": "RV-1043",
+                            "key": "root.0.1.0.1.1.0"
+                          },
+                          {
+                            "text": " · To review",
+                            "key": "root.0.1.0.1.1.1"
+                          }
+                        ],
+                        "key": "root.0.1.0.1.1"
+                      },
+                      {
+                        "tag": "option",
+                        "attrs": {
+                          "value": "2"
+                        },
+                        "children": [
+                          {
+                            "text": "RV-1044",
+                            "key": "root.0.1.0.1.2.0"
+                          },
+                          {
+                            "text": " · To review",
+                            "key": "root.0.1.0.1.2.1"
+                          }
+                        ],
+                        "key": "root.0.1.0.1.2"
+                      },
+                      {
+                        "tag": "option",
+                        "attrs": {
+                          "value": "3"
+                        },
+                        "children": [
+                          {
+                            "text": "RV-1045",
+                            "key": "root.0.1.0.1.3.0"
+                          },
+                          {
+                            "text": " · To review",
+                            "key": "root.0.1.0.1.3.1"
+                          }
+                        ],
+                        "key": "root.0.1.0.1.3"
+                      }
+                    ],
+                    "key": "root.0.1.0.1"
+                  },
+                  {
+                    "tag": "span",
+                    "attrs": {
+                      "class": "styles-module__mi3KTG__toolbarTopic"
+                    },
+                    "children": [
+                      {
+                        "text": "Workspace access",
+                        "key": "root.0.1.0.2.0"
+                      }
+                    ],
+                    "key": "root.0.1.0.2"
+                  }
+                ],
+                "key": "root.0.1.0"
+              },
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "styles-module__mi3KTG__paging"
+                },
+                "children": [
+                  {
+                    "tag": "span",
+                    "attrs": {},
+                    "children": [
+                      {
+                        "text": "1",
+                        "key": "root.0.1.1.0.0"
+                      },
+                      {
+                        "text": " / ",
+                        "key": "root.0.1.1.0.1"
+                      },
+                      {
+                        "text": "4",
+                        "key": "root.0.1.1.0.2"
+                      }
+                    ],
+                    "key": "root.0.1.1.0"
+                  },
+                  {
+                    "tag": "button",
+                    "attrs": {
+                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-6",
+                      "aria-label": "Previous response",
+                      "disabled": ""
+                    },
+                    "children": [
+                      {
+                        "tag": "icon",
+                        "attrs": {
+                          "name": "i-lucide-arrow-left",
+                          "class": "lucide lucide-arrow-left"
+                        },
+                        "key": "root.0.1.1.1.0"
+                      }
+                    ],
+                    "key": "root.0.1.1.1"
+                  },
+                  {
+                    "tag": "button",
+                    "attrs": {
+                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-6",
+                      "aria-label": "Next response"
+                    },
+                    "children": [
+                      {
+                        "tag": "icon",
+                        "attrs": {
+                          "name": "i-lucide-arrow-right",
+                          "class": "lucide lucide-arrow-right"
+                        },
+                        "key": "root.0.1.1.2.0"
+                      }
+                    ],
+                    "key": "root.0.1.1.2"
+                  }
+                ],
+                "key": "root.0.1.1"
+              }
+            ],
+            "key": "root.0.1"
+          },
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "styles-module__mi3KTG__workspace"
+            },
+            "children": [
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "styles-module__mi3KTG__evidence"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "styles-module__mi3KTG__conversationHeading"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {},
+                        "children": [
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "styles-module__mi3KTG__label"
+                            },
+                            "children": [
+                              {
+                                "text": "Conversation",
+                                "key": "root.0.2.0.0.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.2.0.0.0.0"
+                          },
+                          {
+                            "tag": "h2",
+                            "attrs": {},
+                            "children": [
+                              {
+                                "text": "Inviting teammates to a workspace",
+                                "key": "root.0.2.0.0.0.1.0"
+                              }
+                            ],
+                            "key": "root.0.2.0.0.0.1"
+                          }
+                        ],
+                        "key": "root.0.2.0.0.0"
+                      },
+                      {
+                        "tag": "span",
+                        "attrs": {
+                          "class": "styles-module__mi3KTG__channel"
+                        },
+                        "children": [
+                          {
+                            "text": "Web chat",
+                            "key": "root.0.2.0.0.1.0"
+                          }
+                        ],
+                        "key": "root.0.2.0.0.1"
+                      }
+                    ],
+                    "key": "root.0.2.0.0"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "styles-module__mi3KTG__customer"
+                    },
+                    "children": [
+                      {
+                        "tag": "span",
+                        "attrs": {
+                          "class": "styles-module__mi3KTG__avatar"
+                        },
+                        "children": [
+                          {
+                            "text": "MC",
+                            "key": "root.0.2.0.1.0.0"
+                          }
+                        ],
+                        "key": "root.0.2.0.1.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {},
+                        "children": [
+                          {
+                            "tag": "strong",
+                            "attrs": {},
+                            "children": [
+                              {
+                                "text": "Maya Chen",
+                                "key": "root.0.2.0.1.1.0.0"
+                              }
+                            ],
+                            "key": "root.0.2.0.1.1.0"
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": {},
+                            "children": [
+                              {
+                                "text": "Northstar Studio",
+                                "key": "root.0.2.0.1.1.1.0"
+                              }
+                            ],
+                            "key": "root.0.2.0.1.1.1"
+                          }
+                        ],
+                        "key": "root.0.2.0.1.1"
+                      },
+                      {
+                        "tag": "time",
+                        "attrs": {},
+                        "children": [
+                          {
+                            "text": "10:42 AM",
+                            "key": "root.0.2.0.1.2.0"
+                          }
+                        ],
+                        "key": "root.0.2.0.1.2"
+                      }
+                    ],
+                    "key": "root.0.2.0.1"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "styles-module__mi3KTG__messages"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "styles-module__mi3KTG__message"
+                        },
+                        "children": [
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "styles-module__mi3KTG__speaker"
+                            },
+                            "children": [
+                              {
+                                "text": "Maya",
+                                "key": "root.0.2.0.2.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.2.0.2.0.0"
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": {},
+                            "children": [
+                              {
+                                "text": "I’m the owner of our design workspace, but not an organization admin. Can I invite two contractors to just this workspace?",
+                                "key": "root.0.2.0.2.0.1.0"
+                              }
+                            ],
+                            "key": "root.0.2.0.2.0.1"
+                          }
+                        ],
+                        "key": "root.0.2.0.2.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "styles-module__mi3KTG__answer"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "styles-module__mi3KTG__answerHeading"
+                            },
+                            "children": [
+                              {
+                                "tag": "strong",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "text": "Support assistant",
+                                    "key": "root.0.2.0.2.1.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.2.1.0.0"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "text": "Answer under review",
+                                    "key": "root.0.2.0.2.1.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.2.1.0.1"
+                              }
+                            ],
+                            "key": "root.0.2.0.2.1.0"
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": {},
+                            "children": [
+                              {
+                                "text": "Only organization administrators can invite new members. Ask your organization admin to open Settings → Members and send invitations to the contractors. Once they join, your admin can add them to the design workspace.",
+                                "key": "root.0.2.0.2.1.1.0"
+                              }
+                            ],
+                            "key": "root.0.2.0.2.1.1"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "styles-module__mi3KTG__citation"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-file-text",
+                                  "class": "lucide lucide-file-text"
+                                },
+                                "key": "root.0.2.0.2.1.2.0"
+                              },
+                              {
+                                "text": "Invite people to a workspace",
+                                "key": "root.0.2.0.2.1.2.1"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "text": "1",
+                                    "key": "root.0.2.0.2.1.2.2.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.2.1.2.2"
+                              }
+                            ],
+                            "key": "root.0.2.0.2.1.2"
+                          }
+                        ],
+                        "key": "root.0.2.0.2.1"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "styles-module__mi3KTG__message"
+                        },
+                        "children": [
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "styles-module__mi3KTG__speaker"
+                            },
+                            "children": [
+                              {
+                                "text": "Maya",
+                                "key": "root.0.2.0.2.2.0.0"
+                              }
+                            ],
+                            "key": "root.0.2.0.2.2.0"
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": {},
+                            "children": [
+                              {
+                                "text": "Does that mean I need to contact our IT team every time? I thought workspace owners could manage their own members.",
+                                "key": "root.0.2.0.2.2.1.0"
+                              }
+                            ],
+                            "key": "root.0.2.0.2.2.1"
+                          }
+                        ],
+                        "key": "root.0.2.0.2.2"
+                      }
+                    ],
+                    "key": "root.0.2.0.2"
+                  },
+                  {
+                    "tag": "section",
+                    "attrs": {
+                      "id": "review-source",
+                      "class": "styles-module__mi3KTG__source"
+                    },
+                    "children": [
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "styles-module__mi3KTG__sourceToggle"
+                        },
+                        "children": [
+                          {
+                            "tag": "span",
+                            "attrs": {},
+                            "children": [
+                              {
+                                "text": "Source evidence ",
+                                "key": "root.0.2.0.3.0.0.0"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "styles-module__mi3KTG__sourceCount"
+                                },
+                                "children": [
+                                  {
+                                    "text": "1",
+                                    "key": "root.0.2.0.3.0.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.3.0.0.1"
+                              }
+                            ],
+                            "key": "root.0.2.0.3.0.0"
+                          },
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-chevron-down",
+                              "class": "lucide lucide-chevron-down"
+                            },
+                            "key": "root.0.2.0.3.0.1"
+                          }
+                        ],
+                        "key": "root.0.2.0.3.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "styles-module__mi3KTG__sourceBody"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "styles-module__mi3KTG__sourceTitle"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-file-text",
+                                  "class": "lucide lucide-file-text"
+                                },
+                                "key": "root.0.2.0.3.1.0.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "h3",
+                                    "attrs": {},
+                                    "children": [
+                                      {
+                                        "text": "Invite people to a workspace",
+                                        "key": "root.0.2.0.3.1.0.1.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.3.1.0.1.0"
+                                  },
+                                  {
+                                    "tag": "p",
+                                    "attrs": {},
+                                    "children": [
+                                      {
+                                        "text": "Roles & permissions / Workspace members",
+                                        "key": "root.0.2.0.3.1.0.1.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.3.1.0.1.1"
+                                  }
+                                ],
+                                "key": "root.0.2.0.3.1.0.1"
+                              }
+                            ],
+                            "key": "root.0.2.0.3.1.0"
+                          },
+                          {
+                            "tag": "blockquote",
+                            "attrs": {},
+                            "children": [
+                              {
+                                "text": "Workspace owners and organization administrators can invite people to a workspace. Owners can invite members and guests to workspaces they own. Guest access is limited to the selected workspace and does not grant access to other organization resources.",
+                                "key": "root.0.2.0.3.1.1.0"
+                              }
+                            ],
+                            "key": "root.0.2.0.3.1.1"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "styles-module__mi3KTG__sourceFooter"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "text": "Knowledge base",
+                                    "key": "root.0.2.0.3.1.2.0.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.3.1.2.0"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "text": "Updated ",
+                                    "key": "root.0.2.0.3.1.2.1.0"
+                                  },
+                                  {
+                                    "text": "Sep 12, 2026",
+                                    "key": "root.0.2.0.3.1.2.1.1"
+                                  }
+                                ],
+                                "key": "root.0.2.0.3.1.2.1"
+                              }
+                            ],
+                            "key": "root.0.2.0.3.1.2"
+                          }
+                        ],
+                        "key": "root.0.2.0.3.1"
+                      }
+                    ],
+                    "key": "root.0.2.0.3"
+                  }
+                ],
+                "key": "root.0.2.0"
+              },
+              {
+                "tag": "aside",
+                "attrs": {
+                  "class": "styles-module__mi3KTG__review",
+                  "aria-label": "Review response"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "styles-module__mi3KTG__reviewHeading"
+                    },
+                    "children": [
+                      {
+                        "tag": "h2",
+                        "attrs": {},
+                        "children": [
+                          {
+                            "text": "Your review",
+                            "key": "root.0.2.1.0.0.0"
+                          }
+                        ],
+                        "key": "root.0.2.1.0.0"
+                      },
+                      {
+                        "tag": "span",
+                        "attrs": {},
+                        "children": [
+                          {
+                            "text": "Not submitted",
+                            "key": "root.0.2.1.0.1.0"
+                          }
+                        ],
+                        "key": "root.0.2.1.0.1"
+                      }
+                    ],
+                    "key": "root.0.2.1.0"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "styles-module__mi3KTG__reviewContent"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "styles-module__mi3KTG__reason"
+                        },
+                        "children": [
+                          {
+                            "tag": "strong",
+                            "attrs": {},
+                            "children": [
+                              {
+                                "text": "Customer questioned the answer",
+                                "key": "root.0.2.1.1.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.2.1.1.0.0"
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": {},
+                            "children": [
+                              {
+                                "text": "Source contradicts the stated permission requirement.",
+                                "key": "root.0.2.1.1.0.1.0"
+                              }
+                            ],
+                            "key": "root.0.2.1.1.0.1"
+                          }
+                        ],
+                        "key": "root.0.2.1.1.0"
+                      },
+                      {
+                        "tag": "fieldset",
+                        "attrs": {
+                          "class": "styles-module__mi3KTG__field"
+                        },
+                        "children": [
+                          {
+                            "tag": "legend",
+                            "attrs": {},
+                            "children": [
+                              {
+                                "text": "Is the answer accurate?",
+                                "key": "root.0.2.1.1.1.0.0"
+                              }
+                            ],
+                            "key": "root.0.2.1.1.1.0"
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": {},
+                            "children": [
+                              {
+                                "text": "Compare factual claims with the source.",
+                                "key": "root.0.2.1.1.1.1.0"
+                              }
+                            ],
+                            "key": "root.0.2.1.1.1.1"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "styles-module__mi3KTG__options"
+                            },
+                            "children": [
+                              {
+                                "tag": "button",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "text": "Accurate",
+                                    "key": "root.0.2.1.1.1.2.0.0"
+                                  }
+                                ],
+                                "key": "root.0.2.1.1.1.2.0"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "text": "Partly accurate",
+                                    "key": "root.0.2.1.1.1.2.1.0"
+                                  }
+                                ],
+                                "key": "root.0.2.1.1.1.2.1"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "text": "Incorrect",
+                                    "key": "root.0.2.1.1.1.2.2.0"
+                                  }
+                                ],
+                                "key": "root.0.2.1.1.1.2.2"
+                              }
+                            ],
+                            "key": "root.0.2.1.1.1.2"
+                          }
+                        ],
+                        "key": "root.0.2.1.1.1"
+                      },
+                      {
+                        "tag": "fieldset",
+                        "attrs": {
+                          "class": "styles-module__mi3KTG__field"
+                        },
+                        "children": [
+                          {
+                            "tag": "legend",
+                            "attrs": {},
+                            "children": [
+                              {
+                                "text": "Did it resolve the request?",
+                                "key": "root.0.2.1.1.2.0.0"
+                              }
+                            ],
+                            "key": "root.0.2.1.1.2.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "styles-module__mi3KTG__options"
+                            },
+                            "children": [
+                              {
+                                "tag": "button",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "text": "Resolved",
+                                    "key": "root.0.2.1.1.2.1.0.0"
+                                  }
+                                ],
+                                "key": "root.0.2.1.1.2.1.0"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "text": "Partially",
+                                    "key": "root.0.2.1.1.2.1.1.0"
+                                  }
+                                ],
+                                "key": "root.0.2.1.1.2.1.1"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "text": "Unresolved",
+                                    "key": "root.0.2.1.1.2.1.2.0"
+                                  }
+                                ],
+                                "key": "root.0.2.1.1.2.1.2"
+                              }
+                            ],
+                            "key": "root.0.2.1.1.2.1"
+                          }
+                        ],
+                        "key": "root.0.2.1.1.2"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "styles-module__mi3KTG__field"
+                        },
+                        "children": [
+                          {
+                            "tag": "label",
+                            "attrs": {
+                              "for": "review-notes"
+                            },
+                            "children": [
+                              {
+                                "text": "Reviewer notes ",
+                                "key": "root.0.2.1.1.3.0.0"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "text": "Optional",
+                                    "key": "root.0.2.1.1.3.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.2.1.1.3.0.1"
+                              }
+                            ],
+                            "key": "root.0.2.1.1.3.0"
+                          },
+                          {
+                            "tag": "textarea",
+                            "attrs": {
+                              "class": "border-input placeholder:text-muted-foreground focus-visible:ring-ring flex min-h-[60px] w-full rounded-md border bg-transparent px-3 py-2 text-base shadow-xs focus-visible:ring-1 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
+                              "id": "review-notes",
+                              "placeholder": "What should we improve?",
+                              "value": ""
+                            },
+                            "children": [],
+                            "key": "root.0.2.1.1.3.1"
+                          }
+                        ],
+                        "key": "root.0.2.1.1.3"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "styles-module__mi3KTG__destination"
+                        },
+                        "children": [
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "styles-module__mi3KTG__label"
+                            },
+                            "children": [
+                              {
+                                "text": "Save to dataset",
+                                "key": "root.0.2.1.1.4.0.0"
+                              }
+                            ],
+                            "key": "root.0.2.1.1.4.0"
+                          },
+                          {
+                            "tag": "strong",
+                            "attrs": {},
+                            "children": [
+                              {
+                                "text": "Customer support · September review",
+                                "key": "root.0.2.1.1.4.1.0"
+                              }
+                            ],
+                            "key": "root.0.2.1.1.4.1"
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": {},
+                            "children": [
+                              {
+                                "text": "Includes the response, source, and your annotations.",
+                                "key": "root.0.2.1.1.4.2.0"
+                              }
+                            ],
+                            "key": "root.0.2.1.1.4.2"
+                          }
+                        ],
+                        "key": "root.0.2.1.1.4"
+                      }
+                    ],
+                    "key": "root.0.2.1.1"
+                  },
+                  {
+                    "tag": "footer",
+                    "attrs": {
+                      "class": "styles-module__mi3KTG__reviewFooter"
+                    },
+                    "children": [
+                      {
+                        "tag": "p",
+                        "attrs": {
+                          "role": "status"
+                        },
+                        "children": [
+                          {
+                            "text": "Your review stays editable after saving.",
+                            "key": "root.0.2.1.2.0.0"
+                          }
+                        ],
+                        "key": "root.0.2.1.2.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {},
+                        "children": [
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs"
+                            },
+                            "children": [
+                              {
+                                "text": "Skip for now",
+                                "key": "root.0.2.1.2.1.0.0"
+                              }
+                            ],
+                            "key": "root.0.2.1.2.1.0"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 h-8 rounded-md px-3 text-xs"
+                            },
+                            "children": [
+                              {
+                                "text": "Save and next",
+                                "key": "root.0.2.1.2.1.1.0"
+                              },
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-check",
+                                  "class": "lucide lucide-check"
+                                },
+                                "key": "root.0.2.1.2.1.1.1"
+                              }
+                            ],
+                            "key": "root.0.2.1.2.1.1"
+                          }
+                        ],
+                        "key": "root.0.2.1.2.1"
+                      }
+                    ],
+                    "key": "root.0.2.1.2"
+                  }
+                ],
+                "key": "root.0.2.1"
+              }
+            ],
+            "key": "root.0.2"
+          }
+        ],
+        "key": "root.0"
+      }
+    ],
+    "key": "root"
+  },
+  "headings": [
+    "Support answer quality Manual review",
+    "Inviting teammates to a workspace",
+    "Invite people to a workspace",
+    "Your review"
+  ]
+}

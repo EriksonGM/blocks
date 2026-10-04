@@ -1,0 +1,1961 @@
+{
+  "label": "Notifications",
+  "path": "/todo/notifications",
+  "appTitle": "Todo App",
+  "tree": {
+    "tag": "div",
+    "attrs": {
+      "class": "contents"
+    },
+    "children": [
+      {
+        "tag": "div",
+        "attrs": {
+          "class": "flex min-h-0 flex-1 flex-col overflow-hidden"
+        },
+        "children": [
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "flex h-14 shrink-0 items-center gap-2 border-b px-4 sm:px-6"
+            },
+            "children": [
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "flex flex-1 items-center gap-2"
+                },
+                "children": [
+                  {
+                    "tag": "nav",
+                    "attrs": {
+                      "aria-label": "breadcrumb"
+                    },
+                    "children": [
+                      {
+                        "tag": "ol",
+                        "attrs": {
+                          "class": "text-muted-foreground flex flex-wrap items-center gap-1.5 text-sm break-words sm:gap-2.5"
+                        },
+                        "children": [
+                          {
+                            "tag": "li",
+                            "attrs": {
+                              "class": "inline-flex items-center gap-1.5"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "role": "link",
+                                  "class": "text-foreground font-normal line-clamp-1"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Notifications",
+                                    "key": "root.0.0.0.0.0.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.0.0.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.0"
+                      }
+                    ],
+                    "key": "root.0.0.0.0"
+                  }
+                ],
+                "key": "root.0.0.0"
+              },
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "flex items-center gap-2 text-sm"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "group relative flex items-center"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "text-muted-foreground font-medium transition-transform duration-200 ease-out group-hover:-translate-x-16"
+                        },
+                        "children": [
+                          {
+                            "text": "Oct 3",
+                            "key": "root.0.0.1.0.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.1.0.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "text-muted-foreground absolute right-0 translate-x-2 scale-50 font-medium whitespace-nowrap opacity-0 transition-all duration-200 ease-out group-hover:translate-x-0 group-hover:scale-100 group-hover:opacity-100"
+                        },
+                        "children": [
+                          {
+                            "text": "12:58 PM",
+                            "key": "root.0.0.1.0.1.0"
+                          }
+                        ],
+                        "key": "root.0.0.1.0.1"
+                      }
+                    ],
+                    "key": "root.0.0.1.0"
+                  },
+                  {
+                    "tag": "button",
+                    "attrs": {
+                      "class": "inline-flex items-center justify-center whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent rounded-md text-xs text-muted-foreground hover:text-foreground h-7 gap-2 px-2",
+                      "type": "button",
+                      "aria-label": "Search tasks"
+                    },
+                    "children": [
+                      {
+                        "tag": "icon",
+                        "attrs": {
+                          "name": "i-lucide-search",
+                          "class": "lucide lucide-search size-3.5"
+                        },
+                        "key": "root.0.0.1.1.0"
+                      },
+                      {
+                        "tag": "span",
+                        "attrs": {
+                          "class": "text-xs"
+                        },
+                        "children": [
+                          {
+                            "text": "Search",
+                            "key": "root.0.0.1.1.1.0"
+                          }
+                        ],
+                        "key": "root.0.0.1.1.1"
+                      }
+                    ],
+                    "key": "root.0.0.1.1"
+                  },
+                  {
+                    "tag": "button",
+                    "attrs": {
+                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground data-[state=open]:bg-accent h-7 w-7",
+                      "type": "button",
+                      "id": "radix-_R_eb5uknmlb_",
+                      "aria-haspopup": "menu",
+                      "data-state": "closed"
+                    },
+                    "children": [
+                      {
+                        "tag": "icon",
+                        "attrs": {
+                          "name": "i-lucide-ellipsis",
+                          "class": "lucide lucide-ellipsis"
+                        },
+                        "key": "root.0.0.1.2.0"
+                      }
+                    ],
+                    "key": "root.0.0.1.2"
+                  }
+                ],
+                "key": "root.0.0.1"
+              }
+            ],
+            "key": "root.0.0"
+          },
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "flex min-h-0 flex-1 flex-col overflow-auto"
+            },
+            "children": [
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "flex flex-1 flex-col gap-6 py-6 px-6"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "w-full space-y-6 transition-all duration-300 mx-auto max-w-3xl"
+                    },
+                    "children": [
+                      {
+                        "tag": "h1",
+                        "attrs": {
+                          "class": "text-2xl font-bold"
+                        },
+                        "children": [
+                          {
+                            "text": "Notifications",
+                            "key": "root.0.1.0.0.0.0"
+                          }
+                        ],
+                        "key": "root.0.1.0.0.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "data-orientation": "horizontal",
+                          "class": "mt-4",
+                          "data-slot": "tabs"
+                        },
+                        "panels": [
+                          {
+                            "label": "All",
+                            "tree": {
+                              "tag": "div",
+                              "attrs": {
+                                "data-state": "active",
+                                "data-orientation": "horizontal",
+                                "role": "tabpanel",
+                                "id": "radix-_R_inpfj5uknmlb_-content-all",
+                                "class": "ring-offset-background focus-visible:ring-ring focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden mt-4",
+                                "style": "animation-duration:0s"
+                              },
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "attrs": {
+                                    "role": "list",
+                                    "data-slot": "item-group",
+                                    "class": "group/item-group flex flex-col"
+                                  },
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "attrs": {
+                                        "data-orientation": "horizontal",
+                                        "role": "none",
+                                        "class": "bg-border shrink-0 h-[1px] w-full my-0",
+                                        "data-slot": "item-separator"
+                                      },
+                                      "children": [],
+                                      "key": "root.0.1.0.0.1.panel0.0.0"
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "attrs": {
+                                        "data-slot": "item",
+                                        "class": "group/item flex text-sm rounded-md transition-colors [a]:hover:bg-accent/50 [a]:transition-colors duration-100 flex-wrap outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] border-border p-4 gap-4 items-start border-0 border-l-4 bg-muted border-l-red-500"
+                                      },
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "attrs": {
+                                            "data-slot": "item-media",
+                                            "class": "flex shrink-0 items-center justify-center gap-2 group-has-[[data-slot=item-description]]/item:self-start [&_svg]:pointer-events-none group-has-[[data-slot=item-description]]/item:translate-y-0.5 bg-transparent"
+                                          },
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "attrs": {
+                                                "class": "mt-1 flex size-8 items-center justify-center rounded-full bg-red-500"
+                                              },
+                                              "children": [
+                                                {
+                                                  "tag": "icon",
+                                                  "attrs": {
+                                                    "name": "i-lucide-zap",
+                                                    "class": "lucide lucide-zap size-4 text-white"
+                                                  },
+                                                  "key": "root.0.1.0.0.1.panel0.0.1.0.0.0"
+                                                }
+                                              ],
+                                              "key": "root.0.1.0.0.1.panel0.0.1.0.0"
+                                            }
+                                          ],
+                                          "key": "root.0.1.0.0.1.panel0.0.1.0"
+                                        },
+                                        {
+                                          "tag": "div",
+                                          "attrs": {
+                                            "data-slot": "item-content",
+                                            "class": "flex flex-1 flex-col gap-1 [&+[data-slot=item-content]]:flex-none"
+                                          },
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "attrs": {
+                                                "class": "flex items-start justify-between gap-4"
+                                              },
+                                              "children": [
+                                                {
+                                                  "tag": "div",
+                                                  "attrs": {
+                                                    "class": "flex-1"
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "tag": "p",
+                                                      "attrs": {
+                                                        "class": "text-sm"
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "tag": "span",
+                                                          "attrs": {
+                                                            "class": "font-medium"
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "text": "Karma unlocked!",
+                                                              "key": "root.0.1.0.0.1.panel0.0.1.1.0.0.0.0.0"
+                                                            }
+                                                          ],
+                                                          "key": "root.0.1.0.0.1.panel0.0.1.1.0.0.0.0"
+                                                        },
+                                                        {
+                                                          "text": "You're now a Karma Novice. Get things done to earn points and climb the ranks.",
+                                                          "key": "root.0.1.0.0.1.panel0.0.1.1.0.0.0.1"
+                                                        }
+                                                      ],
+                                                      "key": "root.0.1.0.0.1.panel0.0.1.1.0.0.0"
+                                                    },
+                                                    {
+                                                      "tag": "button",
+                                                      "attrs": {
+                                                        "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs my-1"
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "text": "Explore Productivity",
+                                                          "key": "root.0.1.0.0.1.panel0.0.1.1.0.0.1.0"
+                                                        }
+                                                      ],
+                                                      "key": "root.0.1.0.0.1.panel0.0.1.1.0.0.1"
+                                                    },
+                                                    {
+                                                      "tag": "div",
+                                                      "attrs": {
+                                                        "class": "flex items-end justify-between"
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "tag": "p",
+                                                          "attrs": {
+                                                            "class": "text-muted-foreground mt-1 text-xs"
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "text": "50 minutes ago",
+                                                              "key": "root.0.1.0.0.1.panel0.0.1.1.0.0.2.0.0"
+                                                            }
+                                                          ],
+                                                          "key": "root.0.1.0.0.1.panel0.0.1.1.0.0.2.0"
+                                                        },
+                                                        {
+                                                          "tag": "button",
+                                                          "attrs": {
+                                                            "class": "text-destructive hover:text-destructive/80 shrink-0 transition-colors",
+                                                            "title": "Mark as read"
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "tag": "div",
+                                                              "attrs": {
+                                                                "class": "border-destructive bg-destructive flex size-2 animate-pulse items-center justify-center rounded-full border"
+                                                              },
+                                                              "children": [],
+                                                              "key": "root.0.1.0.0.1.panel0.0.1.1.0.0.2.1.0"
+                                                            }
+                                                          ],
+                                                          "key": "root.0.1.0.0.1.panel0.0.1.1.0.0.2.1"
+                                                        }
+                                                      ],
+                                                      "key": "root.0.1.0.0.1.panel0.0.1.1.0.0.2"
+                                                    }
+                                                  ],
+                                                  "key": "root.0.1.0.0.1.panel0.0.1.1.0.0"
+                                                }
+                                              ],
+                                              "key": "root.0.1.0.0.1.panel0.0.1.1.0"
+                                            }
+                                          ],
+                                          "key": "root.0.1.0.0.1.panel0.0.1.1"
+                                        }
+                                      ],
+                                      "key": "root.0.1.0.0.1.panel0.0.1"
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "attrs": {
+                                        "data-orientation": "horizontal",
+                                        "role": "none",
+                                        "class": "bg-border shrink-0 h-[1px] w-full my-0",
+                                        "data-slot": "item-separator"
+                                      },
+                                      "children": [],
+                                      "key": "root.0.1.0.0.1.panel0.0.2"
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "attrs": {
+                                        "data-slot": "item",
+                                        "class": "group/item flex text-sm rounded-md transition-colors [a]:hover:bg-accent/50 [a]:transition-colors duration-100 flex-wrap outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] border-border p-4 gap-4 items-start border-0 border-l-4 border-l-transparent"
+                                      },
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "attrs": {
+                                            "data-slot": "item-media",
+                                            "class": "flex shrink-0 items-center justify-center gap-2 group-has-[[data-slot=item-description]]/item:self-start [&_svg]:pointer-events-none group-has-[[data-slot=item-description]]/item:translate-y-0.5 bg-transparent"
+                                          },
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "attrs": {
+                                                "class": "mt-1 flex size-8 items-center justify-center rounded-full bg-green-500"
+                                              },
+                                              "children": [
+                                                {
+                                                  "tag": "icon",
+                                                  "attrs": {
+                                                    "name": "i-lucide-circle-check-big",
+                                                    "class": "lucide lucide-circle-check-big size-4 text-white"
+                                                  },
+                                                  "key": "root.0.1.0.0.1.panel0.0.3.0.0.0"
+                                                }
+                                              ],
+                                              "key": "root.0.1.0.0.1.panel0.0.3.0.0"
+                                            }
+                                          ],
+                                          "key": "root.0.1.0.0.1.panel0.0.3.0"
+                                        },
+                                        {
+                                          "tag": "div",
+                                          "attrs": {
+                                            "data-slot": "item-content",
+                                            "class": "flex flex-1 flex-col gap-1 [&+[data-slot=item-content]]:flex-none"
+                                          },
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "attrs": {
+                                                "class": "flex items-start justify-between gap-4"
+                                              },
+                                              "children": [
+                                                {
+                                                  "tag": "div",
+                                                  "attrs": {
+                                                    "class": "flex-1"
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "tag": "p",
+                                                      "attrs": {
+                                                        "class": "text-sm"
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "tag": "span",
+                                                          "attrs": {
+                                                            "class": "font-medium"
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "text": "Task completed!",
+                                                              "key": "root.0.1.0.0.1.panel0.0.3.1.0.0.0.0.0"
+                                                            }
+                                                          ],
+                                                          "key": "root.0.1.0.0.1.panel0.0.3.1.0.0.0.0"
+                                                        },
+                                                        {
+                                                          "text": "You completed \"Design new landing page\" in Project Alpha.",
+                                                          "key": "root.0.1.0.0.1.panel0.0.3.1.0.0.0.1"
+                                                        }
+                                                      ],
+                                                      "key": "root.0.1.0.0.1.panel0.0.3.1.0.0.0"
+                                                    },
+                                                    {
+                                                      "tag": "div",
+                                                      "attrs": {
+                                                        "class": "flex items-end justify-between"
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "tag": "p",
+                                                          "attrs": {
+                                                            "class": "text-muted-foreground mt-1 text-xs"
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "text": "2 hours ago",
+                                                              "key": "root.0.1.0.0.1.panel0.0.3.1.0.0.1.0.0"
+                                                            }
+                                                          ],
+                                                          "key": "root.0.1.0.0.1.panel0.0.3.1.0.0.1.0"
+                                                        }
+                                                      ],
+                                                      "key": "root.0.1.0.0.1.panel0.0.3.1.0.0.1"
+                                                    }
+                                                  ],
+                                                  "key": "root.0.1.0.0.1.panel0.0.3.1.0.0"
+                                                }
+                                              ],
+                                              "key": "root.0.1.0.0.1.panel0.0.3.1.0"
+                                            }
+                                          ],
+                                          "key": "root.0.1.0.0.1.panel0.0.3.1"
+                                        }
+                                      ],
+                                      "key": "root.0.1.0.0.1.panel0.0.3"
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "attrs": {
+                                        "data-orientation": "horizontal",
+                                        "role": "none",
+                                        "class": "bg-border shrink-0 h-[1px] w-full my-0",
+                                        "data-slot": "item-separator"
+                                      },
+                                      "children": [],
+                                      "key": "root.0.1.0.0.1.panel0.0.4"
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "attrs": {
+                                        "data-slot": "item",
+                                        "class": "group/item flex text-sm rounded-md transition-colors [a]:hover:bg-accent/50 [a]:transition-colors duration-100 flex-wrap outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] border-border p-4 gap-4 items-start border-0 border-l-4 border-l-transparent"
+                                      },
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "attrs": {
+                                            "data-slot": "item-media",
+                                            "class": "flex shrink-0 items-center justify-center gap-2 group-has-[[data-slot=item-description]]/item:self-start [&_svg]:pointer-events-none group-has-[[data-slot=item-description]]/item:translate-y-0.5 bg-transparent"
+                                          },
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "attrs": {
+                                                "class": "mt-1 flex size-8 items-center justify-center rounded-full bg-blue-500"
+                                              },
+                                              "children": [
+                                                {
+                                                  "tag": "icon",
+                                                  "attrs": {
+                                                    "name": "i-lucide-users",
+                                                    "class": "lucide lucide-users size-4 text-white"
+                                                  },
+                                                  "key": "root.0.1.0.0.1.panel0.0.5.0.0.0"
+                                                }
+                                              ],
+                                              "key": "root.0.1.0.0.1.panel0.0.5.0.0"
+                                            }
+                                          ],
+                                          "key": "root.0.1.0.0.1.panel0.0.5.0"
+                                        },
+                                        {
+                                          "tag": "div",
+                                          "attrs": {
+                                            "data-slot": "item-content",
+                                            "class": "flex flex-1 flex-col gap-1 [&+[data-slot=item-content]]:flex-none"
+                                          },
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "attrs": {
+                                                "class": "flex items-start justify-between gap-4"
+                                              },
+                                              "children": [
+                                                {
+                                                  "tag": "div",
+                                                  "attrs": {
+                                                    "class": "flex-1"
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "tag": "p",
+                                                      "attrs": {
+                                                        "class": "text-sm"
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "tag": "span",
+                                                          "attrs": {
+                                                            "class": "font-medium"
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "text": "New collaborator",
+                                                              "key": "root.0.1.0.0.1.panel0.0.5.1.0.0.0.0.0"
+                                                            }
+                                                          ],
+                                                          "key": "root.0.1.0.0.1.panel0.0.5.1.0.0.0.0"
+                                                        },
+                                                        {
+                                                          "text": "John Doe has been added to your workspace.",
+                                                          "key": "root.0.1.0.0.1.panel0.0.5.1.0.0.0.1"
+                                                        }
+                                                      ],
+                                                      "key": "root.0.1.0.0.1.panel0.0.5.1.0.0.0"
+                                                    },
+                                                    {
+                                                      "tag": "div",
+                                                      "attrs": {
+                                                        "class": "flex items-end justify-between"
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "tag": "p",
+                                                          "attrs": {
+                                                            "class": "text-muted-foreground mt-1 text-xs"
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "text": "5 hours ago",
+                                                              "key": "root.0.1.0.0.1.panel0.0.5.1.0.0.1.0.0"
+                                                            }
+                                                          ],
+                                                          "key": "root.0.1.0.0.1.panel0.0.5.1.0.0.1.0"
+                                                        }
+                                                      ],
+                                                      "key": "root.0.1.0.0.1.panel0.0.5.1.0.0.1"
+                                                    }
+                                                  ],
+                                                  "key": "root.0.1.0.0.1.panel0.0.5.1.0.0"
+                                                }
+                                              ],
+                                              "key": "root.0.1.0.0.1.panel0.0.5.1.0"
+                                            }
+                                          ],
+                                          "key": "root.0.1.0.0.1.panel0.0.5.1"
+                                        }
+                                      ],
+                                      "key": "root.0.1.0.0.1.panel0.0.5"
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "attrs": {
+                                        "data-orientation": "horizontal",
+                                        "role": "none",
+                                        "class": "bg-border shrink-0 h-[1px] w-full my-0",
+                                        "data-slot": "item-separator"
+                                      },
+                                      "children": [],
+                                      "key": "root.0.1.0.0.1.panel0.0.6"
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "attrs": {
+                                        "data-slot": "item",
+                                        "class": "group/item flex text-sm rounded-md transition-colors [a]:hover:bg-accent/50 [a]:transition-colors duration-100 flex-wrap outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] border-border p-4 gap-4 items-start border-0 border-l-4 border-l-transparent"
+                                      },
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "attrs": {
+                                            "data-slot": "item-media",
+                                            "class": "flex shrink-0 items-center justify-center gap-2 group-has-[[data-slot=item-description]]/item:self-start [&_svg]:pointer-events-none group-has-[[data-slot=item-description]]/item:translate-y-0.5 bg-transparent"
+                                          },
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "attrs": {
+                                                "class": "mt-1 flex size-8 items-center justify-center rounded-full bg-purple-500"
+                                              },
+                                              "children": [
+                                                {
+                                                  "tag": "icon",
+                                                  "attrs": {
+                                                    "name": "i-lucide-trending-up",
+                                                    "class": "lucide lucide-trending-up size-4 text-white"
+                                                  },
+                                                  "key": "root.0.1.0.0.1.panel0.0.7.0.0.0"
+                                                }
+                                              ],
+                                              "key": "root.0.1.0.0.1.panel0.0.7.0.0"
+                                            }
+                                          ],
+                                          "key": "root.0.1.0.0.1.panel0.0.7.0"
+                                        },
+                                        {
+                                          "tag": "div",
+                                          "attrs": {
+                                            "data-slot": "item-content",
+                                            "class": "flex flex-1 flex-col gap-1 [&+[data-slot=item-content]]:flex-none"
+                                          },
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "attrs": {
+                                                "class": "flex items-start justify-between gap-4"
+                                              },
+                                              "children": [
+                                                {
+                                                  "tag": "div",
+                                                  "attrs": {
+                                                    "class": "flex-1"
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "tag": "p",
+                                                      "attrs": {
+                                                        "class": "text-sm"
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "tag": "span",
+                                                          "attrs": {
+                                                            "class": "font-medium"
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "text": "Weekly summary",
+                                                              "key": "root.0.1.0.0.1.panel0.0.7.1.0.0.0.0.0"
+                                                            }
+                                                          ],
+                                                          "key": "root.0.1.0.0.1.panel0.0.7.1.0.0.0.0"
+                                                        },
+                                                        {
+                                                          "text": "You completed 12 tasks this week. Great work!",
+                                                          "key": "root.0.1.0.0.1.panel0.0.7.1.0.0.0.1"
+                                                        }
+                                                      ],
+                                                      "key": "root.0.1.0.0.1.panel0.0.7.1.0.0.0"
+                                                    },
+                                                    {
+                                                      "tag": "div",
+                                                      "attrs": {
+                                                        "class": "flex items-end justify-between"
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "tag": "p",
+                                                          "attrs": {
+                                                            "class": "text-muted-foreground mt-1 text-xs"
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "text": "1 day ago",
+                                                              "key": "root.0.1.0.0.1.panel0.0.7.1.0.0.1.0.0"
+                                                            }
+                                                          ],
+                                                          "key": "root.0.1.0.0.1.panel0.0.7.1.0.0.1.0"
+                                                        }
+                                                      ],
+                                                      "key": "root.0.1.0.0.1.panel0.0.7.1.0.0.1"
+                                                    }
+                                                  ],
+                                                  "key": "root.0.1.0.0.1.panel0.0.7.1.0.0"
+                                                }
+                                              ],
+                                              "key": "root.0.1.0.0.1.panel0.0.7.1.0"
+                                            }
+                                          ],
+                                          "key": "root.0.1.0.0.1.panel0.0.7.1"
+                                        }
+                                      ],
+                                      "key": "root.0.1.0.0.1.panel0.0.7"
+                                    }
+                                  ],
+                                  "key": "root.0.1.0.0.1.panel0.0"
+                                }
+                              ],
+                              "key": "root.0.1.0.0.1.panel0"
+                            }
+                          },
+                          {
+                            "label": "Unread (1)",
+                            "tree": {
+                              "tag": "div",
+                              "attrs": {
+                                "data-state": "active",
+                                "data-orientation": "horizontal",
+                                "role": "tabpanel",
+                                "id": "radix-_R_inpfj5uknmlb_-content-all",
+                                "class": "ring-offset-background focus-visible:ring-ring focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden mt-4",
+                                "style": "animation-duration:0s"
+                              },
+                              "children": [
+                                {
+                                  "tag": "div",
+                                  "attrs": {
+                                    "role": "list",
+                                    "data-slot": "item-group",
+                                    "class": "group/item-group flex flex-col"
+                                  },
+                                  "children": [
+                                    {
+                                      "tag": "div",
+                                      "attrs": {
+                                        "data-orientation": "horizontal",
+                                        "role": "none",
+                                        "class": "bg-border shrink-0 h-[1px] w-full my-0",
+                                        "data-slot": "item-separator"
+                                      },
+                                      "children": [],
+                                      "key": "root.0.1.0.0.1.panel1.0.0"
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "attrs": {
+                                        "data-slot": "item",
+                                        "class": "group/item flex text-sm rounded-md transition-colors [a]:hover:bg-accent/50 [a]:transition-colors duration-100 flex-wrap outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] border-border p-4 gap-4 items-start border-0 border-l-4 bg-muted border-l-red-500"
+                                      },
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "attrs": {
+                                            "data-slot": "item-media",
+                                            "class": "flex shrink-0 items-center justify-center gap-2 group-has-[[data-slot=item-description]]/item:self-start [&_svg]:pointer-events-none group-has-[[data-slot=item-description]]/item:translate-y-0.5 bg-transparent"
+                                          },
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "attrs": {
+                                                "class": "mt-1 flex size-8 items-center justify-center rounded-full bg-red-500"
+                                              },
+                                              "children": [
+                                                {
+                                                  "tag": "icon",
+                                                  "attrs": {
+                                                    "name": "i-lucide-zap",
+                                                    "class": "lucide lucide-zap size-4 text-white"
+                                                  },
+                                                  "key": "root.0.1.0.0.1.panel1.0.1.0.0.0"
+                                                }
+                                              ],
+                                              "key": "root.0.1.0.0.1.panel1.0.1.0.0"
+                                            }
+                                          ],
+                                          "key": "root.0.1.0.0.1.panel1.0.1.0"
+                                        },
+                                        {
+                                          "tag": "div",
+                                          "attrs": {
+                                            "data-slot": "item-content",
+                                            "class": "flex flex-1 flex-col gap-1 [&+[data-slot=item-content]]:flex-none"
+                                          },
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "attrs": {
+                                                "class": "flex items-start justify-between gap-4"
+                                              },
+                                              "children": [
+                                                {
+                                                  "tag": "div",
+                                                  "attrs": {
+                                                    "class": "flex-1"
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "tag": "p",
+                                                      "attrs": {
+                                                        "class": "text-sm"
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "tag": "span",
+                                                          "attrs": {
+                                                            "class": "font-medium"
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "text": "Karma unlocked!",
+                                                              "key": "root.0.1.0.0.1.panel1.0.1.1.0.0.0.0.0"
+                                                            }
+                                                          ],
+                                                          "key": "root.0.1.0.0.1.panel1.0.1.1.0.0.0.0"
+                                                        },
+                                                        {
+                                                          "text": "You're now a Karma Novice. Get things done to earn points and climb the ranks.",
+                                                          "key": "root.0.1.0.0.1.panel1.0.1.1.0.0.0.1"
+                                                        }
+                                                      ],
+                                                      "key": "root.0.1.0.0.1.panel1.0.1.1.0.0.0"
+                                                    },
+                                                    {
+                                                      "tag": "button",
+                                                      "attrs": {
+                                                        "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs my-1"
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "text": "Explore Productivity",
+                                                          "key": "root.0.1.0.0.1.panel1.0.1.1.0.0.1.0"
+                                                        }
+                                                      ],
+                                                      "key": "root.0.1.0.0.1.panel1.0.1.1.0.0.1"
+                                                    },
+                                                    {
+                                                      "tag": "div",
+                                                      "attrs": {
+                                                        "class": "flex items-end justify-between"
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "tag": "p",
+                                                          "attrs": {
+                                                            "class": "text-muted-foreground mt-1 text-xs"
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "text": "50 minutes ago",
+                                                              "key": "root.0.1.0.0.1.panel1.0.1.1.0.0.2.0.0"
+                                                            }
+                                                          ],
+                                                          "key": "root.0.1.0.0.1.panel1.0.1.1.0.0.2.0"
+                                                        },
+                                                        {
+                                                          "tag": "button",
+                                                          "attrs": {
+                                                            "class": "text-destructive hover:text-destructive/80 shrink-0 transition-colors",
+                                                            "title": "Mark as read"
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "tag": "div",
+                                                              "attrs": {
+                                                                "class": "border-destructive bg-destructive flex size-2 animate-pulse items-center justify-center rounded-full border"
+                                                              },
+                                                              "children": [],
+                                                              "key": "root.0.1.0.0.1.panel1.0.1.1.0.0.2.1.0"
+                                                            }
+                                                          ],
+                                                          "key": "root.0.1.0.0.1.panel1.0.1.1.0.0.2.1"
+                                                        }
+                                                      ],
+                                                      "key": "root.0.1.0.0.1.panel1.0.1.1.0.0.2"
+                                                    }
+                                                  ],
+                                                  "key": "root.0.1.0.0.1.panel1.0.1.1.0.0"
+                                                }
+                                              ],
+                                              "key": "root.0.1.0.0.1.panel1.0.1.1.0"
+                                            }
+                                          ],
+                                          "key": "root.0.1.0.0.1.panel1.0.1.1"
+                                        }
+                                      ],
+                                      "key": "root.0.1.0.0.1.panel1.0.1"
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "attrs": {
+                                        "data-orientation": "horizontal",
+                                        "role": "none",
+                                        "class": "bg-border shrink-0 h-[1px] w-full my-0",
+                                        "data-slot": "item-separator"
+                                      },
+                                      "children": [],
+                                      "key": "root.0.1.0.0.1.panel1.0.2"
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "attrs": {
+                                        "data-slot": "item",
+                                        "class": "group/item flex text-sm rounded-md transition-colors [a]:hover:bg-accent/50 [a]:transition-colors duration-100 flex-wrap outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] border-border p-4 gap-4 items-start border-0 border-l-4 border-l-transparent"
+                                      },
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "attrs": {
+                                            "data-slot": "item-media",
+                                            "class": "flex shrink-0 items-center justify-center gap-2 group-has-[[data-slot=item-description]]/item:self-start [&_svg]:pointer-events-none group-has-[[data-slot=item-description]]/item:translate-y-0.5 bg-transparent"
+                                          },
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "attrs": {
+                                                "class": "mt-1 flex size-8 items-center justify-center rounded-full bg-green-500"
+                                              },
+                                              "children": [
+                                                {
+                                                  "tag": "icon",
+                                                  "attrs": {
+                                                    "name": "i-lucide-circle-check-big",
+                                                    "class": "lucide lucide-circle-check-big size-4 text-white"
+                                                  },
+                                                  "key": "root.0.1.0.0.1.panel1.0.3.0.0.0"
+                                                }
+                                              ],
+                                              "key": "root.0.1.0.0.1.panel1.0.3.0.0"
+                                            }
+                                          ],
+                                          "key": "root.0.1.0.0.1.panel1.0.3.0"
+                                        },
+                                        {
+                                          "tag": "div",
+                                          "attrs": {
+                                            "data-slot": "item-content",
+                                            "class": "flex flex-1 flex-col gap-1 [&+[data-slot=item-content]]:flex-none"
+                                          },
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "attrs": {
+                                                "class": "flex items-start justify-between gap-4"
+                                              },
+                                              "children": [
+                                                {
+                                                  "tag": "div",
+                                                  "attrs": {
+                                                    "class": "flex-1"
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "tag": "p",
+                                                      "attrs": {
+                                                        "class": "text-sm"
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "tag": "span",
+                                                          "attrs": {
+                                                            "class": "font-medium"
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "text": "Task completed!",
+                                                              "key": "root.0.1.0.0.1.panel1.0.3.1.0.0.0.0.0"
+                                                            }
+                                                          ],
+                                                          "key": "root.0.1.0.0.1.panel1.0.3.1.0.0.0.0"
+                                                        },
+                                                        {
+                                                          "text": "You completed \"Design new landing page\" in Project Alpha.",
+                                                          "key": "root.0.1.0.0.1.panel1.0.3.1.0.0.0.1"
+                                                        }
+                                                      ],
+                                                      "key": "root.0.1.0.0.1.panel1.0.3.1.0.0.0"
+                                                    },
+                                                    {
+                                                      "tag": "div",
+                                                      "attrs": {
+                                                        "class": "flex items-end justify-between"
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "tag": "p",
+                                                          "attrs": {
+                                                            "class": "text-muted-foreground mt-1 text-xs"
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "text": "2 hours ago",
+                                                              "key": "root.0.1.0.0.1.panel1.0.3.1.0.0.1.0.0"
+                                                            }
+                                                          ],
+                                                          "key": "root.0.1.0.0.1.panel1.0.3.1.0.0.1.0"
+                                                        }
+                                                      ],
+                                                      "key": "root.0.1.0.0.1.panel1.0.3.1.0.0.1"
+                                                    }
+                                                  ],
+                                                  "key": "root.0.1.0.0.1.panel1.0.3.1.0.0"
+                                                }
+                                              ],
+                                              "key": "root.0.1.0.0.1.panel1.0.3.1.0"
+                                            }
+                                          ],
+                                          "key": "root.0.1.0.0.1.panel1.0.3.1"
+                                        }
+                                      ],
+                                      "key": "root.0.1.0.0.1.panel1.0.3"
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "attrs": {
+                                        "data-orientation": "horizontal",
+                                        "role": "none",
+                                        "class": "bg-border shrink-0 h-[1px] w-full my-0",
+                                        "data-slot": "item-separator"
+                                      },
+                                      "children": [],
+                                      "key": "root.0.1.0.0.1.panel1.0.4"
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "attrs": {
+                                        "data-slot": "item",
+                                        "class": "group/item flex text-sm rounded-md transition-colors [a]:hover:bg-accent/50 [a]:transition-colors duration-100 flex-wrap outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] border-border p-4 gap-4 items-start border-0 border-l-4 border-l-transparent"
+                                      },
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "attrs": {
+                                            "data-slot": "item-media",
+                                            "class": "flex shrink-0 items-center justify-center gap-2 group-has-[[data-slot=item-description]]/item:self-start [&_svg]:pointer-events-none group-has-[[data-slot=item-description]]/item:translate-y-0.5 bg-transparent"
+                                          },
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "attrs": {
+                                                "class": "mt-1 flex size-8 items-center justify-center rounded-full bg-blue-500"
+                                              },
+                                              "children": [
+                                                {
+                                                  "tag": "icon",
+                                                  "attrs": {
+                                                    "name": "i-lucide-users",
+                                                    "class": "lucide lucide-users size-4 text-white"
+                                                  },
+                                                  "key": "root.0.1.0.0.1.panel1.0.5.0.0.0"
+                                                }
+                                              ],
+                                              "key": "root.0.1.0.0.1.panel1.0.5.0.0"
+                                            }
+                                          ],
+                                          "key": "root.0.1.0.0.1.panel1.0.5.0"
+                                        },
+                                        {
+                                          "tag": "div",
+                                          "attrs": {
+                                            "data-slot": "item-content",
+                                            "class": "flex flex-1 flex-col gap-1 [&+[data-slot=item-content]]:flex-none"
+                                          },
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "attrs": {
+                                                "class": "flex items-start justify-between gap-4"
+                                              },
+                                              "children": [
+                                                {
+                                                  "tag": "div",
+                                                  "attrs": {
+                                                    "class": "flex-1"
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "tag": "p",
+                                                      "attrs": {
+                                                        "class": "text-sm"
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "tag": "span",
+                                                          "attrs": {
+                                                            "class": "font-medium"
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "text": "New collaborator",
+                                                              "key": "root.0.1.0.0.1.panel1.0.5.1.0.0.0.0.0"
+                                                            }
+                                                          ],
+                                                          "key": "root.0.1.0.0.1.panel1.0.5.1.0.0.0.0"
+                                                        },
+                                                        {
+                                                          "text": "John Doe has been added to your workspace.",
+                                                          "key": "root.0.1.0.0.1.panel1.0.5.1.0.0.0.1"
+                                                        }
+                                                      ],
+                                                      "key": "root.0.1.0.0.1.panel1.0.5.1.0.0.0"
+                                                    },
+                                                    {
+                                                      "tag": "div",
+                                                      "attrs": {
+                                                        "class": "flex items-end justify-between"
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "tag": "p",
+                                                          "attrs": {
+                                                            "class": "text-muted-foreground mt-1 text-xs"
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "text": "5 hours ago",
+                                                              "key": "root.0.1.0.0.1.panel1.0.5.1.0.0.1.0.0"
+                                                            }
+                                                          ],
+                                                          "key": "root.0.1.0.0.1.panel1.0.5.1.0.0.1.0"
+                                                        }
+                                                      ],
+                                                      "key": "root.0.1.0.0.1.panel1.0.5.1.0.0.1"
+                                                    }
+                                                  ],
+                                                  "key": "root.0.1.0.0.1.panel1.0.5.1.0.0"
+                                                }
+                                              ],
+                                              "key": "root.0.1.0.0.1.panel1.0.5.1.0"
+                                            }
+                                          ],
+                                          "key": "root.0.1.0.0.1.panel1.0.5.1"
+                                        }
+                                      ],
+                                      "key": "root.0.1.0.0.1.panel1.0.5"
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "attrs": {
+                                        "data-orientation": "horizontal",
+                                        "role": "none",
+                                        "class": "bg-border shrink-0 h-[1px] w-full my-0",
+                                        "data-slot": "item-separator"
+                                      },
+                                      "children": [],
+                                      "key": "root.0.1.0.0.1.panel1.0.6"
+                                    },
+                                    {
+                                      "tag": "div",
+                                      "attrs": {
+                                        "data-slot": "item",
+                                        "class": "group/item flex text-sm rounded-md transition-colors [a]:hover:bg-accent/50 [a]:transition-colors duration-100 flex-wrap outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] border-border p-4 gap-4 items-start border-0 border-l-4 border-l-transparent"
+                                      },
+                                      "children": [
+                                        {
+                                          "tag": "div",
+                                          "attrs": {
+                                            "data-slot": "item-media",
+                                            "class": "flex shrink-0 items-center justify-center gap-2 group-has-[[data-slot=item-description]]/item:self-start [&_svg]:pointer-events-none group-has-[[data-slot=item-description]]/item:translate-y-0.5 bg-transparent"
+                                          },
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "attrs": {
+                                                "class": "mt-1 flex size-8 items-center justify-center rounded-full bg-purple-500"
+                                              },
+                                              "children": [
+                                                {
+                                                  "tag": "icon",
+                                                  "attrs": {
+                                                    "name": "i-lucide-trending-up",
+                                                    "class": "lucide lucide-trending-up size-4 text-white"
+                                                  },
+                                                  "key": "root.0.1.0.0.1.panel1.0.7.0.0.0"
+                                                }
+                                              ],
+                                              "key": "root.0.1.0.0.1.panel1.0.7.0.0"
+                                            }
+                                          ],
+                                          "key": "root.0.1.0.0.1.panel1.0.7.0"
+                                        },
+                                        {
+                                          "tag": "div",
+                                          "attrs": {
+                                            "data-slot": "item-content",
+                                            "class": "flex flex-1 flex-col gap-1 [&+[data-slot=item-content]]:flex-none"
+                                          },
+                                          "children": [
+                                            {
+                                              "tag": "div",
+                                              "attrs": {
+                                                "class": "flex items-start justify-between gap-4"
+                                              },
+                                              "children": [
+                                                {
+                                                  "tag": "div",
+                                                  "attrs": {
+                                                    "class": "flex-1"
+                                                  },
+                                                  "children": [
+                                                    {
+                                                      "tag": "p",
+                                                      "attrs": {
+                                                        "class": "text-sm"
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "tag": "span",
+                                                          "attrs": {
+                                                            "class": "font-medium"
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "text": "Weekly summary",
+                                                              "key": "root.0.1.0.0.1.panel1.0.7.1.0.0.0.0.0"
+                                                            }
+                                                          ],
+                                                          "key": "root.0.1.0.0.1.panel1.0.7.1.0.0.0.0"
+                                                        },
+                                                        {
+                                                          "text": "You completed 12 tasks this week. Great work!",
+                                                          "key": "root.0.1.0.0.1.panel1.0.7.1.0.0.0.1"
+                                                        }
+                                                      ],
+                                                      "key": "root.0.1.0.0.1.panel1.0.7.1.0.0.0"
+                                                    },
+                                                    {
+                                                      "tag": "div",
+                                                      "attrs": {
+                                                        "class": "flex items-end justify-between"
+                                                      },
+                                                      "children": [
+                                                        {
+                                                          "tag": "p",
+                                                          "attrs": {
+                                                            "class": "text-muted-foreground mt-1 text-xs"
+                                                          },
+                                                          "children": [
+                                                            {
+                                                              "text": "1 day ago",
+                                                              "key": "root.0.1.0.0.1.panel1.0.7.1.0.0.1.0.0"
+                                                            }
+                                                          ],
+                                                          "key": "root.0.1.0.0.1.panel1.0.7.1.0.0.1.0"
+                                                        }
+                                                      ],
+                                                      "key": "root.0.1.0.0.1.panel1.0.7.1.0.0.1"
+                                                    }
+                                                  ],
+                                                  "key": "root.0.1.0.0.1.panel1.0.7.1.0.0"
+                                                }
+                                              ],
+                                              "key": "root.0.1.0.0.1.panel1.0.7.1.0"
+                                            }
+                                          ],
+                                          "key": "root.0.1.0.0.1.panel1.0.7.1"
+                                        }
+                                      ],
+                                      "key": "root.0.1.0.0.1.panel1.0.7"
+                                    }
+                                  ],
+                                  "key": "root.0.1.0.0.1.panel1.0"
+                                }
+                              ],
+                              "key": "root.0.1.0.0.1.panel1"
+                            }
+                          }
+                        ],
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "role": "tablist",
+                              "class": "bg-muted text-muted-foreground inline-flex h-9 items-center justify-center rounded-lg p-1",
+                              "data-orientation": "horizontal",
+                              "style": "outline:none"
+                            },
+                            "children": [
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "type": "button",
+                                  "role": "tab",
+                                  "data-state": "active",
+                                  "id": "radix-_R_inpfj5uknmlb_-trigger-all",
+                                  "class": "ring-offset-background focus-visible:ring-ring data-[state=active]:bg-background data-[state=active]:text-foreground inline-flex items-center justify-center rounded-md px-3 py-1 text-sm font-medium whitespace-nowrap transition-all focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-[state=active]:shadow-sm",
+                                  "data-orientation": "horizontal"
+                                },
+                                "children": [
+                                  {
+                                    "text": "All",
+                                    "key": "root.0.1.0.0.1.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.1.0.0.1.0.0"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "type": "button",
+                                  "role": "tab",
+                                  "data-state": "inactive",
+                                  "id": "radix-_R_inpfj5uknmlb_-trigger-unread",
+                                  "class": "ring-offset-background focus-visible:ring-ring data-[state=active]:bg-background data-[state=active]:text-foreground inline-flex items-center justify-center rounded-md px-3 py-1 text-sm font-medium whitespace-nowrap transition-all focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-[state=active]:shadow-sm",
+                                  "data-orientation": "horizontal"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Unread ",
+                                    "key": "root.0.1.0.0.1.0.1.0"
+                                  },
+                                  {
+                                    "text": "(1)",
+                                    "key": "root.0.1.0.0.1.0.1.1"
+                                  }
+                                ],
+                                "key": "root.0.1.0.0.1.0.1"
+                              }
+                            ],
+                            "key": "root.0.1.0.0.1.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "data-state": "active",
+                              "data-orientation": "horizontal",
+                              "role": "tabpanel",
+                              "id": "radix-_R_inpfj5uknmlb_-content-all",
+                              "class": "ring-offset-background focus-visible:ring-ring focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden mt-4",
+                              "style": "animation-duration:0s"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "role": "list",
+                                  "data-slot": "item-group",
+                                  "class": "group/item-group flex flex-col"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "data-orientation": "horizontal",
+                                      "role": "none",
+                                      "class": "bg-border shrink-0 h-[1px] w-full my-0",
+                                      "data-slot": "item-separator"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.1.0.0.1.1.0.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "data-slot": "item",
+                                      "class": "group/item flex text-sm rounded-md transition-colors [a]:hover:bg-accent/50 [a]:transition-colors duration-100 flex-wrap outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] border-border p-4 gap-4 items-start border-0 border-l-4 bg-muted border-l-red-500"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "data-slot": "item-media",
+                                          "class": "flex shrink-0 items-center justify-center gap-2 group-has-[[data-slot=item-description]]/item:self-start [&_svg]:pointer-events-none group-has-[[data-slot=item-description]]/item:translate-y-0.5 bg-transparent"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "mt-1 flex size-8 items-center justify-center rounded-full bg-red-500"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "icon",
+                                                "attrs": {
+                                                  "name": "i-lucide-zap",
+                                                  "class": "lucide lucide-zap size-4 text-white"
+                                                },
+                                                "key": "root.0.1.0.0.1.1.0.1.0.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.1.0.0.1.1.0.1.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.1.0.0.1.1.0.1.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "data-slot": "item-content",
+                                          "class": "flex flex-1 flex-col gap-1 [&+[data-slot=item-content]]:flex-none"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "flex items-start justify-between gap-4"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "flex-1"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "p",
+                                                    "attrs": {
+                                                      "class": "text-sm"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {
+                                                          "class": "font-medium"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "Karma unlocked!",
+                                                            "key": "root.0.1.0.0.1.1.0.1.1.0.0.0.0.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.1.0.0.1.1.0.1.1.0.0.0.0"
+                                                      },
+                                                      {
+                                                        "text": "You're now a Karma Novice. Get things done to earn points and climb the ranks.",
+                                                        "key": "root.0.1.0.0.1.1.0.1.1.0.0.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.1.0.0.1.1.0.1.1.0.0.0"
+                                                  },
+                                                  {
+                                                    "tag": "button",
+                                                    "attrs": {
+                                                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs my-1"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Explore Productivity",
+                                                        "key": "root.0.1.0.0.1.1.0.1.1.0.0.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.1.0.0.1.1.0.1.1.0.0.1"
+                                                  },
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "flex items-end justify-between"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "p",
+                                                        "attrs": {
+                                                          "class": "text-muted-foreground mt-1 text-xs"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "50 minutes ago",
+                                                            "key": "root.0.1.0.0.1.1.0.1.1.0.0.2.0.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.1.0.0.1.1.0.1.1.0.0.2.0"
+                                                      },
+                                                      {
+                                                        "tag": "button",
+                                                        "attrs": {
+                                                          "class": "text-destructive hover:text-destructive/80 shrink-0 transition-colors",
+                                                          "title": "Mark as read"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "div",
+                                                            "attrs": {
+                                                              "class": "border-destructive bg-destructive flex size-2 animate-pulse items-center justify-center rounded-full border"
+                                                            },
+                                                            "children": [],
+                                                            "key": "root.0.1.0.0.1.1.0.1.1.0.0.2.1.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.1.0.0.1.1.0.1.1.0.0.2.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.1.0.0.1.1.0.1.1.0.0.2"
+                                                  }
+                                                ],
+                                                "key": "root.0.1.0.0.1.1.0.1.1.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.1.0.0.1.1.0.1.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.1.0.0.1.1.0.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.1.0.0.1.1.0.1"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "data-orientation": "horizontal",
+                                      "role": "none",
+                                      "class": "bg-border shrink-0 h-[1px] w-full my-0",
+                                      "data-slot": "item-separator"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.1.0.0.1.1.0.2"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "data-slot": "item",
+                                      "class": "group/item flex text-sm rounded-md transition-colors [a]:hover:bg-accent/50 [a]:transition-colors duration-100 flex-wrap outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] border-border p-4 gap-4 items-start border-0 border-l-4 border-l-transparent"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "data-slot": "item-media",
+                                          "class": "flex shrink-0 items-center justify-center gap-2 group-has-[[data-slot=item-description]]/item:self-start [&_svg]:pointer-events-none group-has-[[data-slot=item-description]]/item:translate-y-0.5 bg-transparent"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "mt-1 flex size-8 items-center justify-center rounded-full bg-green-500"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "icon",
+                                                "attrs": {
+                                                  "name": "i-lucide-circle-check-big",
+                                                  "class": "lucide lucide-circle-check-big size-4 text-white"
+                                                },
+                                                "key": "root.0.1.0.0.1.1.0.3.0.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.1.0.0.1.1.0.3.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.1.0.0.1.1.0.3.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "data-slot": "item-content",
+                                          "class": "flex flex-1 flex-col gap-1 [&+[data-slot=item-content]]:flex-none"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "flex items-start justify-between gap-4"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "flex-1"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "p",
+                                                    "attrs": {
+                                                      "class": "text-sm"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {
+                                                          "class": "font-medium"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "Task completed!",
+                                                            "key": "root.0.1.0.0.1.1.0.3.1.0.0.0.0.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.1.0.0.1.1.0.3.1.0.0.0.0"
+                                                      },
+                                                      {
+                                                        "text": "You completed \"Design new landing page\" in Project Alpha.",
+                                                        "key": "root.0.1.0.0.1.1.0.3.1.0.0.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.1.0.0.1.1.0.3.1.0.0.0"
+                                                  },
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "flex items-end justify-between"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "p",
+                                                        "attrs": {
+                                                          "class": "text-muted-foreground mt-1 text-xs"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "2 hours ago",
+                                                            "key": "root.0.1.0.0.1.1.0.3.1.0.0.1.0.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.1.0.0.1.1.0.3.1.0.0.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.1.0.0.1.1.0.3.1.0.0.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.1.0.0.1.1.0.3.1.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.1.0.0.1.1.0.3.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.1.0.0.1.1.0.3.1"
+                                      }
+                                    ],
+                                    "key": "root.0.1.0.0.1.1.0.3"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "data-orientation": "horizontal",
+                                      "role": "none",
+                                      "class": "bg-border shrink-0 h-[1px] w-full my-0",
+                                      "data-slot": "item-separator"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.1.0.0.1.1.0.4"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "data-slot": "item",
+                                      "class": "group/item flex text-sm rounded-md transition-colors [a]:hover:bg-accent/50 [a]:transition-colors duration-100 flex-wrap outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] border-border p-4 gap-4 items-start border-0 border-l-4 border-l-transparent"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "data-slot": "item-media",
+                                          "class": "flex shrink-0 items-center justify-center gap-2 group-has-[[data-slot=item-description]]/item:self-start [&_svg]:pointer-events-none group-has-[[data-slot=item-description]]/item:translate-y-0.5 bg-transparent"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "mt-1 flex size-8 items-center justify-center rounded-full bg-blue-500"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "icon",
+                                                "attrs": {
+                                                  "name": "i-lucide-users",
+                                                  "class": "lucide lucide-users size-4 text-white"
+                                                },
+                                                "key": "root.0.1.0.0.1.1.0.5.0.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.1.0.0.1.1.0.5.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.1.0.0.1.1.0.5.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "data-slot": "item-content",
+                                          "class": "flex flex-1 flex-col gap-1 [&+[data-slot=item-content]]:flex-none"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "flex items-start justify-between gap-4"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "flex-1"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "p",
+                                                    "attrs": {
+                                                      "class": "text-sm"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {
+                                                          "class": "font-medium"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "New collaborator",
+                                                            "key": "root.0.1.0.0.1.1.0.5.1.0.0.0.0.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.1.0.0.1.1.0.5.1.0.0.0.0"
+                                                      },
+                                                      {
+                                                        "text": "John Doe has been added to your workspace.",
+                                                        "key": "root.0.1.0.0.1.1.0.5.1.0.0.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.1.0.0.1.1.0.5.1.0.0.0"
+                                                  },
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "flex items-end justify-between"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "p",
+                                                        "attrs": {
+                                                          "class": "text-muted-foreground mt-1 text-xs"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "5 hours ago",
+                                                            "key": "root.0.1.0.0.1.1.0.5.1.0.0.1.0.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.1.0.0.1.1.0.5.1.0.0.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.1.0.0.1.1.0.5.1.0.0.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.1.0.0.1.1.0.5.1.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.1.0.0.1.1.0.5.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.1.0.0.1.1.0.5.1"
+                                      }
+                                    ],
+                                    "key": "root.0.1.0.0.1.1.0.5"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "data-orientation": "horizontal",
+                                      "role": "none",
+                                      "class": "bg-border shrink-0 h-[1px] w-full my-0",
+                                      "data-slot": "item-separator"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.1.0.0.1.1.0.6"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "data-slot": "item",
+                                      "class": "group/item flex text-sm rounded-md transition-colors [a]:hover:bg-accent/50 [a]:transition-colors duration-100 flex-wrap outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] border-border p-4 gap-4 items-start border-0 border-l-4 border-l-transparent"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "data-slot": "item-media",
+                                          "class": "flex shrink-0 items-center justify-center gap-2 group-has-[[data-slot=item-description]]/item:self-start [&_svg]:pointer-events-none group-has-[[data-slot=item-description]]/item:translate-y-0.5 bg-transparent"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "mt-1 flex size-8 items-center justify-center rounded-full bg-purple-500"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "icon",
+                                                "attrs": {
+                                                  "name": "i-lucide-trending-up",
+                                                  "class": "lucide lucide-trending-up size-4 text-white"
+                                                },
+                                                "key": "root.0.1.0.0.1.1.0.7.0.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.1.0.0.1.1.0.7.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.1.0.0.1.1.0.7.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "data-slot": "item-content",
+                                          "class": "flex flex-1 flex-col gap-1 [&+[data-slot=item-content]]:flex-none"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "flex items-start justify-between gap-4"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "flex-1"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "p",
+                                                    "attrs": {
+                                                      "class": "text-sm"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {
+                                                          "class": "font-medium"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "Weekly summary",
+                                                            "key": "root.0.1.0.0.1.1.0.7.1.0.0.0.0.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.1.0.0.1.1.0.7.1.0.0.0.0"
+                                                      },
+                                                      {
+                                                        "text": "You completed 12 tasks this week. Great work!",
+                                                        "key": "root.0.1.0.0.1.1.0.7.1.0.0.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.1.0.0.1.1.0.7.1.0.0.0"
+                                                  },
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "flex items-end justify-between"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "p",
+                                                        "attrs": {
+                                                          "class": "text-muted-foreground mt-1 text-xs"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "1 day ago",
+                                                            "key": "root.0.1.0.0.1.1.0.7.1.0.0.1.0.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.1.0.0.1.1.0.7.1.0.0.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.1.0.0.1.1.0.7.1.0.0.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.1.0.0.1.1.0.7.1.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.1.0.0.1.1.0.7.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.1.0.0.1.1.0.7.1"
+                                      }
+                                    ],
+                                    "key": "root.0.1.0.0.1.1.0.7"
+                                  }
+                                ],
+                                "key": "root.0.1.0.0.1.1.0"
+                              }
+                            ],
+                            "key": "root.0.1.0.0.1.1"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "data-state": "inactive",
+                              "data-orientation": "horizontal",
+                              "role": "tabpanel",
+                              "id": "radix-_R_inpfj5uknmlb_-content-unread",
+                              "class": "ring-offset-background focus-visible:ring-ring focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden mt-4"
+                            },
+                            "children": [],
+                            "key": "root.0.1.0.0.1.2"
+                          }
+                        ],
+                        "key": "root.0.1.0.0.1"
+                      }
+                    ],
+                    "key": "root.0.1.0.0"
+                  }
+                ],
+                "key": "root.0.1.0"
+              }
+            ],
+            "key": "root.0.1"
+          }
+        ],
+        "key": "root.0"
+      }
+    ],
+    "key": "root"
+  },
+  "headings": [
+    "Notifications"
+  ]
+}

@@ -1,0 +1,2977 @@
+{
+  "label": "Model usage",
+  "path": "/ai-chat/model-usage",
+  "appTitle": "",
+  "tree": {
+    "tag": "div",
+    "attrs": {
+      "id": "ai-workspace-content",
+      "class": "flex min-h-0 flex-1 flex-col"
+    },
+    "children": [
+      {
+        "tag": "div",
+        "attrs": {
+          "class": "min-h-0 flex-1 overflow-y-auto"
+        },
+        "children": [
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "mx-auto flex flex-col px-4 sm:px-8 max-w-[944px] gap-6 py-8 sm:py-12"
+            },
+            "children": [
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "flex flex-wrap gap-4 items-start justify-between"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "flex flex-col gap-1"
+                    },
+                    "children": [
+                      {
+                        "tag": "h1",
+                        "attrs": {
+                          "class": "text-2xl font-semibold tracking-tight"
+                        },
+                        "children": [
+                          {
+                            "text": "Model usage",
+                            "key": "root.0.0.0.0.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.0"
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {
+                          "class": "text-muted-foreground max-w-2xl text-sm"
+                        },
+                        "children": [
+                          {
+                            "text": "Track usage, spend, and reliability across your models.",
+                            "key": "root.0.0.0.0.1.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.1"
+                      }
+                    ],
+                    "key": "root.0.0.0.0"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "flex flex-wrap items-center gap-2"
+                    },
+                    "children": [
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 h-8 rounded-md px-3 text-xs"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-download",
+                              "class": "lucide lucide-download size-3.5"
+                            },
+                            "key": "root.0.0.0.1.0.0"
+                          },
+                          {
+                            "text": "Export",
+                            "key": "root.0.0.0.1.0.1"
+                          }
+                        ],
+                        "key": "root.0.0.0.1.0"
+                      }
+                    ],
+                    "key": "root.0.0.0.1"
+                  }
+                ],
+                "key": "root.0.0.0"
+              },
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "flex flex-wrap items-center justify-between gap-3"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "flex flex-wrap gap-2"
+                    },
+                    "children": [
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "type": "button",
+                          "role": "combobox",
+                          "data-state": "closed",
+                          "class": "border-input ring-offset-background placeholder:text-muted-foreground focus:ring-ring flex items-center justify-between rounded-md border bg-transparent px-3 py-2 whitespace-nowrap shadow-xs focus:ring-1 focus:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 w-auto h-8 min-w-0 text-xs",
+                          "aria-label": "Project"
+                        },
+                        "options": [
+                          "All projects",
+                          "Support copilot",
+                          "Knowledge search",
+                          "Content studio"
+                        ],
+                        "children": [
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "style": "pointer-events:none"
+                            },
+                            "children": [
+                              {
+                                "text": "All projects",
+                                "key": "root.0.0.1.0.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.0.0"
+                          },
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-chevron-down",
+                              "class": "lucide lucide-chevron-down h-4 w-4 opacity-50"
+                            },
+                            "key": "root.0.0.1.0.0.1"
+                          }
+                        ],
+                        "key": "root.0.0.1.0.0"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "type": "button",
+                          "role": "combobox",
+                          "data-state": "closed",
+                          "class": "border-input ring-offset-background placeholder:text-muted-foreground focus:ring-ring flex items-center justify-between rounded-md border bg-transparent px-3 py-2 whitespace-nowrap shadow-xs focus:ring-1 focus:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 w-auto h-8 min-w-0 text-xs",
+                          "aria-label": "Usage period"
+                        },
+                        "options": [
+                          "Last 14 days",
+                          "Last 30 days"
+                        ],
+                        "children": [
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "style": "pointer-events:none"
+                            },
+                            "children": [
+                              {
+                                "text": "Last 14 days",
+                                "key": "root.0.0.1.0.1.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.1.0"
+                          },
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-chevron-down",
+                              "class": "lucide lucide-chevron-down h-4 w-4 opacity-50"
+                            },
+                            "key": "root.0.0.1.0.1.1"
+                          }
+                        ],
+                        "key": "root.0.0.1.0.1"
+                      }
+                    ],
+                    "key": "root.0.0.1.0"
+                  },
+                  {
+                    "tag": "span",
+                    "attrs": {
+                      "class": "text-muted-foreground text-xs"
+                    },
+                    "children": [
+                      {
+                        "text": "As of Sep 24, 2026",
+                        "key": "root.0.0.1.1.0"
+                      }
+                    ],
+                    "key": "root.0.0.1.1"
+                  }
+                ],
+                "key": "root.0.0.1"
+              },
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "grid gap-3 sm:grid-cols-3"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "flex min-h-24 flex-col justify-between gap-4 rounded-2xl border p-4"
+                    },
+                    "children": [
+                      {
+                        "tag": "span",
+                        "attrs": {
+                          "class": "text-muted-foreground text-sm"
+                        },
+                        "children": [
+                          {
+                            "text": "Total requests",
+                            "key": "root.0.0.2.0.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.2.0.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex items-end justify-between gap-2"
+                        },
+                        "children": [
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "text-xl font-medium tabular-nums"
+                            },
+                            "children": [
+                              {
+                                "text": "19.2K",
+                                "key": "root.0.0.2.0.1.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.2.0.1.0"
+                          },
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "text-muted-foreground text-xs"
+                            },
+                            "children": [
+                              {
+                                "text": "29M",
+                                "key": "root.0.0.2.0.1.1.0"
+                              },
+                              {
+                                "text": " tokens",
+                                "key": "root.0.0.2.0.1.1.1"
+                              }
+                            ],
+                            "key": "root.0.0.2.0.1.1"
+                          }
+                        ],
+                        "key": "root.0.0.2.0.1"
+                      }
+                    ],
+                    "key": "root.0.0.2.0"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "flex min-h-24 flex-col justify-between gap-4 rounded-2xl border p-4"
+                    },
+                    "children": [
+                      {
+                        "tag": "span",
+                        "attrs": {
+                          "class": "text-muted-foreground text-sm"
+                        },
+                        "children": [
+                          {
+                            "text": "Usage spend",
+                            "key": "root.0.0.2.1.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.2.1.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex items-end justify-between gap-2"
+                        },
+                        "children": [
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "text-xl font-medium tabular-nums"
+                            },
+                            "children": [
+                              {
+                                "text": "$116.51",
+                                "key": "root.0.0.2.1.1.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.1.0"
+                          },
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "text-muted-foreground text-xs"
+                            },
+                            "children": [
+                              {
+                                "text": "USD · this period",
+                                "key": "root.0.0.2.1.1.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.1.1"
+                          }
+                        ],
+                        "key": "root.0.0.2.1.1"
+                      }
+                    ],
+                    "key": "root.0.0.2.1"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "flex min-h-24 flex-col justify-between gap-4 rounded-2xl border p-4"
+                    },
+                    "children": [
+                      {
+                        "tag": "span",
+                        "attrs": {
+                          "class": "text-muted-foreground text-sm"
+                        },
+                        "children": [
+                          {
+                            "text": "Models in use",
+                            "key": "root.0.0.2.2.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.2.2.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex items-end justify-between gap-2"
+                        },
+                        "children": [
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "text-xl font-medium tabular-nums"
+                            },
+                            "children": [
+                              {
+                                "text": "3",
+                                "key": "root.0.0.2.2.1.0.0"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-muted-foreground text-sm"
+                                },
+                                "children": [
+                                  {
+                                    "text": "of ",
+                                    "key": "root.0.0.2.2.1.0.1.0"
+                                  },
+                                  {
+                                    "text": "4",
+                                    "key": "root.0.0.2.2.1.0.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.2.1.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.2.2.1.0"
+                          },
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "text-xs text-amber-700 dark:text-amber-400"
+                            },
+                            "children": [
+                              {
+                                "text": "1 needs attention",
+                                "key": "root.0.0.2.2.1.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.2.2.1.1"
+                          }
+                        ],
+                        "key": "root.0.0.2.2.1"
+                      }
+                    ],
+                    "key": "root.0.0.2.2"
+                  }
+                ],
+                "key": "root.0.0.2"
+              },
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "grid items-start gap-5 md:grid-cols-2"
+                },
+                "children": [
+                  {
+                    "tag": "article",
+                    "attrs": {
+                      "aria-label": "GPT-4.1 usage",
+                      "class": "bg-muted/35 overflow-hidden rounded-2xl"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex h-11 items-center justify-between gap-3 px-4"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex min-w-0 items-center gap-2"
+                            },
+                            "children": [
+                              {
+                                "tag": "h2",
+                                "attrs": {
+                                  "class": "truncate text-sm font-medium"
+                                },
+                                "children": [
+                                  {
+                                    "text": "GPT-4.1",
+                                    "key": "root.0.0.3.0.0.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.3.0.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.3.0.0.0"
+                          },
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "text-muted-foreground shrink-0 text-xs"
+                            },
+                            "children": [
+                              {
+                                "text": "OpenAI",
+                                "key": "root.0.0.3.0.0.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.3.0.0.1"
+                          }
+                        ],
+                        "key": "root.0.0.3.0.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "bg-background flex min-h-[258px] flex-col rounded-2xl border p-4"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex items-center justify-between gap-2"
+                            },
+                            "children": [
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-muted-foreground text-xs"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Reasoning & tools",
+                                    "key": "root.0.0.3.0.1.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.3.0.1.0.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "inline-flex items-center rounded-md border px-2.5 py-0.5 transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 text-[10px] font-normal border-emerald-200 bg-emerald-50 text-emerald-700 dark:border-emerald-900 dark:bg-emerald-950 dark:text-emerald-300"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Healthy",
+                                    "key": "root.0.0.3.0.1.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.3.0.1.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.3.0.1.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "mt-6 flex h-[76px] items-end gap-1",
+                              "role": "img",
+                              "aria-label": "GPT-4.1: 10,489 requests, 43 failed, 119 rate limited in 14 days."
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex min-w-0 flex-1 flex-col justify-end overflow-hidden rounded-t-[3px]",
+                                  "style": "height:67.67485822306239%",
+                                  "title": "Sep 11: 716 requests · 3 failed · 4 rate limited"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-rose-500",
+                                      "style": "height:0.41899441340782123%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.0.1.1.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-amber-400",
+                                      "style": "height:0.5586592178770949%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.0.1.1.0.1"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 flex-1 bg-emerald-500"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.0.1.1.0.2"
+                                  }
+                                ],
+                                "key": "root.0.0.3.0.1.1.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex min-w-0 flex-1 flex-col justify-end overflow-hidden rounded-t-[3px]",
+                                  "style": "height:77.31568998109641%",
+                                  "title": "Sep 12: 818 requests · 3 failed · 5 rate limited"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-rose-500",
+                                      "style": "height:0.36674816625916873%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.0.1.1.1.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-amber-400",
+                                      "style": "height:0.6112469437652812%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.0.1.1.1.1"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 flex-1 bg-emerald-500"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.0.1.1.1.2"
+                                  }
+                                ],
+                                "key": "root.0.0.3.0.1.1.1"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex min-w-0 flex-1 flex-col justify-end overflow-hidden rounded-t-[3px]",
+                                  "style": "height:39.22495274102079%",
+                                  "title": "Sep 13: 415 requests · 2 failed · 3 rate limited"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-rose-500",
+                                      "style": "height:0.48192771084337355%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.0.1.1.2.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-amber-400",
+                                      "style": "height:0.7228915662650602%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.0.1.1.2.1"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 flex-1 bg-emerald-500"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.0.1.1.2.2"
+                                  }
+                                ],
+                                "key": "root.0.0.3.0.1.1.2"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex min-w-0 flex-1 flex-col justify-end overflow-hidden rounded-t-[3px]",
+                                  "style": "height:96.88090737240076%",
+                                  "title": "Sep 14: 1,025 requests · 4 failed · 6 rate limited"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-rose-500",
+                                      "style": "height:0.3902439024390244%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.0.1.1.3.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-amber-400",
+                                      "style": "height:0.5853658536585366%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.0.1.1.3.1"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 flex-1 bg-emerald-500"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.0.1.1.3.2"
+                                  }
+                                ],
+                                "key": "root.0.0.3.0.1.1.3"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex min-w-0 flex-1 flex-col justify-end overflow-hidden rounded-t-[3px]",
+                                  "style": "height:93.38374291115312%",
+                                  "title": "Sep 15: 988 requests · 4 failed · 6 rate limited"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-rose-500",
+                                      "style": "height:0.4048582995951417%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.0.1.1.4.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-amber-400",
+                                      "style": "height:0.6072874493927125%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.0.1.1.4.1"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 flex-1 bg-emerald-500"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.0.1.1.4.2"
+                                  }
+                                ],
+                                "key": "root.0.0.3.0.1.1.4"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex min-w-0 flex-1 flex-col justify-end overflow-hidden rounded-t-[3px]",
+                                  "style": "height:78.54442344045368%",
+                                  "title": "Sep 16: 831 requests · 3 failed · 5 rate limited"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-rose-500",
+                                      "style": "height:0.36101083032490977%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.0.1.1.5.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-amber-400",
+                                      "style": "height:0.601684717208183%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.0.1.1.5.1"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 flex-1 bg-emerald-500"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.0.1.1.5.2"
+                                  }
+                                ],
+                                "key": "root.0.0.3.0.1.1.5"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex min-w-0 flex-1 flex-col justify-end overflow-hidden rounded-t-[3px]",
+                                  "style": "height:88.468809073724%",
+                                  "title": "Sep 17: 936 requests · 4 failed · 61 rate limited"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-rose-500",
+                                      "style": "height:0.4273504273504274%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.0.1.1.6.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-amber-400",
+                                      "style": "height:6.517094017094018%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.0.1.1.6.1"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 flex-1 bg-emerald-500"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.0.1.1.6.2"
+                                  }
+                                ],
+                                "key": "root.0.0.3.0.1.1.6"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex min-w-0 flex-1 flex-col justify-end overflow-hidden rounded-t-[3px]",
+                                  "style": "height:59.262759924385634%",
+                                  "title": "Sep 18: 627 requests · 3 failed · 4 rate limited"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-rose-500",
+                                      "style": "height:0.4784688995215311%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.0.1.1.7.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-amber-400",
+                                      "style": "height:0.6379585326953748%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.0.1.1.7.1"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 flex-1 bg-emerald-500"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.0.1.1.7.2"
+                                  }
+                                ],
+                                "key": "root.0.0.3.0.1.1.7"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex min-w-0 flex-1 flex-col justify-end overflow-hidden rounded-t-[3px]",
+                                  "style": "height:69.18714555765595%",
+                                  "title": "Sep 19: 732 requests · 3 failed · 5 rate limited"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-rose-500",
+                                      "style": "height:0.4098360655737705%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.0.1.1.8.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-amber-400",
+                                      "style": "height:0.6830601092896175%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.0.1.1.8.1"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 flex-1 bg-emerald-500"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.0.1.1.8.2"
+                                  }
+                                ],
+                                "key": "root.0.0.3.0.1.1.8"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex min-w-0 flex-1 flex-col justify-end overflow-hidden rounded-t-[3px]",
+                                  "style": "height:35.72778827977316%",
+                                  "title": "Sep 20: 378 requests · 2 failed · 2 rate limited"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-rose-500",
+                                      "style": "height:0.5291005291005291%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.0.1.1.9.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-amber-400",
+                                      "style": "height:0.5291005291005291%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.0.1.1.9.1"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 flex-1 bg-emerald-500"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.0.1.1.9.2"
+                                  }
+                                ],
+                                "key": "root.0.0.3.0.1.1.9"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex min-w-0 flex-1 flex-col justify-end overflow-hidden rounded-t-[3px]",
+                                  "style": "height:89.5085066162571%",
+                                  "title": "Sep 21: 947 requests · 4 failed · 6 rate limited"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-rose-500",
+                                      "style": "height:0.42238648363252373%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.0.1.1.10.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-amber-400",
+                                      "style": "height:0.6335797254487857%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.0.1.1.10.1"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 flex-1 bg-emerald-500"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.0.1.1.10.2"
+                                  }
+                                ],
+                                "key": "root.0.0.3.0.1.1.10"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex min-w-0 flex-1 flex-col justify-end overflow-hidden rounded-t-[3px]",
+                                  "style": "height:100%",
+                                  "title": "Sep 22: 1,058 requests · 4 failed · 6 rate limited"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-rose-500",
+                                      "style": "height:0.3780718336483932%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.0.1.1.11.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-amber-400",
+                                      "style": "height:0.5671077504725899%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.0.1.1.11.1"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 flex-1 bg-emerald-500"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.0.1.1.11.2"
+                                  }
+                                ],
+                                "key": "root.0.0.3.0.1.1.11"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex min-w-0 flex-1 flex-col justify-end overflow-hidden rounded-t-[3px]",
+                                  "style": "height:96.21928166351607%",
+                                  "title": "Sep 23: 1,018 requests · 4 failed · 6 rate limited"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-rose-500",
+                                      "style": "height:0.3929273084479371%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.0.1.1.12.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-amber-400",
+                                      "style": "height:0.5893909626719057%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.0.1.1.12.1"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 flex-1 bg-emerald-500"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.0.1.1.12.2"
+                                  }
+                                ],
+                                "key": "root.0.0.3.0.1.1.12"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex min-w-0 flex-1 flex-col justify-end overflow-hidden rounded-t-[3px]",
+                                  "style": "height:0%",
+                                  "title": "Sep 24: 0 requests · 0 failed · 0 rate limited"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-rose-500",
+                                      "style": "height:0%;min-height:0"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.0.1.1.13.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-amber-400",
+                                      "style": "height:0%;min-height:0"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.0.1.1.13.1"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 flex-1 bg-emerald-500"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.0.1.1.13.2"
+                                  }
+                                ],
+                                "key": "root.0.0.3.0.1.1.13"
+                              }
+                            ],
+                            "key": "root.0.0.3.0.1.1"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "mt-3 flex items-center justify-between text-xs"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "text": "10.5K",
+                                    "key": "root.0.0.3.0.1.2.0.0"
+                                  },
+                                  {
+                                    "text": " requests",
+                                    "key": "root.0.0.3.0.1.2.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.3.0.1.2.0"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-muted-foreground"
+                                },
+                                "children": [
+                                  {
+                                    "text": "$62.93",
+                                    "key": "root.0.0.3.0.1.2.1.0"
+                                  },
+                                  {
+                                    "text": " used",
+                                    "key": "root.0.0.3.0.1.2.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.3.0.1.2.1"
+                              }
+                            ],
+                            "key": "root.0.0.3.0.1.2"
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": {
+                              "class": "text-muted-foreground mt-2 text-[11px]"
+                            },
+                            "children": [
+                              {
+                                "text": "14",
+                                "key": "root.0.0.3.0.1.3.0"
+                              },
+                              {
+                                "text": "-day usage · ",
+                                "key": "root.0.0.3.0.1.3.1"
+                              },
+                              {
+                                "text": "13M",
+                                "key": "root.0.0.3.0.1.3.2"
+                              },
+                              {
+                                "text": " tokens",
+                                "key": "root.0.0.3.0.1.3.3"
+                              }
+                            ],
+                            "key": "root.0.0.3.0.1.3"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "mt-auto grid grid-cols-2 gap-2 pt-5"
+                            },
+                            "children": [
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-md px-3 h-7 text-xs shadow-none"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Activity",
+                                    "key": "root.0.0.3.0.1.4.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "sr-only"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": " for ",
+                                        "key": "root.0.0.3.0.1.4.0.1.0"
+                                      },
+                                      {
+                                        "text": "GPT-4.1",
+                                        "key": "root.0.0.3.0.1.4.0.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.3.0.1.4.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.3.0.1.4.0"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-md px-3 h-7 text-xs shadow-none"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Budget",
+                                    "key": "root.0.0.3.0.1.4.1.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "sr-only"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": " for ",
+                                        "key": "root.0.0.3.0.1.4.1.1.0"
+                                      },
+                                      {
+                                        "text": "GPT-4.1",
+                                        "key": "root.0.0.3.0.1.4.1.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.3.0.1.4.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.3.0.1.4.1"
+                              }
+                            ],
+                            "key": "root.0.0.3.0.1.4"
+                          }
+                        ],
+                        "key": "root.0.0.3.0.1"
+                      }
+                    ],
+                    "key": "root.0.0.3.0"
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": {
+                      "aria-label": "Claude Sonnet 4 usage",
+                      "class": "bg-muted/35 overflow-hidden rounded-2xl"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex h-11 items-center justify-between gap-3 px-4"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex min-w-0 items-center gap-2"
+                            },
+                            "children": [
+                              {
+                                "tag": "h2",
+                                "attrs": {
+                                  "class": "truncate text-sm font-medium"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Claude Sonnet 4",
+                                    "key": "root.0.0.3.1.0.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.3.1.0.0"
+                          },
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "title": "Elevated errors in the last 7 days"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-triangle-alert",
+                                  "class": "lucide lucide-triangle-alert size-4 text-amber-500"
+                                },
+                                "key": "root.0.0.3.1.0.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.3.1.0.1"
+                          }
+                        ],
+                        "key": "root.0.0.3.1.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "bg-background flex min-h-[258px] flex-col rounded-2xl border p-4"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex items-center justify-between gap-2"
+                            },
+                            "children": [
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-muted-foreground text-xs"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Writing & analysis",
+                                    "key": "root.0.0.3.1.1.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.1.0.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "inline-flex items-center rounded-md border px-2.5 py-0.5 transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 text-[10px] font-normal border-amber-200 bg-amber-50 text-amber-700 dark:border-amber-900 dark:bg-amber-950 dark:text-amber-300"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Elevated errors",
+                                    "key": "root.0.0.3.1.1.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.1.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.3.1.1.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "mt-6 flex h-[76px] items-end gap-1",
+                              "role": "img",
+                              "aria-label": "Claude Sonnet 4: 5,272 requests, 94 failed, 53 rate limited in 14 days."
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex min-w-0 flex-1 flex-col justify-end overflow-hidden rounded-t-[3px]",
+                                  "style": "height:81.23861566484517%",
+                                  "title": "Sep 11: 446 requests · 2 failed · 3 rate limited"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-rose-500",
+                                      "style": "height:0.4484304932735426%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.1.1.1.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-amber-400",
+                                      "style": "height:0.672645739910314%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.1.1.1.0.1"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 flex-1 bg-emerald-500"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.1.1.1.0.2"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.1.1.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex min-w-0 flex-1 flex-col justify-end overflow-hidden rounded-t-[3px]",
+                                  "style": "height:90.7103825136612%",
+                                  "title": "Sep 12: 498 requests · 2 failed · 3 rate limited"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-rose-500",
+                                      "style": "height:0.4016064257028112%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.1.1.1.1.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-amber-400",
+                                      "style": "height:0.6024096385542169%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.1.1.1.1.1"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 flex-1 bg-emerald-500"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.1.1.1.1.2"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.1.1.1"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex min-w-0 flex-1 flex-col justify-end overflow-hidden rounded-t-[3px]",
+                                  "style": "height:39.34426229508197%",
+                                  "title": "Sep 13: 216 requests · 0 failed · 1 rate limited"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-rose-500",
+                                      "style": "height:0%;min-height:0"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.1.1.1.2.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-amber-400",
+                                      "style": "height:0.4629629629629629%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.1.1.1.2.1"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 flex-1 bg-emerald-500"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.1.1.1.2.2"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.1.1.2"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex min-w-0 flex-1 flex-col justify-end overflow-hidden rounded-t-[3px]",
+                                  "style": "height:73.04189435336977%",
+                                  "title": "Sep 14: 401 requests · 1 failed · 2 rate limited"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-rose-500",
+                                      "style": "height:0.24937655860349126%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.1.1.1.3.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-amber-400",
+                                      "style": "height:0.4987531172069825%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.1.1.1.3.1"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 flex-1 bg-emerald-500"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.1.1.1.3.2"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.1.1.3"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex min-w-0 flex-1 flex-col justify-end overflow-hidden rounded-t-[3px]",
+                                  "style": "height:82.5136612021858%",
+                                  "title": "Sep 15: 453 requests · 1 failed · 3 rate limited"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-rose-500",
+                                      "style": "height:0.22075055187637968%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.1.1.1.4.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-amber-400",
+                                      "style": "height:0.6622516556291391%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.1.1.1.4.1"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 flex-1 bg-emerald-500"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.1.1.1.4.2"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.1.1.4"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex min-w-0 flex-1 flex-col justify-end overflow-hidden rounded-t-[3px]",
+                                  "style": "height:54.826958105646625%",
+                                  "title": "Sep 16: 301 requests · 1 failed · 2 rate limited"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-rose-500",
+                                      "style": "height:0.33222591362126247%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.1.1.1.5.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-amber-400",
+                                      "style": "height:0.6644518272425249%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.1.1.1.5.1"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 flex-1 bg-emerald-500"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.1.1.1.5.2"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.1.1.5"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex min-w-0 flex-1 flex-col justify-end overflow-hidden rounded-t-[3px]",
+                                  "style": "height:64.11657559198542%",
+                                  "title": "Sep 17: 352 requests · 1 failed · 23 rate limited"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-rose-500",
+                                      "style": "height:0.2840909090909091%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.1.1.1.6.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-amber-400",
+                                      "style": "height:6.534090909090909%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.1.1.1.6.1"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 flex-1 bg-emerald-500"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.1.1.1.6.2"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.1.1.6"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex min-w-0 flex-1 flex-col justify-end overflow-hidden rounded-t-[3px]",
+                                  "style": "height:73.95264116575592%",
+                                  "title": "Sep 18: 406 requests · 2 failed · 3 rate limited"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-rose-500",
+                                      "style": "height:0.49261083743842365%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.1.1.1.7.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-amber-400",
+                                      "style": "height:0.7389162561576355%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.1.1.1.7.1"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 flex-1 bg-emerald-500"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.1.1.1.7.2"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.1.1.7"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex min-w-0 flex-1 flex-col justify-end overflow-hidden rounded-t-[3px]",
+                                  "style": "height:83.60655737704919%",
+                                  "title": "Sep 19: 459 requests · 18 failed · 3 rate limited"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-rose-500",
+                                      "style": "height:3.9215686274509802%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.1.1.1.8.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-amber-400",
+                                      "style": "height:0.6535947712418301%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.1.1.1.8.1"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 flex-1 bg-emerald-500"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.1.1.1.8.2"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.1.1.8"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex min-w-0 flex-1 flex-col justify-end overflow-hidden rounded-t-[3px]",
+                                  "style": "height:42.07650273224044%",
+                                  "title": "Sep 20: 231 requests · 9 failed · 1 rate limited"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-rose-500",
+                                      "style": "height:3.896103896103896%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.1.1.1.9.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-amber-400",
+                                      "style": "height:0.4329004329004329%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.1.1.1.9.1"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 flex-1 bg-emerald-500"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.1.1.1.9.2"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.1.1.9"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex min-w-0 flex-1 flex-col justify-end overflow-hidden rounded-t-[3px]",
+                                  "style": "height:89.98178506375227%",
+                                  "title": "Sep 21: 494 requests · 19 failed · 3 rate limited"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-rose-500",
+                                      "style": "height:3.8461538461538463%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.1.1.1.10.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-amber-400",
+                                      "style": "height:0.6072874493927125%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.1.1.1.10.1"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 flex-1 bg-emerald-500"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.1.1.1.10.2"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.1.1.10"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex min-w-0 flex-1 flex-col justify-end overflow-hidden rounded-t-[3px]",
+                                  "style": "height:100%",
+                                  "title": "Sep 22: 549 requests · 21 failed · 3 rate limited"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-rose-500",
+                                      "style": "height:3.825136612021858%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.1.1.1.11.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-amber-400",
+                                      "style": "height:0.546448087431694%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.1.1.1.11.1"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 flex-1 bg-emerald-500"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.1.1.1.11.2"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.1.1.11"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex min-w-0 flex-1 flex-col justify-end overflow-hidden rounded-t-[3px]",
+                                  "style": "height:84.8816029143898%",
+                                  "title": "Sep 23: 466 requests · 17 failed · 3 rate limited"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-rose-500",
+                                      "style": "height:3.648068669527897%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.1.1.1.12.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-amber-400",
+                                      "style": "height:0.6437768240343348%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.1.1.1.12.1"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 flex-1 bg-emerald-500"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.1.1.1.12.2"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.1.1.12"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex min-w-0 flex-1 flex-col justify-end overflow-hidden rounded-t-[3px]",
+                                  "style": "height:0%",
+                                  "title": "Sep 24: 0 requests · 0 failed · 0 rate limited"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-rose-500",
+                                      "style": "height:0%;min-height:0"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.1.1.1.13.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-amber-400",
+                                      "style": "height:0%;min-height:0"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.1.1.1.13.1"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 flex-1 bg-emerald-500"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.1.1.1.13.2"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.1.1.13"
+                              }
+                            ],
+                            "key": "root.0.0.3.1.1.1"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "mt-3 flex items-center justify-between text-xs"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "text": "5.3K",
+                                    "key": "root.0.0.3.1.1.2.0.0"
+                                  },
+                                  {
+                                    "text": " requests",
+                                    "key": "root.0.0.3.1.1.2.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.1.2.0"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-muted-foreground"
+                                },
+                                "children": [
+                                  {
+                                    "text": "$47.45",
+                                    "key": "root.0.0.3.1.1.2.1.0"
+                                  },
+                                  {
+                                    "text": " used",
+                                    "key": "root.0.0.3.1.1.2.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.1.2.1"
+                              }
+                            ],
+                            "key": "root.0.0.3.1.1.2"
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": {
+                              "class": "text-muted-foreground mt-2 text-[11px]"
+                            },
+                            "children": [
+                              {
+                                "text": "14",
+                                "key": "root.0.0.3.1.1.3.0"
+                              },
+                              {
+                                "text": "-day usage · ",
+                                "key": "root.0.0.3.1.1.3.1"
+                              },
+                              {
+                                "text": "8.8M",
+                                "key": "root.0.0.3.1.1.3.2"
+                              },
+                              {
+                                "text": " tokens",
+                                "key": "root.0.0.3.1.1.3.3"
+                              }
+                            ],
+                            "key": "root.0.0.3.1.1.3"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "mt-auto grid grid-cols-2 gap-2 pt-5"
+                            },
+                            "children": [
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-md px-3 h-7 text-xs shadow-none"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Activity",
+                                    "key": "root.0.0.3.1.1.4.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "sr-only"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": " for ",
+                                        "key": "root.0.0.3.1.1.4.0.1.0"
+                                      },
+                                      {
+                                        "text": "Claude Sonnet 4",
+                                        "key": "root.0.0.3.1.1.4.0.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.3.1.1.4.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.1.4.0"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-md px-3 h-7 text-xs shadow-none"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Budget",
+                                    "key": "root.0.0.3.1.1.4.1.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "sr-only"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": " for ",
+                                        "key": "root.0.0.3.1.1.4.1.1.0"
+                                      },
+                                      {
+                                        "text": "Claude Sonnet 4",
+                                        "key": "root.0.0.3.1.1.4.1.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.3.1.1.4.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.1.4.1"
+                              }
+                            ],
+                            "key": "root.0.0.3.1.1.4"
+                          }
+                        ],
+                        "key": "root.0.0.3.1.1"
+                      }
+                    ],
+                    "key": "root.0.0.3.1"
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": {
+                      "aria-label": "Gemini 2.5 Flash usage",
+                      "class": "bg-muted/35 overflow-hidden rounded-2xl"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex h-11 items-center justify-between gap-3 px-4"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex min-w-0 items-center gap-2"
+                            },
+                            "children": [
+                              {
+                                "tag": "h2",
+                                "attrs": {
+                                  "class": "truncate text-sm font-medium"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Gemini 2.5 Flash",
+                                    "key": "root.0.0.3.2.0.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.3.2.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.3.2.0.0"
+                          },
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "text-muted-foreground shrink-0 text-xs"
+                            },
+                            "children": [
+                              {
+                                "text": "Google",
+                                "key": "root.0.0.3.2.0.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.3.2.0.1"
+                          }
+                        ],
+                        "key": "root.0.0.3.2.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "bg-background flex min-h-[258px] flex-col rounded-2xl border p-4"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex items-center justify-between gap-2"
+                            },
+                            "children": [
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-muted-foreground text-xs"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Fast responses",
+                                    "key": "root.0.0.3.2.1.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.3.2.1.0.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "inline-flex items-center rounded-md border px-2.5 py-0.5 transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 text-[10px] font-normal border-emerald-200 bg-emerald-50 text-emerald-700 dark:border-emerald-900 dark:bg-emerald-950 dark:text-emerald-300"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Healthy",
+                                    "key": "root.0.0.3.2.1.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.3.2.1.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.3.2.1.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "mt-6 flex h-[76px] items-end gap-1",
+                              "role": "img",
+                              "aria-label": "Gemini 2.5 Flash: 3,404 requests, 8 failed, 37 rate limited in 14 days."
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex min-w-0 flex-1 flex-col justify-end overflow-hidden rounded-t-[3px]",
+                                  "style": "height:90.11299435028248%",
+                                  "title": "Sep 11: 319 requests · 1 failed · 2 rate limited"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-rose-500",
+                                      "style": "height:0.3134796238244514%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.2.1.1.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-amber-400",
+                                      "style": "height:0.6269592476489028%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.2.1.1.0.1"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 flex-1 bg-emerald-500"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.2.1.1.0.2"
+                                  }
+                                ],
+                                "key": "root.0.0.3.2.1.1.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex min-w-0 flex-1 flex-col justify-end overflow-hidden rounded-t-[3px]",
+                                  "style": "height:100%",
+                                  "title": "Sep 12: 354 requests · 2 failed · 2 rate limited"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-rose-500",
+                                      "style": "height:0.5649717514124294%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.2.1.1.1.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-amber-400",
+                                      "style": "height:0.5649717514124294%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.2.1.1.1.1"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 flex-1 bg-emerald-500"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.2.1.1.1.2"
+                                  }
+                                ],
+                                "key": "root.0.0.3.2.1.1.1"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex min-w-0 flex-1 flex-col justify-end overflow-hidden rounded-t-[3px]",
+                                  "style": "height:38.70056497175141%",
+                                  "title": "Sep 13: 137 requests · 0 failed · 1 rate limited"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-rose-500",
+                                      "style": "height:0%;min-height:0"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.2.1.1.2.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-amber-400",
+                                      "style": "height:0.7299270072992701%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.2.1.1.2.1"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 flex-1 bg-emerald-500"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.2.1.1.2.2"
+                                  }
+                                ],
+                                "key": "root.0.0.3.2.1.1.2"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex min-w-0 flex-1 flex-col justify-end overflow-hidden rounded-t-[3px]",
+                                  "style": "height:55.932203389830505%",
+                                  "title": "Sep 14: 198 requests · 0 failed · 1 rate limited"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-rose-500",
+                                      "style": "height:0%;min-height:0"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.2.1.1.3.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-amber-400",
+                                      "style": "height:0.5050505050505051%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.2.1.1.3.1"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 flex-1 bg-emerald-500"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.2.1.1.3.2"
+                                  }
+                                ],
+                                "key": "root.0.0.3.2.1.1.3"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex min-w-0 flex-1 flex-col justify-end overflow-hidden rounded-t-[3px]",
+                                  "style": "height:66.10169491525424%",
+                                  "title": "Sep 15: 234 requests · 0 failed · 1 rate limited"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-rose-500",
+                                      "style": "height:0%;min-height:0"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.2.1.1.4.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-amber-400",
+                                      "style": "height:0.4273504273504274%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.2.1.1.4.1"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 flex-1 bg-emerald-500"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.2.1.1.4.2"
+                                  }
+                                ],
+                                "key": "root.0.0.3.2.1.1.4"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex min-w-0 flex-1 flex-col justify-end overflow-hidden rounded-t-[3px]",
+                                  "style": "height:76.27118644067797%",
+                                  "title": "Sep 16: 270 requests · 0 failed · 2 rate limited"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-rose-500",
+                                      "style": "height:0%;min-height:0"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.2.1.1.5.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-amber-400",
+                                      "style": "height:0.7407407407407408%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.2.1.1.5.1"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 flex-1 bg-emerald-500"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.2.1.1.5.2"
+                                  }
+                                ],
+                                "key": "root.0.0.3.2.1.1.5"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex min-w-0 flex-1 flex-col justify-end overflow-hidden rounded-t-[3px]",
+                                  "style": "height:86.4406779661017%",
+                                  "title": "Sep 17: 306 requests · 1 failed · 20 rate limited"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-rose-500",
+                                      "style": "height:0.32679738562091504%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.2.1.1.6.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-amber-400",
+                                      "style": "height:6.535947712418301%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.2.1.1.6.1"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 flex-1 bg-emerald-500"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.2.1.1.6.2"
+                                  }
+                                ],
+                                "key": "root.0.0.3.2.1.1.6"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex min-w-0 flex-1 flex-col justify-end overflow-hidden rounded-t-[3px]",
+                                  "style": "height:96.61016949152543%",
+                                  "title": "Sep 18: 342 requests · 1 failed · 2 rate limited"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-rose-500",
+                                      "style": "height:0.29239766081871343%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.2.1.1.7.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-amber-400",
+                                      "style": "height:0.5847953216374269%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.2.1.1.7.1"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 flex-1 bg-emerald-500"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.2.1.1.7.2"
+                                  }
+                                ],
+                                "key": "root.0.0.3.2.1.1.7"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex min-w-0 flex-1 flex-col justify-end overflow-hidden rounded-t-[3px]",
+                                  "style": "height:92.93785310734464%",
+                                  "title": "Sep 19: 329 requests · 2 failed · 2 rate limited"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-rose-500",
+                                      "style": "height:0.60790273556231%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.2.1.1.8.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-amber-400",
+                                      "style": "height:0.60790273556231%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.2.1.1.8.1"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 flex-1 bg-emerald-500"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.2.1.1.8.2"
+                                  }
+                                ],
+                                "key": "root.0.0.3.2.1.1.8"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex min-w-0 flex-1 flex-col justify-end overflow-hidden rounded-t-[3px]",
+                                  "style": "height:46.61016949152542%",
+                                  "title": "Sep 20: 165 requests · 0 failed · 1 rate limited"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-rose-500",
+                                      "style": "height:0%;min-height:0"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.2.1.1.9.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-amber-400",
+                                      "style": "height:0.6060606060606061%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.2.1.1.9.1"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 flex-1 bg-emerald-500"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.2.1.1.9.2"
+                                  }
+                                ],
+                                "key": "root.0.0.3.2.1.1.9"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex min-w-0 flex-1 flex-col justify-end overflow-hidden rounded-t-[3px]",
+                                  "style": "height:87.85310734463276%",
+                                  "title": "Sep 21: 311 requests · 1 failed · 1 rate limited"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-rose-500",
+                                      "style": "height:0.3215434083601286%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.2.1.1.10.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-amber-400",
+                                      "style": "height:0.3215434083601286%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.2.1.1.10.1"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 flex-1 bg-emerald-500"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.2.1.1.10.2"
+                                  }
+                                ],
+                                "key": "root.0.0.3.2.1.1.10"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex min-w-0 flex-1 flex-col justify-end overflow-hidden rounded-t-[3px]",
+                                  "style": "height:56.779661016949156%",
+                                  "title": "Sep 22: 201 requests · 0 failed · 1 rate limited"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-rose-500",
+                                      "style": "height:0%;min-height:0"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.2.1.1.11.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-amber-400",
+                                      "style": "height:0.4975124378109453%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.2.1.1.11.1"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 flex-1 bg-emerald-500"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.2.1.1.11.2"
+                                  }
+                                ],
+                                "key": "root.0.0.3.2.1.1.11"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex min-w-0 flex-1 flex-col justify-end overflow-hidden rounded-t-[3px]",
+                                  "style": "height:67.2316384180791%",
+                                  "title": "Sep 23: 238 requests · 0 failed · 1 rate limited"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-rose-500",
+                                      "style": "height:0%;min-height:0"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.2.1.1.12.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-amber-400",
+                                      "style": "height:0.42016806722689076%;min-height:2px"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.2.1.1.12.1"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 flex-1 bg-emerald-500"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.2.1.1.12.2"
+                                  }
+                                ],
+                                "key": "root.0.0.3.2.1.1.12"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex min-w-0 flex-1 flex-col justify-end overflow-hidden rounded-t-[3px]",
+                                  "style": "height:0%",
+                                  "title": "Sep 24: 0 requests · 0 failed · 0 rate limited"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-rose-500",
+                                      "style": "height:0%;min-height:0"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.2.1.1.13.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 bg-amber-400",
+                                      "style": "height:0%;min-height:0"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.2.1.1.13.1"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "min-h-0 flex-1 bg-emerald-500"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.3.2.1.1.13.2"
+                                  }
+                                ],
+                                "key": "root.0.0.3.2.1.1.13"
+                              }
+                            ],
+                            "key": "root.0.0.3.2.1.1"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "mt-3 flex items-center justify-between text-xs"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "text": "3.4K",
+                                    "key": "root.0.0.3.2.1.2.0.0"
+                                  },
+                                  {
+                                    "text": " requests",
+                                    "key": "root.0.0.3.2.1.2.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.3.2.1.2.0"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-muted-foreground"
+                                },
+                                "children": [
+                                  {
+                                    "text": "$6.13",
+                                    "key": "root.0.0.3.2.1.2.1.0"
+                                  },
+                                  {
+                                    "text": " used",
+                                    "key": "root.0.0.3.2.1.2.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.3.2.1.2.1"
+                              }
+                            ],
+                            "key": "root.0.0.3.2.1.2"
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": {
+                              "class": "text-muted-foreground mt-2 text-[11px]"
+                            },
+                            "children": [
+                              {
+                                "text": "14",
+                                "key": "root.0.0.3.2.1.3.0"
+                              },
+                              {
+                                "text": "-day usage · ",
+                                "key": "root.0.0.3.2.1.3.1"
+                              },
+                              {
+                                "text": "7.2M",
+                                "key": "root.0.0.3.2.1.3.2"
+                              },
+                              {
+                                "text": " tokens",
+                                "key": "root.0.0.3.2.1.3.3"
+                              }
+                            ],
+                            "key": "root.0.0.3.2.1.3"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "mt-auto grid grid-cols-2 gap-2 pt-5"
+                            },
+                            "children": [
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-md px-3 h-7 text-xs shadow-none"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Activity",
+                                    "key": "root.0.0.3.2.1.4.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "sr-only"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": " for ",
+                                        "key": "root.0.0.3.2.1.4.0.1.0"
+                                      },
+                                      {
+                                        "text": "Gemini 2.5 Flash",
+                                        "key": "root.0.0.3.2.1.4.0.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.3.2.1.4.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.3.2.1.4.0"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-md px-3 h-7 text-xs shadow-none"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Budget",
+                                    "key": "root.0.0.3.2.1.4.1.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "sr-only"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": " for ",
+                                        "key": "root.0.0.3.2.1.4.1.1.0"
+                                      },
+                                      {
+                                        "text": "Gemini 2.5 Flash",
+                                        "key": "root.0.0.3.2.1.4.1.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.3.2.1.4.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.3.2.1.4.1"
+                              }
+                            ],
+                            "key": "root.0.0.3.2.1.4"
+                          }
+                        ],
+                        "key": "root.0.0.3.2.1"
+                      }
+                    ],
+                    "key": "root.0.0.3.2"
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": {
+                      "aria-label": "Mistral Large usage",
+                      "class": "bg-muted/35 overflow-hidden rounded-2xl"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex h-11 items-center justify-between gap-3 px-4"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex min-w-0 items-center gap-2"
+                            },
+                            "children": [
+                              {
+                                "tag": "h2",
+                                "attrs": {
+                                  "class": "truncate text-sm font-medium"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Mistral Large",
+                                    "key": "root.0.0.3.3.0.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.3.3.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.3.3.0.0"
+                          },
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "text-muted-foreground shrink-0 text-xs"
+                            },
+                            "children": [
+                              {
+                                "text": "Mistral",
+                                "key": "root.0.0.3.3.0.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.3.3.0.1"
+                          }
+                        ],
+                        "key": "root.0.0.3.3.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "bg-background flex min-h-[258px] flex-col rounded-2xl border p-4"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex items-center justify-between gap-2"
+                            },
+                            "children": [
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-muted-foreground text-xs"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Multilingual tasks",
+                                    "key": "root.0.0.3.3.1.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.3.3.1.0.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "inline-flex items-center rounded-md border px-2.5 py-0.5 transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 text-[10px] font-normal border-emerald-200 bg-emerald-50 text-emerald-700 dark:border-emerald-900 dark:bg-emerald-950 dark:text-emerald-300"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Ready",
+                                    "key": "root.0.0.3.3.1.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.3.3.1.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.3.3.1.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "mt-auto pt-8"
+                            },
+                            "children": [
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-sm font-medium"
+                                },
+                                "children": [
+                                  {
+                                    "text": "No requests yet",
+                                    "key": "root.0.0.3.3.1.1.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.3.3.1.1.0"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-muted-foreground mt-2 text-xs leading-relaxed"
+                                },
+                                "children": [
+                                  {
+                                    "text": "This model is available to your workspace. Its usage will appear here after your first API request.",
+                                    "key": "root.0.0.3.3.1.1.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.3.3.1.1.1"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-md px-3 mt-5 h-7 w-full text-xs shadow-none"
+                                },
+                                "children": [
+                                  {
+                                    "text": "View model",
+                                    "key": "root.0.0.3.3.1.1.2.0"
+                                  }
+                                ],
+                                "key": "root.0.0.3.3.1.1.2"
+                              }
+                            ],
+                            "key": "root.0.0.3.3.1.1"
+                          }
+                        ],
+                        "key": "root.0.0.3.3.1"
+                      }
+                    ],
+                    "key": "root.0.0.3.3"
+                  }
+                ],
+                "key": "root.0.0.3"
+              },
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "text-muted-foreground flex flex-wrap items-center justify-between gap-3 text-xs"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "flex flex-wrap gap-4"
+                    },
+                    "children": [
+                      {
+                        "tag": "span",
+                        "attrs": {
+                          "class": "flex items-center gap-1.5"
+                        },
+                        "children": [
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "size-2 rounded-[2px] bg-emerald-500"
+                            },
+                            "children": [],
+                            "key": "root.0.0.4.0.0.0"
+                          },
+                          {
+                            "text": "Successful",
+                            "key": "root.0.0.4.0.0.1"
+                          }
+                        ],
+                        "key": "root.0.0.4.0.0"
+                      },
+                      {
+                        "tag": "span",
+                        "attrs": {
+                          "class": "flex items-center gap-1.5"
+                        },
+                        "children": [
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "size-2 rounded-[2px] bg-amber-400"
+                            },
+                            "children": [],
+                            "key": "root.0.0.4.0.1.0"
+                          },
+                          {
+                            "text": "Rate limited",
+                            "key": "root.0.0.4.0.1.1"
+                          }
+                        ],
+                        "key": "root.0.0.4.0.1"
+                      },
+                      {
+                        "tag": "span",
+                        "attrs": {
+                          "class": "flex items-center gap-1.5"
+                        },
+                        "children": [
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "size-2 rounded-[2px] bg-rose-500"
+                            },
+                            "children": [],
+                            "key": "root.0.0.4.0.2.0"
+                          },
+                          {
+                            "text": "Failed",
+                            "key": "root.0.0.4.0.2.1"
+                          }
+                        ],
+                        "key": "root.0.0.4.0.2"
+                      }
+                    ],
+                    "key": "root.0.0.4.0"
+                  },
+                  {
+                    "tag": "a",
+                    "attrs": {
+                      "class": "text-foreground underline-offset-4 hover:underline",
+                      "href": "/ai-chat/usage-insights"
+                    },
+                    "children": [
+                      {
+                        "text": "Explore usage insights ",
+                        "key": "root.0.0.4.1.0"
+                      }
+                    ],
+                    "key": "root.0.0.4.1"
+                  }
+                ],
+                "key": "root.0.0.4"
+              },
+              {
+                "tag": "p",
+                "attrs": {
+                  "class": "text-muted-foreground text-xs"
+                },
+                "children": [
+                  {
+                    "text": "Demo workspace · Illustrative usage and costs. Budget changes apply to this demo session.",
+                    "key": "root.0.0.5.0"
+                  }
+                ],
+                "key": "root.0.0.5"
+              }
+            ],
+            "key": "root.0.0"
+          }
+        ],
+        "key": "root.0"
+      }
+    ],
+    "key": "root"
+  },
+  "headings": [
+    "Model usage",
+    "GPT-4.1",
+    "Claude Sonnet 4",
+    "Gemini 2.5 Flash",
+    "Mistral Large"
+  ]
+}

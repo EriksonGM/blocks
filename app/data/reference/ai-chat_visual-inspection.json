@@ -1,0 +1,1115 @@
+{
+  "label": "Visual inspection",
+  "path": "/ai-chat/visual-inspection",
+  "appTitle": "",
+  "tree": {
+    "tag": "div",
+    "attrs": {
+      "id": "ai-workspace-content",
+      "class": "flex min-h-0 flex-1 flex-col"
+    },
+    "children": [
+      {
+        "tag": "div",
+        "attrs": {
+          "class": "flex min-h-0 flex-1 flex-col overflow-y-auto xl:overflow-hidden"
+        },
+        "children": [
+          {
+            "tag": "header",
+            "attrs": {
+              "class": "flex shrink-0 flex-wrap items-center justify-between gap-3 border-b px-5 py-4 md:px-7"
+            },
+            "children": [
+              {
+                "tag": "div",
+                "attrs": {},
+                "children": [
+                  {
+                    "tag": "p",
+                    "attrs": {
+                      "class": "text-muted-foreground flex items-center gap-1.5 text-xs"
+                    },
+                    "children": [
+                      {
+                        "text": "Commerce experience ",
+                        "key": "root.0.0.0.0.0"
+                      },
+                      {
+                        "tag": "icon",
+                        "attrs": {
+                          "name": "i-lucide-chevron-right",
+                          "class": "lucide lucide-chevron-right size-3"
+                        },
+                        "key": "root.0.0.0.0.1"
+                      },
+                      {
+                        "text": " Design review",
+                        "key": "root.0.0.0.0.2"
+                      }
+                    ],
+                    "key": "root.0.0.0.0"
+                  },
+                  {
+                    "tag": "h1",
+                    "attrs": {
+                      "class": "mt-1.5 text-xl font-semibold tracking-tight"
+                    },
+                    "children": [
+                      {
+                        "text": "A closer look.",
+                        "key": "root.0.0.0.1.0"
+                      }
+                    ],
+                    "key": "root.0.0.0.1"
+                  }
+                ],
+                "key": "root.0.0.0"
+              },
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "flex flex-wrap items-center gap-2"
+                },
+                "children": [
+                  {
+                    "tag": "input",
+                    "attrs": {
+                      "type": "file",
+                      "accept": "image/png,image/jpeg,image/webp",
+                      "class": "sr-only",
+                      "aria-label": "Open an image for inspection",
+                      "value": ""
+                    },
+                    "children": [],
+                    "key": "root.0.0.1.0"
+                  },
+                  {
+                    "tag": "button",
+                    "attrs": {
+                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs"
+                    },
+                    "children": [
+                      {
+                        "tag": "icon",
+                        "attrs": {
+                          "name": "i-lucide-upload",
+                          "class": "lucide lucide-upload"
+                        },
+                        "key": "root.0.0.1.1.0"
+                      },
+                      {
+                        "text": " Open image",
+                        "key": "root.0.0.1.1.1"
+                      }
+                    ],
+                    "key": "root.0.0.1.1"
+                  },
+                  {
+                    "tag": "button",
+                    "attrs": {
+                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs"
+                    },
+                    "children": [
+                      {
+                        "tag": "icon",
+                        "attrs": {
+                          "name": "i-lucide-download",
+                          "class": "lucide lucide-download"
+                        },
+                        "key": "root.0.0.1.2.0"
+                      },
+                      {
+                        "text": " Export review",
+                        "key": "root.0.0.1.2.1"
+                      }
+                    ],
+                    "key": "root.0.0.1.2"
+                  },
+                  {
+                    "tag": "button",
+                    "attrs": {
+                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 h-8 rounded-md px-3 text-xs"
+                    },
+                    "children": [
+                      {
+                        "tag": "icon",
+                        "attrs": {
+                          "name": "i-lucide-bot",
+                          "class": "lucide lucide-bot"
+                        },
+                        "key": "root.0.0.1.3.0"
+                      },
+                      {
+                        "text": "Review image",
+                        "key": "root.0.0.1.3.1"
+                      }
+                    ],
+                    "key": "root.0.0.1.3"
+                  }
+                ],
+                "key": "root.0.0.1"
+              }
+            ],
+            "key": "root.0.0"
+          },
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "flex min-h-0 flex-1 flex-col xl:flex-row"
+            },
+            "children": [
+              {
+                "tag": "section",
+                "attrs": {
+                  "class": "flex min-w-0 flex-1 flex-col",
+                  "aria-label": "Image review canvas"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "flex min-h-14 shrink-0 flex-wrap items-center justify-between gap-2 border-b px-4 py-2"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex min-w-0 items-center gap-2"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-image",
+                              "class": "lucide lucide-image text-muted-foreground size-4 shrink-0"
+                            },
+                            "key": "root.0.1.0.0.0.0"
+                          },
+                          {
+                            "tag": "select",
+                            "attrs": {
+                              "aria-label": "Review image",
+                              "class": "max-w-52 min-w-0 bg-transparent text-xs font-medium outline-offset-4"
+                            },
+                            "children": [
+                              {
+                                "tag": "option",
+                                "attrs": {
+                                  "value": "sample"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Order detail · desktop",
+                                    "key": "root.0.1.0.0.0.1.0.0"
+                                  }
+                                ],
+                                "key": "root.0.1.0.0.0.1.0"
+                              }
+                            ],
+                            "key": "root.0.1.0.0.0.1"
+                          }
+                        ],
+                        "key": "root.0.1.0.0.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex items-center gap-1"
+                        },
+                        "children": [
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80 size-6",
+                              "aria-label": "Select regions"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-mouse-pointer-2",
+                                  "class": "lucide lucide-mouse-pointer2 lucide-mouse-pointer-2"
+                                },
+                                "key": "root.0.1.0.0.1.0.0"
+                              }
+                            ],
+                            "key": "root.0.1.0.0.1.0"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-6",
+                              "aria-label": "Draw a region"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-square-dashed",
+                                  "class": "lucide lucide-square-dashed"
+                                },
+                                "key": "root.0.1.0.0.1.1.0"
+                              }
+                            ],
+                            "key": "root.0.1.0.0.1.1"
+                          },
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "bg-border mx-1 h-4 w-px"
+                            },
+                            "children": [],
+                            "key": "root.0.1.0.0.1.2"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-6",
+                              "aria-label": "Zoom out"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-minus",
+                                  "class": "lucide lucide-minus"
+                                },
+                                "key": "root.0.1.0.0.1.3.0"
+                              }
+                            ],
+                            "key": "root.0.1.0.0.1.3"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 w-14 font-mono text-xs",
+                              "aria-label": "Fit image to viewport"
+                            },
+                            "children": [
+                              {
+                                "text": "100",
+                                "key": "root.0.1.0.0.1.4.0"
+                              },
+                              {
+                                "text": "%",
+                                "key": "root.0.1.0.0.1.4.1"
+                              }
+                            ],
+                            "key": "root.0.1.0.0.1.4"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-6",
+                              "aria-label": "Zoom in"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-plus",
+                                  "class": "lucide lucide-plus"
+                                },
+                                "key": "root.0.1.0.0.1.5.0"
+                              }
+                            ],
+                            "key": "root.0.1.0.0.1.5"
+                          }
+                        ],
+                        "key": "root.0.1.0.0.1"
+                      }
+                    ],
+                    "key": "root.0.1.0.0"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "bg-muted/50 min-h-[360px] overflow-auto p-6 xl:min-h-0 xl:flex-1",
+                      "style": "background-image:radial-gradient(var(--border) 1px, transparent 1px);background-size:18px 18px"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "relative mx-auto bg-white shadow-sm outline-offset-4",
+                          "aria-label": "Image canvas. Use Draw a region or Add region to annotate.",
+                          "style": "width:700px;aspect-ratio:1452 / 900"
+                        },
+                        "children": [
+                          {
+                            "tag": "img",
+                            "attrs": {
+                              "alt": "Order detail screen under review; numbered regions link to observations",
+                              "width": "1452",
+                              "height": "900",
+                              "class": "pointer-events-none h-full w-full select-none",
+                              "style": "color:transparent",
+                              "src": "/reference/764e2e752a87f6e8.png"
+                            },
+                            "children": [],
+                            "key": "root.0.1.0.1.0.0"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "type": "button",
+                              "aria-label": "Select region 1: Make order status actionable",
+                              "class": "absolute border transition-[background-color,box-shadow] focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none border-blue-600/60 bg-blue-500/5 ring-2 ring-blue-600/70",
+                              "style": "left:3%;top:1%;width:56%;height:12%"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "absolute -top-3 -left-3 flex size-6 items-center justify-center rounded-full border-2 border-white text-[10px] font-semibold text-white shadow-sm bg-blue-600"
+                                },
+                                "children": [
+                                  {
+                                    "text": "1",
+                                    "key": "root.0.1.0.1.0.1.0.0"
+                                  }
+                                ],
+                                "key": "root.0.1.0.1.0.1.0"
+                              }
+                            ],
+                            "key": "root.0.1.0.1.0.1"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "type": "button",
+                              "aria-label": "Select region 2: Keep line items easy to scan",
+                              "class": "absolute border transition-[background-color,box-shadow] focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none border-blue-600/60 bg-blue-500/5",
+                              "style": "left:3%;top:69%;width:66%;height:28%"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "absolute -top-3 -left-3 flex size-6 items-center justify-center rounded-full border-2 border-white text-[10px] font-semibold text-white shadow-sm bg-blue-600"
+                                },
+                                "children": [
+                                  {
+                                    "text": "2",
+                                    "key": "root.0.1.0.1.0.2.0.0"
+                                  }
+                                ],
+                                "key": "root.0.1.0.1.0.2.0"
+                              }
+                            ],
+                            "key": "root.0.1.0.1.0.2"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "type": "button",
+                              "aria-label": "Select region 3: Keep customer context close",
+                              "class": "absolute border transition-[background-color,box-shadow] focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none border-emerald-600/60 bg-emerald-500/5",
+                              "style": "left:74%;top:57%;width:24%;height:29%"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "absolute -top-3 -left-3 flex size-6 items-center justify-center rounded-full border-2 border-white text-[10px] font-semibold text-white shadow-sm bg-emerald-700"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-check",
+                                      "class": "lucide lucide-check size-3"
+                                    },
+                                    "key": "root.0.1.0.1.0.3.0.0"
+                                  }
+                                ],
+                                "key": "root.0.1.0.1.0.3.0"
+                              }
+                            ],
+                            "key": "root.0.1.0.1.0.3"
+                          }
+                        ],
+                        "key": "root.0.1.0.1.0"
+                      }
+                    ],
+                    "key": "root.0.1.0.1"
+                  }
+                ],
+                "key": "root.0.1.0"
+              },
+              {
+                "tag": "aside",
+                "attrs": {
+                  "class": "flex w-full shrink-0 flex-col border-t xl:w-[360px] xl:overflow-y-auto xl:border-t-0 xl:border-l",
+                  "aria-label": "Region observations"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "flex items-center justify-between px-5 pt-4 pb-3"
+                    },
+                    "children": [
+                      {
+                        "tag": "h2",
+                        "attrs": {
+                          "class": "text-sm font-semibold"
+                        },
+                        "children": [
+                          {
+                            "text": "Observations",
+                            "key": "root.0.1.1.0.0.0"
+                          },
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "text-muted-foreground ml-1 font-normal"
+                            },
+                            "children": [
+                              {
+                                "text": "3",
+                                "key": "root.0.1.1.0.0.1.0"
+                              }
+                            ],
+                            "key": "root.0.1.1.0.0.1"
+                          }
+                        ],
+                        "key": "root.0.1.1.0.0"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-plus",
+                              "class": "lucide lucide-plus"
+                            },
+                            "key": "root.0.1.1.0.1.0"
+                          },
+                          {
+                            "text": " Add region",
+                            "key": "root.0.1.1.0.1.1"
+                          }
+                        ],
+                        "key": "root.0.1.1.0.1"
+                      }
+                    ],
+                    "key": "root.0.1.1.0"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "flex gap-1 px-5 pb-3",
+                      "aria-label": "Filter observations"
+                    },
+                    "children": [
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80 rounded-md px-3 h-7 text-xs"
+                        },
+                        "children": [
+                          {
+                            "text": "All",
+                            "key": "root.0.1.1.1.0.0"
+                          }
+                        ],
+                        "key": "root.0.1.1.1.0"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground rounded-md px-3 h-7 text-xs"
+                        },
+                        "children": [
+                          {
+                            "text": "Open",
+                            "key": "root.0.1.1.1.1.0"
+                          }
+                        ],
+                        "key": "root.0.1.1.1.1"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground rounded-md px-3 h-7 text-xs"
+                        },
+                        "children": [
+                          {
+                            "text": "Resolved",
+                            "key": "root.0.1.1.1.2.0"
+                          }
+                        ],
+                        "key": "root.0.1.1.1.2"
+                      }
+                    ],
+                    "key": "root.0.1.1.1"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "max-h-52 shrink-0 overflow-y-auto border-y py-1"
+                    },
+                    "children": [
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "hover:bg-muted/50 flex w-full items-center gap-3 px-5 py-3 text-left text-xs outline-offset-[-3px] bg-muted"
+                        },
+                        "children": [
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "flex size-5 shrink-0 items-center justify-center rounded-full border text-[10px]"
+                            },
+                            "children": [
+                              {
+                                "text": "1",
+                                "key": "root.0.1.1.2.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.1.1.2.0.0"
+                          },
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "min-w-0 flex-1 truncate font-medium"
+                            },
+                            "children": [
+                              {
+                                "text": "Make order status actionable",
+                                "key": "root.0.1.1.2.0.1.0"
+                              }
+                            ],
+                            "key": "root.0.1.1.2.0.1"
+                          },
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-message-square",
+                              "class": "lucide lucide-message-square text-muted-foreground size-3"
+                            },
+                            "key": "root.0.1.1.2.0.2"
+                          },
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "text-muted-foreground"
+                            },
+                            "children": [
+                              {
+                                "text": "1",
+                                "key": "root.0.1.1.2.0.3.0"
+                              }
+                            ],
+                            "key": "root.0.1.1.2.0.3"
+                          }
+                        ],
+                        "key": "root.0.1.1.2.0"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "hover:bg-muted/50 flex w-full items-center gap-3 px-5 py-3 text-left text-xs outline-offset-[-3px]"
+                        },
+                        "children": [
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "flex size-5 shrink-0 items-center justify-center rounded-full border text-[10px]"
+                            },
+                            "children": [
+                              {
+                                "text": "2",
+                                "key": "root.0.1.1.2.1.0.0"
+                              }
+                            ],
+                            "key": "root.0.1.1.2.1.0"
+                          },
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "min-w-0 flex-1 truncate font-medium"
+                            },
+                            "children": [
+                              {
+                                "text": "Keep line items easy to scan",
+                                "key": "root.0.1.1.2.1.1.0"
+                              }
+                            ],
+                            "key": "root.0.1.1.2.1.1"
+                          },
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-message-square",
+                              "class": "lucide lucide-message-square text-muted-foreground size-3"
+                            },
+                            "key": "root.0.1.1.2.1.2"
+                          },
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "text-muted-foreground"
+                            },
+                            "children": [
+                              {
+                                "text": "0",
+                                "key": "root.0.1.1.2.1.3.0"
+                              }
+                            ],
+                            "key": "root.0.1.1.2.1.3"
+                          }
+                        ],
+                        "key": "root.0.1.1.2.1"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "hover:bg-muted/50 flex w-full items-center gap-3 px-5 py-3 text-left text-xs outline-offset-[-3px]"
+                        },
+                        "children": [
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "flex size-5 shrink-0 items-center justify-center rounded-full border text-[10px] border-emerald-600/20 text-emerald-700 dark:text-emerald-400"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-check",
+                                  "class": "lucide lucide-check size-3"
+                                },
+                                "key": "root.0.1.1.2.2.0.0"
+                              }
+                            ],
+                            "key": "root.0.1.1.2.2.0"
+                          },
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "min-w-0 flex-1 truncate font-medium"
+                            },
+                            "children": [
+                              {
+                                "text": "Keep customer context close",
+                                "key": "root.0.1.1.2.2.1.0"
+                              }
+                            ],
+                            "key": "root.0.1.1.2.2.1"
+                          },
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-message-square",
+                              "class": "lucide lucide-message-square text-muted-foreground size-3"
+                            },
+                            "key": "root.0.1.1.2.2.2"
+                          },
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "text-muted-foreground"
+                            },
+                            "children": [
+                              {
+                                "text": "0",
+                                "key": "root.0.1.1.2.2.3.0"
+                              }
+                            ],
+                            "key": "root.0.1.1.2.2.3"
+                          }
+                        ],
+                        "key": "root.0.1.1.2.2"
+                      }
+                    ],
+                    "key": "root.0.1.1.2"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "flex flex-1 flex-col px-5 py-5"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "mb-3 flex items-center justify-between gap-2"
+                        },
+                        "children": [
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "text-muted-foreground text-[10px] font-medium tracking-widest uppercase"
+                            },
+                            "children": [
+                              {
+                                "text": "Region ",
+                                "key": "root.0.1.1.3.0.0.0"
+                              },
+                              {
+                                "text": "1",
+                                "key": "root.0.1.1.3.0.0.1"
+                              }
+                            ],
+                            "key": "root.0.1.1.3.0.0"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground rounded-md px-3 h-7 text-xs"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-check-check",
+                                  "class": "lucide lucide-check-check"
+                                },
+                                "key": "root.0.1.1.3.0.1.0"
+                              },
+                              {
+                                "text": "Resolve",
+                                "key": "root.0.1.1.3.0.1.1"
+                              }
+                            ],
+                            "key": "root.0.1.1.3.0.1"
+                          }
+                        ],
+                        "key": "root.0.1.1.3.0"
+                      },
+                      {
+                        "tag": "input",
+                        "attrs": {
+                          "class": "border-input file:text-foreground placeholder:text-muted-foreground focus-visible:ring-ring flex w-full rounded-md transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 md:text-sm h-auto border-0 bg-transparent px-0 py-1 text-base font-semibold shadow-none focus-visible:ring-0",
+                          "aria-label": "Region title",
+                          "value": "Make order status actionable"
+                        },
+                        "children": [],
+                        "key": "root.0.1.1.3.1"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs mt-4 self-start"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-bot",
+                              "class": "lucide lucide-bot"
+                            },
+                            "key": "root.0.1.1.3.2.0"
+                          },
+                          {
+                            "text": " Draft observation",
+                            "key": "root.0.1.1.3.2.1"
+                          }
+                        ],
+                        "key": "root.0.1.1.3.2"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "mt-4 space-y-3",
+                          "aria-label": "Region discussion"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "border-l-2 pl-3"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-muted-foreground text-[10px] font-medium"
+                                },
+                                "children": [
+                                  {
+                                    "text": "REVIEW NOTE",
+                                    "key": "root.0.1.1.3.3.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.1.1.3.3.0.0"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "mt-1 text-[13px] leading-6 break-words whitespace-pre-wrap"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Keep the record itself primary. The assistant should explain the exception, not replace the order details.",
+                                    "key": "root.0.1.1.3.3.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.1.1.3.3.0.1"
+                              }
+                            ],
+                            "key": "root.0.1.1.3.3.0"
+                          }
+                        ],
+                        "key": "root.0.1.1.3.3"
+                      },
+                      {
+                        "tag": "form",
+                        "attrs": {
+                          "class": "mt-5 rounded-xl border p-2 shadow-xs"
+                        },
+                        "children": [
+                          {
+                            "tag": "textarea",
+                            "attrs": {
+                              "class": "border-input placeholder:text-muted-foreground focus-visible:ring-ring flex w-full rounded-md py-2 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 md:text-sm min-h-20 resize-none border-0 bg-transparent px-2 text-sm shadow-none focus-visible:ring-0",
+                              "aria-label": "Note for selected region",
+                              "placeholder": "Add a note about this region…",
+                              "value": ""
+                            },
+                            "children": [],
+                            "key": "root.0.1.1.3.4.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex items-center justify-between px-1 pt-1"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-muted-foreground text-[10px]"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Only attached to this region",
+                                    "key": "root.0.1.1.3.4.1.0.0"
+                                  }
+                                ],
+                                "key": "root.0.1.1.3.4.1.0"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 rounded-md px-3 h-7 text-xs",
+                                  "type": "submit",
+                                  "disabled": ""
+                                },
+                                "children": [
+                                  {
+                                    "text": "Add note",
+                                    "key": "root.0.1.1.3.4.1.1.0"
+                                  }
+                                ],
+                                "key": "root.0.1.1.3.4.1.1"
+                              }
+                            ],
+                            "key": "root.0.1.1.3.4.1"
+                          }
+                        ],
+                        "key": "root.0.1.1.3.4"
+                      },
+                      {
+                        "tag": "details",
+                        "attrs": {
+                          "class": "mt-5 text-xs"
+                        },
+                        "children": [
+                          {
+                            "tag": "summary",
+                            "attrs": {
+                              "class": "text-muted-foreground cursor-pointer"
+                            },
+                            "children": [
+                              {
+                                "text": "Region coordinates",
+                                "key": "root.0.1.1.3.5.0.0"
+                              }
+                            ],
+                            "key": "root.0.1.1.3.5.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "mt-3 grid grid-cols-4 gap-2"
+                            },
+                            "children": [
+                              {
+                                "tag": "label",
+                                "attrs": {
+                                  "class": "text-muted-foreground text-[10px]"
+                                },
+                                "children": [
+                                  {
+                                    "text": "x",
+                                    "key": "root.0.1.1.3.5.1.0.0"
+                                  },
+                                  {
+                                    "text": " %",
+                                    "key": "root.0.1.1.3.5.1.0.1"
+                                  },
+                                  {
+                                    "tag": "input",
+                                    "attrs": {
+                                      "type": "number",
+                                      "class": "border-input file:text-foreground placeholder:text-muted-foreground focus-visible:ring-ring flex w-full rounded-md border bg-transparent py-1 shadow-xs transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:ring-1 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 md:text-sm mt-1 h-8 px-2 text-xs",
+                                      "aria-label": "Region x",
+                                      "min": "0",
+                                      "max": "100",
+                                      "step": "0.1",
+                                      "value": "3"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.1.1.3.5.1.0.2"
+                                  }
+                                ],
+                                "key": "root.0.1.1.3.5.1.0"
+                              },
+                              {
+                                "tag": "label",
+                                "attrs": {
+                                  "class": "text-muted-foreground text-[10px]"
+                                },
+                                "children": [
+                                  {
+                                    "text": "y",
+                                    "key": "root.0.1.1.3.5.1.1.0"
+                                  },
+                                  {
+                                    "text": " %",
+                                    "key": "root.0.1.1.3.5.1.1.1"
+                                  },
+                                  {
+                                    "tag": "input",
+                                    "attrs": {
+                                      "type": "number",
+                                      "class": "border-input file:text-foreground placeholder:text-muted-foreground focus-visible:ring-ring flex w-full rounded-md border bg-transparent py-1 shadow-xs transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:ring-1 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 md:text-sm mt-1 h-8 px-2 text-xs",
+                                      "aria-label": "Region y",
+                                      "min": "0",
+                                      "max": "100",
+                                      "step": "0.1",
+                                      "value": "1"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.1.1.3.5.1.1.2"
+                                  }
+                                ],
+                                "key": "root.0.1.1.3.5.1.1"
+                              },
+                              {
+                                "tag": "label",
+                                "attrs": {
+                                  "class": "text-muted-foreground text-[10px]"
+                                },
+                                "children": [
+                                  {
+                                    "text": "width",
+                                    "key": "root.0.1.1.3.5.1.2.0"
+                                  },
+                                  {
+                                    "text": " %",
+                                    "key": "root.0.1.1.3.5.1.2.1"
+                                  },
+                                  {
+                                    "tag": "input",
+                                    "attrs": {
+                                      "type": "number",
+                                      "class": "border-input file:text-foreground placeholder:text-muted-foreground focus-visible:ring-ring flex w-full rounded-md border bg-transparent py-1 shadow-xs transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:ring-1 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 md:text-sm mt-1 h-8 px-2 text-xs",
+                                      "aria-label": "Region width",
+                                      "min": "1",
+                                      "max": "100",
+                                      "step": "0.1",
+                                      "value": "56"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.1.1.3.5.1.2.2"
+                                  }
+                                ],
+                                "key": "root.0.1.1.3.5.1.2"
+                              },
+                              {
+                                "tag": "label",
+                                "attrs": {
+                                  "class": "text-muted-foreground text-[10px]"
+                                },
+                                "children": [
+                                  {
+                                    "text": "height",
+                                    "key": "root.0.1.1.3.5.1.3.0"
+                                  },
+                                  {
+                                    "text": " %",
+                                    "key": "root.0.1.1.3.5.1.3.1"
+                                  },
+                                  {
+                                    "tag": "input",
+                                    "attrs": {
+                                      "type": "number",
+                                      "class": "border-input file:text-foreground placeholder:text-muted-foreground focus-visible:ring-ring flex w-full rounded-md border bg-transparent py-1 shadow-xs transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:ring-1 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 md:text-sm mt-1 h-8 px-2 text-xs",
+                                      "aria-label": "Region height",
+                                      "min": "1",
+                                      "max": "100",
+                                      "step": "0.1",
+                                      "value": "12"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.1.1.3.5.1.3.2"
+                                  }
+                                ],
+                                "key": "root.0.1.1.3.5.1.3"
+                              }
+                            ],
+                            "key": "root.0.1.1.3.5.1"
+                          }
+                        ],
+                        "key": "root.0.1.1.3.5"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-8 rounded-md text-muted-foreground mt-4 self-start px-0 text-xs"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-trash-2",
+                              "class": "lucide lucide-trash2 lucide-trash-2"
+                            },
+                            "key": "root.0.1.1.3.6.0"
+                          },
+                          {
+                            "text": " Remove region",
+                            "key": "root.0.1.1.3.6.1"
+                          }
+                        ],
+                        "key": "root.0.1.1.3.6"
+                      }
+                    ],
+                    "key": "root.0.1.1.3"
+                  }
+                ],
+                "key": "root.0.1.1"
+              }
+            ],
+            "key": "root.0.1"
+          }
+        ],
+        "key": "root.0"
+      }
+    ],
+    "key": "root"
+  },
+  "headings": [
+    "A closer look.",
+    "Observations 3"
+  ]
+}

@@ -1,0 +1,809 @@
+{
+  "label": "Create Task",
+  "path": "/todo/tasks/new",
+  "appTitle": "Todo App",
+  "tree": {
+    "tag": "div",
+    "attrs": {
+      "class": "contents"
+    },
+    "children": [
+      {
+        "tag": "div",
+        "attrs": {
+          "class": "flex min-h-0 flex-1 flex-col overflow-hidden"
+        },
+        "children": [
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "flex h-14 shrink-0 items-center gap-2 border-b px-4 sm:px-6"
+            },
+            "children": [
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "flex flex-1 items-center gap-2"
+                },
+                "children": [
+                  {
+                    "tag": "nav",
+                    "attrs": {
+                      "aria-label": "breadcrumb"
+                    },
+                    "children": [
+                      {
+                        "tag": "ol",
+                        "attrs": {
+                          "class": "text-muted-foreground flex flex-wrap items-center gap-1.5 text-sm break-words sm:gap-2.5"
+                        },
+                        "children": [
+                          {
+                            "tag": "li",
+                            "attrs": {
+                              "class": "inline-flex items-center gap-1.5"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "role": "link",
+                                  "class": "text-foreground font-normal line-clamp-1"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Create Task",
+                                    "key": "root.0.0.0.0.0.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.0.0.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.0"
+                      }
+                    ],
+                    "key": "root.0.0.0.0"
+                  }
+                ],
+                "key": "root.0.0.0"
+              },
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "flex items-center gap-2 text-sm"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "group relative flex items-center"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "text-muted-foreground font-medium transition-transform duration-200 ease-out group-hover:-translate-x-16"
+                        },
+                        "children": [
+                          {
+                            "text": "Oct 3",
+                            "key": "root.0.0.1.0.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.1.0.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "text-muted-foreground absolute right-0 translate-x-2 scale-50 font-medium whitespace-nowrap opacity-0 transition-all duration-200 ease-out group-hover:translate-x-0 group-hover:scale-100 group-hover:opacity-100"
+                        },
+                        "children": [
+                          {
+                            "text": "12:57 PM",
+                            "key": "root.0.0.1.0.1.0"
+                          }
+                        ],
+                        "key": "root.0.0.1.0.1"
+                      }
+                    ],
+                    "key": "root.0.0.1.0"
+                  },
+                  {
+                    "tag": "button",
+                    "attrs": {
+                      "class": "inline-flex items-center justify-center whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent rounded-md text-xs text-muted-foreground hover:text-foreground h-7 gap-2 px-2",
+                      "type": "button",
+                      "aria-label": "Search tasks"
+                    },
+                    "children": [
+                      {
+                        "tag": "icon",
+                        "attrs": {
+                          "name": "i-lucide-search",
+                          "class": "lucide lucide-search size-3.5"
+                        },
+                        "key": "root.0.0.1.1.0"
+                      },
+                      {
+                        "tag": "span",
+                        "attrs": {
+                          "class": "text-xs"
+                        },
+                        "children": [
+                          {
+                            "text": "Search",
+                            "key": "root.0.0.1.1.1.0"
+                          }
+                        ],
+                        "key": "root.0.0.1.1.1"
+                      }
+                    ],
+                    "key": "root.0.0.1.1"
+                  },
+                  {
+                    "tag": "button",
+                    "attrs": {
+                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground data-[state=open]:bg-accent h-7 w-7",
+                      "type": "button",
+                      "id": "radix-_R_eb5uknmlb_",
+                      "aria-haspopup": "menu",
+                      "data-state": "closed"
+                    },
+                    "children": [
+                      {
+                        "tag": "icon",
+                        "attrs": {
+                          "name": "i-lucide-ellipsis",
+                          "class": "lucide lucide-ellipsis"
+                        },
+                        "key": "root.0.0.1.2.0"
+                      }
+                    ],
+                    "key": "root.0.0.1.2"
+                  }
+                ],
+                "key": "root.0.0.1"
+              }
+            ],
+            "key": "root.0.0"
+          },
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "flex min-h-0 flex-1 flex-col overflow-auto"
+            },
+            "children": [
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "flex flex-1 flex-col gap-6 py-6 px-6"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "w-full space-y-6 transition-all duration-300"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "mx-auto w-full max-w-5xl"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "mb-6 flex items-center justify-between border-b pb-4"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-center gap-4"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "a",
+                                    "attrs": {
+                                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-6",
+                                      "href": "/todo"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-arrow-left",
+                                          "class": "lucide lucide-arrow-left size-4"
+                                        },
+                                        "key": "root.0.1.0.0.0.0.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.1.0.0.0.0.0.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center gap-2"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-hash",
+                                          "class": "lucide lucide-hash text-muted-foreground size-4"
+                                        },
+                                        "key": "root.0.1.0.0.0.0.0.1.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "text-sm font-medium"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Personal Tasks 🏠",
+                                            "key": "root.0.1.0.0.0.0.0.1.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.1.0.0.0.0.0.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.1.0.0.0.0.0.1"
+                                  }
+                                ],
+                                "key": "root.0.1.0.0.0.0.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-center gap-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "a",
+                                    "attrs": {
+                                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2",
+                                      "href": "/todo"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Cancel",
+                                        "key": "root.0.1.0.0.0.0.1.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.1.0.0.0.0.1.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 h-9 px-4 py-2",
+                                      "disabled": ""
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Create task",
+                                        "key": "root.0.1.0.0.0.0.1.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.1.0.0.0.0.1.1"
+                                  }
+                                ],
+                                "key": "root.0.1.0.0.0.0.1"
+                              }
+                            ],
+                            "key": "root.0.1.0.0.0.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "grid grid-cols-1 gap-6 md:grid-cols-8"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "md:col-span-5"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex flex-col p-4 md:p-6"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "input",
+                                        "attrs": {
+                                          "class": "border-input file:text-foreground placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full rounded-md border bg-transparent py-1 text-base transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 md:text-sm mb-4 border-none px-0 text-xl! font-semibold shadow-none focus-visible:ring-0",
+                                          "placeholder": "Task title",
+                                          "aria-label": "Task title",
+                                          "value": ""
+                                        },
+                                        "children": [],
+                                        "key": "root.0.1.0.0.0.1.0.0.0"
+                                      },
+                                      {
+                                        "tag": "textarea",
+                                        "attrs": {
+                                          "class": "border-input placeholder:text-muted-foreground focus-visible:ring-ring flex w-full rounded-md bg-transparent px-3 py-2 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 md:text-sm mb-4 min-h-32 resize-none border-0 text-sm shadow-none focus-visible:ring-0",
+                                          "placeholder": "Description",
+                                          "value": ""
+                                        },
+                                        "children": [],
+                                        "key": "root.0.1.0.0.0.1.0.0.1"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "border-t pt-4"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "mb-3 flex items-center gap-2"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "icon",
+                                                "attrs": {
+                                                  "name": "i-lucide-chevron-down",
+                                                  "class": "lucide lucide-chevron-down text-muted-foreground size-4"
+                                                },
+                                                "key": "root.0.1.0.0.0.1.0.0.2.0.0"
+                                              },
+                                              {
+                                                "tag": "h3",
+                                                "attrs": {
+                                                  "class": "text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Subtasks",
+                                                    "key": "root.0.1.0.0.0.1.0.0.2.0.1.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.1.0.0.0.1.0.0.2.0.1"
+                                              }
+                                            ],
+                                            "key": "root.0.1.0.0.0.1.0.0.2.0"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {},
+                                            "children": [
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "pt-2"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "button",
+                                                    "attrs": {
+                                                      "class": "text-muted-foreground flex w-full items-center justify-start gap-2 text-sm transition-all"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "icon",
+                                                        "attrs": {
+                                                          "name": "i-lucide-plus",
+                                                          "class": "lucide lucide-plus size-4"
+                                                        },
+                                                        "key": "root.0.1.0.0.0.1.0.0.2.1.0.0.0"
+                                                      },
+                                                      {
+                                                        "text": "Add Subtask",
+                                                        "key": "root.0.1.0.0.0.1.0.0.2.1.0.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.1.0.0.0.1.0.0.2.1.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.1.0.0.0.1.0.0.2.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.1.0.0.0.1.0.0.2.1"
+                                          }
+                                        ],
+                                        "key": "root.0.1.0.0.0.1.0.0.2"
+                                      }
+                                    ],
+                                    "key": "root.0.1.0.0.0.1.0.0"
+                                  }
+                                ],
+                                "key": "root.0.1.0.0.0.1.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "bg-muted/70 space-y-6 divide-y p-4 md:col-span-3 md:p-6"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {},
+                                    "children": [
+                                      {
+                                        "tag": "label",
+                                        "attrs": {
+                                          "class": "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 mb-1.5 block"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Project",
+                                            "key": "root.0.1.0.0.0.1.1.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.1.0.0.0.1.1.0.0"
+                                      },
+                                      {
+                                        "tag": "button",
+                                        "attrs": {
+                                          "class": "inline-flex items-center whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs w-full justify-between gap-2",
+                                          "type": "button",
+                                          "aria-haspopup": "dialog",
+                                          "data-state": "closed"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "flex items-center gap-2 truncate"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "icon",
+                                                "attrs": {
+                                                  "name": "i-lucide-hash",
+                                                  "class": "lucide lucide-hash text-muted-foreground size-3.5 shrink-0"
+                                                },
+                                                "key": "root.0.1.0.0.0.1.1.0.1.0.0"
+                                              },
+                                              {
+                                                "text": "Personal Tasks 🏠",
+                                                "key": "root.0.1.0.0.0.1.1.0.1.0.1"
+                                              }
+                                            ],
+                                            "key": "root.0.1.0.0.0.1.1.0.1.0"
+                                          },
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-chevron-down",
+                                              "class": "lucide lucide-chevron-down size-3.5 shrink-0"
+                                            },
+                                            "key": "root.0.1.0.0.0.1.1.0.1.1"
+                                          }
+                                        ],
+                                        "key": "root.0.1.0.0.0.1.1.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.1.0.0.0.1.1.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {},
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "mb-1.5 flex items-center justify-between"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "label",
+                                            "attrs": {
+                                              "class": "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Date",
+                                                "key": "root.0.1.0.0.0.1.1.1.0.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.1.0.0.0.1.1.1.0.0"
+                                          },
+                                          {
+                                            "tag": "button",
+                                            "attrs": {
+                                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-4 p-0",
+                                              "type": "button",
+                                              "aria-haspopup": "dialog",
+                                              "data-state": "closed"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "icon",
+                                                "attrs": {
+                                                  "name": "i-lucide-plus",
+                                                  "class": "lucide lucide-plus text-muted-foreground size-4"
+                                                },
+                                                "key": "root.0.1.0.0.0.1.1.1.0.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.1.0.0.0.1.1.1.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.1.0.0.0.1.1.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.1.0.0.0.1.1.1"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {},
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "mb-1.5 flex items-center justify-between"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "label",
+                                            "attrs": {
+                                              "class": "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Deadline",
+                                                "key": "root.0.1.0.0.0.1.1.2.0.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.1.0.0.0.1.1.2.0.0"
+                                          },
+                                          {
+                                            "tag": "button",
+                                            "attrs": {
+                                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-4 p-0",
+                                              "type": "button",
+                                              "aria-haspopup": "dialog",
+                                              "data-state": "closed"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "icon",
+                                                "attrs": {
+                                                  "name": "i-lucide-plus",
+                                                  "class": "lucide lucide-plus text-muted-foreground size-4"
+                                                },
+                                                "key": "root.0.1.0.0.0.1.1.2.0.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.1.0.0.0.1.1.2.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.1.0.0.0.1.1.2.0"
+                                      }
+                                    ],
+                                    "key": "root.0.1.0.0.0.1.1.2"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {},
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "mb-1.5 flex items-center justify-between"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "label",
+                                            "attrs": {
+                                              "class": "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Priority",
+                                                "key": "root.0.1.0.0.0.1.1.3.0.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.1.0.0.0.1.1.3.0.0"
+                                          },
+                                          {
+                                            "tag": "button",
+                                            "attrs": {
+                                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-4 p-0",
+                                              "type": "button",
+                                              "aria-haspopup": "dialog",
+                                              "data-state": "closed"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "icon",
+                                                "attrs": {
+                                                  "name": "i-lucide-plus",
+                                                  "class": "lucide lucide-plus text-muted-foreground size-4"
+                                                },
+                                                "key": "root.0.1.0.0.0.1.1.3.0.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.1.0.0.0.1.1.3.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.1.0.0.0.1.1.3.0"
+                                      }
+                                    ],
+                                    "key": "root.0.1.0.0.0.1.1.3"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "py-1.5"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "mb-1.5 flex items-center justify-between"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "label",
+                                            "attrs": {
+                                              "class": "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Labels",
+                                                "key": "root.0.1.0.0.0.1.1.4.0.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.1.0.0.0.1.1.4.0.0"
+                                          },
+                                          {
+                                            "tag": "button",
+                                            "attrs": {
+                                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-4 p-0",
+                                              "type": "button",
+                                              "aria-haspopup": "dialog",
+                                              "data-state": "closed"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "icon",
+                                                "attrs": {
+                                                  "name": "i-lucide-plus",
+                                                  "class": "lucide lucide-plus text-muted-foreground size-4"
+                                                },
+                                                "key": "root.0.1.0.0.0.1.1.4.0.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.1.0.0.0.1.1.4.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.1.0.0.0.1.1.4.0"
+                                      }
+                                    ],
+                                    "key": "root.0.1.0.0.0.1.1.4"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {},
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "mb-1.5 flex items-center justify-between"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "label",
+                                            "attrs": {
+                                              "class": "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Reminders",
+                                                "key": "root.0.1.0.0.0.1.1.5.0.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.1.0.0.0.1.1.5.0.0"
+                                          },
+                                          {
+                                            "tag": "button",
+                                            "attrs": {
+                                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-4 p-0",
+                                              "type": "button",
+                                              "aria-haspopup": "dialog",
+                                              "data-state": "closed"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "icon",
+                                                "attrs": {
+                                                  "name": "i-lucide-plus",
+                                                  "class": "lucide lucide-plus text-muted-foreground size-4"
+                                                },
+                                                "key": "root.0.1.0.0.0.1.1.5.0.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.1.0.0.0.1.1.5.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.1.0.0.0.1.1.5.0"
+                                      }
+                                    ],
+                                    "key": "root.0.1.0.0.0.1.1.5"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {},
+                                    "children": [
+                                      {
+                                        "tag": "label",
+                                        "attrs": {
+                                          "class": "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 mb-1.5 block"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Location",
+                                            "key": "root.0.1.0.0.0.1.1.6.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.1.0.0.0.1.1.6.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "relative"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-map-pin",
+                                              "class": "lucide lucide-map-pin text-muted-foreground absolute top-1/2 left-2.5 size-3.5 -translate-y-1/2"
+                                            },
+                                            "key": "root.0.1.0.0.0.1.1.6.1.0"
+                                          },
+                                          {
+                                            "tag": "input",
+                                            "attrs": {
+                                              "class": "border-input file:text-foreground placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:ring-1 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 md:text-sm pl-8",
+                                              "placeholder": "Add a location",
+                                              "value": ""
+                                            },
+                                            "children": [],
+                                            "key": "root.0.1.0.0.0.1.1.6.1.1"
+                                          }
+                                        ],
+                                        "key": "root.0.1.0.0.0.1.1.6.1"
+                                      }
+                                    ],
+                                    "key": "root.0.1.0.0.0.1.1.6"
+                                  }
+                                ],
+                                "key": "root.0.1.0.0.0.1.1"
+                              }
+                            ],
+                            "key": "root.0.1.0.0.0.1"
+                          }
+                        ],
+                        "key": "root.0.1.0.0.0"
+                      }
+                    ],
+                    "key": "root.0.1.0.0"
+                  }
+                ],
+                "key": "root.0.1.0"
+              }
+            ],
+            "key": "root.0.1"
+          }
+        ],
+        "key": "root.0"
+      }
+    ],
+    "key": "root"
+  },
+  "headings": [
+    "Subtasks"
+  ]
+}

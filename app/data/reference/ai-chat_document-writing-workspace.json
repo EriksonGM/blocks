@@ -1,0 +1,1676 @@
+{
+  "label": "Document 2",
+  "path": "/ai-chat/document-writing-workspace",
+  "appTitle": "",
+  "tree": {
+    "tag": "div",
+    "attrs": {
+      "id": "ai-workspace-content",
+      "class": "flex min-h-0 flex-1 flex-col"
+    },
+    "children": [
+      {
+        "tag": "div",
+        "attrs": {
+          "class": "flex min-h-0 flex-1 overflow-hidden"
+        },
+        "children": [
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "flex min-h-0 min-w-0 flex-1 flex-col"
+            },
+            "children": [
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "flex min-h-0 flex-1 flex-col"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "flex h-11 shrink-0 items-center justify-between border-b px-4"
+                    },
+                    "children": [
+                      {
+                        "tag": "h1",
+                        "attrs": {
+                          "class": "text-xs font-medium"
+                        },
+                        "children": [
+                          {
+                            "text": "Onboarding brief",
+                            "key": "root.0.0.0.0.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.0"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-6",
+                          "aria-label": "Open document"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-panel-right-open",
+                              "class": "lucide lucide-panel-right-open"
+                            },
+                            "key": "root.0.0.0.0.1.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.1"
+                      }
+                    ],
+                    "key": "root.0.0.0.0"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "data-slot": "message-scroller",
+                      "class": "group/message-scroller relative flex size-full flex-col overflow-hidden min-h-0 flex-1"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "role": "region",
+                          "aria-label": "Conversation messages",
+                          "data-slot": "message-scroller-viewport",
+                          "class": "size-full min-h-0 min-w-0 scroll-fade-b scrollbar-thin scrollbar-gutter-stable overflow-y-auto overscroll-contain contain-content data-autoscrolling:scrollbar-thumb-transparent data-autoscrolling:scrollbar-track-transparent"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "role": "log",
+                              "data-slot": "message-scroller-content",
+                              "class": "flex h-max flex-col min-h-full gap-0 mx-auto w-full max-w-xl px-4 py-7 sm:px-5"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "data-slot": "message-scroller-item",
+                                  "class": "shrink-0 [contain-intrinsic-size:auto_10rem] [content-visibility:auto] flex min-w-0 flex-col gap-9 pb-8"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "data-slot": "message",
+                                      "class": "group/message relative flex w-full min-w-0 gap-2 text-sm data-[align=end]:flex-row-reverse"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "data-slot": "message-content",
+                                          "class": "flex w-full min-w-0 flex-col gap-2.5 wrap-break-word group-data-[align=end]/message:*:data-slot:self-end"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "data-slot": "bubble",
+                                              "class": "group/bubble relative flex w-fit min-w-0 flex-col gap-1 group-data-[align=end]/message:self-end data-[align=end]:self-end data-[variant=ghost]:max-w-full *:data-[slot=bubble-content]:bg-muted [&>[data-slot=bubble-content]:is(button,a):hover]:bg-[color-mix(in_oklch,var(--muted),var(--foreground)_5%)] max-w-[88%] md:max-w-[72%]"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "data-slot": "bubble-content",
+                                                  "class": "w-fit max-w-full min-w-0 overflow-hidden rounded-3xl border-transparent px-3 py-2.5 text-sm wrap-break-word group-data-[align=end]/bubble:self-end [button]:text-left [button,a]:transition-colors [button,a]:outline-none [button,a]:focus-visible:border-ring [button,a]:focus-visible:ring-3 [button,a]:focus-visible:ring-ring/30 border-0 leading-6"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Turn our onboarding notes into a short recommendation for the product team.",
+                                                    "key": "root.0.0.0.1.0.0.0.0.0.0.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.1.0.0.0.0.0.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.1.0.0.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.1.0.0.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.1.0.0.0.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "data-slot": "message",
+                                      "class": "group/message relative flex w-full min-w-0 gap-2 text-sm data-[align=end]:flex-row-reverse"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "data-slot": "message-avatar",
+                                          "class": "flex w-fit min-w-8 shrink-0 items-center justify-center group-has-data-[slot=message-footer]/message:-translate-y-8 self-start overflow-visible rounded-none bg-transparent"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "svg",
+                                            "attrs": {
+                                              "viewBox": "0 0 64 64",
+                                              "class": "drop-shadow-sm size-7",
+                                              "width": "100%",
+                                              "height": "100%"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "defs",
+                                                "attrs": {},
+                                                "children": [
+                                                  {
+                                                    "tag": "linearGradient",
+                                                    "attrs": {
+                                                      "id": "_R_cljdbsnpfknmlb_",
+                                                      "x1": "10",
+                                                      "y1": "8",
+                                                      "x2": "54",
+                                                      "y2": "56"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "stop",
+                                                        "attrs": {
+                                                          "offset": "0",
+                                                          "stop-color": "#050505"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.0.1.0.0.0.1.0.0.0.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "stop",
+                                                        "attrs": {
+                                                          "offset": "0.52",
+                                                          "stop-color": "#334155"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.0.1.0.0.0.1.0.0.0.0.1"
+                                                      },
+                                                      {
+                                                        "tag": "stop",
+                                                        "attrs": {
+                                                          "offset": "1",
+                                                          "stop-color": "#050505"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.0.1.0.0.0.1.0.0.0.0.2"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.1.0.0.0.1.0.0.0.0"
+                                                  },
+                                                  {
+                                                    "tag": "mask",
+                                                    "attrs": {
+                                                      "id": "_R_cljdbsnpfknmlb_-mask",
+                                                      "x": "0",
+                                                      "y": "0",
+                                                      "width": "64",
+                                                      "height": "64"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "rect",
+                                                        "attrs": {
+                                                          "width": "64",
+                                                          "height": "64",
+                                                          "fill": "black"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.0.1.0.0.0.1.0.0.0.1.0"
+                                                      },
+                                                      {
+                                                        "tag": "path",
+                                                        "attrs": {
+                                                          "d": "M 55.37 32.00 C 55.37 34.91 55.34 38.72 55.28 40.73 C 55.21 42.75 55.12 43.12 54.99 44.10 C 54.86 45.07 54.70 45.83 54.51 46.57 C 54.31 47.32 54.09 47.95 53.83 48.55 C 53.56 49.15 53.27 49.68 52.93 50.18 C 52.60 50.67 52.23 51.12 51.82 51.52 C 51.40 51.93 50.96 52.29 50.45 52.62 C 49.95 52.95 49.41 53.24 48.80 53.50 C 48.19 53.76 47.55 53.98 46.79 54.17 C 46.04 54.37 45.27 54.52 44.28 54.65 C 43.29 54.78 42.91 54.87 40.86 54.93 C 38.82 55.00 34.95 55.03 32.00 55.03 C 29.05 55.03 25.18 55.00 23.14 54.93 C 21.09 54.87 20.71 54.78 19.72 54.65 C 18.73 54.52 17.96 54.37 17.21 54.17 C 16.45 53.98 15.81 53.76 15.20 53.50 C 14.59 53.24 14.05 52.95 13.55 52.62 C 13.04 52.29 12.60 51.93 12.18 51.52 C 11.77 51.12 11.40 50.67 11.07 50.18 C 10.73 49.68 10.44 49.15 10.17 48.55 C 9.91 47.95 9.69 47.32 9.49 46.57 C 9.30 45.83 9.14 45.07 9.01 44.10 C 8.88 43.12 8.79 42.75 8.72 40.73 C 8.66 38.72 8.63 34.91 8.63 32.00 C 8.63 29.09 8.66 25.28 8.72 23.27 C 8.79 21.25 8.88 20.88 9.01 19.90 C 9.14 18.93 9.30 18.17 9.49 17.43 C 9.69 16.68 9.91 16.05 10.17 15.45 C 10.44 14.85 10.73 14.32 11.07 13.82 C 11.40 13.33 11.77 12.88 12.18 12.48 C 12.60 12.07 13.04 11.71 13.55 11.38 C 14.05 11.05 14.59 10.76 15.20 10.50 C 15.81 10.24 16.45 10.02 17.21 9.83 C 17.96 9.63 18.73 9.48 19.72 9.35 C 20.71 9.22 21.09 9.13 23.14 9.07 C 25.18 9.00 29.05 8.97 32.00 8.97 C 34.95 8.97 38.82 9.00 40.86 9.07 C 42.91 9.13 43.29 9.22 44.28 9.35 C 45.27 9.48 46.04 9.63 46.79 9.83 C 47.55 10.02 48.19 10.24 48.80 10.50 C 49.41 10.76 49.95 11.05 50.45 11.38 C 50.96 11.71 51.40 12.07 51.82 12.48 C 52.23 12.88 52.60 13.33 52.93 13.82 C 53.27 14.32 53.56 14.85 53.83 15.45 C 54.09 16.05 54.31 16.68 54.51 17.43 C 54.70 18.17 54.86 18.93 54.99 19.90 C 55.12 20.88 55.21 21.25 55.28 23.27 C 55.34 25.28 55.37 29.09 55.37 32.00 Z",
+                                                          "transform": "translate(0 0) rotate(0.00 32 32)",
+                                                          "fill": "white"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.0.1.0.0.0.1.0.0.0.1.1"
+                                                      },
+                                                      {
+                                                        "tag": "rect",
+                                                        "attrs": {
+                                                          "x": "25.1",
+                                                          "y": "25.3",
+                                                          "width": "3.8",
+                                                          "height": "8",
+                                                          "rx": "1.9",
+                                                          "fill": "black",
+                                                          "transform": "translate(0.32 -0.16) rotate(-11 27 29.3) translate(0 29.3) scale(1 1.000) translate(0 -29.3)"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.0.1.0.0.0.1.0.0.0.1.2"
+                                                      },
+                                                      {
+                                                        "tag": "rect",
+                                                        "attrs": {
+                                                          "x": "35.1",
+                                                          "y": "25.3",
+                                                          "width": "3.8",
+                                                          "height": "8",
+                                                          "rx": "1.9",
+                                                          "fill": "black",
+                                                          "transform": "translate(0.32 -0.16) rotate(-11 37 29.3) translate(0 29.3) scale(1 1.000) translate(0 -29.3)"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.0.1.0.0.0.1.0.0.0.1.3"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.1.0.0.0.1.0.0.0.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.1.0.0.0.1.0.0.0"
+                                              },
+                                              {
+                                                "tag": "rect",
+                                                "attrs": {
+                                                  "width": "64",
+                                                  "height": "64",
+                                                  "fill": "url(#_R_cljdbsnpfknmlb_)"
+                                                },
+                                                "children": [],
+                                                "key": "root.0.0.0.1.0.0.0.1.0.0.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.1.0.0.0.1.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.1.0.0.0.1.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "data-slot": "message-content",
+                                          "class": "flex w-full min-w-0 flex-col wrap-break-word group-data-[align=end]/message:*:data-slot:self-end gap-3"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "flex items-center gap-2"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "text-foreground text-xs font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Shadcnblocks AI",
+                                                    "key": "root.0.0.0.1.0.0.0.1.1.0.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.1.0.0.0.1.1.0.0"
+                                              },
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "text-muted-foreground text-[11px]"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Writing",
+                                                    "key": "root.0.0.0.1.0.0.0.1.1.0.1.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.1.0.0.0.1.1.0.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.1.0.0.0.1.1.0"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {},
+                                            "children": [
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "flex min-w-0 flex-col gap-4"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "p",
+                                                    "attrs": {
+                                                      "class": "text-xs leading-5"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "The draft is ready beside this conversation. You can edit it directly or select a passage for a focused revision.",
+                                                        "key": "root.0.0.0.1.0.0.0.1.1.1.0.0.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.1.0.0.0.1.1.1.0.0"
+                                                  },
+                                                  {
+                                                    "tag": "button",
+                                                    "attrs": {
+                                                      "class": "hover:bg-muted/40 focus-visible:ring-ring flex min-w-0 items-center gap-3 rounded-xl border p-3 text-left transition-colors focus-visible:ring-2 focus-visible:outline-none"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {
+                                                          "class": "bg-muted flex size-9 items-center justify-center rounded-lg"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "icon",
+                                                            "attrs": {
+                                                              "name": "i-lucide-file-text",
+                                                              "class": "lucide lucide-file-text size-4"
+                                                            },
+                                                            "key": "root.0.0.0.1.0.0.0.1.1.1.0.1.0.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.1.0.0.0.1.1.1.0.1.0"
+                                                      },
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {
+                                                          "class": "flex-1"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "span",
+                                                            "attrs": {
+                                                              "class": "block text-sm font-medium"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "Onboarding brief",
+                                                                "key": "root.0.0.0.1.0.0.0.1.1.1.0.1.1.0.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.0.1.0.0.0.1.1.1.0.1.1.0"
+                                                          },
+                                                          {
+                                                            "tag": "span",
+                                                            "attrs": {
+                                                              "class": "text-muted-foreground block text-xs"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "Editable document · ",
+                                                                "key": "root.0.0.0.1.0.0.0.1.1.1.0.1.1.1.0"
+                                                              },
+                                                              {
+                                                                "text": "164",
+                                                                "key": "root.0.0.0.1.0.0.0.1.1.1.0.1.1.1.1"
+                                                              },
+                                                              {
+                                                                "text": " words",
+                                                                "key": "root.0.0.0.1.0.0.0.1.1.1.0.1.1.1.2"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.0.1.0.0.0.1.1.1.0.1.1.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.1.0.0.0.1.1.1.0.1.1"
+                                                      },
+                                                      {
+                                                        "tag": "icon",
+                                                        "attrs": {
+                                                          "name": "i-lucide-arrow-up-right",
+                                                          "class": "lucide lucide-arrow-up-right text-muted-foreground size-4"
+                                                        },
+                                                        "key": "root.0.0.0.1.0.0.0.1.1.1.0.1.2"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.1.0.0.0.1.1.1.0.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.1.0.0.0.1.1.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.1.0.0.0.1.1.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.1.0.0.0.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.1.0.0.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.0.1.0.0.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "data-slot": "message-scroller-item",
+                                  "class": "shrink-0 [contain-intrinsic-size:auto_10rem] [content-visibility:auto] flex min-w-0 flex-col gap-9"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "data-slot": "message",
+                                      "class": "group/message relative flex w-full min-w-0 gap-2 text-sm data-[align=end]:flex-row-reverse"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "data-slot": "message-content",
+                                          "class": "flex w-full min-w-0 flex-col gap-2.5 wrap-break-word group-data-[align=end]/message:*:data-slot:self-end"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "data-slot": "bubble",
+                                              "class": "group/bubble relative flex w-fit min-w-0 flex-col gap-1 group-data-[align=end]/message:self-end data-[align=end]:self-end data-[variant=ghost]:max-w-full *:data-[slot=bubble-content]:bg-muted [&>[data-slot=bubble-content]:is(button,a):hover]:bg-[color-mix(in_oklch,var(--muted),var(--foreground)_5%)] max-w-[88%] md:max-w-[72%]"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "data-slot": "bubble-content",
+                                                  "class": "w-fit max-w-full min-w-0 overflow-hidden rounded-3xl border-transparent px-3 py-2.5 text-sm wrap-break-word group-data-[align=end]/bubble:self-end [button]:text-left [button,a]:transition-colors [button,a]:outline-none [button,a]:focus-visible:border-ring [button,a]:focus-visible:ring-3 [button,a]:focus-visible:ring-ring/30 border-0 leading-6"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Make the recommendation shorter and more direct.",
+                                                    "key": "root.0.0.0.1.0.0.1.0.0.0.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.1.0.0.1.0.0.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.1.0.0.1.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.1.0.0.1.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.1.0.0.1.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "data-slot": "message",
+                                      "class": "group/message relative flex w-full min-w-0 gap-2 text-sm data-[align=end]:flex-row-reverse"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "data-slot": "message-avatar",
+                                          "class": "flex w-fit min-w-8 shrink-0 items-center justify-center group-has-data-[slot=message-footer]/message:-translate-y-8 self-start overflow-visible rounded-none bg-transparent"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "svg",
+                                            "attrs": {
+                                              "viewBox": "0 0 64 64",
+                                              "class": "drop-shadow-sm size-7",
+                                              "width": "100%",
+                                              "height": "100%"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "defs",
+                                                "attrs": {},
+                                                "children": [
+                                                  {
+                                                    "tag": "linearGradient",
+                                                    "attrs": {
+                                                      "id": "_R_d5jdbsnpfknmlb_",
+                                                      "x1": "10",
+                                                      "y1": "8",
+                                                      "x2": "54",
+                                                      "y2": "56"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "stop",
+                                                        "attrs": {
+                                                          "offset": "0",
+                                                          "stop-color": "#050505"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.0.1.0.0.1.1.0.0.0.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "stop",
+                                                        "attrs": {
+                                                          "offset": "0.52",
+                                                          "stop-color": "#334155"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.0.1.0.0.1.1.0.0.0.0.1"
+                                                      },
+                                                      {
+                                                        "tag": "stop",
+                                                        "attrs": {
+                                                          "offset": "1",
+                                                          "stop-color": "#050505"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.0.1.0.0.1.1.0.0.0.0.2"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.1.0.0.1.1.0.0.0.0"
+                                                  },
+                                                  {
+                                                    "tag": "mask",
+                                                    "attrs": {
+                                                      "id": "_R_d5jdbsnpfknmlb_-mask",
+                                                      "x": "0",
+                                                      "y": "0",
+                                                      "width": "64",
+                                                      "height": "64"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "rect",
+                                                        "attrs": {
+                                                          "width": "64",
+                                                          "height": "64",
+                                                          "fill": "black"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.0.1.0.0.1.1.0.0.0.1.0"
+                                                      },
+                                                      {
+                                                        "tag": "path",
+                                                        "attrs": {
+                                                          "d": "M 55.37 32.00 C 55.37 34.91 55.34 38.72 55.28 40.73 C 55.21 42.75 55.12 43.12 54.99 44.10 C 54.86 45.07 54.70 45.83 54.51 46.57 C 54.31 47.32 54.09 47.95 53.83 48.55 C 53.56 49.15 53.27 49.68 52.93 50.18 C 52.60 50.67 52.23 51.12 51.82 51.52 C 51.40 51.93 50.96 52.29 50.45 52.62 C 49.95 52.95 49.41 53.24 48.80 53.50 C 48.19 53.76 47.55 53.98 46.79 54.17 C 46.04 54.37 45.27 54.52 44.28 54.65 C 43.29 54.78 42.91 54.87 40.86 54.93 C 38.82 55.00 34.95 55.03 32.00 55.03 C 29.05 55.03 25.18 55.00 23.14 54.93 C 21.09 54.87 20.71 54.78 19.72 54.65 C 18.73 54.52 17.96 54.37 17.21 54.17 C 16.45 53.98 15.81 53.76 15.20 53.50 C 14.59 53.24 14.05 52.95 13.55 52.62 C 13.04 52.29 12.60 51.93 12.18 51.52 C 11.77 51.12 11.40 50.67 11.07 50.18 C 10.73 49.68 10.44 49.15 10.17 48.55 C 9.91 47.95 9.69 47.32 9.49 46.57 C 9.30 45.83 9.14 45.07 9.01 44.10 C 8.88 43.12 8.79 42.75 8.72 40.73 C 8.66 38.72 8.63 34.91 8.63 32.00 C 8.63 29.09 8.66 25.28 8.72 23.27 C 8.79 21.25 8.88 20.88 9.01 19.90 C 9.14 18.93 9.30 18.17 9.49 17.43 C 9.69 16.68 9.91 16.05 10.17 15.45 C 10.44 14.85 10.73 14.32 11.07 13.82 C 11.40 13.33 11.77 12.88 12.18 12.48 C 12.60 12.07 13.04 11.71 13.55 11.38 C 14.05 11.05 14.59 10.76 15.20 10.50 C 15.81 10.24 16.45 10.02 17.21 9.83 C 17.96 9.63 18.73 9.48 19.72 9.35 C 20.71 9.22 21.09 9.13 23.14 9.07 C 25.18 9.00 29.05 8.97 32.00 8.97 C 34.95 8.97 38.82 9.00 40.86 9.07 C 42.91 9.13 43.29 9.22 44.28 9.35 C 45.27 9.48 46.04 9.63 46.79 9.83 C 47.55 10.02 48.19 10.24 48.80 10.50 C 49.41 10.76 49.95 11.05 50.45 11.38 C 50.96 11.71 51.40 12.07 51.82 12.48 C 52.23 12.88 52.60 13.33 52.93 13.82 C 53.27 14.32 53.56 14.85 53.83 15.45 C 54.09 16.05 54.31 16.68 54.51 17.43 C 54.70 18.17 54.86 18.93 54.99 19.90 C 55.12 20.88 55.21 21.25 55.28 23.27 C 55.34 25.28 55.37 29.09 55.37 32.00 Z",
+                                                          "transform": "translate(0 0) rotate(0.00 32 32)",
+                                                          "fill": "white"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.0.1.0.0.1.1.0.0.0.1.1"
+                                                      },
+                                                      {
+                                                        "tag": "rect",
+                                                        "attrs": {
+                                                          "x": "25.1",
+                                                          "y": "25.3",
+                                                          "width": "3.8",
+                                                          "height": "8",
+                                                          "rx": "1.9",
+                                                          "fill": "black",
+                                                          "transform": "translate(0.32 -0.16) rotate(-11 27 29.3) translate(0 29.3) scale(1 1.000) translate(0 -29.3)"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.0.1.0.0.1.1.0.0.0.1.2"
+                                                      },
+                                                      {
+                                                        "tag": "rect",
+                                                        "attrs": {
+                                                          "x": "35.1",
+                                                          "y": "25.3",
+                                                          "width": "3.8",
+                                                          "height": "8",
+                                                          "rx": "1.9",
+                                                          "fill": "black",
+                                                          "transform": "translate(0.32 -0.16) rotate(-11 37 29.3) translate(0 29.3) scale(1 1.000) translate(0 -29.3)"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.0.1.0.0.1.1.0.0.0.1.3"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.1.0.0.1.1.0.0.0.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.1.0.0.1.1.0.0.0"
+                                              },
+                                              {
+                                                "tag": "rect",
+                                                "attrs": {
+                                                  "width": "64",
+                                                  "height": "64",
+                                                  "fill": "url(#_R_d5jdbsnpfknmlb_)"
+                                                },
+                                                "children": [],
+                                                "key": "root.0.0.0.1.0.0.1.1.0.0.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.1.0.0.1.1.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.1.0.0.1.1.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "data-slot": "message-content",
+                                          "class": "flex w-full min-w-0 flex-col wrap-break-word group-data-[align=end]/message:*:data-slot:self-end gap-3"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "flex items-center gap-2"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "text-foreground text-xs font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Shadcnblocks AI",
+                                                    "key": "root.0.0.0.1.0.0.1.1.1.0.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.1.0.0.1.1.1.0.0"
+                                              },
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "text-muted-foreground text-[11px]"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Writing",
+                                                    "key": "root.0.0.0.1.0.0.1.1.1.0.1.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.1.0.0.1.1.1.0.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.1.0.0.1.1.1.0"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {},
+                                            "children": [
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "flex min-w-0 flex-col gap-4"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "button",
+                                                    "attrs": {
+                                                      "class": "focus-visible:ring-ring flex flex-col gap-2 border-l-2 py-1 pl-3 text-left focus-visible:ring-2 focus-visible:outline-none"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {
+                                                          "class": "text-muted-foreground block text-[10px] font-medium tracking-wide uppercase"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "Selected passage",
+                                                            "key": "root.0.0.0.1.0.0.1.1.1.1.0.0.0.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.1.0.0.1.1.1.1.0.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {
+                                                          "class": "text-muted-foreground line-clamp-3 text-xs leading-5"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "We recommend introducing a guided checklist for new teams so that they can get a useful result before they are asked to configure the entire workspace. The checklist should focus on creating one project, inviting one teammate, and completing one shared task. Advanced settings can wait until the team has a reason to use them.",
+                                                            "key": "root.0.0.0.1.0.0.1.1.1.1.0.0.1.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.1.0.0.1.1.1.1.0.0.1"
+                                                      },
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {
+                                                          "class": "block text-xs underline underline-offset-4"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "Locate in document",
+                                                            "key": "root.0.0.0.1.0.0.1.1.1.1.0.0.2.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.1.0.0.1.1.1.1.0.0.2"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.1.0.0.1.1.1.1.0.0"
+                                                  },
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "overflow-hidden rounded-xl border"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "div",
+                                                        "attrs": {
+                                                          "class": "bg-muted/35 flex items-center justify-between border-b px-4 py-3"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "span",
+                                                            "attrs": {
+                                                              "class": "text-xs font-medium"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "Suggested revision",
+                                                                "key": "root.0.0.0.1.0.0.1.1.1.1.0.1.0.0.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.0.1.0.0.1.1.1.1.0.1.0.0"
+                                                          },
+                                                          {
+                                                            "tag": "div",
+                                                            "attrs": {
+                                                              "class": "inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "For review",
+                                                                "key": "root.0.0.0.1.0.0.1.1.1.1.0.1.0.1.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.0.1.0.0.1.1.1.1.0.1.0.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.1.0.0.1.1.1.1.0.1.0"
+                                                      },
+                                                      {
+                                                        "tag": "div",
+                                                        "attrs": {
+                                                          "class": "flex flex-col gap-4 p-4"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "div",
+                                                            "attrs": {
+                                                              "role": "group",
+                                                              "data-slot": "field",
+                                                              "data-orientation": "vertical",
+                                                              "class": "group/field flex w-full gap-3 data-[invalid=true]:text-destructive flex-col *:w-full [&>.sr-only]:w-auto"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "tag": "label",
+                                                                "attrs": {
+                                                                  "class": "text-sm font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 group/field-label peer/field-label flex w-fit gap-2 leading-snug group-data-[disabled=true]/field:opacity-50 has-data-checked:border-primary/30 has-data-checked:bg-primary/5 has-[>[data-slot=field]]:rounded-md has-[>[data-slot=field]]:border *:data-[slot=field]:p-3 dark:has-data-checked:border-primary/20 dark:has-data-checked:bg-primary/10 has-[>[data-slot=field]]:w-full has-[>[data-slot=field]]:flex-col sr-only",
+                                                                  "data-slot": "field-label",
+                                                                  "for": "document-replacement"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "Proposed replacement",
+                                                                    "key": "root.0.0.0.1.0.0.1.1.1.1.0.1.1.0.0.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.0.0.1.0.0.1.1.1.1.0.1.1.0.0"
+                                                              },
+                                                              {
+                                                                "tag": "textarea",
+                                                                "attrs": {
+                                                                  "class": "border-input placeholder:text-muted-foreground focus-visible:ring-ring flex w-full rounded-md border bg-transparent px-3 py-2 text-base shadow-xs focus-visible:ring-1 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 md:text-sm min-h-32",
+                                                                  "id": "document-replacement",
+                                                                  "value": "Help new teams get a useful result with three steps: create a project, invite a teammate, and complete a shared task. Introduce advanced settings when they become relevant."
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "Help new teams get a useful result with three steps: create a project, invite a teammate, and complete a shared task. Introduce advanced settings when they become relevant.",
+                                                                    "key": "root.0.0.0.1.0.0.1.1.1.1.0.1.1.0.1.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.0.0.1.0.0.1.1.1.1.0.1.1.0.1"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.0.1.0.0.1.1.1.1.0.1.1.0"
+                                                          },
+                                                          {
+                                                            "tag": "div",
+                                                            "attrs": {
+                                                              "class": "flex items-center justify-end gap-2"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "tag": "button",
+                                                                "attrs": {
+                                                                  "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "Dismiss",
+                                                                    "key": "root.0.0.0.1.0.0.1.1.1.1.0.1.1.1.0.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.0.0.1.0.0.1.1.1.1.0.1.1.1.0"
+                                                              },
+                                                              {
+                                                                "tag": "button",
+                                                                "attrs": {
+                                                                  "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 h-8 rounded-md px-3 text-xs"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "tag": "icon",
+                                                                    "attrs": {
+                                                                      "name": "i-lucide-check",
+                                                                      "class": "lucide lucide-check"
+                                                                    },
+                                                                    "key": "root.0.0.0.1.0.0.1.1.1.1.0.1.1.1.1.0"
+                                                                  },
+                                                                  {
+                                                                    "text": "Accept edit",
+                                                                    "key": "root.0.0.0.1.0.0.1.1.1.1.0.1.1.1.1.1"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.0.0.1.0.0.1.1.1.1.0.1.1.1.1"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.0.1.0.0.1.1.1.1.0.1.1.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.1.0.0.1.1.1.1.0.1.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.1.0.0.1.1.1.1.0.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.1.0.0.1.1.1.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.1.0.0.1.1.1.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.1.0.0.1.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.1.0.0.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.0.1.0.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.0.1.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.1.0"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 size-6 absolute inset-s-1/2 -translate-x-1/2 border-border bg-background text-foreground transition-[translate,scale,opacity] duration-200 hover:bg-muted hover:text-foreground data-[active=false]:pointer-events-none data-[active=false]:scale-95 data-[active=false]:opacity-0 data-[active=false]:duration-400 data-[active=false]:ease-[cubic-bezier(0.7,0,0.84,0)] data-[active=true]:translate-y-0 data-[active=true]:scale-100 data-[active=true]:opacity-100 data-[active=true]:ease-[cubic-bezier(0.23,1,0.32,1)] data-[direction=end]:bottom-4 data-[direction=end]:data-[active=false]:translate-y-full data-[direction=start]:top-4 data-[direction=start]:data-[active=false]:-translate-y-full rtl:translate-x-1/2 data-[direction=start]:[&_svg]:rotate-180 bottom-3 shadow-md",
+                          "type": "button",
+                          "data-slot": "message-scroller-button",
+                          "aria-label": "Scroll to latest message"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-arrow-down",
+                              "class": "lucide lucide-arrow-down"
+                            },
+                            "key": "root.0.0.0.1.1.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.1.1"
+                      }
+                    ],
+                    "key": "root.0.0.0.1"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "bg-background shrink-0 px-4 pt-3 pb-4 sm:px-5"
+                    },
+                    "children": [
+                      {
+                        "tag": "form",
+                        "attrs": {
+                          "class": "relative mx-auto w-full max-w-xl",
+                          "aria-label": "Continue writing conversation"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "data-slot": "input-group",
+                              "role": "group",
+                              "class": "group/input-group relative flex w-full min-w-0 border outline-none in-data-[slot=combobox-content]:focus-within:border-inherit in-data-[slot=combobox-content]:focus-within:ring-0 has-[[data-slot=input-group-control]:focus-visible]:border-ring has-[[data-slot][aria-invalid=true]]:border-destructive has-[[data-slot][aria-invalid=true]]:ring-3 has-[[data-slot][aria-invalid=true]]:ring-destructive/20 has-[>[data-align=block-end]]:h-auto has-[>[data-align=block-end]]:flex-col has-[>[data-align=block-start]]:h-auto has-[>[data-align=block-start]]:flex-col has-[>textarea]:h-auto dark:bg-input/30 dark:has-[[data-slot][aria-invalid=true]]:ring-destructive/40 has-[>[data-align=block-end]]:[&>input]:pt-3 has-[>[data-align=block-start]]:[&>input]:pb-3 has-[>[data-align=inline-end]]:[&>input]:pr-1.5 has-[>[data-align=inline-start]]:[&>input]:pl-1.5 h-auto flex-col items-stretch transition-[border-color,box-shadow] duration-200 bg-background border-input has-[[data-slot=input-group-control]:focus-visible]:ring-ring/30 gap-0 rounded-2xl shadow-sm has-[[data-slot=input-group-control]:focus-visible]:ring-3"
+                            },
+                            "children": [
+                              {
+                                "tag": "textarea",
+                                "attrs": {
+                                  "class": "border-input focus-visible:ring-ring flex w-full focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 md:text-sm flex-1 resize-none rounded-none border-0 bg-transparent py-2 shadow-none ring-0 focus-visible:ring-0 aria-invalid:ring-0 dark:bg-transparent placeholder:text-muted-foreground/55 [field-sizing:content] max-h-60 overflow-y-auto px-4 pt-4 pb-2.5 text-sm leading-6 min-h-16",
+                                  "data-slot": "input-group-control",
+                                  "aria-label": "Revision instruction",
+                                  "name": "message",
+                                  "placeholder": "Select a passage to suggest an edit…",
+                                  "value": ""
+                                },
+                                "children": [],
+                                "key": "root.0.0.0.2.0.0.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "role": "group",
+                                  "data-slot": "input-group-addon",
+                                  "class": "h-auto py-1.5 text-sm font-medium text-muted-foreground select-none group-data-[disabled=true]/input-group:opacity-50 [&>kbd]:rounded-[calc(var(--radius)-5px)] [&>svg:not([class*='size-'])]:size-4 order-last justify-start group-has-[>input]/input-group:pb-2 [.border-t]:pt-2 grid w-full cursor-default grid-cols-[minmax(0,1fr)_auto] items-center gap-2 px-3 pt-0 pb-3"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-w-0 items-center gap-1"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "button",
+                                        "attrs": {
+                                          "type": "button",
+                                          "role": "combobox",
+                                          "data-state": "closed",
+                                          "class": "border-input ring-offset-background placeholder:text-muted-foreground focus:ring-ring flex items-center justify-between rounded-md bg-transparent px-3 py-2 text-sm whitespace-nowrap focus:ring-1 focus:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 h-7 w-30 border-0 shadow-none",
+                                          "aria-label": "Revision style"
+                                        },
+                                        "options": [
+                                          "More concise",
+                                          "More direct"
+                                        ],
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "style": "pointer-events:none"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "More concise",
+                                                "key": "root.0.0.0.2.0.0.1.0.0.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.2.0.0.1.0.0.0"
+                                          },
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-chevron-down",
+                                              "class": "lucide lucide-chevron-down h-4 w-4 opacity-50"
+                                            },
+                                            "key": "root.0.0.0.2.0.0.1.0.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.2.0.0.1.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.2.0.0.1.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "class": "justify-center whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 flex items-center gap-2 text-sm shadow-none size-8 p-0 has-[>svg]:p-0 rounded-full",
+                                      "type": "submit",
+                                      "aria-label": "Suggest revision",
+                                      "disabled": "",
+                                      "data-state": "closed"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-arrow-up",
+                                          "class": "lucide lucide-arrow-up"
+                                        },
+                                        "key": "root.0.0.0.2.0.0.1.1.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "sr-only"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Send message",
+                                            "key": "root.0.0.0.2.0.0.1.1.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.2.0.0.1.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.2.0.0.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.0.2.0.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.0.2.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.2.0"
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {
+                          "class": "text-muted-foreground mt-2 text-center text-[10px]"
+                        },
+                        "children": [
+                          {
+                            "text": "Demo suggestions · review before applying",
+                            "key": "root.0.0.0.2.1.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.2.1"
+                      }
+                    ],
+                    "key": "root.0.0.0.2"
+                  }
+                ],
+                "key": "root.0.0.0"
+              }
+            ],
+            "key": "root.0.0"
+          },
+          {
+            "tag": "div",
+            "attrs": {
+              "role": "separator",
+              "aria-label": "Resize document editor",
+              "class": "group bg-border relative z-10 hidden w-px shrink-0 cursor-col-resize outline-none min-[980px]:block"
+            },
+            "children": [
+              {
+                "tag": "span",
+                "attrs": {
+                  "class": "before:bg-border group-hover:before:bg-primary/55 group-focus-visible:before:bg-primary/65 absolute inset-y-0 -left-2 w-4 before:absolute before:inset-y-0 before:left-1/2 before:w-px before:-translate-x-1/2 before:transition-colors"
+                },
+                "children": [],
+                "key": "root.0.1.0"
+              }
+            ],
+            "key": "root.0.1"
+          },
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "hidden min-h-0 min-w-[360px] min-[980px]:flex shrink-0",
+              "style": "width:62%"
+            },
+            "children": [
+              {
+                "tag": "section",
+                "attrs": {
+                  "aria-label": "Writing document",
+                  "class": "bg-muted/30 flex min-h-0 min-w-0 flex-1 flex-col"
+                },
+                "children": [
+                  {
+                    "tag": "header",
+                    "attrs": {
+                      "class": "bg-background flex h-11 shrink-0 items-center gap-2 border-b px-3"
+                    },
+                    "children": [
+                      {
+                        "tag": "icon",
+                        "attrs": {
+                          "name": "i-lucide-file-text",
+                          "class": "lucide lucide-file-text text-muted-foreground size-3.5"
+                        },
+                        "key": "root.0.2.0.0.0"
+                      },
+                      {
+                        "tag": "span",
+                        "attrs": {
+                          "class": "min-w-0 flex-1 truncate text-xs font-medium"
+                        },
+                        "children": [
+                          {
+                            "text": "onboarding-brief",
+                            "key": "root.0.2.0.0.1.0"
+                          }
+                        ],
+                        "key": "root.0.2.0.0.1"
+                      },
+                      {
+                        "tag": "span",
+                        "attrs": {
+                          "class": "text-muted-foreground mr-2 hidden text-[11px] sm:inline"
+                        },
+                        "children": [
+                          {
+                            "text": "Draft",
+                            "key": "root.0.2.0.0.2.0"
+                          }
+                        ],
+                        "key": "root.0.2.0.0.2"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-6",
+                          "aria-label": "Expand document"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-maximize-2",
+                              "class": "lucide lucide-maximize2 lucide-maximize-2"
+                            },
+                            "key": "root.0.2.0.0.3.0"
+                          }
+                        ],
+                        "key": "root.0.2.0.0.3"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-6",
+                          "aria-label": "Close document"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-x",
+                              "class": "lucide lucide-x"
+                            },
+                            "key": "root.0.2.0.0.4.0"
+                          }
+                        ],
+                        "key": "root.0.2.0.0.4"
+                      }
+                    ],
+                    "key": "root.0.2.0.0"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "bg-background flex shrink-0 flex-wrap items-center gap-1 border-b px-4 py-3"
+                    },
+                    "children": [
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "type": "button",
+                          "role": "combobox",
+                          "data-state": "closed",
+                          "class": "border-input ring-offset-background placeholder:text-muted-foreground focus:ring-ring flex items-center justify-between rounded-md bg-transparent px-3 py-2 text-sm whitespace-nowrap focus:ring-1 focus:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 h-8 w-30 border-0 shadow-none",
+                          "aria-label": "Text style"
+                        },
+                        "options": [
+                          "Text",
+                          "Heading"
+                        ],
+                        "children": [
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "style": "pointer-events:none"
+                            },
+                            "children": [
+                              {
+                                "text": "Text",
+                                "key": "root.0.2.0.1.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.2.0.1.0.0"
+                          },
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-chevron-down",
+                              "class": "lucide lucide-chevron-down h-4 w-4 opacity-50"
+                            },
+                            "key": "root.0.2.0.1.0.1"
+                          }
+                        ],
+                        "key": "root.0.2.0.1.0"
+                      },
+                      {
+                        "tag": "span",
+                        "attrs": {
+                          "class": "bg-border mx-1 h-4 w-px"
+                        },
+                        "children": [],
+                        "key": "root.0.2.0.1.1"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-6",
+                          "aria-label": "Bold"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-bold",
+                              "class": "lucide lucide-bold"
+                            },
+                            "key": "root.0.2.0.1.2.0"
+                          }
+                        ],
+                        "key": "root.0.2.0.1.2"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-6",
+                          "aria-label": "Italic"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-italic",
+                              "class": "lucide lucide-italic"
+                            },
+                            "key": "root.0.2.0.1.3.0"
+                          }
+                        ],
+                        "key": "root.0.2.0.1.3"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-6",
+                          "aria-label": "Bullet list"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-list",
+                              "class": "lucide lucide-list"
+                            },
+                            "key": "root.0.2.0.1.4.0"
+                          }
+                        ],
+                        "key": "root.0.2.0.1.4"
+                      },
+                      {
+                        "tag": "span",
+                        "attrs": {
+                          "class": "bg-border mx-1 h-4 w-px"
+                        },
+                        "children": [],
+                        "key": "root.0.2.0.1.5"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-6",
+                          "aria-label": "Undo document edit",
+                          "disabled": ""
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-undo-2",
+                              "class": "lucide lucide-undo2 lucide-undo-2"
+                            },
+                            "key": "root.0.2.0.1.6.0"
+                          }
+                        ],
+                        "key": "root.0.2.0.1.6"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-6",
+                          "aria-label": "Redo document edit",
+                          "disabled": ""
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-redo-2",
+                              "class": "lucide lucide-redo2 lucide-redo-2"
+                            },
+                            "key": "root.0.2.0.1.7.0"
+                          }
+                        ],
+                        "key": "root.0.2.0.1.7"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs ml-auto"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-arrow-down-to-line",
+                              "class": "lucide lucide-arrow-down-to-line"
+                            },
+                            "key": "root.0.2.0.1.8.0"
+                          },
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "hidden sm:inline"
+                            },
+                            "children": [
+                              {
+                                "text": "Export",
+                                "key": "root.0.2.0.1.8.1.0"
+                              }
+                            ],
+                            "key": "root.0.2.0.1.8.1"
+                          }
+                        ],
+                        "key": "root.0.2.0.1.8"
+                      }
+                    ],
+                    "key": "root.0.2.0.1"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "data-slot": "scroll-area",
+                      "class": "relative overflow-hidden min-h-0 flex-1",
+                      "style": "position:relative;--radix-scroll-area-corner-width:0px;--radix-scroll-area-corner-height:0px"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "data-slot": "scroll-area-viewport",
+                          "class": "h-full w-full rounded-[inherit]",
+                          "style": "overflow: hidden scroll;"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "style": "min-width:100%;display:table"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "mx-auto max-w-[780px] px-4 py-7 sm:px-7"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "article",
+                                    "attrs": {
+                                      "class": "bg-background rounded-sm border px-6 py-9 shadow-xs sm:px-10"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "text-muted-foreground mb-5 text-[10px] font-medium tracking-[0.16em] uppercase"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Product strategy · September 2026",
+                                            "key": "root.0.2.0.2.0.0.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.2.0.2.0.0.0.0.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "contenteditable": "true",
+                                              "role": "textbox",
+                                              "aria-label": "Document editor",
+                                              "class": "tiptap ProseMirror tiptap-editor prose prose-sm prose-neutral dark:prose-invert max-w-none min-h-[620px] outline-none prose-headings:font-semibold prose-h1:text-[30px] prose-h1:leading-tight prose-h1:tracking-tight prose-h1:mb-5 prose-h2:text-base prose-h2:mt-8 prose-h2:mb-3 prose-p:leading-7 prose-p:my-3 prose-li:my-1 selection:bg-chart-2/20"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "h1",
+                                                "attrs": {},
+                                                "children": [
+                                                  {
+                                                    "text": "Make the first week count",
+                                                    "key": "root.0.2.0.2.0.0.0.0.1.0.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.2.0.2.0.0.0.0.1.0.0"
+                                              },
+                                              {
+                                                "tag": "p",
+                                                "attrs": {},
+                                                "children": [
+                                                  {
+                                                    "text": "A focused onboarding experience for teams that want to start working, not spend their first day configuring software.",
+                                                    "key": "root.0.2.0.2.0.0.0.0.1.0.1.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.2.0.2.0.0.0.0.1.0.1"
+                                              },
+                                              {
+                                                "tag": "h2",
+                                                "attrs": {},
+                                                "children": [
+                                                  {
+                                                    "text": "Recommendation",
+                                                    "key": "root.0.2.0.2.0.0.0.0.1.0.2.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.2.0.2.0.0.0.0.1.0.2"
+                                              },
+                                              {
+                                                "tag": "p",
+                                                "attrs": {},
+                                                "children": [
+                                                  {
+                                                    "text": "We recommend introducing a guided checklist for new teams so that they can get a useful result before they are asked to configure the entire workspace. The checklist should focus on creating one project, inviting one teammate, and completing one shared task. Advanced settings can wait until the team has a reason to use them.",
+                                                    "key": "root.0.2.0.2.0.0.0.0.1.0.3.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.2.0.2.0.0.0.0.1.0.3"
+                                              },
+                                              {
+                                                "tag": "h2",
+                                                "attrs": {},
+                                                "children": [
+                                                  {
+                                                    "text": "What changes",
+                                                    "key": "root.0.2.0.2.0.0.0.0.1.0.4.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.2.0.2.0.0.0.0.1.0.4"
+                                              },
+                                              {
+                                                "tag": "ul",
+                                                "attrs": {},
+                                                "children": [
+                                                  {
+                                                    "tag": "li",
+                                                    "attrs": {},
+                                                    "children": [
+                                                      {
+                                                        "tag": "p",
+                                                        "attrs": {},
+                                                        "children": [
+                                                          {
+                                                            "text": "Replace the setup wizard with a short, persistent checklist.",
+                                                            "key": "root.0.2.0.2.0.0.0.0.1.0.5.0.0.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.2.0.2.0.0.0.0.1.0.5.0.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.2.0.2.0.0.0.0.1.0.5.0"
+                                                  },
+                                                  {
+                                                    "tag": "li",
+                                                    "attrs": {},
+                                                    "children": [
+                                                      {
+                                                        "tag": "p",
+                                                        "attrs": {},
+                                                        "children": [
+                                                          {
+                                                            "text": "Let teams start with a realistic sample project.",
+                                                            "key": "root.0.2.0.2.0.0.0.0.1.0.5.1.0.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.2.0.2.0.0.0.0.1.0.5.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.2.0.2.0.0.0.0.1.0.5.1"
+                                                  },
+                                                  {
+                                                    "tag": "li",
+                                                    "attrs": {},
+                                                    "children": [
+                                                      {
+                                                        "tag": "p",
+                                                        "attrs": {},
+                                                        "children": [
+                                                          {
+                                                            "text": "Keep optional integrations out of the first-run path.",
+                                                            "key": "root.0.2.0.2.0.0.0.0.1.0.5.2.0.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.2.0.2.0.0.0.0.1.0.5.2.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.2.0.2.0.0.0.0.1.0.5.2"
+                                                  }
+                                                ],
+                                                "key": "root.0.2.0.2.0.0.0.0.1.0.5"
+                                              },
+                                              {
+                                                "tag": "h2",
+                                                "attrs": {},
+                                                "children": [
+                                                  {
+                                                    "text": "How we’ll know",
+                                                    "key": "root.0.2.0.2.0.0.0.0.1.0.6.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.2.0.2.0.0.0.0.1.0.6"
+                                              },
+                                              {
+                                                "tag": "p",
+                                                "attrs": {},
+                                                "children": [
+                                                  {
+                                                    "text": "Measure the share of new teams that complete a shared task in their first week. Pair that with time to first result and the number of setup-related support requests.",
+                                                    "key": "root.0.2.0.2.0.0.0.0.1.0.7.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.2.0.2.0.0.0.0.1.0.7"
+                                              },
+                                              {
+                                                "tag": "h2",
+                                                "attrs": {},
+                                                "children": [
+                                                  {
+                                                    "text": "Rollout",
+                                                    "key": "root.0.2.0.2.0.0.0.0.1.0.8.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.2.0.2.0.0.0.0.1.0.8"
+                                              },
+                                              {
+                                                "tag": "p",
+                                                "attrs": {},
+                                                "children": [
+                                                  {
+                                                    "text": "Start with a small group of new workspaces. Review their first-week experience before expanding the rollout. Keep the current setup flow available during the pilot.",
+                                                    "key": "root.0.2.0.2.0.0.0.0.1.0.9.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.2.0.2.0.0.0.0.1.0.9"
+                                              }
+                                            ],
+                                            "key": "root.0.2.0.2.0.0.0.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.2.0.2.0.0.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.2.0.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.2.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.2.0.2.0.0"
+                          }
+                        ],
+                        "key": "root.0.2.0.2.0"
+                      }
+                    ],
+                    "key": "root.0.2.0.2"
+                  },
+                  {
+                    "tag": "footer",
+                    "attrs": {
+                      "class": "text-muted-foreground bg-background flex shrink-0 items-center justify-between gap-3 border-t px-4 py-2 text-[11px]"
+                    },
+                    "children": [
+                      {
+                        "tag": "span",
+                        "attrs": {},
+                        "children": [
+                          {
+                            "text": "164",
+                            "key": "root.0.2.0.3.0.0"
+                          },
+                          {
+                            "text": " words",
+                            "key": "root.0.2.0.3.0.1"
+                          }
+                        ],
+                        "key": "root.0.2.0.3.0"
+                      },
+                      {
+                        "tag": "span",
+                        "attrs": {},
+                        "children": [
+                          {
+                            "text": "Select text to revise a passage",
+                            "key": "root.0.2.0.3.1.0"
+                          }
+                        ],
+                        "key": "root.0.2.0.3.1"
+                      }
+                    ],
+                    "key": "root.0.2.0.3"
+                  }
+                ],
+                "key": "root.0.2.0"
+              }
+            ],
+            "key": "root.0.2"
+          }
+        ],
+        "key": "root.0"
+      }
+    ],
+    "key": "root"
+  },
+  "headings": [
+    "Onboarding brief",
+    "Make the first week count",
+    "Recommendation",
+    "What changes",
+    "How we’ll know",
+    "Rollout"
+  ]
+}

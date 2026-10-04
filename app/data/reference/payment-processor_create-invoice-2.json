@@ -1,0 +1,2510 @@
+{
+  "label": "Create Invoice 2",
+  "path": "/payment-processor/create-invoice-2",
+  "appTitle": "Payment Processor",
+  "tree": {
+    "tag": "div",
+    "attrs": {
+      "class": "flex min-h-0 flex-1 flex-col overflow-hidden"
+    },
+    "children": [
+      {
+        "tag": "div",
+        "attrs": {
+          "class": "flex min-h-0 flex-1 flex-col overflow-hidden"
+        },
+        "children": [
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "bg-background relative flex min-h-0 flex-1 flex-col overflow-hidden"
+            },
+            "children": [
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "grid min-h-0 flex-1 lg:grid-cols-2"
+                },
+                "children": [
+                  {
+                    "tag": "section",
+                    "attrs": {
+                      "class": "bg-background min-h-0 overflow-y-auto pb-28 sm:pb-24"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "border-b"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex items-center justify-between gap-3 px-5 lg:px-8"
+                            },
+                            "children": [
+                              {
+                                "tag": "nav",
+                                "attrs": {
+                                  "aria-label": "Invoice editor sections",
+                                  "class": "flex min-w-0 items-center gap-6 overflow-x-auto"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "inline-flex h-12 shrink-0 items-center border-b-2 text-sm font-semibold transition-colors border-foreground text-foreground"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Invoice Details",
+                                        "key": "root.0.0.0.0.0.0.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.0.0.0.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "text-muted-foreground inline-flex h-12 shrink-0 items-center border-b-2 border-transparent text-sm font-semibold transition-colors hover:text-foreground"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Setup",
+                                        "key": "root.0.0.0.0.0.0.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.0.0.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.0.0.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex flex-col gap-7 px-5 py-6 lg:px-8"
+                        },
+                        "children": [
+                          {
+                            "tag": "section",
+                            "attrs": {
+                              "class": "flex flex-col gap-4"
+                            },
+                            "children": [
+                              {
+                                "tag": "h2",
+                                "attrs": {
+                                  "class": "text-xl font-semibold tracking-tight"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Invoice details",
+                                    "key": "root.0.0.0.0.1.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.1.0.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "data-slot": "field-group",
+                                  "class": "group/field-group @container/field-group flex w-full flex-col data-[slot=checkbox-group]:gap-3 *:data-[slot=field-group]:gap-4 gap-4"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "role": "group",
+                                      "data-slot": "field",
+                                      "data-orientation": "vertical",
+                                      "class": "group/field flex w-full gap-3 data-[invalid=true]:text-destructive flex-col *:w-full [&>.sr-only]:w-auto"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "label",
+                                        "attrs": {
+                                          "class": "text-sm font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 group/field-label peer/field-label flex w-fit gap-2 leading-snug group-data-[disabled=true]/field:opacity-50 has-data-checked:border-primary/30 has-data-checked:bg-primary/5 has-[>[data-slot=field]]:rounded-md has-[>[data-slot=field]]:border *:data-[slot=field]:p-3 dark:has-data-checked:border-primary/20 dark:has-data-checked:bg-primary/10 has-[>[data-slot=field]]:w-full has-[>[data-slot=field]]:flex-col",
+                                          "data-slot": "field-label",
+                                          "for": "invoice-client"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Bill to (Client)",
+                                            "key": "root.0.0.0.0.1.0.1.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.0.1.0.1.0.0"
+                                      },
+                                      {
+                                        "tag": "button",
+                                        "attrs": {
+                                          "type": "button",
+                                          "role": "combobox",
+                                          "data-state": "closed",
+                                          "class": "border-input ring-offset-background placeholder:text-muted-foreground focus:ring-ring flex w-full items-center justify-between rounded-md border bg-transparent px-3 py-2 text-sm whitespace-nowrap shadow-xs focus:ring-1 focus:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 h-11",
+                                          "id": "invoice-client"
+                                        },
+                                        "options": [
+                                          "Olivia Bennett · accounts@northstar.studio",
+                                          "Maya Patel · billing@northstar.studio",
+                                          "Rohan Mehta · ops@northstar.studio"
+                                        ],
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "style": "pointer-events:none"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Olivia Bennett",
+                                                "key": "root.0.0.0.0.1.0.1.0.1.0.0"
+                                              },
+                                              {
+                                                "text": " · ",
+                                                "key": "root.0.0.0.0.1.0.1.0.1.0.1"
+                                              },
+                                              {
+                                                "text": "accounts@northstar.studio",
+                                                "key": "root.0.0.0.0.1.0.1.0.1.0.2"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.1.0.1.0.1.0"
+                                          },
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-chevron-down",
+                                              "class": "lucide lucide-chevron-down h-4 w-4 opacity-50"
+                                            },
+                                            "key": "root.0.0.0.0.1.0.1.0.1.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.0.1.0.1.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.1.0.1.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "data-slot": "field-group",
+                                      "class": "group/field-group @container/field-group flex w-full flex-col data-[slot=checkbox-group]:gap-3 *:data-[slot=field-group]:gap-4 gap-4 md:grid md:grid-cols-3"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "role": "group",
+                                          "data-slot": "field",
+                                          "data-orientation": "vertical",
+                                          "class": "group/field flex w-full gap-3 data-[invalid=true]:text-destructive flex-col *:w-full [&>.sr-only]:w-auto"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "label",
+                                            "attrs": {
+                                              "class": "text-sm font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 group/field-label peer/field-label flex w-fit gap-2 leading-snug group-data-[disabled=true]/field:opacity-50 has-data-checked:border-primary/30 has-data-checked:bg-primary/5 has-[>[data-slot=field]]:rounded-md has-[>[data-slot=field]]:border *:data-[slot=field]:p-3 dark:has-data-checked:border-primary/20 dark:has-data-checked:bg-primary/10 has-[>[data-slot=field]]:w-full has-[>[data-slot=field]]:flex-col",
+                                              "data-slot": "field-label",
+                                              "for": "invoice-number"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Invoice number",
+                                                "key": "root.0.0.0.0.1.0.1.1.0.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.1.0.1.1.0.0"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "data-slot": "input-group",
+                                              "role": "group",
+                                              "class": "group/input-group relative flex h-9 w-full min-w-0 items-center rounded-md border border-input shadow-xs transition-[color,box-shadow] outline-none in-data-[slot=combobox-content]:focus-within:border-inherit in-data-[slot=combobox-content]:focus-within:ring-0 has-[[data-slot=input-group-control]:focus-visible]:border-ring has-[[data-slot=input-group-control]:focus-visible]:ring-3 has-[[data-slot=input-group-control]:focus-visible]:ring-ring/50 has-[[data-slot][aria-invalid=true]]:border-destructive has-[[data-slot][aria-invalid=true]]:ring-3 has-[[data-slot][aria-invalid=true]]:ring-destructive/20 has-[>[data-align=block-end]]:h-auto has-[>[data-align=block-end]]:flex-col has-[>[data-align=block-start]]:h-auto has-[>[data-align=block-start]]:flex-col has-[>textarea]:h-auto dark:bg-input/30 dark:has-[[data-slot][aria-invalid=true]]:ring-destructive/40 has-[>[data-align=block-end]]:[&>input]:pt-3 has-[>[data-align=block-start]]:[&>input]:pb-3 has-[>[data-align=inline-end]]:[&>input]:pr-1.5 has-[>[data-align=inline-start]]:[&>input]:pl-1.5"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "role": "group",
+                                                  "data-slot": "input-group-addon",
+                                                  "class": "flex h-auto cursor-text items-center justify-center gap-2 py-1.5 text-sm font-medium text-muted-foreground select-none group-data-[disabled=true]/input-group:opacity-50 [&>kbd]:rounded-[calc(var(--radius)-5px)] [&>svg:not([class*='size-'])]:size-4 order-first pl-2 has-[>button]:-ml-1 has-[>kbd]:ml-[-0.15rem]"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "span",
+                                                    "attrs": {
+                                                      "class": "flex items-center gap-2 text-sm text-muted-foreground [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "SB-",
+                                                        "key": "root.0.0.0.0.1.0.1.1.0.1.0.0.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.1.0.1.1.0.1.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.1.0.1.1.0.1.0"
+                                              },
+                                              {
+                                                "tag": "input",
+                                                "attrs": {
+                                                  "class": "border-input file:text-foreground placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full px-3 py-1 text-base transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 md:text-sm flex-1 rounded-none border-0 bg-transparent shadow-none ring-0 focus-visible:ring-0 aria-invalid:ring-0 dark:bg-transparent",
+                                                  "data-slot": "input-group-control",
+                                                  "id": "invoice-number",
+                                                  "value": "2026-084"
+                                                },
+                                                "children": [],
+                                                "key": "root.0.0.0.0.1.0.1.1.0.1.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.1.0.1.1.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.0.1.0.1.1.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "role": "group",
+                                          "data-slot": "field",
+                                          "data-orientation": "vertical",
+                                          "class": "group/field flex w-full gap-3 data-[invalid=true]:text-destructive flex-col *:w-full [&>.sr-only]:w-auto"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "label",
+                                            "attrs": {
+                                              "class": "text-sm font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 group/field-label peer/field-label flex w-fit gap-2 leading-snug group-data-[disabled=true]/field:opacity-50 has-data-checked:border-primary/30 has-data-checked:bg-primary/5 has-[>[data-slot=field]]:rounded-md has-[>[data-slot=field]]:border *:data-[slot=field]:p-3 dark:has-data-checked:border-primary/20 dark:has-data-checked:bg-primary/10 has-[>[data-slot=field]]:w-full has-[>[data-slot=field]]:flex-col",
+                                              "data-slot": "field-label",
+                                              "for": "invoice-issued-date"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Issued date",
+                                                "key": "root.0.0.0.0.1.0.1.1.1.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.1.0.1.1.1.0"
+                                          },
+                                          {
+                                            "tag": "button",
+                                            "attrs": {
+                                              "class": "inline-flex items-center whitespace-nowrap rounded-md text-sm transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground px-4 py-2 h-10 w-full justify-start gap-2 text-left font-normal",
+                                              "id": "invoice-issued-date",
+                                              "type": "button",
+                                              "aria-haspopup": "dialog",
+                                              "data-state": "closed"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "icon",
+                                                "attrs": {
+                                                  "name": "i-lucide-calendar",
+                                                  "class": "lucide lucide-calendar size-4"
+                                                },
+                                                "key": "root.0.0.0.0.1.0.1.1.1.1.0"
+                                              },
+                                              {
+                                                "text": "May 27, 2026",
+                                                "key": "root.0.0.0.0.1.0.1.1.1.1.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.1.0.1.1.1.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.0.1.0.1.1.1"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "role": "group",
+                                          "data-slot": "field",
+                                          "data-orientation": "vertical",
+                                          "class": "group/field flex w-full gap-3 data-[invalid=true]:text-destructive flex-col *:w-full [&>.sr-only]:w-auto"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "label",
+                                            "attrs": {
+                                              "class": "text-sm font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 group/field-label peer/field-label flex w-fit gap-2 leading-snug group-data-[disabled=true]/field:opacity-50 has-data-checked:border-primary/30 has-data-checked:bg-primary/5 has-[>[data-slot=field]]:rounded-md has-[>[data-slot=field]]:border *:data-[slot=field]:p-3 dark:has-data-checked:border-primary/20 dark:has-data-checked:bg-primary/10 has-[>[data-slot=field]]:w-full has-[>[data-slot=field]]:flex-col",
+                                              "data-slot": "field-label",
+                                              "for": "invoice-due-date"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Due date",
+                                                "key": "root.0.0.0.0.1.0.1.1.2.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.1.0.1.1.2.0"
+                                          },
+                                          {
+                                            "tag": "button",
+                                            "attrs": {
+                                              "class": "inline-flex items-center whitespace-nowrap rounded-md text-sm transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground px-4 py-2 h-10 w-full justify-start gap-2 text-left font-normal",
+                                              "id": "invoice-due-date",
+                                              "type": "button",
+                                              "aria-haspopup": "dialog",
+                                              "data-state": "closed"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "icon",
+                                                "attrs": {
+                                                  "name": "i-lucide-calendar",
+                                                  "class": "lucide lucide-calendar size-4"
+                                                },
+                                                "key": "root.0.0.0.0.1.0.1.1.2.1.0"
+                                              },
+                                              {
+                                                "text": "June 26, 2026",
+                                                "key": "root.0.0.0.0.1.0.1.1.2.1.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.1.0.1.1.2.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.0.1.0.1.1.2"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.1.0.1.1"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "role": "group",
+                                      "data-slot": "field",
+                                      "data-orientation": "vertical",
+                                      "class": "group/field flex w-full gap-3 data-[invalid=true]:text-destructive flex-col *:w-full [&>.sr-only]:w-auto"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "label",
+                                        "attrs": {
+                                          "class": "text-sm font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 group/field-label peer/field-label flex w-fit gap-2 leading-snug group-data-[disabled=true]/field:opacity-50 has-data-checked:border-primary/30 has-data-checked:bg-primary/5 has-[>[data-slot=field]]:rounded-md has-[>[data-slot=field]]:border *:data-[slot=field]:p-3 dark:has-data-checked:border-primary/20 dark:has-data-checked:bg-primary/10 has-[>[data-slot=field]]:w-full has-[>[data-slot=field]]:flex-col",
+                                          "data-slot": "field-label",
+                                          "for": "invoice-project"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Project",
+                                            "key": "root.0.0.0.0.1.0.1.2.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.0.1.0.1.2.0"
+                                      },
+                                      {
+                                        "tag": "button",
+                                        "attrs": {
+                                          "type": "button",
+                                          "role": "combobox",
+                                          "data-state": "closed",
+                                          "class": "border-input ring-offset-background placeholder:text-muted-foreground focus:ring-ring flex h-9 w-full items-center justify-between rounded-md border bg-transparent px-3 py-2 text-sm whitespace-nowrap shadow-xs focus:ring-1 focus:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1",
+                                          "id": "invoice-project"
+                                        },
+                                        "options": [
+                                          "Northstar Studio workspace rollout",
+                                          "Payment screens implementation",
+                                          "Admin kit integration"
+                                        ],
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "style": "pointer-events:none"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Northstar Studio workspace rollout",
+                                                "key": "root.0.0.0.0.1.0.1.2.1.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.1.0.1.2.1.0"
+                                          },
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-chevron-down",
+                                              "class": "lucide lucide-chevron-down h-4 w-4 opacity-50"
+                                            },
+                                            "key": "root.0.0.0.0.1.0.1.2.1.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.0.1.0.1.2.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.1.0.1.2"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.1.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.0.0.1.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "data-orientation": "horizontal",
+                              "role": "none",
+                              "class": "bg-border shrink-0 h-[1px] w-full"
+                            },
+                            "children": [],
+                            "key": "root.0.0.0.0.1.1"
+                          },
+                          {
+                            "tag": "section",
+                            "attrs": {
+                              "class": "flex flex-col gap-4"
+                            },
+                            "children": [
+                              {
+                                "tag": "h2",
+                                "attrs": {
+                                  "class": "text-xl font-semibold tracking-tight"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Invoice Items",
+                                    "key": "root.0.0.0.0.1.2.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.1.2.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "role": "group",
+                                  "data-slot": "field",
+                                  "data-orientation": "vertical",
+                                  "class": "group/field flex w-full gap-3 data-[invalid=true]:text-destructive flex-col *:w-full [&>.sr-only]:w-auto"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "label",
+                                    "attrs": {
+                                      "class": "text-sm font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 group/field-label peer/field-label flex w-fit gap-2 leading-snug group-data-[disabled=true]/field:opacity-50 has-data-checked:border-primary/30 has-data-checked:bg-primary/5 has-[>[data-slot=field]]:rounded-md has-[>[data-slot=field]]:border *:data-[slot=field]:p-3 dark:has-data-checked:border-primary/20 dark:has-data-checked:bg-primary/10 has-[>[data-slot=field]]:w-full has-[>[data-slot=field]]:flex-col",
+                                      "data-slot": "field-label",
+                                      "for": "invoice-currency"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Currency",
+                                        "key": "root.0.0.0.0.1.2.1.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.1.2.1.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "role": "combobox",
+                                      "data-state": "closed",
+                                      "class": "border-input ring-offset-background placeholder:text-muted-foreground focus:ring-ring flex h-9 w-full items-center justify-between rounded-md border bg-transparent px-3 py-2 text-sm whitespace-nowrap shadow-xs focus:ring-1 focus:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1",
+                                      "id": "invoice-currency"
+                                    },
+                                    "options": [
+                                      "United States Dollar (USD) $",
+                                      "Euro (EUR) €",
+                                      "Indian Rupee (INR) ₹"
+                                    ],
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "style": "pointer-events:none"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "United States Dollar (USD) $",
+                                            "key": "root.0.0.0.0.1.2.1.1.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.0.1.2.1.1.0"
+                                      },
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-chevron-down",
+                                          "class": "lucide lucide-chevron-down h-4 w-4 opacity-50"
+                                        },
+                                        "key": "root.0.0.0.0.1.2.1.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.1.2.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.1.2.1"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "role": "group",
+                                  "data-slot": "field",
+                                  "data-orientation": "vertical",
+                                  "class": "group/field flex w-full gap-3 data-[invalid=true]:text-destructive flex-col *:w-full [&>.sr-only]:w-auto"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "label",
+                                    "attrs": {
+                                      "class": "text-sm font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 group/field-label peer/field-label flex w-fit gap-2 leading-snug group-data-[disabled=true]/field:opacity-50 has-data-checked:border-primary/30 has-data-checked:bg-primary/5 has-[>[data-slot=field]]:rounded-md has-[>[data-slot=field]]:border *:data-[slot=field]:p-3 dark:has-data-checked:border-primary/20 dark:has-data-checked:bg-primary/10 has-[>[data-slot=field]]:w-full has-[>[data-slot=field]]:flex-col",
+                                      "data-slot": "field-label"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Items",
+                                        "key": "root.0.0.0.0.1.2.2.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.1.2.2.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "overflow-hidden rounded-xl border"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "text-muted-foreground grid grid-cols-[32px_minmax(120px,1.4fr)_56px_88px_84px_36px] items-center gap-2 border-b px-3 py-2.5 text-sm font-semibold"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "div",
+                                            "attrs": {},
+                                            "children": [],
+                                            "key": "root.0.0.0.0.1.2.2.1.0.0"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {},
+                                            "children": [
+                                              {
+                                                "text": "Item Name",
+                                                "key": "root.0.0.0.0.1.2.2.1.0.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.1.2.2.1.0.1"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "text-center"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Qty",
+                                                "key": "root.0.0.0.0.1.2.2.1.0.2.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.1.2.2.1.0.2"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {},
+                                            "children": [
+                                              {
+                                                "text": "Rate",
+                                                "key": "root.0.0.0.0.1.2.2.1.0.3.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.1.2.2.1.0.3"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "text-right"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Total",
+                                                "key": "root.0.0.0.0.1.2.2.1.0.4.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.1.2.2.1.0.4"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {},
+                                            "children": [],
+                                            "key": "root.0.0.0.0.1.2.2.1.0.5"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.0.1.2.2.1.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "divide-y"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "grid grid-cols-[32px_minmax(120px,1.4fr)_56px_88px_84px_36px] items-center gap-2 px-3 py-2.5"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "button",
+                                                "attrs": {
+                                                  "type": "button",
+                                                  "class": "text-muted-foreground hover:bg-muted grid size-8 cursor-grab place-items-center rounded-md active:cursor-grabbing",
+                                                  "aria-label": "Reorder item",
+                                                  "role": "button"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "icon",
+                                                    "attrs": {
+                                                      "name": "i-lucide-grip-vertical",
+                                                      "class": "lucide lucide-grip-vertical size-4"
+                                                    },
+                                                    "key": "root.0.0.0.0.1.2.2.1.1.0.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.1.2.2.1.1.0.0"
+                                              },
+                                              {
+                                                "tag": "button",
+                                                "attrs": {
+                                                  "type": "button",
+                                                  "role": "combobox",
+                                                  "data-state": "closed",
+                                                  "class": "border-input ring-offset-background placeholder:text-muted-foreground focus:ring-ring flex h-9 w-full items-center justify-between rounded-md border bg-transparent px-3 py-2 text-sm whitespace-nowrap shadow-xs focus:ring-1 focus:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 min-w-0",
+                                                  "aria-label": "Item name"
+                                                },
+                                                "options": [
+                                                  "Admin workspace license",
+                                                  "Payment screens implementation",
+                                                  "Design handoff and QA notes",
+                                                  "Implementation support",
+                                                  "Figma kit handoff",
+                                                  "Template implementation pack"
+                                                ],
+                                                "children": [
+                                                  {
+                                                    "tag": "span",
+                                                    "attrs": {
+                                                      "style": "pointer-events:none"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Admin workspace license",
+                                                        "key": "root.0.0.0.0.1.2.2.1.1.0.1.0.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.1.2.2.1.1.0.1.0"
+                                                  },
+                                                  {
+                                                    "tag": "icon",
+                                                    "attrs": {
+                                                      "name": "i-lucide-chevron-down",
+                                                      "class": "lucide lucide-chevron-down h-4 w-4 opacity-50"
+                                                    },
+                                                    "key": "root.0.0.0.0.1.2.2.1.1.0.1.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.1.2.2.1.1.0.1"
+                                              },
+                                              {
+                                                "tag": "input",
+                                                "attrs": {
+                                                  "type": "number",
+                                                  "class": "border-input file:text-foreground placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full rounded-md border bg-transparent py-1 text-base shadow-xs transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:ring-1 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 md:text-sm px-2 text-center",
+                                                  "aria-label": "Quantity",
+                                                  "min": "0",
+                                                  "value": "4"
+                                                },
+                                                "children": [],
+                                                "key": "root.0.0.0.0.1.2.2.1.1.0.2"
+                                              },
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "data-slot": "input-group",
+                                                  "role": "group",
+                                                  "class": "group/input-group relative flex h-9 w-full items-center rounded-md border border-input shadow-xs transition-[color,box-shadow] outline-none in-data-[slot=combobox-content]:focus-within:border-inherit in-data-[slot=combobox-content]:focus-within:ring-0 has-[[data-slot=input-group-control]:focus-visible]:border-ring has-[[data-slot=input-group-control]:focus-visible]:ring-3 has-[[data-slot=input-group-control]:focus-visible]:ring-ring/50 has-[[data-slot][aria-invalid=true]]:border-destructive has-[[data-slot][aria-invalid=true]]:ring-3 has-[[data-slot][aria-invalid=true]]:ring-destructive/20 has-[>[data-align=block-end]]:h-auto has-[>[data-align=block-end]]:flex-col has-[>[data-align=block-start]]:h-auto has-[>[data-align=block-start]]:flex-col has-[>textarea]:h-auto dark:bg-input/30 dark:has-[[data-slot][aria-invalid=true]]:ring-destructive/40 has-[>[data-align=block-end]]:[&>input]:pt-3 has-[>[data-align=block-start]]:[&>input]:pb-3 has-[>[data-align=inline-end]]:[&>input]:pr-1.5 has-[>[data-align=inline-start]]:[&>input]:pl-1.5 min-w-0"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "role": "group",
+                                                      "data-slot": "input-group-addon",
+                                                      "class": "flex h-auto cursor-text items-center justify-center gap-2 py-1.5 text-sm font-medium text-muted-foreground select-none group-data-[disabled=true]/input-group:opacity-50 [&>kbd]:rounded-[calc(var(--radius)-5px)] [&>svg:not([class*='size-'])]:size-4 order-first pl-2 has-[>button]:-ml-1 has-[>kbd]:ml-[-0.15rem]"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {
+                                                          "class": "flex items-center gap-2 text-sm text-muted-foreground [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "$",
+                                                            "key": "root.0.0.0.0.1.2.2.1.1.0.3.0.0.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.0.1.2.2.1.1.0.3.0.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.1.2.2.1.1.0.3.0"
+                                                  },
+                                                  {
+                                                    "tag": "input",
+                                                    "attrs": {
+                                                      "type": "number",
+                                                      "class": "border-input file:text-foreground placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full py-1 text-base transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 md:text-sm flex-1 rounded-none border-0 bg-transparent shadow-none ring-0 focus-visible:ring-0 aria-invalid:ring-0 dark:bg-transparent px-1.5",
+                                                      "data-slot": "input-group-control",
+                                                      "aria-label": "Rate",
+                                                      "min": "0",
+                                                      "value": "399"
+                                                    },
+                                                    "children": [],
+                                                    "key": "root.0.0.0.0.1.2.2.1.1.0.3.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.1.2.2.1.1.0.3"
+                                              },
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "min-w-0 text-right text-sm font-semibold tabular-nums"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "$1,596.00",
+                                                    "key": "root.0.0.0.0.1.2.2.1.1.0.4.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.1.2.2.1.1.0.4"
+                                              },
+                                              {
+                                                "tag": "button",
+                                                "attrs": {
+                                                  "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground text-muted-foreground size-8 justify-self-end",
+                                                  "aria-label": "Remove item"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "icon",
+                                                    "attrs": {
+                                                      "name": "i-lucide-trash-2",
+                                                      "class": "lucide lucide-trash2 lucide-trash-2 size-4"
+                                                    },
+                                                    "key": "root.0.0.0.0.1.2.2.1.1.0.5.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.1.2.2.1.1.0.5"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.1.2.2.1.1.0"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "grid grid-cols-[32px_minmax(120px,1.4fr)_56px_88px_84px_36px] items-center gap-2 px-3 py-2.5"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "button",
+                                                "attrs": {
+                                                  "type": "button",
+                                                  "class": "text-muted-foreground hover:bg-muted grid size-8 cursor-grab place-items-center rounded-md active:cursor-grabbing",
+                                                  "aria-label": "Reorder item",
+                                                  "role": "button"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "icon",
+                                                    "attrs": {
+                                                      "name": "i-lucide-grip-vertical",
+                                                      "class": "lucide lucide-grip-vertical size-4"
+                                                    },
+                                                    "key": "root.0.0.0.0.1.2.2.1.1.1.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.1.2.2.1.1.1.0"
+                                              },
+                                              {
+                                                "tag": "button",
+                                                "attrs": {
+                                                  "type": "button",
+                                                  "role": "combobox",
+                                                  "data-state": "closed",
+                                                  "class": "border-input ring-offset-background placeholder:text-muted-foreground focus:ring-ring flex h-9 w-full items-center justify-between rounded-md border bg-transparent px-3 py-2 text-sm whitespace-nowrap shadow-xs focus:ring-1 focus:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 min-w-0",
+                                                  "aria-label": "Item name"
+                                                },
+                                                "options": [
+                                                  "Admin workspace license",
+                                                  "Payment screens implementation",
+                                                  "Design handoff and QA notes",
+                                                  "Implementation support",
+                                                  "Figma kit handoff",
+                                                  "Template implementation pack"
+                                                ],
+                                                "children": [
+                                                  {
+                                                    "tag": "span",
+                                                    "attrs": {
+                                                      "style": "pointer-events:none"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Payment screens implementation",
+                                                        "key": "root.0.0.0.0.1.2.2.1.1.1.1.0.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.1.2.2.1.1.1.1.0"
+                                                  },
+                                                  {
+                                                    "tag": "icon",
+                                                    "attrs": {
+                                                      "name": "i-lucide-chevron-down",
+                                                      "class": "lucide lucide-chevron-down h-4 w-4 opacity-50"
+                                                    },
+                                                    "key": "root.0.0.0.0.1.2.2.1.1.1.1.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.1.2.2.1.1.1.1"
+                                              },
+                                              {
+                                                "tag": "input",
+                                                "attrs": {
+                                                  "type": "number",
+                                                  "class": "border-input file:text-foreground placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full rounded-md border bg-transparent py-1 text-base shadow-xs transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:ring-1 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 md:text-sm px-2 text-center",
+                                                  "aria-label": "Quantity",
+                                                  "min": "0",
+                                                  "value": "8"
+                                                },
+                                                "children": [],
+                                                "key": "root.0.0.0.0.1.2.2.1.1.1.2"
+                                              },
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "data-slot": "input-group",
+                                                  "role": "group",
+                                                  "class": "group/input-group relative flex h-9 w-full items-center rounded-md border border-input shadow-xs transition-[color,box-shadow] outline-none in-data-[slot=combobox-content]:focus-within:border-inherit in-data-[slot=combobox-content]:focus-within:ring-0 has-[[data-slot=input-group-control]:focus-visible]:border-ring has-[[data-slot=input-group-control]:focus-visible]:ring-3 has-[[data-slot=input-group-control]:focus-visible]:ring-ring/50 has-[[data-slot][aria-invalid=true]]:border-destructive has-[[data-slot][aria-invalid=true]]:ring-3 has-[[data-slot][aria-invalid=true]]:ring-destructive/20 has-[>[data-align=block-end]]:h-auto has-[>[data-align=block-end]]:flex-col has-[>[data-align=block-start]]:h-auto has-[>[data-align=block-start]]:flex-col has-[>textarea]:h-auto dark:bg-input/30 dark:has-[[data-slot][aria-invalid=true]]:ring-destructive/40 has-[>[data-align=block-end]]:[&>input]:pt-3 has-[>[data-align=block-start]]:[&>input]:pb-3 has-[>[data-align=inline-end]]:[&>input]:pr-1.5 has-[>[data-align=inline-start]]:[&>input]:pl-1.5 min-w-0"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "role": "group",
+                                                      "data-slot": "input-group-addon",
+                                                      "class": "flex h-auto cursor-text items-center justify-center gap-2 py-1.5 text-sm font-medium text-muted-foreground select-none group-data-[disabled=true]/input-group:opacity-50 [&>kbd]:rounded-[calc(var(--radius)-5px)] [&>svg:not([class*='size-'])]:size-4 order-first pl-2 has-[>button]:-ml-1 has-[>kbd]:ml-[-0.15rem]"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {
+                                                          "class": "flex items-center gap-2 text-sm text-muted-foreground [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "$",
+                                                            "key": "root.0.0.0.0.1.2.2.1.1.1.3.0.0.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.0.1.2.2.1.1.1.3.0.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.1.2.2.1.1.1.3.0"
+                                                  },
+                                                  {
+                                                    "tag": "input",
+                                                    "attrs": {
+                                                      "type": "number",
+                                                      "class": "border-input file:text-foreground placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full py-1 text-base transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 md:text-sm flex-1 rounded-none border-0 bg-transparent shadow-none ring-0 focus-visible:ring-0 aria-invalid:ring-0 dark:bg-transparent px-1.5",
+                                                      "data-slot": "input-group-control",
+                                                      "aria-label": "Rate",
+                                                      "min": "0",
+                                                      "value": "240"
+                                                    },
+                                                    "children": [],
+                                                    "key": "root.0.0.0.0.1.2.2.1.1.1.3.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.1.2.2.1.1.1.3"
+                                              },
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "min-w-0 text-right text-sm font-semibold tabular-nums"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "$1,920.00",
+                                                    "key": "root.0.0.0.0.1.2.2.1.1.1.4.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.1.2.2.1.1.1.4"
+                                              },
+                                              {
+                                                "tag": "button",
+                                                "attrs": {
+                                                  "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground text-muted-foreground size-8 justify-self-end",
+                                                  "aria-label": "Remove item"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "icon",
+                                                    "attrs": {
+                                                      "name": "i-lucide-trash-2",
+                                                      "class": "lucide lucide-trash2 lucide-trash-2 size-4"
+                                                    },
+                                                    "key": "root.0.0.0.0.1.2.2.1.1.1.5.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.1.2.2.1.1.1.5"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.1.2.2.1.1.1"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "grid grid-cols-[32px_minmax(120px,1.4fr)_56px_88px_84px_36px] items-center gap-2 px-3 py-2.5"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "button",
+                                                "attrs": {
+                                                  "type": "button",
+                                                  "class": "text-muted-foreground hover:bg-muted grid size-8 cursor-grab place-items-center rounded-md active:cursor-grabbing",
+                                                  "aria-label": "Reorder item",
+                                                  "role": "button"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "icon",
+                                                    "attrs": {
+                                                      "name": "i-lucide-grip-vertical",
+                                                      "class": "lucide lucide-grip-vertical size-4"
+                                                    },
+                                                    "key": "root.0.0.0.0.1.2.2.1.1.2.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.1.2.2.1.1.2.0"
+                                              },
+                                              {
+                                                "tag": "button",
+                                                "attrs": {
+                                                  "type": "button",
+                                                  "role": "combobox",
+                                                  "data-state": "closed",
+                                                  "class": "border-input ring-offset-background placeholder:text-muted-foreground focus:ring-ring flex h-9 w-full items-center justify-between rounded-md border bg-transparent px-3 py-2 text-sm whitespace-nowrap shadow-xs focus:ring-1 focus:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 min-w-0",
+                                                  "aria-label": "Item name"
+                                                },
+                                                "options": [
+                                                  "Admin workspace license",
+                                                  "Payment screens implementation",
+                                                  "Design handoff and QA notes",
+                                                  "Implementation support",
+                                                  "Figma kit handoff",
+                                                  "Template implementation pack"
+                                                ],
+                                                "children": [
+                                                  {
+                                                    "tag": "span",
+                                                    "attrs": {
+                                                      "style": "pointer-events:none"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Design handoff and QA notes",
+                                                        "key": "root.0.0.0.0.1.2.2.1.1.2.1.0.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.1.2.2.1.1.2.1.0"
+                                                  },
+                                                  {
+                                                    "tag": "icon",
+                                                    "attrs": {
+                                                      "name": "i-lucide-chevron-down",
+                                                      "class": "lucide lucide-chevron-down h-4 w-4 opacity-50"
+                                                    },
+                                                    "key": "root.0.0.0.0.1.2.2.1.1.2.1.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.1.2.2.1.1.2.1"
+                                              },
+                                              {
+                                                "tag": "input",
+                                                "attrs": {
+                                                  "type": "number",
+                                                  "class": "border-input file:text-foreground placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full rounded-md border bg-transparent py-1 text-base shadow-xs transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:ring-1 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 md:text-sm px-2 text-center",
+                                                  "aria-label": "Quantity",
+                                                  "min": "0",
+                                                  "value": "3"
+                                                },
+                                                "children": [],
+                                                "key": "root.0.0.0.0.1.2.2.1.1.2.2"
+                                              },
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "data-slot": "input-group",
+                                                  "role": "group",
+                                                  "class": "group/input-group relative flex h-9 w-full items-center rounded-md border border-input shadow-xs transition-[color,box-shadow] outline-none in-data-[slot=combobox-content]:focus-within:border-inherit in-data-[slot=combobox-content]:focus-within:ring-0 has-[[data-slot=input-group-control]:focus-visible]:border-ring has-[[data-slot=input-group-control]:focus-visible]:ring-3 has-[[data-slot=input-group-control]:focus-visible]:ring-ring/50 has-[[data-slot][aria-invalid=true]]:border-destructive has-[[data-slot][aria-invalid=true]]:ring-3 has-[[data-slot][aria-invalid=true]]:ring-destructive/20 has-[>[data-align=block-end]]:h-auto has-[>[data-align=block-end]]:flex-col has-[>[data-align=block-start]]:h-auto has-[>[data-align=block-start]]:flex-col has-[>textarea]:h-auto dark:bg-input/30 dark:has-[[data-slot][aria-invalid=true]]:ring-destructive/40 has-[>[data-align=block-end]]:[&>input]:pt-3 has-[>[data-align=block-start]]:[&>input]:pb-3 has-[>[data-align=inline-end]]:[&>input]:pr-1.5 has-[>[data-align=inline-start]]:[&>input]:pl-1.5 min-w-0"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "role": "group",
+                                                      "data-slot": "input-group-addon",
+                                                      "class": "flex h-auto cursor-text items-center justify-center gap-2 py-1.5 text-sm font-medium text-muted-foreground select-none group-data-[disabled=true]/input-group:opacity-50 [&>kbd]:rounded-[calc(var(--radius)-5px)] [&>svg:not([class*='size-'])]:size-4 order-first pl-2 has-[>button]:-ml-1 has-[>kbd]:ml-[-0.15rem]"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {
+                                                          "class": "flex items-center gap-2 text-sm text-muted-foreground [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "$",
+                                                            "key": "root.0.0.0.0.1.2.2.1.1.2.3.0.0.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.0.1.2.2.1.1.2.3.0.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.1.2.2.1.1.2.3.0"
+                                                  },
+                                                  {
+                                                    "tag": "input",
+                                                    "attrs": {
+                                                      "type": "number",
+                                                      "class": "border-input file:text-foreground placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full py-1 text-base transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 md:text-sm flex-1 rounded-none border-0 bg-transparent shadow-none ring-0 focus-visible:ring-0 aria-invalid:ring-0 dark:bg-transparent px-1.5",
+                                                      "data-slot": "input-group-control",
+                                                      "aria-label": "Rate",
+                                                      "min": "0",
+                                                      "value": "315"
+                                                    },
+                                                    "children": [],
+                                                    "key": "root.0.0.0.0.1.2.2.1.1.2.3.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.1.2.2.1.1.2.3"
+                                              },
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "min-w-0 text-right text-sm font-semibold tabular-nums"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "$945.00",
+                                                    "key": "root.0.0.0.0.1.2.2.1.1.2.4.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.1.2.2.1.1.2.4"
+                                              },
+                                              {
+                                                "tag": "button",
+                                                "attrs": {
+                                                  "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground text-muted-foreground size-8 justify-self-end",
+                                                  "aria-label": "Remove item"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "icon",
+                                                    "attrs": {
+                                                      "name": "i-lucide-trash-2",
+                                                      "class": "lucide lucide-trash2 lucide-trash-2 size-4"
+                                                    },
+                                                    "key": "root.0.0.0.0.1.2.2.1.1.2.5.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.1.2.2.1.1.2.5"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.1.2.2.1.1.2"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "grid grid-cols-[32px_minmax(120px,1.4fr)_56px_88px_84px_36px] items-center gap-2 px-3 py-2.5"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "button",
+                                                "attrs": {
+                                                  "type": "button",
+                                                  "class": "text-muted-foreground hover:bg-muted grid size-8 cursor-grab place-items-center rounded-md active:cursor-grabbing",
+                                                  "aria-label": "Reorder item",
+                                                  "role": "button"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "icon",
+                                                    "attrs": {
+                                                      "name": "i-lucide-grip-vertical",
+                                                      "class": "lucide lucide-grip-vertical size-4"
+                                                    },
+                                                    "key": "root.0.0.0.0.1.2.2.1.1.3.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.1.2.2.1.1.3.0"
+                                              },
+                                              {
+                                                "tag": "button",
+                                                "attrs": {
+                                                  "type": "button",
+                                                  "role": "combobox",
+                                                  "data-state": "closed",
+                                                  "class": "border-input ring-offset-background placeholder:text-muted-foreground focus:ring-ring flex h-9 w-full items-center justify-between rounded-md border bg-transparent px-3 py-2 text-sm whitespace-nowrap shadow-xs focus:ring-1 focus:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 min-w-0",
+                                                  "aria-label": "Item name"
+                                                },
+                                                "options": [
+                                                  "Admin workspace license",
+                                                  "Payment screens implementation",
+                                                  "Design handoff and QA notes",
+                                                  "Implementation support",
+                                                  "Figma kit handoff",
+                                                  "Template implementation pack"
+                                                ],
+                                                "children": [
+                                                  {
+                                                    "tag": "span",
+                                                    "attrs": {
+                                                      "style": "pointer-events:none"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Implementation support",
+                                                        "key": "root.0.0.0.0.1.2.2.1.1.3.1.0.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.1.2.2.1.1.3.1.0"
+                                                  },
+                                                  {
+                                                    "tag": "icon",
+                                                    "attrs": {
+                                                      "name": "i-lucide-chevron-down",
+                                                      "class": "lucide lucide-chevron-down h-4 w-4 opacity-50"
+                                                    },
+                                                    "key": "root.0.0.0.0.1.2.2.1.1.3.1.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.1.2.2.1.1.3.1"
+                                              },
+                                              {
+                                                "tag": "input",
+                                                "attrs": {
+                                                  "type": "number",
+                                                  "class": "border-input file:text-foreground placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full rounded-md border bg-transparent py-1 text-base shadow-xs transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:ring-1 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 md:text-sm px-2 text-center",
+                                                  "aria-label": "Quantity",
+                                                  "min": "0",
+                                                  "value": "2"
+                                                },
+                                                "children": [],
+                                                "key": "root.0.0.0.0.1.2.2.1.1.3.2"
+                                              },
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "data-slot": "input-group",
+                                                  "role": "group",
+                                                  "class": "group/input-group relative flex h-9 w-full items-center rounded-md border border-input shadow-xs transition-[color,box-shadow] outline-none in-data-[slot=combobox-content]:focus-within:border-inherit in-data-[slot=combobox-content]:focus-within:ring-0 has-[[data-slot=input-group-control]:focus-visible]:border-ring has-[[data-slot=input-group-control]:focus-visible]:ring-3 has-[[data-slot=input-group-control]:focus-visible]:ring-ring/50 has-[[data-slot][aria-invalid=true]]:border-destructive has-[[data-slot][aria-invalid=true]]:ring-3 has-[[data-slot][aria-invalid=true]]:ring-destructive/20 has-[>[data-align=block-end]]:h-auto has-[>[data-align=block-end]]:flex-col has-[>[data-align=block-start]]:h-auto has-[>[data-align=block-start]]:flex-col has-[>textarea]:h-auto dark:bg-input/30 dark:has-[[data-slot][aria-invalid=true]]:ring-destructive/40 has-[>[data-align=block-end]]:[&>input]:pt-3 has-[>[data-align=block-start]]:[&>input]:pb-3 has-[>[data-align=inline-end]]:[&>input]:pr-1.5 has-[>[data-align=inline-start]]:[&>input]:pl-1.5 min-w-0"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "role": "group",
+                                                      "data-slot": "input-group-addon",
+                                                      "class": "flex h-auto cursor-text items-center justify-center gap-2 py-1.5 text-sm font-medium text-muted-foreground select-none group-data-[disabled=true]/input-group:opacity-50 [&>kbd]:rounded-[calc(var(--radius)-5px)] [&>svg:not([class*='size-'])]:size-4 order-first pl-2 has-[>button]:-ml-1 has-[>kbd]:ml-[-0.15rem]"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {
+                                                          "class": "flex items-center gap-2 text-sm text-muted-foreground [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "$",
+                                                            "key": "root.0.0.0.0.1.2.2.1.1.3.3.0.0.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.0.1.2.2.1.1.3.3.0.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.1.2.2.1.1.3.3.0"
+                                                  },
+                                                  {
+                                                    "tag": "input",
+                                                    "attrs": {
+                                                      "type": "number",
+                                                      "class": "border-input file:text-foreground placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full py-1 text-base transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 md:text-sm flex-1 rounded-none border-0 bg-transparent shadow-none ring-0 focus-visible:ring-0 aria-invalid:ring-0 dark:bg-transparent px-1.5",
+                                                      "data-slot": "input-group-control",
+                                                      "aria-label": "Rate",
+                                                      "min": "0",
+                                                      "value": "380"
+                                                    },
+                                                    "children": [],
+                                                    "key": "root.0.0.0.0.1.2.2.1.1.3.3.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.1.2.2.1.1.3.3"
+                                              },
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "min-w-0 text-right text-sm font-semibold tabular-nums"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "$760.00",
+                                                    "key": "root.0.0.0.0.1.2.2.1.1.3.4.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.1.2.2.1.1.3.4"
+                                              },
+                                              {
+                                                "tag": "button",
+                                                "attrs": {
+                                                  "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground text-muted-foreground size-8 justify-self-end",
+                                                  "aria-label": "Remove item"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "icon",
+                                                    "attrs": {
+                                                      "name": "i-lucide-trash-2",
+                                                      "class": "lucide lucide-trash2 lucide-trash-2 size-4"
+                                                    },
+                                                    "key": "root.0.0.0.0.1.2.2.1.1.3.5.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.1.2.2.1.1.3.5"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.1.2.2.1.1.3"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.0.1.2.2.1.1"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "id": "create-invoice-2-items",
+                                          "style": "display: none;"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "\n    To pick up a draggable item, press the space bar.\n    While dragging, use the arrow keys to move the item.\n    Press space again to drop the item in its new position, or press escape to cancel.\n  ",
+                                            "key": "root.0.0.0.0.1.2.2.1.2.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.0.1.2.2.1.2"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "id": "DndLiveRegion-0",
+                                          "role": "status",
+                                          "style": "position: fixed; top: 0px; left: 0px; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(100%); white-space: nowrap;"
+                                        },
+                                        "children": [],
+                                        "key": "root.0.0.0.0.1.2.2.1.3"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "border-t p-3"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "button",
+                                            "attrs": {
+                                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground px-4 py-2 text-primary h-10 w-full border-dashed font-semibold",
+                                              "type": "button"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "icon",
+                                                "attrs": {
+                                                  "name": "i-lucide-plus",
+                                                  "class": "lucide lucide-plus size-4"
+                                                },
+                                                "key": "root.0.0.0.0.1.2.2.1.4.0.0"
+                                              },
+                                              {
+                                                "text": "Add a New Item",
+                                                "key": "root.0.0.0.0.1.2.2.1.4.0.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.1.2.2.1.4.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.0.1.2.2.1.4"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.1.2.2.1"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.1.2.2"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "text-muted-foreground flex justify-end text-sm"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Draft total:",
+                                    "key": "root.0.0.0.0.1.2.3.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-foreground ml-2 font-semibold tabular-nums"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "$5,221.00",
+                                        "key": "root.0.0.0.0.1.2.3.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.1.2.3.1"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.1.2.3"
+                              }
+                            ],
+                            "key": "root.0.0.0.0.1.2"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.1"
+                      }
+                    ],
+                    "key": "root.0.0.0.0"
+                  },
+                  {
+                    "tag": "aside",
+                    "attrs": {
+                      "class": "bg-muted/35 min-h-0 overflow-y-auto border-l pb-28 sm:pb-24"
+                    },
+                    "children": [
+                      {
+                        "tag": "article",
+                        "attrs": {
+                          "class": "mx-auto flex min-h-full max-w-[900px] flex-col px-8 py-9"
+                        },
+                        "children": [
+                          {
+                            "tag": "header",
+                            "attrs": {
+                              "class": "pb-7"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-start justify-between gap-6"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {},
+                                    "children": [
+                                      {
+                                        "tag": "h2",
+                                        "attrs": {
+                                          "class": "text-3xl font-semibold tracking-tight"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Invoice",
+                                            "key": "root.0.0.0.1.0.0.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.1.0.0.0.0.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "mt-4 grid gap-1 text-sm"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "p",
+                                            "attrs": {},
+                                            "children": [
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "text-muted-foreground font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Invoice no.",
+                                                    "key": "root.0.0.0.1.0.0.0.0.1.0.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.1.0.0.0.0.1.0.0"
+                                              },
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "font-semibold"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "SB-",
+                                                    "key": "root.0.0.0.1.0.0.0.0.1.0.1.0"
+                                                  },
+                                                  {
+                                                    "text": "2026-084",
+                                                    "key": "root.0.0.0.1.0.0.0.0.1.0.1.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.1.0.0.0.0.1.0.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.1.0.0.0.0.1.0"
+                                          },
+                                          {
+                                            "tag": "p",
+                                            "attrs": {
+                                              "class": "text-muted-foreground"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Ref:",
+                                                "key": "root.0.0.0.1.0.0.0.0.1.1.0"
+                                              },
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "text-foreground font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "NS-4826-PRO",
+                                                    "key": "root.0.0.0.1.0.0.0.0.1.1.1.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.1.0.0.0.0.1.1.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.1.0.0.0.0.1.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.1.0.0.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.1.0.0.0.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "bg-primary text-primary-foreground grid size-12 shrink-0 place-items-center rounded-full"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "img",
+                                        "attrs": {
+                                          "alt": "Shadcnblocks",
+                                          "width": "24",
+                                          "height": "24",
+                                          "class": "size-6 object-contain brightness-0 invert dark:invert-0",
+                                          "style": "color:transparent",
+                                          "src": "/reference/4eb49a7be0892386.svg"
+                                        },
+                                        "children": [],
+                                        "key": "root.0.0.0.1.0.0.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.1.0.0.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.0.1.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.0.1.0.0"
+                          },
+                          {
+                            "tag": "section",
+                            "attrs": {
+                              "class": "grid gap-8 py-7 md:grid-cols-2"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "p",
+                                    "attrs": {
+                                      "class": "text-muted-foreground mb-2 text-sm font-semibold"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Billed by:",
+                                        "key": "root.0.0.0.1.0.1.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.1.0.1.0.0"
+                                  },
+                                  {
+                                    "tag": "h3",
+                                    "attrs": {
+                                      "class": "text-base font-semibold"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Shadcnblocks.com",
+                                        "key": "root.0.0.0.1.0.1.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.1.0.1.0.1"
+                                  },
+                                  {
+                                    "tag": "p",
+                                    "attrs": {
+                                      "class": "text-muted-foreground mt-1.5 text-sm"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "billing@shadcnblocks.com",
+                                        "key": "root.0.0.0.1.0.1.0.2.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.1.0.1.0.2"
+                                  },
+                                  {
+                                    "tag": "p",
+                                    "attrs": {
+                                      "class": "text-muted-foreground mt-3 max-w-52 text-sm leading-6"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Level 12, 45 Clarence Street, Sydney NSW 2000",
+                                        "key": "root.0.0.0.1.0.1.0.3.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.1.0.1.0.3"
+                                  }
+                                ],
+                                "key": "root.0.0.0.1.0.1.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "p",
+                                    "attrs": {
+                                      "class": "text-muted-foreground mb-2 text-sm font-semibold"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Billed to:",
+                                        "key": "root.0.0.0.1.0.1.1.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.1.0.1.1.0"
+                                  },
+                                  {
+                                    "tag": "h3",
+                                    "attrs": {
+                                      "class": "text-base font-semibold"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Northstar Studio",
+                                        "key": "root.0.0.0.1.0.1.1.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.1.0.1.1.1"
+                                  },
+                                  {
+                                    "tag": "p",
+                                    "attrs": {
+                                      "class": "text-muted-foreground mt-1.5 text-sm"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Olivia Bennett",
+                                        "key": "root.0.0.0.1.0.1.1.2.0"
+                                      },
+                                      {
+                                        "text": " · ",
+                                        "key": "root.0.0.0.1.0.1.1.2.1"
+                                      },
+                                      {
+                                        "text": "accounts@northstar.studio",
+                                        "key": "root.0.0.0.1.0.1.1.2.2"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.1.0.1.1.2"
+                                  },
+                                  {
+                                    "tag": "p",
+                                    "attrs": {
+                                      "class": "text-muted-foreground mt-3 max-w-60 text-sm leading-6"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "18 Collins Street, Melbourne VIC 3000, Australia",
+                                        "key": "root.0.0.0.1.0.1.1.3.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.1.0.1.1.3"
+                                  }
+                                ],
+                                "key": "root.0.0.0.1.0.1.1"
+                              }
+                            ],
+                            "key": "root.0.0.0.1.0.1"
+                          },
+                          {
+                            "tag": "section",
+                            "attrs": {
+                              "class": "py-6"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "bg-background overflow-hidden rounded-lg border"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "table",
+                                    "attrs": {
+                                      "class": "w-full table-fixed text-left text-sm"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "colgroup",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "tag": "col",
+                                            "attrs": {
+                                              "class": "w-full"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.0.1.0.2.0.0.0.0"
+                                          },
+                                          {
+                                            "tag": "col",
+                                            "attrs": {
+                                              "class": "w-16"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.0.1.0.2.0.0.0.1"
+                                          },
+                                          {
+                                            "tag": "col",
+                                            "attrs": {
+                                              "class": "w-24"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.0.1.0.2.0.0.0.2"
+                                          },
+                                          {
+                                            "tag": "col",
+                                            "attrs": {
+                                              "class": "w-28"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.0.1.0.2.0.0.0.3"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.1.0.2.0.0.0"
+                                      },
+                                      {
+                                        "tag": "thead",
+                                        "attrs": {
+                                          "class": "bg-muted/55 text-muted-foreground"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "tr",
+                                            "attrs": {},
+                                            "children": [
+                                              {
+                                                "tag": "th",
+                                                "attrs": {
+                                                  "class": "px-4 py-3 font-semibold"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Service",
+                                                    "key": "root.0.0.0.1.0.2.0.0.1.0.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.1.0.2.0.0.1.0.0"
+                                              },
+                                              {
+                                                "tag": "th",
+                                                "attrs": {
+                                                  "class": "px-3 py-3 text-center font-semibold"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Qty",
+                                                    "key": "root.0.0.0.1.0.2.0.0.1.0.1.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.1.0.2.0.0.1.0.1"
+                                              },
+                                              {
+                                                "tag": "th",
+                                                "attrs": {
+                                                  "class": "px-3 py-3 text-right font-semibold"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Rate",
+                                                    "key": "root.0.0.0.1.0.2.0.0.1.0.2.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.1.0.2.0.0.1.0.2"
+                                              },
+                                              {
+                                                "tag": "th",
+                                                "attrs": {
+                                                  "class": "px-4 py-3 text-right font-semibold"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Amount",
+                                                    "key": "root.0.0.0.1.0.2.0.0.1.0.3.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.1.0.2.0.0.1.0.3"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.1.0.2.0.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.1.0.2.0.0.1"
+                                      },
+                                      {
+                                        "tag": "tbody",
+                                        "attrs": {
+                                          "class": "divide-y"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "tr",
+                                            "attrs": {},
+                                            "children": [
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "px-4 py-4 align-top"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "p",
+                                                    "attrs": {
+                                                      "class": "font-semibold"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Admin workspace license",
+                                                        "key": "root.0.0.0.1.0.2.0.0.2.0.0.0.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.1.0.2.0.0.2.0.0.0"
+                                                  },
+                                                  {
+                                                    "tag": "p",
+                                                    "attrs": {
+                                                      "class": "text-muted-foreground mt-1.5 line-clamp-2 text-xs leading-5"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Seats for the Shadcnblocks admin workspace",
+                                                        "key": "root.0.0.0.1.0.2.0.0.2.0.0.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.1.0.2.0.0.2.0.0.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.1.0.2.0.0.2.0.0"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "px-3 py-4 text-center align-top font-semibold tabular-nums"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "4",
+                                                    "key": "root.0.0.0.1.0.2.0.0.2.0.1.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.1.0.2.0.0.2.0.1"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "px-3 py-4 text-right align-top font-semibold tabular-nums"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "$399.00",
+                                                    "key": "root.0.0.0.1.0.2.0.0.2.0.2.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.1.0.2.0.0.2.0.2"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "px-4 py-4 text-right align-top font-semibold tabular-nums"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "$1,596.00",
+                                                    "key": "root.0.0.0.1.0.2.0.0.2.0.3.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.1.0.2.0.0.2.0.3"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.1.0.2.0.0.2.0"
+                                          },
+                                          {
+                                            "tag": "tr",
+                                            "attrs": {},
+                                            "children": [
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "px-4 py-4 align-top"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "p",
+                                                    "attrs": {
+                                                      "class": "font-semibold"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Payment screens implementation",
+                                                        "key": "root.0.0.0.1.0.2.0.0.2.1.0.0.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.1.0.2.0.0.2.1.0.0"
+                                                  },
+                                                  {
+                                                    "tag": "p",
+                                                    "attrs": {
+                                                      "class": "text-muted-foreground mt-1.5 line-clamp-2 text-xs leading-5"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Invoice, subscription, and payment processor UI screens",
+                                                        "key": "root.0.0.0.1.0.2.0.0.2.1.0.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.1.0.2.0.0.2.1.0.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.1.0.2.0.0.2.1.0"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "px-3 py-4 text-center align-top font-semibold tabular-nums"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "8",
+                                                    "key": "root.0.0.0.1.0.2.0.0.2.1.1.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.1.0.2.0.0.2.1.1"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "px-3 py-4 text-right align-top font-semibold tabular-nums"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "$240.00",
+                                                    "key": "root.0.0.0.1.0.2.0.0.2.1.2.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.1.0.2.0.0.2.1.2"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "px-4 py-4 text-right align-top font-semibold tabular-nums"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "$1,920.00",
+                                                    "key": "root.0.0.0.1.0.2.0.0.2.1.3.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.1.0.2.0.0.2.1.3"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.1.0.2.0.0.2.1"
+                                          },
+                                          {
+                                            "tag": "tr",
+                                            "attrs": {},
+                                            "children": [
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "px-4 py-4 align-top"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "p",
+                                                    "attrs": {
+                                                      "class": "font-semibold"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Design handoff and QA notes",
+                                                        "key": "root.0.0.0.1.0.2.0.0.2.2.0.0.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.1.0.2.0.0.2.2.0.0"
+                                                  },
+                                                  {
+                                                    "tag": "p",
+                                                    "attrs": {
+                                                      "class": "text-muted-foreground mt-1.5 line-clamp-2 text-xs leading-5"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Design-system files, implementation notes, and QA pass",
+                                                        "key": "root.0.0.0.1.0.2.0.0.2.2.0.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.1.0.2.0.0.2.2.0.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.1.0.2.0.0.2.2.0"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "px-3 py-4 text-center align-top font-semibold tabular-nums"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "3",
+                                                    "key": "root.0.0.0.1.0.2.0.0.2.2.1.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.1.0.2.0.0.2.2.1"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "px-3 py-4 text-right align-top font-semibold tabular-nums"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "$315.00",
+                                                    "key": "root.0.0.0.1.0.2.0.0.2.2.2.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.1.0.2.0.0.2.2.2"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "px-4 py-4 text-right align-top font-semibold tabular-nums"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "$945.00",
+                                                    "key": "root.0.0.0.1.0.2.0.0.2.2.3.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.1.0.2.0.0.2.2.3"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.1.0.2.0.0.2.2"
+                                          },
+                                          {
+                                            "tag": "tr",
+                                            "attrs": {},
+                                            "children": [
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "px-4 py-4 align-top"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "p",
+                                                    "attrs": {
+                                                      "class": "font-semibold"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Implementation support",
+                                                        "key": "root.0.0.0.1.0.2.0.0.2.3.0.0.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.1.0.2.0.0.2.3.0.0"
+                                                  },
+                                                  {
+                                                    "tag": "p",
+                                                    "attrs": {
+                                                      "class": "text-muted-foreground mt-1.5 line-clamp-2 text-xs leading-5"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Post-handoff engineering support and billing workflow polish",
+                                                        "key": "root.0.0.0.1.0.2.0.0.2.3.0.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.1.0.2.0.0.2.3.0.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.1.0.2.0.0.2.3.0"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "px-3 py-4 text-center align-top font-semibold tabular-nums"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "2",
+                                                    "key": "root.0.0.0.1.0.2.0.0.2.3.1.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.1.0.2.0.0.2.3.1"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "px-3 py-4 text-right align-top font-semibold tabular-nums"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "$380.00",
+                                                    "key": "root.0.0.0.1.0.2.0.0.2.3.2.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.1.0.2.0.0.2.3.2"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "px-4 py-4 text-right align-top font-semibold tabular-nums"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "$760.00",
+                                                    "key": "root.0.0.0.1.0.2.0.0.2.3.3.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.1.0.2.0.0.2.3.3"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.1.0.2.0.0.2.3"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.1.0.2.0.0.2"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.1.0.2.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.1.0.2.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "mt-5 flex justify-end"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "dl",
+                                    "attrs": {
+                                      "class": "w-full max-w-xs space-y-3 rounded-lg px-4 py-4 text-sm"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "flex items-center justify-between gap-4"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "dt",
+                                            "attrs": {
+                                              "class": "text-muted-foreground"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Subtotal",
+                                                "key": "root.0.0.0.1.0.2.1.0.0.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.1.0.2.1.0.0.0"
+                                          },
+                                          {
+                                            "tag": "dd",
+                                            "attrs": {
+                                              "class": "font-semibold tabular-nums"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "$5,221",
+                                                "key": "root.0.0.0.1.0.2.1.0.0.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.1.0.2.1.0.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.1.0.2.1.0.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "flex items-center justify-between gap-4"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "dt",
+                                            "attrs": {
+                                              "class": "text-muted-foreground"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Tax reserved",
+                                                "key": "root.0.0.0.1.0.2.1.0.1.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.1.0.2.1.0.1.0"
+                                          },
+                                          {
+                                            "tag": "dd",
+                                            "attrs": {
+                                              "class": "font-semibold tabular-nums"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "$0.00",
+                                                "key": "root.0.0.0.1.0.2.1.0.1.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.1.0.2.1.0.1.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.1.0.2.1.0.1"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "flex items-center justify-between gap-4 border-t pt-3 text-base font-semibold"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "dt",
+                                            "attrs": {
+                                              "class": "text-muted-foreground"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Total due",
+                                                "key": "root.0.0.0.1.0.2.1.0.2.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.1.0.2.1.0.2.0"
+                                          },
+                                          {
+                                            "tag": "dd",
+                                            "attrs": {
+                                              "class": "font-semibold tabular-nums"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "$5,221",
+                                                "key": "root.0.0.0.1.0.2.1.0.2.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.1.0.2.1.0.2.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.1.0.2.1.0.2"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.1.0.2.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.1.0.2.1"
+                              }
+                            ],
+                            "key": "root.0.0.0.1.0.2"
+                          },
+                          {
+                            "tag": "footer",
+                            "attrs": {
+                              "class": "mt-auto pt-16"
+                            },
+                            "children": [
+                              {
+                                "tag": "h3",
+                                "attrs": {
+                                  "class": "text-muted-foreground mb-3 font-semibold"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Payment terms",
+                                    "key": "root.0.0.0.1.0.3.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.1.0.3.0"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-muted-foreground mb-6 text-sm leading-6"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Payment is due 30 days after issue.",
+                                    "key": "root.0.0.0.1.0.3.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.1.0.3.1"
+                              },
+                              {
+                                "tag": "h3",
+                                "attrs": {
+                                  "class": "text-muted-foreground mb-3 font-semibold"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Notes",
+                                    "key": "root.0.0.0.1.0.3.2.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.1.0.3.2"
+                              },
+                              {
+                                "tag": "ul",
+                                "attrs": {
+                                  "class": "text-muted-foreground list-disc space-y-2 pl-5 text-sm"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "li",
+                                    "attrs": {},
+                                    "children": [
+                                      {
+                                        "text": "Include the payment reference with the payment memo.",
+                                        "key": "root.0.0.0.1.0.3.3.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.1.0.3.3.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.1.0.3.3"
+                              }
+                            ],
+                            "key": "root.0.0.0.1.0.3"
+                          }
+                        ],
+                        "key": "root.0.0.0.1.0"
+                      }
+                    ],
+                    "key": "root.0.0.0.1"
+                  }
+                ],
+                "key": "root.0.0.0"
+              },
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "pointer-events-none fixed inset-x-0 bottom-4 z-20 flex justify-center px-3 sm:bottom-5"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "bg-background/95 pointer-events-auto flex w-full max-w-[min(100%,46rem)] items-center justify-between gap-2 rounded-full border p-1.5 shadow-[0_18px_45px_-24px_rgba(15,23,42,0.45)] backdrop-blur-md sm:w-auto sm:justify-center"
+                    },
+                    "children": [
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground py-2 h-10 flex-1 rounded-full px-3 text-sm sm:flex-none sm:px-4",
+                          "type": "button"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-chevron-left",
+                              "class": "lucide lucide-chevron-left size-4"
+                            },
+                            "key": "root.0.0.1.0.0.0"
+                          },
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "hidden sm:inline"
+                            },
+                            "children": [
+                              {
+                                "text": "Back ",
+                                "key": "root.0.0.1.0.0.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.0.1"
+                          },
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "sm:hidden"
+                            },
+                            "children": [
+                              {
+                                "text": "Back",
+                                "key": "root.0.0.1.0.0.2.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.0.2"
+                          }
+                        ],
+                        "key": "root.0.0.1.0.0"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-10 shrink-0 rounded-full",
+                          "type": "button",
+                          "aria-label": "Send invoice"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-send",
+                              "class": "lucide lucide-send size-4"
+                            },
+                            "key": "root.0.0.1.0.1.0"
+                          }
+                        ],
+                        "key": "root.0.0.1.0.1"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-10 shrink-0 rounded-full",
+                          "type": "button",
+                          "aria-label": "Download invoice PDF"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-download",
+                              "class": "lucide lucide-download size-4"
+                            },
+                            "key": "root.0.0.1.0.2.0"
+                          }
+                        ],
+                        "key": "root.0.0.1.0.2"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-10 shrink-0 rounded-full",
+                          "type": "button",
+                          "aria-label": "More invoice actions",
+                          "id": "radix-_R_b5fiv5uknmlb_",
+                          "aria-haspopup": "menu",
+                          "data-state": "closed"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-ellipsis-vertical",
+                              "class": "lucide lucide-ellipsis-vertical size-4"
+                            },
+                            "key": "root.0.0.1.0.3.0"
+                          }
+                        ],
+                        "key": "root.0.0.1.0.3"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 py-2 h-10 flex-1 rounded-full px-4 text-sm font-semibold sm:flex-none",
+                          "type": "button"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-check",
+                              "class": "lucide lucide-check size-4"
+                            },
+                            "key": "root.0.0.1.0.4.0"
+                          },
+                          {
+                            "text": "Submit",
+                            "key": "root.0.0.1.0.4.1"
+                          }
+                        ],
+                        "key": "root.0.0.1.0.4"
+                      }
+                    ],
+                    "key": "root.0.0.1.0"
+                  }
+                ],
+                "key": "root.0.0.1"
+              }
+            ],
+            "key": "root.0.0"
+          }
+        ],
+        "key": "root.0"
+      }
+    ],
+    "key": "root"
+  },
+  "headings": [
+    "Invoice details",
+    "Invoice Items",
+    "Invoice",
+    "Shadcnblocks.com",
+    "Northstar Studio",
+    "Payment terms",
+    "Notes"
+  ]
+}

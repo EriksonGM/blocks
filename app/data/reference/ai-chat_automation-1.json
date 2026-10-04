@@ -1,0 +1,802 @@
+{
+  "label": "Automation 1",
+  "path": "/ai-chat/automation-1",
+  "appTitle": "",
+  "tree": {
+    "tag": "div",
+    "attrs": {
+      "id": "ai-workspace-content",
+      "class": "flex min-h-0 flex-1 flex-col"
+    },
+    "children": [
+      {
+        "tag": "h1",
+        "attrs": {
+          "class": "sr-only"
+        },
+        "children": [
+          {
+            "text": "Create automation",
+            "key": "root.0.0"
+          }
+        ],
+        "key": "root.0"
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "class": "text-muted-foreground flex h-11 shrink-0 items-center gap-1 border-b px-4 text-xs sm:px-6"
+        },
+        "children": [
+          {
+            "tag": "span",
+            "attrs": {},
+            "children": [
+              {
+                "text": "Automations",
+                "key": "root.1.0.0"
+              }
+            ],
+            "key": "root.1.0"
+          },
+          {
+            "tag": "span",
+            "attrs": {
+              "class": "text-foreground"
+            },
+            "children": [
+              {
+                "text": "New automation",
+                "key": "root.1.1.0"
+              }
+            ],
+            "key": "root.1.1"
+          }
+        ],
+        "key": "root.1"
+      },
+      {
+        "tag": "div",
+        "attrs": {
+          "data-slot": "scroll-area",
+          "class": "relative overflow-hidden min-h-0 flex-1",
+          "style": "position:relative;--radix-scroll-area-corner-width:0px;--radix-scroll-area-corner-height:0px"
+        },
+        "children": [
+          {
+            "tag": "div",
+            "attrs": {
+              "data-slot": "scroll-area-viewport",
+              "class": "h-full w-full rounded-[inherit]",
+              "style": "overflow: hidden scroll;"
+            },
+            "children": [
+              {
+                "tag": "div",
+                "attrs": {
+                  "style": "min-width:100%;display:table"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "mx-auto w-full max-w-4xl px-4 py-7 sm:px-7 sm:py-10 lg:px-10"
+                    },
+                    "children": [
+                      {
+                        "tag": "header",
+                        "attrs": {
+                          "class": "mb-8"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex flex-col gap-4 sm:flex-row sm:items-start"
+                            },
+                            "children": [
+                              {
+                                "tag": "input",
+                                "attrs": {
+                                  "aria-label": "Automation name",
+                                  "class": "placeholder:text-muted-foreground min-w-0 flex-1 bg-transparent text-2xl font-semibold tracking-[-0.03em] outline-none sm:text-[28px]",
+                                  "placeholder": "Untitled automation",
+                                  "value": "Refine incoming product story"
+                                },
+                                "children": [],
+                                "key": "root.2.0.0.0.0.0.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex shrink-0 items-center gap-2 sm:pt-0.5"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2",
+                                      "type": "button"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Cancel",
+                                        "key": "root.2.0.0.0.0.0.1.0.0"
+                                      }
+                                    ],
+                                    "key": "root.2.0.0.0.0.0.1.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 h-9 px-4 py-2",
+                                      "type": "button",
+                                      "disabled": ""
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Create",
+                                        "key": "root.2.0.0.0.0.0.1.1.0"
+                                      }
+                                    ],
+                                    "key": "root.2.0.0.0.0.0.1.1"
+                                  }
+                                ],
+                                "key": "root.2.0.0.0.0.0.1"
+                              }
+                            ],
+                            "key": "root.2.0.0.0.0.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "mt-4 flex flex-wrap items-center gap-x-2 gap-y-1"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex h-8 items-center gap-2 px-1.5 text-xs font-medium"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "role": "switch",
+                                      "aria-checked": "true",
+                                      "data-state": "checked",
+                                      "value": "on",
+                                      "class": "peer focus-visible:ring-ring focus-visible:ring-offset-background data-[state=checked]:bg-primary data-[state=unchecked]:bg-input inline-flex h-5 w-9 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent shadow-xs transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 scale-90",
+                                      "aria-label": "Automation active"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "data-state": "checked",
+                                          "class": "bg-background pointer-events-none block h-4 w-4 rounded-full ring-0 shadow-lg transition-transform data-[state=checked]:translate-x-4 data-[state=unchecked]:translate-x-0"
+                                        },
+                                        "children": [],
+                                        "key": "root.2.0.0.0.0.1.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.2.0.0.0.0.1.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-emerald-600"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Active",
+                                        "key": "root.2.0.0.0.0.1.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.2.0.0.0.0.1.0.1"
+                                  }
+                                ],
+                                "key": "root.2.0.0.0.0.1.0"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "bg-border h-4 w-px"
+                                },
+                                "children": [],
+                                "key": "root.2.0.0.0.0.1.1"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "class": "inline-flex items-center justify-center whitespace-nowrap transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground rounded-md text-muted-foreground h-8 min-w-0 gap-1.5 px-1.5 text-xs font-medium",
+                                  "type": "button",
+                                  "id": "radix-_R_76fdbsnpfknmlb_",
+                                  "aria-haspopup": "menu",
+                                  "data-state": "closed"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-folder-git-2",
+                                      "class": "lucide lucide-folder-git2 lucide-folder-git-2 size-3.5 shrink-0"
+                                    },
+                                    "key": "root.2.0.0.0.0.1.2.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "max-w-40 truncate"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "admin-console",
+                                        "key": "root.2.0.0.0.0.1.2.1.0"
+                                      }
+                                    ],
+                                    "key": "root.2.0.0.0.0.1.2.1"
+                                  },
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-chevron-down",
+                                      "class": "lucide lucide-chevron-down size-3 shrink-0 opacity-60"
+                                    },
+                                    "key": "root.2.0.0.0.0.1.2.2"
+                                  }
+                                ],
+                                "key": "root.2.0.0.0.0.1.2"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "bg-border h-4 w-px"
+                                },
+                                "children": [],
+                                "key": "root.2.0.0.0.0.1.3"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "class": "inline-flex items-center justify-center whitespace-nowrap transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground rounded-md text-muted-foreground h-8 min-w-0 gap-1.5 px-1.5 text-xs font-medium",
+                                  "type": "button",
+                                  "id": "radix-_R_b6fdbsnpfknmlb_",
+                                  "aria-haspopup": "menu",
+                                  "data-state": "closed"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-git-branch",
+                                      "class": "lucide lucide-git-branch size-3.5 shrink-0"
+                                    },
+                                    "key": "root.2.0.0.0.0.1.4.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "max-w-40 truncate"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "main",
+                                        "key": "root.2.0.0.0.0.1.4.1.0"
+                                      }
+                                    ],
+                                    "key": "root.2.0.0.0.0.1.4.1"
+                                  },
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-chevron-down",
+                                      "class": "lucide lucide-chevron-down size-3 shrink-0 opacity-60"
+                                    },
+                                    "key": "root.2.0.0.0.0.1.4.2"
+                                  }
+                                ],
+                                "key": "root.2.0.0.0.0.1.4"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "bg-border h-4 w-px"
+                                },
+                                "children": [],
+                                "key": "root.2.0.0.0.0.1.5"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "class": "inline-flex items-center justify-center whitespace-nowrap transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground rounded-md text-muted-foreground h-8 min-w-0 gap-1.5 px-1.5 text-xs font-medium",
+                                  "type": "button",
+                                  "id": "radix-_R_f6fdbsnpfknmlb_",
+                                  "aria-haspopup": "menu",
+                                  "data-state": "closed"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-message-square",
+                                      "class": "lucide lucide-message-square size-3.5 shrink-0"
+                                    },
+                                    "key": "root.2.0.0.0.0.1.6.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "max-w-40 truncate"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "New conversation",
+                                        "key": "root.2.0.0.0.0.1.6.1.0"
+                                      }
+                                    ],
+                                    "key": "root.2.0.0.0.0.1.6.1"
+                                  },
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-chevron-down",
+                                      "class": "lucide lucide-chevron-down size-3 shrink-0 opacity-60"
+                                    },
+                                    "key": "root.2.0.0.0.0.1.6.2"
+                                  }
+                                ],
+                                "key": "root.2.0.0.0.0.1.6"
+                              }
+                            ],
+                            "key": "root.2.0.0.0.0.1"
+                          }
+                        ],
+                        "key": "root.2.0.0.0.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "space-y-8"
+                        },
+                        "children": [
+                          {
+                            "tag": "section",
+                            "attrs": {},
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "text-muted-foreground mb-2.5 flex items-center gap-2 text-xs font-medium"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "bg-muted text-foreground grid size-6 place-items-center rounded-full text-[11px] tabular-nums"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "1",
+                                        "key": "root.2.0.0.0.1.0.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.2.0.0.0.1.0.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {},
+                                    "children": [
+                                      {
+                                        "text": "What the agent should do",
+                                        "key": "root.2.0.0.0.1.0.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.2.0.0.0.1.0.0.1"
+                                  }
+                                ],
+                                "key": "root.2.0.0.0.1.0.0"
+                              },
+                              {
+                                "tag": "form",
+                                "attrs": {
+                                  "class": "relative mx-auto w-full max-w-none",
+                                  "aria-label": "Agent instructions"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "data-slot": "input-group",
+                                      "role": "group",
+                                      "class": "group/input-group relative flex w-full min-w-0 border outline-none in-data-[slot=combobox-content]:focus-within:border-inherit in-data-[slot=combobox-content]:focus-within:ring-0 has-[[data-slot=input-group-control]:focus-visible]:border-ring has-[[data-slot][aria-invalid=true]]:border-destructive has-[[data-slot][aria-invalid=true]]:ring-3 has-[[data-slot][aria-invalid=true]]:ring-destructive/20 has-[>[data-align=block-end]]:h-auto has-[>[data-align=block-end]]:flex-col has-[>[data-align=block-start]]:h-auto has-[>[data-align=block-start]]:flex-col has-[>textarea]:h-auto dark:bg-input/30 dark:has-[[data-slot][aria-invalid=true]]:ring-destructive/40 has-[>[data-align=block-end]]:[&>input]:pt-3 has-[>[data-align=block-start]]:[&>input]:pb-3 has-[>[data-align=inline-end]]:[&>input]:pr-1.5 has-[>[data-align=inline-start]]:[&>input]:pl-1.5 h-auto flex-col items-stretch transition-[border-color,box-shadow] duration-200 bg-background border-input has-[[data-slot=input-group-control]:focus-visible]:ring-ring/30 gap-0 rounded-2xl shadow-sm has-[[data-slot=input-group-control]:focus-visible]:ring-3"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "textarea",
+                                        "attrs": {
+                                          "class": "border-input focus-visible:ring-ring flex w-full focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 md:text-sm flex-1 resize-none rounded-none border-0 bg-transparent py-2 shadow-none ring-0 focus-visible:ring-0 aria-invalid:ring-0 dark:bg-transparent placeholder:text-muted-foreground/55 [field-sizing:content] max-h-60 overflow-y-auto px-4 pt-4 pb-2.5 text-sm leading-6 min-h-32",
+                                          "data-slot": "input-group-control",
+                                          "aria-label": "Agent instructions",
+                                          "name": "message",
+                                          "placeholder": "Describe the outcome, constraints, and what not to touch…",
+                                          "value": "Review the newly created product story, clarify its outcome and acceptance criteria, and apply the guidance in PRODUCT_REVIEW.md."
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Review the newly created product story, clarify its outcome and acceptance criteria, and apply the guidance in PRODUCT_REVIEW.md.",
+                                            "key": "root.2.0.0.0.1.0.1.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.2.0.0.0.1.0.1.0.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "role": "group",
+                                          "data-slot": "input-group-addon",
+                                          "class": "h-auto py-1.5 text-sm font-medium text-muted-foreground select-none group-data-[disabled=true]/input-group:opacity-50 [&>kbd]:rounded-[calc(var(--radius)-5px)] [&>svg:not([class*='size-'])]:size-4 order-last justify-start group-has-[>input]/input-group:pb-2 [.border-t]:pt-2 grid w-full cursor-default grid-cols-[minmax(0,1fr)_auto] items-center gap-2 px-3 pt-0 pb-3"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "flex min-w-0 items-center gap-1 flex-wrap"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "button",
+                                                "attrs": {
+                                                  "class": "justify-center whitespace-nowrap transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground py-2 flex items-center shadow-none h-8 max-w-48 gap-1.5 rounded-lg px-2 text-xs font-normal",
+                                                  "type": "button",
+                                                  "aria-label": "Model: GPT-5.6 Sol",
+                                                  "aria-haspopup": "dialog",
+                                                  "data-state": "closed"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "svg",
+                                                    "attrs": {
+                                                      "stroke": "currentColor",
+                                                      "fill": "currentColor",
+                                                      "stroke-width": "0",
+                                                      "role": "img",
+                                                      "viewBox": "0 0 24 24",
+                                                      "class": "size-3.5 shrink-0",
+                                                      "height": "100%",
+                                                      "width": "100%"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "path",
+                                                        "attrs": {
+                                                          "d": "M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.2.0.0.0.1.0.1.0.1.0.0.0.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.2.0.0.0.1.0.1.0.1.0.0.0"
+                                                  },
+                                                  {
+                                                    "tag": "span",
+                                                    "attrs": {
+                                                      "class": "truncate"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "5.6 Sol",
+                                                        "key": "root.2.0.0.0.1.0.1.0.1.0.0.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.2.0.0.0.1.0.1.0.1.0.0.1"
+                                                  },
+                                                  {
+                                                    "tag": "icon",
+                                                    "attrs": {
+                                                      "name": "i-lucide-chevron-down",
+                                                      "class": "lucide lucide-chevron-down text-muted-foreground size-3.5 shrink-0"
+                                                    },
+                                                    "key": "root.2.0.0.0.1.0.1.0.1.0.0.2"
+                                                  }
+                                                ],
+                                                "key": "root.2.0.0.0.1.0.1.0.1.0.0"
+                                              },
+                                              {
+                                                "tag": "button",
+                                                "attrs": {
+                                                  "class": "justify-center whitespace-nowrap transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground py-2 flex items-center shadow-none h-8 max-w-44 gap-1.5 rounded-lg px-2 text-xs font-normal",
+                                                  "type": "button",
+                                                  "id": "radix-_R_16kqfdbsnpfknmlb_",
+                                                  "aria-haspopup": "menu",
+                                                  "data-state": "closed"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "icon",
+                                                    "attrs": {
+                                                      "name": "i-lucide-zap",
+                                                      "class": "lucide lucide-zap size-3.5 shrink-0"
+                                                    },
+                                                    "key": "root.2.0.0.0.1.0.1.0.1.0.1.0"
+                                                  },
+                                                  {
+                                                    "tag": "span",
+                                                    "attrs": {
+                                                      "class": "truncate"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "High",
+                                                        "key": "root.2.0.0.0.1.0.1.0.1.0.1.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.2.0.0.0.1.0.1.0.1.0.1.1"
+                                                  },
+                                                  {
+                                                    "tag": "icon",
+                                                    "attrs": {
+                                                      "name": "i-lucide-chevron-down",
+                                                      "class": "lucide lucide-chevron-down text-muted-foreground size-3.5 shrink-0"
+                                                    },
+                                                    "key": "root.2.0.0.0.1.0.1.0.1.0.1.2"
+                                                  }
+                                                ],
+                                                "key": "root.2.0.0.0.1.0.1.0.1.0.1"
+                                              }
+                                            ],
+                                            "key": "root.2.0.0.0.1.0.1.0.1.0"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "flex min-w-0 items-center gap-1 justify-self-end"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "button",
+                                                "attrs": {
+                                                  "class": "justify-center whitespace-nowrap transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground py-2 flex items-center shadow-none h-8 max-w-44 gap-1.5 rounded-lg px-2 text-xs font-normal",
+                                                  "type": "button",
+                                                  "id": "radix-_R_akqfdbsnpfknmlb_",
+                                                  "aria-haspopup": "menu",
+                                                  "data-state": "closed"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "icon",
+                                                    "attrs": {
+                                                      "name": "i-lucide-bot",
+                                                      "class": "lucide lucide-bot size-3.5 shrink-0"
+                                                    },
+                                                    "key": "root.2.0.0.0.1.0.1.0.1.1.0.0"
+                                                  },
+                                                  {
+                                                    "tag": "span",
+                                                    "attrs": {
+                                                      "class": "truncate"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Workspace agent",
+                                                        "key": "root.2.0.0.0.1.0.1.0.1.1.0.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.2.0.0.0.1.0.1.0.1.1.0.1"
+                                                  },
+                                                  {
+                                                    "tag": "icon",
+                                                    "attrs": {
+                                                      "name": "i-lucide-chevron-down",
+                                                      "class": "lucide lucide-chevron-down text-muted-foreground size-3.5 shrink-0"
+                                                    },
+                                                    "key": "root.2.0.0.0.1.0.1.0.1.1.0.2"
+                                                  }
+                                                ],
+                                                "key": "root.2.0.0.0.1.0.1.0.1.1.0"
+                                              }
+                                            ],
+                                            "key": "root.2.0.0.0.1.0.1.0.1.1"
+                                          }
+                                        ],
+                                        "key": "root.2.0.0.0.1.0.1.0.1"
+                                      }
+                                    ],
+                                    "key": "root.2.0.0.0.1.0.1.0"
+                                  }
+                                ],
+                                "key": "root.2.0.0.0.1.0.1"
+                              }
+                            ],
+                            "key": "root.2.0.0.0.1.0"
+                          },
+                          {
+                            "tag": "section",
+                            "attrs": {},
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "text-muted-foreground mb-2.5 flex items-center gap-2 text-xs font-medium"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "bg-muted text-foreground grid size-6 place-items-center rounded-full text-[11px] tabular-nums"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "2",
+                                        "key": "root.2.0.0.0.1.1.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.2.0.0.0.1.1.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {},
+                                    "children": [
+                                      {
+                                        "text": "When it should run",
+                                        "key": "root.2.0.0.0.1.1.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.2.0.0.0.1.1.0.1"
+                                  }
+                                ],
+                                "key": "root.2.0.0.0.1.1.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "space-y-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "bg-card rounded-xl border p-1 shadow-xs"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "button",
+                                        "attrs": {
+                                          "type": "button",
+                                          "class": "text-muted-foreground hover:bg-muted/60 hover:text-foreground flex min-h-11 w-full items-center gap-2 rounded-lg px-3 text-left text-sm transition-colors",
+                                          "id": "radix-_R_lafdbsnpfknmlb_",
+                                          "aria-haspopup": "menu",
+                                          "data-state": "closed"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-plus",
+                                              "class": "lucide lucide-plus size-4"
+                                            },
+                                            "key": "root.2.0.0.0.1.1.1.0.0.0"
+                                          },
+                                          {
+                                            "text": "Add trigger",
+                                            "key": "root.2.0.0.0.1.1.1.0.0.1"
+                                          }
+                                        ],
+                                        "key": "root.2.0.0.0.1.1.1.0.0"
+                                      }
+                                    ],
+                                    "key": "root.2.0.0.0.1.1.1.0"
+                                  }
+                                ],
+                                "key": "root.2.0.0.0.1.1.1"
+                              }
+                            ],
+                            "key": "root.2.0.0.0.1.1"
+                          },
+                          {
+                            "tag": "section",
+                            "attrs": {},
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "data-state": "closed"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex flex-wrap items-center gap-2"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "button",
+                                        "attrs": {
+                                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs",
+                                          "type": "button",
+                                          "data-state": "closed"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-settings-2",
+                                              "class": "lucide lucide-settings2 lucide-settings-2"
+                                            },
+                                            "key": "root.2.0.0.0.1.2.0.0.0.0"
+                                          },
+                                          {
+                                            "text": "Settings",
+                                            "key": "root.2.0.0.0.1.2.0.0.0.1"
+                                          }
+                                        ],
+                                        "key": "root.2.0.0.0.1.2.0.0.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "text-muted-foreground text-xs"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Checks on · 1 repair · 30 min",
+                                            "key": "root.2.0.0.0.1.2.0.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.2.0.0.0.1.2.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.2.0.0.0.1.2.0.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "data-state": "closed",
+                                      "id": "radix-_R_1qfdbsnpfknmlb_",
+                                      "style": ""
+                                    },
+                                    "children": [],
+                                    "key": "root.2.0.0.0.1.2.0.1"
+                                  }
+                                ],
+                                "key": "root.2.0.0.0.1.2.0"
+                              }
+                            ],
+                            "key": "root.2.0.0.0.1.2"
+                          }
+                        ],
+                        "key": "root.2.0.0.0.1"
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {
+                          "class": "text-muted-foreground mt-6 text-xs"
+                        },
+                        "children": [
+                          {
+                            "text": "Add a trigger to create this automation.",
+                            "key": "root.2.0.0.0.2.0"
+                          }
+                        ],
+                        "key": "root.2.0.0.0.2"
+                      }
+                    ],
+                    "key": "root.2.0.0.0"
+                  }
+                ],
+                "key": "root.2.0.0"
+              }
+            ],
+            "key": "root.2.0"
+          }
+        ],
+        "key": "root.2"
+      }
+    ],
+    "key": "root"
+  },
+  "headings": [
+    "Create automation"
+  ]
+}

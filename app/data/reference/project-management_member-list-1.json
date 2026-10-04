@@ -1,0 +1,3833 @@
+{
+  "label": "Member List 1",
+  "path": "/project-management/member-list-1",
+  "appTitle": "Project Management",
+  "tree": {
+    "tag": "div",
+    "attrs": {
+      "class": "flex h-full flex-col overflow-hidden"
+    },
+    "children": [
+      {
+        "tag": "div",
+        "attrs": {
+          "class": "flex min-h-0 flex-1 flex-col overflow-hidden"
+        },
+        "children": [
+          {
+            "tag": "main",
+            "attrs": {
+              "id": "main-content",
+              "class": "bg-background flex min-h-0 flex-1 flex-col overflow-hidden dark:bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.035),transparent_28%)]"
+            },
+            "children": [
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "border-b dark:border-white/8 dark:bg-[#111111]/95"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "flex flex-col gap-2 px-4 py-3 sm:px-6 lg:min-h-14 lg:flex-row lg:items-center lg:justify-between lg:gap-4 lg:py-0"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex min-w-0 items-center justify-between gap-3"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex min-w-0 items-center gap-2.5 text-sm font-medium dark:text-zinc-100"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "truncate"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Members",
+                                    "key": "root.0.0.0.0.0.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.0.0.0"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "bg-muted text-muted-foreground shrink-0 rounded-md px-1.5 py-0.5 text-xs dark:bg-zinc-900 dark:text-zinc-300"
+                                },
+                                "children": [
+                                  {
+                                    "text": "16",
+                                    "key": "root.0.0.0.0.0.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.0.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.0.0.0.0"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "inline-flex items-center justify-center whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 rounded-md text-xs size-9 shrink-0 gap-1.5 p-0 sm:w-auto sm:px-3 lg:hidden",
+                              "aria-label": "Invite member"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-plus",
+                                  "class": "lucide lucide-plus size-3.5"
+                                },
+                                "key": "root.0.0.0.0.0.1.0"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "hidden sm:inline"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Invite Member",
+                                    "key": "root.0.0.0.0.0.1.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.0.1.1"
+                              }
+                            ],
+                            "key": "root.0.0.0.0.0.1"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "grid min-w-0 grid-cols-2 items-center gap-2 lg:flex lg:flex-wrap lg:justify-end"
+                        },
+                        "children": [
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "inline-flex items-center whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border shadow-xs rounded-md text-xs relative h-9 w-full justify-center gap-1.5 px-2.5 lg:h-8 lg:w-auto lg:border-transparent lg:bg-transparent lg:shadow-none border-border bg-background text-foreground hover:bg-accent hover:text-accent-foreground",
+                              "type": "button",
+                              "aria-haspopup": "dialog",
+                              "data-state": "closed"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-list-filter",
+                                  "class": "lucide lucide-list-filter size-3.5"
+                                },
+                                "key": "root.0.0.0.0.1.0.0"
+                              },
+                              {
+                                "text": "Filter",
+                                "key": "root.0.0.0.0.1.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.0.0.1.0"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "inline-flex items-center whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border shadow-xs rounded-md px-3 text-xs h-9 w-full justify-center gap-1.5 lg:h-8 lg:w-auto border-border bg-background text-foreground hover:bg-accent hover:text-accent-foreground"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-sliders-horizontal",
+                                  "class": "lucide lucide-sliders-horizontal size-3.5"
+                                },
+                                "key": "root.0.0.0.0.1.1.0"
+                              },
+                              {
+                                "text": "Display",
+                                "key": "root.0.0.0.0.1.1.1"
+                              }
+                            ],
+                            "key": "root.0.0.0.0.1.1"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "items-center justify-center whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 rounded-md px-3 text-xs hidden h-8 gap-1.5 lg:inline-flex"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-plus",
+                                  "class": "lucide lucide-plus size-3.5"
+                                },
+                                "key": "root.0.0.0.0.1.2.0"
+                              },
+                              {
+                                "text": "Invite Member",
+                                "key": "root.0.0.0.0.1.2.1"
+                              }
+                            ],
+                            "key": "root.0.0.0.0.1.2"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.1"
+                      }
+                    ],
+                    "key": "root.0.0.0.0"
+                  }
+                ],
+                "key": "root.0.0.0"
+              },
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "flex-1 overflow-auto dark:bg-[linear-gradient(180deg,rgba(255,255,255,0.01),transparent_12%)]"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "min-w-[900px] border-b px-4 py-2 text-sm text-zinc-500 sm:px-6 lg:min-w-0 dark:border-white/8 dark:bg-[#141414]/95 dark:text-zinc-400"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex items-center"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[320px] shrink-0 lg:w-[36%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "text": "Member",
+                                "key": "root.0.0.1.0.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.0.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[150px] shrink-0 lg:w-[16%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "text": "Availability",
+                                "key": "root.0.0.1.0.0.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.0.1"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[100px] shrink-0 lg:w-[14%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "text": "Role",
+                                "key": "root.0.0.1.0.0.2.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.0.2"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[220px] shrink-0 lg:w-[20%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "text": "Teams",
+                                "key": "root.0.0.1.0.0.3.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.0.3"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[110px] shrink-0 lg:w-[14%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "text": "Joined",
+                                "key": "root.0.0.1.0.0.4.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.0.4"
+                          }
+                        ],
+                        "key": "root.0.0.1.0.0"
+                      }
+                    ],
+                    "key": "root.0.0.1.0"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {},
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "hover:bg-muted/40 flex min-w-[900px] items-center border-b px-4 py-3 text-sm transition-colors last:border-b-0 sm:px-6 lg:min-w-0 dark:border-white/8 dark:hover:bg-white/4"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[320px] shrink-0 lg:w-[36%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-center gap-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "relative"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "relative flex overflow-hidden rounded-full size-8 shrink-0"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "img",
+                                            "attrs": {
+                                              "class": "aspect-square h-full w-full",
+                                              "alt": "Ava Reed",
+                                              "src": "/reference/a99c47c2fa3dc656.png"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.1.1.0.0.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.0.0.0.0.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "border-background absolute -right-0.5 -bottom-0.5 size-2.5 rounded-full border-2 dark:border-[#141414]",
+                                          "style": "background-color:#16a34a"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "sr-only"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "online",
+                                                "key": "root.0.0.1.1.0.0.0.0.1.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.0.0.0.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.0.0.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.0.0.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "min-w-0"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "truncate font-medium dark:text-zinc-100"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Ava Reed",
+                                            "key": "root.0.0.1.1.0.0.0.1.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.0.0.0.1.0"
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "truncate text-xs text-zinc-500 dark:text-zinc-400"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "ava.reed@shadcnblocks.dev",
+                                            "key": "root.0.0.1.1.0.0.0.1.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.0.0.0.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.0.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.0.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[150px] shrink-0 lg:w-[16%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-center gap-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-circle-check",
+                                      "class": "lucide lucide-circle-check size-4 shrink-0 text-green-500"
+                                    },
+                                    "key": "root.0.0.1.1.0.1.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "truncate text-xs font-medium dark:text-zinc-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Available",
+                                        "key": "root.0.0.1.1.0.1.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.1.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.0.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.0.1"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[100px] shrink-0 text-xs text-zinc-500 lg:w-[14%] lg:shrink dark:text-zinc-400"
+                            },
+                            "children": [
+                              {
+                                "text": "Member",
+                                "key": "root.0.0.1.1.0.2.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.0.2"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex w-[220px] shrink-0 lg:w-[20%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "type": "button",
+                                  "aria-label": "View 3 teams",
+                                  "class": "text-muted-foreground flex items-center gap-1 truncate text-xs font-medium dark:text-zinc-400",
+                                  "data-state": "closed"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-contact-round",
+                                      "class": "lucide lucide-contact-round size-3.5 shrink-0"
+                                    },
+                                    "key": "root.0.0.1.1.0.3.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "truncate"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "OPS, CX",
+                                        "key": "root.0.0.1.1.0.3.0.1.0"
+                                      },
+                                      {
+                                        "text": " +1",
+                                        "key": "root.0.0.1.1.0.3.0.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.3.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.0.3.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.0.3"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[110px] shrink-0 text-xs text-zinc-500 lg:w-[14%] lg:shrink dark:text-zinc-400"
+                            },
+                            "children": [
+                              {
+                                "text": "Apr 2024",
+                                "key": "root.0.0.1.1.0.4.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.0.4"
+                          }
+                        ],
+                        "key": "root.0.0.1.1.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "hover:bg-muted/40 flex min-w-[900px] items-center border-b px-4 py-3 text-sm transition-colors last:border-b-0 sm:px-6 lg:min-w-0 dark:border-white/8 dark:hover:bg-white/4"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[320px] shrink-0 lg:w-[36%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-center gap-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "relative"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "relative flex overflow-hidden rounded-full size-8 shrink-0"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "img",
+                                            "attrs": {
+                                              "class": "aspect-square h-full w-full",
+                                              "alt": "Ben Lewis",
+                                              "src": "/reference/9310a24e0d573ddb.png"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.1.1.1.0.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.1.0.0.0.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "border-background absolute -right-0.5 -bottom-0.5 size-2.5 rounded-full border-2 dark:border-[#141414]",
+                                          "style": "background-color:#16a34a"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "sr-only"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "online",
+                                                "key": "root.0.0.1.1.1.0.0.0.1.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.1.0.0.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.1.0.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.1.0.0.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "min-w-0"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "truncate font-medium dark:text-zinc-100"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Ben Lewis",
+                                            "key": "root.0.0.1.1.1.0.0.1.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.1.0.0.1.0"
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "truncate text-xs text-zinc-500 dark:text-zinc-400"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "ben.lewis@shadcnblocks.dev",
+                                            "key": "root.0.0.1.1.1.0.0.1.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.1.0.0.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.1.0.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.1.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.1.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[150px] shrink-0 lg:w-[16%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-center gap-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-circle-check",
+                                      "class": "lucide lucide-circle-check size-4 shrink-0 text-green-500"
+                                    },
+                                    "key": "root.0.0.1.1.1.1.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "truncate text-xs font-medium dark:text-zinc-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Available",
+                                        "key": "root.0.0.1.1.1.1.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.1.1.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.1.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.1.1"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[100px] shrink-0 text-xs text-zinc-500 lg:w-[14%] lg:shrink dark:text-zinc-400"
+                            },
+                            "children": [
+                              {
+                                "text": "Admin",
+                                "key": "root.0.0.1.1.1.2.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.1.2"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex w-[220px] shrink-0 lg:w-[20%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "type": "button",
+                                  "aria-label": "View 2 teams",
+                                  "class": "text-muted-foreground flex items-center gap-1 truncate text-xs font-medium dark:text-zinc-400",
+                                  "data-state": "closed"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-contact-round",
+                                      "class": "lucide lucide-contact-round size-3.5 shrink-0"
+                                    },
+                                    "key": "root.0.0.1.1.1.3.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "truncate"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "OPS, GROWTH",
+                                        "key": "root.0.0.1.1.1.3.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.1.3.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.1.3.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.1.3"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[110px] shrink-0 text-xs text-zinc-500 lg:w-[14%] lg:shrink dark:text-zinc-400"
+                            },
+                            "children": [
+                              {
+                                "text": "Nov 2023",
+                                "key": "root.0.0.1.1.1.4.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.1.4"
+                          }
+                        ],
+                        "key": "root.0.0.1.1.1"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "hover:bg-muted/40 flex min-w-[900px] items-center border-b px-4 py-3 text-sm transition-colors last:border-b-0 sm:px-6 lg:min-w-0 dark:border-white/8 dark:hover:bg-white/4"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[320px] shrink-0 lg:w-[36%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-center gap-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "relative"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "relative flex overflow-hidden rounded-full size-8 shrink-0"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "img",
+                                            "attrs": {
+                                              "class": "aspect-square h-full w-full",
+                                              "alt": "Chloe Park",
+                                              "src": "/reference/62828bc2a489837e.png"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.1.1.2.0.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.2.0.0.0.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "border-background absolute -right-0.5 -bottom-0.5 size-2.5 rounded-full border-2 dark:border-[#141414]",
+                                          "style": "background-color:#16a34a"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "sr-only"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "online",
+                                                "key": "root.0.0.1.1.2.0.0.0.1.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.2.0.0.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.2.0.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.2.0.0.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "min-w-0"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "truncate font-medium dark:text-zinc-100"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Chloe Park",
+                                            "key": "root.0.0.1.1.2.0.0.1.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.2.0.0.1.0"
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "truncate text-xs text-zinc-500 dark:text-zinc-400"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "chloe.park@shadcnblocks.dev",
+                                            "key": "root.0.0.1.1.2.0.0.1.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.2.0.0.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.2.0.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.2.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.2.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[150px] shrink-0 lg:w-[16%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-center gap-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-circle-check",
+                                      "class": "lucide lucide-circle-check size-4 shrink-0 text-green-500"
+                                    },
+                                    "key": "root.0.0.1.1.2.1.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "truncate text-xs font-medium dark:text-zinc-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Available",
+                                        "key": "root.0.0.1.1.2.1.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.2.1.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.2.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.2.1"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[100px] shrink-0 text-xs text-zinc-500 lg:w-[14%] lg:shrink dark:text-zinc-400"
+                            },
+                            "children": [
+                              {
+                                "text": "Member",
+                                "key": "root.0.0.1.1.2.2.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.2.2"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex w-[220px] shrink-0 lg:w-[20%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "type": "button",
+                                  "aria-label": "View 2 teams",
+                                  "class": "text-muted-foreground flex items-center gap-1 truncate text-xs font-medium dark:text-zinc-400",
+                                  "data-state": "closed"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-contact-round",
+                                      "class": "lucide lucide-contact-round size-3.5 shrink-0"
+                                    },
+                                    "key": "root.0.0.1.1.2.3.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "truncate"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "CX, GROWTH",
+                                        "key": "root.0.0.1.1.2.3.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.2.3.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.2.3.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.2.3"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[110px] shrink-0 text-xs text-zinc-500 lg:w-[14%] lg:shrink dark:text-zinc-400"
+                            },
+                            "children": [
+                              {
+                                "text": "Sep 2024",
+                                "key": "root.0.0.1.1.2.4.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.2.4"
+                          }
+                        ],
+                        "key": "root.0.0.1.1.2"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "hover:bg-muted/40 flex min-w-[900px] items-center border-b px-4 py-3 text-sm transition-colors last:border-b-0 sm:px-6 lg:min-w-0 dark:border-white/8 dark:hover:bg-white/4"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[320px] shrink-0 lg:w-[36%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-center gap-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "relative"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "relative flex overflow-hidden rounded-full size-8 shrink-0"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "img",
+                                            "attrs": {
+                                              "class": "aspect-square h-full w-full",
+                                              "alt": "Dina Moss",
+                                              "src": "/reference/ada84674117f0188.png"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.1.1.3.0.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.3.0.0.0.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "border-background absolute -right-0.5 -bottom-0.5 size-2.5 rounded-full border-2 dark:border-[#141414]",
+                                          "style": "background-color:#71717a"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "sr-only"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "offline",
+                                                "key": "root.0.0.1.1.3.0.0.0.1.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.3.0.0.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.3.0.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.3.0.0.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "min-w-0"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "truncate font-medium dark:text-zinc-100"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Dina Moss",
+                                            "key": "root.0.0.1.1.3.0.0.1.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.3.0.0.1.0"
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "truncate text-xs text-zinc-500 dark:text-zinc-400"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "dina.moss@shadcnblocks.dev",
+                                            "key": "root.0.0.1.1.3.0.0.1.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.3.0.0.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.3.0.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.3.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.3.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[150px] shrink-0 lg:w-[16%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-center gap-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-circle-dot-dashed",
+                                      "class": "lucide lucide-circle-dot-dashed size-4 shrink-0 text-zinc-500"
+                                    },
+                                    "key": "root.0.0.1.1.3.1.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "truncate text-xs font-medium dark:text-zinc-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Offline",
+                                        "key": "root.0.0.1.1.3.1.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.3.1.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.3.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.3.1"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[100px] shrink-0 text-xs text-zinc-500 lg:w-[14%] lg:shrink dark:text-zinc-400"
+                            },
+                            "children": [
+                              {
+                                "text": "Guest",
+                                "key": "root.0.0.1.1.3.2.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.3.2"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex w-[220px] shrink-0 lg:w-[20%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "type": "button",
+                                  "aria-label": "View 2 teams",
+                                  "class": "text-muted-foreground flex items-center gap-1 truncate text-xs font-medium dark:text-zinc-400",
+                                  "data-state": "closed"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-contact-round",
+                                      "class": "lucide lucide-contact-round size-3.5 shrink-0"
+                                    },
+                                    "key": "root.0.0.1.1.3.3.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "truncate"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "CX, PROGRAM",
+                                        "key": "root.0.0.1.1.3.3.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.3.3.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.3.3.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.3.3"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[110px] shrink-0 text-xs text-zinc-500 lg:w-[14%] lg:shrink dark:text-zinc-400"
+                            },
+                            "children": [
+                              {
+                                "text": "Jan 2025",
+                                "key": "root.0.0.1.1.3.4.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.3.4"
+                          }
+                        ],
+                        "key": "root.0.0.1.1.3"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "hover:bg-muted/40 flex min-w-[900px] items-center border-b px-4 py-3 text-sm transition-colors last:border-b-0 sm:px-6 lg:min-w-0 dark:border-white/8 dark:hover:bg-white/4"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[320px] shrink-0 lg:w-[36%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-center gap-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "relative"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "relative flex overflow-hidden rounded-full size-8 shrink-0"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "img",
+                                            "attrs": {
+                                              "class": "aspect-square h-full w-full",
+                                              "alt": "Ethan Cole",
+                                              "src": "/reference/0a5fda67e048ade8.png"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.1.1.4.0.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.4.0.0.0.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "border-background absolute -right-0.5 -bottom-0.5 size-2.5 rounded-full border-2 dark:border-[#141414]",
+                                          "style": "background-color:#16a34a"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "sr-only"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "online",
+                                                "key": "root.0.0.1.1.4.0.0.0.1.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.4.0.0.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.4.0.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.4.0.0.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "min-w-0"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "truncate font-medium dark:text-zinc-100"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Ethan Cole",
+                                            "key": "root.0.0.1.1.4.0.0.1.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.4.0.0.1.0"
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "truncate text-xs text-zinc-500 dark:text-zinc-400"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "ethan.cole@shadcnblocks.dev",
+                                            "key": "root.0.0.1.1.4.0.0.1.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.4.0.0.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.4.0.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.4.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.4.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[150px] shrink-0 lg:w-[16%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-center gap-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-circle-check",
+                                      "class": "lucide lucide-circle-check size-4 shrink-0 text-green-500"
+                                    },
+                                    "key": "root.0.0.1.1.4.1.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "truncate text-xs font-medium dark:text-zinc-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Available",
+                                        "key": "root.0.0.1.1.4.1.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.4.1.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.4.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.4.1"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[100px] shrink-0 text-xs text-zinc-500 lg:w-[14%] lg:shrink dark:text-zinc-400"
+                            },
+                            "children": [
+                              {
+                                "text": "Member",
+                                "key": "root.0.0.1.1.4.2.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.4.2"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex w-[220px] shrink-0 lg:w-[20%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "type": "button",
+                                  "aria-label": "View 1 teams",
+                                  "class": "text-muted-foreground flex items-center gap-1 truncate text-xs font-medium dark:text-zinc-400",
+                                  "data-state": "closed"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-contact-round",
+                                      "class": "lucide lucide-contact-round size-3.5 shrink-0"
+                                    },
+                                    "key": "root.0.0.1.1.4.3.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "truncate"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "MOBILE",
+                                        "key": "root.0.0.1.1.4.3.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.4.3.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.4.3.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.4.3"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[110px] shrink-0 text-xs text-zinc-500 lg:w-[14%] lg:shrink dark:text-zinc-400"
+                            },
+                            "children": [
+                              {
+                                "text": "May 2024",
+                                "key": "root.0.0.1.1.4.4.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.4.4"
+                          }
+                        ],
+                        "key": "root.0.0.1.1.4"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "hover:bg-muted/40 flex min-w-[900px] items-center border-b px-4 py-3 text-sm transition-colors last:border-b-0 sm:px-6 lg:min-w-0 dark:border-white/8 dark:hover:bg-white/4"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[320px] shrink-0 lg:w-[36%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-center gap-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "relative"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "relative flex overflow-hidden rounded-full size-8 shrink-0"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "img",
+                                            "attrs": {
+                                              "class": "aspect-square h-full w-full",
+                                              "alt": "Harper Singh",
+                                              "src": "/reference/e92f665d5ff7fc07.png"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.1.1.5.0.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.5.0.0.0.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "border-background absolute -right-0.5 -bottom-0.5 size-2.5 rounded-full border-2 dark:border-[#141414]",
+                                          "style": "background-color:#71717a"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "sr-only"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "offline",
+                                                "key": "root.0.0.1.1.5.0.0.0.1.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.5.0.0.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.5.0.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.5.0.0.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "min-w-0"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "truncate font-medium dark:text-zinc-100"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Harper Singh",
+                                            "key": "root.0.0.1.1.5.0.0.1.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.5.0.0.1.0"
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "truncate text-xs text-zinc-500 dark:text-zinc-400"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "harper.singh@shadcnblocks.dev",
+                                            "key": "root.0.0.1.1.5.0.0.1.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.5.0.0.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.5.0.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.5.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.5.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[150px] shrink-0 lg:w-[16%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-center gap-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-circle-dot-dashed",
+                                      "class": "lucide lucide-circle-dot-dashed size-4 shrink-0 text-zinc-500"
+                                    },
+                                    "key": "root.0.0.1.1.5.1.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "truncate text-xs font-medium dark:text-zinc-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Offline",
+                                        "key": "root.0.0.1.1.5.1.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.5.1.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.5.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.5.1"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[100px] shrink-0 text-xs text-zinc-500 lg:w-[14%] lg:shrink dark:text-zinc-400"
+                            },
+                            "children": [
+                              {
+                                "text": "Member",
+                                "key": "root.0.0.1.1.5.2.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.5.2"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex w-[220px] shrink-0 lg:w-[20%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "type": "button",
+                                  "aria-label": "View 2 teams",
+                                  "class": "text-muted-foreground flex items-center gap-1 truncate text-xs font-medium dark:text-zinc-400",
+                                  "data-state": "closed"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-contact-round",
+                                      "class": "lucide lucide-contact-round size-3.5 shrink-0"
+                                    },
+                                    "key": "root.0.0.1.1.5.3.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "truncate"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "OPS, TALENT",
+                                        "key": "root.0.0.1.1.5.3.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.5.3.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.5.3.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.5.3"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[110px] shrink-0 text-xs text-zinc-500 lg:w-[14%] lg:shrink dark:text-zinc-400"
+                            },
+                            "children": [
+                              {
+                                "text": "Oct 2024",
+                                "key": "root.0.0.1.1.5.4.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.5.4"
+                          }
+                        ],
+                        "key": "root.0.0.1.1.5"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "hover:bg-muted/40 flex min-w-[900px] items-center border-b px-4 py-3 text-sm transition-colors last:border-b-0 sm:px-6 lg:min-w-0 dark:border-white/8 dark:hover:bg-white/4"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[320px] shrink-0 lg:w-[36%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-center gap-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "relative"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "relative flex overflow-hidden rounded-full size-8 shrink-0"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "img",
+                                            "attrs": {
+                                              "class": "aspect-square h-full w-full",
+                                              "alt": "Jules Hart",
+                                              "src": "/reference/4759e542002c0be5.png"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.1.1.6.0.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.6.0.0.0.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "border-background absolute -right-0.5 -bottom-0.5 size-2.5 rounded-full border-2 dark:border-[#141414]",
+                                          "style": "background-color:#16a34a"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "sr-only"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "online",
+                                                "key": "root.0.0.1.1.6.0.0.0.1.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.6.0.0.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.6.0.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.6.0.0.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "min-w-0"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "truncate font-medium dark:text-zinc-100"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Jules Hart",
+                                            "key": "root.0.0.1.1.6.0.0.1.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.6.0.0.1.0"
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "truncate text-xs text-zinc-500 dark:text-zinc-400"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "jules.hart@shadcnblocks.dev",
+                                            "key": "root.0.0.1.1.6.0.0.1.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.6.0.0.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.6.0.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.6.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.6.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[150px] shrink-0 lg:w-[16%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-center gap-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-circle-check",
+                                      "class": "lucide lucide-circle-check size-4 shrink-0 text-green-500"
+                                    },
+                                    "key": "root.0.0.1.1.6.1.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "truncate text-xs font-medium dark:text-zinc-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Available",
+                                        "key": "root.0.0.1.1.6.1.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.6.1.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.6.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.6.1"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[100px] shrink-0 text-xs text-zinc-500 lg:w-[14%] lg:shrink dark:text-zinc-400"
+                            },
+                            "children": [
+                              {
+                                "text": "Member",
+                                "key": "root.0.0.1.1.6.2.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.6.2"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex w-[220px] shrink-0 lg:w-[20%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "type": "button",
+                                  "aria-label": "View 2 teams",
+                                  "class": "text-muted-foreground flex items-center gap-1 truncate text-xs font-medium dark:text-zinc-400",
+                                  "data-state": "closed"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-contact-round",
+                                      "class": "lucide lucide-contact-round size-3.5 shrink-0"
+                                    },
+                                    "key": "root.0.0.1.1.6.3.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "truncate"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "MOBILE, CX",
+                                        "key": "root.0.0.1.1.6.3.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.6.3.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.6.3.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.6.3"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[110px] shrink-0 text-xs text-zinc-500 lg:w-[14%] lg:shrink dark:text-zinc-400"
+                            },
+                            "children": [
+                              {
+                                "text": "Aug 2024",
+                                "key": "root.0.0.1.1.6.4.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.6.4"
+                          }
+                        ],
+                        "key": "root.0.0.1.1.6"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "hover:bg-muted/40 flex min-w-[900px] items-center border-b px-4 py-3 text-sm transition-colors last:border-b-0 sm:px-6 lg:min-w-0 dark:border-white/8 dark:hover:bg-white/4"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[320px] shrink-0 lg:w-[36%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-center gap-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "relative"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "relative flex overflow-hidden rounded-full size-8 shrink-0"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "img",
+                                            "attrs": {
+                                              "class": "aspect-square h-full w-full",
+                                              "alt": "Kabir Sethi",
+                                              "src": "/reference/82a5a2284fceeed0.png"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.1.1.7.0.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.7.0.0.0.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "border-background absolute -right-0.5 -bottom-0.5 size-2.5 rounded-full border-2 dark:border-[#141414]",
+                                          "style": "background-color:#16a34a"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "sr-only"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "online",
+                                                "key": "root.0.0.1.1.7.0.0.0.1.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.7.0.0.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.7.0.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.7.0.0.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "min-w-0"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "truncate font-medium dark:text-zinc-100"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Kabir Sethi",
+                                            "key": "root.0.0.1.1.7.0.0.1.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.7.0.0.1.0"
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "truncate text-xs text-zinc-500 dark:text-zinc-400"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "kabir.sethi@shadcnblocks.dev",
+                                            "key": "root.0.0.1.1.7.0.0.1.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.7.0.0.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.7.0.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.7.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.7.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[150px] shrink-0 lg:w-[16%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-center gap-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-circle-check",
+                                      "class": "lucide lucide-circle-check size-4 shrink-0 text-green-500"
+                                    },
+                                    "key": "root.0.0.1.1.7.1.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "truncate text-xs font-medium dark:text-zinc-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Available",
+                                        "key": "root.0.0.1.1.7.1.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.7.1.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.7.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.7.1"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[100px] shrink-0 text-xs text-zinc-500 lg:w-[14%] lg:shrink dark:text-zinc-400"
+                            },
+                            "children": [
+                              {
+                                "text": "Member",
+                                "key": "root.0.0.1.1.7.2.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.7.2"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex w-[220px] shrink-0 lg:w-[20%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "type": "button",
+                                  "aria-label": "View 2 teams",
+                                  "class": "text-muted-foreground flex items-center gap-1 truncate text-xs font-medium dark:text-zinc-400",
+                                  "data-state": "closed"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-contact-round",
+                                      "class": "lucide lucide-contact-round size-3.5 shrink-0"
+                                    },
+                                    "key": "root.0.0.1.1.7.3.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "truncate"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "CX, PARTNER",
+                                        "key": "root.0.0.1.1.7.3.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.7.3.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.7.3.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.7.3"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[110px] shrink-0 text-xs text-zinc-500 lg:w-[14%] lg:shrink dark:text-zinc-400"
+                            },
+                            "children": [
+                              {
+                                "text": "Jun 2024",
+                                "key": "root.0.0.1.1.7.4.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.7.4"
+                          }
+                        ],
+                        "key": "root.0.0.1.1.7"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "hover:bg-muted/40 flex min-w-[900px] items-center border-b px-4 py-3 text-sm transition-colors last:border-b-0 sm:px-6 lg:min-w-0 dark:border-white/8 dark:hover:bg-white/4"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[320px] shrink-0 lg:w-[36%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-center gap-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "relative"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "relative flex overflow-hidden rounded-full size-8 shrink-0"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "img",
+                                            "attrs": {
+                                              "class": "aspect-square h-full w-full",
+                                              "alt": "Leo Park",
+                                              "src": "/reference/6f77b9b90a56c3cc.png"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.1.1.8.0.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.8.0.0.0.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "border-background absolute -right-0.5 -bottom-0.5 size-2.5 rounded-full border-2 dark:border-[#141414]",
+                                          "style": "background-color:#16a34a"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "sr-only"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "online",
+                                                "key": "root.0.0.1.1.8.0.0.0.1.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.8.0.0.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.8.0.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.8.0.0.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "min-w-0"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "truncate font-medium dark:text-zinc-100"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Leo Park",
+                                            "key": "root.0.0.1.1.8.0.0.1.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.8.0.0.1.0"
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "truncate text-xs text-zinc-500 dark:text-zinc-400"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "leo.park@shadcnblocks.dev",
+                                            "key": "root.0.0.1.1.8.0.0.1.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.8.0.0.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.8.0.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.8.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.8.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[150px] shrink-0 lg:w-[16%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-center gap-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-circle-check",
+                                      "class": "lucide lucide-circle-check size-4 shrink-0 text-green-500"
+                                    },
+                                    "key": "root.0.0.1.1.8.1.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "truncate text-xs font-medium dark:text-zinc-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Available",
+                                        "key": "root.0.0.1.1.8.1.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.8.1.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.8.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.8.1"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[100px] shrink-0 text-xs text-zinc-500 lg:w-[14%] lg:shrink dark:text-zinc-400"
+                            },
+                            "children": [
+                              {
+                                "text": "Member",
+                                "key": "root.0.0.1.1.8.2.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.8.2"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex w-[220px] shrink-0 lg:w-[20%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "type": "button",
+                                  "aria-label": "View 2 teams",
+                                  "class": "text-muted-foreground flex items-center gap-1 truncate text-xs font-medium dark:text-zinc-400",
+                                  "data-state": "closed"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-contact-round",
+                                      "class": "lucide lucide-contact-round size-3.5 shrink-0"
+                                    },
+                                    "key": "root.0.0.1.1.8.3.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "truncate"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "MOBILE, FIELD",
+                                        "key": "root.0.0.1.1.8.3.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.8.3.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.8.3.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.8.3"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[110px] shrink-0 text-xs text-zinc-500 lg:w-[14%] lg:shrink dark:text-zinc-400"
+                            },
+                            "children": [
+                              {
+                                "text": "Jul 2024",
+                                "key": "root.0.0.1.1.8.4.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.8.4"
+                          }
+                        ],
+                        "key": "root.0.0.1.1.8"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "hover:bg-muted/40 flex min-w-[900px] items-center border-b px-4 py-3 text-sm transition-colors last:border-b-0 sm:px-6 lg:min-w-0 dark:border-white/8 dark:hover:bg-white/4"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[320px] shrink-0 lg:w-[36%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-center gap-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "relative"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "relative flex overflow-hidden rounded-full size-8 shrink-0"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "img",
+                                            "attrs": {
+                                              "class": "aspect-square h-full w-full",
+                                              "alt": "Maya Rao",
+                                              "src": "/reference/247ac7c76922347b.png"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.1.1.9.0.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.9.0.0.0.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "border-background absolute -right-0.5 -bottom-0.5 size-2.5 rounded-full border-2 dark:border-[#141414]",
+                                          "style": "background-color:#eab308"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "sr-only"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "away",
+                                                "key": "root.0.0.1.1.9.0.0.0.1.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.9.0.0.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.9.0.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.9.0.0.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "min-w-0"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "truncate font-medium dark:text-zinc-100"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Maya Rao",
+                                            "key": "root.0.0.1.1.9.0.0.1.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.9.0.0.1.0"
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "truncate text-xs text-zinc-500 dark:text-zinc-400"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "maya.rao@shadcnblocks.dev",
+                                            "key": "root.0.0.1.1.9.0.0.1.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.9.0.0.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.9.0.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.9.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.9.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[150px] shrink-0 lg:w-[16%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-center gap-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-clock-3",
+                                      "class": "lucide lucide-clock3 lucide-clock-3 size-4 shrink-0 text-amber-500"
+                                    },
+                                    "key": "root.0.0.1.1.9.1.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "truncate text-xs font-medium dark:text-zinc-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Away",
+                                        "key": "root.0.0.1.1.9.1.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.9.1.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.9.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.9.1"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[100px] shrink-0 text-xs text-zinc-500 lg:w-[14%] lg:shrink dark:text-zinc-400"
+                            },
+                            "children": [
+                              {
+                                "text": "Member",
+                                "key": "root.0.0.1.1.9.2.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.9.2"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex w-[220px] shrink-0 lg:w-[20%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "type": "button",
+                                  "aria-label": "View 2 teams",
+                                  "class": "text-muted-foreground flex items-center gap-1 truncate text-xs font-medium dark:text-zinc-400",
+                                  "data-state": "closed"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-contact-round",
+                                      "class": "lucide lucide-contact-round size-3.5 shrink-0"
+                                    },
+                                    "key": "root.0.0.1.1.9.3.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "truncate"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "GROWTH, PROGRAM",
+                                        "key": "root.0.0.1.1.9.3.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.9.3.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.9.3.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.9.3"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[110px] shrink-0 text-xs text-zinc-500 lg:w-[14%] lg:shrink dark:text-zinc-400"
+                            },
+                            "children": [
+                              {
+                                "text": "Jan 2024",
+                                "key": "root.0.0.1.1.9.4.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.9.4"
+                          }
+                        ],
+                        "key": "root.0.0.1.1.9"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "hover:bg-muted/40 flex min-w-[900px] items-center border-b px-4 py-3 text-sm transition-colors last:border-b-0 sm:px-6 lg:min-w-0 dark:border-white/8 dark:hover:bg-white/4"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[320px] shrink-0 lg:w-[36%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-center gap-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "relative"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "relative flex overflow-hidden rounded-full size-8 shrink-0"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "img",
+                                            "attrs": {
+                                              "class": "aspect-square h-full w-full",
+                                              "alt": "Nina Brooks",
+                                              "src": "/reference/c856dbf3620c8188.png"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.1.1.10.0.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.10.0.0.0.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "border-background absolute -right-0.5 -bottom-0.5 size-2.5 rounded-full border-2 dark:border-[#141414]",
+                                          "style": "background-color:#eab308"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "sr-only"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "away",
+                                                "key": "root.0.0.1.1.10.0.0.0.1.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.10.0.0.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.10.0.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.10.0.0.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "min-w-0"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "truncate font-medium dark:text-zinc-100"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Nina Brooks",
+                                            "key": "root.0.0.1.1.10.0.0.1.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.10.0.0.1.0"
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "truncate text-xs text-zinc-500 dark:text-zinc-400"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "nina.brooks@shadcnblocks.dev",
+                                            "key": "root.0.0.1.1.10.0.0.1.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.10.0.0.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.10.0.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.10.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.10.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[150px] shrink-0 lg:w-[16%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-center gap-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-clock-3",
+                                      "class": "lucide lucide-clock3 lucide-clock-3 size-4 shrink-0 text-amber-500"
+                                    },
+                                    "key": "root.0.0.1.1.10.1.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "truncate text-xs font-medium dark:text-zinc-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Away",
+                                        "key": "root.0.0.1.1.10.1.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.10.1.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.10.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.10.1"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[100px] shrink-0 text-xs text-zinc-500 lg:w-[14%] lg:shrink dark:text-zinc-400"
+                            },
+                            "children": [
+                              {
+                                "text": "Guest",
+                                "key": "root.0.0.1.1.10.2.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.10.2"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex w-[220px] shrink-0 lg:w-[20%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "type": "button",
+                                  "aria-label": "View 2 teams",
+                                  "class": "text-muted-foreground flex items-center gap-1 truncate text-xs font-medium dark:text-zinc-400",
+                                  "data-state": "closed"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-contact-round",
+                                      "class": "lucide lucide-contact-round size-3.5 shrink-0"
+                                    },
+                                    "key": "root.0.0.1.1.10.3.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "truncate"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "MOBILE, FIELD",
+                                        "key": "root.0.0.1.1.10.3.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.10.3.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.10.3.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.10.3"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[110px] shrink-0 text-xs text-zinc-500 lg:w-[14%] lg:shrink dark:text-zinc-400"
+                            },
+                            "children": [
+                              {
+                                "text": "Feb 2025",
+                                "key": "root.0.0.1.1.10.4.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.10.4"
+                          }
+                        ],
+                        "key": "root.0.0.1.1.10"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "hover:bg-muted/40 flex min-w-[900px] items-center border-b px-4 py-3 text-sm transition-colors last:border-b-0 sm:px-6 lg:min-w-0 dark:border-white/8 dark:hover:bg-white/4"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[320px] shrink-0 lg:w-[36%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-center gap-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "relative"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "relative flex overflow-hidden rounded-full size-8 shrink-0"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "img",
+                                            "attrs": {
+                                              "class": "aspect-square h-full w-full",
+                                              "alt": "Owen Lee",
+                                              "src": "/reference/ac13c01a479a177b.png"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.1.1.11.0.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.11.0.0.0.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "border-background absolute -right-0.5 -bottom-0.5 size-2.5 rounded-full border-2 dark:border-[#141414]",
+                                          "style": "background-color:#71717a"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "sr-only"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "offline",
+                                                "key": "root.0.0.1.1.11.0.0.0.1.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.11.0.0.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.11.0.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.11.0.0.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "min-w-0"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "truncate font-medium dark:text-zinc-100"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Owen Lee",
+                                            "key": "root.0.0.1.1.11.0.0.1.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.11.0.0.1.0"
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "truncate text-xs text-zinc-500 dark:text-zinc-400"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "owen.lee@shadcnblocks.dev",
+                                            "key": "root.0.0.1.1.11.0.0.1.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.11.0.0.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.11.0.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.11.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.11.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[150px] shrink-0 lg:w-[16%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-center gap-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-circle-dot-dashed",
+                                      "class": "lucide lucide-circle-dot-dashed size-4 shrink-0 text-zinc-500"
+                                    },
+                                    "key": "root.0.0.1.1.11.1.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "truncate text-xs font-medium dark:text-zinc-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Offline",
+                                        "key": "root.0.0.1.1.11.1.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.11.1.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.11.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.11.1"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[100px] shrink-0 text-xs text-zinc-500 lg:w-[14%] lg:shrink dark:text-zinc-400"
+                            },
+                            "children": [
+                              {
+                                "text": "Member",
+                                "key": "root.0.0.1.1.11.2.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.11.2"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex w-[220px] shrink-0 lg:w-[20%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "type": "button",
+                                  "aria-label": "View 2 teams",
+                                  "class": "text-muted-foreground flex items-center gap-1 truncate text-xs font-medium dark:text-zinc-400",
+                                  "data-state": "closed"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-contact-round",
+                                      "class": "lucide lucide-contact-round size-3.5 shrink-0"
+                                    },
+                                    "key": "root.0.0.1.1.11.3.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "truncate"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "GROWTH, PARTNER",
+                                        "key": "root.0.0.1.1.11.3.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.11.3.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.11.3.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.11.3"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[110px] shrink-0 text-xs text-zinc-500 lg:w-[14%] lg:shrink dark:text-zinc-400"
+                            },
+                            "children": [
+                              {
+                                "text": "Feb 2025",
+                                "key": "root.0.0.1.1.11.4.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.11.4"
+                          }
+                        ],
+                        "key": "root.0.0.1.1.11"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "hover:bg-muted/40 flex min-w-[900px] items-center border-b px-4 py-3 text-sm transition-colors last:border-b-0 sm:px-6 lg:min-w-0 dark:border-white/8 dark:hover:bg-white/4"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[320px] shrink-0 lg:w-[36%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-center gap-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "relative"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "relative flex overflow-hidden rounded-full size-8 shrink-0"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "img",
+                                            "attrs": {
+                                              "class": "aspect-square h-full w-full",
+                                              "alt": "Riya Sharma",
+                                              "src": "/reference/5985a55c7498fe2e.png"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.1.1.12.0.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.12.0.0.0.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "border-background absolute -right-0.5 -bottom-0.5 size-2.5 rounded-full border-2 dark:border-[#141414]",
+                                          "style": "background-color:#16a34a"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "sr-only"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "online",
+                                                "key": "root.0.0.1.1.12.0.0.0.1.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.12.0.0.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.12.0.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.12.0.0.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "min-w-0"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "truncate font-medium dark:text-zinc-100"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Riya Sharma",
+                                            "key": "root.0.0.1.1.12.0.0.1.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.12.0.0.1.0"
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "truncate text-xs text-zinc-500 dark:text-zinc-400"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "riya.sharma@shadcnblocks.dev",
+                                            "key": "root.0.0.1.1.12.0.0.1.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.12.0.0.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.12.0.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.12.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.12.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[150px] shrink-0 lg:w-[16%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-center gap-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-circle-check",
+                                      "class": "lucide lucide-circle-check size-4 shrink-0 text-green-500"
+                                    },
+                                    "key": "root.0.0.1.1.12.1.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "truncate text-xs font-medium dark:text-zinc-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Available",
+                                        "key": "root.0.0.1.1.12.1.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.12.1.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.12.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.12.1"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[100px] shrink-0 text-xs text-zinc-500 lg:w-[14%] lg:shrink dark:text-zinc-400"
+                            },
+                            "children": [
+                              {
+                                "text": "Admin",
+                                "key": "root.0.0.1.1.12.2.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.12.2"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex w-[220px] shrink-0 lg:w-[20%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "type": "button",
+                                  "aria-label": "View 3 teams",
+                                  "class": "text-muted-foreground flex items-center gap-1 truncate text-xs font-medium dark:text-zinc-400",
+                                  "data-state": "closed"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-contact-round",
+                                      "class": "lucide lucide-contact-round size-3.5 shrink-0"
+                                    },
+                                    "key": "root.0.0.1.1.12.3.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "truncate"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "OPS, PROGRAM",
+                                        "key": "root.0.0.1.1.12.3.0.1.0"
+                                      },
+                                      {
+                                        "text": " +1",
+                                        "key": "root.0.0.1.1.12.3.0.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.12.3.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.12.3.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.12.3"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[110px] shrink-0 text-xs text-zinc-500 lg:w-[14%] lg:shrink dark:text-zinc-400"
+                            },
+                            "children": [
+                              {
+                                "text": "Mar 2024",
+                                "key": "root.0.0.1.1.12.4.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.12.4"
+                          }
+                        ],
+                        "key": "root.0.0.1.1.12"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "hover:bg-muted/40 flex min-w-[900px] items-center border-b px-4 py-3 text-sm transition-colors last:border-b-0 sm:px-6 lg:min-w-0 dark:border-white/8 dark:hover:bg-white/4"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[320px] shrink-0 lg:w-[36%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-center gap-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "relative"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "relative flex overflow-hidden rounded-full size-8 shrink-0"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "img",
+                                            "attrs": {
+                                              "class": "aspect-square h-full w-full",
+                                              "alt": "Sofia Ahmed",
+                                              "src": "/reference/ee2ed71ab799f5e3.png"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.1.1.13.0.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.13.0.0.0.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "border-background absolute -right-0.5 -bottom-0.5 size-2.5 rounded-full border-2 dark:border-[#141414]",
+                                          "style": "background-color:#eab308"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "sr-only"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "away",
+                                                "key": "root.0.0.1.1.13.0.0.0.1.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.13.0.0.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.13.0.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.13.0.0.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "min-w-0"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "truncate font-medium dark:text-zinc-100"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Sofia Ahmed",
+                                            "key": "root.0.0.1.1.13.0.0.1.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.13.0.0.1.0"
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "truncate text-xs text-zinc-500 dark:text-zinc-400"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "sofia.ahmed@shadcnblocks.dev",
+                                            "key": "root.0.0.1.1.13.0.0.1.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.13.0.0.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.13.0.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.13.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.13.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[150px] shrink-0 lg:w-[16%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-center gap-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-clock-3",
+                                      "class": "lucide lucide-clock3 lucide-clock-3 size-4 shrink-0 text-amber-500"
+                                    },
+                                    "key": "root.0.0.1.1.13.1.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "truncate text-xs font-medium dark:text-zinc-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Away",
+                                        "key": "root.0.0.1.1.13.1.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.13.1.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.13.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.13.1"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[100px] shrink-0 text-xs text-zinc-500 lg:w-[14%] lg:shrink dark:text-zinc-400"
+                            },
+                            "children": [
+                              {
+                                "text": "Admin",
+                                "key": "root.0.0.1.1.13.2.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.13.2"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex w-[220px] shrink-0 lg:w-[20%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "type": "button",
+                                  "aria-label": "View 2 teams",
+                                  "class": "text-muted-foreground flex items-center gap-1 truncate text-xs font-medium dark:text-zinc-400",
+                                  "data-state": "closed"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-contact-round",
+                                      "class": "lucide lucide-contact-round size-3.5 shrink-0"
+                                    },
+                                    "key": "root.0.0.1.1.13.3.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "truncate"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "OPS, TALENT",
+                                        "key": "root.0.0.1.1.13.3.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.13.3.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.13.3.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.13.3"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[110px] shrink-0 text-xs text-zinc-500 lg:w-[14%] lg:shrink dark:text-zinc-400"
+                            },
+                            "children": [
+                              {
+                                "text": "Dec 2023",
+                                "key": "root.0.0.1.1.13.4.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.13.4"
+                          }
+                        ],
+                        "key": "root.0.0.1.1.13"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "hover:bg-muted/40 flex min-w-[900px] items-center border-b px-4 py-3 text-sm transition-colors last:border-b-0 sm:px-6 lg:min-w-0 dark:border-white/8 dark:hover:bg-white/4"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[320px] shrink-0 lg:w-[36%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-center gap-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "relative"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "relative flex overflow-hidden rounded-full size-8 shrink-0"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "img",
+                                            "attrs": {
+                                              "class": "aspect-square h-full w-full",
+                                              "alt": "Tia West",
+                                              "src": "/reference/01c20c8256a0754a.png"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.1.1.14.0.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.14.0.0.0.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "border-background absolute -right-0.5 -bottom-0.5 size-2.5 rounded-full border-2 dark:border-[#141414]",
+                                          "style": "background-color:#71717a"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "sr-only"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "offline",
+                                                "key": "root.0.0.1.1.14.0.0.0.1.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.14.0.0.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.14.0.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.14.0.0.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "min-w-0"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "truncate font-medium dark:text-zinc-100"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Tia West",
+                                            "key": "root.0.0.1.1.14.0.0.1.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.14.0.0.1.0"
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "truncate text-xs text-zinc-500 dark:text-zinc-400"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "tia.west@shadcnblocks.dev",
+                                            "key": "root.0.0.1.1.14.0.0.1.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.14.0.0.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.14.0.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.14.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.14.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[150px] shrink-0 lg:w-[16%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-center gap-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-circle-dot-dashed",
+                                      "class": "lucide lucide-circle-dot-dashed size-4 shrink-0 text-zinc-500"
+                                    },
+                                    "key": "root.0.0.1.1.14.1.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "truncate text-xs font-medium dark:text-zinc-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Offline",
+                                        "key": "root.0.0.1.1.14.1.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.14.1.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.14.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.14.1"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[100px] shrink-0 text-xs text-zinc-500 lg:w-[14%] lg:shrink dark:text-zinc-400"
+                            },
+                            "children": [
+                              {
+                                "text": "Member",
+                                "key": "root.0.0.1.1.14.2.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.14.2"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex w-[220px] shrink-0 lg:w-[20%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "type": "button",
+                                  "aria-label": "View 2 teams",
+                                  "class": "text-muted-foreground flex items-center gap-1 truncate text-xs font-medium dark:text-zinc-400",
+                                  "data-state": "closed"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-contact-round",
+                                      "class": "lucide lucide-contact-round size-3.5 shrink-0"
+                                    },
+                                    "key": "root.0.0.1.1.14.3.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "truncate"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "FIELD, OPS",
+                                        "key": "root.0.0.1.1.14.3.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.14.3.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.14.3.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.14.3"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[110px] shrink-0 text-xs text-zinc-500 lg:w-[14%] lg:shrink dark:text-zinc-400"
+                            },
+                            "children": [
+                              {
+                                "text": "Mar 2025",
+                                "key": "root.0.0.1.1.14.4.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.14.4"
+                          }
+                        ],
+                        "key": "root.0.0.1.1.14"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "hover:bg-muted/40 flex min-w-[900px] items-center border-b px-4 py-3 text-sm transition-colors last:border-b-0 sm:px-6 lg:min-w-0 dark:border-white/8 dark:hover:bg-white/4"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[320px] shrink-0 lg:w-[36%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-center gap-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "relative"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "relative flex overflow-hidden rounded-full size-8 shrink-0"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "img",
+                                            "attrs": {
+                                              "class": "aspect-square h-full w-full",
+                                              "alt": "Victor Hale",
+                                              "src": "/reference/146332adc3a2c901.png"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.1.1.15.0.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.15.0.0.0.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "border-background absolute -right-0.5 -bottom-0.5 size-2.5 rounded-full border-2 dark:border-[#141414]",
+                                          "style": "background-color:#eab308"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "sr-only"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "away",
+                                                "key": "root.0.0.1.1.15.0.0.0.1.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.15.0.0.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.15.0.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.15.0.0.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "min-w-0"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "truncate font-medium dark:text-zinc-100"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Victor Hale",
+                                            "key": "root.0.0.1.1.15.0.0.1.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.15.0.0.1.0"
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "truncate text-xs text-zinc-500 dark:text-zinc-400"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "victor.hale@shadcnblocks.dev",
+                                            "key": "root.0.0.1.1.15.0.0.1.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.15.0.0.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.15.0.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.15.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.15.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[150px] shrink-0 lg:w-[16%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-center gap-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-clock-3",
+                                      "class": "lucide lucide-clock3 lucide-clock-3 size-4 shrink-0 text-amber-500"
+                                    },
+                                    "key": "root.0.0.1.1.15.1.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "truncate text-xs font-medium dark:text-zinc-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Away",
+                                        "key": "root.0.0.1.1.15.1.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.15.1.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.15.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.15.1"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[100px] shrink-0 text-xs text-zinc-500 lg:w-[14%] lg:shrink dark:text-zinc-400"
+                            },
+                            "children": [
+                              {
+                                "text": "Admin",
+                                "key": "root.0.0.1.1.15.2.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.15.2"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex w-[220px] shrink-0 lg:w-[20%] lg:shrink"
+                            },
+                            "children": [
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "type": "button",
+                                  "aria-label": "View 3 teams",
+                                  "class": "text-muted-foreground flex items-center gap-1 truncate text-xs font-medium dark:text-zinc-400",
+                                  "data-state": "closed"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-contact-round",
+                                      "class": "lucide lucide-contact-round size-3.5 shrink-0"
+                                    },
+                                    "key": "root.0.0.1.1.15.3.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "truncate"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "GROWTH, PARTNER",
+                                        "key": "root.0.0.1.1.15.3.0.1.0"
+                                      },
+                                      {
+                                        "text": " +1",
+                                        "key": "root.0.0.1.1.15.3.0.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.15.3.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.15.3.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.15.3"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "w-[110px] shrink-0 text-xs text-zinc-500 lg:w-[14%] lg:shrink dark:text-zinc-400"
+                            },
+                            "children": [
+                              {
+                                "text": "Aug 2023",
+                                "key": "root.0.0.1.1.15.4.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.15.4"
+                          }
+                        ],
+                        "key": "root.0.0.1.1.15"
+                      }
+                    ],
+                    "key": "root.0.0.1.1"
+                  }
+                ],
+                "key": "root.0.0.1"
+              }
+            ],
+            "key": "root.0.0"
+          }
+        ],
+        "key": "root.0"
+      }
+    ],
+    "key": "root"
+  },
+  "headings": []
+}

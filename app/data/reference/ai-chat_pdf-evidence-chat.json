@@ -1,0 +1,1293 @@
+{
+  "label": "Document 1",
+  "path": "/ai-chat/pdf-evidence-chat",
+  "appTitle": "",
+  "tree": {
+    "tag": "div",
+    "attrs": {
+      "id": "ai-workspace-content",
+      "class": "flex min-h-0 flex-1 flex-col"
+    },
+    "children": [
+      {
+        "tag": "div",
+        "attrs": {
+          "class": "flex min-h-0 flex-1 overflow-hidden"
+        },
+        "children": [
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "flex min-h-0 min-w-0 flex-1 flex-col"
+            },
+            "children": [
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "flex min-h-0 flex-1 flex-col"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "flex h-11 shrink-0 items-center justify-between gap-2 border-b px-4"
+                    },
+                    "children": [
+                      {
+                        "tag": "h1",
+                        "attrs": {
+                          "class": "truncate text-xs font-medium"
+                        },
+                        "children": [
+                          {
+                            "text": "First-week research",
+                            "key": "root.0.0.0.0.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.0"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-6",
+                          "aria-label": "Hide PDF reader"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-panel-right-close",
+                              "class": "lucide lucide-panel-right-close"
+                            },
+                            "key": "root.0.0.0.0.1.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.1"
+                      }
+                    ],
+                    "key": "root.0.0.0.0"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "data-slot": "message-scroller",
+                      "class": "group/message-scroller relative flex size-full flex-col overflow-hidden min-h-0 flex-1"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "role": "region",
+                          "aria-label": "Conversation messages",
+                          "data-slot": "message-scroller-viewport",
+                          "class": "size-full min-h-0 min-w-0 scroll-fade-b scrollbar-thin scrollbar-gutter-stable overflow-y-auto overscroll-contain contain-content data-autoscrolling:scrollbar-thumb-transparent data-autoscrolling:scrollbar-track-transparent"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "role": "log",
+                              "data-slot": "message-scroller-content",
+                              "class": "flex h-max flex-col min-h-full gap-0 mx-auto w-full max-w-xl px-4 py-7 sm:px-5"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "data-slot": "message-scroller-item",
+                                  "class": "shrink-0 [contain-intrinsic-size:auto_10rem] [content-visibility:auto] flex min-w-0 flex-col gap-9"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "data-slot": "message",
+                                      "class": "group/message relative flex w-full min-w-0 gap-2 text-sm data-[align=end]:flex-row-reverse"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "data-slot": "message-content",
+                                          "class": "flex w-full min-w-0 flex-col gap-2.5 wrap-break-word group-data-[align=end]/message:*:data-slot:self-end"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "data-slot": "bubble",
+                                              "class": "group/bubble relative flex w-fit min-w-0 flex-col gap-1 group-data-[align=end]/message:self-end data-[align=end]:self-end data-[variant=ghost]:max-w-full *:data-[slot=bubble-content]:bg-muted [&>[data-slot=bubble-content]:is(button,a):hover]:bg-[color-mix(in_oklch,var(--muted),var(--foreground)_5%)] max-w-[88%] md:max-w-[72%]"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "data-slot": "bubble-content",
+                                                  "class": "w-fit max-w-full min-w-0 overflow-hidden rounded-3xl border-transparent px-3 py-2.5 text-sm wrap-break-word group-data-[align=end]/bubble:self-end [button]:text-left [button,a]:transition-colors [button,a]:outline-none [button,a]:focus-visible:border-ring [button,a]:focus-visible:ring-3 [button,a]:focus-visible:ring-ring/30 border-0 leading-6"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "What is getting in the way of a team's first shared result? Use the report and show me the evidence.",
+                                                    "key": "root.0.0.0.1.0.0.0.0.0.0.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.1.0.0.0.0.0.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.1.0.0.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.1.0.0.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.1.0.0.0.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "data-slot": "message",
+                                      "class": "group/message relative flex w-full min-w-0 gap-2 text-sm data-[align=end]:flex-row-reverse"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "data-slot": "message-avatar",
+                                          "class": "flex w-fit min-w-8 shrink-0 items-center justify-center group-has-data-[slot=message-footer]/message:-translate-y-8 self-start overflow-visible rounded-none bg-transparent"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "svg",
+                                            "attrs": {
+                                              "viewBox": "0 0 64 64",
+                                              "class": "drop-shadow-sm size-7",
+                                              "width": "100%",
+                                              "height": "100%"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "defs",
+                                                "attrs": {},
+                                                "children": [
+                                                  {
+                                                    "tag": "linearGradient",
+                                                    "attrs": {
+                                                      "id": "_R_6ljdbsnpfknmlb_",
+                                                      "x1": "10",
+                                                      "y1": "8",
+                                                      "x2": "54",
+                                                      "y2": "56"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "stop",
+                                                        "attrs": {
+                                                          "offset": "0",
+                                                          "stop-color": "#050505"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.0.1.0.0.0.1.0.0.0.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "stop",
+                                                        "attrs": {
+                                                          "offset": "0.52",
+                                                          "stop-color": "#334155"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.0.1.0.0.0.1.0.0.0.0.1"
+                                                      },
+                                                      {
+                                                        "tag": "stop",
+                                                        "attrs": {
+                                                          "offset": "1",
+                                                          "stop-color": "#050505"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.0.1.0.0.0.1.0.0.0.0.2"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.1.0.0.0.1.0.0.0.0"
+                                                  },
+                                                  {
+                                                    "tag": "mask",
+                                                    "attrs": {
+                                                      "id": "_R_6ljdbsnpfknmlb_-mask",
+                                                      "x": "0",
+                                                      "y": "0",
+                                                      "width": "64",
+                                                      "height": "64"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "rect",
+                                                        "attrs": {
+                                                          "width": "64",
+                                                          "height": "64",
+                                                          "fill": "black"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.0.1.0.0.0.1.0.0.0.1.0"
+                                                      },
+                                                      {
+                                                        "tag": "path",
+                                                        "attrs": {
+                                                          "d": "M 55.39 32.00 C 55.39 34.91 55.35 38.71 55.29 40.73 C 55.23 42.74 55.13 43.12 55.00 44.09 C 54.87 45.06 54.71 45.82 54.52 46.57 C 54.33 47.31 54.10 47.94 53.84 48.54 C 53.57 49.15 53.28 49.68 52.94 50.17 C 52.61 50.66 52.24 51.11 51.83 51.51 C 51.41 51.92 50.97 52.28 50.46 52.61 C 49.96 52.94 49.42 53.23 48.81 53.49 C 48.20 53.75 47.56 53.97 46.80 54.16 C 46.05 54.35 45.28 54.51 44.29 54.64 C 43.30 54.76 42.92 54.86 40.87 54.92 C 38.82 54.98 34.96 55.01 32.00 55.01 C 29.04 55.01 25.18 54.98 23.13 54.92 C 21.08 54.86 20.70 54.76 19.71 54.64 C 18.72 54.51 17.95 54.35 17.20 54.16 C 16.44 53.97 15.80 53.75 15.19 53.49 C 14.58 53.23 14.04 52.94 13.54 52.61 C 13.03 52.28 12.59 51.92 12.17 51.51 C 11.76 51.11 11.39 50.66 11.06 50.17 C 10.72 49.68 10.43 49.15 10.16 48.54 C 9.90 47.94 9.67 47.31 9.48 46.57 C 9.29 45.82 9.13 45.06 9.00 44.09 C 8.87 43.12 8.77 42.74 8.71 40.73 C 8.65 38.71 8.61 34.91 8.61 32.00 C 8.61 29.09 8.65 25.29 8.71 23.27 C 8.77 21.26 8.87 20.88 9.00 19.91 C 9.13 18.94 9.29 18.18 9.48 17.43 C 9.67 16.69 9.90 16.06 10.16 15.46 C 10.43 14.85 10.72 14.32 11.06 13.83 C 11.39 13.34 11.76 12.89 12.17 12.49 C 12.59 12.08 13.03 11.72 13.54 11.39 C 14.04 11.06 14.58 10.77 15.19 10.51 C 15.80 10.25 16.44 10.03 17.20 9.84 C 17.95 9.65 18.72 9.49 19.71 9.36 C 20.70 9.24 21.08 9.14 23.13 9.08 C 25.18 9.02 29.04 8.99 32.00 8.99 C 34.96 8.99 38.82 9.02 40.87 9.08 C 42.92 9.14 43.30 9.24 44.29 9.36 C 45.28 9.49 46.05 9.65 46.80 9.84 C 47.56 10.03 48.20 10.25 48.81 10.51 C 49.42 10.77 49.96 11.06 50.46 11.39 C 50.97 11.72 51.41 12.08 51.83 12.49 C 52.24 12.89 52.61 13.34 52.94 13.83 C 53.28 14.32 53.57 14.85 53.84 15.46 C 54.10 16.06 54.33 16.69 54.52 17.43 C 54.71 18.18 54.87 18.94 55.00 19.91 C 55.13 20.88 55.23 21.26 55.29 23.27 C 55.35 25.29 55.39 29.09 55.39 32.00 Z",
+                                                          "transform": "translate(0 0) rotate(0.00 32 32)",
+                                                          "fill": "white"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.0.1.0.0.0.1.0.0.0.1.1"
+                                                      },
+                                                      {
+                                                        "tag": "rect",
+                                                        "attrs": {
+                                                          "x": "25.1",
+                                                          "y": "25.3",
+                                                          "width": "3.8",
+                                                          "height": "8",
+                                                          "rx": "1.9",
+                                                          "fill": "black",
+                                                          "transform": "translate(0.17 -0.32) rotate(-11 27 29.3) translate(0 29.3) scale(1 0.891) translate(0 -29.3)"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.0.1.0.0.0.1.0.0.0.1.2"
+                                                      },
+                                                      {
+                                                        "tag": "rect",
+                                                        "attrs": {
+                                                          "x": "35.1",
+                                                          "y": "25.3",
+                                                          "width": "3.8",
+                                                          "height": "8",
+                                                          "rx": "1.9",
+                                                          "fill": "black",
+                                                          "transform": "translate(0.17 -0.32) rotate(-11 37 29.3) translate(0 29.3) scale(1 0.891) translate(0 -29.3)"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.0.1.0.0.0.1.0.0.0.1.3"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.1.0.0.0.1.0.0.0.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.1.0.0.0.1.0.0.0"
+                                              },
+                                              {
+                                                "tag": "rect",
+                                                "attrs": {
+                                                  "width": "64",
+                                                  "height": "64",
+                                                  "fill": "url(#_R_6ljdbsnpfknmlb_)"
+                                                },
+                                                "children": [],
+                                                "key": "root.0.0.0.1.0.0.0.1.0.0.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.1.0.0.0.1.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.1.0.0.0.1.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "data-slot": "message-content",
+                                          "class": "flex w-full min-w-0 flex-col wrap-break-word group-data-[align=end]/message:*:data-slot:self-end gap-3"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "flex items-center gap-2"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "text-foreground text-xs font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Shadcnblocks AI",
+                                                    "key": "root.0.0.0.1.0.0.0.1.1.0.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.1.0.0.0.1.1.0.0"
+                                              },
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "text-muted-foreground text-[11px]"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Research",
+                                                    "key": "root.0.0.0.1.0.0.0.1.1.0.1.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.1.0.0.0.1.1.0.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.1.0.0.0.1.1.0"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {},
+                                            "children": [
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "flex min-w-0 flex-col gap-4 text-xs leading-5"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "p",
+                                                    "attrs": {},
+                                                    "children": [
+                                                      {
+                                                        "text": "Three handoffs are worth fixing before adding more onboarding steps:",
+                                                        "key": "root.0.0.0.1.0.0.0.1.1.1.0.0.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.1.0.0.0.1.1.1.0.0"
+                                                  },
+                                                  {
+                                                    "tag": "p",
+                                                    "attrs": {},
+                                                    "children": [
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {
+                                                          "class": "group/citation leading-inherit inline"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "span",
+                                                            "attrs": {
+                                                              "class": "decoration-muted-foreground/45 group-hover/citation:decoration-foreground/70 underline decoration-dotted underline-offset-4 transition-colors"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "Teams reach advanced settings before their first shared result. Eight of the 12 observed teams did this, and six needed help understanding what was required.",
+                                                                "key": "root.0.0.0.1.0.0.0.1.1.1.0.1.0.0.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.0.1.0.0.0.1.1.1.0.1.0.0"
+                                                          },
+                                                          {
+                                                            "tag": "button",
+                                                            "attrs": {
+                                                              "class": "items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80 text-xs mx-1 inline-flex h-5 rounded-full px-2 align-baseline",
+                                                              "id": "cite-first-week-findings-0",
+                                                              "aria-label": "View evidence on page 2: 01 / Setup crowds out the first task"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "p. ",
+                                                                "key": "root.0.0.0.1.0.0.0.1.1.1.0.1.0.1.0"
+                                                              },
+                                                              {
+                                                                "text": "2",
+                                                                "key": "root.0.0.0.1.0.0.0.1.1.1.0.1.0.1.1"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.0.1.0.0.0.1.1.1.0.1.0.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.1.0.0.0.1.1.1.0.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.1.0.0.0.1.1.1.0.1"
+                                                  },
+                                                  {
+                                                    "tag": "p",
+                                                    "attrs": {},
+                                                    "children": [
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {
+                                                          "class": "group/citation leading-inherit inline"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "span",
+                                                            "attrs": {
+                                                              "class": "decoration-muted-foreground/45 group-hover/citation:decoration-foreground/70 underline decoration-dotted underline-offset-4 transition-colors"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "An invitation needs a concrete next step. Five teams invited someone without sharing or assigning a task in that session.",
+                                                                "key": "root.0.0.0.1.0.0.0.1.1.1.0.2.0.0.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.0.1.0.0.0.1.1.1.0.2.0.0"
+                                                          },
+                                                          {
+                                                            "tag": "button",
+                                                            "attrs": {
+                                                              "class": "items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground text-xs mx-1 inline-flex h-5 rounded-full px-2 align-baseline",
+                                                              "id": "cite-first-week-findings-1",
+                                                              "aria-label": "View evidence on page 2: 02 / Invitations arrive without a next step"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "p. ",
+                                                                "key": "root.0.0.0.1.0.0.0.1.1.1.0.2.0.1.0"
+                                                              },
+                                                              {
+                                                                "text": "2",
+                                                                "key": "root.0.0.0.1.0.0.0.1.1.1.0.2.0.1.1"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.0.1.0.0.0.1.1.1.0.2.0.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.1.0.0.0.1.1.1.0.2.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.1.0.0.0.1.1.1.0.2"
+                                                  },
+                                                  {
+                                                    "tag": "p",
+                                                    "attrs": {},
+                                                    "children": [
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {
+                                                          "class": "group/citation leading-inherit inline"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "span",
+                                                            "attrs": {
+                                                              "class": "decoration-muted-foreground/45 group-hover/citation:decoration-foreground/70 underline decoration-dotted underline-offset-4 transition-colors"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "Import recovery needs to make partial success clear. Three teams restarted an upload because they could not tell which rows had been saved.",
+                                                                "key": "root.0.0.0.1.0.0.0.1.1.1.0.3.0.0.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.0.1.0.0.0.1.1.1.0.3.0.0"
+                                                          },
+                                                          {
+                                                            "tag": "button",
+                                                            "attrs": {
+                                                              "class": "items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground text-xs mx-1 inline-flex h-5 rounded-full px-2 align-baseline",
+                                                              "id": "cite-first-week-findings-2",
+                                                              "aria-label": "View evidence on page 2: 03 / Import errors force teams to retrace steps"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "p. ",
+                                                                "key": "root.0.0.0.1.0.0.0.1.1.1.0.3.0.1.0"
+                                                              },
+                                                              {
+                                                                "text": "2",
+                                                                "key": "root.0.0.0.1.0.0.0.1.1.1.0.3.0.1.1"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.0.1.0.0.0.1.1.1.0.3.0.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.1.0.0.0.1.1.1.0.3.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.1.0.0.0.1.1.1.0.3"
+                                                  },
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "data-state": "closed"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "button",
+                                                        "attrs": {
+                                                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-8 rounded-md text-xs px-0",
+                                                          "type": "button",
+                                                          "data-state": "closed"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "icon",
+                                                            "attrs": {
+                                                              "name": "i-lucide-file-text",
+                                                              "class": "lucide lucide-file-text"
+                                                            },
+                                                            "key": "root.0.0.0.1.0.0.0.1.1.1.0.4.0.0"
+                                                          },
+                                                          {
+                                                            "text": "1 source ·",
+                                                            "key": "root.0.0.0.1.0.0.0.1.1.1.0.4.0.1"
+                                                          },
+                                                          {
+                                                            "text": "3",
+                                                            "key": "root.0.0.0.1.0.0.0.1.1.1.0.4.0.2"
+                                                          },
+                                                          {
+                                                            "text": " passages",
+                                                            "key": "root.0.0.0.1.0.0.0.1.1.1.0.4.0.3"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.1.0.0.0.1.1.1.0.4.0"
+                                                      },
+                                                      {
+                                                        "tag": "div",
+                                                        "attrs": {
+                                                          "data-state": "closed",
+                                                          "id": "radix-_R_taljdbsnpfknmlb_",
+                                                          "style": ""
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.0.1.0.0.0.1.1.1.0.4.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.1.0.0.0.1.1.1.0.4"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.1.0.0.0.1.1.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.1.0.0.0.1.1.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.1.0.0.0.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.1.0.0.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.0.1.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.0.1.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.1.0"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 size-6 absolute inset-s-1/2 -translate-x-1/2 border-border bg-background text-foreground transition-[translate,scale,opacity] duration-200 hover:bg-muted hover:text-foreground data-[active=false]:pointer-events-none data-[active=false]:scale-95 data-[active=false]:opacity-0 data-[active=false]:duration-400 data-[active=false]:ease-[cubic-bezier(0.7,0,0.84,0)] data-[active=true]:translate-y-0 data-[active=true]:scale-100 data-[active=true]:opacity-100 data-[active=true]:ease-[cubic-bezier(0.23,1,0.32,1)] data-[direction=end]:bottom-4 data-[direction=end]:data-[active=false]:translate-y-full data-[direction=start]:top-4 data-[direction=start]:data-[active=false]:-translate-y-full rtl:translate-x-1/2 data-[direction=start]:[&_svg]:rotate-180 bottom-3 shadow-md",
+                          "type": "button",
+                          "data-slot": "message-scroller-button",
+                          "aria-label": "Scroll to latest message"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-arrow-down",
+                              "class": "lucide lucide-arrow-down"
+                            },
+                            "key": "root.0.0.0.1.1.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.1.1"
+                      }
+                    ],
+                    "key": "root.0.0.0.1"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "bg-background shrink-0 px-4 pt-3 pb-4 sm:px-5"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "mb-3 flex flex-wrap gap-2"
+                        },
+                        "children": [
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs"
+                            },
+                            "children": [
+                              {
+                                "text": "Study limitations",
+                                "key": "root.0.0.0.2.0.0.0"
+                              },
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-arrow-right",
+                                  "class": "lucide lucide-arrow-right"
+                                },
+                                "key": "root.0.0.0.2.0.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.0.2.0.0"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs"
+                            },
+                            "children": [
+                              {
+                                "text": "Pilot plan",
+                                "key": "root.0.0.0.2.0.1.0"
+                              },
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-arrow-right",
+                                  "class": "lucide lucide-arrow-right"
+                                },
+                                "key": "root.0.0.0.2.0.1.1"
+                              }
+                            ],
+                            "key": "root.0.0.0.2.0.1"
+                          }
+                        ],
+                        "key": "root.0.0.0.2.0"
+                      },
+                      {
+                        "tag": "form",
+                        "attrs": {
+                          "class": "relative mx-auto w-full max-w-xl",
+                          "aria-label": "Ask about this PDF"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "data-slot": "input-group",
+                              "role": "group",
+                              "class": "group/input-group relative flex w-full min-w-0 border outline-none in-data-[slot=combobox-content]:focus-within:border-inherit in-data-[slot=combobox-content]:focus-within:ring-0 has-[[data-slot=input-group-control]:focus-visible]:border-ring has-[[data-slot][aria-invalid=true]]:border-destructive has-[[data-slot][aria-invalid=true]]:ring-3 has-[[data-slot][aria-invalid=true]]:ring-destructive/20 has-[>[data-align=block-end]]:h-auto has-[>[data-align=block-end]]:flex-col has-[>[data-align=block-start]]:h-auto has-[>[data-align=block-start]]:flex-col has-[>textarea]:h-auto dark:bg-input/30 dark:has-[[data-slot][aria-invalid=true]]:ring-destructive/40 has-[>[data-align=block-end]]:[&>input]:pt-3 has-[>[data-align=block-start]]:[&>input]:pb-3 has-[>[data-align=inline-end]]:[&>input]:pr-1.5 has-[>[data-align=inline-start]]:[&>input]:pl-1.5 h-auto flex-col items-stretch transition-[border-color,box-shadow] duration-200 bg-background border-input has-[[data-slot=input-group-control]:focus-visible]:ring-ring/30 gap-0 rounded-2xl shadow-sm has-[[data-slot=input-group-control]:focus-visible]:ring-3"
+                            },
+                            "children": [
+                              {
+                                "tag": "textarea",
+                                "attrs": {
+                                  "class": "border-input focus-visible:ring-ring flex w-full focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 md:text-sm flex-1 resize-none rounded-none border-0 bg-transparent py-2 shadow-none ring-0 focus-visible:ring-0 aria-invalid:ring-0 dark:bg-transparent placeholder:text-muted-foreground/55 [field-sizing:content] max-h-60 overflow-y-auto px-4 pt-4 pb-2.5 text-sm leading-6 min-h-16",
+                                  "data-slot": "input-group-control",
+                                  "aria-label": "Question about the report",
+                                  "name": "message",
+                                  "placeholder": "Ask about the report…",
+                                  "value": ""
+                                },
+                                "children": [],
+                                "key": "root.0.0.0.2.1.0.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "role": "group",
+                                  "data-slot": "input-group-addon",
+                                  "class": "h-auto py-1.5 text-sm font-medium text-muted-foreground select-none group-data-[disabled=true]/input-group:opacity-50 [&>kbd]:rounded-[calc(var(--radius)-5px)] [&>svg:not([class*='size-'])]:size-4 order-last justify-start group-has-[>input]/input-group:pb-2 [.border-t]:pt-2 grid w-full cursor-default grid-cols-[minmax(0,1fr)_auto] items-center gap-2 px-3 pt-0 pb-3"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-w-0 items-center gap-1"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "text-muted-foreground flex items-center gap-1.5 text-xs"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-file-text",
+                                              "class": "lucide lucide-file-text size-3.5"
+                                            },
+                                            "key": "root.0.0.0.2.1.0.1.0.0.0"
+                                          },
+                                          {
+                                            "text": "1 report",
+                                            "key": "root.0.0.0.2.1.0.1.0.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.2.1.0.1.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.2.1.0.1.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "class": "justify-center whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 flex items-center gap-2 text-sm shadow-none size-8 p-0 has-[>svg]:p-0 rounded-full",
+                                      "type": "submit",
+                                      "aria-label": "Send message",
+                                      "disabled": "",
+                                      "data-state": "closed"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-arrow-up",
+                                          "class": "lucide lucide-arrow-up"
+                                        },
+                                        "key": "root.0.0.0.2.1.0.1.1.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "sr-only"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Send message",
+                                            "key": "root.0.0.0.2.1.0.1.1.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.2.1.0.1.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.2.1.0.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.0.2.1.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.0.2.1.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.2.1"
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {
+                          "class": "text-muted-foreground mt-2 text-center text-[10px]"
+                        },
+                        "children": [
+                          {
+                            "text": "Prepared demo answers · verify against the cited passage",
+                            "key": "root.0.0.0.2.2.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.2.2"
+                      }
+                    ],
+                    "key": "root.0.0.0.2"
+                  }
+                ],
+                "key": "root.0.0.0"
+              }
+            ],
+            "key": "root.0.0"
+          },
+          {
+            "tag": "div",
+            "attrs": {
+              "role": "separator",
+              "aria-label": "Resize pdf reader",
+              "class": "group bg-border relative z-10 hidden w-px shrink-0 cursor-col-resize outline-none min-[980px]:block"
+            },
+            "children": [
+              {
+                "tag": "span",
+                "attrs": {
+                  "class": "before:bg-border group-hover:before:bg-primary/55 group-focus-visible:before:bg-primary/65 absolute inset-y-0 -left-2 w-4 before:absolute before:inset-y-0 before:left-1/2 before:w-px before:-translate-x-1/2 before:transition-colors"
+                },
+                "children": [],
+                "key": "root.0.1.0"
+              }
+            ],
+            "key": "root.0.1"
+          },
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "hidden min-h-0 min-w-[360px] min-[980px]:flex shrink-0",
+              "style": "width:60%"
+            },
+            "children": [
+              {
+                "tag": "section",
+                "attrs": {
+                  "aria-label": "PDF evidence reader",
+                  "class": "flex h-full min-h-0 w-full min-w-0 flex-col"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "flex h-11 shrink-0 items-center gap-2 border-b px-3"
+                    },
+                    "children": [
+                      {
+                        "tag": "icon",
+                        "attrs": {
+                          "name": "i-lucide-file-text",
+                          "class": "lucide lucide-file-text text-muted-foreground size-4 shrink-0"
+                        },
+                        "key": "root.0.2.0.0.0"
+                      },
+                      {
+                        "tag": "span",
+                        "attrs": {
+                          "class": "min-w-0 flex-1 truncate text-xs"
+                        },
+                        "children": [
+                          {
+                            "text": "first-week-research.pdf",
+                            "key": "root.0.2.0.0.1.0"
+                          }
+                        ],
+                        "key": "root.0.2.0.0.1"
+                      },
+                      {
+                        "tag": "a",
+                        "attrs": {
+                          "href": "/reference/3b956b1a006ba312.pdf",
+                          "aria-label": "Download original PDF",
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-6"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-download",
+                              "class": "lucide lucide-download"
+                            },
+                            "key": "root.0.2.0.0.2.0"
+                          }
+                        ],
+                        "key": "root.0.2.0.0.2"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-6",
+                          "aria-label": "Close PDF reader"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-x",
+                              "class": "lucide lucide-x"
+                            },
+                            "key": "root.0.2.0.0.3.0"
+                          }
+                        ],
+                        "key": "root.0.2.0.0.3"
+                      }
+                    ],
+                    "key": "root.0.2.0.0"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "role": "toolbar",
+                      "aria-label": "PDF navigation",
+                      "class": "flex shrink-0 flex-wrap items-center justify-between gap-2 border-b px-3 py-2"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex items-center gap-1"
+                        },
+                        "children": [
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-6",
+                              "aria-label": "Document outline",
+                              "type": "button",
+                              "aria-haspopup": "dialog",
+                              "data-state": "closed"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-list-tree",
+                                  "class": "lucide lucide-list-tree"
+                                },
+                                "key": "root.0.2.0.1.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.2.0.1.0.0"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-6",
+                              "aria-label": "Search PDF"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-search",
+                                  "class": "lucide lucide-search"
+                                },
+                                "key": "root.0.2.0.1.0.1.0"
+                              }
+                            ],
+                            "key": "root.0.2.0.1.0.1"
+                          }
+                        ],
+                        "key": "root.0.2.0.1.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex items-center gap-1"
+                        },
+                        "children": [
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-6",
+                              "aria-label": "Previous PDF page"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-chevron-left",
+                                  "class": "lucide lucide-chevron-left"
+                                },
+                                "key": "root.0.2.0.1.1.0.0"
+                              }
+                            ],
+                            "key": "root.0.2.0.1.1.0"
+                          },
+                          {
+                            "tag": "input",
+                            "attrs": {
+                              "class": "border-input file:text-foreground placeholder:text-muted-foreground focus-visible:ring-ring flex rounded-md border bg-transparent py-1 text-base shadow-xs transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:ring-1 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 md:text-sm h-7 w-10 px-1 text-center",
+                              "aria-label": "PDF page number",
+                              "value": "2"
+                            },
+                            "children": [],
+                            "key": "root.0.2.0.1.1.1"
+                          },
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "text-muted-foreground text-xs"
+                            },
+                            "children": [
+                              {
+                                "text": "/ ",
+                                "key": "root.0.2.0.1.1.2.0"
+                              },
+                              {
+                                "text": "3",
+                                "key": "root.0.2.0.1.1.2.1"
+                              }
+                            ],
+                            "key": "root.0.2.0.1.1.2"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-6",
+                              "aria-label": "Next PDF page"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-chevron-right",
+                                  "class": "lucide lucide-chevron-right"
+                                },
+                                "key": "root.0.2.0.1.1.3.0"
+                              }
+                            ],
+                            "key": "root.0.2.0.1.1.3"
+                          }
+                        ],
+                        "key": "root.0.2.0.1.1"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "type": "button",
+                          "role": "combobox",
+                          "data-state": "closed",
+                          "class": "border-input ring-offset-background placeholder:text-muted-foreground focus:ring-ring flex items-center justify-between rounded-md border bg-transparent px-3 py-2 text-sm whitespace-nowrap shadow-xs focus:ring-1 focus:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 h-7 w-28",
+                          "aria-label": "PDF zoom"
+                        },
+                        "options": [
+                          "Fit width",
+                          "100%",
+                          "125%",
+                          "150%",
+                          "200%"
+                        ],
+                        "children": [
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "style": "pointer-events:none"
+                            },
+                            "children": [
+                              {
+                                "text": "Fit width",
+                                "key": "root.0.2.0.1.2.0.0"
+                              }
+                            ],
+                            "key": "root.0.2.0.1.2.0"
+                          },
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-chevron-down",
+                              "class": "lucide lucide-chevron-down h-4 w-4 opacity-50"
+                            },
+                            "key": "root.0.2.0.1.2.1"
+                          }
+                        ],
+                        "key": "root.0.2.0.1.2"
+                      }
+                    ],
+                    "key": "root.0.2.0.1"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "bg-muted/30 flex shrink-0 items-center gap-2 border-b px-3 py-2"
+                    },
+                    "children": [
+                      {
+                        "tag": "span",
+                        "attrs": {
+                          "class": "bg-chart-2 size-1.5 shrink-0 rounded-full"
+                        },
+                        "children": [],
+                        "key": "root.0.2.0.2.0"
+                      },
+                      {
+                        "tag": "span",
+                        "attrs": {
+                          "class": "min-w-0 flex-1 truncate text-xs"
+                        },
+                        "children": [
+                          {
+                            "text": "01 / Setup crowds out the first task",
+                            "key": "root.0.2.0.2.1.0"
+                          }
+                        ],
+                        "key": "root.0.2.0.2.1"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-6",
+                          "aria-label": "Copy cited passage"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-copy",
+                              "class": "lucide lucide-copy"
+                            },
+                            "key": "root.0.2.0.2.2.0"
+                          }
+                        ],
+                        "key": "root.0.2.0.2.2"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-6",
+                          "aria-label": "Clear passage highlight"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-x",
+                              "class": "lucide lucide-x"
+                            },
+                            "key": "root.0.2.0.2.3.0"
+                          }
+                        ],
+                        "key": "root.0.2.0.2.3"
+                      }
+                    ],
+                    "key": "root.0.2.0.2"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "bg-muted/40 min-h-0 flex-1 overflow-auto overscroll-contain p-4 sm:p-6",
+                      "aria-label": "PDF page 2: The friction is in the handoff"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "relative mx-auto shrink-0 overflow-hidden rounded-sm shadow-sm",
+                          "style": "width:100%;aspect-ratio:612 / 792"
+                        },
+                        "children": [
+                          {
+                            "tag": "img",
+                            "attrs": {
+                              "alt": "Page 2: The friction is in the handoff. Select a passage to inspect its evidence.",
+                              "width": "612",
+                              "height": "792",
+                              "class": "block h-auto w-full",
+                              "style": "color:transparent",
+                              "src": "/reference/c80057a07cb60c2a.png"
+                            },
+                            "children": [],
+                            "key": "root.0.2.0.3.0.0"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "type": "button",
+                              "aria-label": "Select passage: 01 / Setup crowds out the first task",
+                              "class": "hover:bg-chart-2/10 focus-visible:border-chart-2 absolute rounded-sm border-2 transition-colors focus-visible:outline-none border-chart-2/60 bg-chart-2/15",
+                              "style": "left:8.169934640522875%;top:27.02020202020202%;width:83.66013071895425%;height:8.585858585858585%"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "sr-only"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Eight of the 12 observed teams opened advanced settings before completing their first shared task. Six of those teams asked the facilitator which settings were required. The questions were about whether it was safe to proceed, rather than how to use a specific control.",
+                                    "key": "root.0.2.0.3.0.1.0.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.3.0.1.0"
+                              }
+                            ],
+                            "key": "root.0.2.0.3.0.1"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "type": "button",
+                              "aria-label": "Select passage: 02 / Invitations arrive without a next step",
+                              "class": "hover:bg-chart-2/10 focus-visible:border-chart-2 absolute rounded-sm border-2 border-transparent transition-colors focus-visible:outline-none",
+                              "style": "left:8.169934640522875%;top:41.035353535353536%;width:83.66013071895425%;height:8.585858585858585%"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "sr-only"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Five teams invited a teammate but did not assign or share a task in the same session. Invitees could enter the workspace, yet the invitation did not explain what they should do first. A small, concrete shared task would give both people a useful starting point.",
+                                    "key": "root.0.2.0.3.0.2.0.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.3.0.2.0"
+                              }
+                            ],
+                            "key": "root.0.2.0.3.0.2"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "type": "button",
+                              "aria-label": "Select passage: 03 / Import errors force teams to retrace steps",
+                              "class": "hover:bg-chart-2/10 focus-visible:border-chart-2 absolute rounded-sm border-2 border-transparent transition-colors focus-visible:outline-none",
+                              "style": "left:8.169934640522875%;top:55.05050505050505%;width:83.66013071895425%;height:8.585858585858585%"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "sr-only"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Four teams encountered an invalid row during their first import. Three restarted the upload because they could not tell whether valid rows had been saved. The preview needs a clear count of accepted and rejected rows, plus a way to retry only the rejected rows.",
+                                    "key": "root.0.2.0.3.0.3.0.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.3.0.3.0"
+                              }
+                            ],
+                            "key": "root.0.2.0.3.0.3"
+                          }
+                        ],
+                        "key": "root.0.2.0.3.0"
+                      }
+                    ],
+                    "key": "root.0.2.0.3"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "text-muted-foreground flex shrink-0 items-center justify-between gap-2 border-t px-3 py-2 text-[11px]"
+                    },
+                    "children": [
+                      {
+                        "tag": "span",
+                        "attrs": {},
+                        "children": [
+                          {
+                            "text": "Page ",
+                            "key": "root.0.2.0.4.0.0"
+                          },
+                          {
+                            "text": "2",
+                            "key": "root.0.2.0.4.0.1"
+                          },
+                          {
+                            "text": " of ",
+                            "key": "root.0.2.0.4.0.2"
+                          },
+                          {
+                            "text": "3",
+                            "key": "root.0.2.0.4.0.3"
+                          },
+                          {
+                            "text": " · ",
+                            "key": "root.0.2.0.4.0.4"
+                          },
+                          {
+                            "text": "Observed friction",
+                            "key": "root.0.2.0.4.0.5"
+                          }
+                        ],
+                        "key": "root.0.2.0.4.0"
+                      },
+                      {
+                        "tag": "span",
+                        "attrs": {},
+                        "children": [
+                          {
+                            "text": "Demo research report",
+                            "key": "root.0.2.0.4.1.0"
+                          }
+                        ],
+                        "key": "root.0.2.0.4.1"
+                      }
+                    ],
+                    "key": "root.0.2.0.4"
+                  }
+                ],
+                "key": "root.0.2.0"
+              }
+            ],
+            "key": "root.0.2"
+          }
+        ],
+        "key": "root.0"
+      }
+    ],
+    "key": "root"
+  },
+  "headings": [
+    "First-week research"
+  ]
+}

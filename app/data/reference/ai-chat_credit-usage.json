@@ -1,0 +1,1711 @@
+{
+  "label": "Credit usage",
+  "path": "/ai-chat/credit-usage",
+  "appTitle": "",
+  "tree": {
+    "tag": "div",
+    "attrs": {
+      "id": "ai-workspace-content",
+      "class": "flex min-h-0 flex-1 flex-col"
+    },
+    "children": [
+      {
+        "tag": "div",
+        "attrs": {
+          "class": "min-h-0 flex-1 overflow-y-auto"
+        },
+        "children": [
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "mx-auto flex flex-col px-4 sm:px-8 gap-6 py-6 sm:py-8 max-w-5xl"
+            },
+            "children": [
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "flex flex-wrap gap-4 items-start justify-between"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "flex flex-col gap-1"
+                    },
+                    "children": [
+                      {
+                        "tag": "h1",
+                        "attrs": {
+                          "class": "text-2xl font-semibold tracking-tight"
+                        },
+                        "children": [
+                          {
+                            "text": "Credit usage",
+                            "key": "root.0.0.0.0.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.0"
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {
+                          "class": "text-muted-foreground max-w-2xl text-sm"
+                        },
+                        "children": [
+                          {
+                            "text": "A closer look at what your team is creating, running, and saving.",
+                            "key": "root.0.0.0.0.1.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.1"
+                      }
+                    ],
+                    "key": "root.0.0.0.0"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "flex flex-wrap items-center gap-2"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "role": "tablist",
+                          "class": "bg-muted text-muted-foreground inline-flex h-9 items-center justify-center rounded-lg p-1",
+                          "aria-label": "Usage period",
+                          "data-orientation": "horizontal",
+                          "style": "outline:none"
+                        },
+                        "children": [
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "type": "button",
+                              "role": "tab",
+                              "data-state": "inactive",
+                              "id": "radix-_R_1bsnpfknmlb_-trigger-daily",
+                              "class": "ring-offset-background focus-visible:ring-ring data-[state=active]:bg-background data-[state=active]:text-foreground inline-flex items-center justify-center rounded-md px-3 py-1 text-sm font-medium whitespace-nowrap transition-all focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-[state=active]:shadow-sm",
+                              "data-orientation": "horizontal"
+                            },
+                            "children": [
+                              {
+                                "text": "Daily",
+                                "key": "root.0.0.0.1.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.0.1.0.0"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "type": "button",
+                              "role": "tab",
+                              "data-state": "active",
+                              "id": "radix-_R_1bsnpfknmlb_-trigger-weekly",
+                              "class": "ring-offset-background focus-visible:ring-ring data-[state=active]:bg-background data-[state=active]:text-foreground inline-flex items-center justify-center rounded-md px-3 py-1 text-sm font-medium whitespace-nowrap transition-all focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-[state=active]:shadow-sm",
+                              "data-orientation": "horizontal"
+                            },
+                            "children": [
+                              {
+                                "text": "Weekly",
+                                "key": "root.0.0.0.1.0.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.0.1.0.1"
+                          }
+                        ],
+                        "key": "root.0.0.0.1.0"
+                      }
+                    ],
+                    "key": "root.0.0.0.1"
+                  }
+                ],
+                "key": "root.0.0.0"
+              },
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "flex flex-col gap-10 pt-3"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "bg-card text-card-foreground rounded-lg border overflow-hidden"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex space-y-1.5 p-6 flex-row flex-wrap items-center justify-between gap-4"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex items-center gap-3"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex size-10 shrink-0 items-center justify-center rounded-lg bg-emerald-500/10 text-emerald-600"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-chart-no-axes-column",
+                                      "class": "lucide lucide-chart-no-axes-column size-5"
+                                    },
+                                    "key": "root.0.0.1.0.0.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.0.0.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex flex-col gap-1.5"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "leading-none font-semibold tracking-tight"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Business plan",
+                                        "key": "root.0.0.1.0.0.0.1.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.0.0.1.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "text-muted-foreground text-sm"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Team workspace · Monthly billing",
+                                        "key": "root.0.0.1.0.0.0.1.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.0.0.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.0.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.0.0"
+                          },
+                          {
+                            "tag": "a",
+                            "attrs": {
+                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2",
+                              "href": "/ai-chat/billing"
+                            },
+                            "children": [
+                              {
+                                "text": "Manage plan",
+                                "key": "root.0.0.1.0.0.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.0.1"
+                          }
+                        ],
+                        "key": "root.0.0.1.0.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "data-orientation": "horizontal",
+                          "role": "none",
+                          "class": "bg-border shrink-0 h-[1px] w-full"
+                        },
+                        "children": [],
+                        "key": "root.0.0.1.0.1"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "p-6 flex flex-col gap-5 pt-6"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex flex-wrap items-end justify-between gap-3"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex flex-col gap-1"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-muted-foreground text-xs"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Credits used this ",
+                                        "key": "root.0.0.1.0.2.0.0.0.0"
+                                      },
+                                      {
+                                        "text": "week",
+                                        "key": "root.0.0.1.0.2.0.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.2.0.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-3xl font-semibold tracking-tight tabular-nums"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "234,050",
+                                        "key": "root.0.0.1.0.2.0.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.2.0.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.2.0.0"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-muted-foreground text-xs"
+                                },
+                                "children": [
+                                  {
+                                    "text": "10–16 Sep 2026",
+                                    "key": "root.0.0.1.0.2.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.2.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.2.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "role": "img",
+                              "aria-label": "Credit usage: organization 182,100 credits, agents 51,950 credits",
+                              "class": "flex h-3 gap-1"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "rounded-md bg-emerald-500 transition-[width] duration-300 motion-reduce:transition-none",
+                                  "style": "width:77.80388805810723%"
+                                },
+                                "children": [],
+                                "key": "root.0.0.1.0.2.1.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "rounded-md bg-emerald-500/35 transition-[width] duration-300 motion-reduce:transition-none",
+                                  "style": "width:22.196111941892756%"
+                                },
+                                "children": [],
+                                "key": "root.0.0.1.0.2.1.1"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.2.1"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "text-muted-foreground flex flex-wrap items-center justify-between gap-x-6 gap-y-3 text-sm"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex flex-wrap gap-x-6 gap-y-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "flex items-center gap-2"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "size-2 rounded-sm bg-emerald-500"
+                                        },
+                                        "children": [],
+                                        "key": "root.0.0.1.0.2.2.0.0.0"
+                                      },
+                                      {
+                                        "text": "Organization usage (",
+                                        "key": "root.0.0.1.0.2.2.0.0.1"
+                                      },
+                                      {
+                                        "text": "182.1K",
+                                        "key": "root.0.0.1.0.2.2.0.0.2"
+                                      },
+                                      {
+                                        "text": "credits)",
+                                        "key": "root.0.0.1.0.2.2.0.0.3"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.2.2.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "flex items-center gap-2"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "size-2 rounded-sm bg-emerald-500/35"
+                                        },
+                                        "children": [],
+                                        "key": "root.0.0.1.0.2.2.0.1.0"
+                                      },
+                                      {
+                                        "text": "Agent usage (",
+                                        "key": "root.0.0.1.0.2.2.0.1.1"
+                                      },
+                                      {
+                                        "text": "52K",
+                                        "key": "root.0.0.1.0.2.2.0.1.2"
+                                      },
+                                      {
+                                        "text": " credits)",
+                                        "key": "root.0.0.1.0.2.2.0.1.3"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.2.2.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.2.2.0"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "text": "Renews on 28 Sep 2026",
+                                    "key": "root.0.0.1.0.2.2.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.2.2.1"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.2.2"
+                          }
+                        ],
+                        "key": "root.0.0.1.0.2"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "data-orientation": "horizontal",
+                          "role": "none",
+                          "class": "bg-border shrink-0 h-[1px] w-full"
+                        },
+                        "children": [],
+                        "key": "root.0.0.1.0.3"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "items-center grid grid-cols-2 divide-x p-0 md:grid-cols-4"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex flex-col gap-1.5 p-5"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-2xl font-semibold tracking-tight tabular-nums"
+                                },
+                                "children": [
+                                  {
+                                    "text": "780",
+                                    "key": "root.0.0.1.0.4.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.4.0.0"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-muted-foreground text-sm"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Hours saved",
+                                    "key": "root.0.0.1.0.4.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.4.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.4.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex flex-col gap-1.5 p-5"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-2xl font-semibold tracking-tight tabular-nums"
+                                },
+                                "children": [
+                                  {
+                                    "text": "8",
+                                    "key": "root.0.0.1.0.4.1.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.4.1.0"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-muted-foreground text-sm"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Active agents",
+                                    "key": "root.0.0.1.0.4.1.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.4.1.1"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.4.1"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex flex-col gap-1.5 p-5"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-2xl font-semibold tracking-tight tabular-nums"
+                                },
+                                "children": [
+                                  {
+                                    "text": "3,056",
+                                    "key": "root.0.0.1.0.4.2.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.4.2.0"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-muted-foreground text-sm"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Completed runs",
+                                    "key": "root.0.0.1.0.4.2.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.4.2.1"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.4.2"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex flex-col gap-1.5 p-5"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-2xl font-semibold tracking-tight tabular-nums"
+                                },
+                                "children": [
+                                  {
+                                    "text": "437",
+                                    "key": "root.0.0.1.0.4.3.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.4.3.0"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-muted-foreground text-sm"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Runs / day avg.",
+                                    "key": "root.0.0.1.0.4.3.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.4.3.1"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.4.3"
+                          }
+                        ],
+                        "key": "root.0.0.1.0.4"
+                      }
+                    ],
+                    "key": "root.0.0.1.0"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "data-orientation": "horizontal",
+                      "class": "flex flex-col gap-4"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex flex-wrap items-center justify-between gap-4"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "role": "tablist",
+                              "class": "bg-muted text-muted-foreground inline-flex h-9 items-center justify-center rounded-lg p-1",
+                              "aria-label": "Usage breakdown",
+                              "data-orientation": "horizontal",
+                              "style": "outline:none"
+                            },
+                            "children": [
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "type": "button",
+                                  "role": "tab",
+                                  "data-state": "active",
+                                  "id": "radix-_R_1atbsnpfknmlb_-trigger-agents",
+                                  "class": "ring-offset-background focus-visible:ring-ring data-[state=active]:bg-background data-[state=active]:text-foreground inline-flex items-center justify-center rounded-md px-3 py-1 text-sm font-medium whitespace-nowrap transition-all focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-[state=active]:shadow-sm",
+                                  "data-orientation": "horizontal"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Agents",
+                                    "key": "root.0.0.1.1.0.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.0.0.0"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "type": "button",
+                                  "role": "tab",
+                                  "data-state": "inactive",
+                                  "id": "radix-_R_1atbsnpfknmlb_-trigger-users",
+                                  "class": "ring-offset-background focus-visible:ring-ring data-[state=active]:bg-background data-[state=active]:text-foreground inline-flex items-center justify-center rounded-md px-3 py-1 text-sm font-medium whitespace-nowrap transition-all focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-[state=active]:shadow-sm",
+                                  "data-orientation": "horizontal"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Power users",
+                                    "key": "root.0.0.1.1.0.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.0.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.0.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex w-full flex-wrap items-center gap-2 sm:w-auto"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "data-slot": "input-group",
+                                  "role": "group",
+                                  "class": "group/input-group relative flex h-9 min-w-0 items-center rounded-md border border-input shadow-xs transition-[color,box-shadow] outline-none in-data-[slot=combobox-content]:focus-within:border-inherit in-data-[slot=combobox-content]:focus-within:ring-0 has-[[data-slot=input-group-control]:focus-visible]:border-ring has-[[data-slot=input-group-control]:focus-visible]:ring-3 has-[[data-slot=input-group-control]:focus-visible]:ring-ring/50 has-[[data-slot][aria-invalid=true]]:border-destructive has-[[data-slot][aria-invalid=true]]:ring-3 has-[[data-slot][aria-invalid=true]]:ring-destructive/20 has-[>[data-align=block-end]]:h-auto has-[>[data-align=block-end]]:flex-col has-[>[data-align=block-start]]:h-auto has-[>[data-align=block-start]]:flex-col has-[>textarea]:h-auto dark:bg-input/30 dark:has-[[data-slot][aria-invalid=true]]:ring-destructive/40 has-[>[data-align=block-end]]:[&>input]:pt-3 has-[>[data-align=block-start]]:[&>input]:pb-3 has-[>[data-align=inline-end]]:[&>input]:pr-1.5 has-[>[data-align=inline-start]]:[&>input]:pl-1.5 w-full sm:w-60"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "role": "group",
+                                      "data-slot": "input-group-addon",
+                                      "class": "flex h-auto cursor-text items-center justify-center gap-2 py-1.5 text-sm font-medium text-muted-foreground select-none group-data-[disabled=true]/input-group:opacity-50 [&>kbd]:rounded-[calc(var(--radius)-5px)] [&>svg:not([class*='size-'])]:size-4 order-first pl-2 has-[>button]:-ml-1 has-[>kbd]:ml-[-0.15rem]"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-search",
+                                          "class": "lucide lucide-search"
+                                        },
+                                        "key": "root.0.0.1.1.0.1.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.1.0.0"
+                                  },
+                                  {
+                                    "tag": "input",
+                                    "attrs": {
+                                      "class": "border-input file:text-foreground placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full px-3 py-1 text-base transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 md:text-sm flex-1 rounded-none border-0 bg-transparent shadow-none ring-0 focus-visible:ring-0 aria-invalid:ring-0 dark:bg-transparent",
+                                      "data-slot": "input-group-control",
+                                      "aria-label": "Search agents",
+                                      "placeholder": "Search agents…",
+                                      "value": ""
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.1.1.0.1.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.0.1.0"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-download",
+                                      "class": "lucide lucide-download"
+                                    },
+                                    "key": "root.0.0.1.1.0.1.1.0"
+                                  },
+                                  {
+                                    "text": "Export",
+                                    "key": "root.0.0.1.1.0.1.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.0.1.1"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2 border-dashed",
+                                  "type": "button",
+                                  "id": "radix-_R_77atbsnpfknmlb_",
+                                  "aria-haspopup": "menu",
+                                  "data-state": "closed"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-plus",
+                                      "class": "lucide lucide-plus"
+                                    },
+                                    "key": "root.0.0.1.1.0.1.2.0"
+                                  },
+                                  {
+                                    "text": "Filter",
+                                    "key": "root.0.0.1.1.0.1.2.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.0.1.2"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.0.1"
+                          }
+                        ],
+                        "key": "root.0.0.1.1.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "data-state": "active",
+                          "data-orientation": "horizontal",
+                          "role": "tabpanel",
+                          "id": "radix-_R_1atbsnpfknmlb_-content-agents",
+                          "class": "ring-offset-background focus-visible:ring-ring focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden mt-0 flex flex-col gap-3",
+                          "style": "animation-duration:0s"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "overflow-hidden rounded-xl border"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "relative w-full overflow-auto"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "table",
+                                    "attrs": {
+                                      "class": "w-full caption-bottom text-sm min-w-[800px]"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "thead",
+                                        "attrs": {
+                                          "class": "[&_tr]:border-b"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "tr",
+                                            "attrs": {
+                                              "class": "group/row hover:bg-muted/50 data-[state=selected]:bg-muted border-b transition-colors bg-muted/35"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "th",
+                                                "attrs": {
+                                                  "class": "text-muted-foreground h-10 text-left align-middle font-medium [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] w-[32%] px-5"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Agent",
+                                                    "key": "root.0.0.1.1.1.0.0.0.0.0.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.0.0.0"
+                                              },
+                                              {
+                                                "tag": "th",
+                                                "attrs": {
+                                                  "class": "text-muted-foreground h-10 px-2 text-left align-middle font-medium [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] w-[23%]"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Category",
+                                                    "key": "root.0.0.1.1.1.0.0.0.0.0.1.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.0.0.1"
+                                              },
+                                              {
+                                                "tag": "th",
+                                                "attrs": {
+                                                  "class": "text-muted-foreground h-10 px-2 align-middle font-medium [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-right"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "button",
+                                                    "attrs": {
+                                                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs",
+                                                      "aria-label": "Sort by runs"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Runs",
+                                                        "key": "root.0.0.1.1.1.0.0.0.0.0.2.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "icon",
+                                                        "attrs": {
+                                                          "name": "i-lucide-arrow-up-down",
+                                                          "class": "lucide lucide-arrow-up-down"
+                                                        },
+                                                        "key": "root.0.0.1.1.1.0.0.0.0.0.2.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.1.1.1.0.0.0.0.0.2.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.0.0.2"
+                                              },
+                                              {
+                                                "tag": "th",
+                                                "attrs": {
+                                                  "class": "text-muted-foreground h-10 px-2 align-middle font-medium [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-right"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "button",
+                                                    "attrs": {
+                                                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs",
+                                                      "aria-label": "Sort by hours saved"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Hours saved",
+                                                        "key": "root.0.0.1.1.1.0.0.0.0.0.3.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "icon",
+                                                        "attrs": {
+                                                          "name": "i-lucide-arrow-up-down",
+                                                          "class": "lucide lucide-arrow-up-down"
+                                                        },
+                                                        "key": "root.0.0.1.1.1.0.0.0.0.0.3.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.1.1.1.0.0.0.0.0.3.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.0.0.3"
+                                              },
+                                              {
+                                                "tag": "th",
+                                                "attrs": {
+                                                  "class": "text-muted-foreground h-10 px-2 align-middle font-medium [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-right"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "button",
+                                                    "attrs": {
+                                                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs",
+                                                      "aria-label": "Sort by credits used"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Credits used",
+                                                        "key": "root.0.0.1.1.1.0.0.0.0.0.4.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "icon",
+                                                        "attrs": {
+                                                          "name": "i-lucide-arrow-up-down",
+                                                          "class": "lucide lucide-arrow-up-down"
+                                                        },
+                                                        "key": "root.0.0.1.1.1.0.0.0.0.0.4.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.1.1.1.0.0.0.0.0.4.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.0.0.4"
+                                              },
+                                              {
+                                                "tag": "th",
+                                                "attrs": {
+                                                  "class": "text-muted-foreground h-10 px-2 align-middle font-medium [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pr-5 text-right"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Share",
+                                                    "key": "root.0.0.1.1.1.0.0.0.0.0.5.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.0.0.5"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.1.0.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.1.0.0.0.0"
+                                      },
+                                      {
+                                        "tag": "tbody",
+                                        "attrs": {
+                                          "class": "[&_tr:last-child]:border-0"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "tr",
+                                            "attrs": {
+                                              "class": "group/row hover:bg-muted/50 data-[state=selected]:bg-muted border-b transition-colors"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] px-5 py-5 font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Inbox triage",
+                                                    "key": "root.0.0.1.1.1.0.0.0.1.0.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.1.0.0"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-muted-foreground"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Customer support",
+                                                    "key": "root.0.0.1.1.1.0.0.0.1.0.1.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.1.0.1"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] px-5 text-right tabular-nums"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "842",
+                                                    "key": "root.0.0.1.1.1.0.0.0.1.0.2.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.1.0.2"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] px-5 text-right tabular-nums"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "164",
+                                                    "key": "root.0.0.1.1.1.0.0.0.1.0.3.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.1.0.3"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] px-5 text-right tabular-nums"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "12,740",
+                                                    "key": "root.0.0.1.1.1.0.0.0.1.0.4.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.1.0.4"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pr-5 text-right tabular-nums"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "24.5%",
+                                                    "key": "root.0.0.1.1.1.0.0.0.1.0.5.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.1.0.5"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.1.0.0.0.1.0"
+                                          },
+                                          {
+                                            "tag": "tr",
+                                            "attrs": {
+                                              "class": "group/row hover:bg-muted/50 data-[state=selected]:bg-muted border-b transition-colors"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] px-5 py-5 font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Release notes writer",
+                                                    "key": "root.0.0.1.1.1.0.0.0.1.1.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.1.1.0"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-muted-foreground"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Content",
+                                                    "key": "root.0.0.1.1.1.0.0.0.1.1.1.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.1.1.1"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] px-5 text-right tabular-nums"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "367",
+                                                    "key": "root.0.0.1.1.1.0.0.0.1.1.2.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.1.1.2"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] px-5 text-right tabular-nums"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "73",
+                                                    "key": "root.0.0.1.1.1.0.0.0.1.1.3.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.1.1.3"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] px-5 text-right tabular-nums"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "6,380",
+                                                    "key": "root.0.0.1.1.1.0.0.0.1.1.4.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.1.1.4"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pr-5 text-right tabular-nums"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "12.3%",
+                                                    "key": "root.0.0.1.1.1.0.0.0.1.1.5.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.1.1.5"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.1.0.0.0.1.1"
+                                          },
+                                          {
+                                            "tag": "tr",
+                                            "attrs": {
+                                              "class": "group/row hover:bg-muted/50 data-[state=selected]:bg-muted border-b transition-colors"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] px-5 py-5 font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Account research",
+                                                    "key": "root.0.0.1.1.1.0.0.0.1.2.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.1.2.0"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-muted-foreground"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Research",
+                                                    "key": "root.0.0.1.1.1.0.0.0.1.2.1.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.1.2.1"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] px-5 text-right tabular-nums"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "596",
+                                                    "key": "root.0.0.1.1.1.0.0.0.1.2.2.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.1.2.2"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] px-5 text-right tabular-nums"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "208",
+                                                    "key": "root.0.0.1.1.1.0.0.0.1.2.3.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.1.2.3"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] px-5 text-right tabular-nums"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "9,120",
+                                                    "key": "root.0.0.1.1.1.0.0.0.1.2.4.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.1.2.4"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pr-5 text-right tabular-nums"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "17.6%",
+                                                    "key": "root.0.0.1.1.1.0.0.0.1.2.5.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.1.2.5"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.1.0.0.0.1.2"
+                                          },
+                                          {
+                                            "tag": "tr",
+                                            "attrs": {
+                                              "class": "group/row hover:bg-muted/50 data-[state=selected]:bg-muted border-b transition-colors"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] px-5 py-5 font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Meeting follow-ups",
+                                                    "key": "root.0.0.1.1.1.0.0.0.1.3.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.1.3.0"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-muted-foreground"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Operations",
+                                                    "key": "root.0.0.1.1.1.0.0.0.1.3.1.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.1.3.1"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] px-5 text-right tabular-nums"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "224",
+                                                    "key": "root.0.0.1.1.1.0.0.0.1.3.2.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.1.3.2"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] px-5 text-right tabular-nums"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "56",
+                                                    "key": "root.0.0.1.1.1.0.0.0.1.3.3.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.1.3.3"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] px-5 text-right tabular-nums"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "4,280",
+                                                    "key": "root.0.0.1.1.1.0.0.0.1.3.4.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.1.3.4"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pr-5 text-right tabular-nums"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "8.2%",
+                                                    "key": "root.0.0.1.1.1.0.0.0.1.3.5.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.1.3.5"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.1.0.0.0.1.3"
+                                          },
+                                          {
+                                            "tag": "tr",
+                                            "attrs": {
+                                              "class": "group/row hover:bg-muted/50 data-[state=selected]:bg-muted border-b transition-colors"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] px-5 py-5 font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Product feedback digest",
+                                                    "key": "root.0.0.1.1.1.0.0.0.1.4.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.1.4.0"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-muted-foreground"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Research",
+                                                    "key": "root.0.0.1.1.1.0.0.0.1.4.1.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.1.4.1"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] px-5 text-right tabular-nums"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "413",
+                                                    "key": "root.0.0.1.1.1.0.0.0.1.4.2.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.1.4.2"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] px-5 text-right tabular-nums"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "119",
+                                                    "key": "root.0.0.1.1.1.0.0.0.1.4.3.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.1.4.3"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] px-5 text-right tabular-nums"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "7,960",
+                                                    "key": "root.0.0.1.1.1.0.0.0.1.4.4.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.1.4.4"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pr-5 text-right tabular-nums"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "15.3%",
+                                                    "key": "root.0.0.1.1.1.0.0.0.1.4.5.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.1.4.5"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.1.0.0.0.1.4"
+                                          },
+                                          {
+                                            "tag": "tr",
+                                            "attrs": {
+                                              "class": "group/row hover:bg-muted/50 data-[state=selected]:bg-muted border-b transition-colors"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] px-5 py-5 font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Help center editor",
+                                                    "key": "root.0.0.1.1.1.0.0.0.1.5.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.1.5.0"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-muted-foreground"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Content",
+                                                    "key": "root.0.0.1.1.1.0.0.0.1.5.1.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.1.5.1"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] px-5 text-right tabular-nums"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "178",
+                                                    "key": "root.0.0.1.1.1.0.0.0.1.5.2.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.1.5.2"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] px-5 text-right tabular-nums"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "42",
+                                                    "key": "root.0.0.1.1.1.0.0.0.1.5.3.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.1.5.3"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] px-5 text-right tabular-nums"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "3,510",
+                                                    "key": "root.0.0.1.1.1.0.0.0.1.5.4.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.1.5.4"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pr-5 text-right tabular-nums"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "6.8%",
+                                                    "key": "root.0.0.1.1.1.0.0.0.1.5.5.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.1.5.5"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.1.0.0.0.1.5"
+                                          },
+                                          {
+                                            "tag": "tr",
+                                            "attrs": {
+                                              "class": "group/row hover:bg-muted/50 data-[state=selected]:bg-muted border-b transition-colors"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] px-5 py-5 font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Pipeline health check",
+                                                    "key": "root.0.0.1.1.1.0.0.0.1.6.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.1.6.0"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-muted-foreground"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Operations",
+                                                    "key": "root.0.0.1.1.1.0.0.0.1.6.1.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.1.6.1"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] px-5 text-right tabular-nums"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "309",
+                                                    "key": "root.0.0.1.1.1.0.0.0.1.6.2.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.1.6.2"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] px-5 text-right tabular-nums"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "87",
+                                                    "key": "root.0.0.1.1.1.0.0.0.1.6.3.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.1.6.3"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] px-5 text-right tabular-nums"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "5,820",
+                                                    "key": "root.0.0.1.1.1.0.0.0.1.6.4.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.1.6.4"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pr-5 text-right tabular-nums"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "11.2%",
+                                                    "key": "root.0.0.1.1.1.0.0.0.1.6.5.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.1.6.5"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.1.0.0.0.1.6"
+                                          },
+                                          {
+                                            "tag": "tr",
+                                            "attrs": {
+                                              "class": "group/row hover:bg-muted/50 data-[state=selected]:bg-muted border-b transition-colors"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] px-5 py-5 font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Onboarding guide",
+                                                    "key": "root.0.0.1.1.1.0.0.0.1.7.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.1.7.0"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-muted-foreground"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Customer support",
+                                                    "key": "root.0.0.1.1.1.0.0.0.1.7.1.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.1.7.1"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] px-5 text-right tabular-nums"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "127",
+                                                    "key": "root.0.0.1.1.1.0.0.0.1.7.2.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.1.7.2"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] px-5 text-right tabular-nums"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "31",
+                                                    "key": "root.0.0.1.1.1.0.0.0.1.7.3.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.1.7.3"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] px-5 text-right tabular-nums"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "2,140",
+                                                    "key": "root.0.0.1.1.1.0.0.0.1.7.4.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.1.7.4"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pr-5 text-right tabular-nums"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "4.1%",
+                                                    "key": "root.0.0.1.1.1.0.0.0.1.7.5.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.1.0.0.0.1.7.5"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.1.0.0.0.1.7"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.1.0.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.1.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.1.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.1.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "text-muted-foreground flex flex-wrap items-center justify-between gap-2 text-xs"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "text": "8",
+                                    "key": "root.0.0.1.1.1.1.0.0"
+                                  },
+                                  {
+                                    "text": " of ",
+                                    "key": "root.0.0.1.1.1.1.0.1"
+                                  },
+                                  {
+                                    "text": "8",
+                                    "key": "root.0.0.1.1.1.1.0.2"
+                                  },
+                                  {
+                                    "text": "agents",
+                                    "key": "root.0.0.1.1.1.1.0.3"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.1.1.0"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "text": "10–16 Sep 2026",
+                                    "key": "root.0.0.1.1.1.1.1.0"
+                                  },
+                                  {
+                                    "text": " · Share of",
+                                    "key": "root.0.0.1.1.1.1.1.1"
+                                  },
+                                  {
+                                    "text": "agent",
+                                    "key": "root.0.0.1.1.1.1.1.2"
+                                  },
+                                  {
+                                    "text": " credits",
+                                    "key": "root.0.0.1.1.1.1.1.3"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.1.1.1"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.1.1"
+                          }
+                        ],
+                        "key": "root.0.0.1.1.1"
+                      }
+                    ],
+                    "key": "root.0.0.1.1"
+                  }
+                ],
+                "key": "root.0.0.1"
+              }
+            ],
+            "key": "root.0.0"
+          }
+        ],
+        "key": "root.0"
+      }
+    ],
+    "key": "root"
+  },
+  "headings": [
+    "Credit usage"
+  ]
+}

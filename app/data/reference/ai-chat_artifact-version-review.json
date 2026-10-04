@@ -1,0 +1,2340 @@
+{
+  "label": "Document 3",
+  "path": "/ai-chat/artifact-version-review",
+  "appTitle": "",
+  "tree": {
+    "tag": "div",
+    "attrs": {
+      "id": "ai-workspace-content",
+      "class": "flex min-h-0 flex-1 flex-col"
+    },
+    "children": [
+      {
+        "tag": "div",
+        "attrs": {
+          "class": "flex min-h-0 flex-1 overflow-hidden"
+        },
+        "children": [
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "flex min-h-0 min-w-0 flex-1 flex-col"
+            },
+            "children": [
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "flex min-h-0 flex-1 flex-col"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "flex h-14 shrink-0 items-center justify-between border-b px-5"
+                    },
+                    "children": [
+                      {
+                        "tag": "h2",
+                        "attrs": {
+                          "class": "text-sm font-medium"
+                        },
+                        "children": [
+                          {
+                            "text": "Conversation",
+                            "key": "root.0.0.0.0.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.0"
+                      },
+                      {
+                        "tag": "span",
+                        "attrs": {
+                          "class": "text-muted-foreground text-xs"
+                        },
+                        "children": [
+                          {
+                            "text": "Artifact review",
+                            "key": "root.0.0.0.0.1.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.1"
+                      }
+                    ],
+                    "key": "root.0.0.0.0"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "data-slot": "message-scroller",
+                      "class": "group/message-scroller relative flex size-full flex-col overflow-hidden min-h-0 flex-1"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "role": "region",
+                          "aria-label": "Conversation messages",
+                          "data-slot": "message-scroller-viewport",
+                          "class": "size-full min-h-0 min-w-0 scroll-fade-b scrollbar-thin scrollbar-gutter-stable overflow-y-auto overscroll-contain contain-content data-autoscrolling:scrollbar-thumb-transparent data-autoscrolling:scrollbar-track-transparent"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "role": "log",
+                              "data-slot": "message-scroller-content",
+                              "class": "flex h-max flex-col min-h-full gap-0 mx-auto w-full max-w-2xl px-5 py-7"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "data-slot": "message-scroller-item",
+                                  "class": "shrink-0 [contain-intrinsic-size:auto_10rem] [content-visibility:auto] flex min-w-0 flex-col gap-9"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "data-slot": "message",
+                                      "class": "group/message relative flex w-full min-w-0 gap-2 text-sm data-[align=end]:flex-row-reverse"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "data-slot": "message-content",
+                                          "class": "flex w-full min-w-0 flex-col gap-2.5 wrap-break-word group-data-[align=end]/message:*:data-slot:self-end"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "data-slot": "bubble",
+                                              "class": "group/bubble relative flex w-fit min-w-0 flex-col gap-1 group-data-[align=end]/message:self-end data-[align=end]:self-end data-[variant=ghost]:max-w-full *:data-[slot=bubble-content]:bg-muted [&>[data-slot=bubble-content]:is(button,a):hover]:bg-[color-mix(in_oklch,var(--muted),var(--foreground)_5%)] max-w-[88%] md:max-w-[72%]"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "data-slot": "bubble-content",
+                                                  "class": "w-fit max-w-full min-w-0 overflow-hidden rounded-3xl border-transparent px-3 py-2.5 text-sm wrap-break-word group-data-[align=end]/bubble:self-end [button]:text-left [button,a]:transition-colors [button,a]:outline-none [button,a]:focus-visible:border-ring [button,a]:focus-visible:ring-3 [button,a]:focus-visible:ring-ring/30 border-0 leading-6"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Help me review onboarding-rollout.md before we share it. What changed, and is there anything we should bring back?",
+                                                    "key": "root.0.0.0.1.0.0.0.0.0.0.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.1.0.0.0.0.0.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.1.0.0.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.1.0.0.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.1.0.0.0.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "data-slot": "message",
+                                      "class": "group/message relative flex w-full min-w-0 gap-2 text-sm data-[align=end]:flex-row-reverse"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "data-slot": "message-avatar",
+                                          "class": "flex w-fit min-w-8 shrink-0 items-center justify-center group-has-data-[slot=message-footer]/message:-translate-y-8 self-start overflow-visible rounded-none bg-transparent"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "svg",
+                                            "attrs": {
+                                              "viewBox": "0 0 64 64",
+                                              "class": "drop-shadow-sm size-7",
+                                              "width": "100%",
+                                              "height": "100%"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "defs",
+                                                "attrs": {},
+                                                "children": [
+                                                  {
+                                                    "tag": "linearGradient",
+                                                    "attrs": {
+                                                      "id": "_R_cljdbsnpfknmlb_",
+                                                      "x1": "10",
+                                                      "y1": "8",
+                                                      "x2": "54",
+                                                      "y2": "56"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "stop",
+                                                        "attrs": {
+                                                          "offset": "0",
+                                                          "stop-color": "#050505"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.0.1.0.0.0.1.0.0.0.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "stop",
+                                                        "attrs": {
+                                                          "offset": "0.52",
+                                                          "stop-color": "#334155"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.0.1.0.0.0.1.0.0.0.0.1"
+                                                      },
+                                                      {
+                                                        "tag": "stop",
+                                                        "attrs": {
+                                                          "offset": "1",
+                                                          "stop-color": "#050505"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.0.1.0.0.0.1.0.0.0.0.2"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.1.0.0.0.1.0.0.0.0"
+                                                  },
+                                                  {
+                                                    "tag": "mask",
+                                                    "attrs": {
+                                                      "id": "_R_cljdbsnpfknmlb_-mask",
+                                                      "x": "0",
+                                                      "y": "0",
+                                                      "width": "64",
+                                                      "height": "64"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "rect",
+                                                        "attrs": {
+                                                          "width": "64",
+                                                          "height": "64",
+                                                          "fill": "black"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.0.1.0.0.0.1.0.0.0.1.0"
+                                                      },
+                                                      {
+                                                        "tag": "path",
+                                                        "attrs": {
+                                                          "d": "M 55.36 32.00 C 55.36 34.91 55.33 38.72 55.26 40.74 C 55.20 42.76 55.10 43.13 54.98 44.11 C 54.85 45.08 54.69 45.84 54.49 46.58 C 54.30 47.33 54.07 47.96 53.81 48.56 C 53.55 49.17 53.25 49.70 52.92 50.19 C 52.59 50.69 52.22 51.13 51.80 51.54 C 51.39 51.94 50.94 52.31 50.44 52.64 C 49.94 52.97 49.40 53.26 48.79 53.52 C 48.18 53.78 47.54 54.00 46.78 54.19 C 46.03 54.38 45.26 54.54 44.27 54.66 C 43.28 54.79 42.90 54.89 40.86 54.95 C 38.81 55.01 34.95 55.04 32.00 55.04 C 29.05 55.04 25.19 55.01 23.14 54.95 C 21.10 54.89 20.72 54.79 19.73 54.66 C 18.74 54.54 17.97 54.38 17.22 54.19 C 16.46 54.00 15.82 53.78 15.21 53.52 C 14.60 53.26 14.06 52.97 13.56 52.64 C 13.06 52.31 12.61 51.94 12.20 51.54 C 11.78 51.13 11.41 50.69 11.08 50.19 C 10.75 49.70 10.45 49.17 10.19 48.56 C 9.93 47.96 9.70 47.33 9.51 46.58 C 9.31 45.84 9.15 45.08 9.02 44.11 C 8.90 43.13 8.80 42.76 8.74 40.74 C 8.67 38.72 8.64 34.91 8.64 32.00 C 8.64 29.09 8.67 25.28 8.74 23.26 C 8.80 21.24 8.90 20.87 9.02 19.89 C 9.15 18.92 9.31 18.16 9.51 17.42 C 9.70 16.67 9.93 16.04 10.19 15.44 C 10.45 14.83 10.75 14.30 11.08 13.81 C 11.41 13.31 11.78 12.87 12.20 12.46 C 12.61 12.06 13.06 11.69 13.56 11.36 C 14.06 11.03 14.60 10.74 15.21 10.48 C 15.82 10.22 16.46 10.00 17.22 9.81 C 17.97 9.62 18.74 9.46 19.73 9.34 C 20.72 9.21 21.10 9.11 23.14 9.05 C 25.19 8.99 29.05 8.96 32.00 8.96 C 34.95 8.96 38.81 8.99 40.86 9.05 C 42.90 9.11 43.28 9.21 44.27 9.34 C 45.26 9.46 46.03 9.62 46.78 9.81 C 47.54 10.00 48.18 10.22 48.79 10.48 C 49.40 10.74 49.94 11.03 50.44 11.36 C 50.94 11.69 51.39 12.06 51.80 12.46 C 52.22 12.87 52.59 13.31 52.92 13.81 C 53.25 14.30 53.55 14.83 53.81 15.44 C 54.07 16.04 54.30 16.67 54.49 17.42 C 54.69 18.16 54.85 18.92 54.98 19.89 C 55.10 20.87 55.20 21.24 55.26 23.26 C 55.33 25.28 55.36 29.09 55.36 32.00 Z",
+                                                          "transform": "translate(0 0) rotate(0.00 32 32)",
+                                                          "fill": "white"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.0.1.0.0.0.1.0.0.0.1.1"
+                                                      },
+                                                      {
+                                                        "tag": "rect",
+                                                        "attrs": {
+                                                          "x": "25.1",
+                                                          "y": "25.3",
+                                                          "width": "3.8",
+                                                          "height": "8",
+                                                          "rx": "1.9",
+                                                          "fill": "black",
+                                                          "transform": "translate(0.97 0.48) rotate(-11 27 29.3) translate(0 29.3) scale(1 1.000) translate(0 -29.3)"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.0.1.0.0.0.1.0.0.0.1.2"
+                                                      },
+                                                      {
+                                                        "tag": "rect",
+                                                        "attrs": {
+                                                          "x": "35.1",
+                                                          "y": "25.3",
+                                                          "width": "3.8",
+                                                          "height": "8",
+                                                          "rx": "1.9",
+                                                          "fill": "black",
+                                                          "transform": "translate(0.97 0.48) rotate(-11 37 29.3) translate(0 29.3) scale(1 1.000) translate(0 -29.3)"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.0.1.0.0.0.1.0.0.0.1.3"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.1.0.0.0.1.0.0.0.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.1.0.0.0.1.0.0.0"
+                                              },
+                                              {
+                                                "tag": "rect",
+                                                "attrs": {
+                                                  "width": "64",
+                                                  "height": "64",
+                                                  "fill": "url(#_R_cljdbsnpfknmlb_)"
+                                                },
+                                                "children": [],
+                                                "key": "root.0.0.0.1.0.0.0.1.0.0.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.1.0.0.0.1.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.1.0.0.0.1.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "data-slot": "message-content",
+                                          "class": "flex w-full min-w-0 flex-col wrap-break-word group-data-[align=end]/message:*:data-slot:self-end gap-3"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "text-xs font-medium"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Shadcnblocks AI",
+                                                "key": "root.0.0.0.1.0.0.0.1.1.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.1.0.0.0.1.1.0"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "prose prose-sm dark:prose-invert prose-headings:font-semibold prose-headings:tracking-tight prose-p:leading-7 prose-li:my-0 prose-pre:overflow-x-auto prose-pre:rounded-xl prose-pre:border prose-pre:bg-muted/40 prose-code:before:content-none prose-code:after:content-none prose-a:font-medium prose-a:underline prose-a:underline-offset-4 max-w-none px-1.5 text-[15px] leading-7 [&>*:first-child]:mt-0 [&>*:last-child]:mb-0"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "p",
+                                                "attrs": {},
+                                                "children": [
+                                                  {
+                                                    "text": "I’ve opened the artifact and its saved versions. We can review the differences before deciding which version to keep.",
+                                                    "key": "root.0.0.0.1.0.0.0.1.1.1.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.1.0.0.0.1.1.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.1.0.0.0.1.1.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.1.0.0.0.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.1.0.0.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.0.1.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.0.1.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.1.0"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 size-6 absolute inset-s-1/2 -translate-x-1/2 border-border bg-background text-foreground transition-[translate,scale,opacity] duration-200 hover:bg-muted hover:text-foreground data-[active=false]:pointer-events-none data-[active=false]:scale-95 data-[active=false]:opacity-0 data-[active=false]:duration-400 data-[active=false]:ease-[cubic-bezier(0.7,0,0.84,0)] data-[active=true]:translate-y-0 data-[active=true]:scale-100 data-[active=true]:opacity-100 data-[active=true]:ease-[cubic-bezier(0.23,1,0.32,1)] data-[direction=end]:bottom-4 data-[direction=end]:data-[active=false]:translate-y-full data-[direction=start]:top-4 data-[direction=start]:data-[active=false]:-translate-y-full rtl:translate-x-1/2 data-[direction=start]:[&_svg]:rotate-180 bottom-3 shadow-md",
+                          "type": "button",
+                          "data-slot": "message-scroller-button",
+                          "aria-label": "Scroll to latest message"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-arrow-down",
+                              "class": "lucide lucide-arrow-down"
+                            },
+                            "key": "root.0.0.0.1.1.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.1.1"
+                      }
+                    ],
+                    "key": "root.0.0.0.1"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "mx-auto w-full max-w-2xl shrink-0 px-4 pt-3 pb-4"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "mb-3 flex flex-wrap gap-1.5"
+                        },
+                        "children": [
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs"
+                            },
+                            "children": [
+                              {
+                                "text": "Explain changes",
+                                "key": "root.0.0.0.2.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.0.2.0.0"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs"
+                            },
+                            "children": [
+                              {
+                                "text": "Restore impact",
+                                "key": "root.0.0.0.2.0.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.0.2.0.1"
+                          }
+                        ],
+                        "key": "root.0.0.0.2.0"
+                      },
+                      {
+                        "tag": "form",
+                        "attrs": {
+                          "class": "relative mx-auto w-full max-w-2xl",
+                          "aria-label": "Ask about artifact versions"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "data-slot": "input-group",
+                              "role": "group",
+                              "class": "group/input-group relative flex w-full min-w-0 border outline-none in-data-[slot=combobox-content]:focus-within:border-inherit in-data-[slot=combobox-content]:focus-within:ring-0 has-[[data-slot=input-group-control]:focus-visible]:border-ring has-[[data-slot][aria-invalid=true]]:border-destructive has-[[data-slot][aria-invalid=true]]:ring-3 has-[[data-slot][aria-invalid=true]]:ring-destructive/20 has-[>[data-align=block-end]]:h-auto has-[>[data-align=block-end]]:flex-col has-[>[data-align=block-start]]:h-auto has-[>[data-align=block-start]]:flex-col has-[>textarea]:h-auto dark:bg-input/30 dark:has-[[data-slot][aria-invalid=true]]:ring-destructive/40 has-[>[data-align=block-end]]:[&>input]:pt-3 has-[>[data-align=block-start]]:[&>input]:pb-3 has-[>[data-align=inline-end]]:[&>input]:pr-1.5 has-[>[data-align=inline-start]]:[&>input]:pl-1.5 h-auto flex-col items-stretch transition-[border-color,box-shadow] duration-200 bg-background border-input has-[[data-slot=input-group-control]:focus-visible]:ring-ring/30 gap-0 rounded-2xl shadow-sm has-[[data-slot=input-group-control]:focus-visible]:ring-3"
+                            },
+                            "children": [
+                              {
+                                "tag": "textarea",
+                                "attrs": {
+                                  "class": "border-input focus-visible:ring-ring flex w-full focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 md:text-sm flex-1 resize-none rounded-none border-0 bg-transparent py-2 shadow-none ring-0 focus-visible:ring-0 aria-invalid:ring-0 dark:bg-transparent placeholder:text-muted-foreground/55 [field-sizing:content] max-h-60 overflow-y-auto px-4 pt-4 pb-2.5 text-sm leading-6 min-h-16",
+                                  "data-slot": "input-group-control",
+                                  "aria-label": "Artifact review question",
+                                  "name": "message",
+                                  "placeholder": "Ask about these changes…",
+                                  "value": ""
+                                },
+                                "children": [],
+                                "key": "root.0.0.0.2.1.0.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "role": "group",
+                                  "data-slot": "input-group-addon",
+                                  "class": "h-auto py-1.5 text-sm font-medium text-muted-foreground select-none group-data-[disabled=true]/input-group:opacity-50 [&>kbd]:rounded-[calc(var(--radius)-5px)] [&>svg:not([class*='size-'])]:size-4 order-last justify-start group-has-[>input]/input-group:pb-2 [.border-t]:pt-2 grid w-full cursor-default grid-cols-[minmax(0,1fr)_auto] items-center gap-2 px-3 pt-0 pb-3"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-w-0 items-center gap-1"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "text-muted-foreground flex items-center gap-1.5 text-[11px]"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-file-text",
+                                              "class": "lucide lucide-file-text size-3.5"
+                                            },
+                                            "key": "root.0.0.0.2.1.0.1.0.0.0"
+                                          },
+                                          {
+                                            "text": "v",
+                                            "key": "root.0.0.0.2.1.0.1.0.0.1"
+                                          },
+                                          {
+                                            "text": "2",
+                                            "key": "root.0.0.0.2.1.0.1.0.0.2"
+                                          },
+                                          {
+                                            "text": " → v",
+                                            "key": "root.0.0.0.2.1.0.1.0.0.3"
+                                          },
+                                          {
+                                            "text": "3",
+                                            "key": "root.0.0.0.2.1.0.1.0.0.4"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.2.1.0.1.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.2.1.0.1.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "class": "justify-center whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 flex items-center gap-2 text-sm shadow-none size-8 p-0 has-[>svg]:p-0 rounded-full",
+                                      "type": "submit",
+                                      "aria-label": "Send message",
+                                      "disabled": "",
+                                      "data-state": "closed"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-arrow-up",
+                                          "class": "lucide lucide-arrow-up"
+                                        },
+                                        "key": "root.0.0.0.2.1.0.1.1.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "sr-only"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Send message",
+                                            "key": "root.0.0.0.2.1.0.1.1.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.2.1.0.1.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.2.1.0.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.0.2.1.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.0.2.1.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.2.1"
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {
+                          "class": "text-muted-foreground mt-2 text-center text-[10px]"
+                        },
+                        "children": [
+                          {
+                            "text": "Demo answers from saved versions · no live model",
+                            "key": "root.0.0.0.2.2.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.2.2"
+                      }
+                    ],
+                    "key": "root.0.0.0.2"
+                  }
+                ],
+                "key": "root.0.0.0"
+              }
+            ],
+            "key": "root.0.0"
+          },
+          {
+            "tag": "div",
+            "attrs": {
+              "role": "separator",
+              "aria-label": "Resize artifact review",
+              "class": "group bg-border relative z-10 hidden w-px shrink-0 cursor-col-resize outline-none min-[980px]:block"
+            },
+            "children": [
+              {
+                "tag": "span",
+                "attrs": {
+                  "class": "before:bg-border group-hover:before:bg-primary/55 group-focus-visible:before:bg-primary/65 absolute inset-y-0 -left-2 w-4 before:absolute before:inset-y-0 before:left-1/2 before:w-px before:-translate-x-1/2 before:transition-colors"
+                },
+                "children": [],
+                "key": "root.0.1.0"
+              }
+            ],
+            "key": "root.0.1"
+          },
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "hidden min-h-0 min-w-[360px] min-[980px]:flex shrink-0",
+              "style": "width:60%"
+            },
+            "children": [
+              {
+                "tag": "div",
+                "attrs": {
+                  "data-orientation": "horizontal",
+                  "class": "@container/versions flex min-h-0 min-w-0 flex-1 flex-col gap-0"
+                },
+                "children": [
+                  {
+                    "tag": "header",
+                    "attrs": {
+                      "class": "flex min-h-14 shrink-0 flex-wrap items-center justify-between gap-2 border-b px-3 py-2"
+                    },
+                    "children": [
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "type": "button",
+                          "role": "combobox",
+                          "data-state": "closed",
+                          "class": "border-input ring-offset-background placeholder:text-muted-foreground focus:ring-ring flex items-center justify-between rounded-md px-3 py-2 text-sm whitespace-nowrap focus:ring-1 focus:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 h-8 w-28 border-0 bg-transparent shadow-none",
+                          "aria-label": "Version history"
+                        },
+                        "options": [
+                          "v3 · Expanded launch",
+                          "v2 · Pilot plan",
+                          "v1 · First draft"
+                        ],
+                        "children": [
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "style": "pointer-events:none"
+                            },
+                            "children": [
+                              {
+                                "text": "v",
+                                "key": "root.0.2.0.0.0.0.0"
+                              },
+                              {
+                                "text": "3",
+                                "key": "root.0.2.0.0.0.0.1"
+                              },
+                              {
+                                "text": " · latest",
+                                "key": "root.0.2.0.0.0.0.2"
+                              }
+                            ],
+                            "key": "root.0.2.0.0.0.0"
+                          },
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-chevron-down",
+                              "class": "lucide lucide-chevron-down h-4 w-4 opacity-50"
+                            },
+                            "key": "root.0.2.0.0.0.1"
+                          }
+                        ],
+                        "key": "root.0.2.0.0.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex items-center gap-1"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "role": "tablist",
+                              "class": "bg-muted text-muted-foreground inline-flex h-9 items-center justify-center rounded-lg p-1",
+                              "aria-label": "Artifact view",
+                              "data-orientation": "horizontal",
+                              "style": "outline:none"
+                            },
+                            "children": [
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "type": "button",
+                                  "role": "tab",
+                                  "data-state": "inactive",
+                                  "id": "radix-_R_ldbsnpfknmlb_-trigger-preview",
+                                  "class": "ring-offset-background focus-visible:ring-ring data-[state=active]:bg-background data-[state=active]:text-foreground inline-flex items-center justify-center rounded-md px-3 py-1 text-sm font-medium whitespace-nowrap transition-all focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-[state=active]:shadow-sm",
+                                  "data-orientation": "horizontal"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Preview",
+                                    "key": "root.0.2.0.0.1.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.0.1.0.0"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "type": "button",
+                                  "role": "tab",
+                                  "data-state": "active",
+                                  "id": "radix-_R_ldbsnpfknmlb_-trigger-compare",
+                                  "class": "ring-offset-background focus-visible:ring-ring data-[state=active]:bg-background data-[state=active]:text-foreground inline-flex items-center justify-center rounded-md px-3 py-1 text-sm font-medium whitespace-nowrap transition-all focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-[state=active]:shadow-sm",
+                                  "data-orientation": "horizontal"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Compare",
+                                    "key": "root.0.2.0.0.1.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.0.1.0.1"
+                              }
+                            ],
+                            "key": "root.0.2.0.0.1.0"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-6",
+                              "aria-label": "Copy version 3"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-copy",
+                                  "class": "lucide lucide-copy"
+                                },
+                                "key": "root.0.2.0.0.1.1.0"
+                              }
+                            ],
+                            "key": "root.0.2.0.0.1.1"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-6",
+                              "aria-label": "Download version 3"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-download",
+                                  "class": "lucide lucide-download"
+                                },
+                                "key": "root.0.2.0.0.1.2.0"
+                              }
+                            ],
+                            "key": "root.0.2.0.0.1.2"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-6",
+                              "aria-label": "Close artifact"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-panel-right-close",
+                                  "class": "lucide lucide-panel-right-close"
+                                },
+                                "key": "root.0.2.0.0.1.3.0"
+                              }
+                            ],
+                            "key": "root.0.2.0.0.1.3"
+                          }
+                        ],
+                        "key": "root.0.2.0.0.1"
+                      }
+                    ],
+                    "key": "root.0.2.0.0"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "data-state": "inactive",
+                      "data-orientation": "horizontal",
+                      "role": "tabpanel",
+                      "id": "radix-_R_ldbsnpfknmlb_-content-preview",
+                      "class": "ring-offset-background focus-visible:ring-ring focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden mt-0 flex min-h-0 flex-1 flex-col data-[state=inactive]:hidden"
+                    },
+                    "children": [],
+                    "key": "root.0.2.0.1"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "data-state": "active",
+                      "data-orientation": "horizontal",
+                      "role": "tabpanel",
+                      "id": "radix-_R_ldbsnpfknmlb_-content-compare",
+                      "class": "ring-offset-background focus-visible:ring-ring focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden mt-0 flex min-h-0 flex-1 flex-col data-[state=inactive]:hidden",
+                      "style": "animation-duration:0s"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "data-slot": "scroll-area",
+                          "class": "relative overflow-hidden bg-muted/30 min-h-0 flex-1",
+                          "style": "position:relative;--radix-scroll-area-corner-width:0px;--radix-scroll-area-corner-height:0px"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "data-slot": "scroll-area-viewport",
+                              "class": "h-full w-full rounded-[inherit]",
+                              "style": "overflow: hidden scroll;"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "style": "min-width:100%;display:table"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "px-4 py-6 sm:px-8 sm:py-8"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "bg-background @container/comparison mx-auto max-w-3xl overflow-hidden rounded-xl border"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "flex shrink-0 flex-wrap items-center justify-between gap-3 border-b px-4 py-3"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "flex items-center gap-2"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "span",
+                                                    "attrs": {
+                                                      "class": "text-muted-foreground text-xs"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Compare",
+                                                        "key": "root.0.2.0.2.0.0.0.0.0.0.0.0.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.2.0.2.0.0.0.0.0.0.0.0"
+                                                  },
+                                                  {
+                                                    "tag": "button",
+                                                    "attrs": {
+                                                      "type": "button",
+                                                      "role": "combobox",
+                                                      "data-state": "closed",
+                                                      "class": "border-input ring-offset-background placeholder:text-muted-foreground focus:ring-ring flex items-center justify-between rounded-md py-2 text-sm whitespace-nowrap focus:ring-1 focus:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 h-7 w-16 border-0 bg-transparent px-1 shadow-none",
+                                                      "aria-label": "Compare from version"
+                                                    },
+                                                    "options": [
+                                                      "v1 · First draft",
+                                                      "v2 · Pilot plan",
+                                                      "v3 · Expanded launch"
+                                                    ],
+                                                    "children": [
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {
+                                                          "style": "pointer-events:none"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "v",
+                                                            "key": "root.0.2.0.2.0.0.0.0.0.0.0.1.0.0"
+                                                          },
+                                                          {
+                                                            "text": "2",
+                                                            "key": "root.0.2.0.2.0.0.0.0.0.0.0.1.0.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.2.0.2.0.0.0.0.0.0.0.1.0"
+                                                      },
+                                                      {
+                                                        "tag": "icon",
+                                                        "attrs": {
+                                                          "name": "i-lucide-chevron-down",
+                                                          "class": "lucide lucide-chevron-down h-4 w-4 opacity-50"
+                                                        },
+                                                        "key": "root.0.2.0.2.0.0.0.0.0.0.0.1.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.2.0.2.0.0.0.0.0.0.0.1"
+                                                  },
+                                                  {
+                                                    "tag": "span",
+                                                    "attrs": {
+                                                      "class": "text-muted-foreground text-xs"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "→ v",
+                                                        "key": "root.0.2.0.2.0.0.0.0.0.0.0.2.0"
+                                                      },
+                                                      {
+                                                        "text": "3",
+                                                        "key": "root.0.2.0.2.0.0.0.0.0.0.0.2.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.2.0.2.0.0.0.0.0.0.0.2"
+                                                  },
+                                                  {
+                                                    "tag": "p",
+                                                    "attrs": {
+                                                      "class": "text-muted-foreground ml-2 text-[11px]"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "4",
+                                                        "key": "root.0.2.0.2.0.0.0.0.0.0.0.3.0"
+                                                      },
+                                                      {
+                                                        "text": " changes",
+                                                        "key": "root.0.2.0.2.0.0.0.0.0.0.0.3.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.2.0.2.0.0.0.0.0.0.0.3"
+                                                  }
+                                                ],
+                                                "key": "root.0.2.0.2.0.0.0.0.0.0.0"
+                                              },
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "flex items-center gap-2"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "button",
+                                                    "attrs": {
+                                                      "type": "button",
+                                                      "role": "checkbox",
+                                                      "aria-checked": "true",
+                                                      "data-state": "checked",
+                                                      "value": "on",
+                                                      "class": "peer border-primary focus-visible:ring-ring data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground shrink-0 rounded-sm border shadow-sm focus-visible:ring-1 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 size-3.5",
+                                                      "id": "changes-only"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {
+                                                          "data-state": "checked",
+                                                          "class": "flex items-center justify-center text-current",
+                                                          "style": "pointer-events:none"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "icon",
+                                                            "attrs": {
+                                                              "name": "i-lucide-check",
+                                                              "class": "lucide lucide-check h-4 w-4"
+                                                            },
+                                                            "key": "root.0.2.0.2.0.0.0.0.0.0.1.0.0.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.2.0.2.0.0.0.0.0.0.1.0.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.2.0.2.0.0.0.0.0.0.1.0"
+                                                  },
+                                                  {
+                                                    "tag": "label",
+                                                    "attrs": {
+                                                      "class": "font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-xs",
+                                                      "for": "changes-only"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Changes only",
+                                                        "key": "root.0.2.0.2.0.0.0.0.0.0.1.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.2.0.2.0.0.0.0.0.0.1.1"
+                                                  },
+                                                  {
+                                                    "tag": "button",
+                                                    "attrs": {
+                                                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-6",
+                                                      "aria-label": "Previous change"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "icon",
+                                                        "attrs": {
+                                                          "name": "i-lucide-chevron-up",
+                                                          "class": "lucide lucide-chevron-up"
+                                                        },
+                                                        "key": "root.0.2.0.2.0.0.0.0.0.0.1.2.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.2.0.2.0.0.0.0.0.0.1.2"
+                                                  },
+                                                  {
+                                                    "tag": "button",
+                                                    "attrs": {
+                                                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-6",
+                                                      "aria-label": "Next change"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "icon",
+                                                        "attrs": {
+                                                          "name": "i-lucide-chevron-down",
+                                                          "class": "lucide lucide-chevron-down"
+                                                        },
+                                                        "key": "root.0.2.0.2.0.0.0.0.0.0.1.3.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.2.0.2.0.0.0.0.0.0.1.3"
+                                                  }
+                                                ],
+                                                "key": "root.0.2.0.2.0.0.0.0.0.0.1"
+                                              }
+                                            ],
+                                            "key": "root.0.2.0.2.0.0.0.0.0.0"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "divide-y"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "section",
+                                                "attrs": {
+                                                  "class": "bg-background focus:ring-ring overflow-hidden outline-none focus:ring-2 focus:ring-inset"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "header",
+                                                    "attrs": {
+                                                      "class": "flex items-center justify-between gap-3 px-5 pt-5 pb-2"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "h2",
+                                                        "attrs": {
+                                                          "class": "text-xs font-medium"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "Subtitle",
+                                                            "key": "root.0.2.0.2.0.0.0.0.0.1.0.0.0.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.2.0.2.0.0.0.0.0.1.0.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "div",
+                                                        "attrs": {
+                                                          "class": "inline-flex items-center rounded-md border px-2.5 py-0.5 font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground text-[10px] capitalize"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "changed",
+                                                            "key": "root.0.2.0.2.0.0.0.0.0.1.0.0.1.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.2.0.2.0.0.0.0.0.1.0.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.0.0"
+                                                  },
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "grid @[500px]/comparison:grid-cols-2"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "div",
+                                                        "attrs": {
+                                                          "class": "border-b p-4 @[500px]/comparison:border-r @[500px]/comparison:border-b-0"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "p",
+                                                            "attrs": {
+                                                              "class": "text-muted-foreground mb-3 text-[11px]"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "FROM · v",
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.0.1.0.0.0"
+                                                              },
+                                                              {
+                                                                "text": "2",
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.0.1.0.0.1"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.2.0.2.0.0.0.0.0.1.0.1.0.0"
+                                                          },
+                                                          {
+                                                            "tag": "p",
+                                                            "attrs": {
+                                                              "class": "text-sm leading-7 whitespace-pre-wrap"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "A ",
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.0.1.0.1.0"
+                                                              },
+                                                              {
+                                                                "tag": "del",
+                                                                "attrs": {
+                                                                  "class": "bg-destructive/10 text-destructive decoration-destructive/50"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "two-week pilot",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.0.1.0.1.1.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.0.1.0.1.1"
+                                                              },
+                                                              {
+                                                                "tag": "del",
+                                                                "attrs": {
+                                                                  "class": "bg-destructive/10 text-destructive decoration-destructive/50"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "with",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.0.1.0.1.2.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.0.1.0.1.2"
+                                                              },
+                                                              {
+                                                                "tag": "del",
+                                                                "attrs": {
+                                                                  "class": "bg-destructive/10 text-destructive decoration-destructive/50"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "a",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.0.1.0.1.3.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.0.1.0.1.3"
+                                                              },
+                                                              {
+                                                                "tag": "del",
+                                                                "attrs": {
+                                                                  "class": "bg-destructive/10 text-destructive decoration-destructive/50"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "clear",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.0.1.0.1.4.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.0.1.0.1.4"
+                                                              },
+                                                              {
+                                                                "tag": "del",
+                                                                "attrs": {
+                                                                  "class": "bg-destructive/10 text-destructive decoration-destructive/50"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "decision",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.0.1.0.1.5.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.0.1.0.1.5"
+                                                              },
+                                                              {
+                                                                "tag": "del",
+                                                                "attrs": {
+                                                                  "class": "bg-destructive/10 text-destructive decoration-destructive/50"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "gate",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.0.1.0.1.6.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.0.1.0.1.6"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.2.0.2.0.0.0.0.0.1.0.1.0.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.2.0.2.0.0.0.0.0.1.0.1.0"
+                                                      },
+                                                      {
+                                                        "tag": "div",
+                                                        "attrs": {
+                                                          "class": "p-4"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "p",
+                                                            "attrs": {
+                                                              "class": "text-muted-foreground mb-3 text-[11px]"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "TO · v",
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.0.1.1.0.0"
+                                                              },
+                                                              {
+                                                                "text": "3",
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.0.1.1.0.1"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.2.0.2.0.0.0.0.0.1.0.1.1.0"
+                                                          },
+                                                          {
+                                                            "tag": "p",
+                                                            "attrs": {
+                                                              "class": "text-sm leading-7 whitespace-pre-wrap"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "A ",
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.0.1.1.1.0"
+                                                              },
+                                                              {
+                                                                "tag": "ins",
+                                                                "attrs": {
+                                                                  "class": "bg-success/10 text-success no-underline"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "shorter",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.0.1.1.1.1.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.0.1.1.1.1"
+                                                              },
+                                                              {
+                                                                "tag": "ins",
+                                                                "attrs": {
+                                                                  "class": "bg-success/10 text-success no-underline"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "setup",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.0.1.1.1.2.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.0.1.1.1.2"
+                                                              },
+                                                              {
+                                                                "tag": "ins",
+                                                                "attrs": {
+                                                                  "class": "bg-success/10 text-success no-underline"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "for",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.0.1.1.1.3.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.0.1.1.1.3"
+                                                              },
+                                                              {
+                                                                "tag": "ins",
+                                                                "attrs": {
+                                                                  "class": "bg-success/10 text-success no-underline"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "every",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.0.1.1.1.4.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.0.1.1.1.4"
+                                                              },
+                                                              {
+                                                                "tag": "ins",
+                                                                "attrs": {
+                                                                  "class": "bg-success/10 text-success no-underline"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "new",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.0.1.1.1.5.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.0.1.1.1.5"
+                                                              },
+                                                              {
+                                                                "tag": "ins",
+                                                                "attrs": {
+                                                                  "class": "bg-success/10 text-success no-underline"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "workspace",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.0.1.1.1.6.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.0.1.1.1.6"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.2.0.2.0.0.0.0.0.1.0.1.1.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.2.0.2.0.0.0.0.0.1.0.1.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.0.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.2.0.2.0.0.0.0.0.1.0"
+                                              },
+                                              {
+                                                "tag": "section",
+                                                "attrs": {
+                                                  "class": "bg-background focus:ring-ring overflow-hidden outline-none focus:ring-2 focus:ring-inset"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "header",
+                                                    "attrs": {
+                                                      "class": "flex items-center justify-between gap-3 px-5 pt-5 pb-2"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "h2",
+                                                        "attrs": {
+                                                          "class": "text-xs font-medium"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "Rollout",
+                                                            "key": "root.0.2.0.2.0.0.0.0.0.1.1.0.0.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.2.0.2.0.0.0.0.0.1.1.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "div",
+                                                        "attrs": {
+                                                          "class": "inline-flex items-center rounded-md border px-2.5 py-0.5 font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground text-[10px] capitalize"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "changed",
+                                                            "key": "root.0.2.0.2.0.0.0.0.0.1.1.0.1.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.2.0.2.0.0.0.0.0.1.1.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.1.0"
+                                                  },
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "grid @[500px]/comparison:grid-cols-2"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "div",
+                                                        "attrs": {
+                                                          "class": "border-b p-4 @[500px]/comparison:border-r @[500px]/comparison:border-b-0"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "p",
+                                                            "attrs": {
+                                                              "class": "text-muted-foreground mb-3 text-[11px]"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "FROM · v",
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.0.0.0"
+                                                              },
+                                                              {
+                                                                "text": "2",
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.0.0.1"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.0.0"
+                                                          },
+                                                          {
+                                                            "tag": "p",
+                                                            "attrs": {
+                                                              "class": "text-sm leading-7 whitespace-pre-wrap"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "tag": "del",
+                                                                "attrs": {
+                                                                  "class": "bg-destructive/10 text-destructive decoration-destructive/50"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "Start",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.0.1.0.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.0.1.0"
+                                                              },
+                                                              {
+                                                                "tag": "del",
+                                                                "attrs": {
+                                                                  "class": "bg-destructive/10 text-destructive decoration-destructive/50"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "with",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.0.1.1.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.0.1.1"
+                                                              },
+                                                              {
+                                                                "tag": "del",
+                                                                "attrs": {
+                                                                  "class": "bg-destructive/10 text-destructive decoration-destructive/50"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "20",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.0.1.2.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.0.1.2"
+                                                              },
+                                                              {
+                                                                "text": "new workspaces ",
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.0.1.3"
+                                                              },
+                                                              {
+                                                                "tag": "del",
+                                                                "attrs": {
+                                                                  "class": "bg-destructive/10 text-destructive decoration-destructive/50"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "for",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.0.1.4.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.0.1.4"
+                                                              },
+                                                              {
+                                                                "tag": "del",
+                                                                "attrs": {
+                                                                  "class": "bg-destructive/10 text-destructive decoration-destructive/50"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "two",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.0.1.5.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.0.1.5"
+                                                              },
+                                                              {
+                                                                "tag": "del",
+                                                                "attrs": {
+                                                                  "class": "bg-destructive/10 text-destructive decoration-destructive/50"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "weeks.",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.0.1.6.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.0.1.6"
+                                                              },
+                                                              {
+                                                                "tag": "del",
+                                                                "attrs": {
+                                                                  "class": "bg-destructive/10 text-destructive decoration-destructive/50"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "Keep",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.0.1.7.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.0.1.7"
+                                                              },
+                                                              {
+                                                                "tag": "del",
+                                                                "attrs": {
+                                                                  "class": "bg-destructive/10 text-destructive decoration-destructive/50"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "the",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.0.1.8.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.0.1.8"
+                                                              },
+                                                              {
+                                                                "tag": "del",
+                                                                "attrs": {
+                                                                  "class": "bg-destructive/10 text-destructive decoration-destructive/50"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "checklist",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.0.1.9.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.0.1.9"
+                                                              },
+                                                              {
+                                                                "tag": "del",
+                                                                "attrs": {
+                                                                  "class": "bg-destructive/10 text-destructive decoration-destructive/50"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "behind",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.0.1.10.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.0.1.10"
+                                                              },
+                                                              {
+                                                                "tag": "del",
+                                                                "attrs": {
+                                                                  "class": "bg-destructive/10 text-destructive decoration-destructive/50"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "a",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.0.1.11.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.0.1.11"
+                                                              },
+                                                              {
+                                                                "tag": "del",
+                                                                "attrs": {
+                                                                  "class": "bg-destructive/10 text-destructive decoration-destructive/50"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "workspace",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.0.1.12.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.0.1.12"
+                                                              },
+                                                              {
+                                                                "tag": "del",
+                                                                "attrs": {
+                                                                  "class": "bg-destructive/10 text-destructive decoration-destructive/50"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "flag",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.0.1.13.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.0.1.13"
+                                                              },
+                                                              {
+                                                                "text": " and ",
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.0.1.14"
+                                                              },
+                                                              {
+                                                                "tag": "del",
+                                                                "attrs": {
+                                                                  "class": "bg-destructive/10 text-destructive decoration-destructive/50"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "review",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.0.1.15.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.0.1.15"
+                                                              },
+                                                              {
+                                                                "tag": "del",
+                                                                "attrs": {
+                                                                  "class": "bg-destructive/10 text-destructive decoration-destructive/50"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "session",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.0.1.16.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.0.1.16"
+                                                              },
+                                                              {
+                                                                "tag": "del",
+                                                                "attrs": {
+                                                                  "class": "bg-destructive/10 text-destructive decoration-destructive/50"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "recordings",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.0.1.17.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.0.1.17"
+                                                              },
+                                                              {
+                                                                "tag": "del",
+                                                                "attrs": {
+                                                                  "class": "bg-destructive/10 text-destructive decoration-destructive/50"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "before",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.0.1.18.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.0.1.18"
+                                                              },
+                                                              {
+                                                                "tag": "del",
+                                                                "attrs": {
+                                                                  "class": "bg-destructive/10 text-destructive decoration-destructive/50"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "inviting",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.0.1.19.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.0.1.19"
+                                                              },
+                                                              {
+                                                                "tag": "del",
+                                                                "attrs": {
+                                                                  "class": "bg-destructive/10 text-destructive decoration-destructive/50"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "a",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.0.1.20.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.0.1.20"
+                                                              },
+                                                              {
+                                                                "tag": "del",
+                                                                "attrs": {
+                                                                  "class": "bg-destructive/10 text-destructive decoration-destructive/50"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "second",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.0.1.21.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.0.1.21"
+                                                              },
+                                                              {
+                                                                "tag": "del",
+                                                                "attrs": {
+                                                                  "class": "bg-destructive/10 text-destructive decoration-destructive/50"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "cohort.",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.0.1.22.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.0.1.22"
+                                                              },
+                                                              {
+                                                                "text": "Existing teams stay on their current flow.",
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.0.1.23"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.0.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.0"
+                                                      },
+                                                      {
+                                                        "tag": "div",
+                                                        "attrs": {
+                                                          "class": "p-4"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "p",
+                                                            "attrs": {
+                                                              "class": "text-muted-foreground mb-3 text-[11px]"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "TO · v",
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.0.0"
+                                                              },
+                                                              {
+                                                                "text": "3",
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.0.1"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.0"
+                                                          },
+                                                          {
+                                                            "tag": "p",
+                                                            "attrs": {
+                                                              "class": "text-sm leading-7 whitespace-pre-wrap"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "tag": "ins",
+                                                                "attrs": {
+                                                                  "class": "bg-success/10 text-success no-underline"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "Enable",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.1.0.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.1.0"
+                                                              },
+                                                              {
+                                                                "tag": "ins",
+                                                                "attrs": {
+                                                                  "class": "bg-success/10 text-success no-underline"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "the",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.1.1.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.1.1"
+                                                              },
+                                                              {
+                                                                "tag": "ins",
+                                                                "attrs": {
+                                                                  "class": "bg-success/10 text-success no-underline"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "checklist",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.1.2.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.1.2"
+                                                              },
+                                                              {
+                                                                "tag": "ins",
+                                                                "attrs": {
+                                                                  "class": "bg-success/10 text-success no-underline"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "for all ",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.1.3.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.1.3"
+                                                              },
+                                                              {
+                                                                "text": "new workspaces ",
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.1.4"
+                                                              },
+                                                              {
+                                                                "tag": "ins",
+                                                                "attrs": {
+                                                                  "class": "bg-success/10 text-success no-underline"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "in",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.1.5.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.1.5"
+                                                              },
+                                                              {
+                                                                "tag": "ins",
+                                                                "attrs": {
+                                                                  "class": "bg-success/10 text-success no-underline"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "the",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.1.6.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.1.6"
+                                                              },
+                                                              {
+                                                                "tag": "ins",
+                                                                "attrs": {
+                                                                  "class": "bg-success/10 text-success no-underline"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "next",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.1.7.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.1.7"
+                                                              },
+                                                              {
+                                                                "tag": "ins",
+                                                                "attrs": {
+                                                                  "class": "bg-success/10 text-success no-underline"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "release.",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.1.8.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.1.8"
+                                                              },
+                                                              {
+                                                                "tag": "ins",
+                                                                "attrs": {
+                                                                  "class": "bg-success/10 text-success no-underline"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "Review",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.1.9.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.1.9"
+                                                              },
+                                                              {
+                                                                "tag": "ins",
+                                                                "attrs": {
+                                                                  "class": "bg-success/10 text-success no-underline"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "the",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.1.10.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.1.10"
+                                                              },
+                                                              {
+                                                                "tag": "ins",
+                                                                "attrs": {
+                                                                  "class": "bg-success/10 text-success no-underline"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "first",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.1.11.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.1.11"
+                                                              },
+                                                              {
+                                                                "tag": "ins",
+                                                                "attrs": {
+                                                                  "class": "bg-success/10 text-success no-underline"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "week",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.1.12.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.1.12"
+                                                              },
+                                                              {
+                                                                "tag": "ins",
+                                                                "attrs": {
+                                                                  "class": "bg-success/10 text-success no-underline"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "of",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.1.13.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.1.13"
+                                                              },
+                                                              {
+                                                                "tag": "ins",
+                                                                "attrs": {
+                                                                  "class": "bg-success/10 text-success no-underline"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "usage",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.1.14.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.1.14"
+                                                              },
+                                                              {
+                                                                "text": " and ",
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.1.15"
+                                                              },
+                                                              {
+                                                                "tag": "ins",
+                                                                "attrs": {
+                                                                  "class": "bg-success/10 text-success no-underline"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "follow",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.1.16.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.1.16"
+                                                              },
+                                                              {
+                                                                "tag": "ins",
+                                                                "attrs": {
+                                                                  "class": "bg-success/10 text-success no-underline"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "up",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.1.17.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.1.17"
+                                                              },
+                                                              {
+                                                                "tag": "ins",
+                                                                "attrs": {
+                                                                  "class": "bg-success/10 text-success no-underline"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "with",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.1.18.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.1.18"
+                                                              },
+                                                              {
+                                                                "tag": "ins",
+                                                                "attrs": {
+                                                                  "class": "bg-success/10 text-success no-underline"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "teams",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.1.19.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.1.19"
+                                                              },
+                                                              {
+                                                                "tag": "ins",
+                                                                "attrs": {
+                                                                  "class": "bg-success/10 text-success no-underline"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "that",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.1.20.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.1.20"
+                                                              },
+                                                              {
+                                                                "tag": "ins",
+                                                                "attrs": {
+                                                                  "class": "bg-success/10 text-success no-underline"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "do",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.1.21.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.1.21"
+                                                              },
+                                                              {
+                                                                "tag": "ins",
+                                                                "attrs": {
+                                                                  "class": "bg-success/10 text-success no-underline"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "not",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.1.22.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.1.22"
+                                                              },
+                                                              {
+                                                                "tag": "ins",
+                                                                "attrs": {
+                                                                  "class": "bg-success/10 text-success no-underline"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "complete",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.1.23.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.1.23"
+                                                              },
+                                                              {
+                                                                "tag": "ins",
+                                                                "attrs": {
+                                                                  "class": "bg-success/10 text-success no-underline"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "the checklist. ",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.1.24.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.1.24"
+                                                              },
+                                                              {
+                                                                "text": "Existing teams stay on their current flow.",
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.1.25"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.2.0.2.0.0.0.0.0.1.1.1.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.1.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.2.0.2.0.0.0.0.0.1.1"
+                                              },
+                                              {
+                                                "tag": "section",
+                                                "attrs": {
+                                                  "class": "bg-background focus:ring-ring overflow-hidden outline-none focus:ring-2 focus:ring-inset"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "header",
+                                                    "attrs": {
+                                                      "class": "flex items-center justify-between gap-3 px-5 pt-5 pb-2"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "h2",
+                                                        "attrs": {
+                                                          "class": "text-xs font-medium"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "Fallback and decision gate",
+                                                            "key": "root.0.2.0.2.0.0.0.0.0.1.2.0.0.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.2.0.2.0.0.0.0.0.1.2.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "div",
+                                                        "attrs": {
+                                                          "class": "inline-flex items-center rounded-md border px-2.5 py-0.5 font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground text-[10px] capitalize"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "removed",
+                                                            "key": "root.0.2.0.2.0.0.0.0.0.1.2.0.1.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.2.0.2.0.0.0.0.0.1.2.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.2.0"
+                                                  },
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "grid @[500px]/comparison:grid-cols-2"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "div",
+                                                        "attrs": {
+                                                          "class": "border-b p-4 @[500px]/comparison:border-r @[500px]/comparison:border-b-0"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "p",
+                                                            "attrs": {
+                                                              "class": "text-muted-foreground mb-3 text-[11px]"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "FROM · v",
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.2.1.0.0.0"
+                                                              },
+                                                              {
+                                                                "text": "2",
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.2.1.0.0.1"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.2.0.2.0.0.0.0.0.1.2.1.0.0"
+                                                          },
+                                                          {
+                                                            "tag": "p",
+                                                            "attrs": {
+                                                              "class": "text-sm leading-7 whitespace-pre-wrap"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "tag": "del",
+                                                                "attrs": {
+                                                                  "class": "bg-destructive/10 text-destructive decoration-destructive/50"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "Keep the current setup flow available throughout the pilot. Pause expansion if teams lose access to required controls or support requests increase. The product owner reviews the evidence before each new cohort.",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.2.1.0.1.0.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.2.1.0.1.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.2.0.2.0.0.0.0.0.1.2.1.0.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.2.0.2.0.0.0.0.0.1.2.1.0"
+                                                      },
+                                                      {
+                                                        "tag": "div",
+                                                        "attrs": {
+                                                          "class": "p-4"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "p",
+                                                            "attrs": {
+                                                              "class": "text-muted-foreground mb-3 text-[11px]"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "TO · v",
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.2.1.1.0.0"
+                                                              },
+                                                              {
+                                                                "text": "3",
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.2.1.1.0.1"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.2.0.2.0.0.0.0.0.1.2.1.1.0"
+                                                          },
+                                                          {
+                                                            "tag": "p",
+                                                            "attrs": {
+                                                              "class": "text-muted-foreground text-sm italic"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "No section in this version",
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.2.1.1.1.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.2.0.2.0.0.0.0.0.1.2.1.1.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.2.0.2.0.0.0.0.0.1.2.1.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.2.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.2.0.2.0.0.0.0.0.1.2"
+                                              },
+                                              {
+                                                "tag": "section",
+                                                "attrs": {
+                                                  "class": "bg-background focus:ring-ring overflow-hidden outline-none focus:ring-2 focus:ring-inset"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "header",
+                                                    "attrs": {
+                                                      "class": "flex items-center justify-between gap-3 px-5 pt-5 pb-2"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "h2",
+                                                        "attrs": {
+                                                          "class": "text-xs font-medium"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "Launch announcement",
+                                                            "key": "root.0.2.0.2.0.0.0.0.0.1.3.0.0.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.2.0.2.0.0.0.0.0.1.3.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "div",
+                                                        "attrs": {
+                                                          "class": "inline-flex items-center rounded-md border px-2.5 py-0.5 font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground text-[10px] capitalize"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "added",
+                                                            "key": "root.0.2.0.2.0.0.0.0.0.1.3.0.1.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.2.0.2.0.0.0.0.0.1.3.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.3.0"
+                                                  },
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "grid @[500px]/comparison:grid-cols-2"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "div",
+                                                        "attrs": {
+                                                          "class": "border-b p-4 @[500px]/comparison:border-r @[500px]/comparison:border-b-0"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "p",
+                                                            "attrs": {
+                                                              "class": "text-muted-foreground mb-3 text-[11px]"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "FROM · v",
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.3.1.0.0.0"
+                                                              },
+                                                              {
+                                                                "text": "2",
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.3.1.0.0.1"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.2.0.2.0.0.0.0.0.1.3.1.0.0"
+                                                          },
+                                                          {
+                                                            "tag": "p",
+                                                            "attrs": {
+                                                              "class": "text-muted-foreground text-sm italic"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "No section in this version",
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.3.1.0.1.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.2.0.2.0.0.0.0.0.1.3.1.0.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.2.0.2.0.0.0.0.0.1.3.1.0"
+                                                      },
+                                                      {
+                                                        "tag": "div",
+                                                        "attrs": {
+                                                          "class": "p-4"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "p",
+                                                            "attrs": {
+                                                              "class": "text-muted-foreground mb-3 text-[11px]"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "TO · v",
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.3.1.1.0.0"
+                                                              },
+                                                              {
+                                                                "text": "3",
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.3.1.1.0.1"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.2.0.2.0.0.0.0.0.1.3.1.1.0"
+                                                          },
+                                                          {
+                                                            "tag": "p",
+                                                            "attrs": {
+                                                              "class": "text-sm leading-7 whitespace-pre-wrap"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "tag": "ins",
+                                                                "attrs": {
+                                                                  "class": "bg-success/10 text-success no-underline"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "Publish the release note on launch day and send a short product email to new workspace owners. Link to the checklist and explain how to invite a teammate.",
+                                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.3.1.1.1.0.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.2.0.2.0.0.0.0.0.1.3.1.1.1.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.2.0.2.0.0.0.0.0.1.3.1.1.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.2.0.2.0.0.0.0.0.1.3.1.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.2.0.2.0.0.0.0.0.1.3.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.2.0.2.0.0.0.0.0.1.3"
+                                              }
+                                            ],
+                                            "key": "root.0.2.0.2.0.0.0.0.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.2.0.2.0.0.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.2.0.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.2.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.2.0.2.0.0"
+                          }
+                        ],
+                        "key": "root.0.2.0.2.0"
+                      }
+                    ],
+                    "key": "root.0.2.0.2"
+                  }
+                ],
+                "key": "root.0.2.0"
+              }
+            ],
+            "key": "root.0.2"
+          }
+        ],
+        "key": "root.0"
+      }
+    ],
+    "key": "root"
+  },
+  "headings": [
+    "Conversation",
+    "Subtitle",
+    "Rollout",
+    "Fallback and decision gate",
+    "Launch announcement"
+  ]
+}

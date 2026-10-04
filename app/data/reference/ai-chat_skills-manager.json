@@ -1,0 +1,1769 @@
+{
+  "label": "Skills manager",
+  "path": "/ai-chat/skills-manager",
+  "appTitle": "",
+  "tree": {
+    "tag": "div",
+    "attrs": {
+      "id": "ai-workspace-content",
+      "class": "flex min-h-0 flex-1 flex-col"
+    },
+    "children": [
+      {
+        "tag": "div",
+        "attrs": {
+          "class": "min-h-0 flex-1 overflow-y-auto"
+        },
+        "children": [
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "mx-auto flex w-full max-w-6xl flex-col gap-9 px-5 py-8 sm:px-8 sm:py-10 lg:px-12"
+            },
+            "children": [
+              {
+                "tag": "header",
+                "attrs": {
+                  "class": "flex flex-wrap items-start justify-between gap-5"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "flex flex-col gap-2"
+                    },
+                    "children": [
+                      {
+                        "tag": "h1",
+                        "attrs": {
+                          "class": "text-2xl font-semibold tracking-tight"
+                        },
+                        "children": [
+                          {
+                            "text": "Skills",
+                            "key": "root.0.0.0.0.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.0"
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {
+                          "class": "text-muted-foreground text-sm"
+                        },
+                        "children": [
+                          {
+                            "text": "Reusable instructions for your team’s everyday work.",
+                            "key": "root.0.0.0.0.1.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.1"
+                      }
+                    ],
+                    "key": "root.0.0.0.0"
+                  },
+                  {
+                    "tag": "button",
+                    "attrs": {
+                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 h-9 px-4 py-2"
+                    },
+                    "children": [
+                      {
+                        "tag": "icon",
+                        "attrs": {
+                          "name": "i-lucide-plus",
+                          "class": "lucide lucide-plus"
+                        },
+                        "key": "root.0.0.0.1.0"
+                      },
+                      {
+                        "text": "Create skill",
+                        "key": "root.0.0.0.1.1"
+                      }
+                    ],
+                    "key": "root.0.0.0.1"
+                  }
+                ],
+                "key": "root.0.0.0"
+              },
+              {
+                "tag": "section",
+                "attrs": {
+                  "class": "flex flex-col gap-4"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "flex flex-wrap items-center justify-between gap-3"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex items-baseline gap-2"
+                        },
+                        "children": [
+                          {
+                            "tag": "h2",
+                            "attrs": {
+                              "id": "installed-heading",
+                              "class": "text-sm font-medium"
+                            },
+                            "children": [
+                              {
+                                "text": "Installed",
+                                "key": "root.0.0.1.0.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.0.0"
+                          },
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "text-muted-foreground text-xs"
+                            },
+                            "children": [
+                              {
+                                "text": "3",
+                                "key": "root.0.0.1.0.0.1.0"
+                              },
+                              {
+                                "text": " enabled · ",
+                                "key": "root.0.0.1.0.0.1.1"
+                              },
+                              {
+                                "text": "4",
+                                "key": "root.0.0.1.0.0.1.2"
+                              },
+                              {
+                                "text": " total",
+                                "key": "root.0.0.1.0.0.1.3"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.0.1"
+                          }
+                        ],
+                        "key": "root.0.0.1.0.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "data-slot": "input-group",
+                          "role": "group",
+                          "class": "group/input-group relative flex h-9 min-w-0 items-center rounded-md border border-input shadow-xs transition-[color,box-shadow] outline-none in-data-[slot=combobox-content]:focus-within:border-inherit in-data-[slot=combobox-content]:focus-within:ring-0 has-[[data-slot=input-group-control]:focus-visible]:border-ring has-[[data-slot=input-group-control]:focus-visible]:ring-3 has-[[data-slot=input-group-control]:focus-visible]:ring-ring/50 has-[[data-slot][aria-invalid=true]]:border-destructive has-[[data-slot][aria-invalid=true]]:ring-3 has-[[data-slot][aria-invalid=true]]:ring-destructive/20 has-[>[data-align=block-end]]:h-auto has-[>[data-align=block-end]]:flex-col has-[>[data-align=block-start]]:h-auto has-[>[data-align=block-start]]:flex-col has-[>textarea]:h-auto dark:bg-input/30 dark:has-[[data-slot][aria-invalid=true]]:ring-destructive/40 has-[>[data-align=block-end]]:[&>input]:pt-3 has-[>[data-align=block-start]]:[&>input]:pb-3 has-[>[data-align=inline-end]]:[&>input]:pr-1.5 has-[>[data-align=inline-start]]:[&>input]:pl-1.5 w-full sm:w-64"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "role": "group",
+                              "data-slot": "input-group-addon",
+                              "class": "flex h-auto cursor-text items-center justify-center gap-2 py-1.5 text-sm font-medium text-muted-foreground select-none group-data-[disabled=true]/input-group:opacity-50 [&>kbd]:rounded-[calc(var(--radius)-5px)] [&>svg:not([class*='size-'])]:size-4 order-first pl-2 has-[>button]:-ml-1 has-[>kbd]:ml-[-0.15rem]"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-search",
+                                  "class": "lucide lucide-search"
+                                },
+                                "key": "root.0.0.1.0.1.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.1.0"
+                          },
+                          {
+                            "tag": "input",
+                            "attrs": {
+                              "class": "border-input file:text-foreground placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full px-3 py-1 text-base transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 md:text-sm flex-1 rounded-none border-0 bg-transparent shadow-none ring-0 focus-visible:ring-0 aria-invalid:ring-0 dark:bg-transparent",
+                              "data-slot": "input-group-control",
+                              "aria-label": "Search skills",
+                              "placeholder": "Search skills…",
+                              "value": ""
+                            },
+                            "children": [],
+                            "key": "root.0.0.1.0.1.1"
+                          }
+                        ],
+                        "key": "root.0.0.1.0.1"
+                      }
+                    ],
+                    "key": "root.0.0.1.0"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "grid gap-3 md:grid-cols-2"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "bg-card text-card-foreground rounded-lg border flex items-center gap-4 px-4 py-4"
+                        },
+                        "children": [
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "aria-label": "View Weekly brief",
+                              "class": "focus-visible:ring-ring flex min-w-0 flex-1 flex-col gap-1.5 rounded-sm text-left focus-visible:ring-2 focus-visible:outline-none"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-sm font-medium"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Weekly brief",
+                                    "key": "root.0.0.1.1.0.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.0.0.0"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-muted-foreground line-clamp-1 text-xs leading-5"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Turn project updates into a short, decision-ready team brief.",
+                                    "key": "root.0.0.1.1.0.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.0.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.0.0"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "type": "button",
+                              "role": "switch",
+                              "aria-checked": "true",
+                              "data-state": "checked",
+                              "value": "on",
+                              "class": "peer focus-visible:ring-ring focus-visible:ring-offset-background data-[state=checked]:bg-primary data-[state=unchecked]:bg-input inline-flex h-5 w-9 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent shadow-xs transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50",
+                              "aria-label": "Enable Weekly brief"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "data-state": "checked",
+                                  "class": "bg-background pointer-events-none block h-4 w-4 rounded-full ring-0 shadow-lg transition-transform data-[state=checked]:translate-x-4 data-[state=unchecked]:translate-x-0"
+                                },
+                                "children": [],
+                                "key": "root.0.0.1.1.0.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.0.1"
+                          }
+                        ],
+                        "key": "root.0.0.1.1.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "bg-card text-card-foreground rounded-lg border flex items-center gap-4 px-4 py-4"
+                        },
+                        "children": [
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "aria-label": "View Data quality review",
+                              "class": "focus-visible:ring-ring flex min-w-0 flex-1 flex-col gap-1.5 rounded-sm text-left focus-visible:ring-2 focus-visible:outline-none"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-sm font-medium"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Data quality review",
+                                    "key": "root.0.0.1.1.1.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.1.0.0"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-muted-foreground line-clamp-1 text-xs leading-5"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Check a dataset for missing values, duplicates, and unexpected changes.",
+                                    "key": "root.0.0.1.1.1.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.1.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.1.0"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "type": "button",
+                              "role": "switch",
+                              "aria-checked": "true",
+                              "data-state": "checked",
+                              "value": "on",
+                              "class": "peer focus-visible:ring-ring focus-visible:ring-offset-background data-[state=checked]:bg-primary data-[state=unchecked]:bg-input inline-flex h-5 w-9 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent shadow-xs transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50",
+                              "aria-label": "Enable Data quality review"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "data-state": "checked",
+                                  "class": "bg-background pointer-events-none block h-4 w-4 rounded-full ring-0 shadow-lg transition-transform data-[state=checked]:translate-x-4 data-[state=unchecked]:translate-x-0"
+                                },
+                                "children": [],
+                                "key": "root.0.0.1.1.1.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.1.1"
+                          }
+                        ],
+                        "key": "root.0.0.1.1.1"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "bg-card text-card-foreground rounded-lg border flex items-center gap-4 px-4 py-4"
+                        },
+                        "children": [
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "aria-label": "View Meeting follow-ups",
+                              "class": "focus-visible:ring-ring flex min-w-0 flex-1 flex-col gap-1.5 rounded-sm text-left focus-visible:ring-2 focus-visible:outline-none"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-sm font-medium"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Meeting follow-ups",
+                                    "key": "root.0.0.1.1.2.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.2.0.0"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-muted-foreground line-clamp-1 text-xs leading-5"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Extract decisions and clearly assigned actions from meeting notes.",
+                                    "key": "root.0.0.1.1.2.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.2.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.2.0"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "type": "button",
+                              "role": "switch",
+                              "aria-checked": "true",
+                              "data-state": "checked",
+                              "value": "on",
+                              "class": "peer focus-visible:ring-ring focus-visible:ring-offset-background data-[state=checked]:bg-primary data-[state=unchecked]:bg-input inline-flex h-5 w-9 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent shadow-xs transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50",
+                              "aria-label": "Enable Meeting follow-ups"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "data-state": "checked",
+                                  "class": "bg-background pointer-events-none block h-4 w-4 rounded-full ring-0 shadow-lg transition-transform data-[state=checked]:translate-x-4 data-[state=unchecked]:translate-x-0"
+                                },
+                                "children": [],
+                                "key": "root.0.0.1.1.2.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.2.1"
+                          }
+                        ],
+                        "key": "root.0.0.1.1.2"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "bg-card text-card-foreground rounded-lg border flex items-center gap-4 px-4 py-4"
+                        },
+                        "children": [
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "aria-label": "View Release notes",
+                              "class": "focus-visible:ring-ring flex min-w-0 flex-1 flex-col gap-1.5 rounded-sm text-left focus-visible:ring-2 focus-visible:outline-none"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-sm font-medium"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Release notes",
+                                    "key": "root.0.0.1.1.3.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.3.0.0"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-muted-foreground line-clamp-1 text-xs leading-5"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Translate engineering changes into clear product announcements.",
+                                    "key": "root.0.0.1.1.3.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.3.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.3.0"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "type": "button",
+                              "role": "switch",
+                              "aria-checked": "false",
+                              "data-state": "unchecked",
+                              "value": "on",
+                              "class": "peer focus-visible:ring-ring focus-visible:ring-offset-background data-[state=checked]:bg-primary data-[state=unchecked]:bg-input inline-flex h-5 w-9 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent shadow-xs transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50",
+                              "aria-label": "Enable Release notes"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "data-state": "unchecked",
+                                  "class": "bg-background pointer-events-none block h-4 w-4 rounded-full ring-0 shadow-lg transition-transform data-[state=checked]:translate-x-4 data-[state=unchecked]:translate-x-0"
+                                },
+                                "children": [],
+                                "key": "root.0.0.1.1.3.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.3.1"
+                          }
+                        ],
+                        "key": "root.0.0.1.1.3"
+                      }
+                    ],
+                    "key": "root.0.0.1.1"
+                  }
+                ],
+                "key": "root.0.0.1"
+              },
+              {
+                "tag": "div",
+                "attrs": {
+                  "data-orientation": "horizontal",
+                  "role": "none",
+                  "class": "bg-border shrink-0 h-[1px] w-full"
+                },
+                "children": [],
+                "key": "root.0.0.2"
+              },
+              {
+                "tag": "section",
+                "attrs": {
+                  "class": "flex flex-col gap-4"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "flex items-baseline justify-between gap-3"
+                    },
+                    "children": [
+                      {
+                        "tag": "h2",
+                        "attrs": {
+                          "id": "recent-heading",
+                          "class": "text-sm font-medium"
+                        },
+                        "children": [
+                          {
+                            "text": "Recently added",
+                            "key": "root.0.0.3.0.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.3.0.0"
+                      },
+                      {
+                        "tag": "span",
+                        "attrs": {
+                          "class": "text-muted-foreground text-xs"
+                        },
+                        "children": [
+                          {
+                            "text": "8",
+                            "key": "root.0.0.3.0.1.0"
+                          },
+                          {
+                            "text": " skills",
+                            "key": "root.0.0.3.0.1.1"
+                          }
+                        ],
+                        "key": "root.0.0.3.0.1"
+                      }
+                    ],
+                    "key": "root.0.0.3.0"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "grid gap-4 md:grid-cols-2"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "bg-card text-card-foreground rounded-lg border flex flex-col"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex flex-col space-y-1.5 flex-1 gap-3 p-5"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-start justify-between gap-3"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-w-0 items-center gap-2.5"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "bg-muted flex size-8 shrink-0 items-center justify-center rounded-lg"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-file-text",
+                                              "class": "lucide lucide-file-text size-4"
+                                            },
+                                            "key": "root.0.0.3.1.0.0.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.3.1.0.0.0.0.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "leading-none font-semibold tracking-tight"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "button",
+                                            "attrs": {
+                                              "class": "focus-visible:ring-ring rounded-sm text-left text-sm leading-5 hover:underline focus-visible:ring-2 focus-visible:outline-none"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Decision record",
+                                                "key": "root.0.0.3.1.0.0.0.0.1.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.3.1.0.0.0.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.3.1.0.0.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.3.1.0.0.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-muted-foreground shrink-0 text-[11px]"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Today",
+                                        "key": "root.0.0.3.1.0.0.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.3.1.0.0.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.0.0.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "text-muted-foreground text-sm"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Capture the context, alternatives, and trade-offs behind an important team decision.",
+                                    "key": "root.0.0.3.1.0.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.0.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.3.1.0.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex items-center p-6 pt-0 justify-between gap-3 px-5 pb-4"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-muted-foreground text-xs"
+                                },
+                                "children": [
+                                  {
+                                    "text": "By ",
+                                    "key": "root.0.0.3.1.0.1.0.0"
+                                  },
+                                  {
+                                    "text": "Workspace team",
+                                    "key": "root.0.0.3.1.0.1.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.0.1.0"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs",
+                                  "aria-label": "Install Decision record"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-download",
+                                      "class": "lucide lucide-download"
+                                    },
+                                    "key": "root.0.0.3.1.0.1.1.0"
+                                  },
+                                  {
+                                    "text": "Install",
+                                    "key": "root.0.0.3.1.0.1.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.0.1.1"
+                              }
+                            ],
+                            "key": "root.0.0.3.1.0.1"
+                          }
+                        ],
+                        "key": "root.0.0.3.1.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "bg-card text-card-foreground rounded-lg border flex flex-col"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex flex-col space-y-1.5 flex-1 gap-3 p-5"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-start justify-between gap-3"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-w-0 items-center gap-2.5"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "bg-muted flex size-8 shrink-0 items-center justify-center rounded-lg"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-book-open",
+                                              "class": "lucide lucide-book-open size-4"
+                                            },
+                                            "key": "root.0.0.3.1.1.0.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.3.1.1.0.0.0.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "leading-none font-semibold tracking-tight"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "button",
+                                            "attrs": {
+                                              "class": "focus-visible:ring-ring rounded-sm text-left text-sm leading-5 hover:underline focus-visible:ring-2 focus-visible:outline-none"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Customer feedback themes",
+                                                "key": "root.0.0.3.1.1.0.0.0.1.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.3.1.1.0.0.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.3.1.1.0.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.3.1.1.0.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-muted-foreground shrink-0 text-[11px]"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Today",
+                                        "key": "root.0.0.3.1.1.0.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.3.1.1.0.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.1.0.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "text-muted-foreground text-sm"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Find recurring patterns in customer conversations and link each theme to supporting examples.",
+                                    "key": "root.0.0.3.1.1.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.1.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.3.1.1.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex items-center p-6 pt-0 justify-between gap-3 px-5 pb-4"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-muted-foreground text-xs"
+                                },
+                                "children": [
+                                  {
+                                    "text": "By ",
+                                    "key": "root.0.0.3.1.1.1.0.0"
+                                  },
+                                  {
+                                    "text": "Maya Chen",
+                                    "key": "root.0.0.3.1.1.1.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.1.1.0"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs",
+                                  "aria-label": "Install Customer feedback themes"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-download",
+                                      "class": "lucide lucide-download"
+                                    },
+                                    "key": "root.0.0.3.1.1.1.1.0"
+                                  },
+                                  {
+                                    "text": "Install",
+                                    "key": "root.0.0.3.1.1.1.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.1.1.1"
+                              }
+                            ],
+                            "key": "root.0.0.3.1.1.1"
+                          }
+                        ],
+                        "key": "root.0.0.3.1.1"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "bg-card text-card-foreground rounded-lg border flex flex-col"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex flex-col space-y-1.5 flex-1 gap-3 p-5"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-start justify-between gap-3"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-w-0 items-center gap-2.5"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "bg-muted flex size-8 shrink-0 items-center justify-center rounded-lg"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-book-open",
+                                              "class": "lucide lucide-book-open size-4"
+                                            },
+                                            "key": "root.0.0.3.1.2.0.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.3.1.2.0.0.0.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "leading-none font-semibold tracking-tight"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "button",
+                                            "attrs": {
+                                              "class": "focus-visible:ring-ring rounded-sm text-left text-sm leading-5 hover:underline focus-visible:ring-2 focus-visible:outline-none"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Metric commentary",
+                                                "key": "root.0.0.3.1.2.0.0.0.1.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.3.1.2.0.0.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.3.1.2.0.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.3.1.2.0.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-muted-foreground shrink-0 text-[11px]"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Yesterday",
+                                        "key": "root.0.0.3.1.2.0.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.3.1.2.0.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.2.0.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "text-muted-foreground text-sm"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Explain what changed in a report, why it might matter, and what should be checked next.",
+                                    "key": "root.0.0.3.1.2.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.2.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.3.1.2.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex items-center p-6 pt-0 justify-between gap-3 px-5 pb-4"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-muted-foreground text-xs"
+                                },
+                                "children": [
+                                  {
+                                    "text": "By ",
+                                    "key": "root.0.0.3.1.2.1.0.0"
+                                  },
+                                  {
+                                    "text": "Priya Shah",
+                                    "key": "root.0.0.3.1.2.1.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.2.1.0"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs",
+                                  "aria-label": "Install Metric commentary"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-download",
+                                      "class": "lucide lucide-download"
+                                    },
+                                    "key": "root.0.0.3.1.2.1.1.0"
+                                  },
+                                  {
+                                    "text": "Install",
+                                    "key": "root.0.0.3.1.2.1.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.2.1.1"
+                              }
+                            ],
+                            "key": "root.0.0.3.1.2.1"
+                          }
+                        ],
+                        "key": "root.0.0.3.1.2"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "bg-card text-card-foreground rounded-lg border flex flex-col"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex flex-col space-y-1.5 flex-1 gap-3 p-5"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-start justify-between gap-3"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-w-0 items-center gap-2.5"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "bg-muted flex size-8 shrink-0 items-center justify-center rounded-lg"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-list-checks",
+                                              "class": "lucide lucide-list-checks size-4"
+                                            },
+                                            "key": "root.0.0.3.1.3.0.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.3.1.3.0.0.0.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "leading-none font-semibold tracking-tight"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "button",
+                                            "attrs": {
+                                              "class": "focus-visible:ring-ring rounded-sm text-left text-sm leading-5 hover:underline focus-visible:ring-2 focus-visible:outline-none"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Project handoff",
+                                                "key": "root.0.0.3.1.3.0.0.0.1.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.3.1.3.0.0.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.3.1.3.0.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.3.1.3.0.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-muted-foreground shrink-0 text-[11px]"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Yesterday",
+                                        "key": "root.0.0.3.1.3.0.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.3.1.3.0.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.3.0.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "text-muted-foreground text-sm"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Prepare a handoff that gives the next owner the context, open questions, and next steps.",
+                                    "key": "root.0.0.3.1.3.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.3.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.3.1.3.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex items-center p-6 pt-0 justify-between gap-3 px-5 pb-4"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-muted-foreground text-xs"
+                                },
+                                "children": [
+                                  {
+                                    "text": "By ",
+                                    "key": "root.0.0.3.1.3.1.0.0"
+                                  },
+                                  {
+                                    "text": "Alex Morgan",
+                                    "key": "root.0.0.3.1.3.1.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.3.1.0"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs",
+                                  "aria-label": "Install Project handoff"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-download",
+                                      "class": "lucide lucide-download"
+                                    },
+                                    "key": "root.0.0.3.1.3.1.1.0"
+                                  },
+                                  {
+                                    "text": "Install",
+                                    "key": "root.0.0.3.1.3.1.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.3.1.1"
+                              }
+                            ],
+                            "key": "root.0.0.3.1.3.1"
+                          }
+                        ],
+                        "key": "root.0.0.3.1.3"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "bg-card text-card-foreground rounded-lg border flex flex-col"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex flex-col space-y-1.5 flex-1 gap-3 p-5"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-start justify-between gap-3"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-w-0 items-center gap-2.5"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "bg-muted flex size-8 shrink-0 items-center justify-center rounded-lg"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-file-text",
+                                              "class": "lucide lucide-file-text size-4"
+                                            },
+                                            "key": "root.0.0.3.1.4.0.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.3.1.4.0.0.0.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "leading-none font-semibold tracking-tight"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "button",
+                                            "attrs": {
+                                              "class": "focus-visible:ring-ring rounded-sm text-left text-sm leading-5 hover:underline focus-visible:ring-2 focus-visible:outline-none"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Release notes",
+                                                "key": "root.0.0.3.1.4.0.0.0.1.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.3.1.4.0.0.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.3.1.4.0.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.3.1.4.0.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-muted-foreground shrink-0 text-[11px]"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "13 Sep",
+                                        "key": "root.0.0.3.1.4.0.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.3.1.4.0.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.4.0.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "text-muted-foreground text-sm"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Translate engineering changes into clear product announcements.",
+                                    "key": "root.0.0.3.1.4.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.4.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.3.1.4.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex items-center p-6 pt-0 justify-between gap-3 px-5 pb-4"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-muted-foreground text-xs"
+                                },
+                                "children": [
+                                  {
+                                    "text": "By ",
+                                    "key": "root.0.0.3.1.4.1.0.0"
+                                  },
+                                  {
+                                    "text": "Jonas Weber",
+                                    "key": "root.0.0.3.1.4.1.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.4.1.0"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs",
+                                  "aria-label": "Manage Release notes"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-check",
+                                      "class": "lucide lucide-check"
+                                    },
+                                    "key": "root.0.0.3.1.4.1.1.0"
+                                  },
+                                  {
+                                    "text": "Installed",
+                                    "key": "root.0.0.3.1.4.1.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.4.1.1"
+                              }
+                            ],
+                            "key": "root.0.0.3.1.4.1"
+                          }
+                        ],
+                        "key": "root.0.0.3.1.4"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "bg-card text-card-foreground rounded-lg border flex flex-col"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex flex-col space-y-1.5 flex-1 gap-3 p-5"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-start justify-between gap-3"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-w-0 items-center gap-2.5"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "bg-muted flex size-8 shrink-0 items-center justify-center rounded-lg"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-list-checks",
+                                              "class": "lucide lucide-list-checks size-4"
+                                            },
+                                            "key": "root.0.0.3.1.5.0.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.3.1.5.0.0.0.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "leading-none font-semibold tracking-tight"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "button",
+                                            "attrs": {
+                                              "class": "focus-visible:ring-ring rounded-sm text-left text-sm leading-5 hover:underline focus-visible:ring-2 focus-visible:outline-none"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Meeting follow-ups",
+                                                "key": "root.0.0.3.1.5.0.0.0.1.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.3.1.5.0.0.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.3.1.5.0.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.3.1.5.0.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-muted-foreground shrink-0 text-[11px]"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "12 Sep",
+                                        "key": "root.0.0.3.1.5.0.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.3.1.5.0.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.5.0.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "text-muted-foreground text-sm"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Extract decisions and clearly assigned actions from meeting notes.",
+                                    "key": "root.0.0.3.1.5.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.5.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.3.1.5.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex items-center p-6 pt-0 justify-between gap-3 px-5 pb-4"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-muted-foreground text-xs"
+                                },
+                                "children": [
+                                  {
+                                    "text": "By ",
+                                    "key": "root.0.0.3.1.5.1.0.0"
+                                  },
+                                  {
+                                    "text": "Workspace team",
+                                    "key": "root.0.0.3.1.5.1.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.5.1.0"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs",
+                                  "aria-label": "Manage Meeting follow-ups"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-check",
+                                      "class": "lucide lucide-check"
+                                    },
+                                    "key": "root.0.0.3.1.5.1.1.0"
+                                  },
+                                  {
+                                    "text": "Installed",
+                                    "key": "root.0.0.3.1.5.1.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.5.1.1"
+                              }
+                            ],
+                            "key": "root.0.0.3.1.5.1"
+                          }
+                        ],
+                        "key": "root.0.0.3.1.5"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "bg-card text-card-foreground rounded-lg border flex flex-col"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex flex-col space-y-1.5 flex-1 gap-3 p-5"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-start justify-between gap-3"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-w-0 items-center gap-2.5"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "bg-muted flex size-8 shrink-0 items-center justify-center rounded-lg"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-book-open",
+                                              "class": "lucide lucide-book-open size-4"
+                                            },
+                                            "key": "root.0.0.3.1.6.0.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.3.1.6.0.0.0.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "leading-none font-semibold tracking-tight"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "button",
+                                            "attrs": {
+                                              "class": "focus-visible:ring-ring rounded-sm text-left text-sm leading-5 hover:underline focus-visible:ring-2 focus-visible:outline-none"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Data quality review",
+                                                "key": "root.0.0.3.1.6.0.0.0.1.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.3.1.6.0.0.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.3.1.6.0.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.3.1.6.0.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-muted-foreground shrink-0 text-[11px]"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "11 Sep",
+                                        "key": "root.0.0.3.1.6.0.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.3.1.6.0.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.6.0.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "text-muted-foreground text-sm"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Check a dataset for missing values, duplicates, and unexpected changes.",
+                                    "key": "root.0.0.3.1.6.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.6.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.3.1.6.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex items-center p-6 pt-0 justify-between gap-3 px-5 pb-4"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-muted-foreground text-xs"
+                                },
+                                "children": [
+                                  {
+                                    "text": "By ",
+                                    "key": "root.0.0.3.1.6.1.0.0"
+                                  },
+                                  {
+                                    "text": "Priya Shah",
+                                    "key": "root.0.0.3.1.6.1.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.6.1.0"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs",
+                                  "aria-label": "Manage Data quality review"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-check",
+                                      "class": "lucide lucide-check"
+                                    },
+                                    "key": "root.0.0.3.1.6.1.1.0"
+                                  },
+                                  {
+                                    "text": "Installed",
+                                    "key": "root.0.0.3.1.6.1.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.6.1.1"
+                              }
+                            ],
+                            "key": "root.0.0.3.1.6.1"
+                          }
+                        ],
+                        "key": "root.0.0.3.1.6"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "bg-card text-card-foreground rounded-lg border flex flex-col"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex flex-col space-y-1.5 flex-1 gap-3 p-5"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-start justify-between gap-3"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-w-0 items-center gap-2.5"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "bg-muted flex size-8 shrink-0 items-center justify-center rounded-lg"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-file-text",
+                                              "class": "lucide lucide-file-text size-4"
+                                            },
+                                            "key": "root.0.0.3.1.7.0.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.3.1.7.0.0.0.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "leading-none font-semibold tracking-tight"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "button",
+                                            "attrs": {
+                                              "class": "focus-visible:ring-ring rounded-sm text-left text-sm leading-5 hover:underline focus-visible:ring-2 focus-visible:outline-none"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Weekly brief",
+                                                "key": "root.0.0.3.1.7.0.0.0.1.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.3.1.7.0.0.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.3.1.7.0.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.3.1.7.0.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-muted-foreground shrink-0 text-[11px]"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "10 Sep",
+                                        "key": "root.0.0.3.1.7.0.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.3.1.7.0.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.7.0.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "text-muted-foreground text-sm"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Turn project updates into a short, decision-ready team brief.",
+                                    "key": "root.0.0.3.1.7.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.7.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.3.1.7.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex items-center p-6 pt-0 justify-between gap-3 px-5 pb-4"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-muted-foreground text-xs"
+                                },
+                                "children": [
+                                  {
+                                    "text": "By ",
+                                    "key": "root.0.0.3.1.7.1.0.0"
+                                  },
+                                  {
+                                    "text": "Workspace team",
+                                    "key": "root.0.0.3.1.7.1.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.7.1.0"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs",
+                                  "aria-label": "Manage Weekly brief"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-check",
+                                      "class": "lucide lucide-check"
+                                    },
+                                    "key": "root.0.0.3.1.7.1.1.0"
+                                  },
+                                  {
+                                    "text": "Installed",
+                                    "key": "root.0.0.3.1.7.1.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.3.1.7.1.1"
+                              }
+                            ],
+                            "key": "root.0.0.3.1.7.1"
+                          }
+                        ],
+                        "key": "root.0.0.3.1.7"
+                      }
+                    ],
+                    "key": "root.0.0.3.1"
+                  }
+                ],
+                "key": "root.0.0.3"
+              },
+              {
+                "tag": "p",
+                "attrs": {
+                  "class": "text-muted-foreground pb-2 text-xs"
+                },
+                "children": [
+                  {
+                    "text": "Demo workspace · Changes apply to this session.",
+                    "key": "root.0.0.4.0"
+                  }
+                ],
+                "key": "root.0.0.4"
+              }
+            ],
+            "key": "root.0.0"
+          }
+        ],
+        "key": "root.0"
+      }
+    ],
+    "key": "root"
+  },
+  "headings": [
+    "Skills",
+    "Installed",
+    "Recently added"
+  ]
+}

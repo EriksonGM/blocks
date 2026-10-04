@@ -1,0 +1,770 @@
+{
+  "label": "Shopping List 🛒",
+  "path": "/todo/projects/shopping",
+  "appTitle": "Todo App",
+  "tree": {
+    "tag": "div",
+    "attrs": {
+      "class": "contents"
+    },
+    "children": [
+      {
+        "tag": "div",
+        "attrs": {
+          "class": "flex min-h-0 flex-1 flex-col overflow-hidden"
+        },
+        "children": [
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "flex h-14 shrink-0 items-center gap-2 border-b px-4 sm:px-6"
+            },
+            "children": [
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "flex flex-1 items-center gap-2"
+                },
+                "children": [
+                  {
+                    "tag": "nav",
+                    "attrs": {
+                      "aria-label": "breadcrumb"
+                    },
+                    "children": [
+                      {
+                        "tag": "ol",
+                        "attrs": {
+                          "class": "text-muted-foreground flex flex-wrap items-center gap-1.5 text-sm break-words sm:gap-2.5"
+                        },
+                        "children": [
+                          {
+                            "tag": "li",
+                            "attrs": {
+                              "class": "inline-flex items-center gap-1.5"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "role": "link",
+                                  "class": "text-foreground font-normal line-clamp-1"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Shopping List 🛒",
+                                    "key": "root.0.0.0.0.0.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.0.0.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.0"
+                      }
+                    ],
+                    "key": "root.0.0.0.0"
+                  }
+                ],
+                "key": "root.0.0.0"
+              },
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "flex items-center gap-2 text-sm"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "group relative flex items-center"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "text-muted-foreground font-medium transition-transform duration-200 ease-out group-hover:-translate-x-16"
+                        },
+                        "children": [
+                          {
+                            "text": "Oct 3",
+                            "key": "root.0.0.1.0.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.1.0.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "text-muted-foreground absolute right-0 translate-x-2 scale-50 font-medium whitespace-nowrap opacity-0 transition-all duration-200 ease-out group-hover:translate-x-0 group-hover:scale-100 group-hover:opacity-100"
+                        },
+                        "children": [
+                          {
+                            "text": "12:57 PM",
+                            "key": "root.0.0.1.0.1.0"
+                          }
+                        ],
+                        "key": "root.0.0.1.0.1"
+                      }
+                    ],
+                    "key": "root.0.0.1.0"
+                  },
+                  {
+                    "tag": "button",
+                    "attrs": {
+                      "class": "inline-flex items-center justify-center whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent rounded-md text-xs text-muted-foreground hover:text-foreground h-7 gap-2 px-2",
+                      "type": "button",
+                      "aria-label": "Search tasks"
+                    },
+                    "children": [
+                      {
+                        "tag": "icon",
+                        "attrs": {
+                          "name": "i-lucide-search",
+                          "class": "lucide lucide-search size-3.5"
+                        },
+                        "key": "root.0.0.1.1.0"
+                      },
+                      {
+                        "tag": "span",
+                        "attrs": {
+                          "class": "text-xs"
+                        },
+                        "children": [
+                          {
+                            "text": "Search",
+                            "key": "root.0.0.1.1.1.0"
+                          }
+                        ],
+                        "key": "root.0.0.1.1.1"
+                      }
+                    ],
+                    "key": "root.0.0.1.1"
+                  },
+                  {
+                    "tag": "button",
+                    "attrs": {
+                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground data-[state=open]:bg-accent h-7 w-7",
+                      "type": "button",
+                      "id": "radix-_R_eb5uknmlb_",
+                      "aria-haspopup": "menu",
+                      "data-state": "closed"
+                    },
+                    "children": [
+                      {
+                        "tag": "icon",
+                        "attrs": {
+                          "name": "i-lucide-ellipsis",
+                          "class": "lucide lucide-ellipsis"
+                        },
+                        "key": "root.0.0.1.2.0"
+                      }
+                    ],
+                    "key": "root.0.0.1.2"
+                  }
+                ],
+                "key": "root.0.0.1"
+              }
+            ],
+            "key": "root.0.0"
+          },
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "flex min-h-0 flex-1 flex-col overflow-auto"
+            },
+            "children": [
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "flex flex-1 flex-col gap-6 py-6 px-6"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "w-full space-y-6 transition-all duration-300 mx-auto max-w-3xl"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "space-y-4"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex items-center justify-between"
+                            },
+                            "children": [
+                              {
+                                "tag": "h2",
+                                "attrs": {
+                                  "class": "text-lg font-semibold"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Active Tasks",
+                                    "key": "root.0.1.0.0.0.0.0.0"
+                                  },
+                                  {
+                                    "text": " (",
+                                    "key": "root.0.1.0.0.0.0.0.1"
+                                  },
+                                  {
+                                    "text": "1",
+                                    "key": "root.0.1.0.0.0.0.0.2"
+                                  },
+                                  {
+                                    "text": ")",
+                                    "key": "root.0.1.0.0.0.0.0.3"
+                                  }
+                                ],
+                                "key": "root.0.1.0.0.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.1.0.0.0.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "space-y-3"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex flex-wrap items-center gap-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center gap-1 rounded-md border p-1"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "button",
+                                        "attrs": {
+                                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80 rounded-md text-xs h-8 px-3"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-list",
+                                              "class": "lucide lucide-list h-4 w-4"
+                                            },
+                                            "key": "root.0.1.0.0.0.1.0.0.0.0"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "hidden sm:inline"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "List",
+                                                "key": "root.0.1.0.0.0.1.0.0.0.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.1.0.0.0.1.0.0.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.1.0.0.0.1.0.0.0"
+                                      },
+                                      {
+                                        "tag": "button",
+                                        "attrs": {
+                                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground rounded-md text-xs h-8 px-3"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-layout-grid",
+                                              "class": "lucide lucide-layout-grid h-4 w-4"
+                                            },
+                                            "key": "root.0.1.0.0.0.1.0.0.1.0"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "hidden sm:inline"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Kanban",
+                                                "key": "root.0.1.0.0.0.1.0.0.1.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.1.0.0.0.1.0.0.1.1"
+                                          }
+                                        ],
+                                        "key": "root.0.1.0.0.0.1.0.0.1"
+                                      },
+                                      {
+                                        "tag": "button",
+                                        "attrs": {
+                                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground rounded-md text-xs h-8 px-3"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-calendar",
+                                              "class": "lucide lucide-calendar h-4 w-4"
+                                            },
+                                            "key": "root.0.1.0.0.0.1.0.0.2.0"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "hidden sm:inline"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Calendar",
+                                                "key": "root.0.1.0.0.0.1.0.0.2.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.1.0.0.0.1.0.0.2.1"
+                                          }
+                                        ],
+                                        "key": "root.0.1.0.0.0.1.0.0.2"
+                                      }
+                                    ],
+                                    "key": "root.0.1.0.0.0.1.0.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "data-orientation": "vertical",
+                                      "role": "none",
+                                      "class": "bg-border shrink-0 w-[1px] h-8"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.1.0.0.0.1.0.1"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground rounded-md px-3 text-xs h-8",
+                                      "type": "button",
+                                      "id": "radix-_r_0_",
+                                      "aria-haspopup": "menu",
+                                      "data-state": "closed"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-funnel",
+                                          "class": "lucide lucide-funnel h-4 w-4"
+                                        },
+                                        "key": "root.0.1.0.0.0.1.0.2.0"
+                                      },
+                                      {
+                                        "text": "Filter",
+                                        "key": "root.0.1.0.0.0.1.0.2.1"
+                                      }
+                                    ],
+                                    "key": "root.0.1.0.0.0.1.0.2"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground rounded-md px-3 text-xs h-8",
+                                      "type": "button",
+                                      "id": "radix-_r_2_",
+                                      "aria-haspopup": "menu",
+                                      "data-state": "closed"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-arrow-up-narrow-wide",
+                                          "class": "lucide lucide-arrow-up-narrow-wide h-4 w-4"
+                                        },
+                                        "key": "root.0.1.0.0.0.1.0.3.0"
+                                      },
+                                      {
+                                        "text": "Sort",
+                                        "key": "root.0.1.0.0.0.1.0.3.1"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "inline-flex items-center rounded-md border text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 px-1.5 py-0"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "M",
+                                            "key": "root.0.1.0.0.0.1.0.3.2.0"
+                                          }
+                                        ],
+                                        "key": "root.0.1.0.0.0.1.0.3.2"
+                                      }
+                                    ],
+                                    "key": "root.0.1.0.0.0.1.0.3"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "text-muted-foreground ml-auto text-sm"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "1",
+                                        "key": "root.0.1.0.0.0.1.0.4.0"
+                                      },
+                                      {
+                                        "text": "task",
+                                        "key": "root.0.1.0.0.0.1.0.4.1"
+                                      }
+                                    ],
+                                    "key": "root.0.1.0.0.0.1.0.4"
+                                  }
+                                ],
+                                "key": "root.0.1.0.0.0.1.0"
+                              }
+                            ],
+                            "key": "root.0.1.0.0.0.1"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "space-y-6"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "[&>*:last-child_[data-slot=item]]:border-b-0"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "style": "opacity: 1;"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "style": "transform: none; transform-origin: 50% 50% 0px; opacity: 1;"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "data-slot": "item",
+                                                  "class": "group/item flex text-sm transition-colors [a]:hover:bg-accent/50 [a]:transition-colors duration-100 flex-wrap outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] bg-transparent p-4 gap-4 group border-border cursor-pointer items-start rounded-none border-0 border-b py-2"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "data-slot": "item-media",
+                                                      "class": "flex shrink-0 items-center justify-center gap-2 group-has-[[data-slot=item-description]]/item:self-start [&_svg]:pointer-events-none group-has-[[data-slot=item-description]]/item:translate-y-0.5 bg-transparent"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "div",
+                                                        "attrs": {
+                                                          "class": "flex items-center gap-0.5"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "div",
+                                                            "attrs": {
+                                                              "class": "relative flex items-center"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "tag": "button",
+                                                                "attrs": {
+                                                                  "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-6 absolute -translate-x-1 scale-50 opacity-0 group-hover:translate-x-0 group-hover:scale-100 group-hover:opacity-100 -left-8",
+                                                                  "role": "button",
+                                                                  "aria-label": "Drag to reorder"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "tag": "icon",
+                                                                    "attrs": {
+                                                                      "name": "i-lucide-grip-vertical",
+                                                                      "class": "lucide lucide-grip-vertical text-muted-foreground size-4"
+                                                                    },
+                                                                    "key": "root.0.1.0.0.0.2.0.0.0.0.0.0.0.0.0.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.1.0.0.0.2.0.0.0.0.0.0.0.0.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.1.0.0.0.2.0.0.0.0.0.0.0.0"
+                                                          },
+                                                          {
+                                                            "tag": "button",
+                                                            "attrs": {
+                                                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-6 shrink-0 rounded-full transition-all duration-200 -ml-1",
+                                                              "aria-label": "Mark \"Buy groceries\" as complete"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "tag": "div",
+                                                                "attrs": {
+                                                                  "class": "relative"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "tag": "div",
+                                                                    "attrs": {
+                                                                      "class": "",
+                                                                      "style": "opacity: 1; transform: none;"
+                                                                    },
+                                                                    "children": [
+                                                                      {
+                                                                        "tag": "icon",
+                                                                        "attrs": {
+                                                                          "name": "i-lucide-circle",
+                                                                          "class": "lucide lucide-circle size-5 text-priority-3"
+                                                                        },
+                                                                        "key": "root.0.1.0.0.0.2.0.0.0.0.0.0.0.1.0.0.0"
+                                                                      }
+                                                                    ],
+                                                                    "key": "root.0.1.0.0.0.2.0.0.0.0.0.0.0.1.0.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.1.0.0.0.2.0.0.0.0.0.0.0.1.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.1.0.0.0.2.0.0.0.0.0.0.0.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.1.0.0.0.2.0.0.0.0.0.0.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.1.0.0.0.2.0.0.0.0.0.0"
+                                                  },
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "data-slot": "item-content",
+                                                      "class": "flex flex-1 flex-col gap-1 [&+[data-slot=item-content]]:flex-none min-w-0"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "div",
+                                                        "attrs": {
+                                                          "class": "min-w-0 flex-1"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "div",
+                                                            "attrs": {
+                                                              "class": "flex items-center gap-1.5"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "tag": "div",
+                                                                "attrs": {
+                                                                  "data-slot": "item-title",
+                                                                  "class": "flex w-fit items-center gap-2 text-sm leading-snug font-medium flex-1"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "tag": "span",
+                                                                    "attrs": {
+                                                                      "class": "relative inline-block"
+                                                                    },
+                                                                    "children": [
+                                                                      {
+                                                                        "text": "Buy groceries",
+                                                                        "key": "root.0.1.0.0.0.2.0.0.0.0.0.1.0.0.0.0.0"
+                                                                      },
+                                                                      {
+                                                                        "tag": "span",
+                                                                        "attrs": {
+                                                                          "class": "bg-muted-foreground absolute top-1/2 left-0 h-[1.5px] -translate-y-1/2",
+                                                                          "style": "width: 0px; opacity: 0;"
+                                                                        },
+                                                                        "children": [],
+                                                                        "key": "root.0.1.0.0.0.2.0.0.0.0.0.1.0.0.0.0.1"
+                                                                      }
+                                                                    ],
+                                                                    "key": "root.0.1.0.0.0.2.0.0.0.0.0.1.0.0.0.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.1.0.0.0.2.0.0.0.0.0.1.0.0.0"
+                                                              },
+                                                              {
+                                                                "tag": "div",
+                                                                "attrs": {
+                                                                  "class": "flex shrink-0 items-center gap-1"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "tag": "div",
+                                                                    "attrs": {
+                                                                      "class": ""
+                                                                    },
+                                                                    "children": [
+                                                                      {
+                                                                        "tag": "button",
+                                                                        "attrs": {
+                                                                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-6 -mr-2 transition-all duration-200 ease-out -translate-x-2 scale-50 opacity-0 group-hover:translate-x-0 group-hover:scale-100 group-hover:opacity-100",
+                                                                          "aria-label": "More actions",
+                                                                          "type": "button",
+                                                                          "id": "radix-_r_a_",
+                                                                          "aria-haspopup": "menu",
+                                                                          "data-state": "closed"
+                                                                        },
+                                                                        "children": [
+                                                                          {
+                                                                            "tag": "icon",
+                                                                            "attrs": {
+                                                                              "name": "i-lucide-ellipsis-vertical",
+                                                                              "class": "lucide lucide-ellipsis-vertical size-4"
+                                                                            },
+                                                                            "key": "root.0.1.0.0.0.2.0.0.0.0.0.1.0.0.1.0.0.0"
+                                                                          }
+                                                                        ],
+                                                                        "key": "root.0.1.0.0.0.2.0.0.0.0.0.1.0.0.1.0.0"
+                                                                      }
+                                                                    ],
+                                                                    "key": "root.0.1.0.0.0.2.0.0.0.0.0.1.0.0.1.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.1.0.0.0.2.0.0.0.0.0.1.0.0.1"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.1.0.0.0.2.0.0.0.0.0.1.0.0"
+                                                          },
+                                                          {
+                                                            "tag": "div",
+                                                            "attrs": {
+                                                              "class": "text-muted-foreground/60 mt-0.5 flex items-center gap-1 text-xs"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "tag": "span",
+                                                                "attrs": {},
+                                                                "children": [
+                                                                  {
+                                                                    "text": "Shopping List 🛒",
+                                                                    "key": "root.0.1.0.0.0.2.0.0.0.0.0.1.0.1.0.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.1.0.0.0.2.0.0.0.0.0.1.0.1.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.1.0.0.0.2.0.0.0.0.0.1.0.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.1.0.0.0.2.0.0.0.0.0.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.1.0.0.0.2.0.0.0.0.0.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.1.0.0.0.2.0.0.0.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.1.0.0.0.2.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.1.0.0.0.2.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.1.0.0.0.2.0.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "id": "DndDescribedBy-0",
+                                      "style": "display: none;"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "\n    To pick up a draggable item, press the space bar.\n    While dragging, use the arrow keys to move the item.\n    Press space again to drop the item in its new position, or press escape to cancel.\n  ",
+                                        "key": "root.0.1.0.0.0.2.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.1.0.0.0.2.0.1"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "id": "DndLiveRegion-0",
+                                      "role": "status",
+                                      "style": "position: fixed; top: 0px; left: 0px; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(100%); white-space: nowrap;"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.1.0.0.0.2.0.2"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "style": "opacity: 1;"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "button",
+                                        "attrs": {
+                                          "class": "inline-flex items-center whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-10 rounded-md px-8 w-full justify-start gap-2"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-plus",
+                                              "class": "lucide lucide-plus h-4 w-4"
+                                            },
+                                            "key": "root.0.1.0.0.0.2.0.3.0.0"
+                                          },
+                                          {
+                                            "text": "Add New Task",
+                                            "key": "root.0.1.0.0.0.2.0.3.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.1.0.0.0.2.0.3.0"
+                                      }
+                                    ],
+                                    "key": "root.0.1.0.0.0.2.0.3"
+                                  }
+                                ],
+                                "key": "root.0.1.0.0.0.2.0"
+                              }
+                            ],
+                            "key": "root.0.1.0.0.0.2"
+                          }
+                        ],
+                        "key": "root.0.1.0.0.0"
+                      }
+                    ],
+                    "key": "root.0.1.0.0"
+                  }
+                ],
+                "key": "root.0.1.0"
+              }
+            ],
+            "key": "root.0.1"
+          }
+        ],
+        "key": "root.0"
+      }
+    ],
+    "key": "root"
+  },
+  "headings": [
+    "Active Tasks (1)"
+  ]
+}

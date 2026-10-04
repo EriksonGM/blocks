@@ -1,0 +1,1946 @@
+{
+  "label": "Invoice Detail 2",
+  "path": "/payment-processor/invoice-detail-2",
+  "appTitle": "Payment Processor",
+  "tree": {
+    "tag": "div",
+    "attrs": {
+      "class": "flex min-h-0 flex-1 flex-col overflow-hidden"
+    },
+    "children": [
+      {
+        "tag": "div",
+        "attrs": {
+          "class": "flex min-h-0 flex-1 flex-col overflow-hidden"
+        },
+        "children": [
+          {
+            "tag": "main",
+            "attrs": {
+              "class": "bg-background text-foreground h-full min-h-0 flex-1 overflow-y-auto overscroll-contain"
+            },
+            "children": [
+              {
+                "tag": "header",
+                "attrs": {
+                  "class": "border-border/80 bg-background border-b px-4 py-6 sm:px-6 lg:px-8"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "flex flex-col gap-4 xl:flex-row xl:items-center xl:justify-between"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex min-w-0 items-start gap-4"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "min-w-0"
+                            },
+                            "children": [
+                              {
+                                "tag": "nav",
+                                "attrs": {
+                                  "class": "text-muted-foreground flex items-center gap-2 text-xs/6"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Invoices",
+                                        "key": "root.0.0.0.0.0.0.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.0.0.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-foreground/80 font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "#SB-2026-084",
+                                        "key": "root.0.0.0.0.0.0.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.0.0.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.0.0.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "mt-1 flex min-w-0 flex-wrap items-center gap-3"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "h1",
+                                    "attrs": {
+                                      "class": "truncate text-xl font-semibold tracking-tight"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Invoice #SB-2026-084",
+                                        "key": "root.0.0.0.0.0.0.1.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.0.0.1.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "rounded-full bg-[color-mix(in_oklch,var(--destructive)_10%,var(--background))] px-2.5 py-0.5 text-xs font-semibold text-[color-mix(in_oklch,var(--destructive)_82%,var(--foreground))] ring-1 ring-[color-mix(in_oklch,var(--destructive)_20%,transparent)] ring-inset"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Overdue",
+                                        "key": "root.0.0.0.0.0.0.1.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.0.0.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.0.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.0.0.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex flex-wrap items-center gap-3"
+                        },
+                        "children": [
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground px-4 py-2 h-9 rounded-md"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-square-check",
+                                  "class": "lucide lucide-square-check size-4"
+                                },
+                                "key": "root.0.0.0.0.1.0.0"
+                              },
+                              {
+                                "text": "Mark as Paid",
+                                "key": "root.0.0.0.0.1.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.0.0.1.0"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground px-4 py-2 text-muted-foreground h-9 rounded-md",
+                              "disabled": ""
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-pen-line",
+                                  "class": "lucide lucide-pen-line size-4"
+                                },
+                                "key": "root.0.0.0.0.1.1.0"
+                              },
+                              {
+                                "text": "Edit",
+                                "key": "root.0.0.0.0.1.1.1"
+                              }
+                            ],
+                            "key": "root.0.0.0.0.1.1"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 shadow-sm py-2 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-5"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-send",
+                                  "class": "lucide lucide-send size-4"
+                                },
+                                "key": "root.0.0.0.0.1.2.0"
+                              },
+                              {
+                                "text": "Send",
+                                "key": "root.0.0.0.0.1.2.1"
+                              }
+                            ],
+                            "key": "root.0.0.0.0.1.2"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.1"
+                      }
+                    ],
+                    "key": "root.0.0.0.0"
+                  }
+                ],
+                "key": "root.0.0.0"
+              },
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "grid min-h-[calc(100dvh-5rem)] grid-cols-1 xl:grid-cols-[minmax(26rem,0.82fr)_minmax(34rem,1fr)] xl:gap-10 2xl:gap-14"
+                },
+                "children": [
+                  {
+                    "tag": "section",
+                    "attrs": {
+                      "class": "bg-background min-w-0 px-4 py-5 sm:px-6 xl:px-7"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "border-border flex gap-7 border-b"
+                        },
+                        "children": [
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "flex h-9 items-center gap-2 border-b-2 px-1 text-xs font-semibold transition-colors border-primary text-foreground",
+                              "type": "button"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-file-text",
+                                  "class": "lucide lucide-file-text size-4 sm:hidden"
+                                },
+                                "key": "root.0.0.1.0.0.0.0"
+                              },
+                              {
+                                "text": "Summary",
+                                "key": "root.0.0.1.0.0.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.0.0"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "flex h-9 items-center gap-2 border-b-2 px-1 text-xs font-semibold transition-colors text-muted-foreground hover:text-foreground border-transparent",
+                              "type": "button"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-history",
+                                  "class": "lucide lucide-history size-4 sm:hidden"
+                                },
+                                "key": "root.0.0.1.0.0.1.0"
+                              },
+                              {
+                                "text": "Timeline",
+                                "key": "root.0.0.1.0.0.1.1"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.0.1"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "flex h-9 items-center gap-2 border-b-2 px-1 text-xs font-semibold transition-colors text-muted-foreground hover:text-foreground border-transparent",
+                              "type": "button"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-message-square-text",
+                                  "class": "lucide lucide-message-square-text size-4 sm:hidden"
+                                },
+                                "key": "root.0.0.1.0.0.2.0"
+                              },
+                              {
+                                "text": "Notes",
+                                "key": "root.0.0.1.0.0.2.1"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.0.2"
+                          }
+                        ],
+                        "key": "root.0.0.1.0.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "mt-6"
+                        },
+                        "children": [
+                          {
+                            "tag": "dl",
+                            "attrs": {
+                              "class": "mt-4 grid grid-cols-2 gap-x-5 gap-y-7 sm:grid-cols-3"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "dt",
+                                    "attrs": {
+                                      "class": "text-muted-foreground text-xs"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Contract value",
+                                        "key": "root.0.0.1.0.1.0.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.1.0.0.0"
+                                  },
+                                  {
+                                    "tag": "dd",
+                                    "attrs": {
+                                      "class": "mt-2 text-[15px] font-semibold tracking-tight tabular-nums text-primary"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "$4,116.64",
+                                        "key": "root.0.0.1.0.1.0.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.1.0.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.1.0.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "dt",
+                                    "attrs": {
+                                      "class": "text-muted-foreground text-xs"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Balance to collect",
+                                        "key": "root.0.0.1.0.1.0.1.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.1.0.1.0"
+                                  },
+                                  {
+                                    "tag": "dd",
+                                    "attrs": {
+                                      "class": "mt-2 text-[15px] font-semibold tracking-tight tabular-nums"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "$1,438.64",
+                                        "key": "root.0.0.1.0.1.0.1.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.1.0.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.1.0.1"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "dt",
+                                    "attrs": {
+                                      "class": "text-muted-foreground text-xs"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Tax reserved",
+                                        "key": "root.0.0.1.0.1.0.2.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.1.0.2.0"
+                                  },
+                                  {
+                                    "tag": "dd",
+                                    "attrs": {
+                                      "class": "mt-2 text-[15px] font-semibold tracking-tight tabular-nums"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "$374.24",
+                                        "key": "root.0.0.1.0.1.0.2.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.1.0.2.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.1.0.2"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "dt",
+                                    "attrs": {
+                                      "class": "text-muted-foreground text-xs"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Collection target",
+                                        "key": "root.0.0.1.0.1.0.3.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.1.0.3.0"
+                                  },
+                                  {
+                                    "tag": "dd",
+                                    "attrs": {
+                                      "class": "mt-2 text-[15px] font-semibold tracking-tight tabular-nums"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "06/10/2026",
+                                        "key": "root.0.0.1.0.1.0.3.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.1.0.3.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.1.0.3"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "dt",
+                                    "attrs": {
+                                      "class": "text-muted-foreground text-xs"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Last receipt",
+                                        "key": "root.0.0.1.0.1.0.4.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.1.0.4.0"
+                                  },
+                                  {
+                                    "tag": "dd",
+                                    "attrs": {
+                                      "class": "mt-2 text-[15px] font-semibold tracking-tight tabular-nums"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "05/31/2026",
+                                        "key": "root.0.0.1.0.1.0.4.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.1.0.4.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.1.0.4"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "dt",
+                                    "attrs": {
+                                      "class": "text-muted-foreground text-xs"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Aging window",
+                                        "key": "root.0.0.1.0.1.0.5.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.1.0.5.0"
+                                  },
+                                  {
+                                    "tag": "dd",
+                                    "attrs": {
+                                      "class": "mt-2 text-[15px] font-semibold tracking-tight tabular-nums"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "7 days",
+                                        "key": "root.0.0.1.0.1.0.5.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.1.0.5.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.1.0.5"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.1.0"
+                          }
+                        ],
+                        "key": "root.0.0.1.0.1"
+                      },
+                      {
+                        "tag": "section",
+                        "attrs": {
+                          "class": "mt-10"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "mb-3 flex items-center justify-between gap-4"
+                            },
+                            "children": [
+                              {
+                                "tag": "h2",
+                                "attrs": {
+                                  "class": "text-base font-semibold tracking-tight"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Collections",
+                                    "key": "root.0.0.1.0.2.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.2.0.0"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border bg-background shadow-xs hover:bg-accent border-primary/45 text-primary hover:text-primary h-8 rounded-sm px-3 text-xs"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-plus",
+                                      "class": "lucide lucide-plus size-4"
+                                    },
+                                    "key": "root.0.0.1.0.2.0.1.0"
+                                  },
+                                  {
+                                    "text": "Link receipt",
+                                    "key": "root.0.0.1.0.2.0.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.2.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.2.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "divide-border border-border divide-y border-t"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "grid grid-cols-[6.25rem_1px_minmax(0,1fr)] gap-4 py-4"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {},
+                                    "children": [
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "text-[13px] font-semibold tabular-nums"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "$1,490.00",
+                                            "key": "root.0.0.1.0.2.1.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.0.2.1.0.0.0"
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "text-muted-foreground mt-1 text-xs"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Paid on 27 May",
+                                            "key": "root.0.0.1.0.2.1.0.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.0.2.1.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.2.1.0.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "bg-border my-1"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.1.0.2.1.0.1"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "min-w-0"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "text-[13px] font-semibold text-[color-mix(in_oklch,var(--primary)_78%,var(--foreground))]"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Processor match",
+                                            "key": "root.0.0.1.0.2.1.0.2.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.0.2.1.0.2.0"
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "text-muted-foreground mt-1 text-[11px]"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Stripe settlement SB-4826",
+                                            "key": "root.0.0.1.0.2.1.0.2.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.0.2.1.0.2.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.2.1.0.2"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.2.1.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "grid grid-cols-[6.25rem_1px_minmax(0,1fr)] gap-4 py-4"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {},
+                                    "children": [
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "text-[13px] font-semibold tabular-nums"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "$1,188.00",
+                                            "key": "root.0.0.1.0.2.1.1.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.0.2.1.1.0.0"
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "text-muted-foreground mt-1 text-xs"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Paid on 31 May",
+                                            "key": "root.0.0.1.0.2.1.1.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.0.2.1.1.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.2.1.1.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "bg-border my-1"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.1.0.2.1.1.1"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "min-w-0"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "text-[13px] font-semibold"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Ops reconciliation",
+                                            "key": "root.0.0.1.0.2.1.1.2.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.0.2.1.1.2.0"
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "text-muted-foreground mt-1 text-[11px]"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Bank transfer memo NS-4826",
+                                            "key": "root.0.0.1.0.2.1.1.2.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.0.2.1.1.2.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.2.1.1.2"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.2.1.1"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.2.1"
+                          }
+                        ],
+                        "key": "root.0.0.1.0.2"
+                      },
+                      {
+                        "tag": "section",
+                        "attrs": {
+                          "class": "mt-10"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "mb-3 flex items-center justify-between gap-4"
+                            },
+                            "children": [
+                              {
+                                "tag": "h2",
+                                "attrs": {
+                                  "class": "text-base font-semibold tracking-tight"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Balance adjustments",
+                                    "key": "root.0.0.1.0.3.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.3.0.0"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border bg-background shadow-xs hover:bg-accent border-primary/45 text-primary hover:text-primary h-8 rounded-sm px-3 text-xs"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-plus",
+                                      "class": "lucide lucide-plus size-4"
+                                    },
+                                    "key": "root.0.0.1.0.3.0.1.0"
+                                  },
+                                  {
+                                    "text": "Add adjustment",
+                                    "key": "root.0.0.1.0.3.0.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.3.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.3.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "border-border grid grid-cols-[minmax(0,1fr)_auto] gap-5 border-t py-4"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "p",
+                                    "attrs": {
+                                      "class": "text-[13px] font-semibold"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "CM-SB-2026-014",
+                                        "key": "root.0.0.1.0.3.1.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.3.1.0.0"
+                                  },
+                                  {
+                                    "tag": "p",
+                                    "attrs": {
+                                      "class": "text-muted-foreground mt-1 text-xs"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Issued on : 04/06/2026",
+                                        "key": "root.0.0.1.0.3.1.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.3.1.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.3.1.0"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-[13px] font-semibold tabular-nums"
+                                },
+                                "children": [
+                                  {
+                                    "text": "$97.60",
+                                    "key": "root.0.0.1.0.3.1.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.3.1.1"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.3.1"
+                          }
+                        ],
+                        "key": "root.0.0.1.0.3"
+                      }
+                    ],
+                    "key": "root.0.0.1.0"
+                  },
+                  {
+                    "tag": "aside",
+                    "attrs": {
+                      "class": "mt-14 bg-[color-mix(in_oklch,var(--muted)_55%,var(--background))] px-4 pt-8 pb-6 sm:px-6 lg:px-8"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "bg-card text-card-foreground ring-border/80 mx-auto max-w-[45rem] rounded-lg p-6 shadow-[0_18px_45px_-22px_color-mix(in_oklch,var(--foreground)_28%,transparent)] ring-1"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex items-start justify-between gap-4"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "bg-primary text-primary-foreground grid size-9 place-items-center rounded-full"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "img",
+                                    "attrs": {
+                                      "alt": "Shadcnblocks",
+                                      "width": "20",
+                                      "height": "20",
+                                      "class": "size-5 object-contain brightness-0 invert dark:invert-0",
+                                      "style": "color:transparent",
+                                      "src": "/reference/4eb49a7be0892386.svg"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.1.1.0.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.0.0.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "text-right"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "h2",
+                                    "attrs": {
+                                      "class": "text-muted-foreground text-xl font-semibold"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Invoice",
+                                        "key": "root.0.0.1.1.0.0.1.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.0.1.0"
+                                  },
+                                  {
+                                    "tag": "p",
+                                    "attrs": {
+                                      "class": "mt-2 text-xs font-bold"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Invoice No: SB-2026-084",
+                                        "key": "root.0.0.1.1.0.0.1.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.0.1.1"
+                                  },
+                                  {
+                                    "tag": "p",
+                                    "attrs": {
+                                      "class": "text-muted-foreground text-[11px]"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Date Issued : 27/05/2026",
+                                        "key": "root.0.0.1.1.0.0.1.2.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.0.1.2"
+                                  },
+                                  {
+                                    "tag": "p",
+                                    "attrs": {
+                                      "class": "text-muted-foreground text-[11px]"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Due Date : 27/06/2026",
+                                        "key": "root.0.0.1.1.0.0.1.3.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.0.1.3"
+                                  },
+                                  {
+                                    "tag": "p",
+                                    "attrs": {
+                                      "class": "text-muted-foreground text-[11px]"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Ref : NS-4826",
+                                        "key": "root.0.0.1.1.0.0.1.4.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.0.1.4"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.0.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.0.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "mt-5"
+                            },
+                            "children": [
+                              {
+                                "tag": "h3",
+                                "attrs": {
+                                  "class": "text-base font-semibold"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Shadcnblocks.com",
+                                    "key": "root.0.0.1.1.0.1.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.0.1.0"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "mt-2 text-[11px] leading-4 font-semibold uppercase"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Level 12, 45 Clarence Street",
+                                    "key": "root.0.0.1.1.0.1.1.0"
+                                  },
+                                  {
+                                    "tag": "br",
+                                    "attrs": {},
+                                    "children": [],
+                                    "key": "root.0.0.1.1.0.1.1.1"
+                                  },
+                                  {
+                                    "text": "Sydney NSW 2000",
+                                    "key": "root.0.0.1.1.0.1.1.2"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.0.1.1"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.0.1"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "mt-6 grid grid-cols-2 gap-8 text-[11px] leading-4"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "min-w-0"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "p",
+                                    "attrs": {
+                                      "class": "text-primary font-semibold"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Customer",
+                                        "key": "root.0.0.1.1.0.2.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.2.0.0"
+                                  },
+                                  {
+                                    "tag": "p",
+                                    "attrs": {
+                                      "class": "mt-2 font-bold uppercase"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "NORTHSTAR STUDIO",
+                                        "key": "root.0.0.1.1.0.2.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.2.0.1"
+                                  },
+                                  {
+                                    "tag": "p",
+                                    "attrs": {
+                                      "class": "text-muted-foreground font-semibold break-words uppercase"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "VAT :AU 746128932",
+                                        "key": "root.0.0.1.1.0.2.0.2.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.2.0.2"
+                                  },
+                                  {
+                                    "tag": "p",
+                                    "attrs": {
+                                      "class": "text-muted-foreground font-semibold break-words uppercase"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "18 Collins Street",
+                                        "key": "root.0.0.1.1.0.2.0.3.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.2.0.3"
+                                  },
+                                  {
+                                    "tag": "p",
+                                    "attrs": {
+                                      "class": "text-muted-foreground font-semibold break-words uppercase"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Melbourne VIC 3000",
+                                        "key": "root.0.0.1.1.0.2.0.4.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.2.0.4"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.0.2.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "min-w-0"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "p",
+                                    "attrs": {
+                                      "class": "text-primary font-semibold"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Deliver To",
+                                        "key": "root.0.0.1.1.0.2.1.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.2.1.0"
+                                  },
+                                  {
+                                    "tag": "p",
+                                    "attrs": {
+                                      "class": "mt-2 font-bold uppercase"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "OLIVIA BENNETT",
+                                        "key": "root.0.0.1.1.0.2.1.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.2.1.1"
+                                  },
+                                  {
+                                    "tag": "p",
+                                    "attrs": {
+                                      "class": "text-muted-foreground font-semibold break-words uppercase"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Product Operations",
+                                        "key": "root.0.0.1.1.0.2.1.2.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.2.1.2"
+                                  },
+                                  {
+                                    "tag": "p",
+                                    "attrs": {
+                                      "class": "text-muted-foreground font-semibold break-words uppercase"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "18 Collins Street",
+                                        "key": "root.0.0.1.1.0.2.1.3.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.2.1.3"
+                                  },
+                                  {
+                                    "tag": "p",
+                                    "attrs": {
+                                      "class": "text-muted-foreground font-semibold break-words uppercase"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Melbourne VIC 3000",
+                                        "key": "root.0.0.1.1.0.2.1.4.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.2.1.4"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.0.2.1"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.0.2"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "border-border mt-7 overflow-hidden rounded-sm border"
+                            },
+                            "children": [
+                              {
+                                "tag": "table",
+                                "attrs": {
+                                  "class": "w-full table-fixed text-left text-[10px]"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "colgroup",
+                                    "attrs": {},
+                                    "children": [
+                                      {
+                                        "tag": "col",
+                                        "attrs": {
+                                          "class": "w-[48%]"
+                                        },
+                                        "children": [],
+                                        "key": "root.0.0.1.1.0.3.0.0.0"
+                                      },
+                                      {
+                                        "tag": "col",
+                                        "attrs": {
+                                          "class": "w-[10%]"
+                                        },
+                                        "children": [],
+                                        "key": "root.0.0.1.1.0.3.0.0.1"
+                                      },
+                                      {
+                                        "tag": "col",
+                                        "attrs": {
+                                          "class": "w-[10%]"
+                                        },
+                                        "children": [],
+                                        "key": "root.0.0.1.1.0.3.0.0.2"
+                                      },
+                                      {
+                                        "tag": "col",
+                                        "attrs": {
+                                          "class": "w-[10%]"
+                                        },
+                                        "children": [],
+                                        "key": "root.0.0.1.1.0.3.0.0.3"
+                                      },
+                                      {
+                                        "tag": "col",
+                                        "attrs": {
+                                          "class": "w-[11%]"
+                                        },
+                                        "children": [],
+                                        "key": "root.0.0.1.1.0.3.0.0.4"
+                                      },
+                                      {
+                                        "tag": "col",
+                                        "attrs": {
+                                          "class": "w-[11%]"
+                                        },
+                                        "children": [],
+                                        "key": "root.0.0.1.1.0.3.0.0.5"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.3.0.0"
+                                  },
+                                  {
+                                    "tag": "thead",
+                                    "attrs": {
+                                      "class": "text-muted-foreground bg-[color-mix(in_oklch,var(--muted)_78%,var(--background))]"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "tr",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "tag": "th",
+                                            "attrs": {
+                                              "class": "px-2 py-2 font-medium"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Workstream",
+                                                "key": "root.0.0.1.1.0.3.0.1.0.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.0.3.0.1.0.0"
+                                          },
+                                          {
+                                            "tag": "th",
+                                            "attrs": {
+                                              "class": "px-2 py-2 font-medium text-right"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Seats",
+                                                "key": "root.0.0.1.1.0.3.0.1.0.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.0.3.0.1.0.1"
+                                          },
+                                          {
+                                            "tag": "th",
+                                            "attrs": {
+                                              "class": "px-2 py-2 font-medium text-right"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Rate",
+                                                "key": "root.0.0.1.1.0.3.0.1.0.2.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.0.3.0.1.0.2"
+                                          },
+                                          {
+                                            "tag": "th",
+                                            "attrs": {
+                                              "class": "px-2 py-2 font-medium text-right"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Tax",
+                                                "key": "root.0.0.1.1.0.3.0.1.0.3.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.0.3.0.1.0.3"
+                                          },
+                                          {
+                                            "tag": "th",
+                                            "attrs": {
+                                              "class": "px-2 py-2 font-medium text-right"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Credit",
+                                                "key": "root.0.0.1.1.0.3.0.1.0.4.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.0.3.0.1.0.4"
+                                          },
+                                          {
+                                            "tag": "th",
+                                            "attrs": {
+                                              "class": "px-2 py-2 font-medium text-right"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Total",
+                                                "key": "root.0.0.1.1.0.3.0.1.0.5.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.0.3.0.1.0.5"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.0.3.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.3.0.1"
+                                  },
+                                  {
+                                    "tag": "tbody",
+                                    "attrs": {
+                                      "class": "divide-border/70 divide-y"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "tr",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "tag": "td",
+                                            "attrs": {
+                                              "class": "px-2 py-2.5 align-top"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "p",
+                                                "attrs": {
+                                                  "class": "font-bold tracking-wide"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Elite lifetime workspace",
+                                                    "key": "root.0.0.1.1.0.3.0.2.0.0.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.0.3.0.2.0.0.0"
+                                              },
+                                              {
+                                                "tag": "p",
+                                                "attrs": {
+                                                  "class": "text-muted-foreground mt-1 leading-[1.25] font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Lifetime access to Shadcnblocks pro blocks and components",
+                                                    "key": "root.0.0.1.1.0.3.0.2.0.0.1.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.0.3.0.2.0.0.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.0.3.0.2.0.0"
+                                          },
+                                          {
+                                            "tag": "td",
+                                            "attrs": {
+                                              "class": "px-2 py-2.5 text-right align-top font-semibold"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "2",
+                                                "key": "root.0.0.1.1.0.3.0.2.0.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.0.3.0.2.0.1"
+                                          },
+                                          {
+                                            "tag": "td",
+                                            "attrs": {
+                                              "class": "px-2 py-2.5 text-right align-top font-semibold"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "$399.00",
+                                                "key": "root.0.0.1.1.0.3.0.2.0.2.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.0.3.0.2.0.2"
+                                          },
+                                          {
+                                            "tag": "td",
+                                            "attrs": {
+                                              "class": "px-2 py-2.5 text-right align-top font-semibold"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "10%",
+                                                "key": "root.0.0.1.1.0.3.0.2.0.3.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.0.3.0.2.0.3"
+                                          },
+                                          {
+                                            "tag": "td",
+                                            "attrs": {
+                                              "class": "px-2 py-2.5 text-right align-top font-semibold"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "0%",
+                                                "key": "root.0.0.1.1.0.3.0.2.0.4.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.0.3.0.2.0.4"
+                                          },
+                                          {
+                                            "tag": "td",
+                                            "attrs": {
+                                              "class": "px-2 py-2.5 text-right align-top font-semibold"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "$798.00",
+                                                "key": "root.0.0.1.1.0.3.0.2.0.5.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.0.3.0.2.0.5"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.0.3.0.2.0"
+                                      },
+                                      {
+                                        "tag": "tr",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "tag": "td",
+                                            "attrs": {
+                                              "class": "px-2 py-2.5 align-top"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "p",
+                                                "attrs": {
+                                                  "class": "font-bold tracking-wide"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Admin kit implementation",
+                                                    "key": "root.0.0.1.1.0.3.0.2.1.0.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.0.3.0.2.1.0.0"
+                                              },
+                                              {
+                                                "tag": "p",
+                                                "attrs": {
+                                                  "class": "text-muted-foreground mt-1 leading-[1.25] font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Dashboard shells, tables, charts, and payment processor views",
+                                                    "key": "root.0.0.1.1.0.3.0.2.1.0.1.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.0.3.0.2.1.0.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.0.3.0.2.1.0"
+                                          },
+                                          {
+                                            "tag": "td",
+                                            "attrs": {
+                                              "class": "px-2 py-2.5 text-right align-top font-semibold"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "4",
+                                                "key": "root.0.0.1.1.0.3.0.2.1.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.0.3.0.2.1.1"
+                                          },
+                                          {
+                                            "tag": "td",
+                                            "attrs": {
+                                              "class": "px-2 py-2.5 text-right align-top font-semibold"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "$540.00",
+                                                "key": "root.0.0.1.1.0.3.0.2.1.2.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.0.3.0.2.1.2"
+                                          },
+                                          {
+                                            "tag": "td",
+                                            "attrs": {
+                                              "class": "px-2 py-2.5 text-right align-top font-semibold"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "10%",
+                                                "key": "root.0.0.1.1.0.3.0.2.1.3.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.0.3.0.2.1.3"
+                                          },
+                                          {
+                                            "tag": "td",
+                                            "attrs": {
+                                              "class": "px-2 py-2.5 text-right align-top font-semibold"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "5%",
+                                                "key": "root.0.0.1.1.0.3.0.2.1.4.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.0.3.0.2.1.4"
+                                          },
+                                          {
+                                            "tag": "td",
+                                            "attrs": {
+                                              "class": "px-2 py-2.5 text-right align-top font-semibold"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "$2,052.00",
+                                                "key": "root.0.0.1.1.0.3.0.2.1.5.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.0.3.0.2.1.5"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.0.3.0.2.1"
+                                      },
+                                      {
+                                        "tag": "tr",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "tag": "td",
+                                            "attrs": {
+                                              "class": "px-2 py-2.5 align-top"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "p",
+                                                "attrs": {
+                                                  "class": "font-bold tracking-wide"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Figma kit handoff",
+                                                    "key": "root.0.0.1.1.0.3.0.2.2.0.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.0.3.0.2.2.0.0"
+                                              },
+                                              {
+                                                "tag": "p",
+                                                "attrs": {
+                                                  "class": "text-muted-foreground mt-1 leading-[1.25] font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Design-system files, block references, and product team notes",
+                                                    "key": "root.0.0.1.1.0.3.0.2.2.0.1.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.0.3.0.2.2.0.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.0.3.0.2.2.0"
+                                          },
+                                          {
+                                            "tag": "td",
+                                            "attrs": {
+                                              "class": "px-2 py-2.5 text-right align-top font-semibold"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "3",
+                                                "key": "root.0.0.1.1.0.3.0.2.2.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.0.3.0.2.2.1"
+                                          },
+                                          {
+                                            "tag": "td",
+                                            "attrs": {
+                                              "class": "px-2 py-2.5 text-right align-top font-semibold"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "$330.00",
+                                                "key": "root.0.0.1.1.0.3.0.2.2.2.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.0.3.0.2.2.2"
+                                          },
+                                          {
+                                            "tag": "td",
+                                            "attrs": {
+                                              "class": "px-2 py-2.5 text-right align-top font-semibold"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "10%",
+                                                "key": "root.0.0.1.1.0.3.0.2.2.3.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.0.3.0.2.2.3"
+                                          },
+                                          {
+                                            "tag": "td",
+                                            "attrs": {
+                                              "class": "px-2 py-2.5 text-right align-top font-semibold"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "0%",
+                                                "key": "root.0.0.1.1.0.3.0.2.2.4.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.0.3.0.2.2.4"
+                                          },
+                                          {
+                                            "tag": "td",
+                                            "attrs": {
+                                              "class": "px-2 py-2.5 text-right align-top font-semibold"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "$990.00",
+                                                "key": "root.0.0.1.1.0.3.0.2.2.5.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.0.3.0.2.2.5"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.0.3.0.2.2"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.3.0.2"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.0.3.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.0.3"
+                          },
+                          {
+                            "tag": "dl",
+                            "attrs": {
+                              "class": "mt-4 ml-auto w-52 space-y-1 text-right text-[11px] font-semibold"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex justify-between gap-3"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "dt",
+                                    "attrs": {},
+                                    "children": [
+                                      {
+                                        "text": "Subtotal",
+                                        "key": "root.0.0.1.1.0.4.0.0.0"
+                                      },
+                                      {
+                                        "text": " :",
+                                        "key": "root.0.0.1.1.0.4.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.4.0.0"
+                                  },
+                                  {
+                                    "tag": "dd",
+                                    "attrs": {},
+                                    "children": [
+                                      {
+                                        "text": "$3,840.00",
+                                        "key": "root.0.0.1.1.0.4.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.4.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.0.4.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex justify-between gap-3"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "dt",
+                                    "attrs": {},
+                                    "children": [
+                                      {
+                                        "text": "Courtesy credit",
+                                        "key": "root.0.0.1.1.0.4.1.0.0"
+                                      },
+                                      {
+                                        "text": " :",
+                                        "key": "root.0.0.1.1.0.4.1.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.4.1.0"
+                                  },
+                                  {
+                                    "tag": "dd",
+                                    "attrs": {},
+                                    "children": [
+                                      {
+                                        "text": "-$97.60",
+                                        "key": "root.0.0.1.1.0.4.1.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.4.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.0.4.1"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex justify-between gap-3"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "dt",
+                                    "attrs": {},
+                                    "children": [
+                                      {
+                                        "text": "Total VAT",
+                                        "key": "root.0.0.1.1.0.4.2.0.0"
+                                      },
+                                      {
+                                        "text": " :",
+                                        "key": "root.0.0.1.1.0.4.2.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.4.2.0"
+                                  },
+                                  {
+                                    "tag": "dd",
+                                    "attrs": {},
+                                    "children": [
+                                      {
+                                        "text": "$374.24",
+                                        "key": "root.0.0.1.1.0.4.2.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.4.2.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.0.4.2"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex justify-between gap-3"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "dt",
+                                    "attrs": {},
+                                    "children": [
+                                      {
+                                        "text": "Total",
+                                        "key": "root.0.0.1.1.0.4.3.0.0"
+                                      },
+                                      {
+                                        "text": " :",
+                                        "key": "root.0.0.1.1.0.4.3.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.4.3.0"
+                                  },
+                                  {
+                                    "tag": "dd",
+                                    "attrs": {},
+                                    "children": [
+                                      {
+                                        "text": "$4,116.64",
+                                        "key": "root.0.0.1.1.0.4.3.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.4.3.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.0.4.3"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex justify-between gap-3"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "dt",
+                                    "attrs": {},
+                                    "children": [
+                                      {
+                                        "text": "Paid",
+                                        "key": "root.0.0.1.1.0.4.4.0.0"
+                                      },
+                                      {
+                                        "text": " :",
+                                        "key": "root.0.0.1.1.0.4.4.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.4.4.0"
+                                  },
+                                  {
+                                    "tag": "dd",
+                                    "attrs": {},
+                                    "children": [
+                                      {
+                                        "text": "$2,678.00",
+                                        "key": "root.0.0.1.1.0.4.4.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.4.4.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.0.4.4"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex justify-between gap-3 text-primary"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "dt",
+                                    "attrs": {},
+                                    "children": [
+                                      {
+                                        "text": "Open Due",
+                                        "key": "root.0.0.1.1.0.4.5.0.0"
+                                      },
+                                      {
+                                        "text": " :",
+                                        "key": "root.0.0.1.1.0.4.5.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.4.5.0"
+                                  },
+                                  {
+                                    "tag": "dd",
+                                    "attrs": {},
+                                    "children": [
+                                      {
+                                        "text": "$1,438.64",
+                                        "key": "root.0.0.1.1.0.4.5.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.4.5.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.0.4.5"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.0.4"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "text-muted-foreground mt-14 flex items-start gap-2 text-[10px] leading-4"
+                            },
+                            "children": [
+                              {
+                                "tag": "p",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "text": "Shadcnblocks.com, ABN : 74 612 893 204",
+                                    "key": "root.0.0.1.1.0.5.0.0"
+                                  },
+                                  {
+                                    "tag": "br",
+                                    "attrs": {},
+                                    "children": [],
+                                    "key": "root.0.0.1.1.0.5.0.1"
+                                  },
+                                  {
+                                    "text": "VAT: AU 746 128 932, Activity Type: digital design systems",
+                                    "key": "root.0.0.1.1.0.5.0.2"
+                                  },
+                                  {
+                                    "tag": "br",
+                                    "attrs": {},
+                                    "children": [],
+                                    "key": "root.0.0.1.1.0.5.0.3"
+                                  },
+                                  {
+                                    "text": "billing@shadcnblocks.com",
+                                    "key": "root.0.0.1.1.0.5.0.4"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.0.5.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.0.5"
+                          }
+                        ],
+                        "key": "root.0.0.1.1.0"
+                      }
+                    ],
+                    "key": "root.0.0.1.1"
+                  }
+                ],
+                "key": "root.0.0.1"
+              }
+            ],
+            "key": "root.0.0"
+          }
+        ],
+        "key": "root.0"
+      }
+    ],
+    "key": "root"
+  },
+  "headings": [
+    "Invoice #SB-2026-084",
+    "Collections",
+    "Balance adjustments",
+    "Invoice",
+    "Shadcnblocks.com"
+  ]
+}

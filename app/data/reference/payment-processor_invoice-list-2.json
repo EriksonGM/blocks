@@ -1,0 +1,2598 @@
+{
+  "label": "Invoice List 2",
+  "path": "/payment-processor/invoice-list-2",
+  "appTitle": "Payment Processor",
+  "tree": {
+    "tag": "div",
+    "attrs": {
+      "class": "flex min-h-0 flex-1 flex-col overflow-hidden"
+    },
+    "children": [
+      {
+        "tag": "div",
+        "attrs": {
+          "class": "flex min-h-0 flex-1 flex-col overflow-hidden"
+        },
+        "children": [
+          {
+            "tag": "main",
+            "attrs": {
+              "class": "bg-background text-foreground flex min-h-0 flex-1 overflow-hidden"
+            },
+            "children": [
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "min-h-0 w-full flex-1 overflow-y-auto"
+                },
+                "children": [
+                  {
+                    "tag": "section",
+                    "attrs": {
+                      "class": "bg-background"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "border-border border-b"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "mx-auto w-full max-w-[1500px] px-5 sm:px-8 xl:px-10 flex flex-col items-center py-8 text-center"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "text-muted-foreground text-[11px] font-bold tracking-[0.16em] uppercase"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Payment Processor ",
+                                    "key": "root.0.0.0.0.0.0.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "mx-3"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "/",
+                                        "key": "root.0.0.0.0.0.0.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.0.0.0.1"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-foreground"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Invoices",
+                                        "key": "root.0.0.0.0.0.0.0.2.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.0.0.0.2"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.0.0.0"
+                              },
+                              {
+                                "tag": "h1",
+                                "attrs": {
+                                  "class": "text-foreground mt-5 text-xl leading-7 font-semibold tracking-tight"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Invoices",
+                                    "key": "root.0.0.0.0.0.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.0.0.1"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "text-muted-foreground mt-2 inline-flex items-center gap-2 text-[13px] font-medium"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Updated few seconds ago",
+                                    "key": "root.0.0.0.0.0.0.2.0"
+                                  },
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-refresh-cw",
+                                      "class": "lucide lucide-refresh-cw size-3.5"
+                                    },
+                                    "key": "root.0.0.0.0.0.0.2.1"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.0.0.2"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "mt-5 flex flex-col gap-2 sm:flex-row"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 py-2 rounded-md h-8 px-2.5 text-[13px] md:text-[13px]",
+                                      "type": "button"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-plus",
+                                          "class": "lucide lucide-plus size-4"
+                                        },
+                                        "key": "root.0.0.0.0.0.0.3.0.0"
+                                      },
+                                      {
+                                        "text": "Create Invoice",
+                                        "key": "root.0.0.0.0.0.0.3.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.0.0.3.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-secondary text-secondary-foreground hover:bg-secondary/80 py-2 rounded-md shadow-none h-8 px-2.5 text-[13px] md:text-[13px]",
+                                      "type": "button"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-download",
+                                          "class": "lucide lucide-download size-4"
+                                        },
+                                        "key": "root.0.0.0.0.0.0.3.1.0"
+                                      },
+                                      {
+                                        "text": "Export CSV",
+                                        "key": "root.0.0.0.0.0.0.3.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.0.0.3.1"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.0.0.3"
+                              }
+                            ],
+                            "key": "root.0.0.0.0.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "border-border border-b"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "mx-auto w-full max-w-[1500px] sm:px-8 xl:px-10 grid grid-cols-2 divide-x-0 divide-y px-0 md:grid-cols-4 md:divide-x md:divide-y-0"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "px-4 py-5 text-center xl:py-6"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "text-muted-foreground text-[13px] font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Past-due balance",
+                                        "key": "root.0.0.0.0.1.0.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.1.0.0.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "text-foreground mt-3 text-2xl font-semibold tracking-tight sm:text-3xl"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "$11.6K",
+                                        "key": "root.0.0.0.0.1.0.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.1.0.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.1.0.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "px-4 py-5 text-center xl:py-6"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "text-muted-foreground text-[13px] font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Due in next 30 days",
+                                        "key": "root.0.0.0.0.1.0.1.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.1.0.1.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "text-foreground mt-3 text-2xl font-semibold tracking-tight sm:text-3xl"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "$16.9K",
+                                        "key": "root.0.0.0.0.1.0.1.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.1.0.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.1.0.1"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "px-4 py-5 text-center xl:py-6"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "text-muted-foreground text-[13px] font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Average time to pay",
+                                        "key": "root.0.0.0.0.1.0.2.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.1.0.2.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "text-foreground mt-3 text-2xl font-semibold tracking-tight sm:text-3xl"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "10",
+                                        "key": "root.0.0.0.0.1.0.2.1.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "text-muted-foreground text-base font-medium"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": " days",
+                                            "key": "root.0.0.0.0.1.0.2.1.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.0.1.0.2.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.1.0.2.1"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.1.0.2"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "px-4 py-5 text-center xl:py-6"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "text-muted-foreground text-[13px] font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Settled invoice volume",
+                                        "key": "root.0.0.0.0.1.0.3.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.1.0.3.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "text-foreground mt-3 text-2xl font-semibold tracking-tight sm:text-3xl"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "$27.2K",
+                                        "key": "root.0.0.0.0.1.0.3.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.1.0.3.1"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.1.0.3"
+                              }
+                            ],
+                            "key": "root.0.0.0.0.1.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.1"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "mx-auto w-full max-w-[1500px] px-5 sm:px-8 xl:px-10 py-6"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex flex-col gap-2 sm:flex-row sm:flex-wrap"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "class": "inline-flex items-center gap-2 whitespace-nowrap transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground py-2 justify-between rounded-md font-medium shadow-none h-8 px-2.5 text-[13px] md:text-[13px]",
+                                      "type": "button",
+                                      "aria-haspopup": "dialog",
+                                      "data-state": "closed"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-list-filter",
+                                          "class": "lucide lucide-list-filter size-4"
+                                        },
+                                        "key": "root.0.0.0.0.2.0.0.0.0"
+                                      },
+                                      {
+                                        "text": "Filter",
+                                        "key": "root.0.0.0.0.2.0.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.2.0.0.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "class": "inline-flex items-center gap-2 whitespace-nowrap transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground py-2 justify-between rounded-md font-medium shadow-none h-8 px-2.5 text-[13px] md:text-[13px]",
+                                      "type": "button",
+                                      "id": "radix-_R_2blfiv5uknmlb_",
+                                      "aria-haspopup": "menu",
+                                      "data-state": "closed"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Newest due date",
+                                        "key": "root.0.0.0.0.2.0.0.1.0"
+                                      },
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-chevron-down",
+                                          "class": "lucide lucide-chevron-down size-4"
+                                        },
+                                        "key": "root.0.0.0.0.2.0.0.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.2.0.0.1"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "class": "inline-flex items-center gap-2 whitespace-nowrap transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground py-2 justify-between rounded-md font-medium shadow-none h-8 px-2.5 text-[13px] md:text-[13px]",
+                                      "type": "button",
+                                      "aria-haspopup": "dialog",
+                                      "data-state": "closed"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Total",
+                                        "key": "root.0.0.0.0.2.0.0.2.0"
+                                      },
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-chevron-down",
+                                          "class": "lucide lucide-chevron-down size-4"
+                                        },
+                                        "key": "root.0.0.0.0.2.0.0.2.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.2.0.0.2"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "class": "inline-flex items-center gap-2 whitespace-nowrap transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground py-2 justify-between rounded-md font-medium shadow-none h-8 px-2.5 text-[13px] md:text-[13px]",
+                                      "type": "button",
+                                      "aria-haspopup": "dialog",
+                                      "data-state": "closed"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Date",
+                                        "key": "root.0.0.0.0.2.0.0.3.0"
+                                      },
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-chevron-down",
+                                          "class": "lucide lucide-chevron-down size-4"
+                                        },
+                                        "key": "root.0.0.0.0.2.0.0.3.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.2.0.0.3"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.2.0.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "relative"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-search",
+                                      "class": "lucide lucide-search text-muted-foreground absolute top-1/2 left-3 size-4 -translate-y-1/2"
+                                    },
+                                    "key": "root.0.0.0.0.2.0.1.0"
+                                  },
+                                  {
+                                    "tag": "input",
+                                    "attrs": {
+                                      "type": "search",
+                                      "class": "file:text-foreground focus-visible:ring-ring flex border px-3 py-1 transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:ring-1 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 md:text-sm border-border bg-background placeholder:text-muted-foreground h-8 w-full rounded-md pr-2.5 pl-9 text-[13px] font-medium shadow-none sm:w-[240px]",
+                                      "placeholder": "Search",
+                                      "aria-label": "Search invoices",
+                                      "value": ""
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.0.0.2.0.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.2.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.0.0.2.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "mt-4 overflow-x-auto"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "relative w-full overflow-auto"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "table",
+                                    "attrs": {
+                                      "class": "w-full caption-bottom text-sm min-w-[1120px]"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "thead",
+                                        "attrs": {
+                                          "class": "[&_tr]:border-b"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "tr",
+                                            "attrs": {
+                                              "class": "group/row data-[state=selected]:bg-muted border-b transition-colors hover:bg-transparent"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "th",
+                                                "attrs": {
+                                                  "class": "text-left align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-muted-foreground h-10 min-w-[220px] px-3 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Invoice",
+                                                    "key": "root.0.0.0.0.2.1.0.0.0.0.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.0.0.0"
+                                              },
+                                              {
+                                                "tag": "th",
+                                                "attrs": {
+                                                  "class": "text-left align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-muted-foreground h-10 min-w-[220px] px-3 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Customer",
+                                                    "key": "root.0.0.0.0.2.1.0.0.0.0.1.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.0.0.1"
+                                              },
+                                              {
+                                                "tag": "th",
+                                                "attrs": {
+                                                  "class": "text-left align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-muted-foreground h-10 min-w-[130px] px-3 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Total",
+                                                    "key": "root.0.0.0.0.2.1.0.0.0.0.2.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.0.0.2"
+                                              },
+                                              {
+                                                "tag": "th",
+                                                "attrs": {
+                                                  "class": "text-left align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-muted-foreground h-10 min-w-[120px] px-3 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Status",
+                                                    "key": "root.0.0.0.0.2.1.0.0.0.0.3.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.0.0.3"
+                                              },
+                                              {
+                                                "tag": "th",
+                                                "attrs": {
+                                                  "class": "text-left align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-muted-foreground h-10 min-w-[130px] px-3 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Amount Due",
+                                                    "key": "root.0.0.0.0.2.1.0.0.0.0.4.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.0.0.4"
+                                              },
+                                              {
+                                                "tag": "th",
+                                                "attrs": {
+                                                  "class": "text-left align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-muted-foreground h-10 min-w-[130px] px-3 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Due Date",
+                                                    "key": "root.0.0.0.0.2.1.0.0.0.0.5.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.0.0.5"
+                                              },
+                                              {
+                                                "tag": "th",
+                                                "attrs": {
+                                                  "class": "text-muted-foreground text-left align-middle font-medium [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] h-10 w-10 px-4"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "span",
+                                                    "attrs": {
+                                                      "class": "sr-only"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Actions",
+                                                        "key": "root.0.0.0.0.2.1.0.0.0.0.6.0.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.1.0.0.0.0.6.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.0.0.6"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.2.1.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.0.2.1.0.0.0"
+                                      },
+                                      {
+                                        "tag": "tbody",
+                                        "attrs": {
+                                          "class": "[&_tr:last-child]:border-0"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "tr",
+                                            "attrs": {
+                                              "class": "group/row data-[state=selected]:bg-muted transition-colors hover:bg-muted/30 border-b"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-foreground px-3 py-2.5 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "INV-7184",
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.0.0.0"
+                                                  },
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "text-muted-foreground text-xs font-normal"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Pro blocks license",
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.0.0.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.0.0.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.0.0"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-foreground px-3 py-2.5 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Northline Studio",
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.0.1.0"
+                                                  },
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "text-muted-foreground text-xs font-normal"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "billing@northline.studio",
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.0.1.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.0.1.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.0.1"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-foreground px-3 py-2.5 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "$2,499",
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.0.2.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.0.2"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] px-3 py-2.5"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "span",
+                                                    "attrs": {
+                                                      "class": "inline-flex h-6 items-center gap-1.5 rounded-md border px-2 text-xs font-medium border-blue-600/20 bg-background text-blue-700 dark:text-blue-400"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "icon",
+                                                        "attrs": {
+                                                          "name": "i-lucide-send",
+                                                          "class": "lucide lucide-send size-3.5"
+                                                        },
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.0.3.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {},
+                                                        "children": [
+                                                          {
+                                                            "text": "Sent",
+                                                            "key": "root.0.0.0.0.2.1.0.0.1.0.3.0.1.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.0.3.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.0.3.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.0.3"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-foreground px-3 py-2.5 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "$2,499",
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.0.4.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.0.4"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-foreground px-3 py-2.5 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Jul 12, 2026",
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.0.5.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.0.5"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] w-10 px-4 py-2.5 text-right"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "button",
+                                                    "attrs": {
+                                                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:text-accent-foreground text-foreground hover:bg-muted size-8 rounded-md",
+                                                      "type": "button"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {
+                                                          "class": "sr-only"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "Actions for ",
+                                                            "key": "root.0.0.0.0.2.1.0.0.1.0.6.0.0.0"
+                                                          },
+                                                          {
+                                                            "text": "INV-7184",
+                                                            "key": "root.0.0.0.0.2.1.0.0.1.0.6.0.0.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.0.6.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "icon",
+                                                        "attrs": {
+                                                          "name": "i-lucide-ellipsis",
+                                                          "class": "lucide lucide-ellipsis size-4"
+                                                        },
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.0.6.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.0.6.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.0.6"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.2.1.0.0.1.0"
+                                          },
+                                          {
+                                            "tag": "tr",
+                                            "attrs": {
+                                              "class": "group/row data-[state=selected]:bg-muted transition-colors hover:bg-muted/30 border-b"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-foreground px-3 py-2.5 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "INV-7172",
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.1.0.0"
+                                                  },
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "text-muted-foreground text-xs font-normal"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Subscription recovery flow",
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.1.0.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.1.0.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.1.0"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-foreground px-3 py-2.5 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Verdant Systems",
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.1.1.0"
+                                                  },
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "text-muted-foreground text-xs font-normal"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "receipts@verdant.systems",
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.1.1.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.1.1.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.1.1"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-foreground px-3 py-2.5 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "$11,240",
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.1.2.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.1.2"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] px-3 py-2.5"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "span",
+                                                    "attrs": {
+                                                      "class": "inline-flex h-6 items-center gap-1.5 rounded-md border px-2 text-xs font-medium border-blue-600/20 bg-background text-blue-700 dark:text-blue-400"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "icon",
+                                                        "attrs": {
+                                                          "name": "i-lucide-send",
+                                                          "class": "lucide lucide-send size-3.5"
+                                                        },
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.1.3.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {},
+                                                        "children": [
+                                                          {
+                                                            "text": "Sent",
+                                                            "key": "root.0.0.0.0.2.1.0.0.1.1.3.0.1.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.1.3.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.1.3.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.1.3"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-foreground px-3 py-2.5 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "$11,240",
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.1.4.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.1.4"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-foreground px-3 py-2.5 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Jun 30, 2026",
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.1.5.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.1.5"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] w-10 px-4 py-2.5 text-right"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "button",
+                                                    "attrs": {
+                                                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:text-accent-foreground text-foreground hover:bg-muted size-8 rounded-md",
+                                                      "type": "button"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {
+                                                          "class": "sr-only"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "Actions for ",
+                                                            "key": "root.0.0.0.0.2.1.0.0.1.1.6.0.0.0"
+                                                          },
+                                                          {
+                                                            "text": "INV-7172",
+                                                            "key": "root.0.0.0.0.2.1.0.0.1.1.6.0.0.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.1.6.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "icon",
+                                                        "attrs": {
+                                                          "name": "i-lucide-ellipsis",
+                                                          "class": "lucide lucide-ellipsis size-4"
+                                                        },
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.1.6.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.1.6.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.1.6"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.2.1.0.0.1.1"
+                                          },
+                                          {
+                                            "tag": "tr",
+                                            "attrs": {
+                                              "class": "group/row data-[state=selected]:bg-muted transition-colors hover:bg-muted/30 border-b"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-foreground px-3 py-2.5 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "INV-7183",
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.2.0.0"
+                                                  },
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "text-muted-foreground text-xs font-normal"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Admin kit integration",
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.2.0.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.2.0.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.2.0"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-foreground px-3 py-2.5 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Vela Design Co.",
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.2.1.0"
+                                                  },
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "text-muted-foreground text-xs font-normal"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "finance@veladesign.co",
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.2.1.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.2.1.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.2.1"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-foreground px-3 py-2.5 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "$8,400",
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.2.2.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.2.2"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] px-3 py-2.5"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "span",
+                                                    "attrs": {
+                                                      "class": "inline-flex h-6 items-center gap-1.5 rounded-md border px-2 text-xs font-medium border-emerald-600/20 bg-background text-emerald-700 dark:text-emerald-400"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "icon",
+                                                        "attrs": {
+                                                          "name": "i-lucide-check",
+                                                          "class": "lucide lucide-check size-3.5"
+                                                        },
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.2.3.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {},
+                                                        "children": [
+                                                          {
+                                                            "text": "Paid",
+                                                            "key": "root.0.0.0.0.2.1.0.0.1.2.3.0.1.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.2.3.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.2.3.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.2.3"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-foreground px-3 py-2.5 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "$0",
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.2.4.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.2.4"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-foreground px-3 py-2.5 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Jun 28, 2026",
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.2.5.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.2.5"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] w-10 px-4 py-2.5 text-right"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "button",
+                                                    "attrs": {
+                                                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:text-accent-foreground text-foreground hover:bg-muted size-8 rounded-md",
+                                                      "type": "button"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {
+                                                          "class": "sr-only"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "Actions for ",
+                                                            "key": "root.0.0.0.0.2.1.0.0.1.2.6.0.0.0"
+                                                          },
+                                                          {
+                                                            "text": "INV-7183",
+                                                            "key": "root.0.0.0.0.2.1.0.0.1.2.6.0.0.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.2.6.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "icon",
+                                                        "attrs": {
+                                                          "name": "i-lucide-ellipsis",
+                                                          "class": "lucide lucide-ellipsis size-4"
+                                                        },
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.2.6.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.2.6.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.2.6"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.2.1.0.0.1.2"
+                                          },
+                                          {
+                                            "tag": "tr",
+                                            "attrs": {
+                                              "class": "group/row data-[state=selected]:bg-muted transition-colors hover:bg-muted/30 border-b"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-foreground px-3 py-2.5 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "INV-7180",
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.3.0.0"
+                                                  },
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "text-muted-foreground text-xs font-normal"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Figma kit handoff",
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.3.0.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.3.0.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.3.0"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-foreground px-3 py-2.5 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Argent Labs",
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.3.1.0"
+                                                  },
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "text-muted-foreground text-xs font-normal"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "billing@argentlabs.dev",
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.3.1.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.3.1.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.3.1"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-foreground px-3 py-2.5 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "$1,950",
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.3.2.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.3.2"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] px-3 py-2.5"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "span",
+                                                    "attrs": {
+                                                      "class": "inline-flex h-6 items-center gap-1.5 rounded-md border px-2 text-xs font-medium border-zinc-500/30 bg-background text-zinc-700 dark:text-zinc-300"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "icon",
+                                                        "attrs": {
+                                                          "name": "i-lucide-clock-3",
+                                                          "class": "lucide lucide-clock3 lucide-clock-3 size-3.5"
+                                                        },
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.3.3.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {},
+                                                        "children": [
+                                                          {
+                                                            "text": "Draft",
+                                                            "key": "root.0.0.0.0.2.1.0.0.1.3.3.0.1.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.3.3.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.3.3.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.3.3"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-foreground px-3 py-2.5 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "$1,950",
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.3.4.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.3.4"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-foreground px-3 py-2.5 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Jun 24, 2026",
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.3.5.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.3.5"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] w-10 px-4 py-2.5 text-right"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "button",
+                                                    "attrs": {
+                                                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:text-accent-foreground text-foreground hover:bg-muted size-8 rounded-md",
+                                                      "type": "button"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {
+                                                          "class": "sr-only"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "Actions for ",
+                                                            "key": "root.0.0.0.0.2.1.0.0.1.3.6.0.0.0"
+                                                          },
+                                                          {
+                                                            "text": "INV-7180",
+                                                            "key": "root.0.0.0.0.2.1.0.0.1.3.6.0.0.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.3.6.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "icon",
+                                                        "attrs": {
+                                                          "name": "i-lucide-ellipsis",
+                                                          "class": "lucide lucide-ellipsis size-4"
+                                                        },
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.3.6.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.3.6.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.3.6"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.2.1.0.0.1.3"
+                                          },
+                                          {
+                                            "tag": "tr",
+                                            "attrs": {
+                                              "class": "group/row data-[state=selected]:bg-muted transition-colors hover:bg-muted/30 border-b"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-foreground px-3 py-2.5 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "INV-7177",
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.4.0.0"
+                                                  },
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "text-muted-foreground text-xs font-normal"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Payment portal polish",
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.4.0.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.4.0.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.4.0"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-foreground px-3 py-2.5 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Rune Atelier",
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.4.1.0"
+                                                  },
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "text-muted-foreground text-xs font-normal"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "studio@runeatelier.com",
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.4.1.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.4.1.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.4.1"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-foreground px-3 py-2.5 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "$4,120",
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.4.2.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.4.2"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] px-3 py-2.5"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "span",
+                                                    "attrs": {
+                                                      "class": "inline-flex h-6 items-center gap-1.5 rounded-md border px-2 text-xs font-medium border-blue-600/20 bg-background text-blue-700 dark:text-blue-400"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "icon",
+                                                        "attrs": {
+                                                          "name": "i-lucide-send",
+                                                          "class": "lucide lucide-send size-3.5"
+                                                        },
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.4.3.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {},
+                                                        "children": [
+                                                          {
+                                                            "text": "Sent",
+                                                            "key": "root.0.0.0.0.2.1.0.0.1.4.3.0.1.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.4.3.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.4.3.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.4.3"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-foreground px-3 py-2.5 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "$1,200",
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.4.4.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.4.4"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-foreground px-3 py-2.5 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Jun 20, 2026",
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.4.5.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.4.5"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] w-10 px-4 py-2.5 text-right"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "button",
+                                                    "attrs": {
+                                                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:text-accent-foreground text-foreground hover:bg-muted size-8 rounded-md",
+                                                      "type": "button"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {
+                                                          "class": "sr-only"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "Actions for ",
+                                                            "key": "root.0.0.0.0.2.1.0.0.1.4.6.0.0.0"
+                                                          },
+                                                          {
+                                                            "text": "INV-7177",
+                                                            "key": "root.0.0.0.0.2.1.0.0.1.4.6.0.0.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.4.6.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "icon",
+                                                        "attrs": {
+                                                          "name": "i-lucide-ellipsis",
+                                                          "class": "lucide lucide-ellipsis size-4"
+                                                        },
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.4.6.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.4.6.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.4.6"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.2.1.0.0.1.4"
+                                          },
+                                          {
+                                            "tag": "tr",
+                                            "attrs": {
+                                              "class": "group/row data-[state=selected]:bg-muted transition-colors hover:bg-muted/30 border-b"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-foreground px-3 py-2.5 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "INV-7182",
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.5.0.0"
+                                                  },
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "text-muted-foreground text-xs font-normal"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Template migration",
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.5.0.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.5.0.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.5.0"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-foreground px-3 py-2.5 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Harborline Apps",
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.5.1.0"
+                                                  },
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "text-muted-foreground text-xs font-normal"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "ap@harborline.app",
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.5.1.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.5.1.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.5.1"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-foreground px-3 py-2.5 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "$3,180",
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.5.2.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.5.2"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] px-3 py-2.5"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "span",
+                                                    "attrs": {
+                                                      "class": "inline-flex h-6 items-center gap-1.5 rounded-md border px-2 text-xs font-medium border-red-600/20 bg-background text-red-700 dark:text-red-400"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "icon",
+                                                        "attrs": {
+                                                          "name": "i-lucide-triangle-alert",
+                                                          "class": "lucide lucide-triangle-alert size-3.5"
+                                                        },
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.5.3.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {},
+                                                        "children": [
+                                                          {
+                                                            "text": "Overdue",
+                                                            "key": "root.0.0.0.0.2.1.0.0.1.5.3.0.1.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.5.3.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.5.3.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.5.3"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-foreground px-3 py-2.5 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "$3,180",
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.5.4.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.5.4"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-foreground px-3 py-2.5 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Jun 12, 2026",
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.5.5.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.5.5"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] w-10 px-4 py-2.5 text-right"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "button",
+                                                    "attrs": {
+                                                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:text-accent-foreground text-foreground hover:bg-muted size-8 rounded-md",
+                                                      "type": "button"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {
+                                                          "class": "sr-only"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "Actions for ",
+                                                            "key": "root.0.0.0.0.2.1.0.0.1.5.6.0.0.0"
+                                                          },
+                                                          {
+                                                            "text": "INV-7182",
+                                                            "key": "root.0.0.0.0.2.1.0.0.1.5.6.0.0.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.5.6.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "icon",
+                                                        "attrs": {
+                                                          "name": "i-lucide-ellipsis",
+                                                          "class": "lucide lucide-ellipsis size-4"
+                                                        },
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.5.6.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.5.6.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.5.6"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.2.1.0.0.1.5"
+                                          },
+                                          {
+                                            "tag": "tr",
+                                            "attrs": {
+                                              "class": "group/row data-[state=selected]:bg-muted transition-colors hover:bg-muted/30 border-b"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-foreground px-3 py-2.5 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "INV-7181",
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.6.0.0"
+                                                  },
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "text-muted-foreground text-xs font-normal"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Duplicate component order",
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.6.0.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.6.0.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.6.0"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-foreground px-3 py-2.5 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Pollen Interface",
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.6.1.0"
+                                                  },
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "text-muted-foreground text-xs font-normal"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "ops@polleninterface.com",
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.6.1.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.6.1.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.6.1"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-foreground px-3 py-2.5 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "$899",
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.6.2.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.6.2"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] px-3 py-2.5"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "span",
+                                                    "attrs": {
+                                                      "class": "inline-flex h-6 items-center gap-1.5 rounded-md border px-2 text-xs font-medium border-muted-foreground/20 bg-background text-muted-foreground"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "icon",
+                                                        "attrs": {
+                                                          "name": "i-lucide-circle-x",
+                                                          "class": "lucide lucide-circle-x size-3.5"
+                                                        },
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.6.3.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {},
+                                                        "children": [
+                                                          {
+                                                            "text": "Void",
+                                                            "key": "root.0.0.0.0.2.1.0.0.1.6.3.0.1.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.6.3.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.6.3.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.6.3"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-foreground px-3 py-2.5 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "$0",
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.6.4.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.6.4"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-foreground px-3 py-2.5 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Jun 8, 2026",
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.6.5.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.6.5"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] w-10 px-4 py-2.5 text-right"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "button",
+                                                    "attrs": {
+                                                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:text-accent-foreground text-foreground hover:bg-muted size-8 rounded-md",
+                                                      "type": "button"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {
+                                                          "class": "sr-only"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "Actions for ",
+                                                            "key": "root.0.0.0.0.2.1.0.0.1.6.6.0.0.0"
+                                                          },
+                                                          {
+                                                            "text": "INV-7181",
+                                                            "key": "root.0.0.0.0.2.1.0.0.1.6.6.0.0.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.6.6.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "icon",
+                                                        "attrs": {
+                                                          "name": "i-lucide-ellipsis",
+                                                          "class": "lucide lucide-ellipsis size-4"
+                                                        },
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.6.6.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.6.6.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.6.6"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.2.1.0.0.1.6"
+                                          },
+                                          {
+                                            "tag": "tr",
+                                            "attrs": {
+                                              "class": "group/row data-[state=selected]:bg-muted transition-colors hover:bg-muted/30 border-b"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-foreground px-3 py-2.5 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "INV-7179",
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.7.0.0"
+                                                  },
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "text-muted-foreground text-xs font-normal"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Lifetime access bundle",
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.7.0.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.7.0.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.7.0"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-foreground px-3 py-2.5 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Cedar UI Works",
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.7.1.0"
+                                                  },
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "text-muted-foreground text-xs font-normal"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "receipts@cedarui.works",
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.7.1.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.7.1.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.7.1"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-foreground px-3 py-2.5 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "$6,800",
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.7.2.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.7.2"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] px-3 py-2.5"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "span",
+                                                    "attrs": {
+                                                      "class": "inline-flex h-6 items-center gap-1.5 rounded-md border px-2 text-xs font-medium border-emerald-600/20 bg-background text-emerald-700 dark:text-emerald-400"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "icon",
+                                                        "attrs": {
+                                                          "name": "i-lucide-check",
+                                                          "class": "lucide lucide-check size-3.5"
+                                                        },
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.7.3.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {},
+                                                        "children": [
+                                                          {
+                                                            "text": "Paid",
+                                                            "key": "root.0.0.0.0.2.1.0.0.1.7.3.0.1.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.7.3.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.7.3.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.7.3"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-foreground px-3 py-2.5 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "$0",
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.7.4.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.7.4"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-foreground px-3 py-2.5 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Jun 3, 2026",
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.7.5.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.7.5"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] w-10 px-4 py-2.5 text-right"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "button",
+                                                    "attrs": {
+                                                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:text-accent-foreground text-foreground hover:bg-muted size-8 rounded-md",
+                                                      "type": "button"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {
+                                                          "class": "sr-only"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "Actions for ",
+                                                            "key": "root.0.0.0.0.2.1.0.0.1.7.6.0.0.0"
+                                                          },
+                                                          {
+                                                            "text": "INV-7179",
+                                                            "key": "root.0.0.0.0.2.1.0.0.1.7.6.0.0.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.7.6.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "icon",
+                                                        "attrs": {
+                                                          "name": "i-lucide-ellipsis",
+                                                          "class": "lucide lucide-ellipsis size-4"
+                                                        },
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.7.6.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.7.6.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.7.6"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.2.1.0.0.1.7"
+                                          },
+                                          {
+                                            "tag": "tr",
+                                            "attrs": {
+                                              "class": "group/row data-[state=selected]:bg-muted transition-colors hover:bg-muted/30 border-b"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-foreground px-3 py-2.5 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "INV-7178",
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.8.0.0"
+                                                  },
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "text-muted-foreground text-xs font-normal"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Private block request",
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.8.0.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.8.0.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.8.0"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-foreground px-3 py-2.5 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "North Pier Digital",
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.8.1.0"
+                                                  },
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "text-muted-foreground text-xs font-normal"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "accounts@northpier.digital",
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.8.1.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.8.1.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.8.1"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-foreground px-3 py-2.5 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "$2,750",
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.8.2.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.8.2"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] px-3 py-2.5"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "span",
+                                                    "attrs": {
+                                                      "class": "inline-flex h-6 items-center gap-1.5 rounded-md border px-2 text-xs font-medium border-red-600/20 bg-background text-red-700 dark:text-red-400"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "icon",
+                                                        "attrs": {
+                                                          "name": "i-lucide-triangle-alert",
+                                                          "class": "lucide lucide-triangle-alert size-3.5"
+                                                        },
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.8.3.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {},
+                                                        "children": [
+                                                          {
+                                                            "text": "Overdue",
+                                                            "key": "root.0.0.0.0.2.1.0.0.1.8.3.0.1.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.8.3.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.8.3.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.8.3"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-foreground px-3 py-2.5 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "$2,750",
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.8.4.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.8.4"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-foreground px-3 py-2.5 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "May 25, 2026",
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.8.5.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.8.5"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] w-10 px-4 py-2.5 text-right"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "button",
+                                                    "attrs": {
+                                                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:text-accent-foreground text-foreground hover:bg-muted size-8 rounded-md",
+                                                      "type": "button"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {
+                                                          "class": "sr-only"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "Actions for ",
+                                                            "key": "root.0.0.0.0.2.1.0.0.1.8.6.0.0.0"
+                                                          },
+                                                          {
+                                                            "text": "INV-7178",
+                                                            "key": "root.0.0.0.0.2.1.0.0.1.8.6.0.0.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.8.6.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "icon",
+                                                        "attrs": {
+                                                          "name": "i-lucide-ellipsis",
+                                                          "class": "lucide lucide-ellipsis size-4"
+                                                        },
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.8.6.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.8.6.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.8.6"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.2.1.0.0.1.8"
+                                          },
+                                          {
+                                            "tag": "tr",
+                                            "attrs": {
+                                              "class": "group/row data-[state=selected]:bg-muted transition-colors hover:bg-muted/30 border-b"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-foreground px-3 py-2.5 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "INV-7176",
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.9.0.0"
+                                                  },
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "text-muted-foreground text-xs font-normal"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Audit dashboard blocks",
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.9.0.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.9.0.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.9.0"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-foreground px-3 py-2.5 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Prism Labs",
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.9.1.0"
+                                                  },
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "text-muted-foreground text-xs font-normal"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "finance@prismlabs.dev",
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.9.1.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.9.1.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.9.1"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-foreground px-3 py-2.5 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "$5,400",
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.9.2.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.9.2"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] px-3 py-2.5"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "span",
+                                                    "attrs": {
+                                                      "class": "inline-flex h-6 items-center gap-1.5 rounded-md border px-2 text-xs font-medium border-emerald-600/20 bg-background text-emerald-700 dark:text-emerald-400"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "icon",
+                                                        "attrs": {
+                                                          "name": "i-lucide-check",
+                                                          "class": "lucide lucide-check size-3.5"
+                                                        },
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.9.3.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {},
+                                                        "children": [
+                                                          {
+                                                            "text": "Paid",
+                                                            "key": "root.0.0.0.0.2.1.0.0.1.9.3.0.1.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.9.3.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.9.3.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.9.3"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-foreground px-3 py-2.5 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "$0",
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.9.4.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.9.4"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-foreground px-3 py-2.5 text-sm font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "May 14, 2026",
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.9.5.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.9.5"
+                                              },
+                                              {
+                                                "tag": "td",
+                                                "attrs": {
+                                                  "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] w-10 px-4 py-2.5 text-right"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "button",
+                                                    "attrs": {
+                                                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:text-accent-foreground text-foreground hover:bg-muted size-8 rounded-md",
+                                                      "type": "button"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {
+                                                          "class": "sr-only"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "Actions for ",
+                                                            "key": "root.0.0.0.0.2.1.0.0.1.9.6.0.0.0"
+                                                          },
+                                                          {
+                                                            "text": "INV-7176",
+                                                            "key": "root.0.0.0.0.2.1.0.0.1.9.6.0.0.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.9.6.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "icon",
+                                                        "attrs": {
+                                                          "name": "i-lucide-ellipsis",
+                                                          "class": "lucide lucide-ellipsis size-4"
+                                                        },
+                                                        "key": "root.0.0.0.0.2.1.0.0.1.9.6.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.2.1.0.0.1.9.6.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.2.1.0.0.1.9.6"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.2.1.0.0.1.9"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.0.2.1.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.2.1.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.2.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.0.0.2.1"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "mt-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "text-foreground text-[13px] font-medium"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Showing ",
+                                    "key": "root.0.0.0.0.2.2.0.0"
+                                  },
+                                  {
+                                    "text": "1",
+                                    "key": "root.0.0.0.0.2.2.0.1"
+                                  },
+                                  {
+                                    "text": " to",
+                                    "key": "root.0.0.0.0.2.2.0.2"
+                                  },
+                                  {
+                                    "text": "10",
+                                    "key": "root.0.0.0.0.2.2.0.3"
+                                  },
+                                  {
+                                    "text": " of ",
+                                    "key": "root.0.0.0.0.2.2.0.4"
+                                  },
+                                  {
+                                    "text": "15",
+                                    "key": "root.0.0.0.0.2.2.0.5"
+                                  },
+                                  {
+                                    "text": " results",
+                                    "key": "root.0.0.0.0.2.2.0.6"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.2.2.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-center gap-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground py-2 rounded-md font-medium shadow-none h-8 px-2.5 text-[13px] md:text-[13px]",
+                                      "type": "button",
+                                      "id": "radix-_R_1nlfiv5uknmlb_",
+                                      "aria-haspopup": "menu",
+                                      "data-state": "closed"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "10",
+                                        "key": "root.0.0.0.0.2.2.1.0.0"
+                                      },
+                                      {
+                                        "text": " per page",
+                                        "key": "root.0.0.0.0.2.2.1.0.1"
+                                      },
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-chevron-down",
+                                          "class": "lucide lucide-chevron-down size-4"
+                                        },
+                                        "key": "root.0.0.0.0.2.2.1.0.2"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.2.2.1.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground py-2 rounded-md font-medium shadow-none h-8 px-2.5 text-[13px] md:text-[13px]",
+                                      "type": "button",
+                                      "disabled": ""
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Previous",
+                                        "key": "root.0.0.0.0.2.2.1.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.2.2.1.1"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground py-2 rounded-md font-medium shadow-none h-8 px-2.5 text-[13px] md:text-[13px]",
+                                      "type": "button"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Next",
+                                        "key": "root.0.0.0.0.2.2.1.2.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.2.2.1.2"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.2.2.1"
+                              }
+                            ],
+                            "key": "root.0.0.0.0.2.2"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.2"
+                      }
+                    ],
+                    "key": "root.0.0.0.0"
+                  }
+                ],
+                "key": "root.0.0.0"
+              }
+            ],
+            "key": "root.0.0"
+          }
+        ],
+        "key": "root.0"
+      }
+    ],
+    "key": "root"
+  },
+  "headings": [
+    "Invoices"
+  ]
+}

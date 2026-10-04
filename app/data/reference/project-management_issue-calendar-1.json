@@ -1,0 +1,3643 @@
+{
+  "label": "Issue Calendar 1",
+  "path": "/project-management/issue-calendar-1",
+  "appTitle": "Project Management",
+  "tree": {
+    "tag": "div",
+    "attrs": {
+      "class": "flex h-full flex-col overflow-hidden"
+    },
+    "children": [
+      {
+        "tag": "div",
+        "attrs": {
+          "class": "flex min-h-0 flex-1 flex-col overflow-hidden"
+        },
+        "children": [
+          {
+            "tag": "main",
+            "attrs": {
+              "class": "bg-background flex h-full min-h-0 flex-1 flex-col overflow-hidden"
+            },
+            "children": [
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "border-b"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "flex min-h-14 items-center gap-4 px-4 sm:px-6"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "no-scrollbar flex min-w-0 flex-1 items-center overflow-x-auto"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex shrink-0 items-center gap-2 pr-1"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "bg-muted text-foreground flex size-7 items-center justify-center rounded-md"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-folder-kanban",
+                                      "class": "lucide lucide-folder-kanban size-4"
+                                    },
+                                    "key": "root.0.0.0.0.0.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.0.0.0"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-foreground/85 max-w-48 truncate px-2 text-[14px] font-medium"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Renewal Forecast Console",
+                                    "key": "root.0.0.0.0.0.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.0.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.0.0.0.0"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent text-muted-foreground hover:text-foreground size-8 shrink-0 rounded-md",
+                              "aria-label": "Project options"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-ellipsis",
+                                  "class": "lucide lucide-ellipsis size-4"
+                                },
+                                "key": "root.0.0.0.0.0.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.0.0.0.1"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "mx-4 h-5 w-px shrink-0 border-l"
+                            },
+                            "children": [],
+                            "key": "root.0.0.0.0.0.2"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex items-center gap-1"
+                            },
+                            "children": [
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "type": "button",
+                                  "class": "relative z-10 flex items-center rounded-md px-2 py-1.5 text-[13px] font-medium transition-colors bg-muted text-foreground"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Issues",
+                                    "key": "root.0.0.0.0.0.3.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "bg-foreground absolute bottom-[-14px] left-1/2 h-0.5 w-[80%] -translate-x-1/2 rounded-t-md"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.0.0.0.3.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.0.3.0"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "type": "button",
+                                  "class": "relative z-10 flex items-center rounded-md px-2 py-1.5 text-[13px] font-medium transition-colors text-muted-foreground hover:bg-muted/50 hover:text-foreground"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Cycles",
+                                    "key": "root.0.0.0.0.0.3.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.0.3.1"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "type": "button",
+                                  "class": "relative z-10 flex items-center rounded-md px-2 py-1.5 text-[13px] font-medium transition-colors text-muted-foreground hover:bg-muted/50 hover:text-foreground"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Modules",
+                                    "key": "root.0.0.0.0.0.3.2.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.0.3.2"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "type": "button",
+                                  "class": "relative z-10 flex items-center rounded-md px-2 py-1.5 text-[13px] font-medium transition-colors text-muted-foreground hover:bg-muted/50 hover:text-foreground"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Views",
+                                    "key": "root.0.0.0.0.0.3.3.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.0.3.3"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "type": "button",
+                                  "class": "relative z-10 flex items-center rounded-md px-2 py-1.5 text-[13px] font-medium transition-colors text-muted-foreground hover:bg-muted/50 hover:text-foreground"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Pages",
+                                    "key": "root.0.0.0.0.0.3.4.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.0.3.4"
+                              }
+                            ],
+                            "key": "root.0.0.0.0.0.3"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex shrink-0 items-center gap-2"
+                        },
+                        "children": [
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground size-8",
+                              "aria-label": "Filter issues",
+                              "type": "button",
+                              "id": "radix-_R_olfiv5uknmlb_",
+                              "aria-haspopup": "menu",
+                              "data-state": "closed"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-sliders-horizontal",
+                                  "class": "lucide lucide-sliders-horizontal size-3.5"
+                                },
+                                "key": "root.0.0.0.0.1.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.0.0.1.0"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "inline-flex items-center justify-center whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 rounded-md px-3 text-xs h-8 shrink-0 gap-1.5"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-plus",
+                                  "class": "lucide lucide-plus size-3.5"
+                                },
+                                "key": "root.0.0.0.0.1.1.0"
+                              },
+                              {
+                                "text": "Add issue",
+                                "key": "root.0.0.0.0.1.1.1"
+                              }
+                            ],
+                            "key": "root.0.0.0.0.1.1"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.1"
+                      }
+                    ],
+                    "key": "root.0.0.0.0"
+                  }
+                ],
+                "key": "root.0.0.0"
+              },
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "flex min-h-14 items-center justify-between gap-3 border-b px-4 sm:px-6"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "flex min-w-0 items-center gap-2"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "text-foreground shrink-0 text-[18px] font-semibold"
+                        },
+                        "children": [
+                          {
+                            "text": "April 2026",
+                            "key": "root.0.0.1.0.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.1.0.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex items-center gap-1"
+                        },
+                        "children": [
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-8 rounded-md",
+                              "aria-label": "Previous range"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-chevron-left",
+                                  "class": "lucide lucide-chevron-left size-4"
+                                },
+                                "key": "root.0.0.1.0.1.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.1.0"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-8 rounded-md",
+                              "aria-label": "Next range"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-chevron-right",
+                                  "class": "lucide lucide-chevron-right size-4"
+                                },
+                                "key": "root.0.0.1.0.1.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.1.1"
+                          }
+                        ],
+                        "key": "root.0.0.1.0.1"
+                      }
+                    ],
+                    "key": "root.0.0.1.0"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "flex shrink-0 items-center gap-2"
+                    },
+                    "children": [
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "type": "button",
+                          "class": "hover:bg-muted rounded-md px-2.5 py-1 text-[13px] font-medium capitalize transition-colors bg-muted text-foreground"
+                        },
+                        "children": [
+                          {
+                            "text": "month",
+                            "key": "root.0.0.1.1.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.1.1.0"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "type": "button",
+                          "class": "hover:bg-muted rounded-md px-2.5 py-1 text-[13px] font-medium capitalize transition-colors"
+                        },
+                        "children": [
+                          {
+                            "text": "week",
+                            "key": "root.0.0.1.1.1.0"
+                          }
+                        ],
+                        "key": "root.0.0.1.1.1"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "type": "button",
+                          "class": "hover:bg-muted rounded-md px-2.5 py-1 text-[13px] font-medium transition-colors"
+                        },
+                        "children": [
+                          {
+                            "text": "Today",
+                            "key": "root.0.0.1.1.2.0"
+                          }
+                        ],
+                        "key": "root.0.0.1.1.2"
+                      }
+                    ],
+                    "key": "root.0.0.1.1"
+                  }
+                ],
+                "key": "root.0.0.1"
+              },
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "flex-1 overflow-auto"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "grid grid-cols-7 border-b bg-zinc-50/80 dark:bg-zinc-950/60"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex h-12 items-center justify-end border-r px-4 text-[13px] font-medium text-zinc-700 last:border-r-0 dark:text-zinc-300"
+                        },
+                        "children": [
+                          {
+                            "text": "Mon",
+                            "key": "root.0.0.2.0.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.2.0.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex h-12 items-center justify-end border-r px-4 text-[13px] font-medium text-zinc-700 last:border-r-0 dark:text-zinc-300"
+                        },
+                        "children": [
+                          {
+                            "text": "Tue",
+                            "key": "root.0.0.2.0.1.0"
+                          }
+                        ],
+                        "key": "root.0.0.2.0.1"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex h-12 items-center justify-end border-r px-4 text-[13px] font-medium text-zinc-700 last:border-r-0 dark:text-zinc-300"
+                        },
+                        "children": [
+                          {
+                            "text": "Wed",
+                            "key": "root.0.0.2.0.2.0"
+                          }
+                        ],
+                        "key": "root.0.0.2.0.2"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex h-12 items-center justify-end border-r px-4 text-[13px] font-medium text-zinc-700 last:border-r-0 dark:text-zinc-300"
+                        },
+                        "children": [
+                          {
+                            "text": "Thu",
+                            "key": "root.0.0.2.0.3.0"
+                          }
+                        ],
+                        "key": "root.0.0.2.0.3"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex h-12 items-center justify-end border-r px-4 text-[13px] font-medium text-zinc-700 last:border-r-0 dark:text-zinc-300"
+                        },
+                        "children": [
+                          {
+                            "text": "Fri",
+                            "key": "root.0.0.2.0.4.0"
+                          }
+                        ],
+                        "key": "root.0.0.2.0.4"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex h-12 items-center justify-end border-r px-4 text-[13px] font-medium text-zinc-700 last:border-r-0 dark:text-zinc-300"
+                        },
+                        "children": [
+                          {
+                            "text": "Sat",
+                            "key": "root.0.0.2.0.5.0"
+                          }
+                        ],
+                        "key": "root.0.0.2.0.5"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex h-12 items-center justify-end border-r px-4 text-[13px] font-medium text-zinc-700 last:border-r-0 dark:text-zinc-300"
+                        },
+                        "children": [
+                          {
+                            "text": "Sun",
+                            "key": "root.0.0.2.0.6.0"
+                          }
+                        ],
+                        "key": "root.0.0.2.0.6"
+                      }
+                    ],
+                    "key": "root.0.0.2.0"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "grid grid-cols-1 divide-y"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "grid min-h-[8.75rem] grid-cols-7 divide-x"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "group flex h-full min-h-[9rem] w-full flex-col"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "hidden flex-shrink-0 justify-end px-3 py-2 text-right text-[12px] font-medium md:flex"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center gap-1.5 text-muted-foreground"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "text": "30",
+                                            "key": "root.0.0.2.1.0.0.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.0.0.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.0.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.0.0.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex h-full flex-col px-2 pb-2 bg-zinc-50/50 dark:bg-zinc-950/80"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-h-[5.5rem] flex-col gap-1 pt-1"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.2.1.0.0.1.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "text-muted-foreground hover:text-foreground mt-auto flex h-7 items-center gap-1.5 px-1 text-[12px] font-medium opacity-0 transition group-hover:opacity-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-plus",
+                                          "class": "lucide lucide-plus size-3.5"
+                                        },
+                                        "key": "root.0.0.2.1.0.0.1.1.0"
+                                      },
+                                      {
+                                        "text": "Add issue",
+                                        "key": "root.0.0.2.1.0.0.1.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.0.0.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.0.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.0.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "group flex h-full min-h-[9rem] w-full flex-col"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "hidden flex-shrink-0 justify-end px-3 py-2 text-right text-[12px] font-medium md:flex"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center gap-1.5 text-muted-foreground"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "text": "31",
+                                            "key": "root.0.0.2.1.0.1.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.0.1.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.0.1.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.0.1.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex h-full flex-col px-2 pb-2 bg-zinc-50/50 dark:bg-zinc-950/80"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-h-[5.5rem] flex-col gap-1 pt-1"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.2.1.0.1.1.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "text-muted-foreground hover:text-foreground mt-auto flex h-7 items-center gap-1.5 px-1 text-[12px] font-medium opacity-0 transition group-hover:opacity-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-plus",
+                                          "class": "lucide lucide-plus size-3.5"
+                                        },
+                                        "key": "root.0.0.2.1.0.1.1.1.0"
+                                      },
+                                      {
+                                        "text": "Add issue",
+                                        "key": "root.0.0.2.1.0.1.1.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.0.1.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.0.1.1"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.0.1"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "group flex h-full min-h-[9rem] w-full flex-col"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "hidden flex-shrink-0 justify-end px-3 py-2 text-right text-[12px] font-medium md:flex"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center gap-1.5 text-foreground"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "text-muted-foreground"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Apr",
+                                            "key": "root.0.0.2.1.0.2.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.0.2.0.0.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "text": "1",
+                                            "key": "root.0.0.2.1.0.2.0.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.0.2.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.0.2.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.0.2.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex h-full flex-col bg-white px-2 pb-2 dark:bg-zinc-950"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-h-[5.5rem] flex-col gap-1 pt-1"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.2.1.0.2.1.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "text-muted-foreground hover:text-foreground mt-auto flex h-7 items-center gap-1.5 px-1 text-[12px] font-medium opacity-0 transition group-hover:opacity-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-plus",
+                                          "class": "lucide lucide-plus size-3.5"
+                                        },
+                                        "key": "root.0.0.2.1.0.2.1.1.0"
+                                      },
+                                      {
+                                        "text": "Add issue",
+                                        "key": "root.0.0.2.1.0.2.1.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.0.2.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.0.2.1"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.0.2"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "group flex h-full min-h-[9rem] w-full flex-col"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "hidden flex-shrink-0 justify-end px-3 py-2 text-right text-[12px] font-medium md:flex"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center gap-1.5 text-foreground"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "text": "2",
+                                            "key": "root.0.0.2.1.0.3.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.0.3.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.0.3.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.0.3.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex h-full flex-col bg-white px-2 pb-2 dark:bg-zinc-950"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-h-[5.5rem] flex-col gap-1 pt-1"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.2.1.0.3.1.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "text-muted-foreground hover:text-foreground mt-auto flex h-7 items-center gap-1.5 px-1 text-[12px] font-medium opacity-0 transition group-hover:opacity-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-plus",
+                                          "class": "lucide lucide-plus size-3.5"
+                                        },
+                                        "key": "root.0.0.2.1.0.3.1.1.0"
+                                      },
+                                      {
+                                        "text": "Add issue",
+                                        "key": "root.0.0.2.1.0.3.1.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.0.3.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.0.3.1"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.0.3"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "group flex h-full min-h-[9rem] w-full flex-col"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "hidden flex-shrink-0 justify-end px-3 py-2 text-right text-[12px] font-medium md:flex"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center gap-1.5 text-foreground"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "text": "3",
+                                            "key": "root.0.0.2.1.0.4.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.0.4.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.0.4.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.0.4.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex h-full flex-col bg-white px-2 pb-2 dark:bg-zinc-950"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-h-[5.5rem] flex-col gap-1 pt-1"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.2.1.0.4.1.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "text-muted-foreground hover:text-foreground mt-auto flex h-7 items-center gap-1.5 px-1 text-[12px] font-medium opacity-0 transition group-hover:opacity-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-plus",
+                                          "class": "lucide lucide-plus size-3.5"
+                                        },
+                                        "key": "root.0.0.2.1.0.4.1.1.0"
+                                      },
+                                      {
+                                        "text": "Add issue",
+                                        "key": "root.0.0.2.1.0.4.1.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.0.4.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.0.4.1"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.0.4"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "group flex h-full min-h-[9rem] w-full flex-col"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "hidden flex-shrink-0 justify-end px-3 py-2 text-right text-[12px] font-medium md:flex"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center gap-1.5 text-foreground"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "text": "4",
+                                            "key": "root.0.0.2.1.0.5.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.0.5.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.0.5.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.0.5.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex h-full flex-col bg-white px-2 pb-2 dark:bg-zinc-950"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-h-[5.5rem] flex-col gap-1 pt-1"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.2.1.0.5.1.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "text-muted-foreground hover:text-foreground mt-auto flex h-7 items-center gap-1.5 px-1 text-[12px] font-medium opacity-0 transition group-hover:opacity-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-plus",
+                                          "class": "lucide lucide-plus size-3.5"
+                                        },
+                                        "key": "root.0.0.2.1.0.5.1.1.0"
+                                      },
+                                      {
+                                        "text": "Add issue",
+                                        "key": "root.0.0.2.1.0.5.1.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.0.5.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.0.5.1"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.0.5"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "group flex h-full min-h-[9rem] w-full flex-col"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "hidden flex-shrink-0 justify-end px-3 py-2 text-right text-[12px] font-medium md:flex"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center gap-1.5 text-foreground"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "text": "5",
+                                            "key": "root.0.0.2.1.0.6.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.0.6.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.0.6.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.0.6.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex h-full flex-col bg-white px-2 pb-2 dark:bg-zinc-950"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-h-[5.5rem] flex-col gap-1 pt-1"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.2.1.0.6.1.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "text-muted-foreground hover:text-foreground mt-auto flex h-7 items-center gap-1.5 px-1 text-[12px] font-medium opacity-0 transition group-hover:opacity-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-plus",
+                                          "class": "lucide lucide-plus size-3.5"
+                                        },
+                                        "key": "root.0.0.2.1.0.6.1.1.0"
+                                      },
+                                      {
+                                        "text": "Add issue",
+                                        "key": "root.0.0.2.1.0.6.1.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.0.6.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.0.6.1"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.0.6"
+                          }
+                        ],
+                        "key": "root.0.0.2.1.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "grid min-h-[8.75rem] grid-cols-7 divide-x"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "group flex h-full min-h-[9rem] w-full flex-col"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "hidden flex-shrink-0 justify-end px-3 py-2 text-right text-[12px] font-medium md:flex"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center gap-1.5 text-foreground"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "text": "6",
+                                            "key": "root.0.0.2.1.1.0.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.1.0.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.1.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.1.0.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex h-full flex-col bg-white px-2 pb-2 dark:bg-zinc-950"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-h-[5.5rem] flex-col gap-1 pt-1"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "button",
+                                        "attrs": {
+                                          "type": "button",
+                                          "class": "flex h-8 w-full cursor-pointer items-center gap-2 rounded-md border px-2 text-left text-[12px] font-medium shadow-[0_1px_2px_rgba(15,23,42,0.04)] transition border-cyan-200/90 bg-cyan-50/60 text-cyan-800 dark:border-cyan-900 dark:bg-cyan-950/25 dark:text-cyan-100 hover:border-zinc-300 hover:bg-white dark:hover:border-zinc-700 dark:hover:bg-zinc-950",
+                                          "title": "Review gantt interaction states"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "h-4 w-0.5 shrink-0 rounded-full bg-cyan-400 dark:bg-cyan-500"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.1.0.1.0.0.0"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-0 truncate"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "text-zinc-500 dark:text-zinc-400"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "RFC-102",
+                                                    "key": "root.0.0.2.1.1.0.1.0.0.1.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.2.1.1.0.1.0.0.1.0"
+                                              },
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "mx-1"
+                                                },
+                                                "children": [],
+                                                "key": "root.0.0.2.1.1.0.1.0.0.1.1"
+                                              },
+                                              {
+                                                "tag": "span",
+                                                "attrs": {},
+                                                "children": [
+                                                  {
+                                                    "text": "Review gantt interaction states",
+                                                    "key": "root.0.0.2.1.1.0.1.0.0.1.2.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.2.1.1.0.1.0.0.1.2"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.1.1.0.1.0.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.1.0.1.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.1.0.1.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "text-muted-foreground hover:text-foreground mt-auto flex h-7 items-center gap-1.5 px-1 text-[12px] font-medium opacity-0 transition group-hover:opacity-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-plus",
+                                          "class": "lucide lucide-plus size-3.5"
+                                        },
+                                        "key": "root.0.0.2.1.1.0.1.1.0"
+                                      },
+                                      {
+                                        "text": "Add issue",
+                                        "key": "root.0.0.2.1.1.0.1.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.1.0.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.1.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.1.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "group flex h-full min-h-[9rem] w-full flex-col"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "hidden flex-shrink-0 justify-end px-3 py-2 text-right text-[12px] font-medium md:flex"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center gap-1.5 text-foreground"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "text": "7",
+                                            "key": "root.0.0.2.1.1.1.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.1.1.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.1.1.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.1.1.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex h-full flex-col bg-white px-2 pb-2 dark:bg-zinc-950"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-h-[5.5rem] flex-col gap-1 pt-1"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "button",
+                                        "attrs": {
+                                          "type": "button",
+                                          "class": "flex h-8 w-full cursor-pointer items-center gap-2 rounded-md border px-2 text-left text-[12px] font-medium shadow-[0_1px_2px_rgba(15,23,42,0.04)] transition border-emerald-200/90 bg-emerald-50/60 text-emerald-800 dark:border-emerald-900 dark:bg-emerald-950/25 dark:text-emerald-100 hover:border-zinc-300 hover:bg-white dark:hover:border-zinc-700 dark:hover:bg-zinc-950",
+                                          "title": "Add mock dependencies and handoff notes"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "h-4 w-0.5 shrink-0 rounded-full bg-emerald-400 dark:bg-emerald-500"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.1.1.1.0.0.0"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-0 truncate"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "text-zinc-500 dark:text-zinc-400"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "RFC-106",
+                                                    "key": "root.0.0.2.1.1.1.1.0.0.1.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.2.1.1.1.1.0.0.1.0"
+                                              },
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "mx-1"
+                                                },
+                                                "children": [],
+                                                "key": "root.0.0.2.1.1.1.1.0.0.1.1"
+                                              },
+                                              {
+                                                "tag": "span",
+                                                "attrs": {},
+                                                "children": [
+                                                  {
+                                                    "text": "Add mock dependencies and handoff notes",
+                                                    "key": "root.0.0.2.1.1.1.1.0.0.1.2.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.2.1.1.1.1.0.0.1.2"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.1.1.1.1.0.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.1.1.1.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.1.1.1.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "text-muted-foreground hover:text-foreground mt-auto flex h-7 items-center gap-1.5 px-1 text-[12px] font-medium opacity-0 transition group-hover:opacity-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-plus",
+                                          "class": "lucide lucide-plus size-3.5"
+                                        },
+                                        "key": "root.0.0.2.1.1.1.1.1.0"
+                                      },
+                                      {
+                                        "text": "Add issue",
+                                        "key": "root.0.0.2.1.1.1.1.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.1.1.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.1.1.1"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.1.1"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "group flex h-full min-h-[9rem] w-full flex-col"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "hidden flex-shrink-0 justify-end px-3 py-2 text-right text-[12px] font-medium md:flex"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center gap-1.5 text-foreground"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "text": "8",
+                                            "key": "root.0.0.2.1.1.2.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.1.2.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.1.2.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.1.2.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex h-full flex-col bg-white px-2 pb-2 dark:bg-zinc-950"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-h-[5.5rem] flex-col gap-1 pt-1"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "button",
+                                        "attrs": {
+                                          "type": "button",
+                                          "class": "flex h-8 w-full cursor-pointer items-center gap-2 rounded-md border px-2 text-left text-[12px] font-medium shadow-[0_1px_2px_rgba(15,23,42,0.04)] transition border-fuchsia-200/90 bg-fuchsia-50/60 text-fuchsia-800 dark:border-fuchsia-900 dark:bg-fuchsia-950/25 dark:text-fuchsia-100 hover:border-zinc-300 hover:bg-white dark:hover:border-zinc-700 dark:hover:bg-zinc-950",
+                                          "title": "Polish the quarter view density"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "h-4 w-0.5 shrink-0 rounded-full bg-fuchsia-400 dark:bg-fuchsia-500"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.1.2.1.0.0.0"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-0 truncate"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "text-zinc-500 dark:text-zinc-400"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "RFC-107",
+                                                    "key": "root.0.0.2.1.1.2.1.0.0.1.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.2.1.1.2.1.0.0.1.0"
+                                              },
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "mx-1"
+                                                },
+                                                "children": [],
+                                                "key": "root.0.0.2.1.1.2.1.0.0.1.1"
+                                              },
+                                              {
+                                                "tag": "span",
+                                                "attrs": {},
+                                                "children": [
+                                                  {
+                                                    "text": "Polish the quarter view density",
+                                                    "key": "root.0.0.2.1.1.2.1.0.0.1.2.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.2.1.1.2.1.0.0.1.2"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.1.1.2.1.0.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.1.2.1.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.1.2.1.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "text-muted-foreground hover:text-foreground mt-auto flex h-7 items-center gap-1.5 px-1 text-[12px] font-medium opacity-0 transition group-hover:opacity-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-plus",
+                                          "class": "lucide lucide-plus size-3.5"
+                                        },
+                                        "key": "root.0.0.2.1.1.2.1.1.0"
+                                      },
+                                      {
+                                        "text": "Add issue",
+                                        "key": "root.0.0.2.1.1.2.1.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.1.2.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.1.2.1"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.1.2"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "group flex h-full min-h-[9rem] w-full flex-col"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "hidden flex-shrink-0 justify-end px-3 py-2 text-right text-[12px] font-medium md:flex"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center gap-1.5 text-foreground"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "text": "9",
+                                            "key": "root.0.0.2.1.1.3.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.1.3.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.1.3.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.1.3.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex h-full flex-col bg-white px-2 pb-2 dark:bg-zinc-950"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-h-[5.5rem] flex-col gap-1 pt-1"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.2.1.1.3.1.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "text-muted-foreground hover:text-foreground mt-auto flex h-7 items-center gap-1.5 px-1 text-[12px] font-medium opacity-0 transition group-hover:opacity-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-plus",
+                                          "class": "lucide lucide-plus size-3.5"
+                                        },
+                                        "key": "root.0.0.2.1.1.3.1.1.0"
+                                      },
+                                      {
+                                        "text": "Add issue",
+                                        "key": "root.0.0.2.1.1.3.1.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.1.3.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.1.3.1"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.1.3"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "group flex h-full min-h-[9rem] w-full flex-col"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "hidden flex-shrink-0 justify-end px-3 py-2 text-right text-[12px] font-medium md:flex"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center gap-1.5 text-foreground"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "text": "10",
+                                            "key": "root.0.0.2.1.1.4.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.1.4.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.1.4.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.1.4.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex h-full flex-col bg-white px-2 pb-2 dark:bg-zinc-950"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-h-[5.5rem] flex-col gap-1 pt-1"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "button",
+                                        "attrs": {
+                                          "type": "button",
+                                          "class": "flex h-8 w-full cursor-pointer items-center gap-2 rounded-md border px-2 text-left text-[12px] font-medium shadow-[0_1px_2px_rgba(15,23,42,0.04)] transition border-amber-200/90 bg-amber-50/60 text-amber-800 dark:border-amber-900 dark:bg-amber-950/25 dark:text-amber-100 hover:border-zinc-300 hover:bg-white dark:hover:border-zinc-700 dark:hover:bg-zinc-950",
+                                          "title": "Finalize issue timeline architecture"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "h-4 w-0.5 shrink-0 rounded-full bg-amber-400 dark:bg-amber-500"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.1.4.1.0.0.0"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-0 truncate"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "text-zinc-500 dark:text-zinc-400"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "RFC-101",
+                                                    "key": "root.0.0.2.1.1.4.1.0.0.1.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.2.1.1.4.1.0.0.1.0"
+                                              },
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "mx-1"
+                                                },
+                                                "children": [],
+                                                "key": "root.0.0.2.1.1.4.1.0.0.1.1"
+                                              },
+                                              {
+                                                "tag": "span",
+                                                "attrs": {},
+                                                "children": [
+                                                  {
+                                                    "text": "Finalize issue timeline architecture",
+                                                    "key": "root.0.0.2.1.1.4.1.0.0.1.2.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.2.1.1.4.1.0.0.1.2"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.1.1.4.1.0.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.1.4.1.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.1.4.1.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "text-muted-foreground hover:text-foreground mt-auto flex h-7 items-center gap-1.5 px-1 text-[12px] font-medium opacity-0 transition group-hover:opacity-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-plus",
+                                          "class": "lucide lucide-plus size-3.5"
+                                        },
+                                        "key": "root.0.0.2.1.1.4.1.1.0"
+                                      },
+                                      {
+                                        "text": "Add issue",
+                                        "key": "root.0.0.2.1.1.4.1.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.1.4.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.1.4.1"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.1.4"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "group flex h-full min-h-[9rem] w-full flex-col"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "hidden flex-shrink-0 justify-end px-3 py-2 text-right text-[12px] font-medium md:flex"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center gap-1.5 text-foreground"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "text": "11",
+                                            "key": "root.0.0.2.1.1.5.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.1.5.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.1.5.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.1.5.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex h-full flex-col bg-white px-2 pb-2 dark:bg-zinc-950"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-h-[5.5rem] flex-col gap-1 pt-1"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.2.1.1.5.1.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "text-muted-foreground hover:text-foreground mt-auto flex h-7 items-center gap-1.5 px-1 text-[12px] font-medium opacity-0 transition group-hover:opacity-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-plus",
+                                          "class": "lucide lucide-plus size-3.5"
+                                        },
+                                        "key": "root.0.0.2.1.1.5.1.1.0"
+                                      },
+                                      {
+                                        "text": "Add issue",
+                                        "key": "root.0.0.2.1.1.5.1.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.1.5.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.1.5.1"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.1.5"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "group flex h-full min-h-[9rem] w-full flex-col"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "hidden flex-shrink-0 justify-end px-3 py-2 text-right text-[12px] font-medium md:flex"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center gap-1.5 text-foreground"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "text": "12",
+                                            "key": "root.0.0.2.1.1.6.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.1.6.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.1.6.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.1.6.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex h-full flex-col bg-white px-2 pb-2 dark:bg-zinc-950"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-h-[5.5rem] flex-col gap-1 pt-1"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.2.1.1.6.1.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "text-muted-foreground hover:text-foreground mt-auto flex h-7 items-center gap-1.5 px-1 text-[12px] font-medium opacity-0 transition group-hover:opacity-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-plus",
+                                          "class": "lucide lucide-plus size-3.5"
+                                        },
+                                        "key": "root.0.0.2.1.1.6.1.1.0"
+                                      },
+                                      {
+                                        "text": "Add issue",
+                                        "key": "root.0.0.2.1.1.6.1.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.1.6.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.1.6.1"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.1.6"
+                          }
+                        ],
+                        "key": "root.0.0.2.1.1"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "grid min-h-[8.75rem] grid-cols-7 divide-x"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "group flex h-full min-h-[9rem] w-full flex-col"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "hidden flex-shrink-0 justify-end px-3 py-2 text-right text-[12px] font-medium md:flex"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center gap-1.5 text-foreground"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "text": "13",
+                                            "key": "root.0.0.2.1.2.0.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.2.0.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.2.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.2.0.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex h-full flex-col bg-white px-2 pb-2 dark:bg-zinc-950"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-h-[5.5rem] flex-col gap-1 pt-1"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.2.1.2.0.1.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "text-muted-foreground hover:text-foreground mt-auto flex h-7 items-center gap-1.5 px-1 text-[12px] font-medium opacity-0 transition group-hover:opacity-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-plus",
+                                          "class": "lucide lucide-plus size-3.5"
+                                        },
+                                        "key": "root.0.0.2.1.2.0.1.1.0"
+                                      },
+                                      {
+                                        "text": "Add issue",
+                                        "key": "root.0.0.2.1.2.0.1.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.2.0.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.2.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.2.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "group flex h-full min-h-[9rem] w-full flex-col"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "hidden flex-shrink-0 justify-end px-3 py-2 text-right text-[12px] font-medium md:flex"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center gap-1.5 text-foreground"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "text": "14",
+                                            "key": "root.0.0.2.1.2.1.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.2.1.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.2.1.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.2.1.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex h-full flex-col bg-white px-2 pb-2 dark:bg-zinc-950"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-h-[5.5rem] flex-col gap-1 pt-1"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.2.1.2.1.1.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "text-muted-foreground hover:text-foreground mt-auto flex h-7 items-center gap-1.5 px-1 text-[12px] font-medium opacity-0 transition group-hover:opacity-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-plus",
+                                          "class": "lucide lucide-plus size-3.5"
+                                        },
+                                        "key": "root.0.0.2.1.2.1.1.1.0"
+                                      },
+                                      {
+                                        "text": "Add issue",
+                                        "key": "root.0.0.2.1.2.1.1.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.2.1.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.2.1.1"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.2.1"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "group flex h-full min-h-[9rem] w-full flex-col"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "hidden flex-shrink-0 justify-end px-3 py-2 text-right text-[12px] font-medium md:flex"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center gap-1.5 text-foreground"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "text": "15",
+                                            "key": "root.0.0.2.1.2.2.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.2.2.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.2.2.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.2.2.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex h-full flex-col bg-white px-2 pb-2 dark:bg-zinc-950"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-h-[5.5rem] flex-col gap-1 pt-1"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.2.1.2.2.1.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "text-muted-foreground hover:text-foreground mt-auto flex h-7 items-center gap-1.5 px-1 text-[12px] font-medium opacity-0 transition group-hover:opacity-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-plus",
+                                          "class": "lucide lucide-plus size-3.5"
+                                        },
+                                        "key": "root.0.0.2.1.2.2.1.1.0"
+                                      },
+                                      {
+                                        "text": "Add issue",
+                                        "key": "root.0.0.2.1.2.2.1.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.2.2.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.2.2.1"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.2.2"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "group flex h-full min-h-[9rem] w-full flex-col"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "hidden flex-shrink-0 justify-end px-3 py-2 text-right text-[12px] font-medium md:flex"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center gap-1.5 text-foreground"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "bg-primary text-primary-foreground inline-flex size-6 items-center justify-center rounded-full text-[11px] font-semibold"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "16",
+                                            "key": "root.0.0.2.1.2.3.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.2.3.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.2.3.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.2.3.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex h-full flex-col bg-white px-2 pb-2 dark:bg-zinc-950"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-h-[5.5rem] flex-col gap-1 pt-1"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "button",
+                                        "attrs": {
+                                          "type": "button",
+                                          "class": "flex h-8 w-full cursor-pointer items-center gap-2 rounded-md border px-2 text-left text-[12px] font-medium shadow-[0_1px_2px_rgba(15,23,42,0.04)] transition border-fuchsia-200/90 bg-fuchsia-50/60 text-fuchsia-800 dark:border-fuchsia-900 dark:bg-fuchsia-950/25 dark:text-fuchsia-100 hover:border-zinc-300 hover:bg-white dark:hover:border-zinc-700 dark:hover:bg-zinc-950",
+                                          "title": "Sync issue filters with project views"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "h-4 w-0.5 shrink-0 rounded-full bg-fuchsia-400 dark:bg-fuchsia-500"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.2.3.1.0.0.0"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-0 truncate"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "text-zinc-500 dark:text-zinc-400"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "RFC-103",
+                                                    "key": "root.0.0.2.1.2.3.1.0.0.1.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.2.1.2.3.1.0.0.1.0"
+                                              },
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "mx-1"
+                                                },
+                                                "children": [],
+                                                "key": "root.0.0.2.1.2.3.1.0.0.1.1"
+                                              },
+                                              {
+                                                "tag": "span",
+                                                "attrs": {},
+                                                "children": [
+                                                  {
+                                                    "text": "Sync issue filters with project views",
+                                                    "key": "root.0.0.2.1.2.3.1.0.0.1.2.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.2.1.2.3.1.0.0.1.2"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.1.2.3.1.0.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.2.3.1.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.2.3.1.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "text-muted-foreground hover:text-foreground mt-auto flex h-7 items-center gap-1.5 px-1 text-[12px] font-medium opacity-0 transition group-hover:opacity-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-plus",
+                                          "class": "lucide lucide-plus size-3.5"
+                                        },
+                                        "key": "root.0.0.2.1.2.3.1.1.0"
+                                      },
+                                      {
+                                        "text": "Add issue",
+                                        "key": "root.0.0.2.1.2.3.1.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.2.3.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.2.3.1"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.2.3"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "group flex h-full min-h-[9rem] w-full flex-col"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "hidden flex-shrink-0 justify-end px-3 py-2 text-right text-[12px] font-medium md:flex"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center gap-1.5 text-foreground"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "text": "17",
+                                            "key": "root.0.0.2.1.2.4.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.2.4.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.2.4.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.2.4.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex h-full flex-col bg-white px-2 pb-2 dark:bg-zinc-950"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-h-[5.5rem] flex-col gap-1 pt-1"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.2.1.2.4.1.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "text-muted-foreground hover:text-foreground mt-auto flex h-7 items-center gap-1.5 px-1 text-[12px] font-medium opacity-0 transition group-hover:opacity-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-plus",
+                                          "class": "lucide lucide-plus size-3.5"
+                                        },
+                                        "key": "root.0.0.2.1.2.4.1.1.0"
+                                      },
+                                      {
+                                        "text": "Add issue",
+                                        "key": "root.0.0.2.1.2.4.1.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.2.4.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.2.4.1"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.2.4"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "group flex h-full min-h-[9rem] w-full flex-col"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "hidden flex-shrink-0 justify-end px-3 py-2 text-right text-[12px] font-medium md:flex"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center gap-1.5 text-foreground"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "text": "18",
+                                            "key": "root.0.0.2.1.2.5.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.2.5.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.2.5.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.2.5.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex h-full flex-col bg-white px-2 pb-2 dark:bg-zinc-950"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-h-[5.5rem] flex-col gap-1 pt-1"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.2.1.2.5.1.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "text-muted-foreground hover:text-foreground mt-auto flex h-7 items-center gap-1.5 px-1 text-[12px] font-medium opacity-0 transition group-hover:opacity-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-plus",
+                                          "class": "lucide lucide-plus size-3.5"
+                                        },
+                                        "key": "root.0.0.2.1.2.5.1.1.0"
+                                      },
+                                      {
+                                        "text": "Add issue",
+                                        "key": "root.0.0.2.1.2.5.1.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.2.5.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.2.5.1"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.2.5"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "group flex h-full min-h-[9rem] w-full flex-col"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "hidden flex-shrink-0 justify-end px-3 py-2 text-right text-[12px] font-medium md:flex"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center gap-1.5 text-foreground"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "text": "19",
+                                            "key": "root.0.0.2.1.2.6.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.2.6.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.2.6.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.2.6.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex h-full flex-col bg-white px-2 pb-2 dark:bg-zinc-950"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-h-[5.5rem] flex-col gap-1 pt-1"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.2.1.2.6.1.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "text-muted-foreground hover:text-foreground mt-auto flex h-7 items-center gap-1.5 px-1 text-[12px] font-medium opacity-0 transition group-hover:opacity-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-plus",
+                                          "class": "lucide lucide-plus size-3.5"
+                                        },
+                                        "key": "root.0.0.2.1.2.6.1.1.0"
+                                      },
+                                      {
+                                        "text": "Add issue",
+                                        "key": "root.0.0.2.1.2.6.1.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.2.6.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.2.6.1"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.2.6"
+                          }
+                        ],
+                        "key": "root.0.0.2.1.2"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "grid min-h-[8.75rem] grid-cols-7 divide-x"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "group flex h-full min-h-[9rem] w-full flex-col"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "hidden flex-shrink-0 justify-end px-3 py-2 text-right text-[12px] font-medium md:flex"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center gap-1.5 text-foreground"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "text": "20",
+                                            "key": "root.0.0.2.1.3.0.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.3.0.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.3.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.3.0.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex h-full flex-col bg-white px-2 pb-2 dark:bg-zinc-950"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-h-[5.5rem] flex-col gap-1 pt-1"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.2.1.3.0.1.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "text-muted-foreground hover:text-foreground mt-auto flex h-7 items-center gap-1.5 px-1 text-[12px] font-medium opacity-0 transition group-hover:opacity-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-plus",
+                                          "class": "lucide lucide-plus size-3.5"
+                                        },
+                                        "key": "root.0.0.2.1.3.0.1.1.0"
+                                      },
+                                      {
+                                        "text": "Add issue",
+                                        "key": "root.0.0.2.1.3.0.1.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.3.0.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.3.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.3.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "group flex h-full min-h-[9rem] w-full flex-col"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "hidden flex-shrink-0 justify-end px-3 py-2 text-right text-[12px] font-medium md:flex"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center gap-1.5 text-foreground"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "text": "21",
+                                            "key": "root.0.0.2.1.3.1.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.3.1.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.3.1.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.3.1.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex h-full flex-col bg-white px-2 pb-2 dark:bg-zinc-950"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-h-[5.5rem] flex-col gap-1 pt-1"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "button",
+                                        "attrs": {
+                                          "type": "button",
+                                          "class": "flex h-8 w-full cursor-pointer items-center gap-2 rounded-md border px-2 text-left text-[12px] font-medium shadow-[0_1px_2px_rgba(15,23,42,0.04)] transition border-cyan-200/90 bg-cyan-50/60 text-cyan-800 dark:border-cyan-900 dark:bg-cyan-950/25 dark:text-cyan-100 hover:border-zinc-300 hover:bg-white dark:hover:border-zinc-700 dark:hover:bg-zinc-950",
+                                          "title": "Create empty and loading timeline states"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "h-4 w-0.5 shrink-0 rounded-full bg-cyan-400 dark:bg-cyan-500"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.3.1.1.0.0.0"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-0 truncate"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "text-zinc-500 dark:text-zinc-400"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "RFC-105",
+                                                    "key": "root.0.0.2.1.3.1.1.0.0.1.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.2.1.3.1.1.0.0.1.0"
+                                              },
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "mx-1"
+                                                },
+                                                "children": [],
+                                                "key": "root.0.0.2.1.3.1.1.0.0.1.1"
+                                              },
+                                              {
+                                                "tag": "span",
+                                                "attrs": {},
+                                                "children": [
+                                                  {
+                                                    "text": "Create empty and loading timeline states",
+                                                    "key": "root.0.0.2.1.3.1.1.0.0.1.2.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.2.1.3.1.1.0.0.1.2"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.1.3.1.1.0.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.3.1.1.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.3.1.1.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "text-muted-foreground hover:text-foreground mt-auto flex h-7 items-center gap-1.5 px-1 text-[12px] font-medium opacity-0 transition group-hover:opacity-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-plus",
+                                          "class": "lucide lucide-plus size-3.5"
+                                        },
+                                        "key": "root.0.0.2.1.3.1.1.1.0"
+                                      },
+                                      {
+                                        "text": "Add issue",
+                                        "key": "root.0.0.2.1.3.1.1.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.3.1.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.3.1.1"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.3.1"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "group flex h-full min-h-[9rem] w-full flex-col"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "hidden flex-shrink-0 justify-end px-3 py-2 text-right text-[12px] font-medium md:flex"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center gap-1.5 text-foreground"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "text": "22",
+                                            "key": "root.0.0.2.1.3.2.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.3.2.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.3.2.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.3.2.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex h-full flex-col bg-white px-2 pb-2 dark:bg-zinc-950"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-h-[5.5rem] flex-col gap-1 pt-1"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.2.1.3.2.1.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "text-muted-foreground hover:text-foreground mt-auto flex h-7 items-center gap-1.5 px-1 text-[12px] font-medium opacity-0 transition group-hover:opacity-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-plus",
+                                          "class": "lucide lucide-plus size-3.5"
+                                        },
+                                        "key": "root.0.0.2.1.3.2.1.1.0"
+                                      },
+                                      {
+                                        "text": "Add issue",
+                                        "key": "root.0.0.2.1.3.2.1.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.3.2.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.3.2.1"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.3.2"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "group flex h-full min-h-[9rem] w-full flex-col"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "hidden flex-shrink-0 justify-end px-3 py-2 text-right text-[12px] font-medium md:flex"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center gap-1.5 text-foreground"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "text": "23",
+                                            "key": "root.0.0.2.1.3.3.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.3.3.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.3.3.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.3.3.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex h-full flex-col bg-white px-2 pb-2 dark:bg-zinc-950"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-h-[5.5rem] flex-col gap-1 pt-1"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.2.1.3.3.1.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "text-muted-foreground hover:text-foreground mt-auto flex h-7 items-center gap-1.5 px-1 text-[12px] font-medium opacity-0 transition group-hover:opacity-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-plus",
+                                          "class": "lucide lucide-plus size-3.5"
+                                        },
+                                        "key": "root.0.0.2.1.3.3.1.1.0"
+                                      },
+                                      {
+                                        "text": "Add issue",
+                                        "key": "root.0.0.2.1.3.3.1.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.3.3.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.3.3.1"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.3.3"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "group flex h-full min-h-[9rem] w-full flex-col"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "hidden flex-shrink-0 justify-end px-3 py-2 text-right text-[12px] font-medium md:flex"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center gap-1.5 text-foreground"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "text": "24",
+                                            "key": "root.0.0.2.1.3.4.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.3.4.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.3.4.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.3.4.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex h-full flex-col bg-white px-2 pb-2 dark:bg-zinc-950"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-h-[5.5rem] flex-col gap-1 pt-1"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.2.1.3.4.1.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "text-muted-foreground hover:text-foreground mt-auto flex h-7 items-center gap-1.5 px-1 text-[12px] font-medium opacity-0 transition group-hover:opacity-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-plus",
+                                          "class": "lucide lucide-plus size-3.5"
+                                        },
+                                        "key": "root.0.0.2.1.3.4.1.1.0"
+                                      },
+                                      {
+                                        "text": "Add issue",
+                                        "key": "root.0.0.2.1.3.4.1.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.3.4.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.3.4.1"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.3.4"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "group flex h-full min-h-[9rem] w-full flex-col"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "hidden flex-shrink-0 justify-end px-3 py-2 text-right text-[12px] font-medium md:flex"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center gap-1.5 text-foreground"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "text": "25",
+                                            "key": "root.0.0.2.1.3.5.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.3.5.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.3.5.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.3.5.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex h-full flex-col bg-white px-2 pb-2 dark:bg-zinc-950"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-h-[5.5rem] flex-col gap-1 pt-1"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.2.1.3.5.1.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "text-muted-foreground hover:text-foreground mt-auto flex h-7 items-center gap-1.5 px-1 text-[12px] font-medium opacity-0 transition group-hover:opacity-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-plus",
+                                          "class": "lucide lucide-plus size-3.5"
+                                        },
+                                        "key": "root.0.0.2.1.3.5.1.1.0"
+                                      },
+                                      {
+                                        "text": "Add issue",
+                                        "key": "root.0.0.2.1.3.5.1.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.3.5.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.3.5.1"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.3.5"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "group flex h-full min-h-[9rem] w-full flex-col"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "hidden flex-shrink-0 justify-end px-3 py-2 text-right text-[12px] font-medium md:flex"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center gap-1.5 text-foreground"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "text": "26",
+                                            "key": "root.0.0.2.1.3.6.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.3.6.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.3.6.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.3.6.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex h-full flex-col bg-white px-2 pb-2 dark:bg-zinc-950"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-h-[5.5rem] flex-col gap-1 pt-1"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.2.1.3.6.1.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "text-muted-foreground hover:text-foreground mt-auto flex h-7 items-center gap-1.5 px-1 text-[12px] font-medium opacity-0 transition group-hover:opacity-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-plus",
+                                          "class": "lucide lucide-plus size-3.5"
+                                        },
+                                        "key": "root.0.0.2.1.3.6.1.1.0"
+                                      },
+                                      {
+                                        "text": "Add issue",
+                                        "key": "root.0.0.2.1.3.6.1.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.3.6.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.3.6.1"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.3.6"
+                          }
+                        ],
+                        "key": "root.0.0.2.1.3"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "grid min-h-[8.75rem] grid-cols-7 divide-x"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "group flex h-full min-h-[9rem] w-full flex-col"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "hidden flex-shrink-0 justify-end px-3 py-2 text-right text-[12px] font-medium md:flex"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center gap-1.5 text-foreground"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "text": "27",
+                                            "key": "root.0.0.2.1.4.0.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.4.0.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.4.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.4.0.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex h-full flex-col bg-white px-2 pb-2 dark:bg-zinc-950"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-h-[5.5rem] flex-col gap-1 pt-1"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.2.1.4.0.1.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "text-muted-foreground hover:text-foreground mt-auto flex h-7 items-center gap-1.5 px-1 text-[12px] font-medium opacity-0 transition group-hover:opacity-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-plus",
+                                          "class": "lucide lucide-plus size-3.5"
+                                        },
+                                        "key": "root.0.0.2.1.4.0.1.1.0"
+                                      },
+                                      {
+                                        "text": "Add issue",
+                                        "key": "root.0.0.2.1.4.0.1.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.4.0.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.4.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.4.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "group flex h-full min-h-[9rem] w-full flex-col"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "hidden flex-shrink-0 justify-end px-3 py-2 text-right text-[12px] font-medium md:flex"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center gap-1.5 text-foreground"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "text": "28",
+                                            "key": "root.0.0.2.1.4.1.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.4.1.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.4.1.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.4.1.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex h-full flex-col bg-white px-2 pb-2 dark:bg-zinc-950"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-h-[5.5rem] flex-col gap-1 pt-1"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.2.1.4.1.1.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "text-muted-foreground hover:text-foreground mt-auto flex h-7 items-center gap-1.5 px-1 text-[12px] font-medium opacity-0 transition group-hover:opacity-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-plus",
+                                          "class": "lucide lucide-plus size-3.5"
+                                        },
+                                        "key": "root.0.0.2.1.4.1.1.1.0"
+                                      },
+                                      {
+                                        "text": "Add issue",
+                                        "key": "root.0.0.2.1.4.1.1.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.4.1.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.4.1.1"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.4.1"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "group flex h-full min-h-[9rem] w-full flex-col"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "hidden flex-shrink-0 justify-end px-3 py-2 text-right text-[12px] font-medium md:flex"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center gap-1.5 text-foreground"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "text": "29",
+                                            "key": "root.0.0.2.1.4.2.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.4.2.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.4.2.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.4.2.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex h-full flex-col bg-white px-2 pb-2 dark:bg-zinc-950"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-h-[5.5rem] flex-col gap-1 pt-1"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.2.1.4.2.1.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "text-muted-foreground hover:text-foreground mt-auto flex h-7 items-center gap-1.5 px-1 text-[12px] font-medium opacity-0 transition group-hover:opacity-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-plus",
+                                          "class": "lucide lucide-plus size-3.5"
+                                        },
+                                        "key": "root.0.0.2.1.4.2.1.1.0"
+                                      },
+                                      {
+                                        "text": "Add issue",
+                                        "key": "root.0.0.2.1.4.2.1.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.4.2.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.4.2.1"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.4.2"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "group flex h-full min-h-[9rem] w-full flex-col"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "hidden flex-shrink-0 justify-end px-3 py-2 text-right text-[12px] font-medium md:flex"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center gap-1.5 text-foreground"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "text": "30",
+                                            "key": "root.0.0.2.1.4.3.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.4.3.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.4.3.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.4.3.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex h-full flex-col bg-white px-2 pb-2 dark:bg-zinc-950"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-h-[5.5rem] flex-col gap-1 pt-1"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.2.1.4.3.1.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "text-muted-foreground hover:text-foreground mt-auto flex h-7 items-center gap-1.5 px-1 text-[12px] font-medium opacity-0 transition group-hover:opacity-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-plus",
+                                          "class": "lucide lucide-plus size-3.5"
+                                        },
+                                        "key": "root.0.0.2.1.4.3.1.1.0"
+                                      },
+                                      {
+                                        "text": "Add issue",
+                                        "key": "root.0.0.2.1.4.3.1.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.4.3.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.4.3.1"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.4.3"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "group flex h-full min-h-[9rem] w-full flex-col"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "hidden flex-shrink-0 justify-end px-3 py-2 text-right text-[12px] font-medium md:flex"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center gap-1.5 text-muted-foreground"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "text-muted-foreground"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "May",
+                                            "key": "root.0.0.2.1.4.4.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.4.4.0.0.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "text": "1",
+                                            "key": "root.0.0.2.1.4.4.0.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.4.4.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.4.4.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.4.4.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex h-full flex-col px-2 pb-2 bg-zinc-50/50 dark:bg-zinc-950/80"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-h-[5.5rem] flex-col gap-1 pt-1"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.2.1.4.4.1.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "text-muted-foreground hover:text-foreground mt-auto flex h-7 items-center gap-1.5 px-1 text-[12px] font-medium opacity-0 transition group-hover:opacity-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-plus",
+                                          "class": "lucide lucide-plus size-3.5"
+                                        },
+                                        "key": "root.0.0.2.1.4.4.1.1.0"
+                                      },
+                                      {
+                                        "text": "Add issue",
+                                        "key": "root.0.0.2.1.4.4.1.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.4.4.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.4.4.1"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.4.4"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "group flex h-full min-h-[9rem] w-full flex-col"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "hidden flex-shrink-0 justify-end px-3 py-2 text-right text-[12px] font-medium md:flex"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center gap-1.5 text-muted-foreground"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "text": "2",
+                                            "key": "root.0.0.2.1.4.5.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.4.5.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.4.5.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.4.5.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex h-full flex-col px-2 pb-2 bg-zinc-50/50 dark:bg-zinc-950/80"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-h-[5.5rem] flex-col gap-1 pt-1"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.2.1.4.5.1.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "text-muted-foreground hover:text-foreground mt-auto flex h-7 items-center gap-1.5 px-1 text-[12px] font-medium opacity-0 transition group-hover:opacity-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-plus",
+                                          "class": "lucide lucide-plus size-3.5"
+                                        },
+                                        "key": "root.0.0.2.1.4.5.1.1.0"
+                                      },
+                                      {
+                                        "text": "Add issue",
+                                        "key": "root.0.0.2.1.4.5.1.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.4.5.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.4.5.1"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.4.5"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "group flex h-full min-h-[9rem] w-full flex-col"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "hidden flex-shrink-0 justify-end px-3 py-2 text-right text-[12px] font-medium md:flex"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center gap-1.5 text-muted-foreground"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "text": "3",
+                                            "key": "root.0.0.2.1.4.6.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.4.6.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.4.6.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.4.6.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex h-full flex-col px-2 pb-2 bg-zinc-50/50 dark:bg-zinc-950/80"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-h-[5.5rem] flex-col gap-1 pt-1"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.2.1.4.6.1.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "text-muted-foreground hover:text-foreground mt-auto flex h-7 items-center gap-1.5 px-1 text-[12px] font-medium opacity-0 transition group-hover:opacity-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-plus",
+                                          "class": "lucide lucide-plus size-3.5"
+                                        },
+                                        "key": "root.0.0.2.1.4.6.1.1.0"
+                                      },
+                                      {
+                                        "text": "Add issue",
+                                        "key": "root.0.0.2.1.4.6.1.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.4.6.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.4.6.1"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.4.6"
+                          }
+                        ],
+                        "key": "root.0.0.2.1.4"
+                      }
+                    ],
+                    "key": "root.0.0.2.1"
+                  }
+                ],
+                "key": "root.0.0.2"
+              }
+            ],
+            "key": "root.0.0"
+          }
+        ],
+        "key": "root.0"
+      }
+    ],
+    "key": "root"
+  },
+  "headings": []
+}

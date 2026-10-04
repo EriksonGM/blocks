@@ -1,0 +1,1830 @@
+{
+  "label": "Audio playground",
+  "path": "/ai-chat/audio-playground",
+  "appTitle": "",
+  "tree": {
+    "tag": "div",
+    "attrs": {
+      "id": "ai-workspace-content",
+      "class": "flex min-h-0 flex-1 flex-col"
+    },
+    "children": [
+      {
+        "tag": "div",
+        "attrs": {
+          "class": "min-h-0 flex-1 overflow-y-auto"
+        },
+        "children": [
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "mx-auto flex flex-col px-4 sm:px-8 gap-6 py-6 sm:py-8 max-w-7xl"
+            },
+            "children": [
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "flex flex-wrap gap-4 items-start justify-between"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "flex flex-col gap-1"
+                    },
+                    "children": [
+                      {
+                        "tag": "h1",
+                        "attrs": {
+                          "class": "text-2xl font-semibold tracking-tight"
+                        },
+                        "children": [
+                          {
+                            "text": "Audio playground",
+                            "key": "root.0.0.0.0.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.0"
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {
+                          "class": "text-muted-foreground max-w-2xl text-sm"
+                        },
+                        "children": [
+                          {
+                            "text": "Configure voice sessions, inspect transcripts, and preview speech.",
+                            "key": "root.0.0.0.0.1.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.1"
+                      }
+                    ],
+                    "key": "root.0.0.0.0"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "flex flex-wrap items-center gap-2"
+                    },
+                    "children": [
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-braces",
+                              "class": "lucide lucide-braces"
+                            },
+                            "key": "root.0.0.0.1.0.0"
+                          },
+                          {
+                            "text": "Export request",
+                            "key": "root.0.0.0.1.0.1"
+                          }
+                        ],
+                        "key": "root.0.0.0.1.0"
+                      }
+                    ],
+                    "key": "root.0.0.0.1"
+                  }
+                ],
+                "key": "root.0.0.0"
+              },
+              {
+                "tag": "audio",
+                "attrs": {
+                  "src": "/reference/cd0fe8784f8ee64c.wav"
+                },
+                "children": [],
+                "key": "root.0.0.1"
+              },
+              {
+                "tag": "div",
+                "attrs": {
+                  "data-orientation": "horizontal"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "overflow-x-auto"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "role": "tablist",
+                          "class": "bg-muted text-muted-foreground inline-flex h-9 items-center justify-center rounded-lg p-1",
+                          "aria-label": "Audio mode",
+                          "data-orientation": "horizontal",
+                          "style": "outline:none"
+                        },
+                        "children": [
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "type": "button",
+                              "role": "tab",
+                              "data-state": "active",
+                              "id": "radix-_R_ldbsnpfknmlb_-trigger-live",
+                              "class": "ring-offset-background focus-visible:ring-ring data-[state=active]:bg-background data-[state=active]:text-foreground inline-flex items-center justify-center rounded-md px-3 py-1 text-sm font-medium whitespace-nowrap transition-all focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-[state=active]:shadow-sm",
+                              "data-orientation": "horizontal"
+                            },
+                            "children": [
+                              {
+                                "text": "Live voice",
+                                "key": "root.0.0.2.0.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.2.0.0.0"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "type": "button",
+                              "role": "tab",
+                              "data-state": "inactive",
+                              "id": "radix-_R_ldbsnpfknmlb_-trigger-realtime",
+                              "class": "ring-offset-background focus-visible:ring-ring data-[state=active]:bg-background data-[state=active]:text-foreground inline-flex items-center justify-center rounded-md px-3 py-1 text-sm font-medium whitespace-nowrap transition-all focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-[state=active]:shadow-sm",
+                              "data-orientation": "horizontal"
+                            },
+                            "children": [
+                              {
+                                "text": "Realtime",
+                                "key": "root.0.0.2.0.0.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.2.0.0.1"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "type": "button",
+                              "role": "tab",
+                              "data-state": "inactive",
+                              "id": "radix-_R_ldbsnpfknmlb_-trigger-translate",
+                              "class": "ring-offset-background focus-visible:ring-ring data-[state=active]:bg-background data-[state=active]:text-foreground inline-flex items-center justify-center rounded-md px-3 py-1 text-sm font-medium whitespace-nowrap transition-all focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-[state=active]:shadow-sm",
+                              "data-orientation": "horizontal"
+                            },
+                            "children": [
+                              {
+                                "text": "Translate",
+                                "key": "root.0.0.2.0.0.2.0"
+                              }
+                            ],
+                            "key": "root.0.0.2.0.0.2"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "type": "button",
+                              "role": "tab",
+                              "data-state": "inactive",
+                              "id": "radix-_R_ldbsnpfknmlb_-trigger-speech",
+                              "class": "ring-offset-background focus-visible:ring-ring data-[state=active]:bg-background data-[state=active]:text-foreground inline-flex items-center justify-center rounded-md px-3 py-1 text-sm font-medium whitespace-nowrap transition-all focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-[state=active]:shadow-sm",
+                              "data-orientation": "horizontal"
+                            },
+                            "children": [
+                              {
+                                "text": "Text to speech",
+                                "key": "root.0.0.2.0.0.3.0"
+                              }
+                            ],
+                            "key": "root.0.0.2.0.0.3"
+                          }
+                        ],
+                        "key": "root.0.0.2.0.0"
+                      }
+                    ],
+                    "key": "root.0.0.2.0"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "data-state": "active",
+                      "data-orientation": "horizontal",
+                      "role": "tabpanel",
+                      "id": "radix-_R_ldbsnpfknmlb_-content-live",
+                      "class": "ring-offset-background focus-visible:ring-ring focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden mt-5",
+                      "style": "animation-duration:0s"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "grid items-start gap-5 xl:grid-cols-[280px_minmax(0,1fr)]"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "bg-card text-card-foreground rounded-lg border"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex flex-col space-y-1.5 p-6"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "leading-none font-semibold tracking-tight"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Session settings",
+                                        "key": "root.0.0.2.1.0.0.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.0.0.0.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "text-muted-foreground text-sm"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Prepare a request and try a sample.",
+                                        "key": "root.0.0.2.1.0.0.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.0.0.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.0.0.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "p-6 pt-0"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "data-slot": "field-group",
+                                      "class": "group/field-group @container/field-group flex w-full flex-col gap-7 data-[slot=checkbox-group]:gap-3 *:data-[slot=field-group]:gap-4"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "role": "group",
+                                          "data-slot": "field",
+                                          "data-orientation": "vertical",
+                                          "class": "group/field flex w-full gap-3 data-[invalid=true]:text-destructive flex-col *:w-full [&>.sr-only]:w-auto"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "label",
+                                            "attrs": {
+                                              "class": "text-sm font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 group/field-label peer/field-label flex w-fit gap-2 leading-snug group-data-[disabled=true]/field:opacity-50 has-data-checked:border-primary/30 has-data-checked:bg-primary/5 has-[>[data-slot=field]]:rounded-md has-[>[data-slot=field]]:border *:data-[slot=field]:p-3 dark:has-data-checked:border-primary/20 dark:has-data-checked:bg-primary/10 has-[>[data-slot=field]]:w-full has-[>[data-slot=field]]:flex-col",
+                                              "data-slot": "field-label"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Sample scenario",
+                                                "key": "root.0.0.2.1.0.0.1.0.0.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.1.0.0.1.0.0.0"
+                                          },
+                                          {
+                                            "tag": "button",
+                                            "attrs": {
+                                              "type": "button",
+                                              "role": "combobox",
+                                              "data-state": "closed",
+                                              "class": "border-input ring-offset-background placeholder:text-muted-foreground focus:ring-ring flex h-9 items-center justify-between rounded-md border bg-transparent px-3 py-2 text-sm whitespace-nowrap shadow-xs focus:ring-1 focus:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 w-auto min-w-36",
+                                              "aria-label": "Audio sample scenario"
+                                            },
+                                            "options": [
+                                              "Workspace welcome",
+                                              "Delivery update"
+                                            ],
+                                            "children": [
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "style": "pointer-events:none"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Workspace welcome",
+                                                    "key": "root.0.0.2.1.0.0.1.0.0.1.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.2.1.0.0.1.0.0.1.0"
+                                              },
+                                              {
+                                                "tag": "icon",
+                                                "attrs": {
+                                                  "name": "i-lucide-chevron-down",
+                                                  "class": "lucide lucide-chevron-down h-4 w-4 opacity-50"
+                                                },
+                                                "key": "root.0.0.2.1.0.0.1.0.0.1.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.1.0.0.1.0.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.0.0.1.0.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "role": "group",
+                                          "data-slot": "field",
+                                          "data-orientation": "vertical",
+                                          "class": "group/field flex w-full gap-3 data-[invalid=true]:text-destructive flex-col *:w-full [&>.sr-only]:w-auto"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "label",
+                                            "attrs": {
+                                              "class": "text-sm font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 group/field-label peer/field-label flex w-fit gap-2 leading-snug group-data-[disabled=true]/field:opacity-50 has-data-checked:border-primary/30 has-data-checked:bg-primary/5 has-[>[data-slot=field]]:rounded-md has-[>[data-slot=field]]:border *:data-[slot=field]:p-3 dark:has-data-checked:border-primary/20 dark:has-data-checked:bg-primary/10 has-[>[data-slot=field]]:w-full has-[>[data-slot=field]]:flex-col",
+                                              "data-slot": "field-label"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Voice",
+                                                "key": "root.0.0.2.1.0.0.1.0.1.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.1.0.0.1.0.1.0"
+                                          },
+                                          {
+                                            "tag": "button",
+                                            "attrs": {
+                                              "type": "button",
+                                              "role": "combobox",
+                                              "data-state": "closed",
+                                              "class": "border-input ring-offset-background placeholder:text-muted-foreground focus:ring-ring flex h-9 items-center justify-between rounded-md border bg-transparent px-3 py-2 text-sm whitespace-nowrap shadow-xs focus:ring-1 focus:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 w-auto min-w-36",
+                                              "aria-label": "Audio voice"
+                                            },
+                                            "options": [
+                                              "Clear · conversational",
+                                              "Warm · measured"
+                                            ],
+                                            "children": [
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "style": "pointer-events:none"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Clear · conversational",
+                                                    "key": "root.0.0.2.1.0.0.1.0.1.1.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.2.1.0.0.1.0.1.1.0"
+                                              },
+                                              {
+                                                "tag": "icon",
+                                                "attrs": {
+                                                  "name": "i-lucide-chevron-down",
+                                                  "class": "lucide lucide-chevron-down h-4 w-4 opacity-50"
+                                                },
+                                                "key": "root.0.0.2.1.0.0.1.0.1.1.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.1.0.0.1.0.1.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.0.0.1.0.1"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "role": "group",
+                                          "data-slot": "field",
+                                          "data-orientation": "vertical",
+                                          "class": "group/field flex w-full gap-3 data-[invalid=true]:text-destructive flex-col *:w-full [&>.sr-only]:w-auto"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "label",
+                                            "attrs": {
+                                              "class": "text-sm font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 group/field-label peer/field-label flex w-fit gap-2 leading-snug group-data-[disabled=true]/field:opacity-50 has-data-checked:border-primary/30 has-data-checked:bg-primary/5 has-[>[data-slot=field]]:rounded-md has-[>[data-slot=field]]:border *:data-[slot=field]:p-3 dark:has-data-checked:border-primary/20 dark:has-data-checked:bg-primary/10 has-[>[data-slot=field]]:w-full has-[>[data-slot=field]]:flex-col",
+                                              "data-slot": "field-label"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Playback speed",
+                                                "key": "root.0.0.2.1.0.0.1.0.2.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.1.0.0.1.0.2.0"
+                                          },
+                                          {
+                                            "tag": "button",
+                                            "attrs": {
+                                              "type": "button",
+                                              "role": "combobox",
+                                              "data-state": "closed",
+                                              "class": "border-input ring-offset-background placeholder:text-muted-foreground focus:ring-ring flex h-9 items-center justify-between rounded-md border bg-transparent px-3 py-2 text-sm whitespace-nowrap shadow-xs focus:ring-1 focus:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 w-auto min-w-36",
+                                              "aria-label": "Audio playback speed"
+                                            },
+                                            "options": [
+                                              "0.75×",
+                                              "1×",
+                                              "1.25×",
+                                              "1.5×"
+                                            ],
+                                            "children": [
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "style": "pointer-events:none"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "1×",
+                                                    "key": "root.0.0.2.1.0.0.1.0.2.1.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.2.1.0.0.1.0.2.1.0"
+                                              },
+                                              {
+                                                "tag": "icon",
+                                                "attrs": {
+                                                  "name": "i-lucide-chevron-down",
+                                                  "class": "lucide lucide-chevron-down h-4 w-4 opacity-50"
+                                                },
+                                                "key": "root.0.0.2.1.0.0.1.0.2.1.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.1.0.0.1.0.2.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.0.0.1.0.2"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.0.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.0.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.0.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex min-w-0 flex-col gap-5"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "data-slot": "field-group",
+                                  "class": "group/field-group @container/field-group flex w-full flex-col gap-7 data-[slot=checkbox-group]:gap-3 *:data-[slot=field-group]:gap-4"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "role": "group",
+                                      "data-slot": "field",
+                                      "data-orientation": "vertical",
+                                      "class": "group/field flex w-full gap-3 data-[invalid=true]:text-destructive flex-col *:w-full [&>.sr-only]:w-auto"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "label",
+                                        "attrs": {
+                                          "class": "text-sm font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 group/field-label peer/field-label flex w-fit gap-2 leading-snug group-data-[disabled=true]/field:opacity-50 has-data-checked:border-primary/30 has-data-checked:bg-primary/5 has-[>[data-slot=field]]:rounded-md has-[>[data-slot=field]]:border *:data-[slot=field]:p-3 dark:has-data-checked:border-primary/20 dark:has-data-checked:bg-primary/10 has-[>[data-slot=field]]:w-full has-[>[data-slot=field]]:flex-col",
+                                          "data-slot": "field-label",
+                                          "for": "audio-instructions"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Instructions",
+                                            "key": "root.0.0.2.1.0.1.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.0.1.0.0.0"
+                                      },
+                                      {
+                                        "tag": "textarea",
+                                        "attrs": {
+                                          "class": "border-input placeholder:text-muted-foreground focus-visible:ring-ring flex w-full rounded-md border bg-transparent px-3 py-2 text-base shadow-xs focus-visible:ring-1 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 md:text-sm min-h-20",
+                                          "id": "audio-instructions",
+                                          "value": "Be a concise, helpful assistant. Confirm the user's intent before suggesting the next step."
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Be a concise, helpful assistant. Confirm the user's intent before suggesting the next step.",
+                                            "key": "root.0.0.2.1.0.1.0.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.0.1.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.0.1.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.0.1.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "bg-card text-card-foreground rounded-lg border"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex space-y-1.5 p-6 flex-row items-center justify-between gap-3"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "leading-none font-semibold tracking-tight"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Voice preview",
+                                                "key": "root.0.0.2.1.0.1.1.0.0.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.1.0.1.1.0.0.0"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "text-muted-foreground text-sm mt-1"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Workspace welcome · clear voice",
+                                                "key": "root.0.0.2.1.0.1.1.0.0.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.1.0.1.1.0.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.0.1.1.0.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Ready",
+                                            "key": "root.0.0.2.1.0.1.1.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.0.1.1.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.0.1.1.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "p-6 pt-0"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "role": "img",
+                                          "aria-label": "Waveform of the selected prerecorded audio",
+                                          "class": "bg-muted/40 flex h-24 items-center gap-0.5 overflow-hidden rounded-md px-3"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-foreground",
+                                              "style": "height:71.92%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.0"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:86.13%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.1"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:82.64999999999999%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.2"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:85.115%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.3"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:60.754999999999995%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.4"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:46.980000000000004%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.5"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:85.405%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.6"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:90%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.7"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:42.195%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.8"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:90%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.9"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:47.415%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.10"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:90%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.11"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:84.97%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.12"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:79.46000000000001%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.13"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:65.105%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.14"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:17.11%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.15"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:5%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.16"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:5%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.17"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:90%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.18"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:90%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.19"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:83.66499999999999%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.20"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:63.945%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.21"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:90%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.22"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:90%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.23"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:47.705000000000005%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.24"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:84.97%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.25"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:77.14%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.26"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:90%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.27"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:52.199999999999996%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.28"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:89.03%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.29"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:75.4%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.30"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:90%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.31"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:81.49000000000001%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.32"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:49.73500000000001%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.33"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:86.85499999999999%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.34"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:85.405%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.35"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:90%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.36"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:16.240000000000002%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.37"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:82.21499999999999%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.38"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:87.725%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.39"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:90%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.40"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:81.2%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.41"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:75.11%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.42"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:34.22%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.43"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:5%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.44"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:5%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.45"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:5.22%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.46"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:90%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.47"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:90%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.48"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:90%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.49"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:90%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.50"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:88.885%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.51"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:90%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.52"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:90%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.53"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:21.605%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.54"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:84.24499999999999%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.55"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:82.21499999999999%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.56"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:67.28%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.57"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:31.755%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.58"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:5%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.59"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:5%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.60"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:90%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.61"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:90%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.62"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:12.035%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.63"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:90%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.64"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:65.685%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.65"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:90%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.66"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:90%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.67"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:83.22999999999999%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.68"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:84.97%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.69"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:89.03%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.70"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:6.96%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.71"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:90%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.72"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:90%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.73"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:63.22%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.74"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:5%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.75"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:5%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.76"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:5%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.77"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:35.525%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.78"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:90%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.79"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:85.25999999999999%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.80"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:79.17%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.81"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:76.995%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.82"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:81.49000000000001%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.83"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:90%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.84"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:90%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.85"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:55.68%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.86"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:72.79%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.87"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:68.14999999999999%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.88"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:90%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.89"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:80.04%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.90"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:90%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.91"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:90%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.92"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:90%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.93"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:48.575%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.94"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-px flex-1 rounded-full bg-muted-foreground/35",
+                                              "style": "height:21.314999999999998%"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.1.0.1.1.1.0.95"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.0.1.1.1.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "mt-3 flex items-center gap-3"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "text-muted-foreground w-8 font-mono text-[11px]"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "0:00",
+                                                "key": "root.0.0.2.1.0.1.1.1.1.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.1.0.1.1.1.1.0"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "data-orientation": "horizontal",
+                                              "data-slot": "slider",
+                                              "class": "relative flex w-full touch-none items-center select-none data-disabled:opacity-50 data-vertical:h-full data-vertical:min-h-40 data-vertical:w-auto data-vertical:flex-col",
+                                              "aria-label": "Seek audio",
+                                              "style": "--radix-slider-thumb-transform:translateX(-50%)"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "data-orientation": "horizontal",
+                                                  "data-slot": "slider-track",
+                                                  "class": "relative grow overflow-hidden rounded-full bg-muted data-horizontal:h-1.5 data-horizontal:w-full data-vertical:h-full data-vertical:w-1.5"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "span",
+                                                    "attrs": {
+                                                      "data-orientation": "horizontal",
+                                                      "data-slot": "slider-range",
+                                                      "class": "absolute bg-primary select-none data-horizontal:h-full data-vertical:w-full",
+                                                      "style": "left:0%;right:100%"
+                                                    },
+                                                    "children": [],
+                                                    "key": "root.0.0.2.1.0.1.1.1.1.1.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.2.1.0.1.1.1.1.1.0"
+                                              },
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "style": "transform: var(--radix-slider-thumb-transform); position: absolute; left: calc(0% + 8px);"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "span",
+                                                    "attrs": {
+                                                      "role": "slider",
+                                                      "aria-label": "Seek audio",
+                                                      "aria-valuemin": "0",
+                                                      "aria-valuemax": "8.01",
+                                                      "data-orientation": "horizontal",
+                                                      "data-slot": "slider-thumb",
+                                                      "class": "block size-4 shrink-0 rounded-full border border-primary bg-background shadow-sm ring-ring/50 transition-[color,box-shadow] select-none hover:ring-4 focus-visible:ring-4 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50",
+                                                      "style": "",
+                                                      "aria-valuenow": "0"
+                                                    },
+                                                    "children": [],
+                                                    "key": "root.0.0.2.1.0.1.1.1.1.1.1.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.2.1.0.1.1.1.1.1.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.1.0.1.1.1.1.1"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "text-muted-foreground w-8 font-mono text-[11px]"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "0:08",
+                                                "key": "root.0.0.2.1.0.1.1.1.1.2.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.1.0.1.1.1.1.2"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.0.1.1.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.0.1.1.1"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center p-6 pt-0 flex-wrap justify-between gap-3"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "flex items-center gap-2"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "button",
+                                            "attrs": {
+                                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 h-8 rounded-md px-3 text-xs"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "icon",
+                                                "attrs": {
+                                                  "name": "i-lucide-mic",
+                                                  "class": "lucide lucide-mic"
+                                                },
+                                                "key": "root.0.0.2.1.0.1.1.2.0.0.0"
+                                              },
+                                              {
+                                                "text": "Start demo session",
+                                                "key": "root.0.0.2.1.0.1.1.2.0.0.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.1.0.1.1.2.0.0"
+                                          },
+                                          {
+                                            "tag": "button",
+                                            "attrs": {
+                                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground size-8",
+                                              "aria-label": "Play audio"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "icon",
+                                                "attrs": {
+                                                  "name": "i-lucide-play",
+                                                  "class": "lucide lucide-play"
+                                                },
+                                                "key": "root.0.0.2.1.0.1.1.2.0.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.1.0.1.1.2.0.1"
+                                          },
+                                          {
+                                            "tag": "button",
+                                            "attrs": {
+                                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-8",
+                                              "aria-label": "Stop audio"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "icon",
+                                                "attrs": {
+                                                  "name": "i-lucide-square",
+                                                  "class": "lucide lucide-square"
+                                                },
+                                                "key": "root.0.0.2.1.0.1.1.2.0.2.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.1.0.1.1.2.0.2"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.0.1.1.2.0"
+                                      },
+                                      {
+                                        "tag": "a",
+                                        "attrs": {
+                                          "href": "/reference/cd0fe8784f8ee64c.wav",
+                                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-arrow-down-to-line",
+                                              "class": "lucide lucide-arrow-down-to-line"
+                                            },
+                                            "key": "root.0.0.2.1.0.1.1.2.1.0"
+                                          },
+                                          {
+                                            "text": "WAV",
+                                            "key": "root.0.0.2.1.0.1.1.2.1.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.0.1.1.2.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.0.1.1.2"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.0.1.1"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "data-orientation": "horizontal"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex flex-wrap items-center justify-between gap-2"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "role": "tablist",
+                                          "class": "bg-muted text-muted-foreground inline-flex h-9 items-center justify-center rounded-lg p-1",
+                                          "aria-label": "Audio inspector",
+                                          "data-orientation": "horizontal",
+                                          "style": "outline:none"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "button",
+                                            "attrs": {
+                                              "type": "button",
+                                              "role": "tab",
+                                              "data-state": "active",
+                                              "id": "radix-_R_3lldbsnpfknmlb_-trigger-transcript",
+                                              "class": "ring-offset-background focus-visible:ring-ring data-[state=active]:bg-background data-[state=active]:text-foreground inline-flex items-center justify-center rounded-md px-3 py-1 text-sm font-medium whitespace-nowrap transition-all focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-[state=active]:shadow-sm",
+                                              "data-orientation": "horizontal"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Transcript",
+                                                "key": "root.0.0.2.1.0.1.2.0.0.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.1.0.1.2.0.0.0"
+                                          },
+                                          {
+                                            "tag": "button",
+                                            "attrs": {
+                                              "type": "button",
+                                              "role": "tab",
+                                              "data-state": "inactive",
+                                              "id": "radix-_R_3lldbsnpfknmlb_-trigger-events",
+                                              "class": "ring-offset-background focus-visible:ring-ring data-[state=active]:bg-background data-[state=active]:text-foreground inline-flex items-center justify-center rounded-md px-3 py-1 text-sm font-medium whitespace-nowrap transition-all focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-[state=active]:shadow-sm",
+                                              "data-orientation": "horizontal"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Events ",
+                                                "key": "root.0.0.2.1.0.1.2.0.0.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.1.0.1.2.0.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.0.1.2.0.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "text-muted-foreground text-[11px]"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Prerecorded demo · microphone not used",
+                                            "key": "root.0.0.2.1.0.1.2.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.0.1.2.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.0.1.2.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "data-state": "active",
+                                      "data-orientation": "horizontal",
+                                      "role": "tabpanel",
+                                      "id": "radix-_R_3lldbsnpfknmlb_-content-transcript",
+                                      "class": "ring-offset-background focus-visible:ring-ring focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden mt-3",
+                                      "style": "animation-duration:0s"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "min-h-32 divide-y rounded-lg border"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "text-muted-foreground flex min-h-32 items-center justify-center px-4 text-center text-sm"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Start a sample to inspect its transcript.",
+                                                "key": "root.0.0.2.1.0.1.2.1.0.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.1.0.1.2.1.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.0.1.2.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.0.1.2.1"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "data-state": "inactive",
+                                      "data-orientation": "horizontal",
+                                      "role": "tabpanel",
+                                      "id": "radix-_R_3lldbsnpfknmlb_-content-events",
+                                      "class": "ring-offset-background focus-visible:ring-ring focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden mt-3"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.2.1.0.1.2.2"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.0.1.2"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.0.1"
+                          }
+                        ],
+                        "key": "root.0.0.2.1.0"
+                      }
+                    ],
+                    "key": "root.0.0.2.1"
+                  }
+                ],
+                "key": "root.0.0.2"
+              }
+            ],
+            "key": "root.0.0"
+          }
+        ],
+        "key": "root.0"
+      }
+    ],
+    "key": "root"
+  },
+  "headings": [
+    "Audio playground"
+  ]
+}

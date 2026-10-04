@@ -1,0 +1,1593 @@
+{
+  "label": "Evidence comparison matrix",
+  "path": "/ai-chat/evidence-comparison-matrix",
+  "appTitle": "",
+  "tree": {
+    "tag": "div",
+    "attrs": {
+      "id": "ai-workspace-content",
+      "class": "flex min-h-0 flex-1 flex-col"
+    },
+    "children": [
+      {
+        "tag": "div",
+        "attrs": {
+          "class": "flex-1 overflow-auto p-6 lg:p-9"
+        },
+        "children": [
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "mb-5 max-w-2xl"
+            },
+            "children": [
+              {
+                "tag": "p",
+                "attrs": {
+                  "class": "text-muted-foreground mb-3 text-xs font-medium tracking-widest uppercase"
+                },
+                "children": [
+                  {
+                    "text": "Onboarding study / Evidence review",
+                    "key": "root.0.0.0.0"
+                  }
+                ],
+                "key": "root.0.0.0"
+              },
+              {
+                "tag": "h1",
+                "attrs": {
+                  "class": "text-2xl font-semibold tracking-tight"
+                },
+                "children": [
+                  {
+                    "text": "Where do the sources agree?",
+                    "key": "root.0.0.1.0"
+                  }
+                ],
+                "key": "root.0.0.1"
+              },
+              {
+                "tag": "p",
+                "attrs": {
+                  "class": "text-muted-foreground mt-2 text-sm"
+                },
+                "children": [
+                  {
+                    "text": "Scan the pattern. Select a claim to read the sources together.",
+                    "key": "root.0.0.2.0"
+                  }
+                ],
+                "key": "root.0.0.2"
+              }
+            ],
+            "key": "root.0.0"
+          },
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "mb-5 flex flex-wrap items-center justify-between gap-4"
+            },
+            "children": [
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "flex flex-wrap gap-1",
+                  "aria-label": "Filter claims"
+                },
+                "children": [
+                  {
+                    "tag": "button",
+                    "attrs": {
+                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80 h-8 rounded-md px-3 text-xs"
+                    },
+                    "children": [
+                      {
+                        "text": "All claims",
+                        "key": "root.0.1.0.0.0"
+                      }
+                    ],
+                    "key": "root.0.1.0.0"
+                  },
+                  {
+                    "tag": "button",
+                    "attrs": {
+                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs"
+                    },
+                    "children": [
+                      {
+                        "text": "Conflict",
+                        "key": "root.0.1.0.1.0"
+                      }
+                    ],
+                    "key": "root.0.1.0.1"
+                  },
+                  {
+                    "tag": "button",
+                    "attrs": {
+                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs"
+                    },
+                    "children": [
+                      {
+                        "text": "Agreement",
+                        "key": "root.0.1.0.2.0"
+                      }
+                    ],
+                    "key": "root.0.1.0.2"
+                  },
+                  {
+                    "tag": "button",
+                    "attrs": {
+                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs"
+                    },
+                    "children": [
+                      {
+                        "text": "Qualified",
+                        "key": "root.0.1.0.3.0"
+                      }
+                    ],
+                    "key": "root.0.1.0.3"
+                  },
+                  {
+                    "tag": "button",
+                    "attrs": {
+                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs"
+                    },
+                    "children": [
+                      {
+                        "text": "Evidence gap",
+                        "key": "root.0.1.0.4.0"
+                      }
+                    ],
+                    "key": "root.0.1.0.4"
+                  }
+                ],
+                "key": "root.0.1.0"
+              },
+              {
+                "tag": "p",
+                "attrs": {
+                  "class": "text-muted-foreground text-xs"
+                },
+                "children": [
+                  {
+                    "text": "0",
+                    "key": "root.0.1.1.0"
+                  },
+                  {
+                    "text": " of 12 cells reviewed",
+                    "key": "root.0.1.1.1"
+                  }
+                ],
+                "key": "root.0.1.1"
+              }
+            ],
+            "key": "root.0.1"
+          },
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "max-h-[460px] overflow-auto rounded-lg border"
+            },
+            "children": [
+              {
+                "tag": "table",
+                "attrs": {
+                  "class": "w-full min-w-[840px] border-collapse text-sm"
+                },
+                "children": [
+                  {
+                    "tag": "caption",
+                    "attrs": {
+                      "class": "sr-only"
+                    },
+                    "children": [
+                      {
+                        "text": "Onboarding claims and supporting or conflicting evidence from three demo sources",
+                        "key": "root.0.2.0.0.0"
+                      }
+                    ],
+                    "key": "root.0.2.0.0"
+                  },
+                  {
+                    "tag": "thead",
+                    "attrs": {},
+                    "children": [
+                      {
+                        "tag": "tr",
+                        "attrs": {
+                          "class": "bg-muted/40 border-b"
+                        },
+                        "children": [
+                          {
+                            "tag": "th",
+                            "attrs": {
+                              "class": "bg-background sticky top-0 left-0 z-20 w-[30%] px-4 py-3 text-left font-medium"
+                            },
+                            "children": [
+                              {
+                                "text": "Claim / assessment",
+                                "key": "root.0.2.0.1.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.2.0.1.0.0"
+                          },
+                          {
+                            "tag": "th",
+                            "attrs": {
+                              "class": "bg-background sticky top-0 z-10 border-l px-4 py-3 text-left font-medium"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-muted-foreground mb-2 block font-mono text-xs"
+                                },
+                                "children": [
+                                  {
+                                    "text": "OBSERVED SOURCE 01",
+                                    "key": "root.0.2.0.1.0.1.0.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.1.0.1.0"
+                              },
+                              {
+                                "text": "Customer interviews",
+                                "key": "root.0.2.0.1.0.1.1"
+                              }
+                            ],
+                            "key": "root.0.2.0.1.0.1"
+                          },
+                          {
+                            "tag": "th",
+                            "attrs": {
+                              "class": "bg-background sticky top-0 z-10 border-l px-4 py-3 text-left font-medium"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-muted-foreground mb-2 block font-mono text-xs"
+                                },
+                                "children": [
+                                  {
+                                    "text": "OBSERVED SOURCE 02",
+                                    "key": "root.0.2.0.1.0.2.0.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.1.0.2.0"
+                              },
+                              {
+                                "text": "Support review",
+                                "key": "root.0.2.0.1.0.2.1"
+                              }
+                            ],
+                            "key": "root.0.2.0.1.0.2"
+                          },
+                          {
+                            "tag": "th",
+                            "attrs": {
+                              "class": "bg-background sticky top-0 z-10 border-l px-4 py-3 text-left font-medium"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-muted-foreground mb-2 block font-mono text-xs"
+                                },
+                                "children": [
+                                  {
+                                    "text": "PROPOSAL · NOT INDEPENDENT EVIDENCE",
+                                    "key": "root.0.2.0.1.0.3.0.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.1.0.3.0"
+                              },
+                              {
+                                "text": "Design proposal",
+                                "key": "root.0.2.0.1.0.3.1"
+                              }
+                            ],
+                            "key": "root.0.2.0.1.0.3"
+                          }
+                        ],
+                        "key": "root.0.2.0.1.0"
+                      }
+                    ],
+                    "key": "root.0.2.0.1"
+                  },
+                  {
+                    "tag": "tbody",
+                    "attrs": {},
+                    "children": [
+                      {
+                        "tag": "tr",
+                        "attrs": {
+                          "class": "border-b last:border-b-0"
+                        },
+                        "children": [
+                          {
+                            "tag": "th",
+                            "attrs": {
+                              "class": "bg-background sticky left-0 z-10 px-4 py-3 text-left align-top font-normal"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "block max-w-60 leading-6 font-medium"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Import a document before introducing collaboration",
+                                    "key": "root.0.2.0.2.0.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.2.0.0.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "inline-flex items-center rounded-md border px-2.5 py-0.5 transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground mt-2 text-[10px] font-normal"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Qualified",
+                                    "key": "root.0.2.0.2.0.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.2.0.0.1"
+                              }
+                            ],
+                            "key": "root.0.2.0.2.0.0"
+                          },
+                          {
+                            "tag": "td",
+                            "attrs": {
+                              "class": "border-l p-2 align-top"
+                            },
+                            "children": [
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "aria-label": "Inspect Customer interviews for Import a document before introducing collaboration",
+                                  "class": "hover:bg-muted focus-visible:outline-ring flex min-h-24 w-full flex-col rounded-md p-3 text-left transition-colors focus-visible:outline-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "flex items-center gap-2 text-xs font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-check",
+                                          "class": "lucide lucide-check size-4"
+                                        },
+                                        "key": "root.0.2.0.2.0.1.0.0.0"
+                                      },
+                                      {
+                                        "text": "Supports",
+                                        "key": "root.0.2.0.2.0.1.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.2.0.1.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-muted-foreground mt-2 line-clamp-2 text-xs leading-5"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Participants wanted something worth sharing before they invited a colleague.",
+                                        "key": "root.0.2.0.2.0.1.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.2.0.1.0.1"
+                                  }
+                                ],
+                                "key": "root.0.2.0.2.0.1.0"
+                              }
+                            ],
+                            "key": "root.0.2.0.2.0.1"
+                          },
+                          {
+                            "tag": "td",
+                            "attrs": {
+                              "class": "border-l p-2 align-top"
+                            },
+                            "children": [
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "aria-label": "Inspect Support review for Import a document before introducing collaboration",
+                                  "class": "hover:bg-muted focus-visible:outline-ring flex min-h-24 w-full flex-col rounded-md p-3 text-left transition-colors focus-visible:outline-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "flex items-center gap-2 text-xs font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-circle-question-mark",
+                                          "class": "lucide lucide-circle-question-mark size-4"
+                                        },
+                                        "key": "root.0.2.0.2.0.2.0.0.0"
+                                      },
+                                      {
+                                        "text": "Qualifies",
+                                        "key": "root.0.2.0.2.0.2.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.2.0.2.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-muted-foreground mt-2 line-clamp-2 text-xs leading-5"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "People joining an established team already had shared content waiting for them.",
+                                        "key": "root.0.2.0.2.0.2.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.2.0.2.0.1"
+                                  }
+                                ],
+                                "key": "root.0.2.0.2.0.2.0"
+                              }
+                            ],
+                            "key": "root.0.2.0.2.0.2"
+                          },
+                          {
+                            "tag": "td",
+                            "attrs": {
+                              "class": "border-l p-2 align-top"
+                            },
+                            "children": [
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "aria-label": "Inspect Design proposal for Import a document before introducing collaboration",
+                                  "class": "hover:bg-muted focus-visible:outline-ring flex min-h-24 w-full flex-col rounded-md p-3 text-left transition-colors focus-visible:outline-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "flex items-center gap-2 text-xs font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-check",
+                                          "class": "lucide lucide-check size-4"
+                                        },
+                                        "key": "root.0.2.0.2.0.3.0.0.0"
+                                      },
+                                      {
+                                        "text": "Supports",
+                                        "key": "root.0.2.0.2.0.3.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.2.0.3.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-muted-foreground mt-2 line-clamp-2 text-xs leading-5"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Begin with a document, then offer sharing as the next useful action.",
+                                        "key": "root.0.2.0.2.0.3.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.2.0.3.0.1"
+                                  }
+                                ],
+                                "key": "root.0.2.0.2.0.3.0"
+                              }
+                            ],
+                            "key": "root.0.2.0.2.0.3"
+                          }
+                        ],
+                        "key": "root.0.2.0.2.0"
+                      },
+                      {
+                        "tag": "tr",
+                        "attrs": {
+                          "class": "border-b last:border-b-0"
+                        },
+                        "children": [
+                          {
+                            "tag": "th",
+                            "attrs": {
+                              "class": "sticky left-0 z-10 px-4 py-3 text-left align-top font-normal bg-accent"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "block max-w-60 leading-6 font-medium"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Require a team invitation to finish setup",
+                                    "key": "root.0.2.0.2.1.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.2.1.0.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "inline-flex items-center rounded-md border px-2.5 py-0.5 transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground mt-2 text-[10px] font-normal"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Conflict",
+                                    "key": "root.0.2.0.2.1.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.2.1.0.1"
+                              }
+                            ],
+                            "key": "root.0.2.0.2.1.0"
+                          },
+                          {
+                            "tag": "td",
+                            "attrs": {
+                              "class": "border-l p-2 align-top"
+                            },
+                            "children": [
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "aria-label": "Inspect Customer interviews for Require a team invitation to finish setup",
+                                  "class": "hover:bg-muted focus-visible:outline-ring flex min-h-24 w-full flex-col rounded-md p-3 text-left transition-colors focus-visible:outline-2 bg-destructive/5 ring-1 ring-blue-500/50"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "flex items-center gap-2 text-xs font-medium text-destructive"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-triangle-alert",
+                                          "class": "lucide lucide-triangle-alert size-4"
+                                        },
+                                        "key": "root.0.2.0.2.1.1.0.0.0"
+                                      },
+                                      {
+                                        "text": "Conflicts",
+                                        "key": "root.0.2.0.2.1.1.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.2.1.1.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-muted-foreground mt-2 line-clamp-2 text-xs leading-5"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Solo participants wanted to explore before deciding who else should join.",
+                                        "key": "root.0.2.0.2.1.1.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.2.1.1.0.1"
+                                  }
+                                ],
+                                "key": "root.0.2.0.2.1.1.0"
+                              }
+                            ],
+                            "key": "root.0.2.0.2.1.1"
+                          },
+                          {
+                            "tag": "td",
+                            "attrs": {
+                              "class": "border-l p-2 align-top"
+                            },
+                            "children": [
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "aria-label": "Inspect Support review for Require a team invitation to finish setup",
+                                  "class": "hover:bg-muted focus-visible:outline-ring flex min-h-24 w-full flex-col rounded-md p-3 text-left transition-colors focus-visible:outline-2 bg-destructive/5"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "flex items-center gap-2 text-xs font-medium text-destructive"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-triangle-alert",
+                                          "class": "lucide lucide-triangle-alert size-4"
+                                        },
+                                        "key": "root.0.2.0.2.1.2.0.0.0"
+                                      },
+                                      {
+                                        "text": "Conflicts",
+                                        "key": "root.0.2.0.2.1.2.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.2.1.2.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-muted-foreground mt-2 line-clamp-2 text-xs leading-5"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Individual accounts asked how to skip the team invitation step.",
+                                        "key": "root.0.2.0.2.1.2.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.2.1.2.0.1"
+                                  }
+                                ],
+                                "key": "root.0.2.0.2.1.2.0"
+                              }
+                            ],
+                            "key": "root.0.2.0.2.1.2"
+                          },
+                          {
+                            "tag": "td",
+                            "attrs": {
+                              "class": "border-l p-2 align-top"
+                            },
+                            "children": [
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "aria-label": "Inspect Design proposal for Require a team invitation to finish setup",
+                                  "class": "hover:bg-muted focus-visible:outline-ring flex min-h-24 w-full flex-col rounded-md p-3 text-left transition-colors focus-visible:outline-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "flex items-center gap-2 text-xs font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-check",
+                                          "class": "lucide lucide-check size-4"
+                                        },
+                                        "key": "root.0.2.0.2.1.3.0.0.0"
+                                      },
+                                      {
+                                        "text": "Supports",
+                                        "key": "root.0.2.0.2.1.3.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.2.1.3.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-muted-foreground mt-2 line-clamp-2 text-xs leading-5"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "The initial concept makes one teammate invitation the last required setup step.",
+                                        "key": "root.0.2.0.2.1.3.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.2.1.3.0.1"
+                                  }
+                                ],
+                                "key": "root.0.2.0.2.1.3.0"
+                              }
+                            ],
+                            "key": "root.0.2.0.2.1.3"
+                          }
+                        ],
+                        "key": "root.0.2.0.2.1"
+                      },
+                      {
+                        "tag": "tr",
+                        "attrs": {
+                          "class": "border-b last:border-b-0"
+                        },
+                        "children": [
+                          {
+                            "tag": "th",
+                            "attrs": {
+                              "class": "bg-background sticky left-0 z-10 px-4 py-3 text-left align-top font-normal"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "block max-w-60 leading-6 font-medium"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Show document visibility before sending invitations",
+                                    "key": "root.0.2.0.2.2.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.2.2.0.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "inline-flex items-center rounded-md border px-2.5 py-0.5 transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground mt-2 text-[10px] font-normal"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Agreement",
+                                    "key": "root.0.2.0.2.2.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.2.2.0.1"
+                              }
+                            ],
+                            "key": "root.0.2.0.2.2.0"
+                          },
+                          {
+                            "tag": "td",
+                            "attrs": {
+                              "class": "border-l p-2 align-top"
+                            },
+                            "children": [
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "aria-label": "Inspect Customer interviews for Show document visibility before sending invitations",
+                                  "class": "hover:bg-muted focus-visible:outline-ring flex min-h-24 w-full flex-col rounded-md p-3 text-left transition-colors focus-visible:outline-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "flex items-center gap-2 text-xs font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-check",
+                                          "class": "lucide lucide-check size-4"
+                                        },
+                                        "key": "root.0.2.0.2.2.1.0.0.0"
+                                      },
+                                      {
+                                        "text": "Supports",
+                                        "key": "root.0.2.0.2.2.1.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.2.2.1.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-muted-foreground mt-2 line-clamp-2 text-xs leading-5"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Before sharing, participants checked whether others could see the whole workspace.",
+                                        "key": "root.0.2.0.2.2.1.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.2.2.1.0.1"
+                                  }
+                                ],
+                                "key": "root.0.2.0.2.2.1.0"
+                              }
+                            ],
+                            "key": "root.0.2.0.2.2.1"
+                          },
+                          {
+                            "tag": "td",
+                            "attrs": {
+                              "class": "border-l p-2 align-top"
+                            },
+                            "children": [
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "aria-label": "Inspect Support review for Show document visibility before sending invitations",
+                                  "class": "hover:bg-muted focus-visible:outline-ring flex min-h-24 w-full flex-col rounded-md p-3 text-left transition-colors focus-visible:outline-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "flex items-center gap-2 text-xs font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-check",
+                                          "class": "lucide lucide-check size-4"
+                                        },
+                                        "key": "root.0.2.0.2.2.2.0.0.0"
+                                      },
+                                      {
+                                        "text": "Supports",
+                                        "key": "root.0.2.0.2.2.2.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.2.2.2.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-muted-foreground mt-2 line-clamp-2 text-xs leading-5"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Questions about private versus shared files recur in invitation requests.",
+                                        "key": "root.0.2.0.2.2.2.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.2.2.2.0.1"
+                                  }
+                                ],
+                                "key": "root.0.2.0.2.2.2.0"
+                              }
+                            ],
+                            "key": "root.0.2.0.2.2.2"
+                          },
+                          {
+                            "tag": "td",
+                            "attrs": {
+                              "class": "border-l p-2 align-top"
+                            },
+                            "children": [
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "aria-label": "Inspect Design proposal for Show document visibility before sending invitations",
+                                  "class": "hover:bg-muted focus-visible:outline-ring flex min-h-24 w-full flex-col rounded-md p-3 text-left transition-colors focus-visible:outline-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "flex items-center gap-2 text-xs font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-check",
+                                          "class": "lucide lucide-check size-4"
+                                        },
+                                        "key": "root.0.2.0.2.2.3.0.0.0"
+                                      },
+                                      {
+                                        "text": "Supports",
+                                        "key": "root.0.2.0.2.2.3.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.2.2.3.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-muted-foreground mt-2 line-clamp-2 text-xs leading-5"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Show an audience preview alongside the invitation action.",
+                                        "key": "root.0.2.0.2.2.3.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.2.2.3.0.1"
+                                  }
+                                ],
+                                "key": "root.0.2.0.2.2.3.0"
+                              }
+                            ],
+                            "key": "root.0.2.0.2.2.3"
+                          }
+                        ],
+                        "key": "root.0.2.0.2.2"
+                      },
+                      {
+                        "tag": "tr",
+                        "attrs": {
+                          "class": "border-b last:border-b-0"
+                        },
+                        "children": [
+                          {
+                            "tag": "th",
+                            "attrs": {
+                              "class": "bg-background sticky left-0 z-10 px-4 py-3 text-left align-top font-normal"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "block max-w-60 leading-6 font-medium"
+                                },
+                                "children": [
+                                  {
+                                    "text": "A guided tour improves first-week retention",
+                                    "key": "root.0.2.0.2.3.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.2.3.0.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "inline-flex items-center rounded-md border px-2.5 py-0.5 transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground mt-2 text-[10px] font-normal"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Evidence gap",
+                                    "key": "root.0.2.0.2.3.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.2.3.0.1"
+                              }
+                            ],
+                            "key": "root.0.2.0.2.3.0"
+                          },
+                          {
+                            "tag": "td",
+                            "attrs": {
+                              "class": "border-l p-2 align-top"
+                            },
+                            "children": [
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "aria-label": "Inspect Customer interviews for A guided tour improves first-week retention",
+                                  "class": "hover:bg-muted focus-visible:outline-ring flex min-h-24 w-full flex-col rounded-md p-3 text-left transition-colors focus-visible:outline-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "flex items-center gap-2 text-xs font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-minus",
+                                          "class": "lucide lucide-minus size-4"
+                                        },
+                                        "key": "root.0.2.0.2.3.1.0.0.0"
+                                      },
+                                      {
+                                        "text": "No evidence",
+                                        "key": "root.0.2.0.2.3.1.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.2.3.1.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-muted-foreground mt-2 line-clamp-2 text-xs leading-5"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Interviews did not measure first-week retention or compare guided tours.",
+                                        "key": "root.0.2.0.2.3.1.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.2.3.1.0.1"
+                                  }
+                                ],
+                                "key": "root.0.2.0.2.3.1.0"
+                              }
+                            ],
+                            "key": "root.0.2.0.2.3.1"
+                          },
+                          {
+                            "tag": "td",
+                            "attrs": {
+                              "class": "border-l p-2 align-top"
+                            },
+                            "children": [
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "aria-label": "Inspect Support review for A guided tour improves first-week retention",
+                                  "class": "hover:bg-muted focus-visible:outline-ring flex min-h-24 w-full flex-col rounded-md p-3 text-left transition-colors focus-visible:outline-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "flex items-center gap-2 text-xs font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-minus",
+                                          "class": "lucide lucide-minus size-4"
+                                        },
+                                        "key": "root.0.2.0.2.3.2.0.0.0"
+                                      },
+                                      {
+                                        "text": "No evidence",
+                                        "key": "root.0.2.0.2.3.2.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.2.3.2.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-muted-foreground mt-2 line-clamp-2 text-xs leading-5"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Support themes contain no retention measurements.",
+                                        "key": "root.0.2.0.2.3.2.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.2.3.2.0.1"
+                                  }
+                                ],
+                                "key": "root.0.2.0.2.3.2.0"
+                              }
+                            ],
+                            "key": "root.0.2.0.2.3.2"
+                          },
+                          {
+                            "tag": "td",
+                            "attrs": {
+                              "class": "border-l p-2 align-top"
+                            },
+                            "children": [
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "aria-label": "Inspect Design proposal for A guided tour improves first-week retention",
+                                  "class": "hover:bg-muted focus-visible:outline-ring flex min-h-24 w-full flex-col rounded-md p-3 text-left transition-colors focus-visible:outline-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "flex items-center gap-2 text-xs font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-circle-question-mark",
+                                          "class": "lucide lucide-circle-question-mark size-4"
+                                        },
+                                        "key": "root.0.2.0.2.3.3.0.0.0"
+                                      },
+                                      {
+                                        "text": "Qualifies",
+                                        "key": "root.0.2.0.2.3.3.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.2.3.3.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-muted-foreground mt-2 line-clamp-2 text-xs leading-5"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "A short tour might help unfamiliar users; test it against learning through real work.",
+                                        "key": "root.0.2.0.2.3.3.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.2.3.3.0.1"
+                                  }
+                                ],
+                                "key": "root.0.2.0.2.3.3.0"
+                              }
+                            ],
+                            "key": "root.0.2.0.2.3.3"
+                          }
+                        ],
+                        "key": "root.0.2.0.2.3"
+                      }
+                    ],
+                    "key": "root.0.2.0.2"
+                  }
+                ],
+                "key": "root.0.2.0"
+              }
+            ],
+            "key": "root.0.2"
+          },
+          {
+            "tag": "section",
+            "attrs": {
+              "class": "mt-5 rounded-xl border",
+              "aria-label": "Selected claim evidence"
+            },
+            "children": [
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "bg-muted/20 flex flex-wrap items-center justify-between gap-2 border-b px-5 py-3"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {},
+                    "children": [
+                      {
+                        "tag": "p",
+                        "attrs": {
+                          "class": "text-muted-foreground mb-1 text-[10px] tracking-wider uppercase"
+                        },
+                        "children": [
+                          {
+                            "text": "Read the sources together",
+                            "key": "root.0.3.0.0.0.0"
+                          }
+                        ],
+                        "key": "root.0.3.0.0.0"
+                      },
+                      {
+                        "tag": "h2",
+                        "attrs": {
+                          "class": "text-sm font-semibold"
+                        },
+                        "children": [
+                          {
+                            "text": "Require a team invitation to finish setup",
+                            "key": "root.0.3.0.0.1.0"
+                          }
+                        ],
+                        "key": "root.0.3.0.0.1"
+                      }
+                    ],
+                    "key": "root.0.3.0.0"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground"
+                    },
+                    "children": [
+                      {
+                        "text": "Conflict",
+                        "key": "root.0.3.0.1.0"
+                      }
+                    ],
+                    "key": "root.0.3.0.1"
+                  }
+                ],
+                "key": "root.0.3.0"
+              },
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "grid divide-y lg:grid-cols-3 lg:divide-x lg:divide-y-0"
+                },
+                "children": [
+                  {
+                    "tag": "article",
+                    "attrs": {
+                      "class": "flex flex-col p-5 bg-blue-500/5"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "mb-3 flex items-center justify-between gap-2"
+                        },
+                        "children": [
+                          {
+                            "tag": "h3",
+                            "attrs": {
+                              "class": "text-xs font-medium"
+                            },
+                            "children": [
+                              {
+                                "text": "Customer interviews",
+                                "key": "root.0.3.1.0.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.3.1.0.0.0"
+                          },
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "flex items-center gap-1 text-[10px] text-destructive"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-triangle-alert",
+                                  "class": "lucide lucide-triangle-alert size-3"
+                                },
+                                "key": "root.0.3.1.0.0.1.0"
+                              },
+                              {
+                                "text": "Conflicts",
+                                "key": "root.0.3.1.0.0.1.1"
+                              }
+                            ],
+                            "key": "root.0.3.1.0.0.1"
+                          }
+                        ],
+                        "key": "root.0.3.1.0.0"
+                      },
+                      {
+                        "tag": "blockquote",
+                        "attrs": {
+                          "class": "border-l-2 pl-3 text-[13px] leading-6"
+                        },
+                        "children": [
+                          {
+                            "text": "Solo participants wanted to explore before deciding who else should join.",
+                            "key": "root.0.3.1.0.1.0"
+                          }
+                        ],
+                        "key": "root.0.3.1.0.1"
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {
+                          "class": "text-muted-foreground mt-3 text-xs leading-5"
+                        },
+                        "children": [
+                          {
+                            "text": "A required invitation prevents these participants from completing setup.",
+                            "key": "root.0.3.1.0.2.0"
+                          }
+                        ],
+                        "key": "root.0.3.1.0.2"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 mt-3 self-start text-xs",
+                          "aria-label": "Mark Customer interviews as reviewed"
+                        },
+                        "children": [
+                          {
+                            "text": "Mark as reviewed",
+                            "key": "root.0.3.1.0.3.0"
+                          }
+                        ],
+                        "key": "root.0.3.1.0.3"
+                      }
+                    ],
+                    "key": "root.0.3.1.0"
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": {
+                      "class": "flex flex-col p-5"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "mb-3 flex items-center justify-between gap-2"
+                        },
+                        "children": [
+                          {
+                            "tag": "h3",
+                            "attrs": {
+                              "class": "text-xs font-medium"
+                            },
+                            "children": [
+                              {
+                                "text": "Support review",
+                                "key": "root.0.3.1.1.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.3.1.1.0.0"
+                          },
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "flex items-center gap-1 text-[10px] text-destructive"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-triangle-alert",
+                                  "class": "lucide lucide-triangle-alert size-3"
+                                },
+                                "key": "root.0.3.1.1.0.1.0"
+                              },
+                              {
+                                "text": "Conflicts",
+                                "key": "root.0.3.1.1.0.1.1"
+                              }
+                            ],
+                            "key": "root.0.3.1.1.0.1"
+                          }
+                        ],
+                        "key": "root.0.3.1.1.0"
+                      },
+                      {
+                        "tag": "blockquote",
+                        "attrs": {
+                          "class": "border-l-2 pl-3 text-[13px] leading-6"
+                        },
+                        "children": [
+                          {
+                            "text": "Individual accounts asked how to skip the team invitation step.",
+                            "key": "root.0.3.1.1.1.0"
+                          }
+                        ],
+                        "key": "root.0.3.1.1.1"
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {
+                          "class": "text-muted-foreground mt-3 text-xs leading-5"
+                        },
+                        "children": [
+                          {
+                            "text": "Support notes identify friction with mandatory invitations.",
+                            "key": "root.0.3.1.1.2.0"
+                          }
+                        ],
+                        "key": "root.0.3.1.1.2"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 mt-3 self-start text-xs",
+                          "aria-label": "Mark Support review as reviewed"
+                        },
+                        "children": [
+                          {
+                            "text": "Mark as reviewed",
+                            "key": "root.0.3.1.1.3.0"
+                          }
+                        ],
+                        "key": "root.0.3.1.1.3"
+                      }
+                    ],
+                    "key": "root.0.3.1.1"
+                  },
+                  {
+                    "tag": "article",
+                    "attrs": {
+                      "class": "flex flex-col p-5"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "mb-3 flex items-center justify-between gap-2"
+                        },
+                        "children": [
+                          {
+                            "tag": "h3",
+                            "attrs": {
+                              "class": "text-xs font-medium"
+                            },
+                            "children": [
+                              {
+                                "text": "Design proposal",
+                                "key": "root.0.3.1.2.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.3.1.2.0.0"
+                          },
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "flex items-center gap-1 text-[10px]"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-check",
+                                  "class": "lucide lucide-check size-3"
+                                },
+                                "key": "root.0.3.1.2.0.1.0"
+                              },
+                              {
+                                "text": "Supports",
+                                "key": "root.0.3.1.2.0.1.1"
+                              }
+                            ],
+                            "key": "root.0.3.1.2.0.1"
+                          }
+                        ],
+                        "key": "root.0.3.1.2.0"
+                      },
+                      {
+                        "tag": "blockquote",
+                        "attrs": {
+                          "class": "border-l-2 pl-3 text-[13px] leading-6"
+                        },
+                        "children": [
+                          {
+                            "text": "The initial concept makes one teammate invitation the last required setup step.",
+                            "key": "root.0.3.1.2.1.0"
+                          }
+                        ],
+                        "key": "root.0.3.1.2.1"
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {
+                          "class": "text-muted-foreground mt-3 text-xs leading-5"
+                        },
+                        "children": [
+                          {
+                            "text": "This earlier design concept conflicts with the observed needs. Resolve before implementation.",
+                            "key": "root.0.3.1.2.2.0"
+                          }
+                        ],
+                        "key": "root.0.3.1.2.2"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 mt-3 self-start text-xs",
+                          "aria-label": "Mark Design proposal as reviewed"
+                        },
+                        "children": [
+                          {
+                            "text": "Mark as reviewed",
+                            "key": "root.0.3.1.2.3.0"
+                          }
+                        ],
+                        "key": "root.0.3.1.2.3"
+                      }
+                    ],
+                    "key": "root.0.3.1.2"
+                  }
+                ],
+                "key": "root.0.3.1"
+              }
+            ],
+            "key": "root.0.3"
+          },
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "text-muted-foreground mt-5 flex flex-wrap gap-x-6 gap-y-2 text-xs"
+            },
+            "children": [
+              {
+                "tag": "span",
+                "attrs": {
+                  "class": "flex items-center gap-2"
+                },
+                "children": [
+                  {
+                    "tag": "icon",
+                    "attrs": {
+                      "name": "i-lucide-check",
+                      "class": "lucide lucide-check size-3.5"
+                    },
+                    "key": "root.0.4.0.0"
+                  },
+                  {
+                    "text": "Supports",
+                    "key": "root.0.4.0.1"
+                  }
+                ],
+                "key": "root.0.4.0"
+              },
+              {
+                "tag": "span",
+                "attrs": {
+                  "class": "flex items-center gap-2"
+                },
+                "children": [
+                  {
+                    "tag": "icon",
+                    "attrs": {
+                      "name": "i-lucide-triangle-alert",
+                      "class": "lucide lucide-triangle-alert size-3.5"
+                    },
+                    "key": "root.0.4.1.0"
+                  },
+                  {
+                    "text": "Conflicts",
+                    "key": "root.0.4.1.1"
+                  }
+                ],
+                "key": "root.0.4.1"
+              },
+              {
+                "tag": "span",
+                "attrs": {
+                  "class": "flex items-center gap-2"
+                },
+                "children": [
+                  {
+                    "tag": "icon",
+                    "attrs": {
+                      "name": "i-lucide-circle-question-mark",
+                      "class": "lucide lucide-circle-question-mark size-3.5"
+                    },
+                    "key": "root.0.4.2.0"
+                  },
+                  {
+                    "text": "Qualifies",
+                    "key": "root.0.4.2.1"
+                  }
+                ],
+                "key": "root.0.4.2"
+              },
+              {
+                "tag": "span",
+                "attrs": {
+                  "class": "flex items-center gap-2"
+                },
+                "children": [
+                  {
+                    "tag": "icon",
+                    "attrs": {
+                      "name": "i-lucide-minus",
+                      "class": "lucide lucide-minus size-3.5"
+                    },
+                    "key": "root.0.4.3.0"
+                  },
+                  {
+                    "text": "No evidence",
+                    "key": "root.0.4.3.1"
+                  }
+                ],
+                "key": "root.0.4.3"
+              }
+            ],
+            "key": "root.0.4"
+          },
+          {
+            "tag": "p",
+            "attrs": {
+              "class": "text-muted-foreground mt-6 max-w-2xl text-xs leading-5"
+            },
+            "children": [
+              {
+                "text": "Agreement shows alignment within this sample, not proof. The design proposal is a hypothesis and is not independent research evidence.",
+                "key": "root.0.5.0"
+              }
+            ],
+            "key": "root.0.5"
+          }
+        ],
+        "key": "root.0"
+      }
+    ],
+    "key": "root"
+  },
+  "headings": [
+    "Where do the sources agree?",
+    "Require a team invitation to finish setup",
+    "Customer interviews",
+    "Support review",
+    "Design proposal"
+  ]
+}

@@ -1,0 +1,2684 @@
+{
+  "label": "Issue List 1",
+  "path": "/project-management/issue-list-1",
+  "appTitle": "Project Management",
+  "tree": {
+    "tag": "div",
+    "attrs": {
+      "class": "flex h-full flex-col overflow-hidden"
+    },
+    "children": [
+      {
+        "tag": "div",
+        "attrs": {
+          "class": "flex min-h-0 flex-1 flex-col overflow-hidden"
+        },
+        "children": [
+          {
+            "tag": "main",
+            "attrs": {
+              "class": "bg-background flex h-full min-h-0 flex-1 flex-col overflow-hidden"
+            },
+            "children": [
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "border-b"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "flex min-h-14 items-center gap-4 px-4 sm:px-6"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "no-scrollbar flex min-w-0 flex-1 items-center overflow-x-auto"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex shrink-0 items-center gap-2 pr-1"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "bg-muted text-foreground flex size-7 items-center justify-center rounded-md"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-folder-kanban",
+                                      "class": "lucide lucide-folder-kanban size-4"
+                                    },
+                                    "key": "root.0.0.0.0.0.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.0.0.0"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-foreground/85 max-w-48 truncate px-2 text-[14px] font-medium"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Renewal Forecast Console",
+                                    "key": "root.0.0.0.0.0.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.0.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.0.0.0.0"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent text-muted-foreground hover:text-foreground size-8 shrink-0 rounded-md",
+                              "aria-label": "Project options"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-ellipsis",
+                                  "class": "lucide lucide-ellipsis size-4"
+                                },
+                                "key": "root.0.0.0.0.0.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.0.0.0.1"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "mx-4 h-5 w-px shrink-0 border-l"
+                            },
+                            "children": [],
+                            "key": "root.0.0.0.0.0.2"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex items-center gap-1"
+                            },
+                            "children": [
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "type": "button",
+                                  "class": "relative z-10 flex items-center rounded-md px-2 py-1.5 text-[13px] font-medium transition-colors bg-muted text-foreground"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Issues",
+                                    "key": "root.0.0.0.0.0.3.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "bg-foreground absolute bottom-[-14px] left-1/2 h-0.5 w-[80%] -translate-x-1/2 rounded-t-md"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.0.0.0.3.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.0.3.0"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "type": "button",
+                                  "class": "relative z-10 flex items-center rounded-md px-2 py-1.5 text-[13px] font-medium transition-colors text-muted-foreground hover:bg-muted/50 hover:text-foreground"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Cycles",
+                                    "key": "root.0.0.0.0.0.3.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.0.3.1"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "type": "button",
+                                  "class": "relative z-10 flex items-center rounded-md px-2 py-1.5 text-[13px] font-medium transition-colors text-muted-foreground hover:bg-muted/50 hover:text-foreground"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Modules",
+                                    "key": "root.0.0.0.0.0.3.2.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.0.3.2"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "type": "button",
+                                  "class": "relative z-10 flex items-center rounded-md px-2 py-1.5 text-[13px] font-medium transition-colors text-muted-foreground hover:bg-muted/50 hover:text-foreground"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Views",
+                                    "key": "root.0.0.0.0.0.3.3.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.0.3.3"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "type": "button",
+                                  "class": "relative z-10 flex items-center rounded-md px-2 py-1.5 text-[13px] font-medium transition-colors text-muted-foreground hover:bg-muted/50 hover:text-foreground"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Pages",
+                                    "key": "root.0.0.0.0.0.3.4.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.0.3.4"
+                              }
+                            ],
+                            "key": "root.0.0.0.0.0.3"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex shrink-0 items-center gap-2"
+                        },
+                        "children": [
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground size-8",
+                              "aria-label": "Filter issues",
+                              "type": "button",
+                              "id": "radix-_R_1ilfiv5uknmlb_",
+                              "aria-haspopup": "menu",
+                              "data-state": "closed"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-sliders-horizontal",
+                                  "class": "lucide lucide-sliders-horizontal size-3.5"
+                                },
+                                "key": "root.0.0.0.0.1.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.0.0.1.0"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "inline-flex items-center justify-center whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 rounded-md px-3 text-xs h-8 shrink-0 gap-1.5"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-plus",
+                                  "class": "lucide lucide-plus size-3.5"
+                                },
+                                "key": "root.0.0.0.0.1.1.0"
+                              },
+                              {
+                                "text": "Add issue",
+                                "key": "root.0.0.0.0.1.1.1"
+                              }
+                            ],
+                            "key": "root.0.0.0.0.1.1"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.1"
+                      }
+                    ],
+                    "key": "root.0.0.0.0"
+                  }
+                ],
+                "key": "root.0.0.0"
+              },
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "flex min-h-11 items-center justify-between border-b px-4 py-1.5 sm:px-6"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "text-foreground text-[14px] font-semibold"
+                    },
+                    "children": [
+                      {
+                        "text": "8",
+                        "key": "root.0.0.1.0.0"
+                      },
+                      {
+                        "text": " Issues",
+                        "key": "root.0.0.1.0.1"
+                      }
+                    ],
+                    "key": "root.0.0.1.0"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "text-muted-foreground text-[13px] font-medium"
+                    },
+                    "children": [
+                      {
+                        "text": "Grouped by status",
+                        "key": "root.0.0.1.1.0"
+                      }
+                    ],
+                    "key": "root.0.0.1.1"
+                  }
+                ],
+                "key": "root.0.0.1"
+              },
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "flex-1 overflow-auto"
+                },
+                "children": [
+                  {
+                    "tag": "section",
+                    "attrs": {
+                      "class": "border-b last:border-b-0"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "sticky top-0 z-10 flex min-h-[50px] items-center gap-3 border-b px-4 sm:px-6 bg-zinc-50 dark:bg-zinc-950/60"
+                        },
+                        "children": [
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "type": "button",
+                              "class": "flex min-w-0 items-center gap-2.5 text-[14px] font-semibold text-zinc-800 dark:text-zinc-200"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-chevron-down",
+                                  "class": "lucide lucide-chevron-down text-muted-foreground size-4"
+                                },
+                                "key": "root.0.0.2.0.0.0.0"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "flex size-4 shrink-0 items-center justify-center rounded-full border border-zinc-300 text-zinc-400 dark:border-zinc-700 dark:text-zinc-500"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "size-1.5 rounded-full bg-zinc-400 dark:bg-zinc-500"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.2.0.0.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.0.0.0.1"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "text": "Backlog",
+                                    "key": "root.0.0.2.0.0.0.2.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.0.0.0.2"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-muted-foreground rounded-full bg-white px-1.5 py-0.5 text-[11px] font-medium dark:bg-zinc-900"
+                                },
+                                "children": [
+                                  {
+                                    "text": "2",
+                                    "key": "root.0.0.2.0.0.0.3.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.0.0.0.3"
+                              }
+                            ],
+                            "key": "root.0.0.2.0.0.0"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent text-muted-foreground hover:text-foreground ml-auto size-7 rounded-md",
+                              "aria-label": "Add issue to Backlog"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-plus",
+                                  "class": "lucide lucide-plus size-4"
+                                },
+                                "key": "root.0.0.2.0.0.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.2.0.0.1"
+                          }
+                        ],
+                        "key": "root.0.0.2.0.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {},
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "group hover:bg-muted/30 grid min-h-[50px] grid-cols-[88px_minmax(0,1fr)_auto] items-center gap-4 border-b px-4 transition-colors sm:px-6"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "min-w-0"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "p",
+                                    "attrs": {
+                                      "class": "truncate text-[12px] font-semibold tracking-[0.12em] text-zinc-500 uppercase dark:text-zinc-400"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "RFC-104",
+                                        "key": "root.0.0.2.0.1.0.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.1.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.0.1.0.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "min-w-0 py-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "min-w-0"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "truncate text-[14px] font-semibold text-zinc-900 dark:text-zinc-50"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Document drag and resize behavior",
+                                            "key": "root.0.0.2.0.1.0.1.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.1.0.1.0.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "text-muted-foreground mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-[12px]"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {},
+                                            "children": [
+                                              {
+                                                "text": "Blocked",
+                                                "key": "root.0.0.2.0.1.0.1.0.1.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.0.1.0.1.0.1.0"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "text-zinc-300 dark:text-zinc-600"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "/",
+                                                "key": "root.0.0.2.0.1.0.1.0.1.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.0.1.0.1.0.1.1"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {},
+                                            "children": [
+                                              {
+                                                "text": "Blocked",
+                                                "key": "root.0.0.2.0.1.0.1.0.1.2.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.0.1.0.1.0.1.2"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.1.0.1.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.1.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.0.1.0.1"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-center gap-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "inline-flex h-6 items-center gap-1.5 rounded-md border px-2 text-[11px] font-medium border-zinc-200 bg-white text-zinc-700 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-300"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "size-1.5 rounded-full bg-zinc-400 dark:bg-zinc-500"
+                                        },
+                                        "children": [],
+                                        "key": "root.0.0.2.0.1.0.2.0.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "text": "Backlog",
+                                            "key": "root.0.0.2.0.1.0.2.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.1.0.2.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.1.0.2.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "aria-label": "Assign issue",
+                                      "class": "text-muted-foreground inline-flex size-7 items-center justify-center rounded-md border border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-950 opacity-0 transition-opacity group-hover:opacity-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-users",
+                                          "class": "lucide lucide-users size-3.5"
+                                        },
+                                        "key": "root.0.0.2.0.1.0.2.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.1.0.2.1"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent text-muted-foreground hover:text-foreground size-7 rounded-md opacity-70 transition-opacity group-hover:opacity-100",
+                                      "aria-label": "More actions for Document drag and resize behavior",
+                                      "type": "button",
+                                      "id": "radix-_R_fb35fiv5uknmlb_",
+                                      "aria-haspopup": "menu",
+                                      "data-state": "closed"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-ellipsis",
+                                          "class": "lucide lucide-ellipsis size-4"
+                                        },
+                                        "key": "root.0.0.2.0.1.0.2.2.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.1.0.2.2"
+                                  }
+                                ],
+                                "key": "root.0.0.2.0.1.0.2"
+                              }
+                            ],
+                            "key": "root.0.0.2.0.1.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "group hover:bg-muted/30 grid min-h-[50px] grid-cols-[88px_minmax(0,1fr)_auto] items-center gap-4 border-b px-4 transition-colors sm:px-6"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "min-w-0"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "p",
+                                    "attrs": {
+                                      "class": "truncate text-[12px] font-semibold tracking-[0.12em] text-zinc-500 uppercase dark:text-zinc-400"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "RFC-108",
+                                        "key": "root.0.0.2.0.1.1.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.1.1.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.0.1.1.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "min-w-0 py-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "min-w-0"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "truncate text-[14px] font-semibold text-zinc-900 dark:text-zinc-50"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Prepare issue calendar follow-up screen",
+                                            "key": "root.0.0.2.0.1.1.1.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.1.1.1.0.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "text-muted-foreground mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-[12px]"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {},
+                                            "children": [
+                                              {
+                                                "text": "No owner yet",
+                                                "key": "root.0.0.2.0.1.1.1.0.1.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.0.1.1.1.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.1.1.1.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.1.1.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.0.1.1.1"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-center gap-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "inline-flex h-6 items-center gap-1.5 rounded-md border px-2 text-[11px] font-medium border-zinc-200 bg-white text-zinc-700 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-300"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "size-1.5 rounded-full bg-zinc-400 dark:bg-zinc-500"
+                                        },
+                                        "children": [],
+                                        "key": "root.0.0.2.0.1.1.2.0.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "text": "Backlog",
+                                            "key": "root.0.0.2.0.1.1.2.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.1.1.2.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.1.1.2.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "aria-label": "Assign issue",
+                                      "class": "text-muted-foreground inline-flex size-7 items-center justify-center rounded-md border border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-950 opacity-0 transition-opacity group-hover:opacity-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-users",
+                                          "class": "lucide lucide-users size-3.5"
+                                        },
+                                        "key": "root.0.0.2.0.1.1.2.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.1.1.2.1"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent text-muted-foreground hover:text-foreground size-7 rounded-md opacity-70 transition-opacity group-hover:opacity-100",
+                                      "aria-label": "More actions for Prepare issue calendar follow-up screen",
+                                      "type": "button",
+                                      "id": "radix-_R_fj35fiv5uknmlb_",
+                                      "aria-haspopup": "menu",
+                                      "data-state": "closed"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-ellipsis",
+                                          "class": "lucide lucide-ellipsis size-4"
+                                        },
+                                        "key": "root.0.0.2.0.1.1.2.2.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.1.1.2.2"
+                                  }
+                                ],
+                                "key": "root.0.0.2.0.1.1.2"
+                              }
+                            ],
+                            "key": "root.0.0.2.0.1.1"
+                          }
+                        ],
+                        "key": "root.0.0.2.0.1"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "type": "button",
+                          "class": "text-muted-foreground hover:text-foreground flex min-h-8 w-full items-center gap-2 bg-zinc-50/65 px-4 text-[12px] font-medium sm:px-6 dark:bg-zinc-950/40"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-plus",
+                              "class": "lucide lucide-plus size-3.5"
+                            },
+                            "key": "root.0.0.2.0.2.0"
+                          },
+                          {
+                            "text": "New issue",
+                            "key": "root.0.0.2.0.2.1"
+                          }
+                        ],
+                        "key": "root.0.0.2.0.2"
+                      }
+                    ],
+                    "key": "root.0.0.2.0"
+                  },
+                  {
+                    "tag": "section",
+                    "attrs": {
+                      "class": "border-b last:border-b-0"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "sticky top-0 z-10 flex min-h-[50px] items-center gap-3 border-b px-4 sm:px-6 bg-zinc-50 dark:bg-zinc-950/60"
+                        },
+                        "children": [
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "type": "button",
+                              "class": "flex min-w-0 items-center gap-2.5 text-[14px] font-semibold text-zinc-800 dark:text-zinc-200"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-chevron-down",
+                                  "class": "lucide lucide-chevron-down text-muted-foreground size-4"
+                                },
+                                "key": "root.0.0.2.1.0.0.0"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "flex size-4 shrink-0 items-center justify-center rounded-full border border-sky-300 text-sky-500 dark:border-sky-800 dark:text-sky-400"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "size-1.5 rounded-full bg-sky-400 dark:bg-sky-500"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.2.1.0.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.0.0.1"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "text": "Todo",
+                                    "key": "root.0.0.2.1.0.0.2.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.0.0.2"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-muted-foreground rounded-full bg-white px-1.5 py-0.5 text-[11px] font-medium dark:bg-zinc-900"
+                                },
+                                "children": [
+                                  {
+                                    "text": "2",
+                                    "key": "root.0.0.2.1.0.0.3.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.0.0.3"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.0.0"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent text-muted-foreground hover:text-foreground ml-auto size-7 rounded-md",
+                              "aria-label": "Add issue to Todo"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-plus",
+                                  "class": "lucide lucide-plus size-4"
+                                },
+                                "key": "root.0.0.2.1.0.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.0.1"
+                          }
+                        ],
+                        "key": "root.0.0.2.1.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {},
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "group hover:bg-muted/30 grid min-h-[50px] grid-cols-[88px_minmax(0,1fr)_auto] items-center gap-4 border-b px-4 transition-colors sm:px-6"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "min-w-0"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "p",
+                                    "attrs": {
+                                      "class": "truncate text-[12px] font-semibold tracking-[0.12em] text-zinc-500 uppercase dark:text-zinc-400"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "RFC-102",
+                                        "key": "root.0.0.2.1.1.0.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.1.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.1.0.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "min-w-0 py-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "min-w-0"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "truncate text-[14px] font-semibold text-zinc-900 dark:text-zinc-50"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Review gantt interaction states",
+                                            "key": "root.0.0.2.1.1.0.1.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.1.0.1.0.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "text-muted-foreground mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-[12px]"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {},
+                                            "children": [
+                                              {
+                                                "text": "Updated today",
+                                                "key": "root.0.0.2.1.1.0.1.0.1.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.1.1.0.1.0.1.0"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "text-zinc-300 dark:text-zinc-600"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "/",
+                                                "key": "root.0.0.2.1.1.0.1.0.1.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.1.1.0.1.0.1.1"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "capitalize"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "medium",
+                                                "key": "root.0.0.2.1.1.0.1.0.1.2.0"
+                                              },
+                                              {
+                                                "text": " priority",
+                                                "key": "root.0.0.2.1.1.0.1.0.1.2.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.1.1.0.1.0.1.2"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "text-zinc-300 dark:text-zinc-600"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "/",
+                                                "key": "root.0.0.2.1.1.0.1.0.1.3.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.1.1.0.1.0.1.3"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {},
+                                            "children": [
+                                              {
+                                                "text": "1",
+                                                "key": "root.0.0.2.1.1.0.1.0.1.4.0"
+                                              },
+                                              {
+                                                "text": " sub-issue",
+                                                "key": "root.0.0.2.1.1.0.1.0.1.4.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.1.1.0.1.0.1.4"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.1.0.1.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.1.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.1.0.1"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-center gap-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "inline-flex h-6 items-center gap-1.5 rounded-md border px-2 text-[11px] font-medium border-sky-200 bg-sky-50 text-sky-700 dark:border-sky-950 dark:bg-sky-950/40 dark:text-sky-300"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "size-1.5 rounded-full bg-sky-400 dark:bg-sky-500"
+                                        },
+                                        "children": [],
+                                        "key": "root.0.0.2.1.1.0.2.0.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "text": "Todo",
+                                            "key": "root.0.0.2.1.1.0.2.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.1.0.2.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.1.0.2.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "aria-label": "Assign issue",
+                                      "class": "text-muted-foreground inline-flex size-7 items-center justify-center rounded-md border border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-950 opacity-0 transition-opacity group-hover:opacity-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-users",
+                                          "class": "lucide lucide-users size-3.5"
+                                        },
+                                        "key": "root.0.0.2.1.1.0.2.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.1.0.2.1"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent text-muted-foreground hover:text-foreground size-7 rounded-md opacity-70 transition-opacity group-hover:opacity-100",
+                                      "aria-label": "More actions for Review gantt interaction states",
+                                      "type": "button",
+                                      "id": "radix-_R_fb55fiv5uknmlb_",
+                                      "aria-haspopup": "menu",
+                                      "data-state": "closed"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-ellipsis",
+                                          "class": "lucide lucide-ellipsis size-4"
+                                        },
+                                        "key": "root.0.0.2.1.1.0.2.2.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.1.0.2.2"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.1.0.2"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.1.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "group hover:bg-muted/30 grid min-h-[50px] grid-cols-[88px_minmax(0,1fr)_auto] items-center gap-4 border-b px-4 transition-colors sm:px-6"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "min-w-0"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "p",
+                                    "attrs": {
+                                      "class": "truncate text-[12px] font-semibold tracking-[0.12em] text-zinc-500 uppercase dark:text-zinc-400"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "RFC-105",
+                                        "key": "root.0.0.2.1.1.1.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.1.1.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.1.1.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "min-w-0 py-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "min-w-0"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "truncate text-[14px] font-semibold text-zinc-900 dark:text-zinc-50"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Create empty and loading timeline states",
+                                            "key": "root.0.0.2.1.1.1.1.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.1.1.1.0.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "text-muted-foreground mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-[12px]"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {},
+                                            "children": [
+                                              {
+                                                "text": "Updated today",
+                                                "key": "root.0.0.2.1.1.1.1.0.1.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.1.1.1.1.0.1.0"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "text-zinc-300 dark:text-zinc-600"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "/",
+                                                "key": "root.0.0.2.1.1.1.1.0.1.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.1.1.1.1.0.1.1"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "capitalize"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "medium",
+                                                "key": "root.0.0.2.1.1.1.1.0.1.2.0"
+                                              },
+                                              {
+                                                "text": " priority",
+                                                "key": "root.0.0.2.1.1.1.1.0.1.2.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.1.1.1.1.0.1.2"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "text-zinc-300 dark:text-zinc-600"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "/",
+                                                "key": "root.0.0.2.1.1.1.1.0.1.3.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.1.1.1.1.0.1.3"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {},
+                                            "children": [
+                                              {
+                                                "text": "2",
+                                                "key": "root.0.0.2.1.1.1.1.0.1.4.0"
+                                              },
+                                              {
+                                                "text": " sub-issue",
+                                                "key": "root.0.0.2.1.1.1.1.0.1.4.1"
+                                              },
+                                              {
+                                                "text": "s",
+                                                "key": "root.0.0.2.1.1.1.1.0.1.4.2"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.1.1.1.1.0.1.4"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.1.1.1.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.1.1.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.1.1.1"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-center gap-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "inline-flex h-6 items-center gap-1.5 rounded-md border px-2 text-[11px] font-medium border-sky-200 bg-sky-50 text-sky-700 dark:border-sky-950 dark:bg-sky-950/40 dark:text-sky-300"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "size-1.5 rounded-full bg-sky-400 dark:bg-sky-500"
+                                        },
+                                        "children": [],
+                                        "key": "root.0.0.2.1.1.1.2.0.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "text": "Todo",
+                                            "key": "root.0.0.2.1.1.1.2.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.1.1.2.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.1.1.2.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "aria-label": "Assign issue",
+                                      "class": "text-muted-foreground inline-flex size-7 items-center justify-center rounded-md border border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-950 opacity-0 transition-opacity group-hover:opacity-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-users",
+                                          "class": "lucide lucide-users size-3.5"
+                                        },
+                                        "key": "root.0.0.2.1.1.1.2.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.1.1.2.1"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent text-muted-foreground hover:text-foreground size-7 rounded-md opacity-70 transition-opacity group-hover:opacity-100",
+                                      "aria-label": "More actions for Create empty and loading timeline states",
+                                      "type": "button",
+                                      "id": "radix-_R_fj55fiv5uknmlb_",
+                                      "aria-haspopup": "menu",
+                                      "data-state": "closed"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-ellipsis",
+                                          "class": "lucide lucide-ellipsis size-4"
+                                        },
+                                        "key": "root.0.0.2.1.1.1.2.2.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.1.1.2.2"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.1.1.2"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.1.1"
+                          }
+                        ],
+                        "key": "root.0.0.2.1.1"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "type": "button",
+                          "class": "text-muted-foreground hover:text-foreground flex min-h-8 w-full items-center gap-2 bg-zinc-50/65 px-4 text-[12px] font-medium sm:px-6 dark:bg-zinc-950/40"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-plus",
+                              "class": "lucide lucide-plus size-3.5"
+                            },
+                            "key": "root.0.0.2.1.2.0"
+                          },
+                          {
+                            "text": "New issue",
+                            "key": "root.0.0.2.1.2.1"
+                          }
+                        ],
+                        "key": "root.0.0.2.1.2"
+                      }
+                    ],
+                    "key": "root.0.0.2.1"
+                  },
+                  {
+                    "tag": "section",
+                    "attrs": {
+                      "class": "border-b last:border-b-0"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "sticky top-0 z-10 flex min-h-[50px] items-center gap-3 border-b px-4 sm:px-6 bg-zinc-50 dark:bg-zinc-950/60"
+                        },
+                        "children": [
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "type": "button",
+                              "class": "flex min-w-0 items-center gap-2.5 text-[14px] font-semibold text-zinc-800 dark:text-zinc-200"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-chevron-down",
+                                  "class": "lucide lucide-chevron-down text-muted-foreground size-4"
+                                },
+                                "key": "root.0.0.2.2.0.0.0"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "flex size-4 shrink-0 items-center justify-center rounded-full border border-amber-300 text-amber-500 dark:border-amber-800 dark:text-amber-400"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "size-1.5 rounded-full bg-amber-400 dark:bg-amber-500"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.2.2.0.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.2.0.0.1"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "text": "In Progress",
+                                    "key": "root.0.0.2.2.0.0.2.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.2.0.0.2"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-muted-foreground rounded-full bg-white px-1.5 py-0.5 text-[11px] font-medium dark:bg-zinc-900"
+                                },
+                                "children": [
+                                  {
+                                    "text": "1",
+                                    "key": "root.0.0.2.2.0.0.3.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.2.0.0.3"
+                              }
+                            ],
+                            "key": "root.0.0.2.2.0.0"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent text-muted-foreground hover:text-foreground ml-auto size-7 rounded-md",
+                              "aria-label": "Add issue to In Progress"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-plus",
+                                  "class": "lucide lucide-plus size-4"
+                                },
+                                "key": "root.0.0.2.2.0.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.2.2.0.1"
+                          }
+                        ],
+                        "key": "root.0.0.2.2.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {},
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "group hover:bg-muted/30 grid min-h-[50px] grid-cols-[88px_minmax(0,1fr)_auto] items-center gap-4 border-b px-4 transition-colors sm:px-6"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "min-w-0"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "p",
+                                    "attrs": {
+                                      "class": "truncate text-[12px] font-semibold tracking-[0.12em] text-zinc-500 uppercase dark:text-zinc-400"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "RFC-101",
+                                        "key": "root.0.0.2.2.1.0.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.2.1.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.2.1.0.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "min-w-0 py-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "min-w-0"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "truncate text-[14px] font-semibold text-zinc-900 dark:text-zinc-50"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Finalize issue timeline architecture",
+                                            "key": "root.0.0.2.2.1.0.1.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.2.1.0.1.0.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "text-muted-foreground mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-[12px]"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {},
+                                            "children": [
+                                              {
+                                                "text": "Updated 2h ago",
+                                                "key": "root.0.0.2.2.1.0.1.0.1.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.2.1.0.1.0.1.0"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "text-zinc-300 dark:text-zinc-600"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "/",
+                                                "key": "root.0.0.2.2.1.0.1.0.1.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.2.1.0.1.0.1.1"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "capitalize"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "high",
+                                                "key": "root.0.0.2.2.1.0.1.0.1.2.0"
+                                              },
+                                              {
+                                                "text": " priority",
+                                                "key": "root.0.0.2.2.1.0.1.0.1.2.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.2.1.0.1.0.1.2"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "text-zinc-300 dark:text-zinc-600"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "/",
+                                                "key": "root.0.0.2.2.1.0.1.0.1.3.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.2.1.0.1.0.1.3"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {},
+                                            "children": [
+                                              {
+                                                "text": "3",
+                                                "key": "root.0.0.2.2.1.0.1.0.1.4.0"
+                                              },
+                                              {
+                                                "text": " sub-issue",
+                                                "key": "root.0.0.2.2.1.0.1.0.1.4.1"
+                                              },
+                                              {
+                                                "text": "s",
+                                                "key": "root.0.0.2.2.1.0.1.0.1.4.2"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.2.1.0.1.0.1.4"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.2.1.0.1.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.2.1.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.2.1.0.1"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-center gap-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "inline-flex h-6 items-center gap-1.5 rounded-md border px-2 text-[11px] font-medium border-amber-200 bg-amber-50 text-amber-700 dark:border-amber-950 dark:bg-amber-950/40 dark:text-amber-300"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "size-1.5 rounded-full bg-amber-400 dark:bg-amber-500"
+                                        },
+                                        "children": [],
+                                        "key": "root.0.0.2.2.1.0.2.0.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "text": "In Progress",
+                                            "key": "root.0.0.2.2.1.0.2.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.2.1.0.2.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.2.1.0.2.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "inline-flex h-7 items-center gap-2 rounded-md border border-zinc-200 bg-white px-2 dark:border-zinc-800 dark:bg-zinc-950"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "relative flex shrink-0 overflow-hidden rounded-full size-5"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "img",
+                                            "attrs": {
+                                              "class": "aspect-square h-full w-full",
+                                              "alt": "Nina Oliver",
+                                              "src": "/reference/ac13c01a479a177b.png"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.2.1.0.2.1.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.2.1.0.2.1.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "hidden text-[12px] font-medium text-zinc-600 xl:inline dark:text-zinc-300"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Nina Oliver",
+                                            "key": "root.0.0.2.2.1.0.2.1.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.2.1.0.2.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.2.1.0.2.1"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent text-muted-foreground hover:text-foreground size-7 rounded-md opacity-70 transition-opacity group-hover:opacity-100",
+                                      "aria-label": "More actions for Finalize issue timeline architecture",
+                                      "type": "button",
+                                      "id": "radix-_R_7r75fiv5uknmlb_",
+                                      "aria-haspopup": "menu",
+                                      "data-state": "closed"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-ellipsis",
+                                          "class": "lucide lucide-ellipsis size-4"
+                                        },
+                                        "key": "root.0.0.2.2.1.0.2.2.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.2.1.0.2.2"
+                                  }
+                                ],
+                                "key": "root.0.0.2.2.1.0.2"
+                              }
+                            ],
+                            "key": "root.0.0.2.2.1.0"
+                          }
+                        ],
+                        "key": "root.0.0.2.2.1"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "type": "button",
+                          "class": "text-muted-foreground hover:text-foreground flex min-h-8 w-full items-center gap-2 bg-zinc-50/65 px-4 text-[12px] font-medium sm:px-6 dark:bg-zinc-950/40"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-plus",
+                              "class": "lucide lucide-plus size-3.5"
+                            },
+                            "key": "root.0.0.2.2.2.0"
+                          },
+                          {
+                            "text": "New issue",
+                            "key": "root.0.0.2.2.2.1"
+                          }
+                        ],
+                        "key": "root.0.0.2.2.2"
+                      }
+                    ],
+                    "key": "root.0.0.2.2"
+                  },
+                  {
+                    "tag": "section",
+                    "attrs": {
+                      "class": "border-b last:border-b-0"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "sticky top-0 z-10 flex min-h-[50px] items-center gap-3 border-b px-4 sm:px-6 bg-zinc-50 dark:bg-zinc-950/60"
+                        },
+                        "children": [
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "type": "button",
+                              "class": "flex min-w-0 items-center gap-2.5 text-[14px] font-semibold text-zinc-800 dark:text-zinc-200"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-chevron-down",
+                                  "class": "lucide lucide-chevron-down text-muted-foreground size-4"
+                                },
+                                "key": "root.0.0.2.3.0.0.0"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "flex size-4 shrink-0 items-center justify-center rounded-full border border-fuchsia-300 text-fuchsia-500 dark:border-fuchsia-800 dark:text-fuchsia-400"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "size-1.5 rounded-full bg-fuchsia-400 dark:bg-fuchsia-500"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.2.3.0.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.3.0.0.1"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "text": "Review",
+                                    "key": "root.0.0.2.3.0.0.2.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.3.0.0.2"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-muted-foreground rounded-full bg-white px-1.5 py-0.5 text-[11px] font-medium dark:bg-zinc-900"
+                                },
+                                "children": [
+                                  {
+                                    "text": "2",
+                                    "key": "root.0.0.2.3.0.0.3.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.3.0.0.3"
+                              }
+                            ],
+                            "key": "root.0.0.2.3.0.0"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent text-muted-foreground hover:text-foreground ml-auto size-7 rounded-md",
+                              "aria-label": "Add issue to Review"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-plus",
+                                  "class": "lucide lucide-plus size-4"
+                                },
+                                "key": "root.0.0.2.3.0.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.2.3.0.1"
+                          }
+                        ],
+                        "key": "root.0.0.2.3.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {},
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "group hover:bg-muted/30 grid min-h-[50px] grid-cols-[88px_minmax(0,1fr)_auto] items-center gap-4 border-b px-4 transition-colors sm:px-6"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "min-w-0"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "p",
+                                    "attrs": {
+                                      "class": "truncate text-[12px] font-semibold tracking-[0.12em] text-zinc-500 uppercase dark:text-zinc-400"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "RFC-103",
+                                        "key": "root.0.0.2.3.1.0.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.3.1.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.3.1.0.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "min-w-0 py-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "min-w-0"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "truncate text-[14px] font-semibold text-zinc-900 dark:text-zinc-50"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Sync issue filters with project views",
+                                            "key": "root.0.0.2.3.1.0.1.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.3.1.0.1.0.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "text-muted-foreground mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-[12px]"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {},
+                                            "children": [
+                                              {
+                                                "text": "Updated yesterday",
+                                                "key": "root.0.0.2.3.1.0.1.0.1.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.3.1.0.1.0.1.0"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "text-zinc-300 dark:text-zinc-600"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "/",
+                                                "key": "root.0.0.2.3.1.0.1.0.1.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.3.1.0.1.0.1.1"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "capitalize"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "high",
+                                                "key": "root.0.0.2.3.1.0.1.0.1.2.0"
+                                              },
+                                              {
+                                                "text": " priority",
+                                                "key": "root.0.0.2.3.1.0.1.0.1.2.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.3.1.0.1.0.1.2"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "text-zinc-300 dark:text-zinc-600"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "/",
+                                                "key": "root.0.0.2.3.1.0.1.0.1.3.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.3.1.0.1.0.1.3"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {},
+                                            "children": [
+                                              {
+                                                "text": "4",
+                                                "key": "root.0.0.2.3.1.0.1.0.1.4.0"
+                                              },
+                                              {
+                                                "text": " sub-issue",
+                                                "key": "root.0.0.2.3.1.0.1.0.1.4.1"
+                                              },
+                                              {
+                                                "text": "s",
+                                                "key": "root.0.0.2.3.1.0.1.0.1.4.2"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.3.1.0.1.0.1.4"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.3.1.0.1.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.3.1.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.3.1.0.1"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-center gap-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "inline-flex h-6 items-center gap-1.5 rounded-md border px-2 text-[11px] font-medium border-fuchsia-200 bg-fuchsia-50 text-fuchsia-700 dark:border-fuchsia-950 dark:bg-fuchsia-950/40 dark:text-fuchsia-300"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "size-1.5 rounded-full bg-fuchsia-400 dark:bg-fuchsia-500"
+                                        },
+                                        "children": [],
+                                        "key": "root.0.0.2.3.1.0.2.0.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "text": "Review",
+                                            "key": "root.0.0.2.3.1.0.2.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.3.1.0.2.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.3.1.0.2.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "inline-flex h-7 items-center gap-2 rounded-md border border-zinc-200 bg-white px-2 dark:border-zinc-800 dark:bg-zinc-950"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "relative flex shrink-0 overflow-hidden rounded-full size-5"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "img",
+                                            "attrs": {
+                                              "class": "aspect-square h-full w-full",
+                                              "alt": "Kai Young",
+                                              "src": "/reference/82a5a2284fceeed0.png"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.3.1.0.2.1.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.3.1.0.2.1.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "hidden text-[12px] font-medium text-zinc-600 xl:inline dark:text-zinc-300"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Kai Young",
+                                            "key": "root.0.0.2.3.1.0.2.1.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.3.1.0.2.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.3.1.0.2.1"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent text-muted-foreground hover:text-foreground size-7 rounded-md opacity-70 transition-opacity group-hover:opacity-100",
+                                      "aria-label": "More actions for Sync issue filters with project views",
+                                      "type": "button",
+                                      "id": "radix-_R_fb95fiv5uknmlb_",
+                                      "aria-haspopup": "menu",
+                                      "data-state": "closed"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-ellipsis",
+                                          "class": "lucide lucide-ellipsis size-4"
+                                        },
+                                        "key": "root.0.0.2.3.1.0.2.2.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.3.1.0.2.2"
+                                  }
+                                ],
+                                "key": "root.0.0.2.3.1.0.2"
+                              }
+                            ],
+                            "key": "root.0.0.2.3.1.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "group hover:bg-muted/30 grid min-h-[50px] grid-cols-[88px_minmax(0,1fr)_auto] items-center gap-4 border-b px-4 transition-colors sm:px-6"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "min-w-0"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "p",
+                                    "attrs": {
+                                      "class": "truncate text-[12px] font-semibold tracking-[0.12em] text-zinc-500 uppercase dark:text-zinc-400"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "RFC-107",
+                                        "key": "root.0.0.2.3.1.1.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.3.1.1.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.3.1.1.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "min-w-0 py-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "min-w-0"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "truncate text-[14px] font-semibold text-zinc-900 dark:text-zinc-50"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Polish the quarter view density",
+                                            "key": "root.0.0.2.3.1.1.1.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.3.1.1.1.0.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "text-muted-foreground mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-[12px]"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {},
+                                            "children": [
+                                              {
+                                                "text": "Updated today",
+                                                "key": "root.0.0.2.3.1.1.1.0.1.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.3.1.1.1.0.1.0"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "text-zinc-300 dark:text-zinc-600"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "/",
+                                                "key": "root.0.0.2.3.1.1.1.0.1.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.3.1.1.1.0.1.1"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "capitalize"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "medium",
+                                                "key": "root.0.0.2.3.1.1.1.0.1.2.0"
+                                              },
+                                              {
+                                                "text": " priority",
+                                                "key": "root.0.0.2.3.1.1.1.0.1.2.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.3.1.1.1.0.1.2"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "text-zinc-300 dark:text-zinc-600"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "/",
+                                                "key": "root.0.0.2.3.1.1.1.0.1.3.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.3.1.1.1.0.1.3"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {},
+                                            "children": [
+                                              {
+                                                "text": "2",
+                                                "key": "root.0.0.2.3.1.1.1.0.1.4.0"
+                                              },
+                                              {
+                                                "text": " sub-issue",
+                                                "key": "root.0.0.2.3.1.1.1.0.1.4.1"
+                                              },
+                                              {
+                                                "text": "s",
+                                                "key": "root.0.0.2.3.1.1.1.0.1.4.2"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.3.1.1.1.0.1.4"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.3.1.1.1.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.3.1.1.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.3.1.1.1"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-center gap-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "inline-flex h-6 items-center gap-1.5 rounded-md border px-2 text-[11px] font-medium border-fuchsia-200 bg-fuchsia-50 text-fuchsia-700 dark:border-fuchsia-950 dark:bg-fuchsia-950/40 dark:text-fuchsia-300"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "size-1.5 rounded-full bg-fuchsia-400 dark:bg-fuchsia-500"
+                                        },
+                                        "children": [],
+                                        "key": "root.0.0.2.3.1.1.2.0.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "text": "Review",
+                                            "key": "root.0.0.2.3.1.1.2.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.3.1.1.2.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.3.1.1.2.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "inline-flex h-7 items-center gap-2 rounded-md border border-zinc-200 bg-white px-2 dark:border-zinc-800 dark:bg-zinc-950"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "relative flex shrink-0 overflow-hidden rounded-full size-5"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "img",
+                                            "attrs": {
+                                              "class": "aspect-square h-full w-full",
+                                              "alt": "Ava Reed",
+                                              "src": "/reference/5985a55c7498fe2e.png"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.3.1.1.2.1.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.3.1.1.2.1.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "hidden text-[12px] font-medium text-zinc-600 xl:inline dark:text-zinc-300"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Ava Reed",
+                                            "key": "root.0.0.2.3.1.1.2.1.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.3.1.1.2.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.3.1.1.2.1"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent text-muted-foreground hover:text-foreground size-7 rounded-md opacity-70 transition-opacity group-hover:opacity-100",
+                                      "aria-label": "More actions for Polish the quarter view density",
+                                      "type": "button",
+                                      "id": "radix-_R_fj95fiv5uknmlb_",
+                                      "aria-haspopup": "menu",
+                                      "data-state": "closed"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-ellipsis",
+                                          "class": "lucide lucide-ellipsis size-4"
+                                        },
+                                        "key": "root.0.0.2.3.1.1.2.2.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.3.1.1.2.2"
+                                  }
+                                ],
+                                "key": "root.0.0.2.3.1.1.2"
+                              }
+                            ],
+                            "key": "root.0.0.2.3.1.1"
+                          }
+                        ],
+                        "key": "root.0.0.2.3.1"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "type": "button",
+                          "class": "text-muted-foreground hover:text-foreground flex min-h-8 w-full items-center gap-2 bg-zinc-50/65 px-4 text-[12px] font-medium sm:px-6 dark:bg-zinc-950/40"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-plus",
+                              "class": "lucide lucide-plus size-3.5"
+                            },
+                            "key": "root.0.0.2.3.2.0"
+                          },
+                          {
+                            "text": "New issue",
+                            "key": "root.0.0.2.3.2.1"
+                          }
+                        ],
+                        "key": "root.0.0.2.3.2"
+                      }
+                    ],
+                    "key": "root.0.0.2.3"
+                  },
+                  {
+                    "tag": "section",
+                    "attrs": {
+                      "class": "border-b last:border-b-0"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "sticky top-0 z-10 flex min-h-[50px] items-center gap-3 border-b px-4 sm:px-6 bg-zinc-50 dark:bg-zinc-950/60"
+                        },
+                        "children": [
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "type": "button",
+                              "class": "flex min-w-0 items-center gap-2.5 text-[14px] font-semibold text-zinc-800 dark:text-zinc-200"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-chevron-down",
+                                  "class": "lucide lucide-chevron-down text-muted-foreground size-4"
+                                },
+                                "key": "root.0.0.2.4.0.0.0"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "flex size-4 shrink-0 items-center justify-center rounded-full border border-emerald-300 text-emerald-500 dark:border-emerald-800 dark:text-emerald-400"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "size-1.5 rounded-full bg-emerald-500 dark:bg-emerald-500"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.2.4.0.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.4.0.0.1"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "text": "Done",
+                                    "key": "root.0.0.2.4.0.0.2.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.4.0.0.2"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-muted-foreground rounded-full bg-white px-1.5 py-0.5 text-[11px] font-medium dark:bg-zinc-900"
+                                },
+                                "children": [
+                                  {
+                                    "text": "1",
+                                    "key": "root.0.0.2.4.0.0.3.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.4.0.0.3"
+                              }
+                            ],
+                            "key": "root.0.0.2.4.0.0"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent text-muted-foreground hover:text-foreground ml-auto size-7 rounded-md",
+                              "aria-label": "Add issue to Done"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-plus",
+                                  "class": "lucide lucide-plus size-4"
+                                },
+                                "key": "root.0.0.2.4.0.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.2.4.0.1"
+                          }
+                        ],
+                        "key": "root.0.0.2.4.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {},
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "group hover:bg-muted/30 grid min-h-[50px] grid-cols-[88px_minmax(0,1fr)_auto] items-center gap-4 border-b px-4 transition-colors sm:px-6"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "min-w-0"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "p",
+                                    "attrs": {
+                                      "class": "truncate text-[12px] font-semibold tracking-[0.12em] text-zinc-500 uppercase dark:text-zinc-400"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "RFC-106",
+                                        "key": "root.0.0.2.4.1.0.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.4.1.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.4.1.0.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "min-w-0 py-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "min-w-0"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "truncate text-[14px] font-semibold text-zinc-900 dark:text-zinc-50"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Add mock dependencies and handoff notes",
+                                            "key": "root.0.0.2.4.1.0.1.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.4.1.0.1.0.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "text-muted-foreground mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-[12px]"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {},
+                                            "children": [
+                                              {
+                                                "text": "Closed today",
+                                                "key": "root.0.0.2.4.1.0.1.0.1.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.4.1.0.1.0.1.0"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "text-zinc-300 dark:text-zinc-600"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "/",
+                                                "key": "root.0.0.2.4.1.0.1.0.1.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.4.1.0.1.0.1.1"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "capitalize"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "low",
+                                                "key": "root.0.0.2.4.1.0.1.0.1.2.0"
+                                              },
+                                              {
+                                                "text": " priority",
+                                                "key": "root.0.0.2.4.1.0.1.0.1.2.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.4.1.0.1.0.1.2"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "text-zinc-300 dark:text-zinc-600"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "/",
+                                                "key": "root.0.0.2.4.1.0.1.0.1.3.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.4.1.0.1.0.1.3"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {},
+                                            "children": [
+                                              {
+                                                "text": "1",
+                                                "key": "root.0.0.2.4.1.0.1.0.1.4.0"
+                                              },
+                                              {
+                                                "text": " sub-issue",
+                                                "key": "root.0.0.2.4.1.0.1.0.1.4.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.4.1.0.1.0.1.4"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.4.1.0.1.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.4.1.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.4.1.0.1"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-center gap-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "inline-flex h-6 items-center gap-1.5 rounded-md border px-2 text-[11px] font-medium border-emerald-200 bg-emerald-50 text-emerald-700 dark:border-emerald-950 dark:bg-emerald-950/40 dark:text-emerald-300"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "size-1.5 rounded-full bg-emerald-500 dark:bg-emerald-500"
+                                        },
+                                        "children": [],
+                                        "key": "root.0.0.2.4.1.0.2.0.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "text": "Done",
+                                            "key": "root.0.0.2.4.1.0.2.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.4.1.0.2.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.4.1.0.2.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "inline-flex h-7 items-center gap-2 rounded-md border border-zinc-200 bg-white px-2 dark:border-zinc-800 dark:bg-zinc-950"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "relative flex shrink-0 overflow-hidden rounded-full size-5"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "img",
+                                            "attrs": {
+                                              "class": "aspect-square h-full w-full",
+                                              "alt": "Lena Moss",
+                                              "src": "/reference/a99c47c2fa3dc656.png"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.4.1.0.2.1.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.4.1.0.2.1.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "hidden text-[12px] font-medium text-zinc-600 xl:inline dark:text-zinc-300"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Lena Moss",
+                                            "key": "root.0.0.2.4.1.0.2.1.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.4.1.0.2.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.4.1.0.2.1"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent text-muted-foreground hover:text-foreground size-7 rounded-md opacity-70 transition-opacity group-hover:opacity-100",
+                                      "aria-label": "More actions for Add mock dependencies and handoff notes",
+                                      "type": "button",
+                                      "id": "radix-_R_7rb5fiv5uknmlb_",
+                                      "aria-haspopup": "menu",
+                                      "data-state": "closed"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-ellipsis",
+                                          "class": "lucide lucide-ellipsis size-4"
+                                        },
+                                        "key": "root.0.0.2.4.1.0.2.2.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.4.1.0.2.2"
+                                  }
+                                ],
+                                "key": "root.0.0.2.4.1.0.2"
+                              }
+                            ],
+                            "key": "root.0.0.2.4.1.0"
+                          }
+                        ],
+                        "key": "root.0.0.2.4.1"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "type": "button",
+                          "class": "text-muted-foreground hover:text-foreground flex min-h-8 w-full items-center gap-2 bg-zinc-50/65 px-4 text-[12px] font-medium sm:px-6 dark:bg-zinc-950/40"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-plus",
+                              "class": "lucide lucide-plus size-3.5"
+                            },
+                            "key": "root.0.0.2.4.2.0"
+                          },
+                          {
+                            "text": "New issue",
+                            "key": "root.0.0.2.4.2.1"
+                          }
+                        ],
+                        "key": "root.0.0.2.4.2"
+                      }
+                    ],
+                    "key": "root.0.0.2.4"
+                  }
+                ],
+                "key": "root.0.0.2"
+              }
+            ],
+            "key": "root.0.0"
+          }
+        ],
+        "key": "root.0"
+      }
+    ],
+    "key": "root"
+  },
+  "headings": []
+}

@@ -1,0 +1,2084 @@
+{
+  "label": "Agent builder",
+  "path": "/ai-chat/agent-studio/builder",
+  "appTitle": "",
+  "tree": {
+    "tag": "div",
+    "attrs": {
+      "id": "ai-workspace-content",
+      "class": "flex min-h-0 flex-1 flex-col"
+    },
+    "children": [
+      {
+        "tag": "div",
+        "attrs": {
+          "class": "flex min-h-0 flex-1 flex-col"
+        },
+        "children": [
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "flex min-h-[66px] shrink-0 flex-wrap items-center justify-between gap-3 border-b px-4 py-3 sm:px-5"
+            },
+            "children": [
+              {
+                "tag": "div",
+                "attrs": {},
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "flex items-center gap-2"
+                    },
+                    "children": [
+                      {
+                        "tag": "h1",
+                        "attrs": {
+                          "class": "text-sm font-semibold"
+                        },
+                        "children": [
+                          {
+                            "text": "Customer signal analyst",
+                            "key": "root.0.0.0.0.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.0"
+                      },
+                      {
+                        "tag": "span",
+                        "attrs": {
+                          "class": "text-muted-foreground rounded border px-1.5 py-0.5 text-[9px]"
+                        },
+                        "children": [
+                          {
+                            "text": "v",
+                            "key": "root.0.0.0.0.1.0"
+                          },
+                          {
+                            "text": "1",
+                            "key": "root.0.0.0.0.1.1"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.1"
+                      }
+                    ],
+                    "key": "root.0.0.0.0"
+                  },
+                  {
+                    "tag": "p",
+                    "attrs": {
+                      "class": "text-muted-foreground mt-1 text-[11px]"
+                    },
+                    "children": [
+                      {
+                        "text": "Build the context. Let the agent do the work.",
+                        "key": "root.0.0.0.1.0"
+                      }
+                    ],
+                    "key": "root.0.0.0.1"
+                  }
+                ],
+                "key": "root.0.0.0"
+              },
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "flex items-center gap-2"
+                },
+                "children": [
+                  {
+                    "tag": "span",
+                    "attrs": {
+                      "class": "text-muted-foreground hidden text-[10px] sm:block"
+                    },
+                    "children": [
+                      {
+                        "text": "All changes saved",
+                        "key": "root.0.0.1.0.0"
+                      }
+                    ],
+                    "key": "root.0.0.1.0"
+                  },
+                  {
+                    "tag": "button",
+                    "attrs": {
+                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs",
+                      "disabled": ""
+                    },
+                    "children": [
+                      {
+                        "text": "Save agent",
+                        "key": "root.0.0.1.1.0"
+                      }
+                    ],
+                    "key": "root.0.0.1.1"
+                  },
+                  {
+                    "tag": "button",
+                    "attrs": {
+                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 h-8 rounded-md px-3 text-xs"
+                    },
+                    "children": [
+                      {
+                        "tag": "icon",
+                        "attrs": {
+                          "name": "i-lucide-play",
+                          "class": "lucide lucide-play size-3.5"
+                        },
+                        "key": "root.0.0.1.2.0"
+                      },
+                      {
+                        "text": "Test run",
+                        "key": "root.0.0.1.2.1"
+                      }
+                    ],
+                    "key": "root.0.0.1.2"
+                  }
+                ],
+                "key": "root.0.0.1"
+              }
+            ],
+            "key": "root.0.0"
+          },
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "flex shrink-0 border-b p-2 lg:hidden"
+            },
+            "children": [
+              {
+                "tag": "button",
+                "attrs": {
+                  "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80 h-8 rounded-md px-3 text-xs"
+                },
+                "children": [
+                  {
+                    "text": "Builder",
+                    "key": "root.0.1.0.0"
+                  }
+                ],
+                "key": "root.0.1.0"
+              },
+              {
+                "tag": "button",
+                "attrs": {
+                  "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs"
+                },
+                "children": [
+                  {
+                    "text": "Test conversation",
+                    "key": "root.0.1.1.0"
+                  }
+                ],
+                "key": "root.0.1.1"
+              }
+            ],
+            "key": "root.0.1"
+          },
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "flex min-h-0 flex-1"
+            },
+            "children": [
+              {
+                "tag": "section",
+                "attrs": {
+                  "aria-label": "Agent configuration canvas",
+                  "class": "bg-muted/15 relative min-w-0 flex-1 overflow-hidden block"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "absolute top-3 right-3 z-10 hidden lg:block"
+                    },
+                    "children": [
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input shadow-xs hover:bg-accent hover:text-accent-foreground size-6 bg-background",
+                          "aria-label": "Hide test conversation"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-panel-right-close",
+                              "class": "lucide lucide-panel-right-close size-4"
+                            },
+                            "key": "root.0.2.0.0.0.0"
+                          }
+                        ],
+                        "key": "root.0.2.0.0.0"
+                      }
+                    ],
+                    "key": "root.0.2.0.0"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "h-full overflow-auto bg-[radial-gradient(var(--border)_1px,transparent_1px)] bg-size-[18px_18px] p-4 pb-20"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "mx-auto",
+                          "style": "width:720px;height:702px"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "relative h-[780px] w-[800px] origin-top-left",
+                              "style": "transform:scale(0.9)"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "text-muted-foreground absolute top-6 left-6 text-[10px] tracking-widest"
+                                },
+                                "children": [
+                                  {
+                                    "text": "INPUTS & CONTEXT",
+                                    "key": "root.0.2.0.1.0.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.1.0.0.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "text-muted-foreground absolute top-6 left-[280px] text-[10px] tracking-widest"
+                                },
+                                "children": [
+                                  {
+                                    "text": "YOUR AGENT",
+                                    "key": "root.0.2.0.1.0.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.1.0.0.1"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "text-muted-foreground absolute top-6 left-[574px] text-[10px] tracking-widest"
+                                },
+                                "children": [
+                                  {
+                                    "text": "CAPABILITIES",
+                                    "key": "root.0.2.0.1.0.0.2.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.1.0.0.2"
+                              },
+                              {
+                                "tag": "svg",
+                                "attrs": {
+                                  "class": "pointer-events-none absolute inset-0 h-full w-full text-emerald-600/35 dark:text-emerald-400/30",
+                                  "viewBox": "0 0 720 702",
+                                  "width": "100%",
+                                  "height": "100%"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "path",
+                                    "attrs": {
+                                      "d": "M224 130 C250 130, 247 325, 274 325",
+                                      "fill": "none",
+                                      "stroke": "currentColor",
+                                      "stroke-width": "1.5"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.2.0.1.0.0.3.0"
+                                  },
+                                  {
+                                    "tag": "path",
+                                    "attrs": {
+                                      "d": "M224 275 C250 275, 247 325, 274 325",
+                                      "fill": "none",
+                                      "stroke": "currentColor",
+                                      "stroke-width": "1.5"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.2.0.1.0.0.3.1"
+                                  },
+                                  {
+                                    "tag": "path",
+                                    "attrs": {
+                                      "d": "M224 424 C250 424, 247 325, 274 325",
+                                      "fill": "none",
+                                      "stroke": "currentColor",
+                                      "stroke-width": "1.5"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.2.0.1.0.0.3.2"
+                                  },
+                                  {
+                                    "tag": "path",
+                                    "attrs": {
+                                      "d": "M224 603 C250 603, 247 325, 274 325",
+                                      "fill": "none",
+                                      "stroke": "currentColor",
+                                      "stroke-width": "1.5"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.2.0.1.0.0.3.3"
+                                  },
+                                  {
+                                    "tag": "path",
+                                    "attrs": {
+                                      "d": "M522 325 C545 325, 545 145, 572 145",
+                                      "fill": "none",
+                                      "stroke": "currentColor",
+                                      "stroke-width": "1.5"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.2.0.1.0.0.3.4"
+                                  },
+                                  {
+                                    "tag": "path",
+                                    "attrs": {
+                                      "d": "M522 325 C545 325, 545 358, 572 358",
+                                      "fill": "none",
+                                      "stroke": "currentColor",
+                                      "stroke-width": "1.5"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.2.0.1.0.0.3.5"
+                                  },
+                                  {
+                                    "tag": "path",
+                                    "attrs": {
+                                      "d": "M522 325 C545 325, 545 559, 572 559",
+                                      "fill": "none",
+                                      "stroke": "currentColor",
+                                      "stroke-width": "1.5"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.2.0.1.0.0.3.6"
+                                  },
+                                  {
+                                    "tag": "circle",
+                                    "attrs": {
+                                      "cx": "224",
+                                      "cy": "130",
+                                      "r": "3",
+                                      "fill": "currentColor"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.2.0.1.0.0.3.7"
+                                  },
+                                  {
+                                    "tag": "circle",
+                                    "attrs": {
+                                      "cx": "224",
+                                      "cy": "275",
+                                      "r": "3",
+                                      "fill": "currentColor"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.2.0.1.0.0.3.8"
+                                  },
+                                  {
+                                    "tag": "circle",
+                                    "attrs": {
+                                      "cx": "224",
+                                      "cy": "424",
+                                      "r": "3",
+                                      "fill": "currentColor"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.2.0.1.0.0.3.9"
+                                  },
+                                  {
+                                    "tag": "circle",
+                                    "attrs": {
+                                      "cx": "224",
+                                      "cy": "603",
+                                      "r": "3",
+                                      "fill": "currentColor"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.2.0.1.0.0.3.10"
+                                  },
+                                  {
+                                    "tag": "circle",
+                                    "attrs": {
+                                      "cx": "572",
+                                      "cy": "145",
+                                      "r": "3",
+                                      "fill": "currentColor"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.2.0.1.0.0.3.11"
+                                  },
+                                  {
+                                    "tag": "circle",
+                                    "attrs": {
+                                      "cx": "572",
+                                      "cy": "358",
+                                      "r": "3",
+                                      "fill": "currentColor"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.2.0.1.0.0.3.12"
+                                  },
+                                  {
+                                    "tag": "circle",
+                                    "attrs": {
+                                      "cx": "572",
+                                      "cy": "559",
+                                      "r": "3",
+                                      "fill": "currentColor"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.2.0.1.0.0.3.13"
+                                  }
+                                ],
+                                "key": "root.0.2.0.1.0.0.3"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "aria-label": "Configure schedule",
+                                  "class": "bg-muted/60 absolute rounded-xl border p-1 text-left shadow-xs transition-[border-color,box-shadow] outline-none hover:border-emerald-500/50 hover:shadow-md focus-visible:ring-2 focus-visible:ring-emerald-500 top-[76px] left-6 w-[200px]"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center gap-2 px-2 py-2 text-[11px]"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-calendar-clock",
+                                          "class": "lucide lucide-calendar-clock text-muted-foreground size-3.5"
+                                        },
+                                        "key": "root.0.2.0.1.0.0.4.0.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "font-medium"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Schedule",
+                                            "key": "root.0.2.0.1.0.0.4.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.2.0.1.0.0.4.0.1"
+                                      },
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-chevron-down",
+                                          "class": "lucide lucide-chevron-down text-muted-foreground ml-auto size-3"
+                                        },
+                                        "key": "root.0.2.0.1.0.0.4.0.2"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.1.0.0.4.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "bg-background rounded-lg border px-3 py-3"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "text-[11px] leading-5"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Every Monday",
+                                            "key": "root.0.2.0.1.0.0.4.1.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.2.0.1.0.0.4.1.0"
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "text-muted-foreground mt-1 text-[10px]"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "09:00 UTC · Customer brief",
+                                            "key": "root.0.2.0.1.0.0.4.1.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.2.0.1.0.0.4.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.1.0.0.4.1"
+                                  }
+                                ],
+                                "key": "root.0.2.0.1.0.0.4"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "aria-label": "Configure event trigger",
+                                  "class": "bg-muted/60 absolute rounded-xl border p-1 text-left shadow-xs transition-[border-color,box-shadow] outline-none hover:border-emerald-500/50 hover:shadow-md focus-visible:ring-2 focus-visible:ring-emerald-500 top-[214px] left-6 w-[200px]"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center gap-2 px-2 py-2 text-[11px]"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-webhook",
+                                          "class": "lucide lucide-webhook text-muted-foreground size-3.5"
+                                        },
+                                        "key": "root.0.2.0.1.0.0.5.0.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "font-medium"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Event trigger",
+                                            "key": "root.0.2.0.1.0.0.5.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.2.0.1.0.0.5.0.1"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "ml-auto text-[9px] text-emerald-700 dark:text-emerald-400"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Event",
+                                            "key": "root.0.2.0.1.0.0.5.0.2.0"
+                                          }
+                                        ],
+                                        "key": "root.0.2.0.1.0.0.5.0.2"
+                                      },
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-chevron-down",
+                                          "class": "lucide lucide-chevron-down text-muted-foreground ml-auto size-3"
+                                        },
+                                        "key": "root.0.2.0.1.0.0.5.0.3"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.1.0.0.5.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "bg-background rounded-lg border px-3 py-3"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "text-[11px] leading-5"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "New support conversation",
+                                            "key": "root.0.2.0.1.0.0.5.1.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.2.0.1.0.0.5.1.0"
+                                      },
+                                      {
+                                        "tag": "code",
+                                        "attrs": {
+                                          "class": "text-muted-foreground bg-muted/50 mt-2 block rounded px-1.5 py-1 text-[10px]"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "priority = high",
+                                            "key": "root.0.2.0.1.0.0.5.1.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.2.0.1.0.0.5.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.1.0.0.5.1"
+                                  }
+                                ],
+                                "key": "root.0.2.0.1.0.0.5"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "aria-label": "Configure channels",
+                                  "class": "bg-muted/60 absolute rounded-xl border p-1 text-left shadow-xs transition-[border-color,box-shadow] outline-none hover:border-emerald-500/50 hover:shadow-md focus-visible:ring-2 focus-visible:ring-emerald-500 top-[374px] left-6 w-[200px]"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center gap-2 px-2 py-2 text-[11px]"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-message-square",
+                                          "class": "lucide lucide-message-square text-muted-foreground size-3.5"
+                                        },
+                                        "key": "root.0.2.0.1.0.0.6.0.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "font-medium"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Channels",
+                                            "key": "root.0.2.0.1.0.0.6.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.2.0.1.0.0.6.0.1"
+                                      },
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-chevron-down",
+                                          "class": "lucide lucide-chevron-down text-muted-foreground ml-auto size-3"
+                                        },
+                                        "key": "root.0.2.0.1.0.0.6.0.2"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.1.0.0.6.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "bg-background rounded-lg border px-3 py-3"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "flex items-center justify-between"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "p",
+                                            "attrs": {
+                                              "class": "text-[11px] leading-5"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Slack",
+                                                "key": "root.0.2.0.1.0.0.6.1.0.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.2.0.1.0.0.6.1.0.0"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "size-1.5 rounded-full bg-emerald-500"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.2.0.1.0.0.6.1.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.2.0.1.0.0.6.1.0"
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "text-muted-foreground mt-1 truncate text-[10px]"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "#customer-insights",
+                                            "key": "root.0.2.0.1.0.0.6.1.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.2.0.1.0.0.6.1.1"
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "mt-2 text-[9px] text-emerald-700 dark:text-emerald-400"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Approval before delivery",
+                                            "key": "root.0.2.0.1.0.0.6.1.2.0"
+                                          }
+                                        ],
+                                        "key": "root.0.2.0.1.0.0.6.1.2"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.1.0.0.6.1"
+                                  }
+                                ],
+                                "key": "root.0.2.0.1.0.0.6"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "aria-label": "Configure memory",
+                                  "class": "bg-muted/60 absolute rounded-xl border p-1 text-left shadow-xs transition-[border-color,box-shadow] outline-none hover:border-emerald-500/50 hover:shadow-md focus-visible:ring-2 focus-visible:ring-emerald-500 top-[548px] left-6 w-[200px]"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center gap-2 px-2 py-2 text-[11px]"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-database",
+                                          "class": "lucide lucide-database text-muted-foreground size-3.5"
+                                        },
+                                        "key": "root.0.2.0.1.0.0.7.0.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "font-medium"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Memory",
+                                            "key": "root.0.2.0.1.0.0.7.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.2.0.1.0.0.7.0.1"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "ml-auto text-[9px] text-emerald-700 dark:text-emerald-400"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "2",
+                                            "key": "root.0.2.0.1.0.0.7.0.2.0"
+                                          }
+                                        ],
+                                        "key": "root.0.2.0.1.0.0.7.0.2"
+                                      },
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-chevron-down",
+                                          "class": "lucide lucide-chevron-down text-muted-foreground ml-auto size-3"
+                                        },
+                                        "key": "root.0.2.0.1.0.0.7.0.3"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.1.0.0.7.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "bg-background rounded-lg border px-3 py-3"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "space-y-2"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "p",
+                                            "attrs": {
+                                              "class": "text-[11px] leading-5 flex items-center gap-2"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "bg-muted-foreground/50 size-1 shrink-0 rounded-full"
+                                                },
+                                                "children": [],
+                                                "key": "root.0.2.0.1.0.0.7.1.0.0.0"
+                                              },
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "truncate"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Product priorities",
+                                                    "key": "root.0.2.0.1.0.0.7.1.0.0.1.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.2.0.1.0.0.7.1.0.0.1"
+                                              }
+                                            ],
+                                            "key": "root.0.2.0.1.0.0.7.1.0.0"
+                                          },
+                                          {
+                                            "tag": "p",
+                                            "attrs": {
+                                              "class": "text-[11px] leading-5 flex items-center gap-2"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "bg-muted-foreground/50 size-1 shrink-0 rounded-full"
+                                                },
+                                                "children": [],
+                                                "key": "root.0.2.0.1.0.0.7.1.0.1.0"
+                                              },
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "truncate"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Previous findings",
+                                                    "key": "root.0.2.0.1.0.0.7.1.0.1.1.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.2.0.1.0.0.7.1.0.1.1"
+                                              }
+                                            ],
+                                            "key": "root.0.2.0.1.0.0.7.1.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.2.0.1.0.0.7.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.1.0.0.7.1"
+                                  }
+                                ],
+                                "key": "root.0.2.0.1.0.0.7"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "aria-label": "Configure agent instructions",
+                                  "class": "bg-muted/60 absolute rounded-xl border p-1 text-left transition-[border-color,box-shadow] outline-none hover:border-emerald-500/50 hover:shadow-md focus-visible:ring-2 focus-visible:ring-emerald-500 top-[194px] left-[274px] w-[248px] border-emerald-500/35 shadow-[0_0_0_4px_color-mix(in_oklab,var(--color-emerald-500)_5%,transparent)]"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center gap-2 px-2 py-2 text-[11px]"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-bot",
+                                          "class": "lucide lucide-bot text-muted-foreground size-3.5"
+                                        },
+                                        "key": "root.0.2.0.1.0.0.8.0.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "font-medium"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Agent",
+                                            "key": "root.0.2.0.1.0.0.8.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.2.0.1.0.0.8.0.1"
+                                      },
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-chevron-down",
+                                          "class": "lucide lucide-chevron-down text-muted-foreground ml-auto size-3"
+                                        },
+                                        "key": "root.0.2.0.1.0.0.8.0.2"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.1.0.0.8.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "bg-background rounded-lg border px-3 py-3"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "mb-3 flex items-center gap-2"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "flex size-7 items-center justify-center rounded-md bg-emerald-500/10 font-serif text-base text-emerald-700 dark:text-emerald-400"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "N",
+                                                "key": "root.0.2.0.1.0.0.8.1.0.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.2.0.1.0.0.8.1.0.0"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "text-[12px] font-semibold"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Customer signal analyst",
+                                                "key": "root.0.2.0.1.0.0.8.1.0.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.2.0.1.0.0.8.1.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.2.0.1.0.0.8.1.0"
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "text-muted-foreground text-[11px] leading-5"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Turn customer feedback into the next right decision.",
+                                            "key": "root.0.2.0.1.0.0.8.1.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.2.0.1.0.0.8.1.1"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "my-3 border-t"
+                                        },
+                                        "children": [],
+                                        "key": "root.0.2.0.1.0.0.8.1.2"
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "mb-1.5 text-[10px] font-medium"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Instructions",
+                                            "key": "root.0.2.0.1.0.0.8.1.3.0"
+                                          }
+                                        ],
+                                        "key": "root.0.2.0.1.0.0.8.1.3"
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "text-muted-foreground line-clamp-5 text-[11px] leading-[19px]"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Read the latest customer signals and group them by underlying need. Support every finding with a source. Prioritize recurring issues and separate evidence from assumptions. Prepare a brief for human review; never contact customers directly.",
+                                            "key": "root.0.2.0.1.0.0.8.1.4.0"
+                                          }
+                                        ],
+                                        "key": "root.0.2.0.1.0.0.8.1.4"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "mt-4 flex items-center justify-between border-t pt-3 text-[10px]"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {},
+                                            "children": [
+                                              {
+                                                "text": "GPT-4.1",
+                                                "key": "root.0.2.0.1.0.0.8.1.5.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.2.0.1.0.0.8.1.5.0"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "text-emerald-700 dark:text-emerald-400"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Edit agent →",
+                                                "key": "root.0.2.0.1.0.0.8.1.5.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.2.0.1.0.0.8.1.5.1"
+                                          }
+                                        ],
+                                        "key": "root.0.2.0.1.0.0.8.1.5"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.1.0.0.8.1"
+                                  }
+                                ],
+                                "key": "root.0.2.0.1.0.0.8"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "aria-label": "Configure tools",
+                                  "class": "bg-muted/60 absolute rounded-xl border p-1 text-left shadow-xs transition-[border-color,box-shadow] outline-none hover:border-emerald-500/50 hover:shadow-md focus-visible:ring-2 focus-visible:ring-emerald-500 top-[76px] left-[572px] w-[204px]"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center gap-2 px-2 py-2 text-[11px]"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-wrench",
+                                          "class": "lucide lucide-wrench text-muted-foreground size-3.5"
+                                        },
+                                        "key": "root.0.2.0.1.0.0.9.0.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "font-medium"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Tools",
+                                            "key": "root.0.2.0.1.0.0.9.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.2.0.1.0.0.9.0.1"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "ml-auto text-[9px] text-emerald-700 dark:text-emerald-400"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "3",
+                                            "key": "root.0.2.0.1.0.0.9.0.2.0"
+                                          }
+                                        ],
+                                        "key": "root.0.2.0.1.0.0.9.0.2"
+                                      },
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-chevron-down",
+                                          "class": "lucide lucide-chevron-down text-muted-foreground ml-auto size-3"
+                                        },
+                                        "key": "root.0.2.0.1.0.0.9.0.3"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.1.0.0.9.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "bg-background rounded-lg border px-3 py-3"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "space-y-2"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "p",
+                                            "attrs": {
+                                              "class": "text-[11px] leading-5 truncate"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Zendesk · Search tickets",
+                                                "key": "root.0.2.0.1.0.0.9.1.0.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.2.0.1.0.0.9.1.0.0"
+                                          },
+                                          {
+                                            "tag": "p",
+                                            "attrs": {
+                                              "class": "text-[11px] leading-5 truncate"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Notion · Read pages",
+                                                "key": "root.0.2.0.1.0.0.9.1.0.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.2.0.1.0.0.9.1.0.1"
+                                          },
+                                          {
+                                            "tag": "p",
+                                            "attrs": {
+                                              "class": "text-[11px] leading-5 truncate"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Slack · Read threads",
+                                                "key": "root.0.2.0.1.0.0.9.1.0.2.0"
+                                              }
+                                            ],
+                                            "key": "root.0.2.0.1.0.0.9.1.0.2"
+                                          }
+                                        ],
+                                        "key": "root.0.2.0.1.0.0.9.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.1.0.0.9.1"
+                                  }
+                                ],
+                                "key": "root.0.2.0.1.0.0.9"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "aria-label": "Configure skills",
+                                  "class": "bg-muted/60 absolute rounded-xl border p-1 text-left shadow-xs transition-[border-color,box-shadow] outline-none hover:border-emerald-500/50 hover:shadow-md focus-visible:ring-2 focus-visible:ring-emerald-500 top-[294px] left-[572px] w-[204px]"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center gap-2 px-2 py-2 text-[11px]"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-layers",
+                                          "class": "lucide lucide-layers text-muted-foreground size-3.5"
+                                        },
+                                        "key": "root.0.2.0.1.0.0.10.0.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "font-medium"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Skills",
+                                            "key": "root.0.2.0.1.0.0.10.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.2.0.1.0.0.10.0.1"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "ml-auto text-[9px] text-emerald-700 dark:text-emerald-400"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "3",
+                                            "key": "root.0.2.0.1.0.0.10.0.2.0"
+                                          }
+                                        ],
+                                        "key": "root.0.2.0.1.0.0.10.0.2"
+                                      },
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-chevron-down",
+                                          "class": "lucide lucide-chevron-down text-muted-foreground ml-auto size-3"
+                                        },
+                                        "key": "root.0.2.0.1.0.0.10.0.3"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.1.0.0.10.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "bg-background rounded-lg border px-3 py-3"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "space-y-2"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "p",
+                                            "attrs": {
+                                              "class": "text-[11px] leading-5"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Signal clustering",
+                                                "key": "root.0.2.0.1.0.0.10.1.0.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.2.0.1.0.0.10.1.0.0"
+                                          },
+                                          {
+                                            "tag": "p",
+                                            "attrs": {
+                                              "class": "text-[11px] leading-5"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Source verification",
+                                                "key": "root.0.2.0.1.0.0.10.1.0.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.2.0.1.0.0.10.1.0.1"
+                                          },
+                                          {
+                                            "tag": "p",
+                                            "attrs": {
+                                              "class": "text-[11px] leading-5"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Opportunity scoring",
+                                                "key": "root.0.2.0.1.0.0.10.1.0.2.0"
+                                              }
+                                            ],
+                                            "key": "root.0.2.0.1.0.0.10.1.0.2"
+                                          }
+                                        ],
+                                        "key": "root.0.2.0.1.0.0.10.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.1.0.0.10.1"
+                                  }
+                                ],
+                                "key": "root.0.2.0.1.0.0.10"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "aria-label": "Configure sub-agents",
+                                  "class": "bg-muted/60 absolute rounded-xl border p-1 text-left shadow-xs transition-[border-color,box-shadow] outline-none hover:border-emerald-500/50 hover:shadow-md focus-visible:ring-2 focus-visible:ring-emerald-500 top-[505px] left-[572px] w-[204px]"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center gap-2 px-2 py-2 text-[11px]"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-git-branch",
+                                          "class": "lucide lucide-git-branch text-muted-foreground size-3.5"
+                                        },
+                                        "key": "root.0.2.0.1.0.0.11.0.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "font-medium"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Sub-agents",
+                                            "key": "root.0.2.0.1.0.0.11.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.2.0.1.0.0.11.0.1"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "ml-auto text-[9px] text-emerald-700 dark:text-emerald-400"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "2",
+                                            "key": "root.0.2.0.1.0.0.11.0.2.0"
+                                          }
+                                        ],
+                                        "key": "root.0.2.0.1.0.0.11.0.2"
+                                      },
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-chevron-down",
+                                          "class": "lucide lucide-chevron-down text-muted-foreground ml-auto size-3"
+                                        },
+                                        "key": "root.0.2.0.1.0.0.11.0.3"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.1.0.0.11.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "bg-background rounded-lg border px-3 py-3"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "space-y-2"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "p",
+                                            "attrs": {
+                                              "class": "text-[11px] leading-5 flex items-center gap-2"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "size-1.5 rounded-full bg-emerald-500/60"
+                                                },
+                                                "children": [],
+                                                "key": "root.0.2.0.1.0.0.11.1.0.0.0"
+                                              },
+                                              {
+                                                "text": "Evidence researcher",
+                                                "key": "root.0.2.0.1.0.0.11.1.0.0.1"
+                                              }
+                                            ],
+                                            "key": "root.0.2.0.1.0.0.11.1.0.0"
+                                          },
+                                          {
+                                            "tag": "p",
+                                            "attrs": {
+                                              "class": "text-[11px] leading-5 flex items-center gap-2"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "size-1.5 rounded-full bg-emerald-500/60"
+                                                },
+                                                "children": [],
+                                                "key": "root.0.2.0.1.0.0.11.1.0.1.0"
+                                              },
+                                              {
+                                                "text": "Brief editor",
+                                                "key": "root.0.2.0.1.0.0.11.1.0.1.1"
+                                              }
+                                            ],
+                                            "key": "root.0.2.0.1.0.0.11.1.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.2.0.1.0.0.11.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.1.0.0.11.1"
+                                  }
+                                ],
+                                "key": "root.0.2.0.1.0.0.11"
+                              }
+                            ],
+                            "key": "root.0.2.0.1.0.0"
+                          }
+                        ],
+                        "key": "root.0.2.0.1.0"
+                      }
+                    ],
+                    "key": "root.0.2.0.1"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "bg-background absolute bottom-4 left-1/2 flex -translate-x-1/2 items-center rounded-lg border p-1 shadow-sm"
+                    },
+                    "children": [
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-6",
+                          "aria-label": "Zoom out"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-minus",
+                              "class": "lucide lucide-minus size-3.5"
+                            },
+                            "key": "root.0.2.0.2.0.0"
+                          }
+                        ],
+                        "key": "root.0.2.0.2.0"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "min-w-14 text-xs tabular-nums",
+                          "aria-label": "Reset zoom"
+                        },
+                        "children": [
+                          {
+                            "text": "90",
+                            "key": "root.0.2.0.2.1.0"
+                          },
+                          {
+                            "text": "%",
+                            "key": "root.0.2.0.2.1.1"
+                          }
+                        ],
+                        "key": "root.0.2.0.2.1"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-6",
+                          "aria-label": "Zoom in"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-plus",
+                              "class": "lucide lucide-plus size-3.5"
+                            },
+                            "key": "root.0.2.0.2.2.0"
+                          }
+                        ],
+                        "key": "root.0.2.0.2.2"
+                      }
+                    ],
+                    "key": "root.0.2.0.2"
+                  }
+                ],
+                "key": "root.0.2.0"
+              },
+              {
+                "tag": "aside",
+                "attrs": {
+                  "aria-label": "Test conversation",
+                  "class": "bg-background w-full shrink-0 flex-col border-l lg:w-[292px] hidden lg:flex"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "flex items-center justify-between border-b px-4 py-3"
+                    },
+                    "children": [
+                      {
+                        "tag": "h2",
+                        "attrs": {
+                          "class": "text-xs font-medium"
+                        },
+                        "children": [
+                          {
+                            "text": "Test conversation",
+                            "key": "root.0.2.1.0.0.0"
+                          }
+                        ],
+                        "key": "root.0.2.1.0.0"
+                      },
+                      {
+                        "tag": "span",
+                        "attrs": {
+                          "class": "text-muted-foreground text-[10px]"
+                        },
+                        "children": [
+                          {
+                            "text": "Sample run",
+                            "key": "root.0.2.1.0.1.0"
+                          }
+                        ],
+                        "key": "root.0.2.1.0.1"
+                      }
+                    ],
+                    "key": "root.0.2.1.0"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "min-h-0 flex-1 space-y-5 overflow-y-auto px-4 py-5 text-xs leading-6"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "bg-muted/50 rounded-lg border px-3 py-2.5"
+                        },
+                        "children": [
+                          {
+                            "text": "Review customer signals from the past seven days.",
+                            "key": "root.0.2.1.1.0.0"
+                          }
+                        ],
+                        "key": "root.0.2.1.1.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {},
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "mb-2 flex items-center gap-2 text-[10px] text-emerald-700 dark:text-emerald-400"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "size-1.5 rounded-full bg-emerald-500"
+                                },
+                                "children": [],
+                                "key": "root.0.2.1.1.1.0.0"
+                              },
+                              {
+                                "text": "Run complete",
+                                "key": "root.0.2.1.1.1.0.1"
+                              }
+                            ],
+                            "key": "root.0.2.1.1.1.0"
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": {},
+                            "children": [
+                              {
+                                "text": "I’ll review the latest feedback, check it against our product priorities, and prepare a brief with links to the evidence.",
+                                "key": "root.0.2.1.1.1.1.0"
+                              }
+                            ],
+                            "key": "root.0.2.1.1.1.1"
+                          }
+                        ],
+                        "key": "root.0.2.1.1.1"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "space-y-2"
+                        },
+                        "children": [
+                          {
+                            "tag": "p",
+                            "attrs": {
+                              "class": "text-muted-foreground text-[10px] font-medium tracking-wide"
+                            },
+                            "children": [
+                              {
+                                "text": "CONTEXT",
+                                "key": "root.0.2.1.1.2.0.0"
+                              }
+                            ],
+                            "key": "root.0.2.1.1.2.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "space-y-1.5"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-center gap-2 rounded-md border px-2.5 py-1.5 text-[11px]"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-database",
+                                      "class": "lucide lucide-database text-muted-foreground size-3"
+                                    },
+                                    "key": "root.0.2.1.1.2.1.0.0"
+                                  },
+                                  {
+                                    "text": "Product priorities",
+                                    "key": "root.0.2.1.1.2.1.0.1"
+                                  },
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-check",
+                                      "class": "lucide lucide-check ml-auto size-3 text-emerald-600"
+                                    },
+                                    "key": "root.0.2.1.1.2.1.0.2"
+                                  }
+                                ],
+                                "key": "root.0.2.1.1.2.1.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-center gap-2 rounded-md border px-2.5 py-1.5 text-[11px]"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-database",
+                                      "class": "lucide lucide-database text-muted-foreground size-3"
+                                    },
+                                    "key": "root.0.2.1.1.2.1.1.0"
+                                  },
+                                  {
+                                    "text": "Previous findings",
+                                    "key": "root.0.2.1.1.2.1.1.1"
+                                  },
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-check",
+                                      "class": "lucide lucide-check ml-auto size-3 text-emerald-600"
+                                    },
+                                    "key": "root.0.2.1.1.2.1.1.2"
+                                  }
+                                ],
+                                "key": "root.0.2.1.1.2.1.1"
+                              }
+                            ],
+                            "key": "root.0.2.1.1.2.1"
+                          }
+                        ],
+                        "key": "root.0.2.1.1.2"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "space-y-2"
+                        },
+                        "children": [
+                          {
+                            "tag": "p",
+                            "attrs": {
+                              "class": "text-muted-foreground text-[10px] font-medium tracking-wide"
+                            },
+                            "children": [
+                              {
+                                "text": "READING SOURCES",
+                                "key": "root.0.2.1.1.3.0.0"
+                              }
+                            ],
+                            "key": "root.0.2.1.1.3.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex items-center gap-2 text-[11px]"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-check",
+                                  "class": "lucide lucide-check size-3 text-emerald-600"
+                                },
+                                "key": "root.0.2.1.1.3.1.0"
+                              },
+                              {
+                                "text": "Zendesk · Search tickets",
+                                "key": "root.0.2.1.1.3.1.1"
+                              }
+                            ],
+                            "key": "root.0.2.1.1.3.1"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex items-center gap-2 text-[11px]"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-check",
+                                  "class": "lucide lucide-check size-3 text-emerald-600"
+                                },
+                                "key": "root.0.2.1.1.3.2.0"
+                              },
+                              {
+                                "text": "Notion · Read pages",
+                                "key": "root.0.2.1.1.3.2.1"
+                              }
+                            ],
+                            "key": "root.0.2.1.1.3.2"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex items-center gap-2 text-[11px]"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-check",
+                                  "class": "lucide lucide-check size-3 text-emerald-600"
+                                },
+                                "key": "root.0.2.1.1.3.3.0"
+                              },
+                              {
+                                "text": "Slack · Read threads",
+                                "key": "root.0.2.1.1.3.3.1"
+                              }
+                            ],
+                            "key": "root.0.2.1.1.3.3"
+                          }
+                        ],
+                        "key": "root.0.2.1.1.3"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex flex-wrap gap-1.5"
+                        },
+                        "children": [
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "bg-muted/40 rounded-md border px-2 py-1 text-[10px]"
+                            },
+                            "children": [
+                              {
+                                "text": "Evidence researcher",
+                                "key": "root.0.2.1.1.4.0.0"
+                              }
+                            ],
+                            "key": "root.0.2.1.1.4.0"
+                          },
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "bg-muted/40 rounded-md border px-2 py-1 text-[10px]"
+                            },
+                            "children": [
+                              {
+                                "text": "Brief editor",
+                                "key": "root.0.2.1.1.4.1.0"
+                              }
+                            ],
+                            "key": "root.0.2.1.1.4.1"
+                          }
+                        ],
+                        "key": "root.0.2.1.1.4"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "space-y-3"
+                        },
+                        "children": [
+                          {
+                            "tag": "p",
+                            "attrs": {
+                              "class": "font-medium"
+                            },
+                            "children": [
+                              {
+                                "text": "Three themes worth a closer look",
+                                "key": "root.0.2.1.1.5.0.0"
+                              }
+                            ],
+                            "key": "root.0.2.1.1.5.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex gap-2"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-muted-foreground"
+                                },
+                                "children": [
+                                  {
+                                    "text": "1",
+                                    "key": "root.0.2.1.1.5.1.0.0"
+                                  },
+                                  {
+                                    "text": ".",
+                                    "key": "root.0.2.1.1.5.1.0.1"
+                                  }
+                                ],
+                                "key": "root.0.2.1.1.5.1.0"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "text": "Invite flows need clearer role descriptions.",
+                                    "key": "root.0.2.1.1.5.1.1.0"
+                                  }
+                                ],
+                                "key": "root.0.2.1.1.5.1.1"
+                              }
+                            ],
+                            "key": "root.0.2.1.1.5.1"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex gap-2"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-muted-foreground"
+                                },
+                                "children": [
+                                  {
+                                    "text": "2",
+                                    "key": "root.0.2.1.1.5.2.0.0"
+                                  },
+                                  {
+                                    "text": ".",
+                                    "key": "root.0.2.1.1.5.2.0.1"
+                                  }
+                                ],
+                                "key": "root.0.2.1.1.5.2.0"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "text": "Teams want a single place for handoff decisions.",
+                                    "key": "root.0.2.1.1.5.2.1.0"
+                                  }
+                                ],
+                                "key": "root.0.2.1.1.5.2.1"
+                              }
+                            ],
+                            "key": "root.0.2.1.1.5.2"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex gap-2"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-muted-foreground"
+                                },
+                                "children": [
+                                  {
+                                    "text": "3",
+                                    "key": "root.0.2.1.1.5.3.0.0"
+                                  },
+                                  {
+                                    "text": ".",
+                                    "key": "root.0.2.1.1.5.3.0.1"
+                                  }
+                                ],
+                                "key": "root.0.2.1.1.5.3.0"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "text": "Export status needs to be easier to find.",
+                                    "key": "root.0.2.1.1.5.3.1.0"
+                                  }
+                                ],
+                                "key": "root.0.2.1.1.5.3.1"
+                              }
+                            ],
+                            "key": "root.0.2.1.1.5.3"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "rounded-lg border border-emerald-600/20 bg-emerald-500/5 p-3 text-[11px]"
+                            },
+                            "children": [
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "font-medium"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Ready for your review",
+                                    "key": "root.0.2.1.1.5.4.0.0"
+                                  }
+                                ],
+                                "key": "root.0.2.1.1.5.4.0"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-muted-foreground mt-1"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Slack",
+                                    "key": "root.0.2.1.1.5.4.1.0"
+                                  },
+                                  {
+                                    "text": " ·",
+                                    "key": "root.0.2.1.1.5.4.1.1"
+                                  },
+                                  {
+                                    "text": "#customer-insights",
+                                    "key": "root.0.2.1.1.5.4.1.2"
+                                  }
+                                ],
+                                "key": "root.0.2.1.1.5.4.1"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-muted-foreground mt-1"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Sample output only. Nothing has been sent.",
+                                    "key": "root.0.2.1.1.5.4.2.0"
+                                  }
+                                ],
+                                "key": "root.0.2.1.1.5.4.2"
+                              }
+                            ],
+                            "key": "root.0.2.1.1.5.4"
+                          }
+                        ],
+                        "key": "root.0.2.1.1.5"
+                      }
+                    ],
+                    "key": "root.0.2.1.1"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "space-y-2 border-t p-3"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "text-muted-foreground flex items-center justify-between text-[10px]"
+                        },
+                        "children": [
+                          {
+                            "tag": "span",
+                            "attrs": {},
+                            "children": [
+                              {
+                                "text": "GPT-4.1",
+                                "key": "root.0.2.1.2.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.2.1.2.0.0"
+                          },
+                          {
+                            "tag": "span",
+                            "attrs": {},
+                            "children": [
+                              {
+                                "text": "Demo · 1.8k tokens",
+                                "key": "root.0.2.1.2.0.1.0"
+                              }
+                            ],
+                            "key": "root.0.2.1.2.0.1"
+                          }
+                        ],
+                        "key": "root.0.2.1.2.0"
+                      },
+                      {
+                        "tag": "form",
+                        "attrs": {
+                          "class": "rounded-lg border p-2"
+                        },
+                        "children": [
+                          {
+                            "tag": "textarea",
+                            "attrs": {
+                              "class": "border-input placeholder:text-muted-foreground focus-visible:ring-ring flex w-full rounded-md bg-transparent focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 md:text-sm min-h-12 resize-none border-0 p-1 text-xs shadow-none focus-visible:ring-0",
+                              "aria-label": "Follow-up notes",
+                              "placeholder": "Add a review note…",
+                              "value": ""
+                            },
+                            "children": [],
+                            "key": "root.0.2.1.2.1.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex justify-end"
+                            },
+                            "children": [
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 size-6",
+                                  "type": "submit",
+                                  "disabled": "",
+                                  "aria-label": "Add review note"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-arrow-up",
+                                      "class": "lucide lucide-arrow-up size-3.5"
+                                    },
+                                    "key": "root.0.2.1.2.1.1.0.0"
+                                  }
+                                ],
+                                "key": "root.0.2.1.2.1.1.0"
+                              }
+                            ],
+                            "key": "root.0.2.1.2.1.1"
+                          }
+                        ],
+                        "key": "root.0.2.1.2.1"
+                      }
+                    ],
+                    "key": "root.0.2.1.2"
+                  }
+                ],
+                "key": "root.0.2.1"
+              }
+            ],
+            "key": "root.0.2"
+          }
+        ],
+        "key": "root.0"
+      }
+    ],
+    "key": "root"
+  },
+  "headings": [
+    "Customer signal analyst",
+    "Test conversation"
+  ]
+}

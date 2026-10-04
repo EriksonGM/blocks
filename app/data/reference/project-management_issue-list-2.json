@@ -1,0 +1,2649 @@
+{
+  "label": "Issue List 2",
+  "path": "/project-management/issue-list-2",
+  "appTitle": "Project Management",
+  "tree": {
+    "tag": "div",
+    "attrs": {
+      "class": "flex h-full flex-col overflow-hidden"
+    },
+    "children": [
+      {
+        "tag": "div",
+        "attrs": {
+          "class": "flex min-h-0 flex-1 flex-col overflow-hidden"
+        },
+        "children": [
+          {
+            "tag": "main",
+            "attrs": {
+              "class": "bg-background flex h-full min-h-0 flex-1 flex-col overflow-hidden"
+            },
+            "children": [
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "border-b bg-white dark:bg-zinc-950"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "flex min-h-14 items-center gap-4 px-4 sm:px-6"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "no-scrollbar flex min-w-0 flex-1 items-center overflow-x-auto"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex shrink-0 items-center gap-2 pr-1"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "bg-muted text-foreground flex size-7 items-center justify-center rounded-md"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-folder-kanban",
+                                      "class": "lucide lucide-folder-kanban size-4"
+                                    },
+                                    "key": "root.0.0.0.0.0.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.0.0.0"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-foreground/85 max-w-48 truncate px-2 text-[14px] font-medium"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Renewal Forecast Console",
+                                    "key": "root.0.0.0.0.0.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.0.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.0.0.0.0"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent text-muted-foreground hover:text-foreground size-8 shrink-0 rounded-md",
+                              "aria-label": "Project options"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-ellipsis",
+                                  "class": "lucide lucide-ellipsis size-4"
+                                },
+                                "key": "root.0.0.0.0.0.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.0.0.0.1"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "mx-4 h-5 w-px shrink-0 border-l"
+                            },
+                            "children": [],
+                            "key": "root.0.0.0.0.0.2"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex items-center gap-1"
+                            },
+                            "children": [
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "type": "button",
+                                  "class": "relative z-10 flex items-center rounded-md px-2 py-1.5 text-[13px] font-medium transition-colors bg-muted text-foreground"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Issues",
+                                    "key": "root.0.0.0.0.0.3.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "bg-foreground absolute bottom-[-14px] left-1/2 h-0.5 w-[80%] -translate-x-1/2 rounded-t-md"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.0.0.0.3.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.0.3.0"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "type": "button",
+                                  "class": "relative z-10 flex items-center rounded-md px-2 py-1.5 text-[13px] font-medium transition-colors text-muted-foreground hover:bg-muted/50 hover:text-foreground"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Cycles",
+                                    "key": "root.0.0.0.0.0.3.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.0.3.1"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "type": "button",
+                                  "class": "relative z-10 flex items-center rounded-md px-2 py-1.5 text-[13px] font-medium transition-colors text-muted-foreground hover:bg-muted/50 hover:text-foreground"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Modules",
+                                    "key": "root.0.0.0.0.0.3.2.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.0.3.2"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "type": "button",
+                                  "class": "relative z-10 flex items-center rounded-md px-2 py-1.5 text-[13px] font-medium transition-colors text-muted-foreground hover:bg-muted/50 hover:text-foreground"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Views",
+                                    "key": "root.0.0.0.0.0.3.3.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.0.3.3"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "type": "button",
+                                  "class": "relative z-10 flex items-center rounded-md px-2 py-1.5 text-[13px] font-medium transition-colors text-muted-foreground hover:bg-muted/50 hover:text-foreground"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Pages",
+                                    "key": "root.0.0.0.0.0.3.4.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.0.3.4"
+                              }
+                            ],
+                            "key": "root.0.0.0.0.0.3"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex shrink-0 items-center gap-2"
+                        },
+                        "children": [
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground size-8",
+                              "aria-label": "Filter issues",
+                              "type": "button",
+                              "id": "radix-_R_1ilfiv5uknmlb_",
+                              "aria-haspopup": "menu",
+                              "data-state": "closed"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-sliders-horizontal",
+                                  "class": "lucide lucide-sliders-horizontal size-3.5"
+                                },
+                                "key": "root.0.0.0.0.1.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.0.0.1.0"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "inline-flex items-center justify-center whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 rounded-md px-3 text-xs h-8 shrink-0 gap-1.5"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-plus",
+                                  "class": "lucide lucide-plus size-3.5"
+                                },
+                                "key": "root.0.0.0.0.1.1.0"
+                              },
+                              {
+                                "text": "Add issue",
+                                "key": "root.0.0.0.0.1.1.1"
+                              }
+                            ],
+                            "key": "root.0.0.0.0.1.1"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.1"
+                      }
+                    ],
+                    "key": "root.0.0.0.0"
+                  }
+                ],
+                "key": "root.0.0.0"
+              },
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "flex min-h-11 items-center justify-between border-b bg-white px-4 py-1.5 sm:px-6 dark:bg-zinc-950"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "text-foreground text-[14px] font-semibold"
+                    },
+                    "children": [
+                      {
+                        "text": "15",
+                        "key": "root.0.0.1.0.0"
+                      },
+                      {
+                        "text": " Issues",
+                        "key": "root.0.0.1.0.1"
+                      }
+                    ],
+                    "key": "root.0.0.1.0"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "text-muted-foreground text-[13px] font-medium"
+                    },
+                    "children": [
+                      {
+                        "text": "Grouped by status",
+                        "key": "root.0.0.1.1.0"
+                      }
+                    ],
+                    "key": "root.0.0.1.1"
+                  }
+                ],
+                "key": "root.0.0.1"
+              },
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "flex-1 overflow-auto bg-white p-3 dark:bg-zinc-950"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "min-w-[760px] space-y-2 md:min-w-0"
+                    },
+                    "children": [
+                      {
+                        "tag": "section",
+                        "attrs": {
+                          "class": "overflow-hidden rounded-[4px] border border-zinc-300 dark:border-zinc-800"
+                        },
+                        "children": [
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "type": "button",
+                              "class": "flex h-[42px] w-full items-center gap-2 px-3 text-left text-[14px] font-medium border-fuchsia-200 bg-fuchsia-100/60 dark:border-fuchsia-900 dark:bg-fuchsia-950/35 text-fuchsia-700 dark:text-fuchsia-200"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-chevron-down",
+                                  "class": "lucide lucide-chevron-down size-3.5 text-zinc-950 dark:text-zinc-100"
+                                },
+                                "key": "root.0.0.2.0.0.0.0"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "inline-flex size-3.5 items-center justify-center rounded-full border border-fuchsia-400 text-fuchsia-500"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-check",
+                                      "class": "lucide lucide-check size-2.5"
+                                    },
+                                    "key": "root.0.0.2.0.0.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.0.0.0.1"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "text": "Review",
+                                    "key": "root.0.0.2.0.0.0.2.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.0.0.0.2"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-zinc-500 dark:text-zinc-400"
+                                },
+                                "children": [
+                                  {
+                                    "text": "3",
+                                    "key": "root.0.0.2.0.0.0.3.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.0.0.0.3"
+                              }
+                            ],
+                            "key": "root.0.0.2.0.0.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {},
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "group grid h-11 grid-cols-[34px_92px_34px_minmax(260px,1fr)_auto] items-center border-b border-zinc-200 bg-zinc-100/60 text-[13px] transition-colors last:border-b-0 hover:bg-zinc-200/70 dark:border-zinc-800 dark:bg-zinc-950/55 dark:hover:bg-zinc-900/80"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex justify-end pr-1.5 text-zinc-900 dark:text-zinc-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-signal",
+                                          "class": "lucide lucide-signal size-3.5"
+                                        },
+                                        "key": "root.0.0.2.0.0.1.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.0.1.0.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "truncate font-medium text-zinc-500 dark:text-zinc-400"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "RFC-103",
+                                        "key": "root.0.0.2.0.0.1.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.0.1.0.1"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center justify-center"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "inline-flex size-3.5 items-center justify-center rounded-full border border-fuchsia-400 text-fuchsia-500"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-check",
+                                              "class": "lucide lucide-check size-2.5"
+                                            },
+                                            "key": "root.0.0.2.0.0.1.0.2.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.0.1.0.2.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.0.1.0.2"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-w-0 items-center gap-2 pr-4"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-git-pull-request",
+                                          "class": "lucide lucide-git-pull-request size-4 shrink-0 text-fuchsia-700 dark:text-fuchsia-200"
+                                        },
+                                        "key": "root.0.0.2.0.0.1.0.3.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "truncate text-zinc-950 dark:text-zinc-100"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Sync issue filters with project views",
+                                            "key": "root.0.0.2.0.0.1.0.3.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.0.1.0.3.1"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "inline-flex h-6 shrink-0 items-center gap-1 rounded-full border border-zinc-300 bg-white px-2 text-[12px] text-zinc-700 dark:border-zinc-700 dark:bg-zinc-950 dark:text-zinc-300"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-message-circle",
+                                              "class": "lucide lucide-message-circle size-3.5"
+                                            },
+                                            "key": "root.0.0.2.0.0.1.0.3.2.0"
+                                          },
+                                          {
+                                            "text": "2",
+                                            "key": "root.0.0.2.0.0.1.0.3.2.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.0.1.0.3.2"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.0.1.0.3"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex h-full items-center text-zinc-500 dark:text-zinc-400"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "flex w-36 items-center justify-start border-l border-zinc-200 px-3 dark:border-zinc-800"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "inline-flex h-7 max-w-full items-center gap-1.5 rounded-full border border-zinc-200 bg-white px-2 text-[12px] dark:border-zinc-800 dark:bg-zinc-950"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "icon",
+                                                "attrs": {
+                                                  "name": "i-lucide-github",
+                                                  "class": "lucide lucide-github size-4"
+                                                },
+                                                "key": "root.0.0.2.0.0.1.0.4.0.0.0"
+                                              },
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "truncate"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Views",
+                                                    "key": "root.0.0.2.0.0.1.0.4.0.0.1.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.2.0.0.1.0.4.0.0.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.0.0.1.0.4.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.0.1.0.4.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "flex w-16 items-center gap-1 border-l border-zinc-200 px-3 dark:border-zinc-800"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-circle",
+                                              "class": "lucide lucide-circle size-4 text-zinc-300 dark:text-zinc-700"
+                                            },
+                                            "key": "root.0.0.2.0.0.1.0.4.1.0"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {},
+                                            "children": [
+                                              {
+                                                "text": "0h",
+                                                "key": "root.0.0.2.0.0.1.0.4.1.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.0.0.1.0.4.1.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.0.1.0.4.1"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "w-20 border-l border-zinc-200 px-3 dark:border-zinc-800"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "8 Feb",
+                                            "key": "root.0.0.2.0.0.1.0.4.2.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.0.1.0.4.2"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "flex w-12 justify-center"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "button",
+                                            "attrs": {
+                                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:text-accent-foreground size-7 rounded-md border border-zinc-200 bg-zinc-50 text-zinc-700 hover:bg-zinc-200/70 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-300 dark:hover:bg-zinc-900",
+                                              "aria-label": "Assign RFC-103"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "icon",
+                                                "attrs": {
+                                                  "name": "i-lucide-user-round",
+                                                  "class": "lucide lucide-user-round size-3.5"
+                                                },
+                                                "key": "root.0.0.2.0.0.1.0.4.3.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.0.0.1.0.4.3.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.0.1.0.4.3"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.0.1.0.4"
+                                  }
+                                ],
+                                "key": "root.0.0.2.0.0.1.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "group grid h-11 grid-cols-[34px_92px_34px_minmax(260px,1fr)_auto] items-center border-b border-zinc-200 bg-zinc-100/60 text-[13px] transition-colors last:border-b-0 hover:bg-zinc-200/70 dark:border-zinc-800 dark:bg-zinc-950/55 dark:hover:bg-zinc-900/80"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex justify-end pr-1.5 text-zinc-900 dark:text-zinc-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-signal",
+                                          "class": "lucide lucide-signal size-3.5"
+                                        },
+                                        "key": "root.0.0.2.0.0.1.1.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.0.1.1.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "truncate font-medium text-zinc-500 dark:text-zinc-400"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "RFC-107",
+                                        "key": "root.0.0.2.0.0.1.1.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.0.1.1.1"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center justify-center"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "inline-flex size-3.5 items-center justify-center rounded-full border border-fuchsia-400 text-fuchsia-500"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-check",
+                                              "class": "lucide lucide-check size-2.5"
+                                            },
+                                            "key": "root.0.0.2.0.0.1.1.2.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.0.1.1.2.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.0.1.1.2"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-w-0 items-center gap-2 pr-4"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-git-pull-request",
+                                          "class": "lucide lucide-git-pull-request size-4 shrink-0 text-fuchsia-700 dark:text-fuchsia-200"
+                                        },
+                                        "key": "root.0.0.2.0.0.1.1.3.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "truncate text-zinc-950 dark:text-zinc-100"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Polish the quarter view density",
+                                            "key": "root.0.0.2.0.0.1.1.3.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.0.1.1.3.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.0.1.1.3"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex h-full items-center text-zinc-500 dark:text-zinc-400"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "flex w-36 items-center justify-start border-l border-zinc-200 px-3 dark:border-zinc-800"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "inline-flex h-7 max-w-full items-center gap-1.5 rounded-full border border-zinc-200 bg-white px-2 text-[12px] dark:border-zinc-800 dark:bg-zinc-950"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "icon",
+                                                "attrs": {
+                                                  "name": "i-lucide-github",
+                                                  "class": "lucide lucide-github size-4"
+                                                },
+                                                "key": "root.0.0.2.0.0.1.1.4.0.0.0"
+                                              },
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "truncate"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Density",
+                                                    "key": "root.0.0.2.0.0.1.1.4.0.0.1.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.2.0.0.1.1.4.0.0.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.0.0.1.1.4.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.0.1.1.4.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "flex w-16 items-center gap-1 border-l border-zinc-200 px-3 dark:border-zinc-800"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-circle",
+                                              "class": "lucide lucide-circle size-4 text-zinc-300 dark:text-zinc-700"
+                                            },
+                                            "key": "root.0.0.2.0.0.1.1.4.1.0"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {},
+                                            "children": [
+                                              {
+                                                "text": "0h",
+                                                "key": "root.0.0.2.0.0.1.1.4.1.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.0.0.1.1.4.1.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.0.1.1.4.1"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "w-20 border-l border-zinc-200 px-3 dark:border-zinc-800"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "26 Jun",
+                                            "key": "root.0.0.2.0.0.1.1.4.2.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.0.1.1.4.2"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "flex w-12 justify-center"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "button",
+                                            "attrs": {
+                                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:text-accent-foreground size-7 rounded-md border border-zinc-200 bg-zinc-50 text-zinc-700 hover:bg-zinc-200/70 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-300 dark:hover:bg-zinc-900",
+                                              "aria-label": "Assign RFC-107"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "icon",
+                                                "attrs": {
+                                                  "name": "i-lucide-user-round",
+                                                  "class": "lucide lucide-user-round size-3.5"
+                                                },
+                                                "key": "root.0.0.2.0.0.1.1.4.3.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.0.0.1.1.4.3.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.0.1.1.4.3"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.0.1.1.4"
+                                  }
+                                ],
+                                "key": "root.0.0.2.0.0.1.1"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "group grid h-11 grid-cols-[34px_92px_34px_minmax(260px,1fr)_auto] items-center border-b border-zinc-200 bg-zinc-100/60 text-[13px] transition-colors last:border-b-0 hover:bg-zinc-200/70 dark:border-zinc-800 dark:bg-zinc-950/55 dark:hover:bg-zinc-900/80"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex justify-end pr-1.5 text-zinc-900 dark:text-zinc-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-signal",
+                                          "class": "lucide lucide-signal size-3.5"
+                                        },
+                                        "key": "root.0.0.2.0.0.1.2.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.0.1.2.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "truncate font-medium text-zinc-500 dark:text-zinc-400"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "RFC-109",
+                                        "key": "root.0.0.2.0.0.1.2.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.0.1.2.1"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center justify-center"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "inline-flex size-3.5 items-center justify-center rounded-full border border-fuchsia-400 text-fuchsia-500"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-check",
+                                              "class": "lucide lucide-check size-2.5"
+                                            },
+                                            "key": "root.0.0.2.0.0.1.2.2.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.0.1.2.2.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.0.1.2.2"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-w-0 items-center gap-2 pr-4"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-git-pull-request",
+                                          "class": "lucide lucide-git-pull-request size-4 shrink-0 text-fuchsia-700 dark:text-fuchsia-200"
+                                        },
+                                        "key": "root.0.0.2.0.0.1.2.3.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "truncate text-zinc-950 dark:text-zinc-100"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Verify saved view presets across workspaces",
+                                            "key": "root.0.0.2.0.0.1.2.3.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.0.1.2.3.1"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "inline-flex h-6 shrink-0 items-center gap-1 rounded-full border border-zinc-300 bg-white px-2 text-[12px] text-zinc-700 dark:border-zinc-700 dark:bg-zinc-950 dark:text-zinc-300"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-message-circle",
+                                              "class": "lucide lucide-message-circle size-3.5"
+                                            },
+                                            "key": "root.0.0.2.0.0.1.2.3.2.0"
+                                          },
+                                          {
+                                            "text": "1",
+                                            "key": "root.0.0.2.0.0.1.2.3.2.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.0.1.2.3.2"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.0.1.2.3"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex h-full items-center text-zinc-500 dark:text-zinc-400"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "flex w-36 items-center justify-start border-l border-zinc-200 px-3 dark:border-zinc-800"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "inline-flex h-7 max-w-full items-center gap-1.5 rounded-full border border-zinc-200 bg-white px-2 text-[12px] dark:border-zinc-800 dark:bg-zinc-950"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "icon",
+                                                "attrs": {
+                                                  "name": "i-lucide-github",
+                                                  "class": "lucide lucide-github size-4"
+                                                },
+                                                "key": "root.0.0.2.0.0.1.2.4.0.0.0"
+                                              },
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "truncate"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Views",
+                                                    "key": "root.0.0.2.0.0.1.2.4.0.0.1.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.2.0.0.1.2.4.0.0.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.0.0.1.2.4.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.0.1.2.4.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "flex w-16 items-center gap-1 border-l border-zinc-200 px-3 dark:border-zinc-800"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-circle",
+                                              "class": "lucide lucide-circle size-4 text-zinc-300 dark:text-zinc-700"
+                                            },
+                                            "key": "root.0.0.2.0.0.1.2.4.1.0"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {},
+                                            "children": [
+                                              {
+                                                "text": "0h",
+                                                "key": "root.0.0.2.0.0.1.2.4.1.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.0.0.1.2.4.1.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.0.1.2.4.1"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "w-20 border-l border-zinc-200 px-3 dark:border-zinc-800"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "18 Jun",
+                                            "key": "root.0.0.2.0.0.1.2.4.2.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.0.1.2.4.2"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "flex w-12 justify-center"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "button",
+                                            "attrs": {
+                                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:text-accent-foreground size-7 rounded-md border border-zinc-200 bg-zinc-50 text-zinc-700 hover:bg-zinc-200/70 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-300 dark:hover:bg-zinc-900",
+                                              "aria-label": "Assign RFC-109"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "icon",
+                                                "attrs": {
+                                                  "name": "i-lucide-user-round",
+                                                  "class": "lucide lucide-user-round size-3.5"
+                                                },
+                                                "key": "root.0.0.2.0.0.1.2.4.3.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.0.0.1.2.4.3.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.0.1.2.4.3"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.0.1.2.4"
+                                  }
+                                ],
+                                "key": "root.0.0.2.0.0.1.2"
+                              }
+                            ],
+                            "key": "root.0.0.2.0.0.1"
+                          }
+                        ],
+                        "key": "root.0.0.2.0.0"
+                      },
+                      {
+                        "tag": "section",
+                        "attrs": {
+                          "class": "overflow-hidden rounded-[4px] border border-zinc-300 dark:border-zinc-800"
+                        },
+                        "children": [
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "type": "button",
+                              "class": "flex h-[42px] w-full items-center gap-2 px-3 text-left text-[14px] font-medium border-zinc-300 bg-zinc-200/70 dark:border-zinc-800 dark:bg-zinc-900/80 text-zinc-600 dark:text-zinc-300"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-chevron-down",
+                                  "class": "lucide lucide-chevron-down size-3.5 text-zinc-950 dark:text-zinc-100"
+                                },
+                                "key": "root.0.0.2.0.1.0.0"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "inline-flex size-3.5 items-center justify-center rounded-full border border-zinc-400 text-zinc-400"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-circle",
+                                      "class": "lucide lucide-circle size-2.5"
+                                    },
+                                    "key": "root.0.0.2.0.1.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.0.1.0.1"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "text": "Backlog",
+                                    "key": "root.0.0.2.0.1.0.2.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.0.1.0.2"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-zinc-500 dark:text-zinc-400"
+                                },
+                                "children": [
+                                  {
+                                    "text": "3",
+                                    "key": "root.0.0.2.0.1.0.3.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.0.1.0.3"
+                              }
+                            ],
+                            "key": "root.0.0.2.0.1.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {},
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "group grid h-11 grid-cols-[34px_92px_34px_minmax(260px,1fr)_auto] items-center border-b border-zinc-200 bg-zinc-100/60 text-[13px] transition-colors last:border-b-0 hover:bg-zinc-200/70 dark:border-zinc-800 dark:bg-zinc-950/55 dark:hover:bg-zinc-900/80"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex justify-end pr-1.5 text-zinc-900 dark:text-zinc-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-signal",
+                                          "class": "lucide lucide-signal size-3.5"
+                                        },
+                                        "key": "root.0.0.2.0.1.1.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.1.1.0.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "truncate font-medium text-zinc-500 dark:text-zinc-400"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "RFC-104",
+                                        "key": "root.0.0.2.0.1.1.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.1.1.0.1"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center justify-center"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "inline-flex size-3.5 items-center justify-center rounded-full border border-zinc-400 text-zinc-400"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-circle",
+                                              "class": "lucide lucide-circle size-2.5"
+                                            },
+                                            "key": "root.0.0.2.0.1.1.0.2.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.1.1.0.2.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.1.1.0.2"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-w-0 items-center gap-2 pr-4"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "truncate text-zinc-950 dark:text-zinc-100"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Document drag and resize behavior",
+                                            "key": "root.0.0.2.0.1.1.0.3.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.1.1.0.3.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.1.1.0.3"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex h-full items-center text-zinc-500 dark:text-zinc-400"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "flex w-36 items-center justify-start border-l border-zinc-200 px-3 dark:border-zinc-800"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "inline-flex h-7 max-w-full items-center gap-1.5 rounded-full border border-zinc-200 bg-white px-2 text-[12px] dark:border-zinc-800 dark:bg-zinc-950"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "icon",
+                                                "attrs": {
+                                                  "name": "i-lucide-github",
+                                                  "class": "lucide lucide-github size-4"
+                                                },
+                                                "key": "root.0.0.2.0.1.1.0.4.0.0.0"
+                                              },
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "truncate"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Guidelines",
+                                                    "key": "root.0.0.2.0.1.1.0.4.0.0.1.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.2.0.1.1.0.4.0.0.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.0.1.1.0.4.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.1.1.0.4.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "flex w-16 items-center gap-1 border-l border-zinc-200 px-3 dark:border-zinc-800"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-circle",
+                                              "class": "lucide lucide-circle size-4 text-zinc-300 dark:text-zinc-700"
+                                            },
+                                            "key": "root.0.0.2.0.1.1.0.4.1.0"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {},
+                                            "children": [
+                                              {
+                                                "text": "0h",
+                                                "key": "root.0.0.2.0.1.1.0.4.1.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.0.1.1.0.4.1.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.1.1.0.4.1"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "w-20 border-l border-zinc-200 px-3 dark:border-zinc-800"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "7 Oct",
+                                            "key": "root.0.0.2.0.1.1.0.4.2.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.1.1.0.4.2"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "flex w-12 justify-center"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "button",
+                                            "attrs": {
+                                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:text-accent-foreground size-7 rounded-md border border-zinc-200 bg-zinc-50 text-zinc-700 hover:bg-zinc-200/70 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-300 dark:hover:bg-zinc-900",
+                                              "aria-label": "Assign RFC-104"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "icon",
+                                                "attrs": {
+                                                  "name": "i-lucide-user-round",
+                                                  "class": "lucide lucide-user-round size-3.5"
+                                                },
+                                                "key": "root.0.0.2.0.1.1.0.4.3.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.0.1.1.0.4.3.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.1.1.0.4.3"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.1.1.0.4"
+                                  }
+                                ],
+                                "key": "root.0.0.2.0.1.1.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "group grid h-11 grid-cols-[34px_92px_34px_minmax(260px,1fr)_auto] items-center border-b border-zinc-200 bg-zinc-100/60 text-[13px] transition-colors last:border-b-0 hover:bg-zinc-200/70 dark:border-zinc-800 dark:bg-zinc-950/55 dark:hover:bg-zinc-900/80"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex justify-end pr-1.5 text-zinc-900 dark:text-zinc-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-signal",
+                                          "class": "lucide lucide-signal size-3.5"
+                                        },
+                                        "key": "root.0.0.2.0.1.1.1.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.1.1.1.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "truncate font-medium text-zinc-500 dark:text-zinc-400"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "RFC-108",
+                                        "key": "root.0.0.2.0.1.1.1.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.1.1.1.1"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center justify-center"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "inline-flex size-3.5 items-center justify-center rounded-full border border-zinc-400 text-zinc-400"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-circle",
+                                              "class": "lucide lucide-circle size-2.5"
+                                            },
+                                            "key": "root.0.0.2.0.1.1.1.2.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.1.1.1.2.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.1.1.1.2"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-w-0 items-center gap-2 pr-4"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-git-pull-request",
+                                          "class": "lucide lucide-git-pull-request size-4 shrink-0 text-zinc-600 dark:text-zinc-300"
+                                        },
+                                        "key": "root.0.0.2.0.1.1.1.3.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "truncate text-zinc-950 dark:text-zinc-100"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Prepare issue calendar follow-up screen",
+                                            "key": "root.0.0.2.0.1.1.1.3.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.1.1.1.3.1"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "inline-flex h-6 shrink-0 items-center gap-1 rounded-full border border-zinc-300 bg-white px-2 text-[12px] text-zinc-700 dark:border-zinc-700 dark:bg-zinc-950 dark:text-zinc-300"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-message-circle",
+                                              "class": "lucide lucide-message-circle size-3.5"
+                                            },
+                                            "key": "root.0.0.2.0.1.1.1.3.2.0"
+                                          },
+                                          {
+                                            "text": "1",
+                                            "key": "root.0.0.2.0.1.1.1.3.2.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.1.1.1.3.2"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.1.1.1.3"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex h-full items-center text-zinc-500 dark:text-zinc-400"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "flex w-36 items-center justify-start border-l border-zinc-200 px-3 dark:border-zinc-800"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "inline-flex h-7 max-w-full items-center gap-1.5 rounded-full border border-zinc-200 bg-white px-2 text-[12px] dark:border-zinc-800 dark:bg-zinc-950"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "icon",
+                                                "attrs": {
+                                                  "name": "i-lucide-github",
+                                                  "class": "lucide lucide-github size-4"
+                                                },
+                                                "key": "root.0.0.2.0.1.1.1.4.0.0.0"
+                                              },
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "truncate"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Calendar",
+                                                    "key": "root.0.0.2.0.1.1.1.4.0.0.1.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.2.0.1.1.1.4.0.0.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.0.1.1.1.4.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.1.1.1.4.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "flex w-16 items-center gap-1 border-l border-zinc-200 px-3 dark:border-zinc-800"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-circle",
+                                              "class": "lucide lucide-circle size-4 text-zinc-300 dark:text-zinc-700"
+                                            },
+                                            "key": "root.0.0.2.0.1.1.1.4.1.0"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {},
+                                            "children": [
+                                              {
+                                                "text": "0h",
+                                                "key": "root.0.0.2.0.1.1.1.4.1.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.0.1.1.1.4.1.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.1.1.1.4.1"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "w-20 border-l border-zinc-200 px-3 dark:border-zinc-800"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "20 Mar",
+                                            "key": "root.0.0.2.0.1.1.1.4.2.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.1.1.1.4.2"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "flex w-12 justify-center"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "button",
+                                            "attrs": {
+                                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:text-accent-foreground size-7 rounded-md border border-zinc-200 bg-zinc-50 text-zinc-700 hover:bg-zinc-200/70 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-300 dark:hover:bg-zinc-900",
+                                              "aria-label": "Assign RFC-108"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "icon",
+                                                "attrs": {
+                                                  "name": "i-lucide-user-round",
+                                                  "class": "lucide lucide-user-round size-3.5"
+                                                },
+                                                "key": "root.0.0.2.0.1.1.1.4.3.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.0.1.1.1.4.3.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.1.1.1.4.3"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.1.1.1.4"
+                                  }
+                                ],
+                                "key": "root.0.0.2.0.1.1.1"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "group grid h-11 grid-cols-[34px_92px_34px_minmax(260px,1fr)_auto] items-center border-b border-zinc-200 bg-zinc-100/60 text-[13px] transition-colors last:border-b-0 hover:bg-zinc-200/70 dark:border-zinc-800 dark:bg-zinc-950/55 dark:hover:bg-zinc-900/80"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex justify-end pr-1.5 text-zinc-900 dark:text-zinc-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-signal",
+                                          "class": "lucide lucide-signal size-3.5"
+                                        },
+                                        "key": "root.0.0.2.0.1.1.2.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.1.1.2.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "truncate font-medium text-zinc-500 dark:text-zinc-400"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "RFC-110",
+                                        "key": "root.0.0.2.0.1.1.2.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.1.1.2.1"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center justify-center"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "inline-flex size-3.5 items-center justify-center rounded-full border border-zinc-400 text-zinc-400"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-circle",
+                                              "class": "lucide lucide-circle size-2.5"
+                                            },
+                                            "key": "root.0.0.2.0.1.1.2.2.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.1.1.2.2.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.1.1.2.2"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-w-0 items-center gap-2 pr-4"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "truncate text-zinc-950 dark:text-zinc-100"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Define backlog import edge cases",
+                                            "key": "root.0.0.2.0.1.1.2.3.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.1.1.2.3.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.1.1.2.3"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex h-full items-center text-zinc-500 dark:text-zinc-400"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "flex w-36 items-center justify-start border-l border-zinc-200 px-3 dark:border-zinc-800"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "inline-flex h-7 max-w-full items-center gap-1.5 rounded-full border border-zinc-200 bg-white px-2 text-[12px] dark:border-zinc-800 dark:bg-zinc-950"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "icon",
+                                                "attrs": {
+                                                  "name": "i-lucide-github",
+                                                  "class": "lucide lucide-github size-4"
+                                                },
+                                                "key": "root.0.0.2.0.1.1.2.4.0.0.0"
+                                              },
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "truncate"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Import",
+                                                    "key": "root.0.0.2.0.1.1.2.4.0.0.1.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.2.0.1.1.2.4.0.0.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.0.1.1.2.4.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.1.1.2.4.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "flex w-16 items-center gap-1 border-l border-zinc-200 px-3 dark:border-zinc-800"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-circle",
+                                              "class": "lucide lucide-circle size-4 text-zinc-300 dark:text-zinc-700"
+                                            },
+                                            "key": "root.0.0.2.0.1.1.2.4.1.0"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {},
+                                            "children": [
+                                              {
+                                                "text": "0h",
+                                                "key": "root.0.0.2.0.1.1.2.4.1.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.0.1.1.2.4.1.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.1.1.2.4.1"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "w-20 border-l border-zinc-200 px-3 dark:border-zinc-800"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "4 Aug",
+                                            "key": "root.0.0.2.0.1.1.2.4.2.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.1.1.2.4.2"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "flex w-12 justify-center"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "button",
+                                            "attrs": {
+                                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:text-accent-foreground size-7 rounded-md border border-zinc-200 bg-zinc-50 text-zinc-700 hover:bg-zinc-200/70 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-300 dark:hover:bg-zinc-900",
+                                              "aria-label": "Assign RFC-110"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "icon",
+                                                "attrs": {
+                                                  "name": "i-lucide-user-round",
+                                                  "class": "lucide lucide-user-round size-3.5"
+                                                },
+                                                "key": "root.0.0.2.0.1.1.2.4.3.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.0.1.1.2.4.3.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.1.1.2.4.3"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.1.1.2.4"
+                                  }
+                                ],
+                                "key": "root.0.0.2.0.1.1.2"
+                              }
+                            ],
+                            "key": "root.0.0.2.0.1.1"
+                          }
+                        ],
+                        "key": "root.0.0.2.0.1"
+                      },
+                      {
+                        "tag": "section",
+                        "attrs": {
+                          "class": "overflow-hidden rounded-[4px] border border-zinc-300 dark:border-zinc-800"
+                        },
+                        "children": [
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "type": "button",
+                              "class": "flex h-[42px] w-full items-center gap-2 px-3 text-left text-[14px] font-medium border-cyan-200 bg-cyan-100/60 dark:border-cyan-900 dark:bg-cyan-950/35 text-cyan-700 dark:text-cyan-200"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-chevron-right",
+                                  "class": "lucide lucide-chevron-right size-3.5 text-zinc-950 dark:text-zinc-100"
+                                },
+                                "key": "root.0.0.2.0.2.0.0"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "inline-flex size-3.5 items-center justify-center rounded-full border border-cyan-400 text-cyan-500"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-check",
+                                      "class": "lucide lucide-check size-2.5"
+                                    },
+                                    "key": "root.0.0.2.0.2.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.0.2.0.1"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "text": "Todo",
+                                    "key": "root.0.0.2.0.2.0.2.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.0.2.0.2"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-zinc-500 dark:text-zinc-400"
+                                },
+                                "children": [
+                                  {
+                                    "text": "3",
+                                    "key": "root.0.0.2.0.2.0.3.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.0.2.0.3"
+                              }
+                            ],
+                            "key": "root.0.0.2.0.2.0"
+                          }
+                        ],
+                        "key": "root.0.0.2.0.2"
+                      },
+                      {
+                        "tag": "section",
+                        "attrs": {
+                          "class": "overflow-hidden rounded-[4px] border border-zinc-300 dark:border-zinc-800"
+                        },
+                        "children": [
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "type": "button",
+                              "class": "flex h-[42px] w-full items-center gap-2 px-3 text-left text-[14px] font-medium border-amber-200 bg-amber-100/60 dark:border-amber-900 dark:bg-amber-950/35 text-amber-700 dark:text-amber-200"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-chevron-down",
+                                  "class": "lucide lucide-chevron-down size-3.5 text-zinc-950 dark:text-zinc-100"
+                                },
+                                "key": "root.0.0.2.0.3.0.0"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "inline-flex size-3.5 items-center justify-center rounded-full border border-amber-400 text-amber-500"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-check",
+                                      "class": "lucide lucide-check size-2.5"
+                                    },
+                                    "key": "root.0.0.2.0.3.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.0.3.0.1"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "text": "In Progress",
+                                    "key": "root.0.0.2.0.3.0.2.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.0.3.0.2"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-zinc-500 dark:text-zinc-400"
+                                },
+                                "children": [
+                                  {
+                                    "text": "3",
+                                    "key": "root.0.0.2.0.3.0.3.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.0.3.0.3"
+                              }
+                            ],
+                            "key": "root.0.0.2.0.3.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {},
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "group grid h-11 grid-cols-[34px_92px_34px_minmax(260px,1fr)_auto] items-center border-b border-zinc-200 bg-zinc-100/60 text-[13px] transition-colors last:border-b-0 hover:bg-zinc-200/70 dark:border-zinc-800 dark:bg-zinc-950/55 dark:hover:bg-zinc-900/80"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex justify-end pr-1.5 text-zinc-900 dark:text-zinc-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-signal",
+                                          "class": "lucide lucide-signal size-3.5"
+                                        },
+                                        "key": "root.0.0.2.0.3.1.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.3.1.0.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "truncate font-medium text-zinc-500 dark:text-zinc-400"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "RFC-101",
+                                        "key": "root.0.0.2.0.3.1.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.3.1.0.1"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center justify-center"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "inline-flex size-3.5 items-center justify-center rounded-full border border-amber-400 text-amber-500"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-check",
+                                              "class": "lucide lucide-check size-2.5"
+                                            },
+                                            "key": "root.0.0.2.0.3.1.0.2.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.3.1.0.2.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.3.1.0.2"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-w-0 items-center gap-2 pr-4"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-git-pull-request",
+                                          "class": "lucide lucide-git-pull-request size-4 shrink-0 text-amber-700 dark:text-amber-200"
+                                        },
+                                        "key": "root.0.0.2.0.3.1.0.3.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "truncate text-zinc-950 dark:text-zinc-100"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Finalize issue timeline architecture",
+                                            "key": "root.0.0.2.0.3.1.0.3.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.3.1.0.3.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.3.1.0.3"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex h-full items-center text-zinc-500 dark:text-zinc-400"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "flex w-36 items-center justify-start border-l border-zinc-200 px-3 dark:border-zinc-800"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "inline-flex h-7 max-w-full items-center gap-1.5 rounded-full border border-zinc-200 bg-white px-2 text-[12px] dark:border-zinc-800 dark:bg-zinc-950"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "icon",
+                                                "attrs": {
+                                                  "name": "i-lucide-github",
+                                                  "class": "lucide lucide-github size-4"
+                                                },
+                                                "key": "root.0.0.2.0.3.1.0.4.0.0.0"
+                                              },
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "truncate"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Platform",
+                                                    "key": "root.0.0.2.0.3.1.0.4.0.0.1.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.2.0.3.1.0.4.0.0.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.0.3.1.0.4.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.3.1.0.4.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "flex w-16 items-center gap-1 border-l border-zinc-200 px-3 dark:border-zinc-800"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-circle",
+                                              "class": "lucide lucide-circle size-4 text-zinc-300 dark:text-zinc-700"
+                                            },
+                                            "key": "root.0.0.2.0.3.1.0.4.1.0"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {},
+                                            "children": [
+                                              {
+                                                "text": "0h",
+                                                "key": "root.0.0.2.0.3.1.0.4.1.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.0.3.1.0.4.1.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.3.1.0.4.1"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "w-20 border-l border-zinc-200 px-3 dark:border-zinc-800"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "12 May",
+                                            "key": "root.0.0.2.0.3.1.0.4.2.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.3.1.0.4.2"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "flex w-12 justify-center"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "button",
+                                            "attrs": {
+                                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:text-accent-foreground size-7 rounded-md border border-zinc-200 bg-zinc-50 text-zinc-700 hover:bg-zinc-200/70 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-300 dark:hover:bg-zinc-900",
+                                              "aria-label": "Assign RFC-101"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "icon",
+                                                "attrs": {
+                                                  "name": "i-lucide-user-round",
+                                                  "class": "lucide lucide-user-round size-3.5"
+                                                },
+                                                "key": "root.0.0.2.0.3.1.0.4.3.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.0.3.1.0.4.3.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.3.1.0.4.3"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.3.1.0.4"
+                                  }
+                                ],
+                                "key": "root.0.0.2.0.3.1.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "group grid h-11 grid-cols-[34px_92px_34px_minmax(260px,1fr)_auto] items-center border-b border-zinc-200 bg-zinc-100/60 text-[13px] transition-colors last:border-b-0 hover:bg-zinc-200/70 dark:border-zinc-800 dark:bg-zinc-950/55 dark:hover:bg-zinc-900/80"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex justify-end pr-1.5 text-zinc-900 dark:text-zinc-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-signal",
+                                          "class": "lucide lucide-signal size-3.5"
+                                        },
+                                        "key": "root.0.0.2.0.3.1.1.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.3.1.1.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "truncate font-medium text-zinc-500 dark:text-zinc-400"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "RFC-112",
+                                        "key": "root.0.0.2.0.3.1.1.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.3.1.1.1"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center justify-center"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "inline-flex size-3.5 items-center justify-center rounded-full border border-amber-400 text-amber-500"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-check",
+                                              "class": "lucide lucide-check size-2.5"
+                                            },
+                                            "key": "root.0.0.2.0.3.1.1.2.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.3.1.1.2.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.3.1.1.2"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-w-0 items-center gap-2 pr-4"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-git-pull-request",
+                                          "class": "lucide lucide-git-pull-request size-4 shrink-0 text-amber-700 dark:text-amber-200"
+                                        },
+                                        "key": "root.0.0.2.0.3.1.1.3.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "truncate text-zinc-950 dark:text-zinc-100"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Tune inline issue activity affordances",
+                                            "key": "root.0.0.2.0.3.1.1.3.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.3.1.1.3.1"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "inline-flex h-6 shrink-0 items-center gap-1 rounded-full border border-zinc-300 bg-white px-2 text-[12px] text-zinc-700 dark:border-zinc-700 dark:bg-zinc-950 dark:text-zinc-300"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-message-circle",
+                                              "class": "lucide lucide-message-circle size-3.5"
+                                            },
+                                            "key": "root.0.0.2.0.3.1.1.3.2.0"
+                                          },
+                                          {
+                                            "text": "2",
+                                            "key": "root.0.0.2.0.3.1.1.3.2.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.3.1.1.3.2"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.3.1.1.3"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex h-full items-center text-zinc-500 dark:text-zinc-400"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "flex w-36 items-center justify-start border-l border-zinc-200 px-3 dark:border-zinc-800"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "inline-flex h-7 max-w-full items-center gap-1.5 rounded-full border border-zinc-200 bg-white px-2 text-[12px] dark:border-zinc-800 dark:bg-zinc-950"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "icon",
+                                                "attrs": {
+                                                  "name": "i-lucide-github",
+                                                  "class": "lucide lucide-github size-4"
+                                                },
+                                                "key": "root.0.0.2.0.3.1.1.4.0.0.0"
+                                              },
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "truncate"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Activity",
+                                                    "key": "root.0.0.2.0.3.1.1.4.0.0.1.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.2.0.3.1.1.4.0.0.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.0.3.1.1.4.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.3.1.1.4.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "flex w-16 items-center gap-1 border-l border-zinc-200 px-3 dark:border-zinc-800"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-circle",
+                                              "class": "lucide lucide-circle size-4 text-zinc-300 dark:text-zinc-700"
+                                            },
+                                            "key": "root.0.0.2.0.3.1.1.4.1.0"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {},
+                                            "children": [
+                                              {
+                                                "text": "0h",
+                                                "key": "root.0.0.2.0.3.1.1.4.1.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.0.3.1.1.4.1.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.3.1.1.4.1"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "w-20 border-l border-zinc-200 px-3 dark:border-zinc-800"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "22 May",
+                                            "key": "root.0.0.2.0.3.1.1.4.2.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.3.1.1.4.2"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "flex w-12 justify-center"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "button",
+                                            "attrs": {
+                                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:text-accent-foreground size-7 rounded-md border border-zinc-200 bg-zinc-50 text-zinc-700 hover:bg-zinc-200/70 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-300 dark:hover:bg-zinc-900",
+                                              "aria-label": "Assign RFC-112"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "icon",
+                                                "attrs": {
+                                                  "name": "i-lucide-user-round",
+                                                  "class": "lucide lucide-user-round size-3.5"
+                                                },
+                                                "key": "root.0.0.2.0.3.1.1.4.3.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.0.3.1.1.4.3.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.3.1.1.4.3"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.3.1.1.4"
+                                  }
+                                ],
+                                "key": "root.0.0.2.0.3.1.1"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "group grid h-11 grid-cols-[34px_92px_34px_minmax(260px,1fr)_auto] items-center border-b border-zinc-200 bg-zinc-100/60 text-[13px] transition-colors last:border-b-0 hover:bg-zinc-200/70 dark:border-zinc-800 dark:bg-zinc-950/55 dark:hover:bg-zinc-900/80"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex justify-end pr-1.5 text-zinc-900 dark:text-zinc-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-signal",
+                                          "class": "lucide lucide-signal size-3.5"
+                                        },
+                                        "key": "root.0.0.2.0.3.1.2.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.3.1.2.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "truncate font-medium text-zinc-500 dark:text-zinc-400"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "RFC-113",
+                                        "key": "root.0.0.2.0.3.1.2.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.3.1.2.1"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-center justify-center"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "inline-flex size-3.5 items-center justify-center rounded-full border border-amber-400 text-amber-500"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-check",
+                                              "class": "lucide lucide-check size-2.5"
+                                            },
+                                            "key": "root.0.0.2.0.3.1.2.2.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.3.1.2.2.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.3.1.2.2"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-w-0 items-center gap-2 pr-4"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-git-pull-request",
+                                          "class": "lucide lucide-git-pull-request size-4 shrink-0 text-amber-700 dark:text-amber-200"
+                                        },
+                                        "key": "root.0.0.2.0.3.1.2.3.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "truncate text-zinc-950 dark:text-zinc-100"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Connect keyboard focus states to list navigation",
+                                            "key": "root.0.0.2.0.3.1.2.3.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.3.1.2.3.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.3.1.2.3"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex h-full items-center text-zinc-500 dark:text-zinc-400"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "flex w-36 items-center justify-start border-l border-zinc-200 px-3 dark:border-zinc-800"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "inline-flex h-7 max-w-full items-center gap-1.5 rounded-full border border-zinc-200 bg-white px-2 text-[12px] dark:border-zinc-800 dark:bg-zinc-950"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "icon",
+                                                "attrs": {
+                                                  "name": "i-lucide-github",
+                                                  "class": "lucide lucide-github size-4"
+                                                },
+                                                "key": "root.0.0.2.0.3.1.2.4.0.0.0"
+                                              },
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "truncate"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Accessibility",
+                                                    "key": "root.0.0.2.0.3.1.2.4.0.0.1.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.2.0.3.1.2.4.0.0.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.0.3.1.2.4.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.3.1.2.4.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "flex w-16 items-center gap-1 border-l border-zinc-200 px-3 dark:border-zinc-800"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-circle",
+                                              "class": "lucide lucide-circle size-4 text-zinc-300 dark:text-zinc-700"
+                                            },
+                                            "key": "root.0.0.2.0.3.1.2.4.1.0"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {},
+                                            "children": [
+                                              {
+                                                "text": "0h",
+                                                "key": "root.0.0.2.0.3.1.2.4.1.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.0.3.1.2.4.1.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.3.1.2.4.1"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "w-20 border-l border-zinc-200 px-3 dark:border-zinc-800"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "30 May",
+                                            "key": "root.0.0.2.0.3.1.2.4.2.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.3.1.2.4.2"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "flex w-12 justify-center"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "button",
+                                            "attrs": {
+                                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:text-accent-foreground size-7 rounded-md border border-zinc-200 bg-zinc-50 text-zinc-700 hover:bg-zinc-200/70 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-300 dark:hover:bg-zinc-900",
+                                              "aria-label": "Assign RFC-113"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "icon",
+                                                "attrs": {
+                                                  "name": "i-lucide-user-round",
+                                                  "class": "lucide lucide-user-round size-3.5"
+                                                },
+                                                "key": "root.0.0.2.0.3.1.2.4.3.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.0.3.1.2.4.3.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.3.1.2.4.3"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.3.1.2.4"
+                                  }
+                                ],
+                                "key": "root.0.0.2.0.3.1.2"
+                              }
+                            ],
+                            "key": "root.0.0.2.0.3.1"
+                          }
+                        ],
+                        "key": "root.0.0.2.0.3"
+                      },
+                      {
+                        "tag": "section",
+                        "attrs": {
+                          "class": "overflow-hidden rounded-[4px] border border-zinc-300 dark:border-zinc-800"
+                        },
+                        "children": [
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "type": "button",
+                              "class": "flex h-[42px] w-full items-center gap-2 px-3 text-left text-[14px] font-medium border-emerald-200 bg-emerald-100/60 dark:border-emerald-900 dark:bg-emerald-950/35 text-emerald-700 dark:text-emerald-200"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-chevron-right",
+                                  "class": "lucide lucide-chevron-right size-3.5 text-zinc-950 dark:text-zinc-100"
+                                },
+                                "key": "root.0.0.2.0.4.0.0"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "inline-flex size-3.5 items-center justify-center rounded-full border border-emerald-400 text-emerald-500"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-check",
+                                      "class": "lucide lucide-check size-2.5"
+                                    },
+                                    "key": "root.0.0.2.0.4.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.0.4.0.1"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "text": "Done",
+                                    "key": "root.0.0.2.0.4.0.2.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.0.4.0.2"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-zinc-500 dark:text-zinc-400"
+                                },
+                                "children": [
+                                  {
+                                    "text": "3",
+                                    "key": "root.0.0.2.0.4.0.3.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.0.4.0.3"
+                              }
+                            ],
+                            "key": "root.0.0.2.0.4.0"
+                          }
+                        ],
+                        "key": "root.0.0.2.0.4"
+                      }
+                    ],
+                    "key": "root.0.0.2.0"
+                  }
+                ],
+                "key": "root.0.0.2"
+              }
+            ],
+            "key": "root.0.0"
+          }
+        ],
+        "key": "root.0"
+      }
+    ],
+    "key": "root"
+  },
+  "headings": []
+}

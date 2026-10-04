@@ -1,0 +1,2456 @@
+{
+  "label": "Transaction Detail",
+  "path": "/payment-processor/transaction-detail",
+  "appTitle": "Payment Processor",
+  "tree": {
+    "tag": "div",
+    "attrs": {
+      "class": "flex min-h-0 flex-1 flex-col overflow-hidden"
+    },
+    "children": [
+      {
+        "tag": "div",
+        "attrs": {
+          "class": "flex min-h-0 flex-1 flex-col overflow-hidden"
+        },
+        "children": [
+          {
+            "tag": "main",
+            "attrs": {
+              "class": "bg-background text-foreground h-full min-h-0 flex-1 overflow-y-auto overscroll-contain"
+            },
+            "children": [
+              {
+                "tag": "header",
+                "attrs": {
+                  "class": "border-border bg-muted/30 border-b"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8"
+                    },
+                    "children": [
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 text-primary underline-offset-4 hover:underline py-2 mb-6 h-8 gap-2 px-0"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-arrow-left",
+                              "class": "lucide lucide-arrow-left size-4"
+                            },
+                            "key": "root.0.0.0.0.0.0"
+                          },
+                          {
+                            "text": "Back to transactions",
+                            "key": "root.0.0.0.0.0.1"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex flex-col gap-5 xl:flex-row xl:items-end xl:justify-between"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "min-w-0"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "mb-3 flex flex-wrap items-center gap-2"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "inline-flex items-center gap-2 rounded-md border border-amber-500/25 bg-amber-50 px-2.5 py-1 text-xs font-semibold text-amber-700 dark:bg-amber-500/10 dark:text-amber-300"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "size-2 rounded-full bg-amber-500"
+                                        },
+                                        "children": [],
+                                        "key": "root.0.0.0.0.1.0.0.0.0"
+                                      },
+                                      {
+                                        "text": "Pending review",
+                                        "key": "root.0.0.0.0.1.0.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.1.0.0.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-muted-foreground inline-flex items-center gap-1.5 text-sm font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-fingerprint-pattern",
+                                          "class": "lucide lucide-fingerprint-pattern size-4"
+                                        },
+                                        "key": "root.0.0.0.0.1.0.0.1.0"
+                                      },
+                                      {
+                                        "text": "pay_ONfo13LR30lnWj5e1r6z4",
+                                        "key": "root.0.0.0.0.1.0.0.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.1.0.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.1.0.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex min-w-0 flex-wrap items-center gap-3"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "h1",
+                                    "attrs": {
+                                      "class": "text-3xl font-semibold tracking-tight"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Transaction ",
+                                        "key": "root.0.0.0.0.1.0.1.0.0"
+                                      },
+                                      {
+                                        "text": "txn_R8M42QH91L6C",
+                                        "key": "root.0.0.0.0.1.0.1.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.1.0.1.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground size-9 rounded-md"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-square-pen",
+                                          "class": "lucide lucide-square-pen size-4"
+                                        },
+                                        "key": "root.0.0.0.0.1.0.1.1.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "sr-only"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Edit transaction",
+                                            "key": "root.0.0.0.0.1.0.1.1.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.0.1.0.1.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.1.0.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.1.0.1"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-muted-foreground mt-3 max-w-2xl text-sm"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Review payment evidence, processor routing, and audit changes before releasing the capture hold.",
+                                    "key": "root.0.0.0.0.1.0.2.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.1.0.2"
+                              }
+                            ],
+                            "key": "root.0.0.0.0.1.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex shrink-0 items-center gap-2"
+                            },
+                            "children": [
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 px-4 py-2 h-9 rounded-md"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-circle-check",
+                                      "class": "lucide lucide-circle-check size-4"
+                                    },
+                                    "key": "root.0.0.0.0.1.1.0.0"
+                                  },
+                                  {
+                                    "text": "Approve",
+                                    "key": "root.0.0.0.0.1.1.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.1.1.0"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground px-4 py-2 h-9 rounded-md"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-refresh-ccw",
+                                      "class": "lucide lucide-refresh-ccw size-4"
+                                    },
+                                    "key": "root.0.0.0.0.1.1.1.0"
+                                  },
+                                  {
+                                    "text": "Refund",
+                                    "key": "root.0.0.0.0.1.1.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.1.1.1"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground size-10 rounded-md",
+                                  "type": "button",
+                                  "id": "radix-_R_3klfiv5uknmlb_",
+                                  "aria-haspopup": "menu",
+                                  "data-state": "closed"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-ellipsis-vertical",
+                                      "class": "lucide lucide-ellipsis-vertical size-4"
+                                    },
+                                    "key": "root.0.0.0.0.1.1.2.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "sr-only"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "More actions",
+                                        "key": "root.0.0.0.0.1.1.2.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.1.1.2.1"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.1.1.2"
+                              }
+                            ],
+                            "key": "root.0.0.0.0.1.1"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.1"
+                      }
+                    ],
+                    "key": "root.0.0.0.0"
+                  }
+                ],
+                "key": "root.0.0.0"
+              },
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "mx-auto grid max-w-7xl grid-cols-1 gap-6 px-4 py-10 sm:px-6 lg:px-8 xl:grid-cols-[minmax(0,1fr)_19rem]"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "min-w-0"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "mb-4 rounded-sm border border-amber-500/25 bg-amber-50/80 p-4 text-amber-950 dark:bg-amber-500/10 dark:text-amber-100"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex gap-3"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-triangle-alert",
+                                  "class": "lucide lucide-triangle-alert mt-0.5 size-5 shrink-0 text-amber-600 dark:text-amber-300"
+                                },
+                                "key": "root.0.0.1.0.0.0.0"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-sm leading-6"
+                                },
+                                "children": [
+                                  {
+                                    "text": "This ACH debit is inside a manual review window because the customer exceeded the new-account velocity limit. Confirm the invoice, authorization file, and bank ownership before approval.",
+                                    "key": "root.0.0.1.0.0.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.0.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.1.0.0"
+                      },
+                      {
+                        "tag": "section",
+                        "attrs": {
+                          "class": "py-7 first:pt-0"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "mb-6 flex items-center gap-4"
+                            },
+                            "children": [
+                              {
+                                "tag": "h2",
+                                "attrs": {
+                                  "class": "text-foreground shrink-0 text-xl font-semibold tracking-tight"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Transaction Details",
+                                    "key": "root.0.0.1.0.1.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.1.0.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "bg-border h-px min-w-8 flex-1"
+                                },
+                                "children": [],
+                                "key": "root.0.0.1.0.1.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.1.0"
+                          },
+                          {
+                            "tag": "dl",
+                            "attrs": {
+                              "class": "grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-4"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "dt",
+                                    "attrs": {
+                                      "class": "text-muted-foreground text-[13px] leading-none font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Transaction ID",
+                                        "key": "root.0.0.1.0.1.1.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.1.1.0.0"
+                                  },
+                                  {
+                                    "tag": "dd",
+                                    "attrs": {
+                                      "class": "text-foreground mt-2 min-w-0 text-sm font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "txn_R8M42QH91L6C",
+                                        "key": "root.0.0.1.0.1.1.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.1.1.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.1.1.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "dt",
+                                    "attrs": {
+                                      "class": "text-muted-foreground text-[13px] leading-none font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Amount",
+                                        "key": "root.0.0.1.0.1.1.1.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.1.1.1.0"
+                                  },
+                                  {
+                                    "tag": "dd",
+                                    "attrs": {
+                                      "class": "text-foreground mt-2 min-w-0 text-sm font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "$8,120.50",
+                                        "key": "root.0.0.1.0.1.1.1.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.1.1.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.1.1.1"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "dt",
+                                    "attrs": {
+                                      "class": "text-muted-foreground text-[13px] leading-none font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Customer",
+                                        "key": "root.0.0.1.0.1.1.2.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.1.1.2.0"
+                                  },
+                                  {
+                                    "tag": "dd",
+                                    "attrs": {
+                                      "class": "text-foreground mt-2 min-w-0 text-sm font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Helio Supply",
+                                        "key": "root.0.0.1.0.1.1.2.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.1.1.2.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.1.1.2"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "dt",
+                                    "attrs": {
+                                      "class": "text-muted-foreground text-[13px] leading-none font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Payment method",
+                                        "key": "root.0.0.1.0.1.1.3.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.1.1.3.0"
+                                  },
+                                  {
+                                    "tag": "dd",
+                                    "attrs": {
+                                      "class": "text-foreground mt-2 min-w-0 text-sm font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "ACH debit",
+                                        "key": "root.0.0.1.0.1.1.3.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.1.1.3.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.1.1.3"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "dt",
+                                    "attrs": {
+                                      "class": "text-muted-foreground text-[13px] leading-none font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Processor",
+                                        "key": "root.0.0.1.0.1.1.4.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.1.1.4.0"
+                                  },
+                                  {
+                                    "tag": "dd",
+                                    "attrs": {
+                                      "class": "text-foreground mt-2 min-w-0 text-sm font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Adyen",
+                                        "key": "root.0.0.1.0.1.1.4.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.1.1.4.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.1.1.4"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "dt",
+                                    "attrs": {
+                                      "class": "text-muted-foreground text-[13px] leading-none font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Source",
+                                        "key": "root.0.0.1.0.1.1.5.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.1.1.5.0"
+                                  },
+                                  {
+                                    "tag": "dd",
+                                    "attrs": {
+                                      "class": "text-foreground mt-2 min-w-0 text-sm font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Hosted checkout",
+                                        "key": "root.0.0.1.0.1.1.5.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.1.1.5.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.1.1.5"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "dt",
+                                    "attrs": {
+                                      "class": "text-muted-foreground text-[13px] leading-none font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Currency",
+                                        "key": "root.0.0.1.0.1.1.6.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.1.1.6.0"
+                                  },
+                                  {
+                                    "tag": "dd",
+                                    "attrs": {
+                                      "class": "text-foreground mt-2 min-w-0 text-sm font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "USD",
+                                        "key": "root.0.0.1.0.1.1.6.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.1.1.6.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.1.1.6"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "dt",
+                                    "attrs": {
+                                      "class": "text-muted-foreground text-[13px] leading-none font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Created",
+                                        "key": "root.0.0.1.0.1.1.7.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.1.1.7.0"
+                                  },
+                                  {
+                                    "tag": "dd",
+                                    "attrs": {
+                                      "class": "text-foreground mt-2 min-w-0 text-sm font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "May 29, 2026, 08:56 IST",
+                                        "key": "root.0.0.1.0.1.1.7.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.1.1.7.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.1.1.7"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "dt",
+                                    "attrs": {
+                                      "class": "text-muted-foreground text-[13px] leading-none font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Settlement",
+                                        "key": "root.0.0.1.0.1.1.8.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.1.1.8.0"
+                                  },
+                                  {
+                                    "tag": "dd",
+                                    "attrs": {
+                                      "class": "text-foreground mt-2 min-w-0 text-sm font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Expected Jun 02, 2026",
+                                        "key": "root.0.0.1.0.1.1.8.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.1.1.8.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.1.1.8"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "dt",
+                                    "attrs": {
+                                      "class": "text-muted-foreground text-[13px] leading-none font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Ledger account",
+                                        "key": "root.0.0.1.0.1.1.9.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.1.1.9.0"
+                                  },
+                                  {
+                                    "tag": "dd",
+                                    "attrs": {
+                                      "class": "text-foreground mt-2 min-w-0 text-sm font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Operating balance",
+                                        "key": "root.0.0.1.0.1.1.9.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.1.1.9.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.1.1.9"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "dt",
+                                    "attrs": {
+                                      "class": "text-muted-foreground text-[13px] leading-none font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Descriptor",
+                                        "key": "root.0.0.1.0.1.1.10.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.1.1.10.0"
+                                  },
+                                  {
+                                    "tag": "dd",
+                                    "attrs": {
+                                      "class": "text-foreground mt-2 min-w-0 text-sm font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "HELIO-SUPPLY-0429",
+                                        "key": "root.0.0.1.0.1.1.10.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.1.1.10.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.1.1.10"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "dt",
+                                    "attrs": {
+                                      "class": "text-muted-foreground text-[13px] leading-none font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Statement ID",
+                                        "key": "root.0.0.1.0.1.1.11.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.1.1.11.0"
+                                  },
+                                  {
+                                    "tag": "dd",
+                                    "attrs": {
+                                      "class": "text-foreground mt-2 min-w-0 text-sm font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "STMT-8462-HS",
+                                        "key": "root.0.0.1.0.1.1.11.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.1.1.11.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.1.1.11"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.1.1"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "mt-8"
+                            },
+                            "children": [
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-muted-foreground mb-3 text-[13px] leading-none font-medium"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Supporting documents",
+                                    "key": "root.0.0.1.0.1.2.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.1.2.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "grid gap-3 sm:grid-cols-3"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "border-border bg-background flex min-w-0 items-center gap-3 rounded-md border p-3"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "bg-muted grid size-10 shrink-0 place-items-center rounded-md"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-file-text",
+                                              "class": "lucide lucide-file-text text-muted-foreground size-5"
+                                            },
+                                            "key": "root.0.0.1.0.1.2.1.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.0.1.2.1.0.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "min-w-0 flex-1"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "p",
+                                            "attrs": {
+                                              "class": "truncate text-sm font-semibold"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "bank-authorization.pdf",
+                                                "key": "root.0.0.1.0.1.2.1.0.1.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.0.1.2.1.0.1.0"
+                                          },
+                                          {
+                                            "tag": "p",
+                                            "attrs": {
+                                              "class": "text-muted-foreground truncate text-xs"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Uploaded May 29, 2026 at 09:04",
+                                                "key": "root.0.0.1.0.1.2.1.0.1.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.0.1.2.1.0.1.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.0.1.2.1.0.1"
+                                      },
+                                      {
+                                        "tag": "button",
+                                        "attrs": {
+                                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-8 shrink-0"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-ellipsis-vertical",
+                                              "class": "lucide lucide-ellipsis-vertical size-4"
+                                            },
+                                            "key": "root.0.0.1.0.1.2.1.0.2.0"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "sr-only"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Document actions",
+                                                "key": "root.0.0.1.0.1.2.1.0.2.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.0.1.2.1.0.2.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.0.1.2.1.0.2"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.1.2.1.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "border-border bg-background flex min-w-0 items-center gap-3 rounded-md border p-3"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "bg-muted grid size-10 shrink-0 place-items-center rounded-md"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-file-text",
+                                              "class": "lucide lucide-file-text text-muted-foreground size-5"
+                                            },
+                                            "key": "root.0.0.1.0.1.2.1.1.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.0.1.2.1.1.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "min-w-0 flex-1"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "p",
+                                            "attrs": {
+                                              "class": "truncate text-sm font-semibold"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "risk-review-note.txt",
+                                                "key": "root.0.0.1.0.1.2.1.1.1.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.0.1.2.1.1.1.0"
+                                          },
+                                          {
+                                            "tag": "p",
+                                            "attrs": {
+                                              "class": "text-muted-foreground truncate text-xs"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Added by Priya Shah at 09:18",
+                                                "key": "root.0.0.1.0.1.2.1.1.1.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.0.1.2.1.1.1.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.0.1.2.1.1.1"
+                                      },
+                                      {
+                                        "tag": "button",
+                                        "attrs": {
+                                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-8 shrink-0"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-ellipsis-vertical",
+                                              "class": "lucide lucide-ellipsis-vertical size-4"
+                                            },
+                                            "key": "root.0.0.1.0.1.2.1.1.2.0"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "sr-only"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Document actions",
+                                                "key": "root.0.0.1.0.1.2.1.1.2.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.0.1.2.1.1.2.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.0.1.2.1.1.2"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.1.2.1.1"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "border-border bg-background flex min-w-0 items-center gap-3 rounded-md border p-3"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "bg-muted grid size-10 shrink-0 place-items-center rounded-md"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-file-text",
+                                              "class": "lucide lucide-file-text text-muted-foreground size-5"
+                                            },
+                                            "key": "root.0.0.1.0.1.2.1.2.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.0.1.2.1.2.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "min-w-0 flex-1"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "p",
+                                            "attrs": {
+                                              "class": "truncate text-sm font-semibold"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "invoice-20486.pdf",
+                                                "key": "root.0.0.1.0.1.2.1.2.1.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.0.1.2.1.2.1.0"
+                                          },
+                                          {
+                                            "tag": "p",
+                                            "attrs": {
+                                              "class": "text-muted-foreground truncate text-xs"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Generated from billing workspace",
+                                                "key": "root.0.0.1.0.1.2.1.2.1.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.0.1.2.1.2.1.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.0.1.2.1.2.1"
+                                      },
+                                      {
+                                        "tag": "button",
+                                        "attrs": {
+                                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-8 shrink-0"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-ellipsis-vertical",
+                                              "class": "lucide lucide-ellipsis-vertical size-4"
+                                            },
+                                            "key": "root.0.0.1.0.1.2.1.2.2.0"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "sr-only"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Document actions",
+                                                "key": "root.0.0.1.0.1.2.1.2.2.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.0.1.2.1.2.2.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.0.1.2.1.2.2"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.1.2.1.2"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.1.2.1"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.1.2"
+                          }
+                        ],
+                        "key": "root.0.0.1.0.1"
+                      },
+                      {
+                        "tag": "section",
+                        "attrs": {
+                          "class": "py-7 first:pt-0"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "mb-6 flex items-center gap-4"
+                            },
+                            "children": [
+                              {
+                                "tag": "h2",
+                                "attrs": {
+                                  "class": "text-foreground shrink-0 text-xl font-semibold tracking-tight"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Processor Context",
+                                    "key": "root.0.0.1.0.2.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.2.0.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "bg-border h-px min-w-8 flex-1"
+                                },
+                                "children": [],
+                                "key": "root.0.0.1.0.2.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.2.0"
+                          },
+                          {
+                            "tag": "dl",
+                            "attrs": {
+                              "class": "grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2 xl:grid-cols-3"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "dt",
+                                    "attrs": {
+                                      "class": "text-muted-foreground text-[13px] leading-none font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Merchant route",
+                                        "key": "root.0.0.1.0.2.1.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.2.1.0.0"
+                                  },
+                                  {
+                                    "tag": "dd",
+                                    "attrs": {
+                                      "class": "text-foreground mt-2 min-w-0 text-sm font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "North America / ACH",
+                                        "key": "root.0.0.1.0.2.1.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.2.1.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.2.1.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "dt",
+                                    "attrs": {
+                                      "class": "text-muted-foreground text-[13px] leading-none font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Invoice",
+                                        "key": "root.0.0.1.0.2.1.1.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.2.1.1.0"
+                                  },
+                                  {
+                                    "tag": "dd",
+                                    "attrs": {
+                                      "class": "text-foreground mt-2 min-w-0 text-sm font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "INV-20486",
+                                        "key": "root.0.0.1.0.2.1.1.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.2.1.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.2.1.1"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "dt",
+                                    "attrs": {
+                                      "class": "text-muted-foreground text-[13px] leading-none font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Customer email",
+                                        "key": "root.0.0.1.0.2.1.2.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.2.1.2.0"
+                                  },
+                                  {
+                                    "tag": "dd",
+                                    "attrs": {
+                                      "class": "text-foreground mt-2 min-w-0 text-sm font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "billing@helio.supply",
+                                        "key": "root.0.0.1.0.2.1.2.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.2.1.2.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.2.1.2"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "dt",
+                                    "attrs": {
+                                      "class": "text-muted-foreground text-[13px] leading-none font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Capture mode",
+                                        "key": "root.0.0.1.0.2.1.3.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.2.1.3.0"
+                                  },
+                                  {
+                                    "tag": "dd",
+                                    "attrs": {
+                                      "class": "text-foreground mt-2 min-w-0 text-sm font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Automatic after bank confirmation",
+                                        "key": "root.0.0.1.0.2.1.3.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.2.1.3.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.2.1.3"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "dt",
+                                    "attrs": {
+                                      "class": "text-muted-foreground text-[13px] leading-none font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Verification",
+                                        "key": "root.0.0.1.0.2.1.4.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.2.1.4.0"
+                                  },
+                                  {
+                                    "tag": "dd",
+                                    "attrs": {
+                                      "class": "text-foreground mt-2 min-w-0 text-sm font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Micro-deposit fallback enabled",
+                                        "key": "root.0.0.1.0.2.1.4.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.2.1.4.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.2.1.4"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "dt",
+                                    "attrs": {
+                                      "class": "text-muted-foreground text-[13px] leading-none font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Location",
+                                        "key": "root.0.0.1.0.2.1.5.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.2.1.5.0"
+                                  },
+                                  {
+                                    "tag": "dd",
+                                    "attrs": {
+                                      "class": "text-foreground mt-2 min-w-0 text-sm font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Austin, TX",
+                                        "key": "root.0.0.1.0.2.1.5.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.2.1.5.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.2.1.5"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "dt",
+                                    "attrs": {
+                                      "class": "text-muted-foreground text-[13px] leading-none font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "IP address",
+                                        "key": "root.0.0.1.0.2.1.6.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.2.1.6.0"
+                                  },
+                                  {
+                                    "tag": "dd",
+                                    "attrs": {
+                                      "class": "text-foreground mt-2 min-w-0 text-sm font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "198.51.100.42",
+                                        "key": "root.0.0.1.0.2.1.6.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.2.1.6.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.2.1.6"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "dt",
+                                    "attrs": {
+                                      "class": "text-muted-foreground text-[13px] leading-none font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Webhook delivery",
+                                        "key": "root.0.0.1.0.2.1.7.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.2.1.7.0"
+                                  },
+                                  {
+                                    "tag": "dd",
+                                    "attrs": {
+                                      "class": "text-foreground mt-2 min-w-0 text-sm font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "2 delivered, 1 retry scheduled",
+                                        "key": "root.0.0.1.0.2.1.7.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.2.1.7.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.2.1.7"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.2.1"
+                          }
+                        ],
+                        "key": "root.0.0.1.0.2"
+                      },
+                      {
+                        "tag": "section",
+                        "attrs": {
+                          "class": "py-7 first:pt-0"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "mb-6 flex items-center gap-4"
+                            },
+                            "children": [
+                              {
+                                "tag": "h2",
+                                "attrs": {
+                                  "class": "text-foreground shrink-0 text-xl font-semibold tracking-tight"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Operational Notes",
+                                    "key": "root.0.0.1.0.3.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.3.0.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "bg-border h-px min-w-8 flex-1"
+                                },
+                                "children": [],
+                                "key": "root.0.0.1.0.3.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.3.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "grid gap-4 md:grid-cols-3"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "border-border rounded-md border p-4"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-shield-check",
+                                      "class": "lucide lucide-shield-check text-muted-foreground size-5"
+                                    },
+                                    "key": "root.0.0.1.0.3.1.0.0"
+                                  },
+                                  {
+                                    "tag": "h3",
+                                    "attrs": {
+                                      "class": "mt-4 text-sm font-semibold"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Risk posture",
+                                        "key": "root.0.0.1.0.3.1.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.3.1.0.1"
+                                  },
+                                  {
+                                    "tag": "p",
+                                    "attrs": {
+                                      "class": "text-muted-foreground mt-2 text-sm"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Low dispute history, elevated transaction size.",
+                                        "key": "root.0.0.1.0.3.1.0.2.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.3.1.0.2"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.3.1.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "border-border rounded-md border p-4"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-banknote",
+                                      "class": "lucide lucide-banknote text-muted-foreground size-5"
+                                    },
+                                    "key": "root.0.0.1.0.3.1.1.0"
+                                  },
+                                  {
+                                    "tag": "h3",
+                                    "attrs": {
+                                      "class": "mt-4 text-sm font-semibold"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Funds movement",
+                                        "key": "root.0.0.1.0.3.1.1.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.3.1.1.1"
+                                  },
+                                  {
+                                    "tag": "p",
+                                    "attrs": {
+                                      "class": "text-muted-foreground mt-2 text-sm"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Debit is authorized but settlement has not started.",
+                                        "key": "root.0.0.1.0.3.1.1.2.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.3.1.1.2"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.3.1.1"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "border-border rounded-md border p-4"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-message-square-text",
+                                      "class": "lucide lucide-message-square-text text-muted-foreground size-5"
+                                    },
+                                    "key": "root.0.0.1.0.3.1.2.0"
+                                  },
+                                  {
+                                    "tag": "h3",
+                                    "attrs": {
+                                      "class": "mt-4 text-sm font-semibold"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Customer thread",
+                                        "key": "root.0.0.1.0.3.1.2.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.3.1.2.1"
+                                  },
+                                  {
+                                    "tag": "p",
+                                    "attrs": {
+                                      "class": "text-muted-foreground mt-2 text-sm"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Billing contact confirmed the invoice by email.",
+                                        "key": "root.0.0.1.0.3.1.2.2.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.3.1.2.2"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.3.1.2"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.3.1"
+                          }
+                        ],
+                        "key": "root.0.0.1.0.3"
+                      },
+                      {
+                        "tag": "section",
+                        "attrs": {
+                          "class": "py-7 first:pt-0"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "mb-6 flex items-center gap-4"
+                            },
+                            "children": [
+                              {
+                                "tag": "h2",
+                                "attrs": {
+                                  "class": "text-foreground shrink-0 text-xl font-semibold tracking-tight"
+                                },
+                                "children": [
+                                  {
+                                    "text": "History",
+                                    "key": "root.0.0.1.0.4.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.4.0.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "bg-border h-px min-w-8 flex-1"
+                                },
+                                "children": [],
+                                "key": "root.0.0.1.0.4.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.4.0"
+                          },
+                          {
+                            "tag": "ol",
+                            "attrs": {
+                              "class": "space-y-0"
+                            },
+                            "children": [
+                              {
+                                "tag": "li",
+                                "attrs": {
+                                  "class": "grid grid-cols-[5rem_2rem_minmax(0,1fr)] gap-4"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "pt-0.5 text-sm"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "font-medium"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "May 29",
+                                            "key": "root.0.0.1.0.4.1.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.0.4.1.0.0.0"
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "text-muted-foreground"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "09:22",
+                                            "key": "root.0.0.1.0.4.1.0.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.0.4.1.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.4.1.0.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "relative flex justify-center"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "bg-border absolute top-7 bottom-0 w-px"
+                                        },
+                                        "children": [],
+                                        "key": "root.0.0.1.0.4.1.0.1.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "relative z-10 mt-1 size-3 rounded-full border-2 border-amber-500 bg-amber-500"
+                                        },
+                                        "children": [],
+                                        "key": "root.0.0.1.0.4.1.0.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.4.1.0.1"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "pb-7"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "flex flex-wrap items-center gap-x-2 gap-y-1"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "p",
+                                            "attrs": {
+                                              "class": "text-sm font-semibold"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Review window opened",
+                                                "key": "root.0.0.1.0.4.1.0.2.0.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.0.4.1.0.2.0.0"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "text-muted-foreground text-sm"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "by ",
+                                                "key": "root.0.0.1.0.4.1.0.2.0.1.0"
+                                              },
+                                              {
+                                                "text": "Risk engine",
+                                                "key": "root.0.0.1.0.4.1.0.2.0.1.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.0.4.1.0.2.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.0.4.1.0.2.0"
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "text-muted-foreground mt-1 text-sm"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "ACH velocity threshold requested a second approval before capture.",
+                                            "key": "root.0.0.1.0.4.1.0.2.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.0.4.1.0.2.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.4.1.0.2"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.4.1.0"
+                              },
+                              {
+                                "tag": "li",
+                                "attrs": {
+                                  "class": "grid grid-cols-[5rem_2rem_minmax(0,1fr)] gap-4"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "pt-0.5 text-sm"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "font-medium"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "May 29",
+                                            "key": "root.0.0.1.0.4.1.1.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.0.4.1.1.0.0"
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "text-muted-foreground"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "09:18",
+                                            "key": "root.0.0.1.0.4.1.1.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.0.4.1.1.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.4.1.1.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "relative flex justify-center"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "bg-border absolute top-7 bottom-0 w-px"
+                                        },
+                                        "children": [],
+                                        "key": "root.0.0.1.0.4.1.1.1.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "bg-background relative z-10 mt-1 size-3 rounded-full border-2 border-border"
+                                        },
+                                        "children": [],
+                                        "key": "root.0.0.1.0.4.1.1.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.4.1.1.1"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "pb-7"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "flex flex-wrap items-center gap-x-2 gap-y-1"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "p",
+                                            "attrs": {
+                                              "class": "text-sm font-semibold"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Internal note added",
+                                                "key": "root.0.0.1.0.4.1.1.2.0.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.0.4.1.1.2.0.0"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "text-muted-foreground text-sm"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "by ",
+                                                "key": "root.0.0.1.0.4.1.1.2.0.1.0"
+                                              },
+                                              {
+                                                "text": "Priya Shah",
+                                                "key": "root.0.0.1.0.4.1.1.2.0.1.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.0.4.1.1.2.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.0.4.1.1.2.0"
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "text-muted-foreground mt-1 text-sm"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Finance confirmed the purchase order and matching invoice total.",
+                                            "key": "root.0.0.1.0.4.1.1.2.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.0.4.1.1.2.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.4.1.1.2"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.4.1.1"
+                              },
+                              {
+                                "tag": "li",
+                                "attrs": {
+                                  "class": "grid grid-cols-[5rem_2rem_minmax(0,1fr)] gap-4"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "pt-0.5 text-sm"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "font-medium"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "May 29",
+                                            "key": "root.0.0.1.0.4.1.2.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.0.4.1.2.0.0"
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "text-muted-foreground"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "09:03",
+                                            "key": "root.0.0.1.0.4.1.2.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.0.4.1.2.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.4.1.2.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "relative flex justify-center"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "bg-border absolute top-7 bottom-0 w-px"
+                                        },
+                                        "children": [],
+                                        "key": "root.0.0.1.0.4.1.2.1.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "relative z-10 mt-1 size-3 rounded-full border-2 border-emerald-500 bg-emerald-500"
+                                        },
+                                        "children": [],
+                                        "key": "root.0.0.1.0.4.1.2.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.4.1.2.1"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "pb-7"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "flex flex-wrap items-center gap-x-2 gap-y-1"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "p",
+                                            "attrs": {
+                                              "class": "text-sm font-semibold"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Bank account verified",
+                                                "key": "root.0.0.1.0.4.1.2.2.0.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.0.4.1.2.2.0.0"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "text-muted-foreground text-sm"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "by ",
+                                                "key": "root.0.0.1.0.4.1.2.2.0.1.0"
+                                              },
+                                              {
+                                                "text": "Adyen",
+                                                "key": "root.0.0.1.0.4.1.2.2.0.1.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.0.4.1.2.2.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.0.4.1.2.2.0"
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "text-muted-foreground mt-1 text-sm"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Account ownership passed through processor verification.",
+                                            "key": "root.0.0.1.0.4.1.2.2.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.0.4.1.2.2.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.4.1.2.2"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.4.1.2"
+                              },
+                              {
+                                "tag": "li",
+                                "attrs": {
+                                  "class": "grid grid-cols-[5rem_2rem_minmax(0,1fr)] gap-4"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "pt-0.5 text-sm"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "font-medium"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "May 29",
+                                            "key": "root.0.0.1.0.4.1.3.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.0.4.1.3.0.0"
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "text-muted-foreground"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "08:56",
+                                            "key": "root.0.0.1.0.4.1.3.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.0.4.1.3.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.4.1.3.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "relative flex justify-center"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "bg-background relative z-10 mt-1 size-3 rounded-full border-2 border-border"
+                                        },
+                                        "children": [],
+                                        "key": "root.0.0.1.0.4.1.3.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.4.1.3.1"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "pb-7"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "flex flex-wrap items-center gap-x-2 gap-y-1"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "p",
+                                            "attrs": {
+                                              "class": "text-sm font-semibold"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Transaction created",
+                                                "key": "root.0.0.1.0.4.1.3.2.0.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.0.4.1.3.2.0.0"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "text-muted-foreground text-sm"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "by ",
+                                                "key": "root.0.0.1.0.4.1.3.2.0.1.0"
+                                              },
+                                              {
+                                                "text": "Checkout",
+                                                "key": "root.0.0.1.0.4.1.3.2.0.1.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.0.4.1.3.2.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.0.4.1.3.2.0"
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "text-muted-foreground mt-1 text-sm"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Hosted checkout submitted an ACH debit for Helio Supply.",
+                                            "key": "root.0.0.1.0.4.1.3.2.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.0.4.1.3.2.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.4.1.3.2"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.4.1.3"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.4.1"
+                          }
+                        ],
+                        "key": "root.0.0.1.0.4"
+                      }
+                    ],
+                    "key": "root.0.0.1.0"
+                  },
+                  {
+                    "tag": "aside",
+                    "attrs": {
+                      "class": "lg:sticky lg:top-6"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "border-border bg-card text-card-foreground overflow-hidden rounded-md border"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "p-6"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "mt-3 inline-flex items-center gap-2 text-sm font-semibold text-amber-700 dark:text-amber-300"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "size-2 rounded-full bg-amber-500"
+                                        },
+                                        "children": [],
+                                        "key": "root.0.0.1.1.0.0.0.0.0"
+                                      },
+                                      {
+                                        "text": "Pending review",
+                                        "key": "root.0.0.1.1.0.0.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.0.0.0"
+                                  },
+                                  {
+                                    "tag": "p",
+                                    "attrs": {
+                                      "class": "mt-2 text-3xl font-semibold tracking-tight"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "$8,120.50",
+                                        "key": "root.0.0.1.1.0.0.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.0.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.0.0.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "mt-6 grid grid-cols-2 gap-3"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "bg-muted/50 rounded-md p-3"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "text-muted-foreground text-xs font-medium"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Processor fee",
+                                            "key": "root.0.0.1.1.0.0.1.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.0.0.1.0.0"
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "mt-1 text-sm font-semibold"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "$183.63",
+                                            "key": "root.0.0.1.1.0.0.1.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.0.0.1.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.0.1.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "bg-muted/50 rounded-md p-3"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "text-muted-foreground text-xs font-medium"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Net after fees",
+                                            "key": "root.0.0.1.1.0.0.1.1.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.0.0.1.1.0"
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "mt-1 text-sm font-semibold"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "$7,936.87",
+                                            "key": "root.0.0.1.1.0.0.1.1.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.0.0.1.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.0.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.0.0.1"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "border-border mt-6 border-t pt-5"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-start gap-3"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "grid size-9 shrink-0 place-items-center rounded-md bg-amber-50 text-amber-700 dark:bg-amber-500/10 dark:text-amber-300"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-triangle-alert",
+                                              "class": "lucide lucide-triangle-alert size-5"
+                                            },
+                                            "key": "root.0.0.1.1.0.0.2.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.0.0.2.0.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "min-w-0"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "p",
+                                            "attrs": {
+                                              "class": "text-sm font-semibold"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Manual verification required",
+                                                "key": "root.0.0.1.1.0.0.2.0.1.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.0.0.2.0.1.0"
+                                          },
+                                          {
+                                            "tag": "p",
+                                            "attrs": {
+                                              "class": "text-muted-foreground mt-1 text-sm"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Confirm authorization before release. Capture is paused until the review outcome is logged.",
+                                                "key": "root.0.0.1.1.0.0.2.0.1.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.0.0.2.0.1.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.0.0.2.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.0.2.0"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.0.0.2"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.0.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "border-border grid grid-cols-2 border-t"
+                            },
+                            "children": [
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground px-4 py-2 h-12 rounded-none"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-copy",
+                                      "class": "lucide lucide-copy size-4"
+                                    },
+                                    "key": "root.0.0.1.1.0.1.0.0"
+                                  },
+                                  {
+                                    "text": "Copy ID",
+                                    "key": "root.0.0.1.1.0.1.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.0.1.0"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground px-4 py-2 h-12 rounded-none border-l"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-download",
+                                      "class": "lucide lucide-download size-4"
+                                    },
+                                    "key": "root.0.0.1.1.0.1.1.0"
+                                  },
+                                  {
+                                    "text": "Receipt",
+                                    "key": "root.0.0.1.1.0.1.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.0.1.1"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.0.1"
+                          }
+                        ],
+                        "key": "root.0.0.1.1.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "mt-5 flex items-center gap-2"
+                        },
+                        "children": [
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground px-4 py-2 h-10 flex-1 rounded-md"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-mail",
+                                  "class": "lucide lucide-mail size-4"
+                                },
+                                "key": "root.0.0.1.1.1.0.0"
+                              },
+                              {
+                                "text": "Email customer",
+                                "key": "root.0.0.1.1.1.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.1.0"
+                          }
+                        ],
+                        "key": "root.0.0.1.1.1"
+                      }
+                    ],
+                    "key": "root.0.0.1.1"
+                  }
+                ],
+                "key": "root.0.0.1"
+              }
+            ],
+            "key": "root.0.0"
+          }
+        ],
+        "key": "root.0"
+      }
+    ],
+    "key": "root"
+  },
+  "headings": [
+    "Transaction txn_R8M42QH91L6C",
+    "Transaction Details",
+    "Processor Context",
+    "Operational Notes",
+    "Risk posture",
+    "Funds movement",
+    "Customer thread",
+    "History"
+  ]
+}

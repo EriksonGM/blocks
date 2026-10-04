@@ -1,0 +1,2709 @@
+{
+  "label": "Payment Workflow",
+  "path": "/payment-processor/payment-workflow",
+  "appTitle": "Payment Processor",
+  "tree": {
+    "tag": "div",
+    "attrs": {
+      "class": "flex min-h-0 flex-1 flex-col overflow-hidden"
+    },
+    "children": [
+      {
+        "tag": "div",
+        "attrs": {
+          "class": "flex min-h-0 flex-1 flex-col overflow-hidden"
+        },
+        "children": [
+          {
+            "tag": "main",
+            "attrs": {
+              "class": "bg-background text-foreground flex min-h-0 flex-1 flex-col overflow-hidden"
+            },
+            "children": [
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "flex items-center gap-2 border-b px-4 py-3 lg:px-6"
+                },
+                "children": [
+                  {
+                    "tag": "nav",
+                    "attrs": {
+                      "aria-label": "Breadcrumb",
+                      "class": "flex min-w-0 items-center gap-2 text-xs font-semibold tracking-[0.12em] uppercase"
+                    },
+                    "children": [
+                      {
+                        "tag": "icon",
+                        "attrs": {
+                          "name": "i-lucide-git-branch",
+                          "class": "lucide lucide-git-branch text-muted-foreground size-3.5 shrink-0"
+                        },
+                        "key": "root.0.0.0.0.0"
+                      },
+                      {
+                        "tag": "span",
+                        "attrs": {
+                          "class": "text-muted-foreground hidden shrink-0 sm:inline"
+                        },
+                        "children": [
+                          {
+                            "text": "Workflows",
+                            "key": "root.0.0.0.0.1.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.1"
+                      },
+                      {
+                        "tag": "span",
+                        "attrs": {
+                          "class": "text-muted-foreground hidden shrink-0 sm:inline"
+                        },
+                        "children": [
+                          {
+                            "text": "/",
+                            "key": "root.0.0.0.0.2.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.2"
+                      },
+                      {
+                        "tag": "span",
+                        "attrs": {
+                          "class": "truncate"
+                        },
+                        "children": [
+                          {
+                            "text": "Paid order fulfillment",
+                            "key": "root.0.0.0.0.3.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.3"
+                      }
+                    ],
+                    "key": "root.0.0.0.0"
+                  },
+                  {
+                    "tag": "button",
+                    "attrs": {
+                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-8 shrink-0 rounded-md",
+                      "aria-label": "Add to favorites",
+                      "type": "button"
+                    },
+                    "children": [
+                      {
+                        "tag": "icon",
+                        "attrs": {
+                          "name": "i-lucide-star",
+                          "class": "lucide lucide-star size-4"
+                        },
+                        "key": "root.0.0.0.1.0"
+                      }
+                    ],
+                    "key": "root.0.0.0.1"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "ml-auto flex shrink-0 items-center gap-2"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "inline-flex items-center border py-0.5 transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 h-6 rounded-full px-2.5 text-[11px] font-medium shadow-none border-amber-600/20 bg-amber-50 text-amber-700 dark:border-amber-400/20 dark:bg-amber-950/40 dark:text-amber-400"
+                        },
+                        "children": [
+                          {
+                            "text": "Draft changes",
+                            "key": "root.0.0.0.2.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.2.0"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground hidden size-8 rounded-md lg:inline-flex",
+                          "aria-label": "Hide details",
+                          "type": "button"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-panel-right",
+                              "class": "lucide lucide-panel-right size-4"
+                            },
+                            "key": "root.0.0.0.2.1.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.2.1"
+                      }
+                    ],
+                    "key": "root.0.0.0.2"
+                  }
+                ],
+                "key": "root.0.0.0"
+              },
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "flex items-center gap-6 border-b px-4 lg:px-6"
+                },
+                "children": [
+                  {
+                    "tag": "button",
+                    "attrs": {
+                      "class": "flex h-11 shrink-0 items-center gap-2 border-b-2 text-sm font-medium transition-colors border-b-foreground text-foreground",
+                      "type": "button"
+                    },
+                    "children": [
+                      {
+                        "tag": "icon",
+                        "attrs": {
+                          "name": "i-lucide-workflow",
+                          "class": "lucide lucide-workflow size-4"
+                        },
+                        "key": "root.0.0.1.0.0"
+                      },
+                      {
+                        "text": "Editor",
+                        "key": "root.0.0.1.0.1"
+                      }
+                    ],
+                    "key": "root.0.0.1.0"
+                  },
+                  {
+                    "tag": "button",
+                    "attrs": {
+                      "class": "flex h-11 shrink-0 items-center gap-2 border-b-2 text-sm font-medium transition-colors text-muted-foreground hover:text-foreground border-b-transparent",
+                      "type": "button"
+                    },
+                    "children": [
+                      {
+                        "tag": "icon",
+                        "attrs": {
+                          "name": "i-lucide-play",
+                          "class": "lucide lucide-play size-4"
+                        },
+                        "key": "root.0.0.1.1.0"
+                      },
+                      {
+                        "text": "Runs",
+                        "key": "root.0.0.1.1.1"
+                      }
+                    ],
+                    "key": "root.0.0.1.1"
+                  }
+                ],
+                "key": "root.0.0.1"
+              },
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "vertical-scrollbar grid min-h-0 flex-1 grid-cols-1 overflow-y-auto lg:overflow-hidden lg:grid-cols-[minmax(0,1fr)_minmax(20rem,22rem)] xl:grid-cols-[minmax(0,1fr)_minmax(22rem,24rem)]"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "flex min-h-0 flex-col"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "relative min-h-[26rem] flex-1 overflow-hidden"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "pointer-events-none absolute inset-x-4 bottom-4 z-10 flex justify-center lg:inset-x-6"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "bg-background pointer-events-auto flex w-full max-w-3xl flex-col gap-3 rounded-xl border px-4 py-3 shadow-lg sm:flex-row sm:items-center sm:justify-between"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-w-0 items-center gap-3"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "grid size-8 shrink-0 place-items-center rounded-full bg-blue-50 text-blue-600 dark:bg-blue-950/50 dark:text-blue-400"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-info",
+                                              "class": "lucide lucide-info size-4"
+                                            },
+                                            "key": "root.0.0.2.0.0.0.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.0.0.0.0.0"
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "truncate text-sm font-medium"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "This workflow has unpublished changes",
+                                            "key": "root.0.0.2.0.0.0.0.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.0.0.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.0.0.0.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex shrink-0 items-center gap-2"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "button",
+                                        "attrs": {
+                                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground px-4 py-2 h-8 rounded-md text-xs",
+                                          "type": "button"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Discard changes",
+                                            "key": "root.0.0.2.0.0.0.0.1.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.0.0.0.1.0"
+                                      },
+                                      {
+                                        "tag": "button",
+                                        "attrs": {
+                                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 px-4 py-2 h-8 rounded-md text-xs",
+                                          "type": "button"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Publish changes",
+                                            "key": "root.0.0.2.0.0.0.0.1.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.0.0.0.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.0.0.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.0.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.2.0.0.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "react-flow !bg-background [&_.react-flow__controls]:!bg-background [&_.react-flow__controls-button]:!border-border [&_.react-flow__controls-button]:!bg-background [&_.react-flow__controls-button]:!text-foreground [&_.react-flow__attribution]:hidden [&_.react-flow__controls]:!flex [&_.react-flow__controls]:!flex-row [&_.react-flow__controls]:!overflow-hidden [&_.react-flow__controls]:!rounded-md [&_.react-flow__controls]:!border [&_.react-flow__controls]:!shadow-sm [&_.react-flow__controls-button]:!size-8 [&_.react-flow__panel]:!m-3 sm:[&_.react-flow__panel]:!m-5 light",
+                              "role": "application",
+                              "style": "width: 100%; height: 100%; overflow: hidden; position: relative; z-index: 0;"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "react-flow__renderer",
+                                  "style": "position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "react-flow__pane draggable",
+                                      "style": "position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "react-flow__viewport xyflow__viewport react-flow__container",
+                                          "style": "transform: translate(-29.3333px, 114.722px) scale(0.777778);"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "react-flow__edges"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "svg",
+                                                "attrs": {
+                                                  "class": "react-flow__marker",
+                                                  "width": "100%",
+                                                  "height": "100%"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "defs",
+                                                    "attrs": {},
+                                                    "children": [
+                                                      {
+                                                        "tag": "marker",
+                                                        "attrs": {
+                                                          "class": "react-flow__arrowhead",
+                                                          "id": "1__color=var(--muted-foreground)&type=arrowclosed",
+                                                          "viewBox": "-10 -10 20 20"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "polyline",
+                                                            "attrs": {
+                                                              "class": "arrowclosed",
+                                                              "stroke-linecap": "round",
+                                                              "stroke-linejoin": "round",
+                                                              "points": "-5,-4 0,0 -5,4 -5,-4",
+                                                              "style": "stroke-width: 1; stroke: var(--muted-foreground); fill: var(--muted-foreground);"
+                                                            },
+                                                            "children": [],
+                                                            "key": "root.0.0.2.0.0.1.0.0.0.0.0.0.0.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.2.0.0.1.0.0.0.0.0.0.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.2.0.0.1.0.0.0.0.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.2.0.0.1.0.0.0.0.0"
+                                              },
+                                              {
+                                                "tag": "svg",
+                                                "attrs": {
+                                                  "style": "z-index: 0;",
+                                                  "viewBox": "0 0 233.3333282470703 116.66665649414062",
+                                                  "width": "100%",
+                                                  "height": "100%"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "g",
+                                                    "attrs": {
+                                                      "class": "react-flow__edge react-flow__edge-smoothstep nopan selectable",
+                                                      "role": "group",
+                                                      "data-id": "trigger-branch",
+                                                      "aria-label": "Edge from trigger to branch"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "path",
+                                                        "attrs": {
+                                                          "d": "M552 121L552 141L552 151L552 151L552 161L552 181",
+                                                          "fill": "none",
+                                                          "class": "react-flow__edge-path",
+                                                          "style": "stroke: var(--muted-foreground); stroke-width: 1.5;"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.2.0.0.1.0.0.0.0.1.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "path",
+                                                        "attrs": {
+                                                          "d": "M552 121L552 141L552 151L552 151L552 161L552 181",
+                                                          "fill": "none",
+                                                          "stroke-opacity": "0",
+                                                          "stroke-width": "20",
+                                                          "class": "react-flow__edge-interaction"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.2.0.0.1.0.0.0.0.1.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.2.0.0.1.0.0.0.0.1.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.2.0.0.1.0.0.0.0.1"
+                                              },
+                                              {
+                                                "tag": "svg",
+                                                "attrs": {
+                                                  "style": "z-index: 0;",
+                                                  "viewBox": "0 0 233.3333282470703 116.66665649414062",
+                                                  "width": "100%",
+                                                  "height": "100%"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "g",
+                                                    "attrs": {
+                                                      "class": "react-flow__edge react-flow__edge-smoothstep nopan selectable",
+                                                      "role": "group",
+                                                      "data-id": "branch-single-license",
+                                                      "aria-label": "Edge from branch to single-license"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "path",
+                                                        "attrs": {
+                                                          "d": "M552 283L552 303L 552,313Q 552,318 547,318L 257,318Q 252,318 252,323L252 333L252 353",
+                                                          "fill": "none",
+                                                          "class": "react-flow__edge-path",
+                                                          "style": "stroke: var(--muted-foreground); stroke-width: 1.5;"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.2.0.0.1.0.0.0.0.2.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "path",
+                                                        "attrs": {
+                                                          "d": "M552 283L552 303L 552,313Q 552,318 547,318L 257,318Q 252,318 252,323L252 333L252 353",
+                                                          "fill": "none",
+                                                          "stroke-opacity": "0",
+                                                          "stroke-width": "20",
+                                                          "class": "react-flow__edge-interaction"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.2.0.0.1.0.0.0.0.2.0.1"
+                                                      },
+                                                      {
+                                                        "tag": "g",
+                                                        "attrs": {
+                                                          "transform": "translate(393.5725450515747 311.57142877578735)",
+                                                          "class": "react-flow__edge-textwrapper"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "rect",
+                                                            "attrs": {
+                                                              "width": "32.854909896850586",
+                                                              "x": "-8",
+                                                              "y": "-4",
+                                                              "height": "20.857142448425293",
+                                                              "class": "react-flow__edge-textbg",
+                                                              "rx": "999",
+                                                              "ry": "999",
+                                                              "style": "fill: var(--background); stroke: var(--muted-foreground); stroke-opacity: 0.35;"
+                                                            },
+                                                            "children": [],
+                                                            "key": "root.0.0.2.0.0.1.0.0.0.0.2.0.2.0"
+                                                          },
+                                                          {
+                                                            "tag": "text",
+                                                            "attrs": {
+                                                              "class": "react-flow__edge-text",
+                                                              "y": "6.4285712242126465",
+                                                              "style": "fill: var(--muted-foreground); font-size: 10px; font-weight: 600; letter-spacing: 0.08em;"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "NO",
+                                                                "key": "root.0.0.2.0.0.1.0.0.0.0.2.0.2.1.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.2.0.0.1.0.0.0.0.2.0.2.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.2.0.0.1.0.0.0.0.2.0.2"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.2.0.0.1.0.0.0.0.2.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.2.0.0.1.0.0.0.0.2"
+                                              },
+                                              {
+                                                "tag": "svg",
+                                                "attrs": {
+                                                  "style": "z-index: 0;",
+                                                  "viewBox": "0 0 233.3333282470703 116.66665649414062",
+                                                  "width": "100%",
+                                                  "height": "100%"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "g",
+                                                    "attrs": {
+                                                      "class": "react-flow__edge react-flow__edge-smoothstep nopan selectable",
+                                                      "role": "group",
+                                                      "data-id": "branch-team-license",
+                                                      "aria-label": "Edge from branch to team-license"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "path",
+                                                        "attrs": {
+                                                          "d": "M552 283L552 303L 552,313Q 552,318 557,318L 847,318Q 852,318 852,323L852 333L852 353",
+                                                          "fill": "none",
+                                                          "class": "react-flow__edge-path",
+                                                          "style": "stroke: var(--muted-foreground); stroke-width: 1.5;"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.2.0.0.1.0.0.0.0.3.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "path",
+                                                        "attrs": {
+                                                          "d": "M552 283L552 303L 552,313Q 552,318 557,318L 847,318Q 852,318 852,323L852 333L852 353",
+                                                          "fill": "none",
+                                                          "stroke-opacity": "0",
+                                                          "stroke-width": "20",
+                                                          "class": "react-flow__edge-interaction"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.2.0.0.1.0.0.0.0.3.0.1"
+                                                      },
+                                                      {
+                                                        "tag": "g",
+                                                        "attrs": {
+                                                          "transform": "translate(690.9609375 311.57142877578735)",
+                                                          "class": "react-flow__edge-textwrapper"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "rect",
+                                                            "attrs": {
+                                                              "width": "38.078125",
+                                                              "x": "-8",
+                                                              "y": "-4",
+                                                              "height": "20.857142448425293",
+                                                              "class": "react-flow__edge-textbg",
+                                                              "rx": "999",
+                                                              "ry": "999",
+                                                              "style": "fill: var(--background); stroke: var(--muted-foreground); stroke-opacity: 0.35;"
+                                                            },
+                                                            "children": [],
+                                                            "key": "root.0.0.2.0.0.1.0.0.0.0.3.0.2.0"
+                                                          },
+                                                          {
+                                                            "tag": "text",
+                                                            "attrs": {
+                                                              "class": "react-flow__edge-text",
+                                                              "y": "6.4285712242126465",
+                                                              "style": "fill: var(--muted-foreground); font-size: 10px; font-weight: 600; letter-spacing: 0.08em;"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "YES",
+                                                                "key": "root.0.0.2.0.0.1.0.0.0.0.3.0.2.1.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.2.0.0.1.0.0.0.0.3.0.2.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.2.0.0.1.0.0.0.0.3.0.2"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.2.0.0.1.0.0.0.0.3.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.2.0.0.1.0.0.0.0.3"
+                                              },
+                                              {
+                                                "tag": "svg",
+                                                "attrs": {
+                                                  "style": "z-index: 0;",
+                                                  "viewBox": "0 0 233.3333282470703 116.66665649414062",
+                                                  "width": "100%",
+                                                  "height": "100%"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "g",
+                                                    "attrs": {
+                                                      "class": "react-flow__edge react-flow__edge-smoothstep nopan selectable",
+                                                      "role": "group",
+                                                      "data-id": "single-license-single-email",
+                                                      "aria-label": "Edge from single-license to single-email"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "path",
+                                                        "attrs": {
+                                                          "d": "M252 455L252 475L252 485L252 485L252 495L252 515",
+                                                          "fill": "none",
+                                                          "class": "react-flow__edge-path",
+                                                          "style": "stroke: var(--muted-foreground); stroke-width: 1.5;"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.2.0.0.1.0.0.0.0.4.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "path",
+                                                        "attrs": {
+                                                          "d": "M252 455L252 475L252 485L252 485L252 495L252 515",
+                                                          "fill": "none",
+                                                          "stroke-opacity": "0",
+                                                          "stroke-width": "20",
+                                                          "class": "react-flow__edge-interaction"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.2.0.0.1.0.0.0.0.4.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.2.0.0.1.0.0.0.0.4.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.2.0.0.1.0.0.0.0.4"
+                                              },
+                                              {
+                                                "tag": "svg",
+                                                "attrs": {
+                                                  "style": "z-index: 0;",
+                                                  "viewBox": "0 0 233.3333282470703 116.66665649414062",
+                                                  "width": "100%",
+                                                  "height": "100%"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "g",
+                                                    "attrs": {
+                                                      "class": "react-flow__edge react-flow__edge-smoothstep nopan selectable",
+                                                      "role": "group",
+                                                      "data-id": "team-license-team-email",
+                                                      "aria-label": "Edge from team-license to team-email"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "path",
+                                                        "attrs": {
+                                                          "d": "M852 455L852 475L852 485L852 485L852 495L852 515",
+                                                          "fill": "none",
+                                                          "class": "react-flow__edge-path",
+                                                          "style": "stroke: var(--muted-foreground); stroke-width: 1.5;"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.2.0.0.1.0.0.0.0.5.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "path",
+                                                        "attrs": {
+                                                          "d": "M852 455L852 475L852 485L852 485L852 495L852 515",
+                                                          "fill": "none",
+                                                          "stroke-opacity": "0",
+                                                          "stroke-width": "20",
+                                                          "class": "react-flow__edge-interaction"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.2.0.0.1.0.0.0.0.5.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.2.0.0.1.0.0.0.0.5.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.2.0.0.1.0.0.0.0.5"
+                                              },
+                                              {
+                                                "tag": "svg",
+                                                "attrs": {
+                                                  "style": "z-index: 0;",
+                                                  "viewBox": "0 0 233.3333282470703 116.66665649414062",
+                                                  "width": "100%",
+                                                  "height": "100%"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "g",
+                                                    "attrs": {
+                                                      "class": "react-flow__edge react-flow__edge-smoothstep nopan selectable",
+                                                      "role": "group",
+                                                      "data-id": "single-email-ledger",
+                                                      "aria-label": "Edge from single-email to ledger"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "path",
+                                                        "attrs": {
+                                                          "d": "M252 617L252 637L 252,647Q 252,652 257,652L 547,652Q 552,652 552,657L552 667L552 687",
+                                                          "fill": "none",
+                                                          "class": "react-flow__edge-path",
+                                                          "style": "stroke: var(--muted-foreground); stroke-width: 1.5;"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.2.0.0.1.0.0.0.0.6.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "path",
+                                                        "attrs": {
+                                                          "d": "M252 617L252 637L 252,647Q 252,652 257,652L 547,652Q 552,652 552,657L552 667L552 687",
+                                                          "fill": "none",
+                                                          "stroke-opacity": "0",
+                                                          "stroke-width": "20",
+                                                          "class": "react-flow__edge-interaction"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.2.0.0.1.0.0.0.0.6.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.2.0.0.1.0.0.0.0.6.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.2.0.0.1.0.0.0.0.6"
+                                              },
+                                              {
+                                                "tag": "svg",
+                                                "attrs": {
+                                                  "style": "z-index: 0;",
+                                                  "viewBox": "0 0 233.3333282470703 116.66665649414062",
+                                                  "width": "100%",
+                                                  "height": "100%"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "g",
+                                                    "attrs": {
+                                                      "class": "react-flow__edge react-flow__edge-smoothstep nopan selectable",
+                                                      "role": "group",
+                                                      "data-id": "team-email-ledger",
+                                                      "aria-label": "Edge from team-email to ledger"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "path",
+                                                        "attrs": {
+                                                          "d": "M852 617L852 637L 852,647Q 852,652 847,652L 557,652Q 552,652 552,657L552 667L552 687",
+                                                          "fill": "none",
+                                                          "class": "react-flow__edge-path",
+                                                          "style": "stroke: var(--muted-foreground); stroke-width: 1.5;"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.2.0.0.1.0.0.0.0.7.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "path",
+                                                        "attrs": {
+                                                          "d": "M852 617L852 637L 852,647Q 852,652 847,652L 557,652Q 552,652 552,657L552 667L552 687",
+                                                          "fill": "none",
+                                                          "stroke-opacity": "0",
+                                                          "stroke-width": "20",
+                                                          "class": "react-flow__edge-interaction"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.2.0.0.1.0.0.0.0.7.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.2.0.0.1.0.0.0.0.7.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.2.0.0.1.0.0.0.0.7"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.0.0.1.0.0.0.0"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "react-flow__edgelabel-renderer"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.0.0.1.0.0.0.1"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "react-flow__nodes",
+                                              "style": "position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "react-flow__node react-flow__node-workflowStep nopan selectable draggable",
+                                                  "data-id": "trigger",
+                                                  "role": "group",
+                                                  "style": "z-index: 0; transform: translate(420px, 0px); pointer-events: all; visibility: visible; width: 264px;"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "w-full"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "div",
+                                                        "attrs": {
+                                                          "class": "text-muted-foreground flex items-center justify-between gap-3 px-1 pb-2 text-[10px] font-semibold tracking-[0.14em] uppercase"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "span",
+                                                            "attrs": {
+                                                              "class": "truncate"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "trigger",
+                                                                "key": "root.0.0.2.0.0.1.0.0.0.2.0.0.0.0.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.2.0.0.1.0.0.0.2.0.0.0.0"
+                                                          },
+                                                          {
+                                                            "tag": "span",
+                                                            "attrs": {
+                                                              "class": "truncate"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "Payments",
+                                                                "key": "root.0.0.2.0.0.1.0.0.0.2.0.0.0.1.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.2.0.0.1.0.0.0.2.0.0.0.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.2.0.0.1.0.0.0.2.0.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "div",
+                                                        "attrs": {
+                                                          "class": "bg-background relative rounded-xl border px-3 py-3 shadow-sm transition-colors border-foreground/25 ring-foreground/15 ring-2"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "div",
+                                                            "attrs": {
+                                                              "class": "flex min-w-0 items-center gap-2.5"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "tag": "span",
+                                                                "attrs": {
+                                                                  "class": "grid size-7 shrink-0 place-items-center rounded-md ring-1 ring-inset bg-blue-50 text-blue-600 dark:bg-blue-950/50 dark:text-blue-400 ring-blue-600/15 dark:ring-blue-400/20"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "tag": "icon",
+                                                                    "attrs": {
+                                                                      "name": "i-lucide-credit-card",
+                                                                      "class": "lucide lucide-credit-card size-4"
+                                                                    },
+                                                                    "key": "root.0.0.2.0.0.1.0.0.0.2.0.0.1.0.0.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.0.2.0.0.1.0.0.0.2.0.0.1.0.0"
+                                                              },
+                                                              {
+                                                                "tag": "p",
+                                                                "attrs": {
+                                                                  "class": "truncate text-sm font-semibold"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "Payment succeeded",
+                                                                    "key": "root.0.0.2.0.0.1.0.0.0.2.0.0.1.0.1.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.0.2.0.0.1.0.0.0.2.0.0.1.0.1"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.2.0.0.1.0.0.0.2.0.0.1.0"
+                                                          },
+                                                          {
+                                                            "tag": "p",
+                                                            "attrs": {
+                                                              "class": "text-muted-foreground mt-2 line-clamp-2 min-h-8 text-xs leading-4"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "A live charge cleared for a shadcnblocks order",
+                                                                "key": "root.0.0.2.0.0.1.0.0.0.2.0.0.1.1.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.2.0.0.1.0.0.0.2.0.0.1.1"
+                                                          },
+                                                          {
+                                                            "tag": "div",
+                                                            "attrs": {
+                                                              "data-nodeid": "trigger",
+                                                              "data-id": "1-trigger-null-source",
+                                                              "class": "react-flow__handle react-flow__handle-bottom nodrag nopan !bg-background !border-muted-foreground/60 !size-2.5 !border source connectable connectablestart connectableend connectionindicator"
+                                                            },
+                                                            "children": [],
+                                                            "key": "root.0.0.2.0.0.1.0.0.0.2.0.0.1.2"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.2.0.0.1.0.0.0.2.0.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.2.0.0.1.0.0.0.2.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.2.0.0.1.0.0.0.2.0"
+                                              },
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "react-flow__node react-flow__node-workflowStep nopan selectable draggable",
+                                                  "data-id": "branch",
+                                                  "role": "group",
+                                                  "style": "z-index: 0; transform: translate(420px, 162px); pointer-events: all; visibility: visible; width: 264px;"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "w-full"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "div",
+                                                        "attrs": {
+                                                          "class": "text-muted-foreground flex items-center justify-between gap-3 px-1 pb-2 text-[10px] font-semibold tracking-[0.14em] uppercase"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "span",
+                                                            "attrs": {
+                                                              "class": "truncate"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "logic",
+                                                                "key": "root.0.0.2.0.0.1.0.0.0.2.1.0.0.0.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.2.0.0.1.0.0.0.2.1.0.0.0"
+                                                          },
+                                                          {
+                                                            "tag": "span",
+                                                            "attrs": {
+                                                              "class": "truncate"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "Conditions",
+                                                                "key": "root.0.0.2.0.0.1.0.0.0.2.1.0.0.1.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.2.0.0.1.0.0.0.2.1.0.0.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.2.0.0.1.0.0.0.2.1.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "div",
+                                                        "attrs": {
+                                                          "class": "bg-background relative rounded-xl border px-3 py-3 shadow-sm transition-colors hover:border-foreground/20"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "div",
+                                                            "attrs": {
+                                                              "data-nodeid": "branch",
+                                                              "data-id": "1-branch-null-target",
+                                                              "class": "react-flow__handle react-flow__handle-top nodrag nopan !bg-background !border-muted-foreground/60 !size-2.5 !border target connectable connectablestart connectableend connectionindicator"
+                                                            },
+                                                            "children": [],
+                                                            "key": "root.0.0.2.0.0.1.0.0.0.2.1.0.1.0"
+                                                          },
+                                                          {
+                                                            "tag": "div",
+                                                            "attrs": {
+                                                              "class": "flex min-w-0 items-center gap-2.5"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "tag": "span",
+                                                                "attrs": {
+                                                                  "class": "grid size-7 shrink-0 place-items-center rounded-md ring-1 ring-inset bg-amber-50 text-amber-600 dark:bg-amber-950/50 dark:text-amber-400 ring-amber-600/15 dark:ring-amber-400/20"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "tag": "icon",
+                                                                    "attrs": {
+                                                                      "name": "i-lucide-git-branch",
+                                                                      "class": "lucide lucide-git-branch size-4"
+                                                                    },
+                                                                    "key": "root.0.0.2.0.0.1.0.0.0.2.1.0.1.1.0.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.0.2.0.0.1.0.0.0.2.1.0.1.1.0"
+                                                              },
+                                                              {
+                                                                "tag": "p",
+                                                                "attrs": {
+                                                                  "class": "truncate text-sm font-semibold"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "If / else",
+                                                                    "key": "root.0.0.2.0.0.1.0.0.0.2.1.0.1.1.1.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.0.2.0.0.1.0.0.0.2.1.0.1.1.1"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.2.0.0.1.0.0.0.2.1.0.1.1"
+                                                          },
+                                                          {
+                                                            "tag": "p",
+                                                            "attrs": {
+                                                              "class": "text-muted-foreground mt-2 line-clamp-2 min-h-8 text-xs leading-4"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "If the order contains a team license",
+                                                                "key": "root.0.0.2.0.0.1.0.0.0.2.1.0.1.2.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.2.0.0.1.0.0.0.2.1.0.1.2"
+                                                          },
+                                                          {
+                                                            "tag": "div",
+                                                            "attrs": {
+                                                              "data-nodeid": "branch",
+                                                              "data-id": "1-branch-null-source",
+                                                              "class": "react-flow__handle react-flow__handle-bottom nodrag nopan !bg-background !border-muted-foreground/60 !size-2.5 !border source connectable connectablestart connectableend connectionindicator"
+                                                            },
+                                                            "children": [],
+                                                            "key": "root.0.0.2.0.0.1.0.0.0.2.1.0.1.3"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.2.0.0.1.0.0.0.2.1.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.2.0.0.1.0.0.0.2.1.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.2.0.0.1.0.0.0.2.1"
+                                              },
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "react-flow__node react-flow__node-workflowStep nopan selectable draggable",
+                                                  "data-id": "single-license",
+                                                  "role": "group",
+                                                  "style": "z-index: 0; transform: translate(120px, 334px); pointer-events: all; visibility: visible; width: 264px;"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "w-full"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "div",
+                                                        "attrs": {
+                                                          "class": "text-muted-foreground flex items-center justify-between gap-3 px-1 pb-2 text-[10px] font-semibold tracking-[0.14em] uppercase"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "span",
+                                                            "attrs": {
+                                                              "class": "truncate"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "action",
+                                                                "key": "root.0.0.2.0.0.1.0.0.0.2.2.0.0.0.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.2.0.0.1.0.0.0.2.2.0.0.0"
+                                                          },
+                                                          {
+                                                            "tag": "span",
+                                                            "attrs": {
+                                                              "class": "truncate"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "Fulfillment",
+                                                                "key": "root.0.0.2.0.0.1.0.0.0.2.2.0.0.1.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.2.0.0.1.0.0.0.2.2.0.0.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.2.0.0.1.0.0.0.2.2.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "div",
+                                                        "attrs": {
+                                                          "class": "bg-background relative rounded-xl border px-3 py-3 shadow-sm transition-colors hover:border-foreground/20"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "div",
+                                                            "attrs": {
+                                                              "data-nodeid": "single-license",
+                                                              "data-id": "1-single-license-null-target",
+                                                              "class": "react-flow__handle react-flow__handle-top nodrag nopan !bg-background !border-muted-foreground/60 !size-2.5 !border target connectable connectablestart connectableend connectionindicator"
+                                                            },
+                                                            "children": [],
+                                                            "key": "root.0.0.2.0.0.1.0.0.0.2.2.0.1.0"
+                                                          },
+                                                          {
+                                                            "tag": "div",
+                                                            "attrs": {
+                                                              "class": "flex min-w-0 items-center gap-2.5"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "tag": "span",
+                                                                "attrs": {
+                                                                  "class": "grid size-7 shrink-0 place-items-center rounded-md ring-1 ring-inset bg-rose-50 text-rose-600 dark:bg-rose-950/50 dark:text-rose-400 ring-rose-600/15 dark:ring-rose-400/20"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "tag": "icon",
+                                                                    "attrs": {
+                                                                      "name": "i-lucide-key-round",
+                                                                      "class": "lucide lucide-key-round size-4"
+                                                                    },
+                                                                    "key": "root.0.0.2.0.0.1.0.0.0.2.2.0.1.1.0.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.0.2.0.0.1.0.0.0.2.2.0.1.1.0"
+                                                              },
+                                                              {
+                                                                "tag": "p",
+                                                                "attrs": {
+                                                                  "class": "truncate text-sm font-semibold"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "Issue license key",
+                                                                    "key": "root.0.0.2.0.0.1.0.0.0.2.2.0.1.1.1.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.0.2.0.0.1.0.0.0.2.2.0.1.1.1"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.2.0.0.1.0.0.0.2.2.0.1.1"
+                                                          },
+                                                          {
+                                                            "tag": "p",
+                                                            "attrs": {
+                                                              "class": "text-muted-foreground mt-2 line-clamp-2 min-h-8 text-xs leading-4"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "Single seat, no expiry",
+                                                                "key": "root.0.0.2.0.0.1.0.0.0.2.2.0.1.2.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.2.0.0.1.0.0.0.2.2.0.1.2"
+                                                          },
+                                                          {
+                                                            "tag": "div",
+                                                            "attrs": {
+                                                              "data-nodeid": "single-license",
+                                                              "data-id": "1-single-license-null-source",
+                                                              "class": "react-flow__handle react-flow__handle-bottom nodrag nopan !bg-background !border-muted-foreground/60 !size-2.5 !border source connectable connectablestart connectableend connectionindicator"
+                                                            },
+                                                            "children": [],
+                                                            "key": "root.0.0.2.0.0.1.0.0.0.2.2.0.1.3"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.2.0.0.1.0.0.0.2.2.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.2.0.0.1.0.0.0.2.2.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.2.0.0.1.0.0.0.2.2"
+                                              },
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "react-flow__node react-flow__node-workflowStep nopan selectable draggable",
+                                                  "data-id": "single-email",
+                                                  "role": "group",
+                                                  "style": "z-index: 0; transform: translate(120px, 496px); pointer-events: all; visibility: visible; width: 264px;"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "w-full"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "div",
+                                                        "attrs": {
+                                                          "class": "text-muted-foreground flex items-center justify-between gap-3 px-1 pb-2 text-[10px] font-semibold tracking-[0.14em] uppercase"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "span",
+                                                            "attrs": {
+                                                              "class": "truncate"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "action",
+                                                                "key": "root.0.0.2.0.0.1.0.0.0.2.3.0.0.0.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.2.0.0.1.0.0.0.2.3.0.0.0"
+                                                          },
+                                                          {
+                                                            "tag": "span",
+                                                            "attrs": {
+                                                              "class": "truncate"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "Communication",
+                                                                "key": "root.0.0.2.0.0.1.0.0.0.2.3.0.0.1.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.2.0.0.1.0.0.0.2.3.0.0.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.2.0.0.1.0.0.0.2.3.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "div",
+                                                        "attrs": {
+                                                          "class": "bg-background relative rounded-xl border px-3 py-3 shadow-sm transition-colors hover:border-foreground/20"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "div",
+                                                            "attrs": {
+                                                              "data-nodeid": "single-email",
+                                                              "data-id": "1-single-email-null-target",
+                                                              "class": "react-flow__handle react-flow__handle-top nodrag nopan !bg-background !border-muted-foreground/60 !size-2.5 !border target connectable connectablestart connectableend connectionindicator"
+                                                            },
+                                                            "children": [],
+                                                            "key": "root.0.0.2.0.0.1.0.0.0.2.3.0.1.0"
+                                                          },
+                                                          {
+                                                            "tag": "div",
+                                                            "attrs": {
+                                                              "class": "flex min-w-0 items-center gap-2.5"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "tag": "span",
+                                                                "attrs": {
+                                                                  "class": "grid size-7 shrink-0 place-items-center rounded-md ring-1 ring-inset bg-rose-50 text-rose-600 dark:bg-rose-950/50 dark:text-rose-400 ring-rose-600/15 dark:ring-rose-400/20"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "tag": "icon",
+                                                                    "attrs": {
+                                                                      "name": "i-lucide-mail",
+                                                                      "class": "lucide lucide-mail size-4"
+                                                                    },
+                                                                    "key": "root.0.0.2.0.0.1.0.0.0.2.3.0.1.1.0.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.0.2.0.0.1.0.0.0.2.3.0.1.1.0"
+                                                              },
+                                                              {
+                                                                "tag": "p",
+                                                                "attrs": {
+                                                                  "class": "truncate text-sm font-semibold"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "Send email",
+                                                                    "key": "root.0.0.2.0.0.1.0.0.0.2.3.0.1.1.1.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.0.2.0.0.1.0.0.0.2.3.0.1.1.1"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.2.0.0.1.0.0.0.2.3.0.1.1"
+                                                          },
+                                                          {
+                                                            "tag": "p",
+                                                            "attrs": {
+                                                              "class": "text-muted-foreground mt-2 line-clamp-2 min-h-8 text-xs leading-4"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "Template: Receipt and downloads",
+                                                                "key": "root.0.0.2.0.0.1.0.0.0.2.3.0.1.2.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.2.0.0.1.0.0.0.2.3.0.1.2"
+                                                          },
+                                                          {
+                                                            "tag": "div",
+                                                            "attrs": {
+                                                              "data-nodeid": "single-email",
+                                                              "data-id": "1-single-email-null-source",
+                                                              "class": "react-flow__handle react-flow__handle-bottom nodrag nopan !bg-background !border-muted-foreground/60 !size-2.5 !border source connectable connectablestart connectableend connectionindicator"
+                                                            },
+                                                            "children": [],
+                                                            "key": "root.0.0.2.0.0.1.0.0.0.2.3.0.1.3"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.2.0.0.1.0.0.0.2.3.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.2.0.0.1.0.0.0.2.3.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.2.0.0.1.0.0.0.2.3"
+                                              },
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "react-flow__node react-flow__node-workflowStep nopan selectable draggable",
+                                                  "data-id": "team-license",
+                                                  "role": "group",
+                                                  "style": "z-index: 0; transform: translate(720px, 334px); pointer-events: all; visibility: visible; width: 264px;"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "w-full"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "div",
+                                                        "attrs": {
+                                                          "class": "text-muted-foreground flex items-center justify-between gap-3 px-1 pb-2 text-[10px] font-semibold tracking-[0.14em] uppercase"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "span",
+                                                            "attrs": {
+                                                              "class": "truncate"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "action",
+                                                                "key": "root.0.0.2.0.0.1.0.0.0.2.4.0.0.0.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.2.0.0.1.0.0.0.2.4.0.0.0"
+                                                          },
+                                                          {
+                                                            "tag": "span",
+                                                            "attrs": {
+                                                              "class": "truncate"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "Fulfillment",
+                                                                "key": "root.0.0.2.0.0.1.0.0.0.2.4.0.0.1.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.2.0.0.1.0.0.0.2.4.0.0.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.2.0.0.1.0.0.0.2.4.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "div",
+                                                        "attrs": {
+                                                          "class": "bg-background relative rounded-xl border px-3 py-3 shadow-sm transition-colors hover:border-foreground/20"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "div",
+                                                            "attrs": {
+                                                              "data-nodeid": "team-license",
+                                                              "data-id": "1-team-license-null-target",
+                                                              "class": "react-flow__handle react-flow__handle-top nodrag nopan !bg-background !border-muted-foreground/60 !size-2.5 !border target connectable connectablestart connectableend connectionindicator"
+                                                            },
+                                                            "children": [],
+                                                            "key": "root.0.0.2.0.0.1.0.0.0.2.4.0.1.0"
+                                                          },
+                                                          {
+                                                            "tag": "div",
+                                                            "attrs": {
+                                                              "class": "flex min-w-0 items-center gap-2.5"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "tag": "span",
+                                                                "attrs": {
+                                                                  "class": "grid size-7 shrink-0 place-items-center rounded-md ring-1 ring-inset bg-rose-50 text-rose-600 dark:bg-rose-950/50 dark:text-rose-400 ring-rose-600/15 dark:ring-rose-400/20"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "tag": "icon",
+                                                                    "attrs": {
+                                                                      "name": "i-lucide-key-round",
+                                                                      "class": "lucide lucide-key-round size-4"
+                                                                    },
+                                                                    "key": "root.0.0.2.0.0.1.0.0.0.2.4.0.1.1.0.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.0.2.0.0.1.0.0.0.2.4.0.1.1.0"
+                                                              },
+                                                              {
+                                                                "tag": "p",
+                                                                "attrs": {
+                                                                  "class": "truncate text-sm font-semibold"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "Issue license key",
+                                                                    "key": "root.0.0.2.0.0.1.0.0.0.2.4.0.1.1.1.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.0.2.0.0.1.0.0.0.2.4.0.1.1.1"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.2.0.0.1.0.0.0.2.4.0.1.1"
+                                                          },
+                                                          {
+                                                            "tag": "p",
+                                                            "attrs": {
+                                                              "class": "text-muted-foreground mt-2 line-clamp-2 min-h-8 text-xs leading-4"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "Team seat pool, 25 seats",
+                                                                "key": "root.0.0.2.0.0.1.0.0.0.2.4.0.1.2.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.2.0.0.1.0.0.0.2.4.0.1.2"
+                                                          },
+                                                          {
+                                                            "tag": "div",
+                                                            "attrs": {
+                                                              "data-nodeid": "team-license",
+                                                              "data-id": "1-team-license-null-source",
+                                                              "class": "react-flow__handle react-flow__handle-bottom nodrag nopan !bg-background !border-muted-foreground/60 !size-2.5 !border source connectable connectablestart connectableend connectionindicator"
+                                                            },
+                                                            "children": [],
+                                                            "key": "root.0.0.2.0.0.1.0.0.0.2.4.0.1.3"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.2.0.0.1.0.0.0.2.4.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.2.0.0.1.0.0.0.2.4.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.2.0.0.1.0.0.0.2.4"
+                                              },
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "react-flow__node react-flow__node-workflowStep nopan selectable draggable",
+                                                  "data-id": "team-email",
+                                                  "role": "group",
+                                                  "style": "z-index: 0; transform: translate(720px, 496px); pointer-events: all; visibility: visible; width: 264px;"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "w-full"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "div",
+                                                        "attrs": {
+                                                          "class": "text-muted-foreground flex items-center justify-between gap-3 px-1 pb-2 text-[10px] font-semibold tracking-[0.14em] uppercase"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "span",
+                                                            "attrs": {
+                                                              "class": "truncate"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "action",
+                                                                "key": "root.0.0.2.0.0.1.0.0.0.2.5.0.0.0.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.2.0.0.1.0.0.0.2.5.0.0.0"
+                                                          },
+                                                          {
+                                                            "tag": "span",
+                                                            "attrs": {
+                                                              "class": "truncate"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "Communication",
+                                                                "key": "root.0.0.2.0.0.1.0.0.0.2.5.0.0.1.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.2.0.0.1.0.0.0.2.5.0.0.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.2.0.0.1.0.0.0.2.5.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "div",
+                                                        "attrs": {
+                                                          "class": "bg-background relative rounded-xl border px-3 py-3 shadow-sm transition-colors hover:border-foreground/20"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "div",
+                                                            "attrs": {
+                                                              "data-nodeid": "team-email",
+                                                              "data-id": "1-team-email-null-target",
+                                                              "class": "react-flow__handle react-flow__handle-top nodrag nopan !bg-background !border-muted-foreground/60 !size-2.5 !border target connectable connectablestart connectableend connectionindicator"
+                                                            },
+                                                            "children": [],
+                                                            "key": "root.0.0.2.0.0.1.0.0.0.2.5.0.1.0"
+                                                          },
+                                                          {
+                                                            "tag": "div",
+                                                            "attrs": {
+                                                              "class": "flex min-w-0 items-center gap-2.5"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "tag": "span",
+                                                                "attrs": {
+                                                                  "class": "grid size-7 shrink-0 place-items-center rounded-md ring-1 ring-inset bg-rose-50 text-rose-600 dark:bg-rose-950/50 dark:text-rose-400 ring-rose-600/15 dark:ring-rose-400/20"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "tag": "icon",
+                                                                    "attrs": {
+                                                                      "name": "i-lucide-mail",
+                                                                      "class": "lucide lucide-mail size-4"
+                                                                    },
+                                                                    "key": "root.0.0.2.0.0.1.0.0.0.2.5.0.1.1.0.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.0.2.0.0.1.0.0.0.2.5.0.1.1.0"
+                                                              },
+                                                              {
+                                                                "tag": "p",
+                                                                "attrs": {
+                                                                  "class": "truncate text-sm font-semibold"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "Send email",
+                                                                    "key": "root.0.0.2.0.0.1.0.0.0.2.5.0.1.1.1.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.0.2.0.0.1.0.0.0.2.5.0.1.1.1"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.2.0.0.1.0.0.0.2.5.0.1.1"
+                                                          },
+                                                          {
+                                                            "tag": "p",
+                                                            "attrs": {
+                                                              "class": "text-muted-foreground mt-2 line-clamp-2 min-h-8 text-xs leading-4"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "Template: Team onboarding",
+                                                                "key": "root.0.0.2.0.0.1.0.0.0.2.5.0.1.2.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.2.0.0.1.0.0.0.2.5.0.1.2"
+                                                          },
+                                                          {
+                                                            "tag": "div",
+                                                            "attrs": {
+                                                              "data-nodeid": "team-email",
+                                                              "data-id": "1-team-email-null-source",
+                                                              "class": "react-flow__handle react-flow__handle-bottom nodrag nopan !bg-background !border-muted-foreground/60 !size-2.5 !border source connectable connectablestart connectableend connectionindicator"
+                                                            },
+                                                            "children": [],
+                                                            "key": "root.0.0.2.0.0.1.0.0.0.2.5.0.1.3"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.2.0.0.1.0.0.0.2.5.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.2.0.0.1.0.0.0.2.5.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.2.0.0.1.0.0.0.2.5"
+                                              },
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "react-flow__node react-flow__node-workflowStep nopan selectable draggable",
+                                                  "data-id": "ledger",
+                                                  "role": "group",
+                                                  "style": "z-index: 0; transform: translate(420px, 668px); pointer-events: all; visibility: visible; width: 264px;"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "w-full"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "div",
+                                                        "attrs": {
+                                                          "class": "text-muted-foreground flex items-center justify-between gap-3 px-1 pb-2 text-[10px] font-semibold tracking-[0.14em] uppercase"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "span",
+                                                            "attrs": {
+                                                              "class": "truncate"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "action",
+                                                                "key": "root.0.0.2.0.0.1.0.0.0.2.6.0.0.0.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.2.0.0.1.0.0.0.2.6.0.0.0"
+                                                          },
+                                                          {
+                                                            "tag": "span",
+                                                            "attrs": {
+                                                              "class": "truncate"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "Accounting",
+                                                                "key": "root.0.0.2.0.0.1.0.0.0.2.6.0.0.1.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.2.0.0.1.0.0.0.2.6.0.0.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.2.0.0.1.0.0.0.2.6.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "div",
+                                                        "attrs": {
+                                                          "class": "bg-background relative rounded-xl border px-3 py-3 shadow-sm transition-colors hover:border-foreground/20"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "div",
+                                                            "attrs": {
+                                                              "data-nodeid": "ledger",
+                                                              "data-id": "1-ledger-null-target",
+                                                              "class": "react-flow__handle react-flow__handle-top nodrag nopan !bg-background !border-muted-foreground/60 !size-2.5 !border target connectable connectablestart connectableend connectionindicator"
+                                                            },
+                                                            "children": [],
+                                                            "key": "root.0.0.2.0.0.1.0.0.0.2.6.0.1.0"
+                                                          },
+                                                          {
+                                                            "tag": "div",
+                                                            "attrs": {
+                                                              "class": "flex min-w-0 items-center gap-2.5"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "tag": "span",
+                                                                "attrs": {
+                                                                  "class": "grid size-7 shrink-0 place-items-center rounded-md ring-1 ring-inset bg-rose-50 text-rose-600 dark:bg-rose-950/50 dark:text-rose-400 ring-rose-600/15 dark:ring-rose-400/20"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "tag": "icon",
+                                                                    "attrs": {
+                                                                      "name": "i-lucide-receipt-text",
+                                                                      "class": "lucide lucide-receipt-text size-4"
+                                                                    },
+                                                                    "key": "root.0.0.2.0.0.1.0.0.0.2.6.0.1.1.0.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.0.2.0.0.1.0.0.0.2.6.0.1.1.0"
+                                                              },
+                                                              {
+                                                                "tag": "p",
+                                                                "attrs": {
+                                                                  "class": "truncate text-sm font-semibold"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "Post to ledger",
+                                                                    "key": "root.0.0.2.0.0.1.0.0.0.2.6.0.1.1.1.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.0.2.0.0.1.0.0.0.2.6.0.1.1.1"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.2.0.0.1.0.0.0.2.6.0.1.1"
+                                                          },
+                                                          {
+                                                            "tag": "p",
+                                                            "attrs": {
+                                                              "class": "text-muted-foreground mt-2 line-clamp-2 min-h-8 text-xs leading-4"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "Recognize revenue for the period",
+                                                                "key": "root.0.0.2.0.0.1.0.0.0.2.6.0.1.2.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.2.0.0.1.0.0.0.2.6.0.1.2"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.2.0.0.1.0.0.0.2.6.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.2.0.0.1.0.0.0.2.6.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.2.0.0.1.0.0.0.2.6"
+                                              }
+                                            ],
+                                            "key": "root.0.0.2.0.0.1.0.0.0.2"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "react-flow__viewport-portal"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.0.0.1.0.0.0.3"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.0.1.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.0.1.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.0.0.1.0"
+                              },
+                              {
+                                "tag": "svg",
+                                "attrs": {
+                                  "class": "react-flow__background",
+                                  "style": "position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; --xy-background-pattern-color-props: var(--border);",
+                                  "width": "100%",
+                                  "height": "100%"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "pattern",
+                                    "attrs": {
+                                      "id": "pattern-1",
+                                      "x": "-4.444444444444425",
+                                      "y": "2.7222222222222268",
+                                      "width": "12.444444444444445",
+                                      "height": "12.444444444444445",
+                                      "patternUnits": "userSpaceOnUse",
+                                      "patternTransform": "translate(-6.222222222222222,-6.222222222222222)"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "circle",
+                                        "attrs": {
+                                          "cx": "0.3888888888888889",
+                                          "cy": "0.3888888888888889",
+                                          "r": "0.3888888888888889",
+                                          "class": "react-flow__background-pattern dots"
+                                        },
+                                        "children": [],
+                                        "key": "root.0.0.2.0.0.1.1.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.0.1.1.0"
+                                  },
+                                  {
+                                    "tag": "rect",
+                                    "attrs": {
+                                      "x": "0",
+                                      "y": "0",
+                                      "width": "100%",
+                                      "height": "100%",
+                                      "fill": "url(#pattern-1)"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.2.0.0.1.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.0.0.1.1"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "react-flow__panel react-flow__controls vertical top left",
+                                  "aria-label": "Control Panel"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "react-flow__controls-button react-flow__controls-zoomin",
+                                      "title": "Zoom In",
+                                      "aria-label": "Zoom In"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "svg",
+                                        "attrs": {
+                                          "xmlns": "http://www.w3.org/2000/svg",
+                                          "viewBox": "0 0 32 32",
+                                          "width": "100%",
+                                          "height": "100%"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "path",
+                                            "attrs": {
+                                              "d": "M32 18.133H18.133V32h-4.266V18.133H0v-4.266h13.867V0h4.266v13.867H32z"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.0.0.1.2.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.0.1.2.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.0.1.2.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "react-flow__controls-button react-flow__controls-zoomout",
+                                      "title": "Zoom Out",
+                                      "aria-label": "Zoom Out"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "svg",
+                                        "attrs": {
+                                          "xmlns": "http://www.w3.org/2000/svg",
+                                          "viewBox": "0 0 32 5",
+                                          "width": "100%",
+                                          "height": "100%"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "path",
+                                            "attrs": {
+                                              "d": "M0 0h32v4.2H0z"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.0.0.1.2.1.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.0.1.2.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.0.1.2.1"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "react-flow__controls-button react-flow__controls-fitview",
+                                      "title": "Fit View",
+                                      "aria-label": "Fit View"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "svg",
+                                        "attrs": {
+                                          "xmlns": "http://www.w3.org/2000/svg",
+                                          "viewBox": "0 0 32 30",
+                                          "width": "100%",
+                                          "height": "100%"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "path",
+                                            "attrs": {
+                                              "d": "M3.692 4.63c0-.53.4-.938.939-.938h5.215V0H4.708C2.13 0 0 2.054 0 4.63v5.216h3.692V4.631zM27.354 0h-5.2v3.692h5.17c.53 0 .984.4.984.939v5.215H32V4.631A4.624 4.624 0 0027.354 0zm.954 24.83c0 .532-.4.94-.939.94h-5.215v3.768h5.215c2.577 0 4.631-2.13 4.631-4.707v-5.139h-3.692v5.139zm-23.677.94c-.531 0-.939-.4-.939-.94v-5.138H0v5.139c0 2.577 2.13 4.707 4.708 4.707h5.138V25.77H4.631z"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.0.0.1.2.2.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.0.1.2.2.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.0.1.2.2"
+                                  }
+                                ],
+                                "key": "root.0.0.2.0.0.1.2"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "id": "react-flow__node-desc-1",
+                                  "style": "display: none;"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Press enter or space to select a node. You can then use the arrow keys to move the node around. Press delete to remove it and escape to cancel.",
+                                    "key": "root.0.0.2.0.0.1.3.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.0.0.1.3"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "id": "react-flow__edge-desc-1",
+                                  "style": "display: none;"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Press enter or space to select an edge. You can then press delete to remove it or escape to cancel.",
+                                    "key": "root.0.0.2.0.0.1.4.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.0.0.1.4"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "id": "react-flow__aria-live-1",
+                                  "style": "position: absolute; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(100%);"
+                                },
+                                "children": [],
+                                "key": "root.0.0.2.0.0.1.5"
+                              }
+                            ],
+                            "key": "root.0.0.2.0.0.1"
+                          }
+                        ],
+                        "key": "root.0.0.2.0.0"
+                      }
+                    ],
+                    "key": "root.0.0.2.0"
+                  },
+                  {
+                    "tag": "aside",
+                    "attrs": {
+                      "class": "vertical-scrollbar min-h-0 overflow-y-auto border-t lg:border-t-0 lg:border-l"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "border-b px-5 py-5"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex items-center gap-2.5"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "grid size-8 shrink-0 place-items-center rounded-md bg-blue-50 text-blue-600 ring-1 ring-blue-600/15 ring-inset dark:bg-blue-950/50 dark:text-blue-400 dark:ring-blue-400/20"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-workflow",
+                                      "class": "lucide lucide-workflow size-4"
+                                    },
+                                    "key": "root.0.0.2.1.0.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.0.0.0"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "truncate text-sm font-semibold"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Paid order fulfillment",
+                                    "key": "root.0.0.2.1.0.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.0.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.0.0"
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": {
+                              "class": "text-muted-foreground mt-3 text-sm leading-relaxed"
+                            },
+                            "children": [
+                              {
+                                "text": "When a payment clears, issue the license the customer actually bought, send the matching receipt, and post the revenue to the ledger.",
+                                "key": "root.0.0.2.1.0.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.0.1"
+                          }
+                        ],
+                        "key": "root.0.0.2.1.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "border-b px-5 py-5"
+                        },
+                        "children": [
+                          {
+                            "tag": "p",
+                            "attrs": {
+                              "class": "text-muted-foreground text-[11px] font-semibold tracking-[0.14em] uppercase"
+                            },
+                            "children": [
+                              {
+                                "text": "Selected step",
+                                "key": "root.0.0.2.1.1.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.1.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "mt-3 flex items-center gap-2.5"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "grid size-8 shrink-0 place-items-center rounded-md ring-1 ring-inset bg-blue-50 text-blue-600 dark:bg-blue-950/50 dark:text-blue-400 ring-blue-600/15 dark:ring-blue-400/20"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-credit-card",
+                                      "class": "lucide lucide-credit-card size-4"
+                                    },
+                                    "key": "root.0.0.2.1.1.1.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.1.1.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "min-w-0"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "p",
+                                    "attrs": {
+                                      "class": "truncate text-sm font-semibold"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Payment succeeded",
+                                        "key": "root.0.0.2.1.1.1.1.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.1.1.1.0"
+                                  },
+                                  {
+                                    "tag": "p",
+                                    "attrs": {
+                                      "class": "text-muted-foreground truncate text-xs"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "trigger",
+                                        "key": "root.0.0.2.1.1.1.1.1.0"
+                                      },
+                                      {
+                                        "text": " · ",
+                                        "key": "root.0.0.2.1.1.1.1.1.1"
+                                      },
+                                      {
+                                        "text": "Payments",
+                                        "key": "root.0.0.2.1.1.1.1.1.2"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.1.1.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.1.1.1"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.1.1"
+                          },
+                          {
+                            "tag": "dl",
+                            "attrs": {
+                              "class": "mt-4 space-y-2.5"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-start justify-between gap-4"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "dt",
+                                    "attrs": {
+                                      "class": "text-muted-foreground shrink-0 text-xs"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Event",
+                                        "key": "root.0.0.2.1.1.2.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.1.2.0.0"
+                                  },
+                                  {
+                                    "tag": "dd",
+                                    "attrs": {
+                                      "class": "min-w-0 text-right text-xs font-medium break-words"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "payment_intent.succeeded",
+                                        "key": "root.0.0.2.1.1.2.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.1.2.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.1.2.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-start justify-between gap-4"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "dt",
+                                    "attrs": {
+                                      "class": "text-muted-foreground shrink-0 text-xs"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Mode",
+                                        "key": "root.0.0.2.1.1.2.1.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.1.2.1.0"
+                                  },
+                                  {
+                                    "tag": "dd",
+                                    "attrs": {
+                                      "class": "min-w-0 text-right text-xs font-medium break-words"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Live payments only",
+                                        "key": "root.0.0.2.1.1.2.1.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.1.2.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.1.2.1"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-start justify-between gap-4"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "dt",
+                                    "attrs": {
+                                      "class": "text-muted-foreground shrink-0 text-xs"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Source",
+                                        "key": "root.0.0.2.1.1.2.2.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.1.2.2.0"
+                                  },
+                                  {
+                                    "tag": "dd",
+                                    "attrs": {
+                                      "class": "min-w-0 text-right text-xs font-medium break-words"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Checkout and invoice payments",
+                                        "key": "root.0.0.2.1.1.2.2.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.1.2.2.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.1.2.2"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-start justify-between gap-4"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "dt",
+                                    "attrs": {
+                                      "class": "text-muted-foreground shrink-0 text-xs"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Debounce",
+                                        "key": "root.0.0.2.1.1.2.3.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.1.2.3.0"
+                                  },
+                                  {
+                                    "tag": "dd",
+                                    "attrs": {
+                                      "class": "min-w-0 text-right text-xs font-medium break-words"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Skip duplicate intents for 60s",
+                                        "key": "root.0.0.2.1.1.2.3.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.1.2.3.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.1.2.3"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.1.2"
+                          }
+                        ],
+                        "key": "root.0.0.2.1.1"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "border-b px-5 py-5"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex items-center justify-between gap-3"
+                            },
+                            "children": [
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-sm font-semibold"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Checklist",
+                                    "key": "root.0.0.2.1.2.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.2.0.0"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-muted-foreground text-xs tabular-nums"
+                                },
+                                "children": [
+                                  {
+                                    "text": "2",
+                                    "key": "root.0.0.2.1.2.0.1.0"
+                                  },
+                                  {
+                                    "text": "/",
+                                    "key": "root.0.0.2.1.2.0.1.1"
+                                  },
+                                  {
+                                    "text": "4",
+                                    "key": "root.0.0.2.1.2.0.1.2"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.2.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.2.0"
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": {
+                              "class": "text-muted-foreground mt-1 text-xs"
+                            },
+                            "children": [
+                              {
+                                "text": "Finish these before publishing to live payments.",
+                                "key": "root.0.0.2.1.2.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.2.1"
+                          },
+                          {
+                            "tag": "ul",
+                            "attrs": {
+                              "class": "mt-3 space-y-2.5"
+                            },
+                            "children": [
+                              {
+                                "tag": "li",
+                                "attrs": {
+                                  "class": "flex items-start gap-2.5"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "role": "checkbox",
+                                      "aria-checked": "true",
+                                      "data-state": "checked",
+                                      "value": "on",
+                                      "class": "peer border-primary focus-visible:ring-ring data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground h-4 w-4 shrink-0 rounded-sm border shadow-sm focus-visible:ring-1 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 mt-0.5",
+                                      "id": "checklist-connect"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "data-state": "checked",
+                                          "class": "flex items-center justify-center text-current",
+                                          "style": "pointer-events:none"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-check",
+                                              "class": "lucide lucide-check h-4 w-4"
+                                            },
+                                            "key": "root.0.0.2.1.2.2.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.2.2.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.2.2.0.0"
+                                  },
+                                  {
+                                    "tag": "label",
+                                    "attrs": {
+                                      "class": "cursor-pointer text-sm leading-snug text-muted-foreground line-through",
+                                      "for": "checklist-connect"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Connect a live payment method",
+                                        "key": "root.0.0.2.1.2.2.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.2.2.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.2.2.0"
+                              },
+                              {
+                                "tag": "li",
+                                "attrs": {
+                                  "class": "flex items-start gap-2.5"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "role": "checkbox",
+                                      "aria-checked": "true",
+                                      "data-state": "checked",
+                                      "value": "on",
+                                      "class": "peer border-primary focus-visible:ring-ring data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground h-4 w-4 shrink-0 rounded-sm border shadow-sm focus-visible:ring-1 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 mt-0.5",
+                                      "id": "checklist-skus"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "data-state": "checked",
+                                          "class": "flex items-center justify-center text-current",
+                                          "style": "pointer-events:none"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-check",
+                                              "class": "lucide lucide-check h-4 w-4"
+                                            },
+                                            "key": "root.0.0.2.1.2.2.1.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.2.2.1.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.2.2.1.0"
+                                  },
+                                  {
+                                    "tag": "label",
+                                    "attrs": {
+                                      "class": "cursor-pointer text-sm leading-snug text-muted-foreground line-through",
+                                      "for": "checklist-skus"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Map license SKUs to products",
+                                        "key": "root.0.0.2.1.2.2.1.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.2.2.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.2.2.1"
+                              },
+                              {
+                                "tag": "li",
+                                "attrs": {
+                                  "class": "flex items-start gap-2.5"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "role": "checkbox",
+                                      "aria-checked": "false",
+                                      "data-state": "unchecked",
+                                      "value": "on",
+                                      "class": "peer border-primary focus-visible:ring-ring data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground h-4 w-4 shrink-0 rounded-sm border shadow-sm focus-visible:ring-1 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 mt-0.5",
+                                      "id": "checklist-receipt"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.2.1.2.2.2.0"
+                                  },
+                                  {
+                                    "tag": "label",
+                                    "attrs": {
+                                      "class": "cursor-pointer text-sm leading-snug",
+                                      "for": "checklist-receipt"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Verify the receipt email template",
+                                        "key": "root.0.0.2.1.2.2.2.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.2.2.2.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.2.2.2"
+                              },
+                              {
+                                "tag": "li",
+                                "attrs": {
+                                  "class": "flex items-start gap-2.5"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "role": "checkbox",
+                                      "aria-checked": "false",
+                                      "data-state": "unchecked",
+                                      "value": "on",
+                                      "class": "peer border-primary focus-visible:ring-ring data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground h-4 w-4 shrink-0 rounded-sm border shadow-sm focus-visible:ring-1 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 mt-0.5",
+                                      "id": "checklist-ledger"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.2.1.2.2.3.0"
+                                  },
+                                  {
+                                    "tag": "label",
+                                    "attrs": {
+                                      "class": "cursor-pointer text-sm leading-snug",
+                                      "for": "checklist-ledger"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Point the ledger at the right account",
+                                        "key": "root.0.0.2.1.2.2.3.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.2.2.3.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.2.2.3"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.2.2"
+                          }
+                        ],
+                        "key": "root.0.0.2.1.2"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "px-5 py-5"
+                        },
+                        "children": [
+                          {
+                            "tag": "p",
+                            "attrs": {
+                              "class": "text-sm font-semibold"
+                            },
+                            "children": [
+                              {
+                                "text": "Helpful resources",
+                                "key": "root.0.0.2.1.3.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.3.0"
+                          },
+                          {
+                            "tag": "ul",
+                            "attrs": {
+                              "class": "mt-3 space-y-1"
+                            },
+                            "children": [
+                              {
+                                "tag": "li",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "a",
+                                    "attrs": {
+                                      "class": "text-muted-foreground hover:text-foreground flex items-center justify-between gap-3 rounded-md py-1.5 text-sm transition-colors",
+                                      "href": "#"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "truncate"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Payment event reference",
+                                            "key": "root.0.0.2.1.3.1.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.3.1.0.0.0"
+                                      },
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-external-link",
+                                          "class": "lucide lucide-external-link size-3.5 shrink-0"
+                                        },
+                                        "key": "root.0.0.2.1.3.1.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.3.1.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.3.1.0"
+                              },
+                              {
+                                "tag": "li",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "a",
+                                    "attrs": {
+                                      "class": "text-muted-foreground hover:text-foreground flex items-center justify-between gap-3 rounded-md py-1.5 text-sm transition-colors",
+                                      "href": "#"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "truncate"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Branching and conditions",
+                                            "key": "root.0.0.2.1.3.1.1.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.3.1.1.0.0"
+                                      },
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-external-link",
+                                          "class": "lucide lucide-external-link size-3.5 shrink-0"
+                                        },
+                                        "key": "root.0.0.2.1.3.1.1.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.3.1.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.3.1.1"
+                              },
+                              {
+                                "tag": "li",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "tag": "a",
+                                    "attrs": {
+                                      "class": "text-muted-foreground hover:text-foreground flex items-center justify-between gap-3 rounded-md py-1.5 text-sm transition-colors",
+                                      "href": "#"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "truncate"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Retry and failure handling",
+                                            "key": "root.0.0.2.1.3.1.2.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.1.3.1.2.0.0"
+                                      },
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-external-link",
+                                          "class": "lucide lucide-external-link size-3.5 shrink-0"
+                                        },
+                                        "key": "root.0.0.2.1.3.1.2.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.3.1.2.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.3.1.2"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.3.1"
+                          }
+                        ],
+                        "key": "root.0.0.2.1.3"
+                      }
+                    ],
+                    "key": "root.0.0.2.1"
+                  }
+                ],
+                "key": "root.0.0.2"
+              }
+            ],
+            "key": "root.0.0"
+          }
+        ],
+        "key": "root.0"
+      }
+    ],
+    "key": "root"
+  },
+  "headings": [],
+  "canvasNodes": 7
+}

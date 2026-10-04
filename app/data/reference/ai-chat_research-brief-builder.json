@@ -1,0 +1,1940 @@
+{
+  "label": "Research 1",
+  "path": "/ai-chat/research-brief-builder",
+  "appTitle": "",
+  "tree": {
+    "tag": "div",
+    "attrs": {
+      "id": "ai-workspace-content",
+      "class": "flex min-h-0 flex-1 flex-col"
+    },
+    "children": [
+      {
+        "tag": "div",
+        "attrs": {
+          "class": "flex min-h-0 flex-1 overflow-hidden"
+        },
+        "children": [
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "flex min-h-0 min-w-0 flex-1 flex-col"
+            },
+            "children": [
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "flex min-h-0 flex-1 flex-col"
+                },
+                "children": [
+                  {
+                    "tag": "header",
+                    "attrs": {
+                      "class": "flex h-14 shrink-0 items-center justify-between gap-3 border-b px-5"
+                    },
+                    "children": [
+                      {
+                        "tag": "h2",
+                        "attrs": {
+                          "class": "text-sm font-medium"
+                        },
+                        "children": [
+                          {
+                            "text": "Your brief",
+                            "key": "root.0.0.0.0.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground"
+                        },
+                        "children": [
+                          {
+                            "text": "Draft",
+                            "key": "root.0.0.0.0.1.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.1"
+                      }
+                    ],
+                    "key": "root.0.0.0.0"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "data-slot": "scroll-area",
+                      "class": "relative overflow-hidden min-h-0 flex-1 [&>[data-slot=scroll-area-viewport]>div]:!block",
+                      "style": "position:relative;--radix-scroll-area-corner-width:0px;--radix-scroll-area-corner-height:0px"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "data-slot": "scroll-area-viewport",
+                          "class": "h-full w-full rounded-[inherit]",
+                          "style": "overflow: hidden scroll;"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "style": "min-width:100%;display:table"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "mx-auto flex w-full max-w-2xl flex-col gap-7 px-5 py-7 sm:px-8"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex flex-col gap-2"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "text-muted-foreground text-xs"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "RESEARCH / NEW BRIEF",
+                                            "key": "root.0.0.0.1.0.0.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.1.0.0.0.0.0"
+                                      },
+                                      {
+                                        "tag": "h1",
+                                        "attrs": {
+                                          "class": "text-2xl font-semibold tracking-tight"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Start with the right question.",
+                                            "key": "root.0.0.0.1.0.0.0.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.1.0.0.0.0.1"
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "text-muted-foreground text-sm leading-relaxed"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Define the decision, set the boundaries, and shape the work before research begins.",
+                                            "key": "root.0.0.0.1.0.0.0.0.2.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.1.0.0.0.0.2"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.1.0.0.0.0"
+                                  },
+                                  {
+                                    "tag": "fieldset",
+                                    "attrs": {
+                                      "data-slot": "field-set",
+                                      "class": "flex flex-col gap-6 has-[>[data-slot=checkbox-group]]:gap-3 has-[>[data-slot=radio-group]]:gap-3"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "legend",
+                                        "attrs": {
+                                          "data-slot": "field-legend",
+                                          "class": "mb-3 font-medium data-[variant=label]:text-sm data-[variant=legend]:text-base sr-only"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Research brief",
+                                            "key": "root.0.0.0.1.0.0.0.1.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.1.0.0.0.1.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "data-slot": "field-group",
+                                          "class": "group/field-group @container/field-group flex w-full flex-col gap-7 data-[slot=checkbox-group]:gap-3 *:data-[slot=field-group]:gap-4"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "role": "group",
+                                              "data-slot": "field",
+                                              "data-orientation": "vertical",
+                                              "class": "group/field flex w-full gap-3 data-[invalid=true]:text-destructive flex-col *:w-full [&>.sr-only]:w-auto"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "label",
+                                                "attrs": {
+                                                  "class": "text-sm font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 group/field-label peer/field-label flex w-fit gap-2 leading-snug group-data-[disabled=true]/field:opacity-50 has-data-checked:border-primary/30 has-data-checked:bg-primary/5 has-[>[data-slot=field]]:rounded-md has-[>[data-slot=field]]:border *:data-[slot=field]:p-3 dark:has-data-checked:border-primary/20 dark:has-data-checked:bg-primary/10 has-[>[data-slot=field]]:w-full has-[>[data-slot=field]]:flex-col",
+                                                  "data-slot": "field-label",
+                                                  "for": "research-objective"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "What do you want to learn?",
+                                                    "key": "root.0.0.0.1.0.0.0.1.1.0.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.1.0.0.0.1.1.0.0"
+                                              },
+                                              {
+                                                "tag": "textarea",
+                                                "attrs": {
+                                                  "class": "border-input placeholder:text-muted-foreground focus-visible:ring-ring flex min-h-[60px] w-full rounded-md border bg-transparent px-3 py-2 text-base shadow-xs focus-visible:ring-1 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
+                                                  "id": "research-objective",
+                                                  "value": "What would make a self-serve onboarding pilot worth expanding?"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "What would make a self-serve onboarding pilot worth expanding?",
+                                                    "key": "root.0.0.0.1.0.0.0.1.1.0.1.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.1.0.0.0.1.1.0.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.1.0.0.0.1.1.0"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "role": "group",
+                                              "data-slot": "field",
+                                              "data-orientation": "vertical",
+                                              "class": "group/field flex w-full gap-3 data-[invalid=true]:text-destructive flex-col *:w-full [&>.sr-only]:w-auto"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "label",
+                                                "attrs": {
+                                                  "class": "text-sm font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 group/field-label peer/field-label flex w-fit gap-2 leading-snug group-data-[disabled=true]/field:opacity-50 has-data-checked:border-primary/30 has-data-checked:bg-primary/5 has-[>[data-slot=field]]:rounded-md has-[>[data-slot=field]]:border *:data-[slot=field]:p-3 dark:has-data-checked:border-primary/20 dark:has-data-checked:bg-primary/10 has-[>[data-slot=field]]:w-full has-[>[data-slot=field]]:flex-col",
+                                                  "data-slot": "field-label",
+                                                  "for": "research-audience"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Who is this for?",
+                                                    "key": "root.0.0.0.1.0.0.0.1.1.1.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.1.0.0.0.1.1.1.0"
+                                              },
+                                              {
+                                                "tag": "input",
+                                                "attrs": {
+                                                  "class": "border-input file:text-foreground placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 w-full rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:ring-1 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
+                                                  "id": "research-audience",
+                                                  "value": "Product and customer success teams"
+                                                },
+                                                "children": [],
+                                                "key": "root.0.0.0.1.0.0.0.1.1.1.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.1.0.0.0.1.1.1"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "data-orientation": "horizontal",
+                                              "role": "none",
+                                              "class": "bg-border shrink-0 h-[1px] w-full"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.0.1.0.0.0.1.1.2"
+                                          },
+                                          {
+                                            "tag": "fieldset",
+                                            "attrs": {
+                                              "data-slot": "field-set",
+                                              "class": "flex flex-col gap-6 has-[>[data-slot=checkbox-group]]:gap-3 has-[>[data-slot=radio-group]]:gap-3"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "legend",
+                                                "attrs": {
+                                                  "data-slot": "field-legend",
+                                                  "class": "mb-3 font-medium data-[variant=label]:text-sm data-[variant=legend]:text-base"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Research questions",
+                                                    "key": "root.0.0.0.1.0.0.0.1.1.3.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.1.0.0.0.1.1.3.0"
+                                              },
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "data-slot": "field-group",
+                                                  "class": "group/field-group @container/field-group flex w-full flex-col data-[slot=checkbox-group]:gap-3 *:data-[slot=field-group]:gap-4 gap-3"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "role": "group",
+                                                      "data-slot": "field",
+                                                      "data-orientation": "vertical",
+                                                      "class": "group/field flex w-full data-[invalid=true]:text-destructive flex-col *:w-full [&>.sr-only]:w-auto gap-2"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "label",
+                                                        "attrs": {
+                                                          "class": "text-sm font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 group/field-label peer/field-label flex w-fit gap-2 leading-snug group-data-[disabled=true]/field:opacity-50 has-data-checked:border-primary/30 has-data-checked:bg-primary/5 has-[>[data-slot=field]]:rounded-md has-[>[data-slot=field]]:border *:data-[slot=field]:p-3 dark:has-data-checked:border-primary/20 dark:has-data-checked:bg-primary/10 has-[>[data-slot=field]]:w-full has-[>[data-slot=field]]:flex-col sr-only",
+                                                          "data-slot": "field-label",
+                                                          "for": "question-1"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "Question",
+                                                            "key": "root.0.0.0.1.0.0.0.1.1.3.1.0.0.0"
+                                                          },
+                                                          {
+                                                            "text": "1",
+                                                            "key": "root.0.0.0.1.0.0.0.1.1.3.1.0.0.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.1.0.0.0.1.1.3.1.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "div",
+                                                        "attrs": {
+                                                          "data-slot": "input-group",
+                                                          "role": "group",
+                                                          "class": "group/input-group relative flex h-9 w-full min-w-0 items-center rounded-md border border-input shadow-xs transition-[color,box-shadow] outline-none in-data-[slot=combobox-content]:focus-within:border-inherit in-data-[slot=combobox-content]:focus-within:ring-0 has-[[data-slot=input-group-control]:focus-visible]:border-ring has-[[data-slot=input-group-control]:focus-visible]:ring-3 has-[[data-slot=input-group-control]:focus-visible]:ring-ring/50 has-[[data-slot][aria-invalid=true]]:border-destructive has-[[data-slot][aria-invalid=true]]:ring-3 has-[[data-slot][aria-invalid=true]]:ring-destructive/20 has-[>[data-align=block-end]]:h-auto has-[>[data-align=block-end]]:flex-col has-[>[data-align=block-start]]:h-auto has-[>[data-align=block-start]]:flex-col has-[>textarea]:h-auto dark:bg-input/30 dark:has-[[data-slot][aria-invalid=true]]:ring-destructive/40 has-[>[data-align=block-end]]:[&>input]:pt-3 has-[>[data-align=block-start]]:[&>input]:pb-3 has-[>[data-align=inline-end]]:[&>input]:pr-1.5 has-[>[data-align=inline-start]]:[&>input]:pl-1.5"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "textarea",
+                                                            "attrs": {
+                                                              "class": "border-input placeholder:text-muted-foreground focus-visible:ring-ring flex min-h-[60px] w-full px-3 text-base focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 md:text-sm flex-1 resize-none rounded-none border-0 bg-transparent py-2 shadow-none ring-0 focus-visible:ring-0 aria-invalid:ring-0 dark:bg-transparent",
+                                                              "data-slot": "input-group-control",
+                                                              "id": "question-1",
+                                                              "value": "Where do new teams lose momentum before reaching first value?"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "Where do new teams lose momentum before reaching first value?",
+                                                                "key": "root.0.0.0.1.0.0.0.1.1.3.1.0.1.0.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.0.1.0.0.0.1.1.3.1.0.1.0"
+                                                          },
+                                                          {
+                                                            "tag": "div",
+                                                            "attrs": {
+                                                              "role": "group",
+                                                              "data-slot": "input-group-addon",
+                                                              "class": "flex h-auto cursor-text items-center gap-2 py-1.5 text-sm font-medium text-muted-foreground select-none group-data-[disabled=true]/input-group:opacity-50 [&>kbd]:rounded-[calc(var(--radius)-5px)] [&>svg:not([class*='size-'])]:size-4 order-last w-full px-2.5 pb-2 group-has-[>input]/input-group:pb-2 [.border-t]:pt-2 justify-end"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "tag": "span",
+                                                                "attrs": {
+                                                                  "class": "mr-auto text-xs tabular-nums"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "Question",
+                                                                    "key": "root.0.0.0.1.0.0.0.1.1.3.1.0.1.1.0.0"
+                                                                  },
+                                                                  {
+                                                                    "text": "1",
+                                                                    "key": "root.0.0.0.1.0.0.0.1.1.3.1.0.1.1.0.1"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.0.0.1.0.0.0.1.1.3.1.0.1.1.0"
+                                                              },
+                                                              {
+                                                                "tag": "button",
+                                                                "attrs": {
+                                                                  "class": "justify-center whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground flex items-center gap-2 text-sm shadow-none size-6 rounded-[calc(var(--radius)-5px)] p-0 has-[>svg]:p-0",
+                                                                  "type": "button",
+                                                                  "aria-label": "Remove question 1"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "tag": "icon",
+                                                                    "attrs": {
+                                                                      "name": "i-lucide-x",
+                                                                      "class": "lucide lucide-x"
+                                                                    },
+                                                                    "key": "root.0.0.0.1.0.0.0.1.1.3.1.0.1.1.1.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.0.0.1.0.0.0.1.1.3.1.0.1.1.1"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.0.1.0.0.0.1.1.3.1.0.1.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.1.0.0.0.1.1.3.1.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.1.0.0.0.1.1.3.1.0"
+                                                  },
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "role": "group",
+                                                      "data-slot": "field",
+                                                      "data-orientation": "vertical",
+                                                      "class": "group/field flex w-full data-[invalid=true]:text-destructive flex-col *:w-full [&>.sr-only]:w-auto gap-2"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "label",
+                                                        "attrs": {
+                                                          "class": "text-sm font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 group/field-label peer/field-label flex w-fit gap-2 leading-snug group-data-[disabled=true]/field:opacity-50 has-data-checked:border-primary/30 has-data-checked:bg-primary/5 has-[>[data-slot=field]]:rounded-md has-[>[data-slot=field]]:border *:data-[slot=field]:p-3 dark:has-data-checked:border-primary/20 dark:has-data-checked:bg-primary/10 has-[>[data-slot=field]]:w-full has-[>[data-slot=field]]:flex-col sr-only",
+                                                          "data-slot": "field-label",
+                                                          "for": "question-2"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "Question",
+                                                            "key": "root.0.0.0.1.0.0.0.1.1.3.1.1.0.0"
+                                                          },
+                                                          {
+                                                            "text": "2",
+                                                            "key": "root.0.0.0.1.0.0.0.1.1.3.1.1.0.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.1.0.0.0.1.1.3.1.1.0"
+                                                      },
+                                                      {
+                                                        "tag": "div",
+                                                        "attrs": {
+                                                          "data-slot": "input-group",
+                                                          "role": "group",
+                                                          "class": "group/input-group relative flex h-9 w-full min-w-0 items-center rounded-md border border-input shadow-xs transition-[color,box-shadow] outline-none in-data-[slot=combobox-content]:focus-within:border-inherit in-data-[slot=combobox-content]:focus-within:ring-0 has-[[data-slot=input-group-control]:focus-visible]:border-ring has-[[data-slot=input-group-control]:focus-visible]:ring-3 has-[[data-slot=input-group-control]:focus-visible]:ring-ring/50 has-[[data-slot][aria-invalid=true]]:border-destructive has-[[data-slot][aria-invalid=true]]:ring-3 has-[[data-slot][aria-invalid=true]]:ring-destructive/20 has-[>[data-align=block-end]]:h-auto has-[>[data-align=block-end]]:flex-col has-[>[data-align=block-start]]:h-auto has-[>[data-align=block-start]]:flex-col has-[>textarea]:h-auto dark:bg-input/30 dark:has-[[data-slot][aria-invalid=true]]:ring-destructive/40 has-[>[data-align=block-end]]:[&>input]:pt-3 has-[>[data-align=block-start]]:[&>input]:pb-3 has-[>[data-align=inline-end]]:[&>input]:pr-1.5 has-[>[data-align=inline-start]]:[&>input]:pl-1.5"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "textarea",
+                                                            "attrs": {
+                                                              "class": "border-input placeholder:text-muted-foreground focus-visible:ring-ring flex min-h-[60px] w-full px-3 text-base focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 md:text-sm flex-1 resize-none rounded-none border-0 bg-transparent py-2 shadow-none ring-0 focus-visible:ring-0 aria-invalid:ring-0 dark:bg-transparent",
+                                                              "data-slot": "input-group-control",
+                                                              "id": "question-2",
+                                                              "value": "Which onboarding interventions have evidence of improving activation?"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "Which onboarding interventions have evidence of improving activation?",
+                                                                "key": "root.0.0.0.1.0.0.0.1.1.3.1.1.1.0.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.0.1.0.0.0.1.1.3.1.1.1.0"
+                                                          },
+                                                          {
+                                                            "tag": "div",
+                                                            "attrs": {
+                                                              "role": "group",
+                                                              "data-slot": "input-group-addon",
+                                                              "class": "flex h-auto cursor-text items-center gap-2 py-1.5 text-sm font-medium text-muted-foreground select-none group-data-[disabled=true]/input-group:opacity-50 [&>kbd]:rounded-[calc(var(--radius)-5px)] [&>svg:not([class*='size-'])]:size-4 order-last w-full px-2.5 pb-2 group-has-[>input]/input-group:pb-2 [.border-t]:pt-2 justify-end"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "tag": "span",
+                                                                "attrs": {
+                                                                  "class": "mr-auto text-xs tabular-nums"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "Question",
+                                                                    "key": "root.0.0.0.1.0.0.0.1.1.3.1.1.1.1.0.0"
+                                                                  },
+                                                                  {
+                                                                    "text": "2",
+                                                                    "key": "root.0.0.0.1.0.0.0.1.1.3.1.1.1.1.0.1"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.0.0.1.0.0.0.1.1.3.1.1.1.1.0"
+                                                              },
+                                                              {
+                                                                "tag": "button",
+                                                                "attrs": {
+                                                                  "class": "justify-center whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground flex items-center gap-2 text-sm shadow-none size-6 rounded-[calc(var(--radius)-5px)] p-0 has-[>svg]:p-0",
+                                                                  "type": "button",
+                                                                  "aria-label": "Remove question 2"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "tag": "icon",
+                                                                    "attrs": {
+                                                                      "name": "i-lucide-x",
+                                                                      "class": "lucide lucide-x"
+                                                                    },
+                                                                    "key": "root.0.0.0.1.0.0.0.1.1.3.1.1.1.1.1.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.0.0.1.0.0.0.1.1.3.1.1.1.1.1"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.0.1.0.0.0.1.1.3.1.1.1.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.1.0.0.0.1.1.3.1.1.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.1.0.0.0.1.1.3.1.1"
+                                                  },
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "role": "group",
+                                                      "data-slot": "field",
+                                                      "data-orientation": "vertical",
+                                                      "class": "group/field flex w-full data-[invalid=true]:text-destructive flex-col *:w-full [&>.sr-only]:w-auto gap-2"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "label",
+                                                        "attrs": {
+                                                          "class": "text-sm font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 group/field-label peer/field-label flex w-fit gap-2 leading-snug group-data-[disabled=true]/field:opacity-50 has-data-checked:border-primary/30 has-data-checked:bg-primary/5 has-[>[data-slot=field]]:rounded-md has-[>[data-slot=field]]:border *:data-[slot=field]:p-3 dark:has-data-checked:border-primary/20 dark:has-data-checked:bg-primary/10 has-[>[data-slot=field]]:w-full has-[>[data-slot=field]]:flex-col sr-only",
+                                                          "data-slot": "field-label",
+                                                          "for": "question-3"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "Question",
+                                                            "key": "root.0.0.0.1.0.0.0.1.1.3.1.2.0.0"
+                                                          },
+                                                          {
+                                                            "text": "3",
+                                                            "key": "root.0.0.0.1.0.0.0.1.1.3.1.2.0.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.1.0.0.0.1.1.3.1.2.0"
+                                                      },
+                                                      {
+                                                        "tag": "div",
+                                                        "attrs": {
+                                                          "data-slot": "input-group",
+                                                          "role": "group",
+                                                          "class": "group/input-group relative flex h-9 w-full min-w-0 items-center rounded-md border border-input shadow-xs transition-[color,box-shadow] outline-none in-data-[slot=combobox-content]:focus-within:border-inherit in-data-[slot=combobox-content]:focus-within:ring-0 has-[[data-slot=input-group-control]:focus-visible]:border-ring has-[[data-slot=input-group-control]:focus-visible]:ring-3 has-[[data-slot=input-group-control]:focus-visible]:ring-ring/50 has-[[data-slot][aria-invalid=true]]:border-destructive has-[[data-slot][aria-invalid=true]]:ring-3 has-[[data-slot][aria-invalid=true]]:ring-destructive/20 has-[>[data-align=block-end]]:h-auto has-[>[data-align=block-end]]:flex-col has-[>[data-align=block-start]]:h-auto has-[>[data-align=block-start]]:flex-col has-[>textarea]:h-auto dark:bg-input/30 dark:has-[[data-slot][aria-invalid=true]]:ring-destructive/40 has-[>[data-align=block-end]]:[&>input]:pt-3 has-[>[data-align=block-start]]:[&>input]:pb-3 has-[>[data-align=inline-end]]:[&>input]:pr-1.5 has-[>[data-align=inline-start]]:[&>input]:pl-1.5"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "textarea",
+                                                            "attrs": {
+                                                              "class": "border-input placeholder:text-muted-foreground focus-visible:ring-ring flex min-h-[60px] w-full px-3 text-base focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 md:text-sm flex-1 resize-none rounded-none border-0 bg-transparent py-2 shadow-none ring-0 focus-visible:ring-0 aria-invalid:ring-0 dark:bg-transparent",
+                                                              "data-slot": "input-group-control",
+                                                              "id": "question-3",
+                                                              "value": "What should we measure before expanding a 20-workspace pilot?"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "What should we measure before expanding a 20-workspace pilot?",
+                                                                "key": "root.0.0.0.1.0.0.0.1.1.3.1.2.1.0.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.0.1.0.0.0.1.1.3.1.2.1.0"
+                                                          },
+                                                          {
+                                                            "tag": "div",
+                                                            "attrs": {
+                                                              "role": "group",
+                                                              "data-slot": "input-group-addon",
+                                                              "class": "flex h-auto cursor-text items-center gap-2 py-1.5 text-sm font-medium text-muted-foreground select-none group-data-[disabled=true]/input-group:opacity-50 [&>kbd]:rounded-[calc(var(--radius)-5px)] [&>svg:not([class*='size-'])]:size-4 order-last w-full px-2.5 pb-2 group-has-[>input]/input-group:pb-2 [.border-t]:pt-2 justify-end"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "tag": "span",
+                                                                "attrs": {
+                                                                  "class": "mr-auto text-xs tabular-nums"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "Question",
+                                                                    "key": "root.0.0.0.1.0.0.0.1.1.3.1.2.1.1.0.0"
+                                                                  },
+                                                                  {
+                                                                    "text": "3",
+                                                                    "key": "root.0.0.0.1.0.0.0.1.1.3.1.2.1.1.0.1"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.0.0.1.0.0.0.1.1.3.1.2.1.1.0"
+                                                              },
+                                                              {
+                                                                "tag": "button",
+                                                                "attrs": {
+                                                                  "class": "justify-center whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground flex items-center gap-2 text-sm shadow-none size-6 rounded-[calc(var(--radius)-5px)] p-0 has-[>svg]:p-0",
+                                                                  "type": "button",
+                                                                  "aria-label": "Remove question 3"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "tag": "icon",
+                                                                    "attrs": {
+                                                                      "name": "i-lucide-x",
+                                                                      "class": "lucide lucide-x"
+                                                                    },
+                                                                    "key": "root.0.0.0.1.0.0.0.1.1.3.1.2.1.1.1.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.0.0.1.0.0.0.1.1.3.1.2.1.1.1"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.0.1.0.0.0.1.1.3.1.2.1.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.1.0.0.0.1.1.3.1.2.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.1.0.0.0.1.1.3.1.2"
+                                                  },
+                                                  {
+                                                    "tag": "button",
+                                                    "attrs": {
+                                                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs self-start"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "icon",
+                                                        "attrs": {
+                                                          "name": "i-lucide-plus",
+                                                          "class": "lucide lucide-plus"
+                                                        },
+                                                        "key": "root.0.0.0.1.0.0.0.1.1.3.1.3.0"
+                                                      },
+                                                      {
+                                                        "text": "Add ",
+                                                        "key": "root.0.0.0.1.0.0.0.1.1.3.1.3.1"
+                                                      },
+                                                      {
+                                                        "text": "question",
+                                                        "key": "root.0.0.0.1.0.0.0.1.1.3.1.3.2"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.1.0.0.0.1.1.3.1.3"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.1.0.0.0.1.1.3.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.1.0.0.0.1.1.3"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "data-orientation": "horizontal",
+                                              "role": "none",
+                                              "class": "bg-border shrink-0 h-[1px] w-full"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.0.1.0.0.0.1.1.4"
+                                          },
+                                          {
+                                            "tag": "fieldset",
+                                            "attrs": {
+                                              "data-slot": "field-set",
+                                              "class": "flex flex-col gap-6 has-[>[data-slot=checkbox-group]]:gap-3 has-[>[data-slot=radio-group]]:gap-3"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "legend",
+                                                "attrs": {
+                                                  "data-slot": "field-legend",
+                                                  "class": "mb-3 font-medium data-[variant=label]:text-sm data-[variant=legend]:text-base"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Scope & sources",
+                                                    "key": "root.0.0.0.1.0.0.0.1.1.5.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.1.0.0.0.1.1.5.0"
+                                              },
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "data-slot": "field-group",
+                                                  "class": "group/field-group @container/field-group flex w-full flex-col data-[slot=checkbox-group]:gap-3 *:data-[slot=field-group]:gap-4 gap-5"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "data-slot": "field-group",
+                                                      "class": "group/field-group @container/field-group flex w-full flex-col gap-7 data-[slot=checkbox-group]:gap-3 *:data-[slot=field-group]:gap-4 @md/field-group:flex-row"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "div",
+                                                        "attrs": {
+                                                          "role": "group",
+                                                          "data-slot": "field",
+                                                          "data-orientation": "vertical",
+                                                          "class": "group/field flex w-full gap-3 data-[invalid=true]:text-destructive flex-col *:w-full [&>.sr-only]:w-auto"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "label",
+                                                            "attrs": {
+                                                              "class": "text-sm font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 group/field-label peer/field-label flex w-fit gap-2 leading-snug group-data-[disabled=true]/field:opacity-50 has-data-checked:border-primary/30 has-data-checked:bg-primary/5 has-[>[data-slot=field]]:rounded-md has-[>[data-slot=field]]:border *:data-[slot=field]:p-3 dark:has-data-checked:border-primary/20 dark:has-data-checked:bg-primary/10 has-[>[data-slot=field]]:w-full has-[>[data-slot=field]]:flex-col",
+                                                              "data-slot": "field-label",
+                                                              "for": "research-region"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "Region",
+                                                                "key": "root.0.0.0.1.0.0.0.1.1.5.1.0.0.0.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.0.1.0.0.0.1.1.5.1.0.0.0"
+                                                          },
+                                                          {
+                                                            "tag": "button",
+                                                            "attrs": {
+                                                              "type": "button",
+                                                              "role": "combobox",
+                                                              "data-state": "closed",
+                                                              "class": "border-input ring-offset-background placeholder:text-muted-foreground focus:ring-ring flex h-9 items-center justify-between rounded-md border bg-transparent px-3 py-2 text-sm whitespace-nowrap shadow-xs focus:ring-1 focus:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 w-full",
+                                                              "id": "research-region"
+                                                            },
+                                                            "options": [
+                                                              "North America",
+                                                              "Europe",
+                                                              "Asia Pacific",
+                                                              "Global"
+                                                            ],
+                                                            "children": [
+                                                              {
+                                                                "tag": "span",
+                                                                "attrs": {
+                                                                  "style": "pointer-events:none"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "North America",
+                                                                    "key": "root.0.0.0.1.0.0.0.1.1.5.1.0.0.1.0.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.0.0.1.0.0.0.1.1.5.1.0.0.1.0"
+                                                              },
+                                                              {
+                                                                "tag": "icon",
+                                                                "attrs": {
+                                                                  "name": "i-lucide-chevron-down",
+                                                                  "class": "lucide lucide-chevron-down h-4 w-4 opacity-50"
+                                                                },
+                                                                "key": "root.0.0.0.1.0.0.0.1.1.5.1.0.0.1.1"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.0.1.0.0.0.1.1.5.1.0.0.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.1.0.0.0.1.1.5.1.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "div",
+                                                        "attrs": {
+                                                          "role": "group",
+                                                          "data-slot": "field",
+                                                          "data-orientation": "vertical",
+                                                          "class": "group/field flex w-full gap-3 data-[invalid=true]:text-destructive flex-col *:w-full [&>.sr-only]:w-auto"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "label",
+                                                            "attrs": {
+                                                              "class": "text-sm font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 group/field-label peer/field-label flex w-fit gap-2 leading-snug group-data-[disabled=true]/field:opacity-50 has-data-checked:border-primary/30 has-data-checked:bg-primary/5 has-[>[data-slot=field]]:rounded-md has-[>[data-slot=field]]:border *:data-[slot=field]:p-3 dark:has-data-checked:border-primary/20 dark:has-data-checked:bg-primary/10 has-[>[data-slot=field]]:w-full has-[>[data-slot=field]]:flex-col",
+                                                              "data-slot": "field-label",
+                                                              "for": "research-period"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "Publication window",
+                                                                "key": "root.0.0.0.1.0.0.0.1.1.5.1.0.1.0.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.0.1.0.0.0.1.1.5.1.0.1.0"
+                                                          },
+                                                          {
+                                                            "tag": "button",
+                                                            "attrs": {
+                                                              "type": "button",
+                                                              "role": "combobox",
+                                                              "data-state": "closed",
+                                                              "class": "border-input ring-offset-background placeholder:text-muted-foreground focus:ring-ring flex h-9 items-center justify-between rounded-md border bg-transparent px-3 py-2 text-sm whitespace-nowrap shadow-xs focus:ring-1 focus:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 w-full",
+                                                              "id": "research-period"
+                                                            },
+                                                            "options": [
+                                                              "Past 3 months",
+                                                              "Past 12 months",
+                                                              "Past 3 years",
+                                                              "Any time"
+                                                            ],
+                                                            "children": [
+                                                              {
+                                                                "tag": "span",
+                                                                "attrs": {
+                                                                  "style": "pointer-events:none"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "Past 12 months",
+                                                                    "key": "root.0.0.0.1.0.0.0.1.1.5.1.0.1.1.0.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.0.0.1.0.0.0.1.1.5.1.0.1.1.0"
+                                                              },
+                                                              {
+                                                                "tag": "icon",
+                                                                "attrs": {
+                                                                  "name": "i-lucide-chevron-down",
+                                                                  "class": "lucide lucide-chevron-down h-4 w-4 opacity-50"
+                                                                },
+                                                                "key": "root.0.0.0.1.0.0.0.1.1.5.1.0.1.1.1"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.0.1.0.0.0.1.1.5.1.0.1.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.1.0.0.0.1.1.5.1.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.1.0.0.0.1.1.5.1.0"
+                                                  },
+                                                  {
+                                                    "tag": "fieldset",
+                                                    "attrs": {
+                                                      "data-slot": "field-set",
+                                                      "class": "flex flex-col gap-6 has-[>[data-slot=checkbox-group]]:gap-3 has-[>[data-slot=radio-group]]:gap-3"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "legend",
+                                                        "attrs": {
+                                                          "data-slot": "field-legend",
+                                                          "class": "mb-3 font-medium data-[variant=label]:text-sm data-[variant=legend]:text-base"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "Allowed source types",
+                                                            "key": "root.0.0.0.1.0.0.0.1.1.5.1.1.0.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.1.0.0.0.1.1.5.1.1.0"
+                                                      },
+                                                      {
+                                                        "tag": "div",
+                                                        "attrs": {
+                                                          "data-slot": "field-group",
+                                                          "class": "group/field-group @container/field-group flex w-full flex-col data-[slot=checkbox-group]:gap-3 *:data-[slot=field-group]:gap-4 gap-3"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "div",
+                                                            "attrs": {
+                                                              "role": "group",
+                                                              "data-slot": "field",
+                                                              "data-orientation": "horizontal",
+                                                              "class": "group/field flex w-full gap-3 data-[invalid=true]:text-destructive flex-row items-center has-[>[data-slot=field-content]]:items-start *:data-[slot=field-label]:flex-auto has-[>[data-slot=field-content]]:[&>[role=checkbox],[role=radio]]:mt-px"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "tag": "button",
+                                                                "attrs": {
+                                                                  "type": "button",
+                                                                  "role": "checkbox",
+                                                                  "aria-checked": "true",
+                                                                  "data-state": "checked",
+                                                                  "value": "on",
+                                                                  "class": "peer border-primary focus-visible:ring-ring data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground h-4 w-4 shrink-0 rounded-sm border shadow-sm focus-visible:ring-1 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50",
+                                                                  "id": "research-source-0"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "tag": "span",
+                                                                    "attrs": {
+                                                                      "data-state": "checked",
+                                                                      "class": "flex items-center justify-center text-current",
+                                                                      "style": "pointer-events:none"
+                                                                    },
+                                                                    "children": [
+                                                                      {
+                                                                        "tag": "icon",
+                                                                        "attrs": {
+                                                                          "name": "i-lucide-check",
+                                                                          "class": "lucide lucide-check h-4 w-4"
+                                                                        },
+                                                                        "key": "root.0.0.0.1.0.0.0.1.1.5.1.1.1.0.0.0.0"
+                                                                      }
+                                                                    ],
+                                                                    "key": "root.0.0.0.1.0.0.0.1.1.5.1.1.1.0.0.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.0.0.1.0.0.0.1.1.5.1.1.1.0.0"
+                                                              },
+                                                              {
+                                                                "tag": "label",
+                                                                "attrs": {
+                                                                  "class": "text-sm font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 group/field-label peer/field-label flex w-fit gap-2 leading-snug group-data-[disabled=true]/field:opacity-50 has-data-checked:border-primary/30 has-data-checked:bg-primary/5 has-[>[data-slot=field]]:rounded-md has-[>[data-slot=field]]:border *:data-[slot=field]:p-3 dark:has-data-checked:border-primary/20 dark:has-data-checked:bg-primary/10 has-[>[data-slot=field]]:w-full has-[>[data-slot=field]]:flex-col",
+                                                                  "data-slot": "field-label",
+                                                                  "for": "research-source-0"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "Official documentation",
+                                                                    "key": "root.0.0.0.1.0.0.0.1.1.5.1.1.1.0.1.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.0.0.1.0.0.0.1.1.5.1.1.1.0.1"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.0.1.0.0.0.1.1.5.1.1.1.0"
+                                                          },
+                                                          {
+                                                            "tag": "div",
+                                                            "attrs": {
+                                                              "role": "group",
+                                                              "data-slot": "field",
+                                                              "data-orientation": "horizontal",
+                                                              "class": "group/field flex w-full gap-3 data-[invalid=true]:text-destructive flex-row items-center has-[>[data-slot=field-content]]:items-start *:data-[slot=field-label]:flex-auto has-[>[data-slot=field-content]]:[&>[role=checkbox],[role=radio]]:mt-px"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "tag": "button",
+                                                                "attrs": {
+                                                                  "type": "button",
+                                                                  "role": "checkbox",
+                                                                  "aria-checked": "true",
+                                                                  "data-state": "checked",
+                                                                  "value": "on",
+                                                                  "class": "peer border-primary focus-visible:ring-ring data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground h-4 w-4 shrink-0 rounded-sm border shadow-sm focus-visible:ring-1 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50",
+                                                                  "id": "research-source-1"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "tag": "span",
+                                                                    "attrs": {
+                                                                      "data-state": "checked",
+                                                                      "class": "flex items-center justify-center text-current",
+                                                                      "style": "pointer-events:none"
+                                                                    },
+                                                                    "children": [
+                                                                      {
+                                                                        "tag": "icon",
+                                                                        "attrs": {
+                                                                          "name": "i-lucide-check",
+                                                                          "class": "lucide lucide-check h-4 w-4"
+                                                                        },
+                                                                        "key": "root.0.0.0.1.0.0.0.1.1.5.1.1.1.1.0.0.0"
+                                                                      }
+                                                                    ],
+                                                                    "key": "root.0.0.0.1.0.0.0.1.1.5.1.1.1.1.0.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.0.0.1.0.0.0.1.1.5.1.1.1.1.0"
+                                                              },
+                                                              {
+                                                                "tag": "label",
+                                                                "attrs": {
+                                                                  "class": "text-sm font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 group/field-label peer/field-label flex w-fit gap-2 leading-snug group-data-[disabled=true]/field:opacity-50 has-data-checked:border-primary/30 has-data-checked:bg-primary/5 has-[>[data-slot=field]]:rounded-md has-[>[data-slot=field]]:border *:data-[slot=field]:p-3 dark:has-data-checked:border-primary/20 dark:has-data-checked:bg-primary/10 has-[>[data-slot=field]]:w-full has-[>[data-slot=field]]:flex-col",
+                                                                  "data-slot": "field-label",
+                                                                  "for": "research-source-1"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "Independent research",
+                                                                    "key": "root.0.0.0.1.0.0.0.1.1.5.1.1.1.1.1.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.0.0.1.0.0.0.1.1.5.1.1.1.1.1"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.0.1.0.0.0.1.1.5.1.1.1.1"
+                                                          },
+                                                          {
+                                                            "tag": "div",
+                                                            "attrs": {
+                                                              "role": "group",
+                                                              "data-slot": "field",
+                                                              "data-orientation": "horizontal",
+                                                              "class": "group/field flex w-full gap-3 data-[invalid=true]:text-destructive flex-row items-center has-[>[data-slot=field-content]]:items-start *:data-[slot=field-label]:flex-auto has-[>[data-slot=field-content]]:[&>[role=checkbox],[role=radio]]:mt-px"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "tag": "button",
+                                                                "attrs": {
+                                                                  "type": "button",
+                                                                  "role": "checkbox",
+                                                                  "aria-checked": "false",
+                                                                  "data-state": "unchecked",
+                                                                  "value": "on",
+                                                                  "class": "peer border-primary focus-visible:ring-ring data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground h-4 w-4 shrink-0 rounded-sm border shadow-sm focus-visible:ring-1 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50",
+                                                                  "id": "research-source-2"
+                                                                },
+                                                                "children": [],
+                                                                "key": "root.0.0.0.1.0.0.0.1.1.5.1.1.1.2.0"
+                                                              },
+                                                              {
+                                                                "tag": "label",
+                                                                "attrs": {
+                                                                  "class": "text-sm font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 group/field-label peer/field-label flex w-fit gap-2 leading-snug group-data-[disabled=true]/field:opacity-50 has-data-checked:border-primary/30 has-data-checked:bg-primary/5 has-[>[data-slot=field]]:rounded-md has-[>[data-slot=field]]:border *:data-[slot=field]:p-3 dark:has-data-checked:border-primary/20 dark:has-data-checked:bg-primary/10 has-[>[data-slot=field]]:w-full has-[>[data-slot=field]]:flex-col",
+                                                                  "data-slot": "field-label",
+                                                                  "for": "research-source-2"
+                                                                },
+                                                                "children": [
+                                                                  {
+                                                                    "text": "Customer interviews",
+                                                                    "key": "root.0.0.0.1.0.0.0.1.1.5.1.1.1.2.1.0"
+                                                                  }
+                                                                ],
+                                                                "key": "root.0.0.0.1.0.0.0.1.1.5.1.1.1.2.1"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.0.1.0.0.0.1.1.5.1.1.1.2"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.1.0.0.0.1.1.5.1.1.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.1.0.0.0.1.1.5.1.1"
+                                                  },
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "role": "group",
+                                                      "data-slot": "field",
+                                                      "data-orientation": "vertical",
+                                                      "class": "group/field flex w-full gap-3 data-[invalid=true]:text-destructive flex-col *:w-full [&>.sr-only]:w-auto"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "label",
+                                                        "attrs": {
+                                                          "class": "text-sm font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 group/field-label peer/field-label flex w-fit gap-2 leading-snug group-data-[disabled=true]/field:opacity-50 has-data-checked:border-primary/30 has-data-checked:bg-primary/5 has-[>[data-slot=field]]:rounded-md has-[>[data-slot=field]]:border *:data-[slot=field]:p-3 dark:has-data-checked:border-primary/20 dark:has-data-checked:bg-primary/10 has-[>[data-slot=field]]:w-full has-[>[data-slot=field]]:flex-col",
+                                                          "data-slot": "field-label",
+                                                          "for": "research-exclusions"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "Leave out",
+                                                            "key": "root.0.0.0.1.0.0.0.1.1.5.1.2.0.0"
+                                                          },
+                                                          {
+                                                            "tag": "span",
+                                                            "attrs": {
+                                                              "class": "text-muted-foreground font-normal"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "(optional)",
+                                                                "key": "root.0.0.0.1.0.0.0.1.1.5.1.2.0.1.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.0.1.0.0.0.1.1.5.1.2.0.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.1.0.0.0.1.1.5.1.2.0"
+                                                      },
+                                                      {
+                                                        "tag": "textarea",
+                                                        "attrs": {
+                                                          "class": "border-input placeholder:text-muted-foreground focus-visible:ring-ring flex min-h-[60px] w-full rounded-md border bg-transparent px-3 py-2 text-base shadow-xs focus-visible:ring-1 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
+                                                          "id": "research-exclusions",
+                                                          "value": "Exclude vendor-sponsored rankings and anonymous claims."
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "Exclude vendor-sponsored rankings and anonymous claims.",
+                                                            "key": "root.0.0.0.1.0.0.0.1.1.5.1.2.1.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.1.0.0.0.1.1.5.1.2.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.1.0.0.0.1.1.5.1.2"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.1.0.0.0.1.1.5.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.1.0.0.0.1.1.5"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.1.0.0.0.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.1.0.0.0.1"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex justify-end"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "button",
+                                        "attrs": {
+                                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Review plan",
+                                            "key": "root.0.0.0.1.0.0.0.2.0.0"
+                                          },
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-arrow-up-right",
+                                              "class": "lucide lucide-arrow-up-right"
+                                            },
+                                            "key": "root.0.0.0.1.0.0.0.2.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.1.0.0.0.2.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.1.0.0.0.2"
+                                  }
+                                ],
+                                "key": "root.0.0.0.1.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.0.1.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.1.0"
+                      }
+                    ],
+                    "key": "root.0.0.0.1"
+                  }
+                ],
+                "key": "root.0.0.0"
+              }
+            ],
+            "key": "root.0.0"
+          },
+          {
+            "tag": "div",
+            "attrs": {
+              "role": "separator",
+              "aria-label": "Resize research plan",
+              "class": "group bg-border relative z-10 hidden w-px shrink-0 cursor-col-resize outline-none min-[980px]:block"
+            },
+            "children": [
+              {
+                "tag": "span",
+                "attrs": {
+                  "class": "before:bg-border group-hover:before:bg-primary/55 group-focus-visible:before:bg-primary/65 absolute inset-y-0 -left-2 w-4 before:absolute before:inset-y-0 before:left-1/2 before:w-px before:-translate-x-1/2 before:transition-colors"
+                },
+                "children": [],
+                "key": "root.0.1.0"
+              }
+            ],
+            "key": "root.0.1"
+          },
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "hidden min-h-0 min-w-[360px] min-[980px]:flex shrink-0",
+              "style": "width:44%"
+            },
+            "children": [
+              {
+                "tag": "section",
+                "attrs": {
+                  "class": "flex min-h-0 min-w-0 flex-1 flex-col"
+                },
+                "children": [
+                  {
+                    "tag": "header",
+                    "attrs": {
+                      "class": "flex h-14 shrink-0 items-center justify-between gap-2 border-b px-4"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex items-center gap-2"
+                        },
+                        "children": [
+                          {
+                            "tag": "h2",
+                            "attrs": {
+                              "class": "text-sm font-medium"
+                            },
+                            "children": [
+                              {
+                                "text": "Research plan",
+                                "key": "root.0.2.0.0.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.2.0.0.0.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80"
+                            },
+                            "children": [
+                              {
+                                "text": "3 steps",
+                                "key": "root.0.2.0.0.0.1.0"
+                              }
+                            ],
+                            "key": "root.0.2.0.0.0.1"
+                          }
+                        ],
+                        "key": "root.0.2.0.0.0"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-6",
+                          "aria-label": "Close research plan"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-panel-right-close",
+                              "class": "lucide lucide-panel-right-close"
+                            },
+                            "key": "root.0.2.0.0.1.0"
+                          }
+                        ],
+                        "key": "root.0.2.0.0.1"
+                      }
+                    ],
+                    "key": "root.0.2.0.0"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "data-slot": "scroll-area",
+                      "class": "relative overflow-hidden bg-muted/30 min-h-0 flex-1 [&>[data-slot=scroll-area-viewport]>div]:!block",
+                      "style": "position:relative;--radix-scroll-area-corner-width:0px;--radix-scroll-area-corner-height:0px"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "data-slot": "scroll-area-viewport",
+                          "class": "h-full w-full rounded-[inherit]",
+                          "style": "overflow: hidden scroll;"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "style": "min-width:100%;display:table"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "mx-auto flex w-full max-w-2xl flex-col gap-5 p-5 sm:p-7"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex flex-col gap-2"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "h3",
+                                        "attrs": {
+                                          "class": "text-lg font-semibold tracking-tight"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "A plan you can shape.",
+                                            "key": "root.0.2.0.1.0.0.0.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.2.0.1.0.0.0.0.0"
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "text-muted-foreground text-sm leading-relaxed"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Edit the sequence before starting. Keep the work focused on the questions in your brief.",
+                                            "key": "root.0.2.0.1.0.0.0.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.2.0.1.0.0.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.1.0.0.0.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "bg-background rounded-xl border p-4"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "fieldset",
+                                        "attrs": {
+                                          "data-slot": "field-set",
+                                          "class": "flex flex-col gap-6 has-[>[data-slot=checkbox-group]]:gap-3 has-[>[data-slot=radio-group]]:gap-3"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "legend",
+                                            "attrs": {
+                                              "data-slot": "field-legend",
+                                              "class": "mb-3 font-medium data-[variant=label]:text-sm data-[variant=legend]:text-base sr-only"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Plan steps",
+                                                "key": "root.0.2.0.1.0.0.0.1.0.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.2.0.1.0.0.0.1.0.0"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "data-slot": "field-group",
+                                              "class": "group/field-group @container/field-group flex w-full flex-col data-[slot=checkbox-group]:gap-3 *:data-[slot=field-group]:gap-4 gap-3"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "role": "group",
+                                                  "data-slot": "field",
+                                                  "data-orientation": "vertical",
+                                                  "class": "group/field flex w-full data-[invalid=true]:text-destructive flex-col *:w-full [&>.sr-only]:w-auto gap-2"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "label",
+                                                    "attrs": {
+                                                      "class": "text-sm font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 group/field-label peer/field-label flex w-fit gap-2 leading-snug group-data-[disabled=true]/field:opacity-50 has-data-checked:border-primary/30 has-data-checked:bg-primary/5 has-[>[data-slot=field]]:rounded-md has-[>[data-slot=field]]:border *:data-[slot=field]:p-3 dark:has-data-checked:border-primary/20 dark:has-data-checked:bg-primary/10 has-[>[data-slot=field]]:w-full has-[>[data-slot=field]]:flex-col sr-only",
+                                                      "data-slot": "field-label",
+                                                      "for": "step-1"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Step",
+                                                        "key": "root.0.2.0.1.0.0.0.1.0.1.0.0.0"
+                                                      },
+                                                      {
+                                                        "text": "1",
+                                                        "key": "root.0.2.0.1.0.0.0.1.0.1.0.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.2.0.1.0.0.0.1.0.1.0.0"
+                                                  },
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "data-slot": "input-group",
+                                                      "role": "group",
+                                                      "class": "group/input-group relative flex h-9 w-full min-w-0 items-center rounded-md border border-input shadow-xs transition-[color,box-shadow] outline-none in-data-[slot=combobox-content]:focus-within:border-inherit in-data-[slot=combobox-content]:focus-within:ring-0 has-[[data-slot=input-group-control]:focus-visible]:border-ring has-[[data-slot=input-group-control]:focus-visible]:ring-3 has-[[data-slot=input-group-control]:focus-visible]:ring-ring/50 has-[[data-slot][aria-invalid=true]]:border-destructive has-[[data-slot][aria-invalid=true]]:ring-3 has-[[data-slot][aria-invalid=true]]:ring-destructive/20 has-[>[data-align=block-end]]:h-auto has-[>[data-align=block-end]]:flex-col has-[>[data-align=block-start]]:h-auto has-[>[data-align=block-start]]:flex-col has-[>textarea]:h-auto dark:bg-input/30 dark:has-[[data-slot][aria-invalid=true]]:ring-destructive/40 has-[>[data-align=block-end]]:[&>input]:pt-3 has-[>[data-align=block-start]]:[&>input]:pb-3 has-[>[data-align=inline-end]]:[&>input]:pr-1.5 has-[>[data-align=inline-start]]:[&>input]:pl-1.5"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "textarea",
+                                                        "attrs": {
+                                                          "class": "border-input placeholder:text-muted-foreground focus-visible:ring-ring flex min-h-[60px] w-full px-3 text-base focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 md:text-sm flex-1 resize-none rounded-none border-0 bg-transparent py-2 shadow-none ring-0 focus-visible:ring-0 aria-invalid:ring-0 dark:bg-transparent",
+                                                          "data-slot": "input-group-control",
+                                                          "id": "step-1",
+                                                          "value": "Find relevant sources for each research question."
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "Find relevant sources for each research question.",
+                                                            "key": "root.0.2.0.1.0.0.0.1.0.1.0.1.0.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.2.0.1.0.0.0.1.0.1.0.1.0"
+                                                      },
+                                                      {
+                                                        "tag": "div",
+                                                        "attrs": {
+                                                          "role": "group",
+                                                          "data-slot": "input-group-addon",
+                                                          "class": "flex h-auto cursor-text items-center gap-2 py-1.5 text-sm font-medium text-muted-foreground select-none group-data-[disabled=true]/input-group:opacity-50 [&>kbd]:rounded-[calc(var(--radius)-5px)] [&>svg:not([class*='size-'])]:size-4 order-last w-full px-2.5 pb-2 group-has-[>input]/input-group:pb-2 [.border-t]:pt-2 justify-end"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "span",
+                                                            "attrs": {
+                                                              "class": "mr-auto text-xs tabular-nums"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "Step",
+                                                                "key": "root.0.2.0.1.0.0.0.1.0.1.0.1.1.0.0"
+                                                              },
+                                                              {
+                                                                "text": "1",
+                                                                "key": "root.0.2.0.1.0.0.0.1.0.1.0.1.1.0.1"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.2.0.1.0.0.0.1.0.1.0.1.1.0"
+                                                          },
+                                                          {
+                                                            "tag": "button",
+                                                            "attrs": {
+                                                              "class": "justify-center whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground flex items-center gap-2 text-sm shadow-none size-6 rounded-[calc(var(--radius)-5px)] p-0 has-[>svg]:p-0",
+                                                              "type": "button",
+                                                              "aria-label": "Move step 1 up",
+                                                              "disabled": ""
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "tag": "icon",
+                                                                "attrs": {
+                                                                  "name": "i-lucide-arrow-up",
+                                                                  "class": "lucide lucide-arrow-up"
+                                                                },
+                                                                "key": "root.0.2.0.1.0.0.0.1.0.1.0.1.1.1.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.2.0.1.0.0.0.1.0.1.0.1.1.1"
+                                                          },
+                                                          {
+                                                            "tag": "button",
+                                                            "attrs": {
+                                                              "class": "justify-center whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground flex items-center gap-2 text-sm shadow-none size-6 rounded-[calc(var(--radius)-5px)] p-0 has-[>svg]:p-0",
+                                                              "type": "button",
+                                                              "aria-label": "Move step 1 down"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "tag": "icon",
+                                                                "attrs": {
+                                                                  "name": "i-lucide-arrow-down",
+                                                                  "class": "lucide lucide-arrow-down"
+                                                                },
+                                                                "key": "root.0.2.0.1.0.0.0.1.0.1.0.1.1.2.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.2.0.1.0.0.0.1.0.1.0.1.1.2"
+                                                          },
+                                                          {
+                                                            "tag": "button",
+                                                            "attrs": {
+                                                              "class": "justify-center whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground flex items-center gap-2 text-sm shadow-none size-6 rounded-[calc(var(--radius)-5px)] p-0 has-[>svg]:p-0",
+                                                              "type": "button",
+                                                              "aria-label": "Remove step 1"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "tag": "icon",
+                                                                "attrs": {
+                                                                  "name": "i-lucide-x",
+                                                                  "class": "lucide lucide-x"
+                                                                },
+                                                                "key": "root.0.2.0.1.0.0.0.1.0.1.0.1.1.3.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.2.0.1.0.0.0.1.0.1.0.1.1.3"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.2.0.1.0.0.0.1.0.1.0.1.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.2.0.1.0.0.0.1.0.1.0.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.2.0.1.0.0.0.1.0.1.0"
+                                              },
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "role": "group",
+                                                  "data-slot": "field",
+                                                  "data-orientation": "vertical",
+                                                  "class": "group/field flex w-full data-[invalid=true]:text-destructive flex-col *:w-full [&>.sr-only]:w-auto gap-2"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "label",
+                                                    "attrs": {
+                                                      "class": "text-sm font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 group/field-label peer/field-label flex w-fit gap-2 leading-snug group-data-[disabled=true]/field:opacity-50 has-data-checked:border-primary/30 has-data-checked:bg-primary/5 has-[>[data-slot=field]]:rounded-md has-[>[data-slot=field]]:border *:data-[slot=field]:p-3 dark:has-data-checked:border-primary/20 dark:has-data-checked:bg-primary/10 has-[>[data-slot=field]]:w-full has-[>[data-slot=field]]:flex-col sr-only",
+                                                      "data-slot": "field-label",
+                                                      "for": "step-2"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Step",
+                                                        "key": "root.0.2.0.1.0.0.0.1.0.1.1.0.0"
+                                                      },
+                                                      {
+                                                        "text": "2",
+                                                        "key": "root.0.2.0.1.0.0.0.1.0.1.1.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.2.0.1.0.0.0.1.0.1.1.0"
+                                                  },
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "data-slot": "input-group",
+                                                      "role": "group",
+                                                      "class": "group/input-group relative flex h-9 w-full min-w-0 items-center rounded-md border border-input shadow-xs transition-[color,box-shadow] outline-none in-data-[slot=combobox-content]:focus-within:border-inherit in-data-[slot=combobox-content]:focus-within:ring-0 has-[[data-slot=input-group-control]:focus-visible]:border-ring has-[[data-slot=input-group-control]:focus-visible]:ring-3 has-[[data-slot=input-group-control]:focus-visible]:ring-ring/50 has-[[data-slot][aria-invalid=true]]:border-destructive has-[[data-slot][aria-invalid=true]]:ring-3 has-[[data-slot][aria-invalid=true]]:ring-destructive/20 has-[>[data-align=block-end]]:h-auto has-[>[data-align=block-end]]:flex-col has-[>[data-align=block-start]]:h-auto has-[>[data-align=block-start]]:flex-col has-[>textarea]:h-auto dark:bg-input/30 dark:has-[[data-slot][aria-invalid=true]]:ring-destructive/40 has-[>[data-align=block-end]]:[&>input]:pt-3 has-[>[data-align=block-start]]:[&>input]:pb-3 has-[>[data-align=inline-end]]:[&>input]:pr-1.5 has-[>[data-align=inline-start]]:[&>input]:pl-1.5"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "textarea",
+                                                        "attrs": {
+                                                          "class": "border-input placeholder:text-muted-foreground focus-visible:ring-ring flex min-h-[60px] w-full px-3 text-base focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 md:text-sm flex-1 resize-none rounded-none border-0 bg-transparent py-2 shadow-none ring-0 focus-visible:ring-0 aria-invalid:ring-0 dark:bg-transparent",
+                                                          "data-slot": "input-group-control",
+                                                          "id": "step-2",
+                                                          "value": "Compare evidence, publication dates, and conflicting findings."
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "Compare evidence, publication dates, and conflicting findings.",
+                                                            "key": "root.0.2.0.1.0.0.0.1.0.1.1.1.0.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.2.0.1.0.0.0.1.0.1.1.1.0"
+                                                      },
+                                                      {
+                                                        "tag": "div",
+                                                        "attrs": {
+                                                          "role": "group",
+                                                          "data-slot": "input-group-addon",
+                                                          "class": "flex h-auto cursor-text items-center gap-2 py-1.5 text-sm font-medium text-muted-foreground select-none group-data-[disabled=true]/input-group:opacity-50 [&>kbd]:rounded-[calc(var(--radius)-5px)] [&>svg:not([class*='size-'])]:size-4 order-last w-full px-2.5 pb-2 group-has-[>input]/input-group:pb-2 [.border-t]:pt-2 justify-end"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "span",
+                                                            "attrs": {
+                                                              "class": "mr-auto text-xs tabular-nums"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "Step",
+                                                                "key": "root.0.2.0.1.0.0.0.1.0.1.1.1.1.0.0"
+                                                              },
+                                                              {
+                                                                "text": "2",
+                                                                "key": "root.0.2.0.1.0.0.0.1.0.1.1.1.1.0.1"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.2.0.1.0.0.0.1.0.1.1.1.1.0"
+                                                          },
+                                                          {
+                                                            "tag": "button",
+                                                            "attrs": {
+                                                              "class": "justify-center whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground flex items-center gap-2 text-sm shadow-none size-6 rounded-[calc(var(--radius)-5px)] p-0 has-[>svg]:p-0",
+                                                              "type": "button",
+                                                              "aria-label": "Move step 2 up"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "tag": "icon",
+                                                                "attrs": {
+                                                                  "name": "i-lucide-arrow-up",
+                                                                  "class": "lucide lucide-arrow-up"
+                                                                },
+                                                                "key": "root.0.2.0.1.0.0.0.1.0.1.1.1.1.1.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.2.0.1.0.0.0.1.0.1.1.1.1.1"
+                                                          },
+                                                          {
+                                                            "tag": "button",
+                                                            "attrs": {
+                                                              "class": "justify-center whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground flex items-center gap-2 text-sm shadow-none size-6 rounded-[calc(var(--radius)-5px)] p-0 has-[>svg]:p-0",
+                                                              "type": "button",
+                                                              "aria-label": "Move step 2 down"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "tag": "icon",
+                                                                "attrs": {
+                                                                  "name": "i-lucide-arrow-down",
+                                                                  "class": "lucide lucide-arrow-down"
+                                                                },
+                                                                "key": "root.0.2.0.1.0.0.0.1.0.1.1.1.1.2.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.2.0.1.0.0.0.1.0.1.1.1.1.2"
+                                                          },
+                                                          {
+                                                            "tag": "button",
+                                                            "attrs": {
+                                                              "class": "justify-center whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground flex items-center gap-2 text-sm shadow-none size-6 rounded-[calc(var(--radius)-5px)] p-0 has-[>svg]:p-0",
+                                                              "type": "button",
+                                                              "aria-label": "Remove step 2"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "tag": "icon",
+                                                                "attrs": {
+                                                                  "name": "i-lucide-x",
+                                                                  "class": "lucide lucide-x"
+                                                                },
+                                                                "key": "root.0.2.0.1.0.0.0.1.0.1.1.1.1.3.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.2.0.1.0.0.0.1.0.1.1.1.1.3"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.2.0.1.0.0.0.1.0.1.1.1.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.2.0.1.0.0.0.1.0.1.1.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.2.0.1.0.0.0.1.0.1.1"
+                                              },
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "role": "group",
+                                                  "data-slot": "field",
+                                                  "data-orientation": "vertical",
+                                                  "class": "group/field flex w-full data-[invalid=true]:text-destructive flex-col *:w-full [&>.sr-only]:w-auto gap-2"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "label",
+                                                    "attrs": {
+                                                      "class": "text-sm font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 group/field-label peer/field-label flex w-fit gap-2 leading-snug group-data-[disabled=true]/field:opacity-50 has-data-checked:border-primary/30 has-data-checked:bg-primary/5 has-[>[data-slot=field]]:rounded-md has-[>[data-slot=field]]:border *:data-[slot=field]:p-3 dark:has-data-checked:border-primary/20 dark:has-data-checked:bg-primary/10 has-[>[data-slot=field]]:w-full has-[>[data-slot=field]]:flex-col sr-only",
+                                                      "data-slot": "field-label",
+                                                      "for": "step-3"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Step",
+                                                        "key": "root.0.2.0.1.0.0.0.1.0.1.2.0.0"
+                                                      },
+                                                      {
+                                                        "text": "3",
+                                                        "key": "root.0.2.0.1.0.0.0.1.0.1.2.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.2.0.1.0.0.0.1.0.1.2.0"
+                                                  },
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "data-slot": "input-group",
+                                                      "role": "group",
+                                                      "class": "group/input-group relative flex h-9 w-full min-w-0 items-center rounded-md border border-input shadow-xs transition-[color,box-shadow] outline-none in-data-[slot=combobox-content]:focus-within:border-inherit in-data-[slot=combobox-content]:focus-within:ring-0 has-[[data-slot=input-group-control]:focus-visible]:border-ring has-[[data-slot=input-group-control]:focus-visible]:ring-3 has-[[data-slot=input-group-control]:focus-visible]:ring-ring/50 has-[[data-slot][aria-invalid=true]]:border-destructive has-[[data-slot][aria-invalid=true]]:ring-3 has-[[data-slot][aria-invalid=true]]:ring-destructive/20 has-[>[data-align=block-end]]:h-auto has-[>[data-align=block-end]]:flex-col has-[>[data-align=block-start]]:h-auto has-[>[data-align=block-start]]:flex-col has-[>textarea]:h-auto dark:bg-input/30 dark:has-[[data-slot][aria-invalid=true]]:ring-destructive/40 has-[>[data-align=block-end]]:[&>input]:pt-3 has-[>[data-align=block-start]]:[&>input]:pb-3 has-[>[data-align=inline-end]]:[&>input]:pr-1.5 has-[>[data-align=inline-start]]:[&>input]:pl-1.5"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "textarea",
+                                                        "attrs": {
+                                                          "class": "border-input placeholder:text-muted-foreground focus-visible:ring-ring flex min-h-[60px] w-full px-3 text-base focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 md:text-sm flex-1 resize-none rounded-none border-0 bg-transparent py-2 shadow-none ring-0 focus-visible:ring-0 aria-invalid:ring-0 dark:bg-transparent",
+                                                          "data-slot": "input-group-control",
+                                                          "id": "step-3",
+                                                          "value": "Draft a decision brief with citations and open questions."
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "Draft a decision brief with citations and open questions.",
+                                                            "key": "root.0.2.0.1.0.0.0.1.0.1.2.1.0.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.2.0.1.0.0.0.1.0.1.2.1.0"
+                                                      },
+                                                      {
+                                                        "tag": "div",
+                                                        "attrs": {
+                                                          "role": "group",
+                                                          "data-slot": "input-group-addon",
+                                                          "class": "flex h-auto cursor-text items-center gap-2 py-1.5 text-sm font-medium text-muted-foreground select-none group-data-[disabled=true]/input-group:opacity-50 [&>kbd]:rounded-[calc(var(--radius)-5px)] [&>svg:not([class*='size-'])]:size-4 order-last w-full px-2.5 pb-2 group-has-[>input]/input-group:pb-2 [.border-t]:pt-2 justify-end"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "span",
+                                                            "attrs": {
+                                                              "class": "mr-auto text-xs tabular-nums"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "Step",
+                                                                "key": "root.0.2.0.1.0.0.0.1.0.1.2.1.1.0.0"
+                                                              },
+                                                              {
+                                                                "text": "3",
+                                                                "key": "root.0.2.0.1.0.0.0.1.0.1.2.1.1.0.1"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.2.0.1.0.0.0.1.0.1.2.1.1.0"
+                                                          },
+                                                          {
+                                                            "tag": "button",
+                                                            "attrs": {
+                                                              "class": "justify-center whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground flex items-center gap-2 text-sm shadow-none size-6 rounded-[calc(var(--radius)-5px)] p-0 has-[>svg]:p-0",
+                                                              "type": "button",
+                                                              "aria-label": "Move step 3 up"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "tag": "icon",
+                                                                "attrs": {
+                                                                  "name": "i-lucide-arrow-up",
+                                                                  "class": "lucide lucide-arrow-up"
+                                                                },
+                                                                "key": "root.0.2.0.1.0.0.0.1.0.1.2.1.1.1.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.2.0.1.0.0.0.1.0.1.2.1.1.1"
+                                                          },
+                                                          {
+                                                            "tag": "button",
+                                                            "attrs": {
+                                                              "class": "justify-center whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground flex items-center gap-2 text-sm shadow-none size-6 rounded-[calc(var(--radius)-5px)] p-0 has-[>svg]:p-0",
+                                                              "type": "button",
+                                                              "aria-label": "Move step 3 down",
+                                                              "disabled": ""
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "tag": "icon",
+                                                                "attrs": {
+                                                                  "name": "i-lucide-arrow-down",
+                                                                  "class": "lucide lucide-arrow-down"
+                                                                },
+                                                                "key": "root.0.2.0.1.0.0.0.1.0.1.2.1.1.2.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.2.0.1.0.0.0.1.0.1.2.1.1.2"
+                                                          },
+                                                          {
+                                                            "tag": "button",
+                                                            "attrs": {
+                                                              "class": "justify-center whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground flex items-center gap-2 text-sm shadow-none size-6 rounded-[calc(var(--radius)-5px)] p-0 has-[>svg]:p-0",
+                                                              "type": "button",
+                                                              "aria-label": "Remove step 3"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "tag": "icon",
+                                                                "attrs": {
+                                                                  "name": "i-lucide-x",
+                                                                  "class": "lucide lucide-x"
+                                                                },
+                                                                "key": "root.0.2.0.1.0.0.0.1.0.1.2.1.1.3.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.2.0.1.0.0.0.1.0.1.2.1.1.3"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.2.0.1.0.0.0.1.0.1.2.1.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.2.0.1.0.0.0.1.0.1.2.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.2.0.1.0.0.0.1.0.1.2"
+                                              },
+                                              {
+                                                "tag": "button",
+                                                "attrs": {
+                                                  "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs self-start"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "icon",
+                                                    "attrs": {
+                                                      "name": "i-lucide-plus",
+                                                      "class": "lucide lucide-plus"
+                                                    },
+                                                    "key": "root.0.2.0.1.0.0.0.1.0.1.3.0"
+                                                  },
+                                                  {
+                                                    "text": "Add ",
+                                                    "key": "root.0.2.0.1.0.0.0.1.0.1.3.1"
+                                                  },
+                                                  {
+                                                    "text": "step",
+                                                    "key": "root.0.2.0.1.0.0.0.1.0.1.3.2"
+                                                  }
+                                                ],
+                                                "key": "root.0.2.0.1.0.0.0.1.0.1.3"
+                                              }
+                                            ],
+                                            "key": "root.0.2.0.1.0.0.0.1.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.2.0.1.0.0.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.1.0.0.0.1"
+                                  },
+                                  {
+                                    "tag": "dl",
+                                    "attrs": {
+                                      "class": "grid grid-cols-[auto_1fr] gap-x-4 gap-y-2 text-xs leading-relaxed"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "dt",
+                                        "attrs": {
+                                          "class": "text-muted-foreground"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Coverage",
+                                            "key": "root.0.2.0.1.0.0.0.2.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.2.0.1.0.0.0.2.0"
+                                      },
+                                      {
+                                        "tag": "dd",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "text": "3",
+                                            "key": "root.0.2.0.1.0.0.0.2.1.0"
+                                          },
+                                          {
+                                            "text": "research questions",
+                                            "key": "root.0.2.0.1.0.0.0.2.1.1"
+                                          }
+                                        ],
+                                        "key": "root.0.2.0.1.0.0.0.2.1"
+                                      },
+                                      {
+                                        "tag": "dt",
+                                        "attrs": {
+                                          "class": "text-muted-foreground"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Sources",
+                                            "key": "root.0.2.0.1.0.0.0.2.2.0"
+                                          }
+                                        ],
+                                        "key": "root.0.2.0.1.0.0.0.2.2"
+                                      },
+                                      {
+                                        "tag": "dd",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "text": "Official documentation · Independent research",
+                                            "key": "root.0.2.0.1.0.0.0.2.3.0"
+                                          }
+                                        ],
+                                        "key": "root.0.2.0.1.0.0.0.2.3"
+                                      },
+                                      {
+                                        "tag": "dt",
+                                        "attrs": {
+                                          "class": "text-muted-foreground"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Deliverable",
+                                            "key": "root.0.2.0.1.0.0.0.2.4.0"
+                                          }
+                                        ],
+                                        "key": "root.0.2.0.1.0.0.0.2.4"
+                                      },
+                                      {
+                                        "tag": "dd",
+                                        "attrs": {},
+                                        "children": [
+                                          {
+                                            "text": "Decision brief with evidence and open questions",
+                                            "key": "root.0.2.0.1.0.0.0.2.5.0"
+                                          }
+                                        ],
+                                        "key": "root.0.2.0.1.0.0.0.2.5"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.1.0.0.0.2"
+                                  }
+                                ],
+                                "key": "root.0.2.0.1.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.2.0.1.0.0"
+                          }
+                        ],
+                        "key": "root.0.2.0.1.0"
+                      }
+                    ],
+                    "key": "root.0.2.0.1"
+                  },
+                  {
+                    "tag": "footer",
+                    "attrs": {
+                      "class": "flex shrink-0 flex-col gap-3 border-t p-4"
+                    },
+                    "children": [
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 h-9 px-4 py-2"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-play",
+                              "class": "lucide lucide-play"
+                            },
+                            "key": "root.0.2.0.2.0.0"
+                          },
+                          {
+                            "text": "Start demo run",
+                            "key": "root.0.2.0.2.0.1"
+                          }
+                        ],
+                        "key": "root.0.2.0.2.0"
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {
+                          "class": "text-muted-foreground text-center text-xs"
+                        },
+                        "children": [
+                          {
+                            "text": "Runs locally · No external services",
+                            "key": "root.0.2.0.2.1.0"
+                          }
+                        ],
+                        "key": "root.0.2.0.2.1"
+                      }
+                    ],
+                    "key": "root.0.2.0.2"
+                  }
+                ],
+                "key": "root.0.2.0"
+              }
+            ],
+            "key": "root.0.2"
+          }
+        ],
+        "key": "root.0"
+      }
+    ],
+    "key": "root"
+  },
+  "headings": [
+    "Your brief",
+    "Start with the right question.",
+    "Research plan",
+    "A plan you can shape."
+  ]
+}

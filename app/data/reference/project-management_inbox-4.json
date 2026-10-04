@@ -1,0 +1,1528 @@
+{
+  "label": "Inbox 4",
+  "path": "/project-management/inbox-4",
+  "appTitle": "Project Management",
+  "tree": {
+    "tag": "div",
+    "attrs": {
+      "class": "flex h-full flex-col overflow-hidden"
+    },
+    "children": [
+      {
+        "tag": "div",
+        "attrs": {
+          "class": "flex min-h-0 flex-1 flex-col overflow-hidden"
+        },
+        "children": [
+          {
+            "tag": "main",
+            "attrs": {
+              "class": "bg-background text-foreground flex min-h-0 flex-1 overflow-hidden"
+            },
+            "children": [
+              {
+                "tag": "aside",
+                "attrs": {
+                  "class": "hidden w-72 shrink-0 flex-col border-r bg-zinc-50/80 lg:flex dark:border-white/8 dark:bg-[#0d0d0d]"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "flex h-16 shrink-0 items-center justify-between border-b px-4 dark:border-white/8"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex items-center gap-3"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "flex size-9 items-center justify-center rounded-xl border bg-white shadow-sm dark:border-white/10 dark:bg-white/5"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-mail",
+                                  "class": "lucide lucide-mail size-4"
+                                },
+                                "key": "root.0.0.0.0.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.0.0.0.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {},
+                            "children": [
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-sm font-semibold text-zinc-950 dark:text-zinc-100"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Project Mail",
+                                    "key": "root.0.0.0.0.0.1.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.0.1.0"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-xs text-zinc-500 dark:text-zinc-400"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Renewal workspace",
+                                    "key": "root.0.0.0.0.0.1.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.0.1.1"
+                              }
+                            ],
+                            "key": "root.0.0.0.0.0.1"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.0"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-8"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-chevron-down",
+                              "class": "lucide lucide-chevron-down size-4"
+                            },
+                            "key": "root.0.0.0.0.1.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.1"
+                      }
+                    ],
+                    "key": "root.0.0.0.0"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "p-3"
+                    },
+                    "children": [
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 px-4 py-2 h-10 w-full justify-start gap-2"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-plus",
+                              "class": "lucide lucide-plus size-4"
+                            },
+                            "key": "root.0.0.0.1.0.0"
+                          },
+                          {
+                            "text": "Compose",
+                            "key": "root.0.0.0.1.0.1"
+                          }
+                        ],
+                        "key": "root.0.0.0.1.0"
+                      }
+                    ],
+                    "key": "root.0.0.0.1"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "data-slot": "scroll-area",
+                      "class": "relative overflow-hidden min-h-0 flex-1 px-3 pb-4",
+                      "style": "position:relative;--radix-scroll-area-corner-width:0px;--radix-scroll-area-corner-height:0px"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "data-slot": "scroll-area-viewport",
+                          "class": "h-full w-full rounded-[inherit]",
+                          "style": "overflow: hidden scroll;"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "style": "min-width:100%;display:table"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "space-y-1"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "flex h-10 w-full items-center gap-3 rounded-lg px-3 text-sm font-medium transition bg-zinc-100 text-zinc-950 dark:bg-white/8 dark:text-zinc-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-inbox",
+                                          "class": "lucide lucide-inbox size-4"
+                                        },
+                                        "key": "root.0.0.0.2.0.0.0.0.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "min-w-0 flex-1 truncate text-left"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Inbox",
+                                            "key": "root.0.0.0.2.0.0.0.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.2.0.0.0.0.1"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "rounded-full px-2 py-0.5 text-xs bg-zinc-950 text-white dark:bg-white dark:text-zinc-950"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "18",
+                                            "key": "root.0.0.0.2.0.0.0.0.2.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.2.0.0.0.0.2"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.2.0.0.0.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "flex h-10 w-full items-center gap-3 rounded-lg px-3 text-sm font-medium transition text-zinc-600 hover:bg-zinc-100 hover:text-zinc-950 dark:text-zinc-400 dark:hover:bg-white/8 dark:hover:text-zinc-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-send",
+                                          "class": "lucide lucide-send size-4"
+                                        },
+                                        "key": "root.0.0.0.2.0.0.0.1.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "min-w-0 flex-1 truncate text-left"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Sent",
+                                            "key": "root.0.0.0.2.0.0.0.1.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.2.0.0.0.1.1"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "rounded-full px-2 py-0.5 text-xs bg-zinc-100 text-zinc-500 dark:bg-white/8 dark:text-zinc-400"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "9",
+                                            "key": "root.0.0.0.2.0.0.0.1.2.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.2.0.0.0.1.2"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.2.0.0.0.1"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "flex h-10 w-full items-center gap-3 rounded-lg px-3 text-sm font-medium transition text-zinc-600 hover:bg-zinc-100 hover:text-zinc-950 dark:text-zinc-400 dark:hover:bg-white/8 dark:hover:text-zinc-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-file-text",
+                                          "class": "lucide lucide-file-text size-4"
+                                        },
+                                        "key": "root.0.0.0.2.0.0.0.2.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "min-w-0 flex-1 truncate text-left"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Drafts",
+                                            "key": "root.0.0.0.2.0.0.0.2.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.2.0.0.0.2.1"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "rounded-full px-2 py-0.5 text-xs bg-zinc-100 text-zinc-500 dark:bg-white/8 dark:text-zinc-400"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "3",
+                                            "key": "root.0.0.0.2.0.0.0.2.2.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.2.0.0.0.2.2"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.2.0.0.0.2"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "flex h-10 w-full items-center gap-3 rounded-lg px-3 text-sm font-medium transition text-zinc-600 hover:bg-zinc-100 hover:text-zinc-950 dark:text-zinc-400 dark:hover:bg-white/8 dark:hover:text-zinc-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-archive",
+                                          "class": "lucide lucide-archive size-4"
+                                        },
+                                        "key": "root.0.0.0.2.0.0.0.3.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "min-w-0 flex-1 truncate text-left"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Archive",
+                                            "key": "root.0.0.0.2.0.0.0.3.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.2.0.0.0.3.1"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "rounded-full px-2 py-0.5 text-xs bg-zinc-100 text-zinc-500 dark:bg-white/8 dark:text-zinc-400"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "42",
+                                            "key": "root.0.0.0.2.0.0.0.3.2.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.2.0.0.0.3.2"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.2.0.0.0.3"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "type": "button",
+                                      "class": "flex h-10 w-full items-center gap-3 rounded-lg px-3 text-sm font-medium transition text-zinc-600 hover:bg-zinc-100 hover:text-zinc-950 dark:text-zinc-400 dark:hover:bg-white/8 dark:hover:text-zinc-100"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-trash-2",
+                                          "class": "lucide lucide-trash2 lucide-trash-2 size-4"
+                                        },
+                                        "key": "root.0.0.0.2.0.0.0.4.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "min-w-0 flex-1 truncate text-left"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Trash",
+                                            "key": "root.0.0.0.2.0.0.0.4.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.2.0.0.0.4.1"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "rounded-full px-2 py-0.5 text-xs bg-zinc-100 text-zinc-500 dark:bg-white/8 dark:text-zinc-400"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "0",
+                                            "key": "root.0.0.0.2.0.0.0.4.2.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.2.0.0.0.4.2"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.2.0.0.0.4"
+                                  }
+                                ],
+                                "key": "root.0.0.0.2.0.0.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "mt-6"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "mb-2 flex items-center justify-between px-3"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "text-xs font-semibold tracking-wide text-zinc-500 uppercase"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Spaces",
+                                            "key": "root.0.0.0.2.0.0.1.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.2.0.0.1.0.0"
+                                      },
+                                      {
+                                        "tag": "button",
+                                        "attrs": {
+                                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-7"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-plus",
+                                              "class": "lucide lucide-plus size-3.5"
+                                            },
+                                            "key": "root.0.0.0.2.0.0.1.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.2.0.0.1.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.2.0.0.1.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "space-y-1"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "button",
+                                        "attrs": {
+                                          "type": "button",
+                                          "class": "flex h-9 w-full items-center gap-3 rounded-lg px-3 text-sm text-zinc-600 transition hover:bg-zinc-100 hover:text-zinc-950 dark:text-zinc-400 dark:hover:bg-white/8 dark:hover:text-zinc-100"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-folder",
+                                              "class": "lucide lucide-folder size-4"
+                                            },
+                                            "key": "root.0.0.0.2.0.0.1.1.0.0"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-0 flex-1 truncate text-left"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Renewal Forecast",
+                                                "key": "root.0.0.0.2.0.0.1.1.0.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.2.0.0.1.1.0.1"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "text-xs text-zinc-400"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "8",
+                                                "key": "root.0.0.0.2.0.0.1.1.0.2.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.2.0.0.1.1.0.2"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.2.0.0.1.1.0"
+                                      },
+                                      {
+                                        "tag": "button",
+                                        "attrs": {
+                                          "type": "button",
+                                          "class": "flex h-9 w-full items-center gap-3 rounded-lg px-3 text-sm text-zinc-600 transition hover:bg-zinc-100 hover:text-zinc-950 dark:text-zinc-400 dark:hover:bg-white/8 dark:hover:text-zinc-100"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-folder",
+                                              "class": "lucide lucide-folder size-4"
+                                            },
+                                            "key": "root.0.0.0.2.0.0.1.1.1.0"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-0 flex-1 truncate text-left"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Platform QA",
+                                                "key": "root.0.0.0.2.0.0.1.1.1.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.2.0.0.1.1.1.1"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "text-xs text-zinc-400"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "5",
+                                                "key": "root.0.0.0.2.0.0.1.1.1.2.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.2.0.0.1.1.1.2"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.2.0.0.1.1.1"
+                                      },
+                                      {
+                                        "tag": "button",
+                                        "attrs": {
+                                          "type": "button",
+                                          "class": "flex h-9 w-full items-center gap-3 rounded-lg px-3 text-sm text-zinc-600 transition hover:bg-zinc-100 hover:text-zinc-950 dark:text-zinc-400 dark:hover:bg-white/8 dark:hover:text-zinc-100"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-folder",
+                                              "class": "lucide lucide-folder size-4"
+                                            },
+                                            "key": "root.0.0.0.2.0.0.1.1.2.0"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-0 flex-1 truncate text-left"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Design Partners",
+                                                "key": "root.0.0.0.2.0.0.1.1.2.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.2.0.0.1.1.2.1"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "text-xs text-zinc-400"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "4",
+                                                "key": "root.0.0.0.2.0.0.1.1.2.2.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.2.0.0.1.1.2.2"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.2.0.0.1.1.2"
+                                      },
+                                      {
+                                        "tag": "button",
+                                        "attrs": {
+                                          "type": "button",
+                                          "class": "flex h-9 w-full items-center gap-3 rounded-lg px-3 text-sm text-zinc-600 transition hover:bg-zinc-100 hover:text-zinc-950 dark:text-zinc-400 dark:hover:bg-white/8 dark:hover:text-zinc-100"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-folder",
+                                              "class": "lucide lucide-folder size-4"
+                                            },
+                                            "key": "root.0.0.0.2.0.0.1.1.3.0"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-0 flex-1 truncate text-left"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Finance Ops",
+                                                "key": "root.0.0.0.2.0.0.1.1.3.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.2.0.0.1.1.3.1"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "text-xs text-zinc-400"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "3",
+                                                "key": "root.0.0.0.2.0.0.1.1.3.2.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.2.0.0.1.1.3.2"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.2.0.0.1.1.3"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.2.0.0.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.0.2.0.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.0.2.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.2.0"
+                      }
+                    ],
+                    "key": "root.0.0.0.2"
+                  }
+                ],
+                "key": "root.0.0.0"
+              },
+              {
+                "tag": "section",
+                "attrs": {
+                  "class": "flex min-h-0 min-w-0 flex-1 flex-col bg-white dark:bg-[#101010]"
+                },
+                "children": [
+                  {
+                    "tag": "header",
+                    "attrs": {
+                      "class": "flex h-16 shrink-0 items-center justify-between border-b px-4 dark:border-white/8"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {},
+                        "children": [
+                          {
+                            "tag": "h1",
+                            "attrs": {
+                              "class": "text-xl font-semibold tracking-tight"
+                            },
+                            "children": [
+                              {
+                                "text": "Inbox",
+                                "key": "root.0.0.1.0.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.0.0"
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": {
+                              "class": "text-sm text-zinc-500 dark:text-zinc-400"
+                            },
+                            "children": [
+                              {
+                                "text": "5",
+                                "key": "root.0.0.1.0.0.1.0"
+                              },
+                              {
+                                "text": " conversations",
+                                "key": "root.0.0.1.0.0.1.1"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.0.1"
+                          }
+                        ],
+                        "key": "root.0.0.1.0.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex items-center gap-2"
+                        },
+                        "children": [
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground size-9 lg:hidden"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-plus",
+                                  "class": "lucide lucide-plus size-4"
+                                },
+                                "key": "root.0.0.1.0.1.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.1.0"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground size-9"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-sliders-horizontal",
+                                  "class": "lucide lucide-sliders-horizontal size-4"
+                                },
+                                "key": "root.0.0.1.0.1.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.1.1"
+                          }
+                        ],
+                        "key": "root.0.0.1.0.1"
+                      }
+                    ],
+                    "key": "root.0.0.1.0"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "border-b p-3 dark:border-white/8"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "relative"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-search",
+                              "class": "lucide lucide-search pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-zinc-400"
+                            },
+                            "key": "root.0.0.1.1.0.0"
+                          },
+                          {
+                            "tag": "input",
+                            "attrs": {
+                              "class": "border-input file:text-foreground placeholder:text-muted-foreground focus-visible:ring-ring flex w-full rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:ring-1 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 md:text-sm h-10 pl-9",
+                              "placeholder": "Search mail...",
+                              "value": ""
+                            },
+                            "children": [],
+                            "key": "root.0.0.1.1.0.1"
+                          }
+                        ],
+                        "key": "root.0.0.1.1.0"
+                      }
+                    ],
+                    "key": "root.0.0.1.1"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "data-slot": "scroll-area",
+                      "class": "relative overflow-hidden min-h-0 flex-1 [&>[data-slot=scroll-area-viewport]>div]:!block",
+                      "style": "position:relative;--radix-scroll-area-corner-width:0px;--radix-scroll-area-corner-height:0px"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "data-slot": "scroll-area-viewport",
+                          "class": "h-full w-full rounded-[inherit]",
+                          "style": "overflow: hidden scroll;"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "style": "min-width:100%;display:table"
+                            },
+                            "children": [
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "type": "button",
+                                  "class": "group grid w-full grid-cols-[auto_minmax(0,1fr)] gap-4 border-b px-6 py-5 text-left transition dark:border-white/8 bg-zinc-50/80 dark:bg-white/5"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "relative flex shrink-0 overflow-hidden rounded-full mt-1 size-10"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "img",
+                                        "attrs": {
+                                          "class": "aspect-square h-full w-full",
+                                          "alt": "Nina Oliver",
+                                          "src": "/reference/5985a55c7498fe2e.png"
+                                        },
+                                        "children": [],
+                                        "key": "root.0.0.1.2.0.0.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.2.0.0.0.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "min-w-0"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "flex min-w-0 items-center gap-2"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "p",
+                                            "attrs": {
+                                              "class": "truncate text-base font-semibold text-zinc-950 dark:text-zinc-100"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Final review before timeline architecture handoff",
+                                                "key": "root.0.0.1.2.0.0.0.1.0.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.2.0.0.0.1.0.0"
+                                          },
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-shield-check",
+                                              "class": "lucide lucide-shield-check size-4 shrink-0 text-sky-500"
+                                            },
+                                            "key": "root.0.0.1.2.0.0.0.1.0.1"
+                                          },
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-star",
+                                              "class": "lucide lucide-star size-4 shrink-0 fill-amber-400 text-amber-400"
+                                            },
+                                            "key": "root.0.0.1.2.0.0.0.1.0.2"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.2.0.0.0.1.0"
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "mt-2 truncate text-sm leading-6 text-zinc-600 dark:text-zinc-300"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Can you confirm the resize behavior notes and the remaining calendar follow-up copy before we send this to engineering?",
+                                            "key": "root.0.0.1.2.0.0.0.1.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.2.0.0.0.1.1"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "mt-3 flex flex-wrap items-center gap-2"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "inline-flex h-8 items-center gap-2 rounded-lg border bg-white px-3 text-sm font-medium text-zinc-700 shadow-[0_1px_1px_rgba(15,23,42,0.04)] dark:border-white/10 dark:bg-white/5 dark:text-zinc-200"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "inline-flex size-4 items-center justify-center rounded border text-[8px] leading-none font-bold uppercase border-red-200 bg-red-50 text-red-700 dark:border-red-500/20 dark:bg-red-500/10 dark:text-red-300"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "p",
+                                                    "key": "root.0.0.1.2.0.0.0.1.2.0.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.2.0.0.0.1.2.0.0"
+                                              },
+                                              {
+                                                "text": "timeline-handoff.pdf",
+                                                "key": "root.0.0.1.2.0.0.0.1.2.0.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.2.0.0.0.1.2.0"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "inline-flex h-8 items-center gap-2 rounded-lg border bg-white px-3 text-sm font-medium text-zinc-700 shadow-[0_1px_1px_rgba(15,23,42,0.04)] dark:border-white/10 dark:bg-white/5 dark:text-zinc-200"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "inline-flex size-4 items-center justify-center rounded border text-[8px] leading-none font-bold uppercase border-blue-200 bg-blue-50 text-blue-700 dark:border-blue-500/20 dark:bg-blue-500/10 dark:text-blue-300"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "m",
+                                                    "key": "root.0.0.1.2.0.0.0.1.2.1.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.2.0.0.0.1.2.1.0"
+                                              },
+                                              {
+                                                "text": "calendar-copy.md",
+                                                "key": "root.0.0.1.2.0.0.0.1.2.1.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.2.0.0.0.1.2.1"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "ml-auto hidden text-xs text-zinc-500 sm:inline dark:text-zinc-400"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Nina Oliver",
+                                                "key": "root.0.0.1.2.0.0.0.1.2.2.0"
+                                              },
+                                              {
+                                                "text": " · ",
+                                                "key": "root.0.0.1.2.0.0.0.1.2.2.1"
+                                              },
+                                              {
+                                                "text": "09:24",
+                                                "key": "root.0.0.1.2.0.0.0.1.2.2.2"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.2.0.0.0.1.2.2"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.2.0.0.0.1.2"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.2.0.0.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.2.0.0.0"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "type": "button",
+                                  "class": "group grid w-full grid-cols-[auto_minmax(0,1fr)] gap-4 border-b px-6 py-5 text-left transition dark:border-white/8 bg-white hover:bg-zinc-50 dark:bg-[#101010] dark:hover:bg-white/5"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "relative flex shrink-0 overflow-hidden rounded-full mt-1 size-10"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "img",
+                                        "attrs": {
+                                          "class": "aspect-square h-full w-full",
+                                          "alt": "Ava Reed",
+                                          "src": "/reference/62828bc2a489837e.png"
+                                        },
+                                        "children": [],
+                                        "key": "root.0.0.1.2.0.0.1.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.2.0.0.1.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "min-w-0"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "flex min-w-0 items-center gap-2"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "p",
+                                            "attrs": {
+                                              "class": "truncate text-base font-semibold text-zinc-950 dark:text-zinc-100"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Dark mode borders are ready for one more pass",
+                                                "key": "root.0.0.1.2.0.0.1.1.0.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.2.0.0.1.1.0.0"
+                                          },
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-shield-check",
+                                              "class": "lucide lucide-shield-check size-4 shrink-0 text-sky-500"
+                                            },
+                                            "key": "root.0.0.1.2.0.0.1.1.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.2.0.0.1.1.0"
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "mt-2 truncate text-sm leading-6 text-zinc-600 dark:text-zinc-300"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "I pushed the latest screenshots. Calendar 2 now matches the quieter border model from Calendar 1.",
+                                            "key": "root.0.0.1.2.0.0.1.1.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.2.0.0.1.1.1"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "mt-3 flex flex-wrap items-center gap-2"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "inline-flex h-8 items-center gap-2 rounded-lg border bg-white px-3 text-sm font-medium text-zinc-700 shadow-[0_1px_1px_rgba(15,23,42,0.04)] dark:border-white/10 dark:bg-white/5 dark:text-zinc-200"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "inline-flex size-4 items-center justify-center rounded border text-[8px] leading-none font-bold uppercase border-violet-200 bg-violet-50 text-violet-700 dark:border-violet-500/20 dark:bg-violet-500/10 dark:text-violet-300"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "p",
+                                                    "key": "root.0.0.1.2.0.0.1.1.2.0.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.2.0.0.1.1.2.0.0"
+                                              },
+                                              {
+                                                "text": "dark-mode-review.png",
+                                                "key": "root.0.0.1.2.0.0.1.1.2.0.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.2.0.0.1.1.2.0"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "ml-auto hidden text-xs text-zinc-500 sm:inline dark:text-zinc-400"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Ava Reed",
+                                                "key": "root.0.0.1.2.0.0.1.1.2.1.0"
+                                              },
+                                              {
+                                                "text": " · ",
+                                                "key": "root.0.0.1.2.0.0.1.1.2.1.1"
+                                              },
+                                              {
+                                                "text": "10:02",
+                                                "key": "root.0.0.1.2.0.0.1.1.2.1.2"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.2.0.0.1.1.2.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.2.0.0.1.1.2"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.2.0.0.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.2.0.0.1"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "type": "button",
+                                  "class": "group grid w-full grid-cols-[auto_minmax(0,1fr)] gap-4 border-b px-6 py-5 text-left transition dark:border-white/8 bg-white hover:bg-zinc-50 dark:bg-[#101010] dark:hover:bg-white/5"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "relative flex shrink-0 overflow-hidden rounded-full mt-1 size-10"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "img",
+                                        "attrs": {
+                                          "class": "aspect-square h-full w-full",
+                                          "alt": "Kai Young",
+                                          "src": "/reference/9310a24e0d573ddb.png"
+                                        },
+                                        "children": [],
+                                        "key": "root.0.0.1.2.0.0.2.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.2.0.0.2.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "min-w-0"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "flex min-w-0 items-center gap-2"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "p",
+                                            "attrs": {
+                                              "class": "truncate text-base font-semibold text-zinc-950 dark:text-zinc-100"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Kanban reorder issue looks fixed in local testing",
+                                                "key": "root.0.0.1.2.0.0.2.1.0.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.2.0.0.2.1.0.0"
+                                          },
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-star",
+                                              "class": "lucide lucide-star size-4 shrink-0 fill-amber-400 text-amber-400"
+                                            },
+                                            "key": "root.0.0.1.2.0.0.2.1.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.2.0.0.2.1.0"
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "mt-2 truncate text-sm leading-6 text-zinc-600 dark:text-zinc-300"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "The drag target now uses the actual item midpoint instead of the stale list index. Reorder feels consistent across columns.",
+                                            "key": "root.0.0.1.2.0.0.2.1.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.2.0.0.2.1.1"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "mt-3 flex flex-wrap items-center gap-2"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "inline-flex h-8 items-center gap-2 rounded-lg border bg-white px-3 text-sm font-medium text-zinc-700 shadow-[0_1px_1px_rgba(15,23,42,0.04)] dark:border-white/10 dark:bg-white/5 dark:text-zinc-200"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "inline-flex size-4 items-center justify-center rounded border text-[8px] leading-none font-bold uppercase border-violet-200 bg-violet-50 text-violet-700 dark:border-violet-500/20 dark:bg-violet-500/10 dark:text-violet-300"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "m",
+                                                    "key": "root.0.0.1.2.0.0.2.1.2.0.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.2.0.0.2.1.2.0.0"
+                                              },
+                                              {
+                                                "text": "reorder-recording.mov",
+                                                "key": "root.0.0.1.2.0.0.2.1.2.0.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.2.0.0.2.1.2.0"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "ml-auto hidden text-xs text-zinc-500 sm:inline dark:text-zinc-400"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Kai Young",
+                                                "key": "root.0.0.1.2.0.0.2.1.2.1.0"
+                                              },
+                                              {
+                                                "text": " · ",
+                                                "key": "root.0.0.1.2.0.0.2.1.2.1.1"
+                                              },
+                                              {
+                                                "text": "Yesterday",
+                                                "key": "root.0.0.1.2.0.0.2.1.2.1.2"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.2.0.0.2.1.2.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.2.0.0.2.1.2"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.2.0.0.2.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.2.0.0.2"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "type": "button",
+                                  "class": "group grid w-full grid-cols-[auto_minmax(0,1fr)] gap-4 border-b px-6 py-5 text-left transition dark:border-white/8 bg-white hover:bg-zinc-50 dark:bg-[#101010] dark:hover:bg-white/5"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "relative flex shrink-0 overflow-hidden rounded-full mt-1 size-10"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "img",
+                                        "attrs": {
+                                          "class": "aspect-square h-full w-full",
+                                          "alt": "Morgan Lee",
+                                          "src": "/reference/a99c47c2fa3dc656.png"
+                                        },
+                                        "children": [],
+                                        "key": "root.0.0.1.2.0.0.3.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.2.0.0.3.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "min-w-0"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "flex min-w-0 items-center gap-2"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "p",
+                                            "attrs": {
+                                              "class": "truncate text-base font-semibold text-zinc-950 dark:text-zinc-100"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Partner call notes and follow-up owners",
+                                                "key": "root.0.0.1.2.0.0.3.1.0.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.2.0.0.3.1.0.0"
+                                          },
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-shield-check",
+                                              "class": "lucide lucide-shield-check size-4 shrink-0 text-sky-500"
+                                            },
+                                            "key": "root.0.0.1.2.0.0.3.1.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.2.0.0.3.1.0"
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "mt-2 truncate text-sm leading-6 text-zinc-600 dark:text-zinc-300"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "The customer likes the new inbox direction. They asked for clearer owners and a simpler attachment row.",
+                                            "key": "root.0.0.1.2.0.0.3.1.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.2.0.0.3.1.1"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "mt-3 flex flex-wrap items-center gap-2"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "inline-flex h-8 items-center gap-2 rounded-lg border bg-white px-3 text-sm font-medium text-zinc-700 shadow-[0_1px_1px_rgba(15,23,42,0.04)] dark:border-white/10 dark:bg-white/5 dark:text-zinc-200"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "inline-flex size-4 items-center justify-center rounded border text-[8px] leading-none font-bold uppercase border-blue-200 bg-blue-50 text-blue-700 dark:border-blue-500/20 dark:bg-blue-500/10 dark:text-blue-300"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "d",
+                                                    "key": "root.0.0.1.2.0.0.3.1.2.0.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.2.0.0.3.1.2.0.0"
+                                              },
+                                              {
+                                                "text": "partner-call-notes.docx",
+                                                "key": "root.0.0.1.2.0.0.3.1.2.0.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.2.0.0.3.1.2.0"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "ml-auto hidden text-xs text-zinc-500 sm:inline dark:text-zinc-400"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Morgan Lee",
+                                                "key": "root.0.0.1.2.0.0.3.1.2.1.0"
+                                              },
+                                              {
+                                                "text": " · ",
+                                                "key": "root.0.0.1.2.0.0.3.1.2.1.1"
+                                              },
+                                              {
+                                                "text": "Mon",
+                                                "key": "root.0.0.1.2.0.0.3.1.2.1.2"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.2.0.0.3.1.2.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.2.0.0.3.1.2"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.2.0.0.3.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.2.0.0.3"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "type": "button",
+                                  "class": "group grid w-full grid-cols-[auto_minmax(0,1fr)] gap-4 border-b px-6 py-5 text-left transition dark:border-white/8 bg-white hover:bg-zinc-50 dark:bg-[#101010] dark:hover:bg-white/5"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "relative flex shrink-0 overflow-hidden rounded-full mt-1 size-10"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "img",
+                                        "attrs": {
+                                          "class": "aspect-square h-full w-full",
+                                          "alt": "Stripe",
+                                          "src": "/reference/6f77b9b90a56c3cc.png"
+                                        },
+                                        "children": [],
+                                        "key": "root.0.0.1.2.0.0.4.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.2.0.0.4.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "min-w-0"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "flex min-w-0 items-center gap-2"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "p",
+                                            "attrs": {
+                                              "class": "truncate text-base font-semibold text-zinc-950 dark:text-zinc-100"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Payout reconciliation export is ready",
+                                                "key": "root.0.0.1.2.0.0.4.1.0.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.2.0.0.4.1.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.2.0.0.4.1.0"
+                                      },
+                                      {
+                                        "tag": "p",
+                                        "attrs": {
+                                          "class": "mt-2 truncate text-sm leading-6 text-zinc-600 dark:text-zinc-300"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Your reconciliation export for the April payout window is ready to download from the finance workspace.",
+                                            "key": "root.0.0.1.2.0.0.4.1.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.2.0.0.4.1.1"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "mt-3 flex flex-wrap items-center gap-2"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "inline-flex h-8 items-center gap-2 rounded-lg border bg-white px-3 text-sm font-medium text-zinc-700 shadow-[0_1px_1px_rgba(15,23,42,0.04)] dark:border-white/10 dark:bg-white/5 dark:text-zinc-200"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "inline-flex size-4 items-center justify-center rounded border text-[8px] leading-none font-bold uppercase border-emerald-200 bg-emerald-50 text-emerald-700 dark:border-emerald-500/20 dark:bg-emerald-500/10 dark:text-emerald-300"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "c",
+                                                    "key": "root.0.0.1.2.0.0.4.1.2.0.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.2.0.0.4.1.2.0.0"
+                                              },
+                                              {
+                                                "text": "april-reconciliation.csv",
+                                                "key": "root.0.0.1.2.0.0.4.1.2.0.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.2.0.0.4.1.2.0"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "ml-auto hidden text-xs text-zinc-500 sm:inline dark:text-zinc-400"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Stripe",
+                                                "key": "root.0.0.1.2.0.0.4.1.2.1.0"
+                                              },
+                                              {
+                                                "text": " · ",
+                                                "key": "root.0.0.1.2.0.0.4.1.2.1.1"
+                                              },
+                                              {
+                                                "text": "Tue",
+                                                "key": "root.0.0.1.2.0.0.4.1.2.1.2"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.2.0.0.4.1.2.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.2.0.0.4.1.2"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.2.0.0.4.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.2.0.0.4"
+                              }
+                            ],
+                            "key": "root.0.0.1.2.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.1.2.0"
+                      }
+                    ],
+                    "key": "root.0.0.1.2"
+                  }
+                ],
+                "key": "root.0.0.1"
+              }
+            ],
+            "key": "root.0.0"
+          }
+        ],
+        "key": "root.0"
+      }
+    ],
+    "key": "root"
+  },
+  "headings": [
+    "Inbox"
+  ]
+}

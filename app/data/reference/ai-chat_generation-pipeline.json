@@ -1,0 +1,2329 @@
+{
+  "label": "YouTube content",
+  "path": "/ai-chat/generation-pipeline",
+  "appTitle": "YouTube content",
+  "tree": {
+    "tag": "div",
+    "attrs": {
+      "id": "ai-workspace-content",
+      "class": "flex min-h-0 flex-1 flex-col"
+    },
+    "children": [
+      {
+        "tag": "div",
+        "attrs": {
+          "class": "relative min-h-0 flex-1"
+        },
+        "children": [
+          {
+            "tag": "div",
+            "attrs": {
+              "style": "width:100%;height:100%;overflow:hidden;position:relative;z-index:0",
+              "class": "react-flow !bg-background light",
+              "role": "application"
+            },
+            "children": [
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "react-flow__renderer",
+                  "style": "position:absolute;width:100%;height:100%;top:0;left:0"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "react-flow__pane selection",
+                      "style": "position:absolute;width:100%;height:100%;top:0;left:0"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "react-flow__viewport xyflow__viewport react-flow__container",
+                          "style": "transform: translate(43px, 114.875px) scale(0.669512);"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "react-flow__edges"
+                            },
+                            "children": [
+                              {
+                                "tag": "svg",
+                                "attrs": {
+                                  "style": "z-index: 0;",
+                                  "viewBox": "0 0 200.85366821289062 100.42681884765625",
+                                  "width": "100%",
+                                  "height": "100%"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "g",
+                                    "attrs": {
+                                      "class": "react-flow__edge react-flow__edge-default nopan selectable",
+                                      "role": "group",
+                                      "data-id": "source:transcript",
+                                      "aria-label": "Edge from source to transcript"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "path",
+                                        "attrs": {
+                                          "d": "M337,424 C377.5,424 377.5,414 418,414",
+                                          "fill": "none",
+                                          "class": "react-flow__edge-path",
+                                          "style": "stroke: var(--chart-2); stroke-width: 1.25; opacity: 0.8;"
+                                        },
+                                        "children": [],
+                                        "key": "root.0.0.0.0.0.0.0.0.0"
+                                      },
+                                      {
+                                        "tag": "path",
+                                        "attrs": {
+                                          "d": "M337,424 C377.5,424 377.5,414 418,414",
+                                          "fill": "none",
+                                          "stroke-opacity": "0",
+                                          "stroke-width": "20",
+                                          "class": "react-flow__edge-interaction"
+                                        },
+                                        "children": [],
+                                        "key": "root.0.0.0.0.0.0.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.0.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.0.0.0"
+                              },
+                              {
+                                "tag": "svg",
+                                "attrs": {
+                                  "style": "z-index: 0;",
+                                  "viewBox": "0 0 200.85366821289062 100.42681884765625",
+                                  "width": "100%",
+                                  "height": "100%"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "g",
+                                    "attrs": {
+                                      "class": "react-flow__edge react-flow__edge-default nopan selectable",
+                                      "role": "group",
+                                      "data-id": "transcript:titles",
+                                      "aria-label": "Edge from transcript to titles"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "path",
+                                        "attrs": {
+                                          "d": "M792,414 C837.5,414 837.5,136.5 883,136.5",
+                                          "fill": "none",
+                                          "class": "react-flow__edge-path",
+                                          "style": "stroke: var(--chart-1); stroke-width: 1.25; opacity: 0.8;"
+                                        },
+                                        "children": [],
+                                        "key": "root.0.0.0.0.0.0.1.0.0"
+                                      },
+                                      {
+                                        "tag": "path",
+                                        "attrs": {
+                                          "d": "M792,414 C837.5,414 837.5,136.5 883,136.5",
+                                          "fill": "none",
+                                          "stroke-opacity": "0",
+                                          "stroke-width": "20",
+                                          "class": "react-flow__edge-interaction"
+                                        },
+                                        "children": [],
+                                        "key": "root.0.0.0.0.0.0.1.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.0.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.0.0.1"
+                              },
+                              {
+                                "tag": "svg",
+                                "attrs": {
+                                  "style": "z-index: 0;",
+                                  "viewBox": "0 0 200.85366821289062 100.42681884765625",
+                                  "width": "100%",
+                                  "height": "100%"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "g",
+                                    "attrs": {
+                                      "class": "react-flow__edge react-flow__edge-default nopan selectable",
+                                      "role": "group",
+                                      "data-id": "transcript:thumb-1",
+                                      "aria-label": "Edge from transcript to thumb-1"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "path",
+                                        "attrs": {
+                                          "d": "M792,414 C837.5,414 837.5,489 883,489",
+                                          "fill": "none",
+                                          "class": "react-flow__edge-path",
+                                          "style": "stroke: var(--chart-1); stroke-width: 1.25; opacity: 0.8;"
+                                        },
+                                        "children": [],
+                                        "key": "root.0.0.0.0.0.0.2.0.0"
+                                      },
+                                      {
+                                        "tag": "path",
+                                        "attrs": {
+                                          "d": "M792,414 C837.5,414 837.5,489 883,489",
+                                          "fill": "none",
+                                          "stroke-opacity": "0",
+                                          "stroke-width": "20",
+                                          "class": "react-flow__edge-interaction"
+                                        },
+                                        "children": [],
+                                        "key": "root.0.0.0.0.0.0.2.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.0.0.2.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.0.0.2"
+                              },
+                              {
+                                "tag": "svg",
+                                "attrs": {
+                                  "style": "z-index: 0;",
+                                  "viewBox": "0 0 200.85366821289062 100.42681884765625",
+                                  "width": "100%",
+                                  "height": "100%"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "g",
+                                    "attrs": {
+                                      "class": "react-flow__edge react-flow__edge-default nopan selectable",
+                                      "role": "group",
+                                      "data-id": "transcript:thumb-2",
+                                      "aria-label": "Edge from transcript to thumb-2"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "path",
+                                        "attrs": {
+                                          "d": "M792,414 C1042.5,414 1042.5,489 1293,489",
+                                          "fill": "none",
+                                          "class": "react-flow__edge-path",
+                                          "style": "stroke: var(--chart-1); stroke-width: 1.25; opacity: 0.8;"
+                                        },
+                                        "children": [],
+                                        "key": "root.0.0.0.0.0.0.3.0.0"
+                                      },
+                                      {
+                                        "tag": "path",
+                                        "attrs": {
+                                          "d": "M792,414 C1042.5,414 1042.5,489 1293,489",
+                                          "fill": "none",
+                                          "stroke-opacity": "0",
+                                          "stroke-width": "20",
+                                          "class": "react-flow__edge-interaction"
+                                        },
+                                        "children": [],
+                                        "key": "root.0.0.0.0.0.0.3.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.0.0.3.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.0.0.3"
+                              },
+                              {
+                                "tag": "svg",
+                                "attrs": {
+                                  "style": "z-index: 0;",
+                                  "viewBox": "0 0 200.85366821289062 100.42681884765625",
+                                  "width": "100%",
+                                  "height": "100%"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "g",
+                                    "attrs": {
+                                      "class": "react-flow__edge react-flow__edge-default nopan selectable",
+                                      "role": "group",
+                                      "data-id": "transcript:description",
+                                      "aria-label": "Edge from transcript to description"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "path",
+                                        "attrs": {
+                                          "d": "M792,414 C837.5,414 837.5,884 883,884",
+                                          "fill": "none",
+                                          "class": "react-flow__edge-path",
+                                          "style": "stroke: var(--chart-1); stroke-width: 1.25; opacity: 0.8;"
+                                        },
+                                        "children": [],
+                                        "key": "root.0.0.0.0.0.0.4.0.0"
+                                      },
+                                      {
+                                        "tag": "path",
+                                        "attrs": {
+                                          "d": "M792,414 C837.5,414 837.5,884 883,884",
+                                          "fill": "none",
+                                          "stroke-opacity": "0",
+                                          "stroke-width": "20",
+                                          "class": "react-flow__edge-interaction"
+                                        },
+                                        "children": [],
+                                        "key": "root.0.0.0.0.0.0.4.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.0.0.4.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.0.0.4"
+                              },
+                              {
+                                "tag": "svg",
+                                "attrs": {
+                                  "style": "z-index: 0;",
+                                  "viewBox": "0 0 200.85366821289062 100.42681884765625",
+                                  "width": "100%",
+                                  "height": "100%"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "g",
+                                    "attrs": {
+                                      "class": "react-flow__edge react-flow__edge-default nopan selectable",
+                                      "role": "group",
+                                      "data-id": "titles:publish",
+                                      "aria-label": "Edge from titles to publish"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "path",
+                                        "attrs": {
+                                          "d": "M1277,136.5 C1285,136.5 1285,154 1293,154",
+                                          "fill": "none",
+                                          "class": "react-flow__edge-path",
+                                          "style": "stroke: var(--chart-1); stroke-width: 1.25; opacity: 0.8;"
+                                        },
+                                        "children": [],
+                                        "key": "root.0.0.0.0.0.0.5.0.0"
+                                      },
+                                      {
+                                        "tag": "path",
+                                        "attrs": {
+                                          "d": "M1277,136.5 C1285,136.5 1285,154 1293,154",
+                                          "fill": "none",
+                                          "stroke-opacity": "0",
+                                          "stroke-width": "20",
+                                          "class": "react-flow__edge-interaction"
+                                        },
+                                        "children": [],
+                                        "key": "root.0.0.0.0.0.0.5.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.0.0.5.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.0.0.5"
+                              },
+                              {
+                                "tag": "svg",
+                                "attrs": {
+                                  "style": "z-index: 0;",
+                                  "viewBox": "0 0 200.85366821289062 100.42681884765625",
+                                  "width": "100%",
+                                  "height": "100%"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "g",
+                                    "attrs": {
+                                      "class": "react-flow__edge react-flow__edge-default nopan selectable",
+                                      "role": "group",
+                                      "data-id": "thumb-1:publish",
+                                      "aria-label": "Edge from thumb-1 to publish"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "path",
+                                        "attrs": {
+                                          "d": "M1237,489 C1265,489 1265,154 1293,154",
+                                          "fill": "none",
+                                          "class": "react-flow__edge-path",
+                                          "style": "stroke: var(--chart-2); stroke-width: 1.25; opacity: 0.8;"
+                                        },
+                                        "children": [],
+                                        "key": "root.0.0.0.0.0.0.6.0.0"
+                                      },
+                                      {
+                                        "tag": "path",
+                                        "attrs": {
+                                          "d": "M1237,489 C1265,489 1265,154 1293,154",
+                                          "fill": "none",
+                                          "stroke-opacity": "0",
+                                          "stroke-width": "20",
+                                          "class": "react-flow__edge-interaction"
+                                        },
+                                        "children": [],
+                                        "key": "root.0.0.0.0.0.0.6.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.0.0.6.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.0.0.6"
+                              }
+                            ],
+                            "key": "root.0.0.0.0.0.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "react-flow__edgelabel-renderer"
+                            },
+                            "children": [],
+                            "key": "root.0.0.0.0.0.1"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "react-flow__nodes",
+                              "style": "position:absolute;width:100%;height:100%;top:0;left:0"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "react-flow__node react-flow__node-media nopan selectable draggable",
+                                  "data-id": "source",
+                                  "role": "group",
+                                  "style": "z-index: 0; transform: translate(0px, 220px); pointer-events: all; visibility: visible; width: 330px; height: 380px;"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "article",
+                                    "attrs": {
+                                      "class": "relative flex size-full flex-col",
+                                      "aria-label": "Source: Podcast setup.mp4"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "media-drag text-muted-foreground flex h-7 shrink-0 cursor-grab items-center justify-between gap-2 text-[10px] active:cursor-grabbing"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "flex min-w-0 items-center gap-1.5 truncate"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "size-1.5 shrink-0 rounded-full",
+                                                  "style": "background: var(--chart-2);"
+                                                },
+                                                "children": [],
+                                                "key": "root.0.0.0.0.0.2.0.0.0.0.0"
+                                              },
+                                              {
+                                                "text": "Podcast setup.mp4",
+                                                "key": "root.0.0.0.0.0.2.0.0.0.0.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.0.2.0.0.0.0"
+                                          },
+                                          {
+                                            "tag": "button",
+                                            "attrs": {
+                                              "class": "nodrag hover:text-foreground rounded p-1",
+                                              "aria-label": "Inspect Podcast setup.mp4"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "icon",
+                                                "attrs": {
+                                                  "name": "i-lucide-arrow-up-right",
+                                                  "class": "lucide lucide-arrow-up-right size-3.5"
+                                                },
+                                                "key": "root.0.0.0.0.0.2.0.0.0.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.0.2.0.0.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.0.0.2.0.0.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "relative min-h-0 flex-1 rounded-md"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "data-nodeid": "source",
+                                              "data-id": "1-source-null-source",
+                                              "class": "react-flow__handle react-flow__handle-right nodrag nopan !border-background !size-3.5 !border-2 source connectable connectablestart connectableend connectionindicator",
+                                              "aria-label": "Output from Podcast setup.mp4",
+                                              "style": "background: var(--chart-2);"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.0.0.0.2.0.0.1.0"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "bg-card flex h-full flex-col overflow-hidden rounded-md border"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "relative min-h-0 flex-1 overflow-hidden max-h-[200px]"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "img",
+                                                    "attrs": {
+                                                      "alt": "Podcast source frame",
+                                                      "class": "size-full object-cover object-[60%_center]",
+                                                      "src": "/reference/d599ae530532d33c.png"
+                                                    },
+                                                    "children": [],
+                                                    "key": "root.0.0.0.0.0.2.0.0.1.1.0.0"
+                                                  },
+                                                  {
+                                                    "tag": "span",
+                                                    "attrs": {
+                                                      "class": "absolute right-2 bottom-2 rounded bg-black/75 px-1.5 py-0.5 font-mono text-[10px] text-white"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "08:24",
+                                                        "key": "root.0.0.0.0.0.2.0.0.1.1.0.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.0.2.0.0.1.1.0.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.0.2.0.0.1.1.0"
+                                              },
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "nodrag nopan flex flex-col gap-2 p-3"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "p",
+                                                    "attrs": {
+                                                      "class": "text-xs font-medium"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Recording your first podcast",
+                                                        "key": "root.0.0.0.0.0.2.0.0.1.1.1.0.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.0.2.0.0.1.1.1.0"
+                                                  },
+                                                  {
+                                                    "tag": "p",
+                                                    "attrs": {
+                                                      "class": "text-muted-foreground text-[10px]"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Sample episode · paste a URL to try the workflow",
+                                                        "key": "root.0.0.0.0.0.2.0.0.1.1.1.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.0.2.0.0.1.1.1.1"
+                                                  },
+                                                  {
+                                                    "tag": "form",
+                                                    "attrs": {
+                                                      "class": "flex gap-1"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "input",
+                                                        "attrs": {
+                                                          "class": "border-input file:text-foreground placeholder:text-muted-foreground focus-visible:ring-ring flex w-full rounded-md border bg-transparent px-3 py-1 shadow-xs transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:ring-1 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 md:text-sm h-8 min-w-0 text-xs",
+                                                          "aria-label": "YouTube video URL",
+                                                          "placeholder": "Paste YouTube URL",
+                                                          "value": ""
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.0.0.0.2.0.0.1.1.1.2.0"
+                                                      },
+                                                      {
+                                                        "tag": "button",
+                                                        "attrs": {
+                                                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground size-6",
+                                                          "type": "submit",
+                                                          "aria-label": "Use YouTube URL"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "icon",
+                                                            "attrs": {
+                                                              "name": "i-lucide-link-2",
+                                                              "class": "lucide lucide-link2 lucide-link-2"
+                                                            },
+                                                            "key": "root.0.0.0.0.0.2.0.0.1.1.1.2.1.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.0.0.2.0.0.1.1.1.2.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.0.2.0.0.1.1.1.2"
+                                                  },
+                                                  {
+                                                    "tag": "button",
+                                                    "attrs": {
+                                                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 h-8 rounded-md px-3 text-xs"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "icon",
+                                                        "attrs": {
+                                                          "name": "i-lucide-file-text",
+                                                          "class": "lucide lucide-file-text"
+                                                        },
+                                                        "key": "root.0.0.0.0.0.2.0.0.1.1.1.3.0"
+                                                      },
+                                                      {
+                                                        "text": "Transcribe video",
+                                                        "key": "root.0.0.0.0.0.2.0.0.1.1.1.3.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.0.2.0.0.1.1.1.3"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.0.2.0.0.1.1.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.0.2.0.0.1.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.0.0.2.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.0.2.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.0.2.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "react-flow__node react-flow__node-media nopan selectable draggable",
+                                  "data-id": "transcript",
+                                  "role": "group",
+                                  "style": "z-index: 0; transform: translate(425px, 105px); pointer-events: all; visibility: visible; width: 360px; height: 590px;"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "article",
+                                    "attrs": {
+                                      "class": "relative flex size-full flex-col",
+                                      "aria-label": "Transcript: Transcript"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "media-drag text-muted-foreground flex h-7 shrink-0 cursor-grab items-center justify-between gap-2 text-[10px] active:cursor-grabbing"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "flex min-w-0 items-center gap-1.5 truncate"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "size-1.5 shrink-0 rounded-full",
+                                                  "style": "background: var(--chart-1);"
+                                                },
+                                                "children": [],
+                                                "key": "root.0.0.0.0.0.2.1.0.0.0.0"
+                                              },
+                                              {
+                                                "text": "Transcript",
+                                                "key": "root.0.0.0.0.0.2.1.0.0.0.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.0.2.1.0.0.0"
+                                          },
+                                          {
+                                            "tag": "button",
+                                            "attrs": {
+                                              "class": "nodrag hover:text-foreground rounded p-1",
+                                              "aria-label": "Inspect Transcript"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "icon",
+                                                "attrs": {
+                                                  "name": "i-lucide-arrow-up-right",
+                                                  "class": "lucide lucide-arrow-up-right size-3.5"
+                                                },
+                                                "key": "root.0.0.0.0.0.2.1.0.0.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.0.2.1.0.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.0.0.2.1.0.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "relative min-h-0 flex-1 rounded-md"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "data-nodeid": "transcript",
+                                              "data-id": "1-transcript-null-target",
+                                              "class": "react-flow__handle react-flow__handle-left nodrag nopan !border-background !size-3.5 !border-2 target connectable connectablestart connectableend connectionindicator",
+                                              "aria-label": "Input to Transcript",
+                                              "style": "background: var(--chart-1);"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.0.0.0.2.1.0.1.0"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "data-nodeid": "transcript",
+                                              "data-id": "1-transcript-null-source",
+                                              "class": "react-flow__handle react-flow__handle-right nodrag nopan !border-background !size-3.5 !border-2 source connectable connectablestart connectableend connectionindicator",
+                                              "aria-label": "Output from Transcript",
+                                              "style": "background: var(--chart-1);"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.0.0.0.2.1.0.1.1"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "bg-card flex h-full flex-col overflow-hidden rounded-md border"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "text-muted-foreground flex items-center justify-between border-b px-3 py-2 text-[9px] tracking-wider uppercase"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "span",
+                                                    "attrs": {},
+                                                    "children": [
+                                                      {
+                                                        "text": "Transcript",
+                                                        "key": "root.0.0.0.0.0.2.1.0.1.2.0.0.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.0.2.1.0.1.2.0.0"
+                                                  },
+                                                  {
+                                                    "tag": "span",
+                                                    "attrs": {},
+                                                    "children": [
+                                                      {
+                                                        "text": "EN · sample",
+                                                        "key": "root.0.0.0.0.0.2.1.0.1.2.0.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.0.2.1.0.1.2.0.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.0.2.1.0.1.2.0"
+                                              },
+                                              {
+                                                "tag": "textarea",
+                                                "attrs": {
+                                                  "class": "nodrag nopan nowheel focus-visible:ring-ring min-h-0 flex-1 resize-none bg-transparent p-3 text-xs leading-relaxed outline-none focus-visible:ring-1",
+                                                  "aria-label": "Transcript text: Transcript",
+                                                  "value": "00:00  You don't need a studio to start a podcast. Today we'll set up a recording space using the equipment you already have.\n\n00:42  Start with the room. Curtains, a rug, and a shelf of books reduce the echo before you buy another microphone.\n\n02:18  Keep the microphone a hand's width from your mouth. Speak slightly across it, rather than directly into it, to soften plosives.\n\n04:06  Record a thirty-second test. Listen for fans, keyboard noise, and clipping. Turn the input gain down before the loudest moment.\n\n06:35  Build a repeatable setup. Mark the mic position, save your recording settings, and keep a short checklist beside the desk.\n\n08:02  Your first episode doesn't need to be perfect. A clear idea, a comfortable guest, and understandable audio are enough to begin."
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "00:00  You don't need a studio to start a podcast. Today we'll set up a recording space using the equipment you already have.\n\n00:42  Start with the room. Curtains, a rug, and a shelf of books reduce the echo before you buy another microphone.\n\n02:18  Keep the microphone a hand's width from your mouth. Speak slightly across it, rather than directly into it, to soften plosives.\n\n04:06  Record a thirty-second test. Listen for fans, keyboard noise, and clipping. Turn the input gain down before the loudest moment.\n\n06:35  Build a repeatable setup. Mark the mic position, save your recording settings, and keep a short checklist beside the desk.\n\n08:02  Your first episode doesn't need to be perfect. A clear idea, a comfortable guest, and understandable audio are enough to begin.",
+                                                    "key": "root.0.0.0.0.0.2.1.0.1.2.1.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.0.2.1.0.1.2.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.0.2.1.0.1.2"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.0.0.2.1.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.0.2.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.0.2.1"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "react-flow__node react-flow__node-media nopan selectable draggable",
+                                  "data-id": "titles",
+                                  "role": "group",
+                                  "style": "z-index: 0; transform: translate(890px, 0px); pointer-events: all; visibility: visible; width: 380px; height: 245px;"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "article",
+                                    "attrs": {
+                                      "class": "relative flex size-full flex-col",
+                                      "aria-label": "Titles: Title ideas"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "media-drag text-muted-foreground flex h-7 shrink-0 cursor-grab items-center justify-between gap-2 text-[10px] active:cursor-grabbing"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "flex min-w-0 items-center gap-1.5 truncate"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "size-1.5 shrink-0 rounded-full",
+                                                  "style": "background: var(--chart-1);"
+                                                },
+                                                "children": [],
+                                                "key": "root.0.0.0.0.0.2.2.0.0.0.0"
+                                              },
+                                              {
+                                                "text": "Title ideas",
+                                                "key": "root.0.0.0.0.0.2.2.0.0.0.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.0.2.2.0.0.0"
+                                          },
+                                          {
+                                            "tag": "button",
+                                            "attrs": {
+                                              "class": "nodrag hover:text-foreground rounded p-1",
+                                              "aria-label": "Inspect Title ideas"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "icon",
+                                                "attrs": {
+                                                  "name": "i-lucide-arrow-up-right",
+                                                  "class": "lucide lucide-arrow-up-right size-3.5"
+                                                },
+                                                "key": "root.0.0.0.0.0.2.2.0.0.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.0.2.2.0.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.0.0.2.2.0.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "relative min-h-0 flex-1 rounded-md"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "data-nodeid": "titles",
+                                              "data-id": "1-titles-null-target",
+                                              "class": "react-flow__handle react-flow__handle-left nodrag nopan !border-background !size-3.5 !border-2 target connectable connectablestart connectableend connectionindicator",
+                                              "aria-label": "Input to Title ideas",
+                                              "style": "background: var(--chart-1);"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.0.0.0.2.2.0.1.0"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "data-nodeid": "titles",
+                                              "data-id": "1-titles-null-source",
+                                              "class": "react-flow__handle react-flow__handle-right nodrag nopan !border-background !size-3.5 !border-2 source connectable connectablestart connectableend connectionindicator",
+                                              "aria-label": "Output from Title ideas",
+                                              "style": "background: var(--chart-1);"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.0.0.0.2.2.0.1.1"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "bg-card flex h-full flex-col overflow-hidden rounded-md border"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "text-muted-foreground flex items-center justify-between border-b px-3 py-2 text-[9px] tracking-wider uppercase"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "span",
+                                                    "attrs": {},
+                                                    "children": [
+                                                      {
+                                                        "text": "Titles",
+                                                        "key": "root.0.0.0.0.0.2.2.0.1.2.0.0.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.0.2.2.0.1.2.0.0"
+                                                  },
+                                                  {
+                                                    "tag": "span",
+                                                    "attrs": {},
+                                                    "children": [
+                                                      {
+                                                        "text": "From transcript",
+                                                        "key": "root.0.0.0.0.0.2.2.0.1.2.0.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.0.2.2.0.1.2.0.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.0.2.2.0.1.2.0"
+                                              },
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "nodrag flex flex-col gap-1 p-2"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "button",
+                                                    "attrs": {
+                                                      "class": "hover:bg-muted flex items-start gap-2 rounded p-2 text-left text-xs leading-5 disabled:opacity-50 bg-muted"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {
+                                                          "class": "text-muted-foreground shrink-0 font-mono text-[9px]"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "0",
+                                                            "key": "root.0.0.0.0.0.2.2.0.1.2.1.0.0.0"
+                                                          },
+                                                          {
+                                                            "text": "1",
+                                                            "key": "root.0.0.0.0.0.2.2.0.1.2.1.0.0.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.0.0.2.2.0.1.2.1.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {},
+                                                        "children": [
+                                                          {
+                                                            "text": "Record your first podcast—with the gear you have",
+                                                            "key": "root.0.0.0.0.0.2.2.0.1.2.1.0.1.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.0.0.2.2.0.1.2.1.0.1"
+                                                      },
+                                                      {
+                                                        "tag": "icon",
+                                                        "attrs": {
+                                                          "name": "i-lucide-check",
+                                                          "class": "lucide lucide-check mt-1 ml-auto size-3 shrink-0"
+                                                        },
+                                                        "key": "root.0.0.0.0.0.2.2.0.1.2.1.0.2"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.0.2.2.0.1.2.1.0"
+                                                  },
+                                                  {
+                                                    "tag": "button",
+                                                    "attrs": {
+                                                      "class": "hover:bg-muted flex items-start gap-2 rounded p-2 text-left text-xs leading-5 disabled:opacity-50"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {
+                                                          "class": "text-muted-foreground shrink-0 font-mono text-[9px]"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "0",
+                                                            "key": "root.0.0.0.0.0.2.2.0.1.2.1.1.0.0"
+                                                          },
+                                                          {
+                                                            "text": "2",
+                                                            "key": "root.0.0.0.0.0.2.2.0.1.2.1.1.0.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.0.0.2.2.0.1.2.1.1.0"
+                                                      },
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {},
+                                                        "children": [
+                                                          {
+                                                            "text": "3 fixes that make a budget mic sound better",
+                                                            "key": "root.0.0.0.0.0.2.2.0.1.2.1.1.1.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.0.0.2.2.0.1.2.1.1.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.0.2.2.0.1.2.1.1"
+                                                  },
+                                                  {
+                                                    "tag": "button",
+                                                    "attrs": {
+                                                      "class": "hover:bg-muted flex items-start gap-2 rounded p-2 text-left text-xs leading-5 disabled:opacity-50"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {
+                                                          "class": "text-muted-foreground shrink-0 font-mono text-[9px]"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "0",
+                                                            "key": "root.0.0.0.0.0.2.2.0.1.2.1.2.0.0"
+                                                          },
+                                                          {
+                                                            "text": "3",
+                                                            "key": "root.0.0.0.0.0.2.2.0.1.2.1.2.0.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.0.0.2.2.0.1.2.1.2.0"
+                                                      },
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {},
+                                                        "children": [
+                                                          {
+                                                            "text": "Your room matters more than your microphone",
+                                                            "key": "root.0.0.0.0.0.2.2.0.1.2.1.2.1.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.0.0.2.2.0.1.2.1.2.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.0.2.2.0.1.2.1.2"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.0.2.2.0.1.2.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.0.2.2.0.1.2"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.0.0.2.2.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.0.2.2.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.0.2.2"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "react-flow__node react-flow__node-media nopan selectable draggable",
+                                  "data-id": "thumb-1",
+                                  "role": "group",
+                                  "style": "z-index: 0; transform: translate(890px, 345px); pointer-events: all; visibility: visible; width: 340px; height: 260px;"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "article",
+                                    "attrs": {
+                                      "class": "relative flex size-full flex-col",
+                                      "aria-label": "Thumbnail: Thumbnail / 01"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "media-drag text-muted-foreground flex h-7 shrink-0 cursor-grab items-center justify-between gap-2 text-[10px] active:cursor-grabbing"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "flex min-w-0 items-center gap-1.5 truncate"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "size-1.5 shrink-0 rounded-full",
+                                                  "style": "background: var(--chart-2);"
+                                                },
+                                                "children": [],
+                                                "key": "root.0.0.0.0.0.2.3.0.0.0.0"
+                                              },
+                                              {
+                                                "text": "Thumbnail / 01",
+                                                "key": "root.0.0.0.0.0.2.3.0.0.0.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.0.2.3.0.0.0"
+                                          },
+                                          {
+                                            "tag": "button",
+                                            "attrs": {
+                                              "class": "nodrag hover:text-foreground rounded p-1",
+                                              "aria-label": "Inspect Thumbnail / 01"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "icon",
+                                                "attrs": {
+                                                  "name": "i-lucide-arrow-up-right",
+                                                  "class": "lucide lucide-arrow-up-right size-3.5"
+                                                },
+                                                "key": "root.0.0.0.0.0.2.3.0.0.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.0.2.3.0.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.0.0.2.3.0.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "relative min-h-0 flex-1 rounded-md"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "data-nodeid": "thumb-1",
+                                              "data-id": "1-thumb-1-null-target",
+                                              "class": "react-flow__handle react-flow__handle-left nodrag nopan !border-background !size-3.5 !border-2 target connectable connectablestart connectableend connectionindicator",
+                                              "aria-label": "Input to Thumbnail / 01",
+                                              "style": "background: var(--chart-2);"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.0.0.0.2.3.0.1.0"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "data-nodeid": "thumb-1",
+                                              "data-id": "1-thumb-1-null-source",
+                                              "class": "react-flow__handle react-flow__handle-right nodrag nopan !border-background !size-3.5 !border-2 source connectable connectablestart connectableend connectionindicator",
+                                              "aria-label": "Output from Thumbnail / 01",
+                                              "style": "background: var(--chart-2);"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.0.0.0.2.3.0.1.1"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "bg-card flex h-full flex-col overflow-hidden rounded-md border"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "relative aspect-video w-full overflow-hidden",
+                                                  "style": "background: rgb(233, 180, 95); color: rgb(36, 27, 17);"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "img",
+                                                    "attrs": {
+                                                      "alt": "Podcast host at the microphone",
+                                                      "class": "absolute inset-y-0 right-0 h-full w-[56%] object-cover object-[61%_center]",
+                                                      "src": "/reference/d599ae530532d33c.png"
+                                                    },
+                                                    "children": [],
+                                                    "key": "root.0.0.0.0.0.2.3.0.1.2.0.0"
+                                                  },
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "absolute inset-y-0 left-0 w-[66%]",
+                                                      "style": "background: linear-gradient(90deg, rgb(233, 180, 95) 68%, transparent);"
+                                                    },
+                                                    "children": [],
+                                                    "key": "root.0.0.0.0.0.2.3.0.1.2.0.1"
+                                                  },
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "absolute inset-y-0 left-0 flex w-[62%] flex-col justify-center px-[6%]"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {
+                                                          "class": "mb-3 text-[8px] font-bold tracking-[.18em]"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "STUDIO NOTES",
+                                                            "key": "root.0.0.0.0.0.2.3.0.1.2.0.2.0.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.0.0.2.3.0.1.2.0.2.0"
+                                                      },
+                                                      {
+                                                        "tag": "p",
+                                                        "attrs": {
+                                                          "class": "text-[31px] leading-[.98] font-black tracking-[-.055em] whitespace-pre-line"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "START YOUR\nPODCAST",
+                                                            "key": "root.0.0.0.0.0.2.3.0.1.2.0.2.1.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.0.0.2.3.0.1.2.0.2.1"
+                                                      },
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {
+                                                          "class": "mt-4 w-fit rounded-sm border border-current px-1.5 py-0.5 text-[8px] font-semibold"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "EPISODE 01",
+                                                            "key": "root.0.0.0.0.0.2.3.0.1.2.0.2.2.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.0.0.2.3.0.1.2.0.2.2"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.0.2.3.0.1.2.0.2"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.0.2.3.0.1.2.0"
+                                              },
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "nodrag mt-auto flex items-center justify-between gap-2 px-3 py-2"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "span",
+                                                    "attrs": {
+                                                      "class": "text-muted-foreground text-[10px]"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "1280 × 720",
+                                                        "key": "root.0.0.0.0.0.2.3.0.1.2.1.0.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.0.2.3.0.1.2.1.0"
+                                                  },
+                                                  {
+                                                    "tag": "button",
+                                                    "attrs": {
+                                                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80 h-8 rounded-md px-3 text-xs"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "icon",
+                                                        "attrs": {
+                                                          "name": "i-lucide-check",
+                                                          "class": "lucide lucide-check"
+                                                        },
+                                                        "key": "root.0.0.0.0.0.2.3.0.1.2.1.1.0"
+                                                      },
+                                                      {
+                                                        "text": "Selected",
+                                                        "key": "root.0.0.0.0.0.2.3.0.1.2.1.1.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.0.2.3.0.1.2.1.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.0.2.3.0.1.2.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.0.2.3.0.1.2"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.0.0.2.3.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.0.2.3.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.0.2.3"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "react-flow__node react-flow__node-media nopan selectable draggable",
+                                  "data-id": "thumb-2",
+                                  "role": "group",
+                                  "style": "z-index: 0; transform: translate(1300px, 345px); pointer-events: all; visibility: visible; width: 340px; height: 260px;"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "article",
+                                    "attrs": {
+                                      "class": "relative flex size-full flex-col",
+                                      "aria-label": "Thumbnail: Thumbnail / 02"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "media-drag text-muted-foreground flex h-7 shrink-0 cursor-grab items-center justify-between gap-2 text-[10px] active:cursor-grabbing"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "flex min-w-0 items-center gap-1.5 truncate"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "size-1.5 shrink-0 rounded-full",
+                                                  "style": "background: var(--chart-2);"
+                                                },
+                                                "children": [],
+                                                "key": "root.0.0.0.0.0.2.4.0.0.0.0"
+                                              },
+                                              {
+                                                "text": "Thumbnail / 02",
+                                                "key": "root.0.0.0.0.0.2.4.0.0.0.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.0.2.4.0.0.0"
+                                          },
+                                          {
+                                            "tag": "button",
+                                            "attrs": {
+                                              "class": "nodrag hover:text-foreground rounded p-1",
+                                              "aria-label": "Inspect Thumbnail / 02"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "icon",
+                                                "attrs": {
+                                                  "name": "i-lucide-arrow-up-right",
+                                                  "class": "lucide lucide-arrow-up-right size-3.5"
+                                                },
+                                                "key": "root.0.0.0.0.0.2.4.0.0.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.0.2.4.0.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.0.0.2.4.0.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "relative min-h-0 flex-1 rounded-md"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "data-nodeid": "thumb-2",
+                                              "data-id": "1-thumb-2-null-target",
+                                              "class": "react-flow__handle react-flow__handle-left nodrag nopan !border-background !size-3.5 !border-2 target connectable connectablestart connectableend connectionindicator",
+                                              "aria-label": "Input to Thumbnail / 02",
+                                              "style": "background: var(--chart-2);"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.0.0.0.2.4.0.1.0"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "data-nodeid": "thumb-2",
+                                              "data-id": "1-thumb-2-null-source",
+                                              "class": "react-flow__handle react-flow__handle-right nodrag nopan !border-background !size-3.5 !border-2 source connectable connectablestart connectableend connectionindicator",
+                                              "aria-label": "Output from Thumbnail / 02",
+                                              "style": "background: var(--chart-2);"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.0.0.0.2.4.0.1.1"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "bg-card flex h-full flex-col overflow-hidden rounded-md border"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "relative aspect-video w-full overflow-hidden",
+                                                  "style": "background: rgb(177, 222, 205); color: rgb(17, 45, 38);"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "img",
+                                                    "attrs": {
+                                                      "alt": "Podcast host at the microphone",
+                                                      "class": "absolute inset-y-0 right-0 h-full w-[56%] object-cover object-[61%_center]",
+                                                      "src": "/reference/d599ae530532d33c.png"
+                                                    },
+                                                    "children": [],
+                                                    "key": "root.0.0.0.0.0.2.4.0.1.2.0.0"
+                                                  },
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "absolute inset-y-0 left-0 w-[66%]",
+                                                      "style": "background: linear-gradient(90deg, rgb(177, 222, 205) 68%, transparent);"
+                                                    },
+                                                    "children": [],
+                                                    "key": "root.0.0.0.0.0.2.4.0.1.2.0.1"
+                                                  },
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "absolute inset-y-0 left-0 flex w-[62%] flex-col justify-center px-[6%]"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {
+                                                          "class": "mb-3 text-[8px] font-bold tracking-[.18em]"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "STUDIO NOTES",
+                                                            "key": "root.0.0.0.0.0.2.4.0.1.2.0.2.0.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.0.0.2.4.0.1.2.0.2.0"
+                                                      },
+                                                      {
+                                                        "tag": "p",
+                                                        "attrs": {
+                                                          "class": "text-[31px] leading-[.98] font-black tracking-[-.055em] whitespace-pre-line"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "BETTER AUDIO\nFOR $0",
+                                                            "key": "root.0.0.0.0.0.2.4.0.1.2.0.2.1.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.0.0.2.4.0.1.2.0.2.1"
+                                                      },
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {
+                                                          "class": "mt-4 w-fit rounded-sm border border-current px-1.5 py-0.5 text-[8px] font-semibold"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "EPISODE 01",
+                                                            "key": "root.0.0.0.0.0.2.4.0.1.2.0.2.2.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.0.0.2.4.0.1.2.0.2.2"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.0.2.4.0.1.2.0.2"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.0.2.4.0.1.2.0"
+                                              },
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "nodrag mt-auto flex items-center justify-between gap-2 px-3 py-2"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "span",
+                                                    "attrs": {
+                                                      "class": "text-muted-foreground text-[10px]"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "1280 × 720",
+                                                        "key": "root.0.0.0.0.0.2.4.0.1.2.1.0.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.0.2.4.0.1.2.1.0"
+                                                  },
+                                                  {
+                                                    "tag": "button",
+                                                    "attrs": {
+                                                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Use thumbnail",
+                                                        "key": "root.0.0.0.0.0.2.4.0.1.2.1.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.0.2.4.0.1.2.1.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.0.2.4.0.1.2.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.0.2.4.0.1.2"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.0.0.2.4.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.0.2.4.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.0.2.4"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "react-flow__node react-flow__node-media nopan selectable draggable",
+                                  "data-id": "description",
+                                  "role": "group",
+                                  "style": "z-index: 0; transform: translate(890px, 715px); pointer-events: all; visibility: visible; width: 380px; height: 310px;"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "article",
+                                    "attrs": {
+                                      "class": "relative flex size-full flex-col",
+                                      "aria-label": "Description: Description & chapters"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "media-drag text-muted-foreground flex h-7 shrink-0 cursor-grab items-center justify-between gap-2 text-[10px] active:cursor-grabbing"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "flex min-w-0 items-center gap-1.5 truncate"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "size-1.5 shrink-0 rounded-full",
+                                                  "style": "background: var(--chart-1);"
+                                                },
+                                                "children": [],
+                                                "key": "root.0.0.0.0.0.2.5.0.0.0.0"
+                                              },
+                                              {
+                                                "text": "Description & chapters",
+                                                "key": "root.0.0.0.0.0.2.5.0.0.0.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.0.2.5.0.0.0"
+                                          },
+                                          {
+                                            "tag": "button",
+                                            "attrs": {
+                                              "class": "nodrag hover:text-foreground rounded p-1",
+                                              "aria-label": "Inspect Description & chapters"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "icon",
+                                                "attrs": {
+                                                  "name": "i-lucide-arrow-up-right",
+                                                  "class": "lucide lucide-arrow-up-right size-3.5"
+                                                },
+                                                "key": "root.0.0.0.0.0.2.5.0.0.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.0.2.5.0.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.0.0.2.5.0.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "relative min-h-0 flex-1 rounded-md"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "data-nodeid": "description",
+                                              "data-id": "1-description-null-target",
+                                              "class": "react-flow__handle react-flow__handle-left nodrag nopan !border-background !size-3.5 !border-2 target connectable connectablestart connectableend connectionindicator",
+                                              "aria-label": "Input to Description & chapters",
+                                              "style": "background: var(--chart-1);"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.0.0.0.2.5.0.1.0"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "data-nodeid": "description",
+                                              "data-id": "1-description-null-source",
+                                              "class": "react-flow__handle react-flow__handle-right nodrag nopan !border-background !size-3.5 !border-2 source connectable connectablestart connectableend connectionindicator",
+                                              "aria-label": "Output from Description & chapters",
+                                              "style": "background: var(--chart-1);"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.0.0.0.2.5.0.1.1"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "bg-card flex h-full flex-col overflow-hidden rounded-md border"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "text-muted-foreground flex items-center justify-between border-b px-3 py-2 text-[9px] tracking-wider uppercase"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "span",
+                                                    "attrs": {},
+                                                    "children": [
+                                                      {
+                                                        "text": "Description",
+                                                        "key": "root.0.0.0.0.0.2.5.0.1.2.0.0.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.0.2.5.0.1.2.0.0"
+                                                  },
+                                                  {
+                                                    "tag": "span",
+                                                    "attrs": {},
+                                                    "children": [
+                                                      {
+                                                        "text": "From transcript",
+                                                        "key": "root.0.0.0.0.0.2.5.0.1.2.0.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.0.2.5.0.1.2.0.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.0.2.5.0.1.2.0"
+                                              },
+                                              {
+                                                "tag": "textarea",
+                                                "attrs": {
+                                                  "class": "nodrag nopan nowheel focus-visible:ring-ring min-h-0 flex-1 resize-none bg-transparent p-3 text-xs leading-relaxed outline-none focus-visible:ring-1",
+                                                  "aria-label": "Description text: Description & chapters",
+                                                  "value": "Start recording with the equipment you already have. In this episode: room treatment, microphone placement, gain, and a repeatable recording checklist.\n\n00:00 Start with what you have\n00:42 Treat the room\n02:18 Place the microphone\n04:06 Record a test\n06:35 Save your setup"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Start recording with the equipment you already have. In this episode: room treatment, microphone placement, gain, and a repeatable recording checklist.\n\n00:00 Start with what you have\n00:42 Treat the room\n02:18 Place the microphone\n04:06 Record a test\n06:35 Save your setup",
+                                                    "key": "root.0.0.0.0.0.2.5.0.1.2.1.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.0.2.5.0.1.2.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.0.2.5.0.1.2"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.0.0.2.5.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.0.2.5.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.0.2.5"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "react-flow__node react-flow__node-media nopan selectable draggable",
+                                  "data-id": "publish",
+                                  "role": "group",
+                                  "style": "z-index: 0; transform: translate(1300px, 0px); pointer-events: all; visibility: visible; width: 340px; height: 280px;"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "article",
+                                    "attrs": {
+                                      "class": "relative flex size-full flex-col",
+                                      "aria-label": "YouTube preview: YouTube preview"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "media-drag text-muted-foreground flex h-7 shrink-0 cursor-grab items-center justify-between gap-2 text-[10px] active:cursor-grabbing"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "flex min-w-0 items-center gap-1.5 truncate"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "size-1.5 shrink-0 rounded-full",
+                                                  "style": "background: var(--chart-2);"
+                                                },
+                                                "children": [],
+                                                "key": "root.0.0.0.0.0.2.6.0.0.0.0"
+                                              },
+                                              {
+                                                "text": "YouTube preview",
+                                                "key": "root.0.0.0.0.0.2.6.0.0.0.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.0.2.6.0.0.0"
+                                          },
+                                          {
+                                            "tag": "button",
+                                            "attrs": {
+                                              "class": "nodrag hover:text-foreground rounded p-1",
+                                              "aria-label": "Inspect YouTube preview"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "icon",
+                                                "attrs": {
+                                                  "name": "i-lucide-arrow-up-right",
+                                                  "class": "lucide lucide-arrow-up-right size-3.5"
+                                                },
+                                                "key": "root.0.0.0.0.0.2.6.0.0.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.0.2.6.0.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.0.0.2.6.0.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "relative min-h-0 flex-1 rounded-md"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "data-nodeid": "publish",
+                                              "data-id": "1-publish-null-target",
+                                              "class": "react-flow__handle react-flow__handle-left nodrag nopan !border-background !size-3.5 !border-2 target connectable connectablestart connectableend connectionindicator",
+                                              "aria-label": "Input to YouTube preview",
+                                              "style": "background: var(--chart-2);"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.0.0.0.2.6.0.1.0"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "bg-card flex h-full flex-col overflow-hidden rounded-md border"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "relative aspect-video w-full overflow-hidden",
+                                                  "style": "background: rgb(233, 180, 95); color: rgb(36, 27, 17);"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "img",
+                                                    "attrs": {
+                                                      "alt": "Podcast host at the microphone",
+                                                      "class": "absolute inset-y-0 right-0 h-full w-[56%] object-cover object-[61%_center]",
+                                                      "src": "/reference/d599ae530532d33c.png"
+                                                    },
+                                                    "children": [],
+                                                    "key": "root.0.0.0.0.0.2.6.0.1.1.0.0"
+                                                  },
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "absolute inset-y-0 left-0 w-[66%]",
+                                                      "style": "background: linear-gradient(90deg, rgb(233, 180, 95) 68%, transparent);"
+                                                    },
+                                                    "children": [],
+                                                    "key": "root.0.0.0.0.0.2.6.0.1.1.0.1"
+                                                  },
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "absolute inset-y-0 left-0 flex w-[62%] flex-col justify-center px-[6%]"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {
+                                                          "class": "mb-3 text-[8px] font-bold tracking-[.18em]"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "STUDIO NOTES",
+                                                            "key": "root.0.0.0.0.0.2.6.0.1.1.0.2.0.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.0.0.2.6.0.1.1.0.2.0"
+                                                      },
+                                                      {
+                                                        "tag": "p",
+                                                        "attrs": {
+                                                          "class": "text-[31px] leading-[.98] font-black tracking-[-.055em] whitespace-pre-line"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "START YOUR\nPODCAST",
+                                                            "key": "root.0.0.0.0.0.2.6.0.1.1.0.2.1.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.0.0.2.6.0.1.1.0.2.1"
+                                                      },
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {
+                                                          "class": "mt-4 w-fit rounded-sm border border-current px-1.5 py-0.5 text-[8px] font-semibold"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "EPISODE 01",
+                                                            "key": "root.0.0.0.0.0.2.6.0.1.1.0.2.2.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.0.0.2.6.0.1.1.0.2.2"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.0.2.6.0.1.1.0.2"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.0.2.6.0.1.1.0"
+                                              },
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "flex gap-2 p-3"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "span",
+                                                    "attrs": {
+                                                      "class": "bg-muted flex size-7 shrink-0 items-center justify-center rounded-full text-[9px] font-bold"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "SN",
+                                                        "key": "root.0.0.0.0.0.2.6.0.1.1.1.0.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.0.2.6.0.1.1.1.0"
+                                                  },
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {},
+                                                    "children": [
+                                                      {
+                                                        "tag": "p",
+                                                        "attrs": {
+                                                          "class": "text-xs leading-4 font-medium"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "Record your first podcast—with the gear you have",
+                                                            "key": "root.0.0.0.0.0.2.6.0.1.1.1.1.0.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.0.0.2.6.0.1.1.1.1.0"
+                                                      },
+                                                      {
+                                                        "tag": "p",
+                                                        "attrs": {
+                                                          "class": "text-muted-foreground mt-1 text-[10px]"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "text": "Studio Notes · Preview",
+                                                            "key": "root.0.0.0.0.0.2.6.0.1.1.1.1.1.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.0.0.0.2.6.0.1.1.1.1.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.0.0.0.2.6.0.1.1.1.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.0.0.0.2.6.0.1.1.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.0.0.0.2.6.0.1.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.0.0.0.2.6.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.0.0.0.2.6.0"
+                                  }
+                                ],
+                                "key": "root.0.0.0.0.0.2.6"
+                              }
+                            ],
+                            "key": "root.0.0.0.0.0.2"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "react-flow__viewport-portal"
+                            },
+                            "children": [],
+                            "key": "root.0.0.0.0.0.3"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.0"
+                      }
+                    ],
+                    "key": "root.0.0.0.0"
+                  }
+                ],
+                "key": "root.0.0.0"
+              },
+              {
+                "tag": "svg",
+                "attrs": {
+                  "class": "react-flow__background",
+                  "style": "position:absolute;width:100%;height:100%;top:0;left:0;--xy-background-pattern-color-props:color-mix(in oklab, var(--muted-foreground) 32%, transparent)",
+                  "width": "100%",
+                  "height": "100%"
+                },
+                "children": [
+                  {
+                    "tag": "pattern",
+                    "attrs": {
+                      "id": "pattern-1",
+                      "x": "0.15121951219511942",
+                      "y": "7.7530487804877986",
+                      "width": "10.71219512195122",
+                      "height": "10.71219512195122",
+                      "patternUnits": "userSpaceOnUse",
+                      "patternTransform": "translate(-5.35609756097561,-5.35609756097561)"
+                    },
+                    "children": [
+                      {
+                        "tag": "circle",
+                        "attrs": {
+                          "cx": "0.5021341463414635",
+                          "cy": "0.5021341463414635",
+                          "r": "0.5021341463414635",
+                          "class": "react-flow__background-pattern dots"
+                        },
+                        "children": [],
+                        "key": "root.0.0.1.0.0"
+                      }
+                    ],
+                    "key": "root.0.0.1.0"
+                  },
+                  {
+                    "tag": "rect",
+                    "attrs": {
+                      "x": "0",
+                      "y": "0",
+                      "width": "100%",
+                      "height": "100%",
+                      "fill": "url(#pattern-1)"
+                    },
+                    "children": [],
+                    "key": "root.0.0.1.1"
+                  }
+                ],
+                "key": "root.0.0.1"
+              },
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "react-flow__panel !m-3 top left"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "bg-background flex flex-col gap-1 rounded-lg border p-1 shadow-sm"
+                    },
+                    "children": [
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80 h-9 w-9",
+                          "aria-label": "Select and move",
+                          "data-state": "closed"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-mouse-pointer-2",
+                              "class": "lucide lucide-mouse-pointer2 lucide-mouse-pointer-2"
+                            },
+                            "key": "root.0.0.2.0.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.2.0.0"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-9 w-9",
+                          "aria-label": "Pan canvas",
+                          "data-state": "closed"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-hand",
+                              "class": "lucide lucide-hand"
+                            },
+                            "key": "root.0.0.2.0.1.0"
+                          }
+                        ],
+                        "key": "root.0.0.2.0.1"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-9 w-9",
+                          "aria-label": "Add thumbnail branch",
+                          "data-state": "closed"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-plus",
+                              "class": "lucide lucide-plus"
+                            },
+                            "key": "root.0.0.2.0.2.0"
+                          }
+                        ],
+                        "key": "root.0.0.2.0.2"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-9 w-9",
+                          "aria-label": "Replace source image",
+                          "data-state": "closed"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-upload",
+                              "class": "lucide lucide-upload"
+                            },
+                            "key": "root.0.0.2.0.3.0"
+                          }
+                        ],
+                        "key": "root.0.0.2.0.3"
+                      }
+                    ],
+                    "key": "root.0.0.2.0"
+                  }
+                ],
+                "key": "root.0.0.2"
+              },
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "react-flow__panel !m-3 bottom left"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "bg-background flex items-center gap-1 rounded-lg border p-1 shadow-sm"
+                    },
+                    "children": [
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-9 w-9",
+                          "aria-label": "Zoom out",
+                          "data-state": "closed"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-minus",
+                              "class": "lucide lucide-minus"
+                            },
+                            "key": "root.0.0.3.0.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.3.0.0"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-9 w-9",
+                          "aria-label": "Fit canvas",
+                          "data-state": "closed"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-focus",
+                              "class": "lucide lucide-focus"
+                            },
+                            "key": "root.0.0.3.0.1.0"
+                          }
+                        ],
+                        "key": "root.0.0.3.0.1"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-9 w-9",
+                          "aria-label": "Zoom in",
+                          "data-state": "closed"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-plus",
+                              "class": "lucide lucide-plus"
+                            },
+                            "key": "root.0.0.3.0.2.0"
+                          }
+                        ],
+                        "key": "root.0.0.3.0.2"
+                      }
+                    ],
+                    "key": "root.0.0.3.0"
+                  }
+                ],
+                "key": "root.0.0.3"
+              },
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "react-flow__panel !m-3 sm:hidden bottom right"
+                },
+                "children": [
+                  {
+                    "tag": "button",
+                    "attrs": {
+                      "type": "button",
+                      "role": "combobox",
+                      "data-state": "closed",
+                      "class": "border-input ring-offset-background placeholder:text-muted-foreground focus:ring-ring flex h-9 items-center justify-between rounded-md border px-3 py-2 text-sm whitespace-nowrap shadow-xs focus:ring-1 focus:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 bg-background w-44",
+                      "aria-label": "Inspect canvas object"
+                    },
+                    "options": [
+                      "Podcast setup.mp4",
+                      "Transcript",
+                      "Title ideas",
+                      "Thumbnail / 01",
+                      "Thumbnail / 02",
+                      "Description & chapters",
+                      "YouTube preview"
+                    ],
+                    "children": [
+                      {
+                        "tag": "span",
+                        "attrs": {
+                          "style": "pointer-events:none"
+                        },
+                        "children": [
+                          {
+                            "text": "Inspect an object",
+                            "key": "root.0.0.4.0.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.4.0.0"
+                      },
+                      {
+                        "tag": "icon",
+                        "attrs": {
+                          "name": "i-lucide-chevron-down",
+                          "class": "lucide lucide-chevron-down h-4 w-4 opacity-50"
+                        },
+                        "key": "root.0.0.4.0.1"
+                      }
+                    ],
+                    "key": "root.0.0.4.0"
+                  }
+                ],
+                "key": "root.0.0.4"
+              },
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "react-flow__panel react-flow__attribution bottom right"
+                },
+                "children": [
+                  {
+                    "tag": "a",
+                    "attrs": {
+                      "href": "https://reactflow.dev?utm_source=attribution",
+                      "aria-label": "React Flow attribution"
+                    },
+                    "children": [
+                      {
+                        "text": "React Flow",
+                        "key": "root.0.0.5.0.0"
+                      }
+                    ],
+                    "key": "root.0.0.5.0"
+                  }
+                ],
+                "key": "root.0.0.5"
+              },
+              {
+                "tag": "div",
+                "attrs": {
+                  "id": "react-flow__node-desc-1",
+                  "style": "display:none"
+                },
+                "children": [
+                  {
+                    "text": "Press enter or space to select a node. You can then use the arrow keys to move the node around. Press delete to remove it and escape to cancel.",
+                    "key": "root.0.0.6.0"
+                  }
+                ],
+                "key": "root.0.0.6"
+              },
+              {
+                "tag": "div",
+                "attrs": {
+                  "id": "react-flow__edge-desc-1",
+                  "style": "display:none"
+                },
+                "children": [
+                  {
+                    "text": "Press enter or space to select an edge. You can then press delete to remove it or escape to cancel.",
+                    "key": "root.0.0.7.0"
+                  }
+                ],
+                "key": "root.0.0.7"
+              },
+              {
+                "tag": "div",
+                "attrs": {
+                  "id": "react-flow__aria-live-1",
+                  "style": "position:absolute;width:1px;height:1px;margin:-1px;border:0;padding:0;overflow:hidden;clip:rect(0px, 0px, 0px, 0px);clip-path:inset(100%)"
+                },
+                "children": [],
+                "key": "root.0.0.8"
+              }
+            ],
+            "key": "root.0.0"
+          }
+        ],
+        "key": "root.0"
+      },
+      {
+        "tag": "footer",
+        "attrs": {
+          "class": "text-muted-foreground flex h-7 shrink-0 items-center justify-between gap-3 border-t px-3 text-[10px]"
+        },
+        "children": [
+          {
+            "tag": "span",
+            "attrs": {},
+            "children": [
+              {
+                "text": "Scripted demo · sample media",
+                "key": "root.1.0.0"
+              },
+              {
+                "tag": "span",
+                "attrs": {
+                  "class": "hidden sm:inline"
+                },
+                "children": [
+                  {
+                    "text": "· Drag headings · connect ports",
+                    "key": "root.1.0.1.0"
+                  }
+                ],
+                "key": "root.1.0.1"
+              }
+            ],
+            "key": "root.1.0"
+          },
+          {
+            "tag": "span",
+            "attrs": {
+              "role": "status"
+            },
+            "children": [
+              {
+                "text": "Saved locally",
+                "key": "root.1.1.0"
+              }
+            ],
+            "key": "root.1.1"
+          }
+        ],
+        "key": "root.1"
+      },
+      {
+        "tag": "input",
+        "attrs": {
+          "type": "file",
+          "accept": "image/png,image/jpeg,image/webp",
+          "class": "hidden",
+          "aria-label": "Upload source image",
+          "value": ""
+        },
+        "children": [],
+        "key": "root.2"
+      }
+    ],
+    "key": "root"
+  },
+  "headings": [],
+  "canvasNodes": 7
+}

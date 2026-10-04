@@ -1,0 +1,2778 @@
+{
+  "label": "Document 5",
+  "path": "/ai-chat/document-comparison",
+  "appTitle": "",
+  "tree": {
+    "tag": "div",
+    "attrs": {
+      "id": "ai-workspace-content",
+      "class": "flex min-h-0 flex-1 flex-col"
+    },
+    "children": [
+      {
+        "tag": "div",
+        "attrs": {
+          "class": "@container/comparison flex min-h-0 flex-1 flex-col"
+        },
+        "children": [
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "flex shrink-0 flex-wrap items-center justify-between gap-3 border-b px-5 py-3"
+            },
+            "children": [
+              {
+                "tag": "div",
+                "attrs": {},
+                "children": [
+                  {
+                    "tag": "h1",
+                    "attrs": {
+                      "class": "text-sm font-medium"
+                    },
+                    "children": [
+                      {
+                        "text": "Review the onboarding guide",
+                        "key": "root.0.0.0.0.0"
+                      }
+                    ],
+                    "key": "root.0.0.0.0"
+                  },
+                  {
+                    "tag": "p",
+                    "attrs": {
+                      "class": "text-muted-foreground mt-1 text-xs"
+                    },
+                    "children": [
+                      {
+                        "text": "Original demo documents · changes stay in this session",
+                        "key": "root.0.0.0.1.0"
+                      }
+                    ],
+                    "key": "root.0.0.0.1"
+                  }
+                ],
+                "key": "root.0.0.0"
+              },
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "flex flex-wrap items-center gap-2"
+                },
+                "children": [
+                  {
+                    "tag": "button",
+                    "attrs": {
+                      "type": "button",
+                      "role": "checkbox",
+                      "aria-checked": "false",
+                      "data-state": "unchecked",
+                      "value": "on",
+                      "class": "peer border-primary focus-visible:ring-ring data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground h-4 w-4 shrink-0 rounded-sm border shadow-sm focus-visible:ring-1 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50",
+                      "id": "comparison-changes-only"
+                    },
+                    "children": [],
+                    "key": "root.0.0.1.0"
+                  },
+                  {
+                    "tag": "label",
+                    "attrs": {
+                      "class": "font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 mr-3 text-xs",
+                      "for": "comparison-changes-only"
+                    },
+                    "children": [
+                      {
+                        "text": "Changes only",
+                        "key": "root.0.0.1.1.0"
+                      }
+                    ],
+                    "key": "root.0.0.1.1"
+                  },
+                  {
+                    "tag": "span",
+                    "attrs": {
+                      "class": "text-muted-foreground text-xs"
+                    },
+                    "children": [
+                      {
+                        "text": "0",
+                        "key": "root.0.0.1.2.0"
+                      },
+                      {
+                        "text": " of ",
+                        "key": "root.0.0.1.2.1"
+                      },
+                      {
+                        "text": "5",
+                        "key": "root.0.0.1.2.2"
+                      },
+                      {
+                        "text": " reviewed",
+                        "key": "root.0.0.1.2.3"
+                      }
+                    ],
+                    "key": "root.0.0.1.2"
+                  },
+                  {
+                    "tag": "button",
+                    "attrs": {
+                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-6",
+                      "aria-label": "Previous difference"
+                    },
+                    "children": [
+                      {
+                        "tag": "icon",
+                        "attrs": {
+                          "name": "i-lucide-chevron-up",
+                          "class": "lucide lucide-chevron-up"
+                        },
+                        "key": "root.0.0.1.3.0"
+                      }
+                    ],
+                    "key": "root.0.0.1.3"
+                  },
+                  {
+                    "tag": "span",
+                    "attrs": {
+                      "class": "text-xs tabular-nums"
+                    },
+                    "children": [
+                      {
+                        "text": "1",
+                        "key": "root.0.0.1.4.0"
+                      },
+                      {
+                        "text": "/ ",
+                        "key": "root.0.0.1.4.1"
+                      },
+                      {
+                        "text": "5",
+                        "key": "root.0.0.1.4.2"
+                      }
+                    ],
+                    "key": "root.0.0.1.4"
+                  },
+                  {
+                    "tag": "button",
+                    "attrs": {
+                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-6",
+                      "aria-label": "Next difference"
+                    },
+                    "children": [
+                      {
+                        "tag": "icon",
+                        "attrs": {
+                          "name": "i-lucide-chevron-down",
+                          "class": "lucide lucide-chevron-down"
+                        },
+                        "key": "root.0.0.1.5.0"
+                      }
+                    ],
+                    "key": "root.0.0.1.5"
+                  }
+                ],
+                "key": "root.0.0.1"
+              }
+            ],
+            "key": "root.0.0"
+          },
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "grid shrink-0 grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center gap-2 border-b px-4 py-3"
+            },
+            "children": [
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "min-w-0"
+                },
+                "children": [
+                  {
+                    "tag": "label",
+                    "attrs": {
+                      "class": "font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-muted-foreground mb-1 block text-xs"
+                    },
+                    "children": [
+                      {
+                        "text": "Before",
+                        "key": "root.0.1.0.0.0"
+                      }
+                    ],
+                    "key": "root.0.1.0.0"
+                  },
+                  {
+                    "tag": "button",
+                    "attrs": {
+                      "type": "button",
+                      "role": "combobox",
+                      "data-state": "closed",
+                      "class": "border-input ring-offset-background placeholder:text-muted-foreground focus:ring-ring flex h-9 items-center justify-between rounded-md border bg-transparent px-3 py-2 text-sm whitespace-nowrap shadow-xs focus:ring-1 focus:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 w-full",
+                      "aria-label": "Before document"
+                    },
+                    "options": [
+                      "Onboarding guide · Original",
+                      "Onboarding guide · Proposed"
+                    ],
+                    "children": [
+                      {
+                        "tag": "span",
+                        "attrs": {
+                          "style": "pointer-events:none"
+                        },
+                        "children": [
+                          {
+                            "text": "Onboarding guide · Original",
+                            "key": "root.0.1.0.1.0.0"
+                          }
+                        ],
+                        "key": "root.0.1.0.1.0"
+                      },
+                      {
+                        "tag": "icon",
+                        "attrs": {
+                          "name": "i-lucide-chevron-down",
+                          "class": "lucide lucide-chevron-down h-4 w-4 opacity-50"
+                        },
+                        "key": "root.0.1.0.1.1"
+                      }
+                    ],
+                    "key": "root.0.1.0.1"
+                  },
+                  {
+                    "tag": "p",
+                    "attrs": {
+                      "class": "text-muted-foreground mt-1 truncate text-xs"
+                    },
+                    "children": [
+                      {
+                        "text": "Maya Chen · September 2",
+                        "key": "root.0.1.0.2.0"
+                      }
+                    ],
+                    "key": "root.0.1.0.2"
+                  }
+                ],
+                "key": "root.0.1.0"
+              },
+              {
+                "tag": "button",
+                "attrs": {
+                  "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground size-6",
+                  "aria-label": "Swap documents"
+                },
+                "children": [
+                  {
+                    "tag": "icon",
+                    "attrs": {
+                      "name": "i-lucide-arrow-left-right",
+                      "class": "lucide lucide-arrow-left-right"
+                    },
+                    "key": "root.0.1.1.0"
+                  }
+                ],
+                "key": "root.0.1.1"
+              },
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "min-w-0"
+                },
+                "children": [
+                  {
+                    "tag": "label",
+                    "attrs": {
+                      "class": "font-medium peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-muted-foreground mb-1 block text-xs"
+                    },
+                    "children": [
+                      {
+                        "text": "After",
+                        "key": "root.0.1.2.0.0"
+                      }
+                    ],
+                    "key": "root.0.1.2.0"
+                  },
+                  {
+                    "tag": "button",
+                    "attrs": {
+                      "type": "button",
+                      "role": "combobox",
+                      "data-state": "closed",
+                      "class": "border-input ring-offset-background placeholder:text-muted-foreground focus:ring-ring flex h-9 items-center justify-between rounded-md border bg-transparent px-3 py-2 text-sm whitespace-nowrap shadow-xs focus:ring-1 focus:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 w-full",
+                      "aria-label": "After document"
+                    },
+                    "options": [
+                      "Onboarding guide · Original",
+                      "Onboarding guide · Proposed"
+                    ],
+                    "children": [
+                      {
+                        "tag": "span",
+                        "attrs": {
+                          "style": "pointer-events:none"
+                        },
+                        "children": [
+                          {
+                            "text": "Onboarding guide · Proposed",
+                            "key": "root.0.1.2.1.0.0"
+                          }
+                        ],
+                        "key": "root.0.1.2.1.0"
+                      },
+                      {
+                        "tag": "icon",
+                        "attrs": {
+                          "name": "i-lucide-chevron-down",
+                          "class": "lucide lucide-chevron-down h-4 w-4 opacity-50"
+                        },
+                        "key": "root.0.1.2.1.1"
+                      }
+                    ],
+                    "key": "root.0.1.2.1"
+                  },
+                  {
+                    "tag": "p",
+                    "attrs": {
+                      "class": "text-muted-foreground mt-1 truncate text-xs"
+                    },
+                    "children": [
+                      {
+                        "text": "Alex Rivera · September 6",
+                        "key": "root.0.1.2.2.0"
+                      }
+                    ],
+                    "key": "root.0.1.2.2"
+                  }
+                ],
+                "key": "root.0.1.2"
+              }
+            ],
+            "key": "root.0.1"
+          },
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "min-h-0 flex-1 overflow-y-auto",
+              "aria-label": "Aligned document readers"
+            },
+            "children": [
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "mx-auto max-w-6xl px-4 py-6 @min-[48rem]/comparison:px-8"
+                },
+                "children": [
+                  {
+                    "tag": "section",
+                    "attrs": {
+                      "aria-label": "Title: unchanged",
+                      "class": "mb-1 rounded-md border border-transparent outline-offset-2"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex flex-wrap items-center justify-between gap-2 px-4 pt-3"
+                        },
+                        "children": [
+                          {
+                            "tag": "h2",
+                            "attrs": {
+                              "class": "text-muted-foreground text-xs font-medium"
+                            },
+                            "children": [
+                              {
+                                "text": "Title",
+                                "key": "root.0.2.0.0.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.2.0.0.0.0"
+                          }
+                        ],
+                        "key": "root.0.2.0.0.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "grid @min-[48rem]/comparison:grid-cols-2"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "min-w-0 px-4 pt-2 pb-5"
+                            },
+                            "children": [
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-muted-foreground mb-2 text-[10px] uppercase @min-[48rem]/comparison:hidden"
+                                },
+                                "children": [
+                                  {
+                                    "text": "before",
+                                    "key": "root.0.2.0.0.1.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.0.1.0.0"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-sm leading-7 whitespace-pre-wrap"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Team onboarding guide",
+                                    "key": "root.0.2.0.0.1.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.0.1.0.1"
+                              }
+                            ],
+                            "key": "root.0.2.0.0.1.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "min-w-0 px-4 pt-2 pb-5 border-t @min-[48rem]/comparison:border-t-0 @min-[48rem]/comparison:border-l"
+                            },
+                            "children": [
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-muted-foreground mb-2 text-[10px] uppercase @min-[48rem]/comparison:hidden"
+                                },
+                                "children": [
+                                  {
+                                    "text": "after",
+                                    "key": "root.0.2.0.0.1.1.0.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.0.1.1.0"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-sm leading-7 whitespace-pre-wrap"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Team onboarding guide",
+                                    "key": "root.0.2.0.0.1.1.1.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.0.1.1.1"
+                              }
+                            ],
+                            "key": "root.0.2.0.0.1.1"
+                          }
+                        ],
+                        "key": "root.0.2.0.0.1"
+                      }
+                    ],
+                    "key": "root.0.2.0.0"
+                  },
+                  {
+                    "tag": "section",
+                    "attrs": {
+                      "aria-label": "Subtitle: unchanged",
+                      "class": "mb-1 rounded-md border border-transparent outline-offset-2"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex flex-wrap items-center justify-between gap-2 px-4 pt-3"
+                        },
+                        "children": [
+                          {
+                            "tag": "h2",
+                            "attrs": {
+                              "class": "text-muted-foreground text-xs font-medium"
+                            },
+                            "children": [
+                              {
+                                "text": "Subtitle",
+                                "key": "root.0.2.0.1.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.2.0.1.0.0"
+                          }
+                        ],
+                        "key": "root.0.2.0.1.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "grid @min-[48rem]/comparison:grid-cols-2"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "min-w-0 px-4 pt-2 pb-5"
+                            },
+                            "children": [
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-muted-foreground mb-2 text-[10px] uppercase @min-[48rem]/comparison:hidden"
+                                },
+                                "children": [
+                                  {
+                                    "text": "before",
+                                    "key": "root.0.2.0.1.1.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.1.1.0.0"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-sm leading-7 whitespace-pre-wrap"
+                                },
+                                "children": [
+                                  {
+                                    "text": "First-week working agreement",
+                                    "key": "root.0.2.0.1.1.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.1.1.0.1"
+                              }
+                            ],
+                            "key": "root.0.2.0.1.1.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "min-w-0 px-4 pt-2 pb-5 border-t @min-[48rem]/comparison:border-t-0 @min-[48rem]/comparison:border-l"
+                            },
+                            "children": [
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-muted-foreground mb-2 text-[10px] uppercase @min-[48rem]/comparison:hidden"
+                                },
+                                "children": [
+                                  {
+                                    "text": "after",
+                                    "key": "root.0.2.0.1.1.1.0.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.1.1.1.0"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-sm leading-7 whitespace-pre-wrap"
+                                },
+                                "children": [
+                                  {
+                                    "text": "First-week working agreement",
+                                    "key": "root.0.2.0.1.1.1.1.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.1.1.1.1"
+                              }
+                            ],
+                            "key": "root.0.2.0.1.1.1"
+                          }
+                        ],
+                        "key": "root.0.2.0.1.1"
+                      }
+                    ],
+                    "key": "root.0.2.0.1"
+                  },
+                  {
+                    "tag": "section",
+                    "attrs": {
+                      "aria-label": "Purpose: unchanged",
+                      "class": "mb-1 rounded-md border border-transparent outline-offset-2"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex flex-wrap items-center justify-between gap-2 px-4 pt-3"
+                        },
+                        "children": [
+                          {
+                            "tag": "h2",
+                            "attrs": {
+                              "class": "text-muted-foreground text-xs font-medium"
+                            },
+                            "children": [
+                              {
+                                "text": "Purpose",
+                                "key": "root.0.2.0.2.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.2.0.2.0.0"
+                          }
+                        ],
+                        "key": "root.0.2.0.2.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "grid @min-[48rem]/comparison:grid-cols-2"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "min-w-0 px-4 pt-2 pb-5"
+                            },
+                            "children": [
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-muted-foreground mb-2 text-[10px] uppercase @min-[48rem]/comparison:hidden"
+                                },
+                                "children": [
+                                  {
+                                    "text": "before",
+                                    "key": "root.0.2.0.2.1.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.2.1.0.0"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-sm leading-7 whitespace-pre-wrap"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Make the first week useful for teams joining Northstar. This guide defines the setup sequence, shared document permissions, and the point at which a team is ready to work independently.",
+                                    "key": "root.0.2.0.2.1.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.2.1.0.1"
+                              }
+                            ],
+                            "key": "root.0.2.0.2.1.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "min-w-0 px-4 pt-2 pb-5 border-t @min-[48rem]/comparison:border-t-0 @min-[48rem]/comparison:border-l"
+                            },
+                            "children": [
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-muted-foreground mb-2 text-[10px] uppercase @min-[48rem]/comparison:hidden"
+                                },
+                                "children": [
+                                  {
+                                    "text": "after",
+                                    "key": "root.0.2.0.2.1.1.0.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.2.1.1.0"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-sm leading-7 whitespace-pre-wrap"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Make the first week useful for teams joining Northstar. This guide defines the setup sequence, shared document permissions, and the point at which a team is ready to work independently.",
+                                    "key": "root.0.2.0.2.1.1.1.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.2.1.1.1"
+                              }
+                            ],
+                            "key": "root.0.2.0.2.1.1"
+                          }
+                        ],
+                        "key": "root.0.2.0.2.1"
+                      }
+                    ],
+                    "key": "root.0.2.0.2"
+                  },
+                  {
+                    "tag": "section",
+                    "attrs": {
+                      "aria-label": "First session: changed",
+                      "class": "mb-1 rounded-md border outline-offset-2 border-border bg-muted/20"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex flex-wrap items-center justify-between gap-2 px-4 pt-3"
+                        },
+                        "children": [
+                          {
+                            "tag": "h2",
+                            "attrs": {
+                              "class": "text-muted-foreground text-xs font-medium"
+                            },
+                            "children": [
+                              {
+                                "text": "First session",
+                                "key": "root.0.2.0.3.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.2.0.3.0.0"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "focus-visible:ring-ring flex items-center gap-2 rounded px-1 py-0.5 text-xs focus-visible:ring-2"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground capitalize"
+                                },
+                                "children": [
+                                  {
+                                    "text": "changed",
+                                    "key": "root.0.2.0.3.0.1.0.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.3.0.1.0"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "text": "Selected",
+                                    "key": "root.0.2.0.3.0.1.1.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.3.0.1.1"
+                              }
+                            ],
+                            "key": "root.0.2.0.3.0.1"
+                          }
+                        ],
+                        "key": "root.0.2.0.3.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "grid @min-[48rem]/comparison:grid-cols-2"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "min-w-0 px-4 pt-2 pb-5"
+                            },
+                            "children": [
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-muted-foreground mb-2 text-[10px] uppercase @min-[48rem]/comparison:hidden"
+                                },
+                                "children": [
+                                  {
+                                    "text": "before",
+                                    "key": "root.0.2.0.3.1.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.3.1.0.0"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-sm leading-7 whitespace-pre-wrap"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Create a workspace and ",
+                                    "key": "root.0.2.0.3.1.0.1.0"
+                                  },
+                                  {
+                                    "tag": "del",
+                                    "attrs": {
+                                      "class": "bg-destructive/10 text-destructive"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "invite",
+                                        "key": "root.0.2.0.3.1.0.1.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.3.1.0.1.1"
+                                  },
+                                  {
+                                    "tag": "del",
+                                    "attrs": {
+                                      "class": "bg-destructive/10 text-destructive"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "one",
+                                        "key": "root.0.2.0.3.1.0.1.2.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.3.1.0.1.2"
+                                  },
+                                  {
+                                    "tag": "del",
+                                    "attrs": {
+                                      "class": "bg-destructive/10 text-destructive"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "teammate",
+                                        "key": "root.0.2.0.3.1.0.1.3.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.3.1.0.1.3"
+                                  },
+                                  {
+                                    "text": " before ",
+                                    "key": "root.0.2.0.3.1.0.1.4"
+                                  },
+                                  {
+                                    "tag": "del",
+                                    "attrs": {
+                                      "class": "bg-destructive/10 text-destructive"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "importing",
+                                        "key": "root.0.2.0.3.1.0.1.5.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.3.1.0.1.5"
+                                  },
+                                  {
+                                    "text": " a ",
+                                    "key": "root.0.2.0.3.1.0.1.6"
+                                  },
+                                  {
+                                    "tag": "del",
+                                    "attrs": {
+                                      "class": "bg-destructive/10 text-destructive"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "document.",
+                                        "key": "root.0.2.0.3.1.0.1.7.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.3.1.0.1.7"
+                                  },
+                                  {
+                                    "text": " A team invitation is ",
+                                    "key": "root.0.2.0.3.1.0.1.8"
+                                  },
+                                  {
+                                    "tag": "del",
+                                    "attrs": {
+                                      "class": "bg-destructive/10 text-destructive"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "required to",
+                                        "key": "root.0.2.0.3.1.0.1.9.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.3.1.0.1.9"
+                                  },
+                                  {
+                                    "tag": "del",
+                                    "attrs": {
+                                      "class": "bg-destructive/10 text-destructive"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "complete",
+                                        "key": "root.0.2.0.3.1.0.1.10.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.3.1.0.1.10"
+                                  },
+                                  {
+                                    "text": " setup. The checklist closes after the ",
+                                    "key": "root.0.2.0.3.1.0.1.11"
+                                  },
+                                  {
+                                    "tag": "del",
+                                    "attrs": {
+                                      "class": "bg-destructive/10 text-destructive"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "invitation",
+                                        "key": "root.0.2.0.3.1.0.1.12.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.3.1.0.1.12"
+                                  },
+                                  {
+                                    "text": "is ",
+                                    "key": "root.0.2.0.3.1.0.1.13"
+                                  },
+                                  {
+                                    "tag": "del",
+                                    "attrs": {
+                                      "class": "bg-destructive/10 text-destructive"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "sent.",
+                                        "key": "root.0.2.0.3.1.0.1.14.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.3.1.0.1.14"
+                                  }
+                                ],
+                                "key": "root.0.2.0.3.1.0.1"
+                              }
+                            ],
+                            "key": "root.0.2.0.3.1.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "min-w-0 px-4 pt-2 pb-5 border-t @min-[48rem]/comparison:border-t-0 @min-[48rem]/comparison:border-l"
+                            },
+                            "children": [
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-muted-foreground mb-2 text-[10px] uppercase @min-[48rem]/comparison:hidden"
+                                },
+                                "children": [
+                                  {
+                                    "text": "after",
+                                    "key": "root.0.2.0.3.1.1.0.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.3.1.1.0"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-sm leading-7 whitespace-pre-wrap"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Create a workspace and ",
+                                    "key": "root.0.2.0.3.1.1.1.0"
+                                  },
+                                  {
+                                    "tag": "ins",
+                                    "attrs": {
+                                      "class": "bg-success/10 text-success no-underline"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "import",
+                                        "key": "root.0.2.0.3.1.1.1.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.3.1.1.1.1"
+                                  },
+                                  {
+                                    "tag": "ins",
+                                    "attrs": {
+                                      "class": "bg-success/10 text-success no-underline"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "a",
+                                        "key": "root.0.2.0.3.1.1.1.2.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.3.1.1.1.2"
+                                  },
+                                  {
+                                    "tag": "ins",
+                                    "attrs": {
+                                      "class": "bg-success/10 text-success no-underline"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "document",
+                                        "key": "root.0.2.0.3.1.1.1.3.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.3.1.1.1.3"
+                                  },
+                                  {
+                                    "text": " before ",
+                                    "key": "root.0.2.0.3.1.1.1.4"
+                                  },
+                                  {
+                                    "tag": "ins",
+                                    "attrs": {
+                                      "class": "bg-success/10 text-success no-underline"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "inviting",
+                                        "key": "root.0.2.0.3.1.1.1.5.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.3.1.1.1.5"
+                                  },
+                                  {
+                                    "text": " a ",
+                                    "key": "root.0.2.0.3.1.1.1.6"
+                                  },
+                                  {
+                                    "tag": "ins",
+                                    "attrs": {
+                                      "class": "bg-success/10 text-success no-underline"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "teammate.",
+                                        "key": "root.0.2.0.3.1.1.1.7.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.3.1.1.1.7"
+                                  },
+                                  {
+                                    "text": " A team invitation is ",
+                                    "key": "root.0.2.0.3.1.1.1.8"
+                                  },
+                                  {
+                                    "tag": "ins",
+                                    "attrs": {
+                                      "class": "bg-success/10 text-success no-underline"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "optional",
+                                        "key": "root.0.2.0.3.1.1.1.9.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.3.1.1.1.9"
+                                  },
+                                  {
+                                    "tag": "ins",
+                                    "attrs": {
+                                      "class": "bg-success/10 text-success no-underline"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "during",
+                                        "key": "root.0.2.0.3.1.1.1.10.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.3.1.1.1.10"
+                                  },
+                                  {
+                                    "text": " setup. The checklist closes after the ",
+                                    "key": "root.0.2.0.3.1.1.1.11"
+                                  },
+                                  {
+                                    "tag": "ins",
+                                    "attrs": {
+                                      "class": "bg-success/10 text-success no-underline"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "first",
+                                        "key": "root.0.2.0.3.1.1.1.12.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.3.1.1.1.12"
+                                  },
+                                  {
+                                    "tag": "ins",
+                                    "attrs": {
+                                      "class": "bg-success/10 text-success no-underline"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "document ",
+                                        "key": "root.0.2.0.3.1.1.1.13.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.3.1.1.1.13"
+                                  },
+                                  {
+                                    "text": "is ",
+                                    "key": "root.0.2.0.3.1.1.1.14"
+                                  },
+                                  {
+                                    "tag": "ins",
+                                    "attrs": {
+                                      "class": "bg-success/10 text-success no-underline"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "ready to use.",
+                                        "key": "root.0.2.0.3.1.1.1.15.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.3.1.1.1.15"
+                                  }
+                                ],
+                                "key": "root.0.2.0.3.1.1.1"
+                              }
+                            ],
+                            "key": "root.0.2.0.3.1.1"
+                          }
+                        ],
+                        "key": "root.0.2.0.3.1"
+                      }
+                    ],
+                    "key": "root.0.2.0.3"
+                  },
+                  {
+                    "tag": "section",
+                    "attrs": {
+                      "aria-label": "Document visibility: changed",
+                      "class": "mb-1 rounded-md border border-transparent outline-offset-2"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex flex-wrap items-center justify-between gap-2 px-4 pt-3"
+                        },
+                        "children": [
+                          {
+                            "tag": "h2",
+                            "attrs": {
+                              "class": "text-muted-foreground text-xs font-medium"
+                            },
+                            "children": [
+                              {
+                                "text": "Document visibility",
+                                "key": "root.0.2.0.4.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.2.0.4.0.0"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "focus-visible:ring-ring flex items-center gap-2 rounded px-1 py-0.5 text-xs focus-visible:ring-2"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground capitalize"
+                                },
+                                "children": [
+                                  {
+                                    "text": "changed",
+                                    "key": "root.0.2.0.4.0.1.0.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.4.0.1.0"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "text": "Select change",
+                                    "key": "root.0.2.0.4.0.1.1.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.4.0.1.1"
+                              }
+                            ],
+                            "key": "root.0.2.0.4.0.1"
+                          }
+                        ],
+                        "key": "root.0.2.0.4.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "grid @min-[48rem]/comparison:grid-cols-2"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "min-w-0 px-4 pt-2 pb-5"
+                            },
+                            "children": [
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-muted-foreground mb-2 text-[10px] uppercase @min-[48rem]/comparison:hidden"
+                                },
+                                "children": [
+                                  {
+                                    "text": "before",
+                                    "key": "root.0.2.0.4.1.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.4.1.0.0"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-sm leading-7 whitespace-pre-wrap"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Imported documents are ",
+                                    "key": "root.0.2.0.4.1.0.1.0"
+                                  },
+                                  {
+                                    "tag": "del",
+                                    "attrs": {
+                                      "class": "bg-destructive/10 text-destructive"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "shared",
+                                        "key": "root.0.2.0.4.1.0.1.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.4.1.0.1.1"
+                                  },
+                                  {
+                                    "tag": "del",
+                                    "attrs": {
+                                      "class": "bg-destructive/10 text-destructive"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "with",
+                                        "key": "root.0.2.0.4.1.0.1.2.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.4.1.0.1.2"
+                                  },
+                                  {
+                                    "tag": "del",
+                                    "attrs": {
+                                      "class": "bg-destructive/10 text-destructive"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "everyone",
+                                        "key": "root.0.2.0.4.1.0.1.3.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.4.1.0.1.3"
+                                  },
+                                  {
+                                    "tag": "del",
+                                    "attrs": {
+                                      "class": "bg-destructive/10 text-destructive"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "in",
+                                        "key": "root.0.2.0.4.1.0.1.4.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.4.1.0.1.4"
+                                  },
+                                  {
+                                    "tag": "del",
+                                    "attrs": {
+                                      "class": "bg-destructive/10 text-destructive"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "the",
+                                        "key": "root.0.2.0.4.1.0.1.5.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.4.1.0.1.5"
+                                  },
+                                  {
+                                    "tag": "del",
+                                    "attrs": {
+                                      "class": "bg-destructive/10 text-destructive"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "workspace.",
+                                        "key": "root.0.2.0.4.1.0.1.6.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.4.1.0.1.6"
+                                  },
+                                  {
+                                    "tag": "del",
+                                    "attrs": {
+                                      "class": "bg-destructive/10 text-destructive"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Workspace",
+                                        "key": "root.0.2.0.4.1.0.1.7.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.4.1.0.1.7"
+                                  },
+                                  {
+                                    "tag": "del",
+                                    "attrs": {
+                                      "class": "bg-destructive/10 text-destructive"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "members",
+                                        "key": "root.0.2.0.4.1.0.1.8.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.4.1.0.1.8"
+                                  },
+                                  {
+                                    "text": "can ",
+                                    "key": "root.0.2.0.4.1.0.1.9"
+                                  },
+                                  {
+                                    "tag": "del",
+                                    "attrs": {
+                                      "class": "bg-destructive/10 text-destructive"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "edit",
+                                        "key": "root.0.2.0.4.1.0.1.10.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.4.1.0.1.10"
+                                  },
+                                  {
+                                    "tag": "del",
+                                    "attrs": {
+                                      "class": "bg-destructive/10 text-destructive"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "shared",
+                                        "key": "root.0.2.0.4.1.0.1.11.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.4.1.0.1.11"
+                                  },
+                                  {
+                                    "tag": "del",
+                                    "attrs": {
+                                      "class": "bg-destructive/10 text-destructive"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "documents.",
+                                        "key": "root.0.2.0.4.1.0.1.12.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.4.1.0.1.12"
+                                  },
+                                  {
+                                    "tag": "del",
+                                    "attrs": {
+                                      "class": "bg-destructive/10 text-destructive"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Review",
+                                        "key": "root.0.2.0.4.1.0.1.13.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.4.1.0.1.13"
+                                  },
+                                  {
+                                    "text": " the ",
+                                    "key": "root.0.2.0.4.1.0.1.14"
+                                  },
+                                  {
+                                    "tag": "del",
+                                    "attrs": {
+                                      "class": "bg-destructive/10 text-destructive"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "member",
+                                        "key": "root.0.2.0.4.1.0.1.15.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.4.1.0.1.15"
+                                  },
+                                  {
+                                    "tag": "del",
+                                    "attrs": {
+                                      "class": "bg-destructive/10 text-destructive"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "list",
+                                        "key": "root.0.2.0.4.1.0.1.16.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.4.1.0.1.16"
+                                  },
+                                  {
+                                    "text": "before ",
+                                    "key": "root.0.2.0.4.1.0.1.17"
+                                  },
+                                  {
+                                    "tag": "del",
+                                    "attrs": {
+                                      "class": "bg-destructive/10 text-destructive"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "adding",
+                                        "key": "root.0.2.0.4.1.0.1.18.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.4.1.0.1.18"
+                                  },
+                                  {
+                                    "tag": "del",
+                                    "attrs": {
+                                      "class": "bg-destructive/10 text-destructive"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "sensitive",
+                                        "key": "root.0.2.0.4.1.0.1.19.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.4.1.0.1.19"
+                                  },
+                                  {
+                                    "tag": "del",
+                                    "attrs": {
+                                      "class": "bg-destructive/10 text-destructive"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "material.",
+                                        "key": "root.0.2.0.4.1.0.1.20.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.4.1.0.1.20"
+                                  }
+                                ],
+                                "key": "root.0.2.0.4.1.0.1"
+                              }
+                            ],
+                            "key": "root.0.2.0.4.1.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "min-w-0 px-4 pt-2 pb-5 border-t @min-[48rem]/comparison:border-t-0 @min-[48rem]/comparison:border-l"
+                            },
+                            "children": [
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-muted-foreground mb-2 text-[10px] uppercase @min-[48rem]/comparison:hidden"
+                                },
+                                "children": [
+                                  {
+                                    "text": "after",
+                                    "key": "root.0.2.0.4.1.1.0.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.4.1.1.0"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-sm leading-7 whitespace-pre-wrap"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Imported documents are ",
+                                    "key": "root.0.2.0.4.1.1.1.0"
+                                  },
+                                  {
+                                    "tag": "ins",
+                                    "attrs": {
+                                      "class": "bg-success/10 text-success no-underline"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "private",
+                                        "key": "root.0.2.0.4.1.1.1.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.4.1.1.1.1"
+                                  },
+                                  {
+                                    "tag": "ins",
+                                    "attrs": {
+                                      "class": "bg-success/10 text-success no-underline"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "to",
+                                        "key": "root.0.2.0.4.1.1.1.2.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.4.1.1.1.2"
+                                  },
+                                  {
+                                    "tag": "ins",
+                                    "attrs": {
+                                      "class": "bg-success/10 text-success no-underline"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "their",
+                                        "key": "root.0.2.0.4.1.1.1.3.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.4.1.1.1.3"
+                                  },
+                                  {
+                                    "tag": "ins",
+                                    "attrs": {
+                                      "class": "bg-success/10 text-success no-underline"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "owner.",
+                                        "key": "root.0.2.0.4.1.1.1.4.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.4.1.1.1.4"
+                                  },
+                                  {
+                                    "tag": "ins",
+                                    "attrs": {
+                                      "class": "bg-success/10 text-success no-underline"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Owners",
+                                        "key": "root.0.2.0.4.1.1.1.5.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.4.1.1.1.5"
+                                  },
+                                  {
+                                    "tag": "ins",
+                                    "attrs": {
+                                      "class": "bg-success/10 text-success no-underline"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "choose",
+                                        "key": "root.0.2.0.4.1.1.1.6.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.4.1.1.1.6"
+                                  },
+                                  {
+                                    "tag": "ins",
+                                    "attrs": {
+                                      "class": "bg-success/10 text-success no-underline"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "which",
+                                        "key": "root.0.2.0.4.1.1.1.7.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.4.1.1.1.7"
+                                  },
+                                  {
+                                    "tag": "ins",
+                                    "attrs": {
+                                      "class": "bg-success/10 text-success no-underline"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "documents",
+                                        "key": "root.0.2.0.4.1.1.1.8.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.4.1.1.1.8"
+                                  },
+                                  {
+                                    "tag": "ins",
+                                    "attrs": {
+                                      "class": "bg-success/10 text-success no-underline"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "to share and whether collaborators ",
+                                        "key": "root.0.2.0.4.1.1.1.9.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.4.1.1.1.9"
+                                  },
+                                  {
+                                    "text": "can ",
+                                    "key": "root.0.2.0.4.1.1.1.10"
+                                  },
+                                  {
+                                    "tag": "ins",
+                                    "attrs": {
+                                      "class": "bg-success/10 text-success no-underline"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "view",
+                                        "key": "root.0.2.0.4.1.1.1.11.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.4.1.1.1.11"
+                                  },
+                                  {
+                                    "tag": "ins",
+                                    "attrs": {
+                                      "class": "bg-success/10 text-success no-underline"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "or",
+                                        "key": "root.0.2.0.4.1.1.1.12.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.4.1.1.1.12"
+                                  },
+                                  {
+                                    "tag": "ins",
+                                    "attrs": {
+                                      "class": "bg-success/10 text-success no-underline"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "edit.",
+                                        "key": "root.0.2.0.4.1.1.1.13.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.4.1.1.1.13"
+                                  },
+                                  {
+                                    "tag": "ins",
+                                    "attrs": {
+                                      "class": "bg-success/10 text-success no-underline"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Show",
+                                        "key": "root.0.2.0.4.1.1.1.14.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.4.1.1.1.14"
+                                  },
+                                  {
+                                    "text": " the ",
+                                    "key": "root.0.2.0.4.1.1.1.15"
+                                  },
+                                  {
+                                    "tag": "ins",
+                                    "attrs": {
+                                      "class": "bg-success/10 text-success no-underline"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "audience",
+                                        "key": "root.0.2.0.4.1.1.1.16.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.4.1.1.1.16"
+                                  },
+                                  {
+                                    "tag": "ins",
+                                    "attrs": {
+                                      "class": "bg-success/10 text-success no-underline"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "and",
+                                        "key": "root.0.2.0.4.1.1.1.17.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.4.1.1.1.17"
+                                  },
+                                  {
+                                    "tag": "ins",
+                                    "attrs": {
+                                      "class": "bg-success/10 text-success no-underline"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "access level ",
+                                        "key": "root.0.2.0.4.1.1.1.18.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.4.1.1.1.18"
+                                  },
+                                  {
+                                    "text": "before ",
+                                    "key": "root.0.2.0.4.1.1.1.19"
+                                  },
+                                  {
+                                    "tag": "ins",
+                                    "attrs": {
+                                      "class": "bg-success/10 text-success no-underline"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "sending",
+                                        "key": "root.0.2.0.4.1.1.1.20.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.4.1.1.1.20"
+                                  },
+                                  {
+                                    "tag": "ins",
+                                    "attrs": {
+                                      "class": "bg-success/10 text-success no-underline"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "an",
+                                        "key": "root.0.2.0.4.1.1.1.21.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.4.1.1.1.21"
+                                  },
+                                  {
+                                    "tag": "ins",
+                                    "attrs": {
+                                      "class": "bg-success/10 text-success no-underline"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "invitation.",
+                                        "key": "root.0.2.0.4.1.1.1.22.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.4.1.1.1.22"
+                                  }
+                                ],
+                                "key": "root.0.2.0.4.1.1.1"
+                              }
+                            ],
+                            "key": "root.0.2.0.4.1.1"
+                          }
+                        ],
+                        "key": "root.0.2.0.4.1"
+                      }
+                    ],
+                    "key": "root.0.2.0.4"
+                  },
+                  {
+                    "tag": "section",
+                    "attrs": {
+                      "aria-label": "Live training: removed",
+                      "class": "mb-1 rounded-md border border-transparent outline-offset-2"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex flex-wrap items-center justify-between gap-2 px-4 pt-3"
+                        },
+                        "children": [
+                          {
+                            "tag": "h2",
+                            "attrs": {
+                              "class": "text-muted-foreground text-xs font-medium"
+                            },
+                            "children": [
+                              {
+                                "text": "Live training",
+                                "key": "root.0.2.0.5.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.2.0.5.0.0"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "focus-visible:ring-ring flex items-center gap-2 rounded px-1 py-0.5 text-xs focus-visible:ring-2"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground capitalize"
+                                },
+                                "children": [
+                                  {
+                                    "text": "removed",
+                                    "key": "root.0.2.0.5.0.1.0.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.5.0.1.0"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "text": "Select change",
+                                    "key": "root.0.2.0.5.0.1.1.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.5.0.1.1"
+                              }
+                            ],
+                            "key": "root.0.2.0.5.0.1"
+                          }
+                        ],
+                        "key": "root.0.2.0.5.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "grid @min-[48rem]/comparison:grid-cols-2"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "min-w-0 px-4 pt-2 pb-5"
+                            },
+                            "children": [
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-muted-foreground mb-2 text-[10px] uppercase @min-[48rem]/comparison:hidden"
+                                },
+                                "children": [
+                                  {
+                                    "text": "before",
+                                    "key": "root.0.2.0.5.1.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.5.1.0.0"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-sm leading-7 whitespace-pre-wrap"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "del",
+                                    "attrs": {
+                                      "class": "bg-destructive/10 text-destructive"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Every new team must attend a 60-minute live training session before the end of its first week. The workspace owner schedules the session for all invited members.",
+                                        "key": "root.0.2.0.5.1.0.1.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.5.1.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.5.1.0.1"
+                              }
+                            ],
+                            "key": "root.0.2.0.5.1.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "min-w-0 px-4 pt-2 pb-5 border-t @min-[48rem]/comparison:border-t-0 @min-[48rem]/comparison:border-l"
+                            },
+                            "children": [
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-muted-foreground mb-2 text-[10px] uppercase @min-[48rem]/comparison:hidden"
+                                },
+                                "children": [
+                                  {
+                                    "text": "after",
+                                    "key": "root.0.2.0.5.1.1.0.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.5.1.1.0"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-muted-foreground text-sm italic"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Section absent in this document",
+                                    "key": "root.0.2.0.5.1.1.1.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.5.1.1.1"
+                              }
+                            ],
+                            "key": "root.0.2.0.5.1.1"
+                          }
+                        ],
+                        "key": "root.0.2.0.5.1"
+                      }
+                    ],
+                    "key": "root.0.2.0.5"
+                  },
+                  {
+                    "tag": "section",
+                    "attrs": {
+                      "aria-label": "First-week check-in: changed",
+                      "class": "mb-1 rounded-md border border-transparent outline-offset-2"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex flex-wrap items-center justify-between gap-2 px-4 pt-3"
+                        },
+                        "children": [
+                          {
+                            "tag": "h2",
+                            "attrs": {
+                              "class": "text-muted-foreground text-xs font-medium"
+                            },
+                            "children": [
+                              {
+                                "text": "First-week check-in",
+                                "key": "root.0.2.0.6.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.2.0.6.0.0"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "focus-visible:ring-ring flex items-center gap-2 rounded px-1 py-0.5 text-xs focus-visible:ring-2"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground capitalize"
+                                },
+                                "children": [
+                                  {
+                                    "text": "changed",
+                                    "key": "root.0.2.0.6.0.1.0.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.6.0.1.0"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "text": "Select change",
+                                    "key": "root.0.2.0.6.0.1.1.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.6.0.1.1"
+                              }
+                            ],
+                            "key": "root.0.2.0.6.0.1"
+                          }
+                        ],
+                        "key": "root.0.2.0.6.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "grid @min-[48rem]/comparison:grid-cols-2"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "min-w-0 px-4 pt-2 pb-5"
+                            },
+                            "children": [
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-muted-foreground mb-2 text-[10px] uppercase @min-[48rem]/comparison:hidden"
+                                },
+                                "children": [
+                                  {
+                                    "text": "before",
+                                    "key": "root.0.2.0.6.1.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.6.1.0.0"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-sm leading-7 whitespace-pre-wrap"
+                                },
+                                "children": [
+                                  {
+                                    "text": "On Friday, the workspace owner reports ",
+                                    "key": "root.0.2.0.6.1.0.1.0"
+                                  },
+                                  {
+                                    "tag": "del",
+                                    "attrs": {
+                                      "class": "bg-destructive/10 text-destructive"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "how",
+                                        "key": "root.0.2.0.6.1.0.1.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.6.1.0.1.1"
+                                  },
+                                  {
+                                    "tag": "del",
+                                    "attrs": {
+                                      "class": "bg-destructive/10 text-destructive"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "many",
+                                        "key": "root.0.2.0.6.1.0.1.2.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.6.1.0.1.2"
+                                  },
+                                  {
+                                    "tag": "del",
+                                    "attrs": {
+                                      "class": "bg-destructive/10 text-destructive"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "invitations",
+                                        "key": "root.0.2.0.6.1.0.1.3.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.6.1.0.1.3"
+                                  },
+                                  {
+                                    "tag": "del",
+                                    "attrs": {
+                                      "class": "bg-destructive/10 text-destructive"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "were",
+                                        "key": "root.0.2.0.6.1.0.1.4.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.6.1.0.1.4"
+                                  },
+                                  {
+                                    "tag": "del",
+                                    "attrs": {
+                                      "class": "bg-destructive/10 text-destructive"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "sent",
+                                        "key": "root.0.2.0.6.1.0.1.5.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.6.1.0.1.5"
+                                  },
+                                  {
+                                    "tag": "del",
+                                    "attrs": {
+                                      "class": "bg-destructive/10 text-destructive"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "and",
+                                        "key": "root.0.2.0.6.1.0.1.6.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.6.1.0.1.6"
+                                  },
+                                  {
+                                    "tag": "del",
+                                    "attrs": {
+                                      "class": "bg-destructive/10 text-destructive"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "whether",
+                                        "key": "root.0.2.0.6.1.0.1.7.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.6.1.0.1.7"
+                                  },
+                                  {
+                                    "tag": "del",
+                                    "attrs": {
+                                      "class": "bg-destructive/10 text-destructive"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "the",
+                                        "key": "root.0.2.0.6.1.0.1.8.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.6.1.0.1.8"
+                                  },
+                                  {
+                                    "tag": "del",
+                                    "attrs": {
+                                      "class": "bg-destructive/10 text-destructive"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "setup",
+                                        "key": "root.0.2.0.6.1.0.1.9.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.6.1.0.1.9"
+                                  },
+                                  {
+                                    "tag": "del",
+                                    "attrs": {
+                                      "class": "bg-destructive/10 text-destructive"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "checklist",
+                                        "key": "root.0.2.0.6.1.0.1.10.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.6.1.0.1.10"
+                                  },
+                                  {
+                                    "tag": "del",
+                                    "attrs": {
+                                      "class": "bg-destructive/10 text-destructive"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "was",
+                                        "key": "root.0.2.0.6.1.0.1.11.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.6.1.0.1.11"
+                                  },
+                                  {
+                                    "tag": "del",
+                                    "attrs": {
+                                      "class": "bg-destructive/10 text-destructive"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "completed.",
+                                        "key": "root.0.2.0.6.1.0.1.12.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.6.1.0.1.12"
+                                  },
+                                  {
+                                    "text": " The onboarding team reviews the report on ",
+                                    "key": "root.0.2.0.6.1.0.1.13"
+                                  },
+                                  {
+                                    "tag": "del",
+                                    "attrs": {
+                                      "class": "bg-destructive/10 text-destructive"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Monday.",
+                                        "key": "root.0.2.0.6.1.0.1.14.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.6.1.0.1.14"
+                                  }
+                                ],
+                                "key": "root.0.2.0.6.1.0.1"
+                              }
+                            ],
+                            "key": "root.0.2.0.6.1.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "min-w-0 px-4 pt-2 pb-5 border-t @min-[48rem]/comparison:border-t-0 @min-[48rem]/comparison:border-l"
+                            },
+                            "children": [
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-muted-foreground mb-2 text-[10px] uppercase @min-[48rem]/comparison:hidden"
+                                },
+                                "children": [
+                                  {
+                                    "text": "after",
+                                    "key": "root.0.2.0.6.1.1.0.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.6.1.1.0"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-sm leading-7 whitespace-pre-wrap"
+                                },
+                                "children": [
+                                  {
+                                    "text": "On Friday, the workspace owner reports ",
+                                    "key": "root.0.2.0.6.1.1.1.0"
+                                  },
+                                  {
+                                    "tag": "ins",
+                                    "attrs": {
+                                      "class": "bg-success/10 text-success no-underline"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "whether",
+                                        "key": "root.0.2.0.6.1.1.1.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.6.1.1.1.1"
+                                  },
+                                  {
+                                    "tag": "ins",
+                                    "attrs": {
+                                      "class": "bg-success/10 text-success no-underline"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "the",
+                                        "key": "root.0.2.0.6.1.1.1.2.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.6.1.1.1.2"
+                                  },
+                                  {
+                                    "tag": "ins",
+                                    "attrs": {
+                                      "class": "bg-success/10 text-success no-underline"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "team",
+                                        "key": "root.0.2.0.6.1.1.1.3.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.6.1.1.1.3"
+                                  },
+                                  {
+                                    "tag": "ins",
+                                    "attrs": {
+                                      "class": "bg-success/10 text-success no-underline"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "completed",
+                                        "key": "root.0.2.0.6.1.1.1.4.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.6.1.1.1.4"
+                                  },
+                                  {
+                                    "tag": "ins",
+                                    "attrs": {
+                                      "class": "bg-success/10 text-success no-underline"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "a",
+                                        "key": "root.0.2.0.6.1.1.1.5.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.6.1.1.1.5"
+                                  },
+                                  {
+                                    "tag": "ins",
+                                    "attrs": {
+                                      "class": "bg-success/10 text-success no-underline"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "shared",
+                                        "key": "root.0.2.0.6.1.1.1.6.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.6.1.1.1.6"
+                                  },
+                                  {
+                                    "tag": "ins",
+                                    "attrs": {
+                                      "class": "bg-success/10 text-success no-underline"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "task",
+                                        "key": "root.0.2.0.6.1.1.1.7.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.6.1.1.1.7"
+                                  },
+                                  {
+                                    "tag": "ins",
+                                    "attrs": {
+                                      "class": "bg-success/10 text-success no-underline"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "and",
+                                        "key": "root.0.2.0.6.1.1.1.8.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.6.1.1.1.8"
+                                  },
+                                  {
+                                    "tag": "ins",
+                                    "attrs": {
+                                      "class": "bg-success/10 text-success no-underline"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "records",
+                                        "key": "root.0.2.0.6.1.1.1.9.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.6.1.1.1.9"
+                                  },
+                                  {
+                                    "tag": "ins",
+                                    "attrs": {
+                                      "class": "bg-success/10 text-success no-underline"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "any",
+                                        "key": "root.0.2.0.6.1.1.1.10.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.6.1.1.1.10"
+                                  },
+                                  {
+                                    "tag": "ins",
+                                    "attrs": {
+                                      "class": "bg-success/10 text-success no-underline"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "setup",
+                                        "key": "root.0.2.0.6.1.1.1.11.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.6.1.1.1.11"
+                                  },
+                                  {
+                                    "tag": "ins",
+                                    "attrs": {
+                                      "class": "bg-success/10 text-success no-underline"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "blockers.",
+                                        "key": "root.0.2.0.6.1.1.1.12.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.6.1.1.1.12"
+                                  },
+                                  {
+                                    "text": " The onboarding team reviews the report on ",
+                                    "key": "root.0.2.0.6.1.1.1.13"
+                                  },
+                                  {
+                                    "tag": "ins",
+                                    "attrs": {
+                                      "class": "bg-success/10 text-success no-underline"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Monday before recommending another cohort.",
+                                        "key": "root.0.2.0.6.1.1.1.14.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.6.1.1.1.14"
+                                  }
+                                ],
+                                "key": "root.0.2.0.6.1.1.1"
+                              }
+                            ],
+                            "key": "root.0.2.0.6.1.1"
+                          }
+                        ],
+                        "key": "root.0.2.0.6.1"
+                      }
+                    ],
+                    "key": "root.0.2.0.6"
+                  },
+                  {
+                    "tag": "section",
+                    "attrs": {
+                      "aria-label": "Getting help: unchanged",
+                      "class": "mb-1 rounded-md border border-transparent outline-offset-2"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex flex-wrap items-center justify-between gap-2 px-4 pt-3"
+                        },
+                        "children": [
+                          {
+                            "tag": "h2",
+                            "attrs": {
+                              "class": "text-muted-foreground text-xs font-medium"
+                            },
+                            "children": [
+                              {
+                                "text": "Getting help",
+                                "key": "root.0.2.0.7.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.2.0.7.0.0"
+                          }
+                        ],
+                        "key": "root.0.2.0.7.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "grid @min-[48rem]/comparison:grid-cols-2"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "min-w-0 px-4 pt-2 pb-5"
+                            },
+                            "children": [
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-muted-foreground mb-2 text-[10px] uppercase @min-[48rem]/comparison:hidden"
+                                },
+                                "children": [
+                                  {
+                                    "text": "before",
+                                    "key": "root.0.2.0.7.1.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.7.1.0.0"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-sm leading-7 whitespace-pre-wrap"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Use the help menu to contact the onboarding team. Include the workspace name and the step you were trying to complete. Never include passwords or private customer documents.",
+                                    "key": "root.0.2.0.7.1.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.7.1.0.1"
+                              }
+                            ],
+                            "key": "root.0.2.0.7.1.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "min-w-0 px-4 pt-2 pb-5 border-t @min-[48rem]/comparison:border-t-0 @min-[48rem]/comparison:border-l"
+                            },
+                            "children": [
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-muted-foreground mb-2 text-[10px] uppercase @min-[48rem]/comparison:hidden"
+                                },
+                                "children": [
+                                  {
+                                    "text": "after",
+                                    "key": "root.0.2.0.7.1.1.0.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.7.1.1.0"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-sm leading-7 whitespace-pre-wrap"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Use the help menu to contact the onboarding team. Include the workspace name and the step you were trying to complete. Never include passwords or private customer documents.",
+                                    "key": "root.0.2.0.7.1.1.1.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.7.1.1.1"
+                              }
+                            ],
+                            "key": "root.0.2.0.7.1.1"
+                          }
+                        ],
+                        "key": "root.0.2.0.7.1"
+                      }
+                    ],
+                    "key": "root.0.2.0.7"
+                  },
+                  {
+                    "tag": "section",
+                    "attrs": {
+                      "aria-label": "If setup stalls: added",
+                      "class": "mb-1 rounded-md border border-transparent outline-offset-2"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex flex-wrap items-center justify-between gap-2 px-4 pt-3"
+                        },
+                        "children": [
+                          {
+                            "tag": "h2",
+                            "attrs": {
+                              "class": "text-muted-foreground text-xs font-medium"
+                            },
+                            "children": [
+                              {
+                                "text": "If setup stalls",
+                                "key": "root.0.2.0.8.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.2.0.8.0.0"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "focus-visible:ring-ring flex items-center gap-2 rounded px-1 py-0.5 text-xs focus-visible:ring-2"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground capitalize"
+                                },
+                                "children": [
+                                  {
+                                    "text": "added",
+                                    "key": "root.0.2.0.8.0.1.0.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.8.0.1.0"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {},
+                                "children": [
+                                  {
+                                    "text": "Select change",
+                                    "key": "root.0.2.0.8.0.1.1.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.8.0.1.1"
+                              }
+                            ],
+                            "key": "root.0.2.0.8.0.1"
+                          }
+                        ],
+                        "key": "root.0.2.0.8.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "grid @min-[48rem]/comparison:grid-cols-2"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "min-w-0 px-4 pt-2 pb-5"
+                            },
+                            "children": [
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-muted-foreground mb-2 text-[10px] uppercase @min-[48rem]/comparison:hidden"
+                                },
+                                "children": [
+                                  {
+                                    "text": "before",
+                                    "key": "root.0.2.0.8.1.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.8.1.0.0"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-muted-foreground text-sm italic"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Section absent in this document",
+                                    "key": "root.0.2.0.8.1.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.8.1.0.1"
+                              }
+                            ],
+                            "key": "root.0.2.0.8.1.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "min-w-0 px-4 pt-2 pb-5 border-t @min-[48rem]/comparison:border-t-0 @min-[48rem]/comparison:border-l"
+                            },
+                            "children": [
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-muted-foreground mb-2 text-[10px] uppercase @min-[48rem]/comparison:hidden"
+                                },
+                                "children": [
+                                  {
+                                    "text": "after",
+                                    "key": "root.0.2.0.8.1.1.0.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.8.1.1.0"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-sm leading-7 whitespace-pre-wrap"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "ins",
+                                    "attrs": {
+                                      "class": "bg-success/10 text-success no-underline"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Keep the imported document and save the unfinished checklist. The owner can resume from the last completed step. Offer a 15-minute office-hours session when the team asks for help.",
+                                        "key": "root.0.2.0.8.1.1.1.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.2.0.8.1.1.1.0"
+                                  }
+                                ],
+                                "key": "root.0.2.0.8.1.1.1"
+                              }
+                            ],
+                            "key": "root.0.2.0.8.1.1"
+                          }
+                        ],
+                        "key": "root.0.2.0.8.1"
+                      }
+                    ],
+                    "key": "root.0.2.0.8"
+                  }
+                ],
+                "key": "root.0.2.0"
+              }
+            ],
+            "key": "root.0.2"
+          },
+          {
+            "tag": "footer",
+            "attrs": {
+              "class": "flex shrink-0 flex-wrap items-center justify-between gap-3 border-t px-5 py-3"
+            },
+            "children": [
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "min-w-0"
+                },
+                "children": [
+                  {
+                    "tag": "p",
+                    "attrs": {
+                      "class": "text-sm font-medium"
+                    },
+                    "children": [
+                      {
+                        "text": "First session",
+                        "key": "root.0.3.0.0.0"
+                      }
+                    ],
+                    "key": "root.0.3.0.0"
+                  },
+                  {
+                    "tag": "p",
+                    "attrs": {
+                      "class": "text-muted-foreground text-xs"
+                    },
+                    "children": [
+                      {
+                        "text": "Review one passage in its full document context.",
+                        "key": "root.0.3.0.1.0"
+                      }
+                    ],
+                    "key": "root.0.3.0.1"
+                  }
+                ],
+                "key": "root.0.3.0"
+              },
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "flex gap-2"
+                },
+                "children": [
+                  {
+                    "tag": "button",
+                    "attrs": {
+                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs"
+                    },
+                    "children": [
+                      {
+                        "text": "Mark reviewed",
+                        "key": "root.0.3.1.0.0"
+                      }
+                    ],
+                    "key": "root.0.3.1.0"
+                  },
+                  {
+                    "tag": "button",
+                    "attrs": {
+                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 h-8 rounded-md px-3 text-xs",
+                      "type": "button",
+                      "aria-haspopup": "dialog",
+                      "data-state": "closed"
+                    },
+                    "children": [
+                      {
+                        "text": "Ask about this change",
+                        "key": "root.0.3.1.1.0"
+                      }
+                    ],
+                    "key": "root.0.3.1.1"
+                  }
+                ],
+                "key": "root.0.3.1"
+              }
+            ],
+            "key": "root.0.3"
+          }
+        ],
+        "key": "root.0"
+      }
+    ],
+    "key": "root"
+  },
+  "headings": [
+    "Review the onboarding guide",
+    "Title",
+    "Subtitle",
+    "Purpose",
+    "First session",
+    "Document visibility",
+    "Live training",
+    "First-week check-in",
+    "Getting help",
+    "If setup stalls"
+  ]
+}

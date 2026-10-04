@@ -1,0 +1,1578 @@
+{
+  "label": "Evaluations",
+  "path": "/ai-chat/evaluations",
+  "appTitle": "",
+  "tree": {
+    "tag": "div",
+    "attrs": {
+      "id": "ai-workspace-content",
+      "class": "flex min-h-0 flex-1 flex-col"
+    },
+    "children": [
+      {
+        "tag": "div",
+        "attrs": {
+          "class": "min-h-0 flex-1 overflow-y-auto"
+        },
+        "children": [
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "mx-auto flex flex-col px-4 sm:px-8 min-h-full gap-8 pt-12 pb-6 sm:pt-16 sm:pb-8 lg:px-10 max-w-7xl"
+            },
+            "children": [
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "flex flex-wrap gap-4 mx-auto max-w-2xl flex-col items-center text-center"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "flex flex-col gap-1"
+                    },
+                    "children": [
+                      {
+                        "tag": "h1",
+                        "attrs": {
+                          "class": "text-2xl font-semibold tracking-tight sm:text-3xl"
+                        },
+                        "children": [
+                          {
+                            "text": "Evaluations",
+                            "key": "root.0.0.0.0.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.0"
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {
+                          "class": "text-muted-foreground max-w-2xl text-sm mt-2 leading-6 sm:text-base"
+                        },
+                        "children": [
+                          {
+                            "text": "Build datasets, grade candidate answers, and compare quality across runs.",
+                            "key": "root.0.0.0.0.1.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.1"
+                      }
+                    ],
+                    "key": "root.0.0.0.0"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "flex flex-wrap items-center gap-2 mt-1"
+                    },
+                    "children": [
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 h-8 rounded-md px-3 text-xs"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-plus",
+                              "class": "lucide lucide-plus"
+                            },
+                            "key": "root.0.0.0.1.0.0"
+                          },
+                          {
+                            "text": "Create evaluation",
+                            "key": "root.0.0.0.1.0.1"
+                          }
+                        ],
+                        "key": "root.0.0.0.1.0"
+                      }
+                    ],
+                    "key": "root.0.0.0.1"
+                  }
+                ],
+                "key": "root.0.0.0"
+              },
+              {
+                "tag": "div",
+                "attrs": {
+                  "data-orientation": "horizontal"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "flex flex-wrap items-center justify-between gap-3"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "overflow-x-auto"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "role": "tablist",
+                              "class": "bg-muted text-muted-foreground inline-flex h-9 items-center justify-center rounded-lg p-1",
+                              "data-orientation": "horizontal",
+                              "style": "outline:none"
+                            },
+                            "children": [
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "type": "button",
+                                  "role": "tab",
+                                  "data-state": "active",
+                                  "id": "radix-_R_ddbsnpfknmlb_-trigger-evaluations",
+                                  "class": "ring-offset-background focus-visible:ring-ring data-[state=active]:bg-background data-[state=active]:text-foreground inline-flex items-center justify-center rounded-md px-3 py-1 text-sm font-medium whitespace-nowrap transition-all focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-[state=active]:shadow-sm",
+                                  "data-orientation": "horizontal"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Evaluations",
+                                    "key": "root.0.0.1.0.0.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.0.0.0"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "type": "button",
+                                  "role": "tab",
+                                  "data-state": "inactive",
+                                  "id": "radix-_R_ddbsnpfknmlb_-trigger-datasets",
+                                  "class": "ring-offset-background focus-visible:ring-ring data-[state=active]:bg-background data-[state=active]:text-foreground inline-flex items-center justify-center rounded-md px-3 py-1 text-sm font-medium whitespace-nowrap transition-all focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-[state=active]:shadow-sm",
+                                  "data-orientation": "horizontal"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Datasets",
+                                    "key": "root.0.0.1.0.0.0.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.0.0.1"
+                              },
+                              {
+                                "tag": "button",
+                                "attrs": {
+                                  "type": "button",
+                                  "role": "tab",
+                                  "data-state": "inactive",
+                                  "id": "radix-_R_ddbsnpfknmlb_-trigger-providers",
+                                  "class": "ring-offset-background focus-visible:ring-ring data-[state=active]:bg-background data-[state=active]:text-foreground inline-flex items-center justify-center rounded-md px-3 py-1 text-sm font-medium whitespace-nowrap transition-all focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-[state=active]:shadow-sm",
+                                  "data-orientation": "horizontal"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Providers",
+                                    "key": "root.0.0.1.0.0.0.2.0"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.0.0.2"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.1.0.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex flex-wrap gap-2"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "relative"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-search",
+                                  "class": "lucide lucide-search text-muted-foreground absolute top-2.5 left-3 size-4"
+                                },
+                                "key": "root.0.0.1.0.1.0.0"
+                              },
+                              {
+                                "tag": "input",
+                                "attrs": {
+                                  "class": "border-input file:text-foreground placeholder:text-muted-foreground focus-visible:ring-ring flex h-9 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:ring-1 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 md:text-sm w-full pl-9 sm:w-56",
+                                  "aria-label": "Search evaluations or datasets",
+                                  "placeholder": "Search evaluations…",
+                                  "value": ""
+                                },
+                                "children": [],
+                                "key": "root.0.0.1.0.1.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.1.0"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "type": "button",
+                              "role": "combobox",
+                              "data-state": "closed",
+                              "class": "border-input ring-offset-background placeholder:text-muted-foreground focus:ring-ring flex h-9 items-center justify-between rounded-md border bg-transparent px-3 py-2 text-sm whitespace-nowrap shadow-xs focus:ring-1 focus:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 w-auto min-w-36",
+                              "aria-label": "Evaluation status"
+                            },
+                            "options": [
+                              "All statuses",
+                              "Completed",
+                              "Running",
+                              "Cancelled"
+                            ],
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "style": "pointer-events:none"
+                                },
+                                "children": [
+                                  {
+                                    "text": "All statuses",
+                                    "key": "root.0.0.1.0.1.1.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.1.1.0"
+                              },
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-chevron-down",
+                                  "class": "lucide lucide-chevron-down h-4 w-4 opacity-50"
+                                },
+                                "key": "root.0.0.1.0.1.1.1"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.1.1"
+                          }
+                        ],
+                        "key": "root.0.0.1.0.1"
+                      }
+                    ],
+                    "key": "root.0.0.1.0"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "data-state": "active",
+                      "data-orientation": "horizontal",
+                      "role": "tabpanel",
+                      "id": "radix-_R_ddbsnpfknmlb_-content-evaluations",
+                      "class": "ring-offset-background focus-visible:ring-ring focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden mt-5",
+                      "style": "animation-duration:0s"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "overflow-hidden rounded-lg border"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "relative w-full overflow-auto"
+                            },
+                            "children": [
+                              {
+                                "tag": "table",
+                                "attrs": {
+                                  "class": "w-full caption-bottom text-sm"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "thead",
+                                    "attrs": {
+                                      "class": "[&_tr]:border-b"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "tr",
+                                        "attrs": {
+                                          "class": "group/row hover:bg-muted/50 data-[state=selected]:bg-muted border-b transition-colors"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "th",
+                                            "attrs": {
+                                              "class": "text-muted-foreground h-10 px-2 text-left align-middle font-medium [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pl-4"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Evaluation",
+                                                "key": "root.0.0.1.1.0.0.0.0.0.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.0.0.0.0.0.0"
+                                          },
+                                          {
+                                            "tag": "th",
+                                            "attrs": {
+                                              "class": "text-muted-foreground h-10 px-2 text-left align-middle font-medium [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Dataset",
+                                                "key": "root.0.0.1.1.0.0.0.0.0.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.0.0.0.0.0.1"
+                                          },
+                                          {
+                                            "tag": "th",
+                                            "attrs": {
+                                              "class": "text-muted-foreground h-10 px-2 text-left align-middle font-medium [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Model",
+                                                "key": "root.0.0.1.1.0.0.0.0.0.2.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.0.0.0.0.0.2"
+                                          },
+                                          {
+                                            "tag": "th",
+                                            "attrs": {
+                                              "class": "text-muted-foreground h-10 px-2 text-left align-middle font-medium [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Status",
+                                                "key": "root.0.0.1.1.0.0.0.0.0.3.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.0.0.0.0.0.3"
+                                          },
+                                          {
+                                            "tag": "th",
+                                            "attrs": {
+                                              "class": "text-muted-foreground h-10 px-2 text-left align-middle font-medium [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Pass rate",
+                                                "key": "root.0.0.1.1.0.0.0.0.0.4.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.0.0.0.0.0.4"
+                                          },
+                                          {
+                                            "tag": "th",
+                                            "attrs": {
+                                              "class": "text-muted-foreground h-10 px-2 text-left align-middle font-medium [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Created",
+                                                "key": "root.0.0.1.1.0.0.0.0.0.5.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.0.0.0.0.0.5"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.0.0.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.0.0.0"
+                                  },
+                                  {
+                                    "tag": "tbody",
+                                    "attrs": {
+                                      "class": "[&_tr:last-child]:border-0"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "tr",
+                                        "attrs": {
+                                          "class": "group/row hover:bg-muted/50 data-[state=selected]:bg-muted border-b transition-colors",
+                                          "data-state": "selected"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "td",
+                                            "attrs": {
+                                              "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pl-4"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "button",
+                                                "attrs": {
+                                                  "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 underline-offset-4 hover:underline text-foreground h-auto p-0"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Support baseline",
+                                                    "key": "root.0.0.1.1.0.0.0.1.0.0.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.0.0.0.1.0.0.0"
+                                              },
+                                              {
+                                                "tag": "p",
+                                                "attrs": {
+                                                  "class": "text-muted-foreground mt-1 font-mono text-[10px]"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "eval_092",
+                                                    "key": "root.0.0.1.1.0.0.0.1.0.0.1.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.0.0.0.1.0.0.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.0.0.0.1.0.0"
+                                          },
+                                          {
+                                            "tag": "td",
+                                            "attrs": {
+                                              "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "p",
+                                                "attrs": {},
+                                                "children": [
+                                                  {
+                                                    "text": "Support answer quality",
+                                                    "key": "root.0.0.1.1.0.0.0.1.0.1.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.0.0.0.1.0.1.0"
+                                              },
+                                              {
+                                                "tag": "p",
+                                                "attrs": {
+                                                  "class": "text-muted-foreground mt-1 text-xs"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Version ",
+                                                    "key": "root.0.0.1.1.0.0.0.1.0.1.1.0"
+                                                  },
+                                                  {
+                                                    "text": "3",
+                                                    "key": "root.0.0.1.1.0.0.0.1.0.1.1.1"
+                                                  },
+                                                  {
+                                                    "text": " · ",
+                                                    "key": "root.0.0.1.1.0.0.0.1.0.1.1.2"
+                                                  },
+                                                  {
+                                                    "text": "5",
+                                                    "key": "root.0.0.1.1.0.0.0.1.0.1.1.3"
+                                                  },
+                                                  {
+                                                    "text": "examples",
+                                                    "key": "root.0.0.1.1.0.0.0.1.0.1.1.4"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.0.0.0.1.0.1.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.0.0.0.1.0.1"
+                                          },
+                                          {
+                                            "tag": "td",
+                                            "attrs": {
+                                              "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-xs"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "OpenAI / GPT-4.1",
+                                                "key": "root.0.0.1.1.0.0.0.1.0.2.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.0.0.0.1.0.2"
+                                          },
+                                          {
+                                            "tag": "td",
+                                            "attrs": {
+                                              "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "span",
+                                                    "attrs": {
+                                                      "class": "mr-1.5 size-1.5 shrink-0 rounded-full bg-success"
+                                                    },
+                                                    "children": [],
+                                                    "key": "root.0.0.1.1.0.0.0.1.0.3.0.0"
+                                                  },
+                                                  {
+                                                    "text": "Completed",
+                                                    "key": "root.0.0.1.1.0.0.0.1.0.3.0.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.0.0.0.1.0.3.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.0.0.0.1.0.3"
+                                          },
+                                          {
+                                            "tag": "td",
+                                            "attrs": {
+                                              "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] tabular-nums"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "80%",
+                                                "key": "root.0.0.1.1.0.0.0.1.0.4.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.0.0.0.1.0.4"
+                                          },
+                                          {
+                                            "tag": "td",
+                                            "attrs": {
+                                              "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-muted-foreground text-xs"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Sep 11, 10:42 AM",
+                                                "key": "root.0.0.1.1.0.0.0.1.0.5.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.0.0.0.1.0.5"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.0.0.0.1.0"
+                                      },
+                                      {
+                                        "tag": "tr",
+                                        "attrs": {
+                                          "class": "group/row hover:bg-muted/50 data-[state=selected]:bg-muted border-b transition-colors"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "td",
+                                            "attrs": {
+                                              "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] pl-4"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "button",
+                                                "attrs": {
+                                                  "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 underline-offset-4 hover:underline text-foreground h-auto p-0"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Intent router",
+                                                    "key": "root.0.0.1.1.0.0.0.1.1.0.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.0.0.0.1.1.0.0"
+                                              },
+                                              {
+                                                "tag": "p",
+                                                "attrs": {
+                                                  "class": "text-muted-foreground mt-1 font-mono text-[10px]"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "eval_091",
+                                                    "key": "root.0.0.1.1.0.0.0.1.1.0.1.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.0.0.0.1.1.0.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.0.0.0.1.1.0"
+                                          },
+                                          {
+                                            "tag": "td",
+                                            "attrs": {
+                                              "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "p",
+                                                "attrs": {},
+                                                "children": [
+                                                  {
+                                                    "text": "Intent classification",
+                                                    "key": "root.0.0.1.1.0.0.0.1.1.1.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.0.0.0.1.1.1.0"
+                                              },
+                                              {
+                                                "tag": "p",
+                                                "attrs": {
+                                                  "class": "text-muted-foreground mt-1 text-xs"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Version ",
+                                                    "key": "root.0.0.1.1.0.0.0.1.1.1.1.0"
+                                                  },
+                                                  {
+                                                    "text": "1",
+                                                    "key": "root.0.0.1.1.0.0.0.1.1.1.1.1"
+                                                  },
+                                                  {
+                                                    "text": " · ",
+                                                    "key": "root.0.0.1.1.0.0.0.1.1.1.1.2"
+                                                  },
+                                                  {
+                                                    "text": "3",
+                                                    "key": "root.0.0.1.1.0.0.0.1.1.1.1.3"
+                                                  },
+                                                  {
+                                                    "text": "examples",
+                                                    "key": "root.0.0.1.1.0.0.0.1.1.1.1.4"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.0.0.0.1.1.1.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.0.0.0.1.1.1"
+                                          },
+                                          {
+                                            "tag": "td",
+                                            "attrs": {
+                                              "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-xs"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "OpenAI / GPT-4.1 mini",
+                                                "key": "root.0.0.1.1.0.0.0.1.1.2.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.0.0.0.1.1.2"
+                                          },
+                                          {
+                                            "tag": "td",
+                                            "attrs": {
+                                              "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px]"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "span",
+                                                    "attrs": {
+                                                      "class": "mr-1.5 size-1.5 shrink-0 rounded-full bg-success"
+                                                    },
+                                                    "children": [],
+                                                    "key": "root.0.0.1.1.0.0.0.1.1.3.0.0"
+                                                  },
+                                                  {
+                                                    "text": "Completed",
+                                                    "key": "root.0.0.1.1.0.0.0.1.1.3.0.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.1.0.0.0.1.1.3.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.0.0.0.1.1.3"
+                                          },
+                                          {
+                                            "tag": "td",
+                                            "attrs": {
+                                              "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] tabular-nums"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "67%",
+                                                "key": "root.0.0.1.1.0.0.0.1.1.4.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.0.0.0.1.1.4"
+                                          },
+                                          {
+                                            "tag": "td",
+                                            "attrs": {
+                                              "class": "p-2 align-middle [&:has([role=checkbox])]:pr-0 [&>[role=checkbox]]:translate-y-[2px] text-muted-foreground text-xs"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Sep 10, 4:18 PM",
+                                                "key": "root.0.0.1.1.0.0.0.1.1.5.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.1.0.0.0.1.1.5"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.1.0.0.0.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.1.0.0.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.1.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.1.1.0"
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {
+                          "class": "text-muted-foreground mt-3 text-xs"
+                        },
+                        "children": [
+                          {
+                            "text": "Runs grade the candidate outputs stored in your dataset. No model request is made.",
+                            "key": "root.0.0.1.1.1.0"
+                          }
+                        ],
+                        "key": "root.0.0.1.1.1"
+                      }
+                    ],
+                    "key": "root.0.0.1.1"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "data-state": "inactive",
+                      "data-orientation": "horizontal",
+                      "role": "tabpanel",
+                      "id": "radix-_R_ddbsnpfknmlb_-content-datasets",
+                      "class": "ring-offset-background focus-visible:ring-ring focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden mt-5"
+                    },
+                    "children": [],
+                    "key": "root.0.0.1.2"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "data-state": "inactive",
+                      "data-orientation": "horizontal",
+                      "role": "tabpanel",
+                      "id": "radix-_R_ddbsnpfknmlb_-content-providers",
+                      "class": "ring-offset-background focus-visible:ring-ring focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden mt-5"
+                    },
+                    "children": [],
+                    "key": "root.0.0.1.3"
+                  }
+                ],
+                "key": "root.0.0.1"
+              },
+              {
+                "tag": "section",
+                "attrs": {
+                  "aria-label": "Selected evaluation results",
+                  "class": "overflow-hidden rounded-lg border"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "bg-muted/20 flex flex-wrap items-start justify-between gap-3 border-b px-5 py-4"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {},
+                        "children": [
+                          {
+                            "tag": "p",
+                            "attrs": {
+                              "class": "text-sm font-medium"
+                            },
+                            "children": [
+                              {
+                                "text": "Support baseline",
+                                "key": "root.0.0.2.0.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.2.0.0.0"
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": {
+                              "class": "text-muted-foreground mt-1 text-xs"
+                            },
+                            "children": [
+                              {
+                                "text": "Support answer quality · v3 · OpenAI / GPT-4.1",
+                                "key": "root.0.0.2.0.0.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.2.0.0.1"
+                          }
+                        ],
+                        "key": "root.0.0.2.0.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground"
+                        },
+                        "children": [
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "mr-1.5 size-1.5 shrink-0 rounded-full bg-success"
+                            },
+                            "children": [],
+                            "key": "root.0.0.2.0.1.0"
+                          },
+                          {
+                            "text": "Completed",
+                            "key": "root.0.0.2.0.1.1"
+                          }
+                        ],
+                        "key": "root.0.0.2.0.1"
+                      }
+                    ],
+                    "key": "root.0.0.2.0"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "space-y-5 p-5"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex flex-wrap items-center justify-end gap-3"
+                        },
+                        "children": [
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "text-muted-foreground text-xs"
+                            },
+                            "children": [
+                              {
+                                "text": "Contains expected phrase",
+                                "key": "root.0.0.2.1.0.0.0"
+                              },
+                              {
+                                "text": "· case insensitive",
+                                "key": "root.0.0.2.1.0.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.2.1.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "grid grid-cols-3 gap-3 rounded-lg border p-5"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {},
+                            "children": [
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-muted-foreground text-xs"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Pass rate",
+                                    "key": "root.0.0.2.1.1.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.1.0.0"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "mt-2 text-2xl font-semibold tabular-nums"
+                                },
+                                "children": [
+                                  {
+                                    "text": "80",
+                                    "key": "root.0.0.2.1.1.0.1.0"
+                                  },
+                                  {
+                                    "text": "%",
+                                    "key": "root.0.0.2.1.1.0.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.1.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.1.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {},
+                            "children": [
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-muted-foreground text-xs"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Passed",
+                                    "key": "root.0.0.2.1.1.1.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.1.1.0"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "mt-2 text-2xl font-semibold tabular-nums"
+                                },
+                                "children": [
+                                  {
+                                    "text": "4",
+                                    "key": "root.0.0.2.1.1.1.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.1.1.1"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.1.1"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {},
+                            "children": [
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-muted-foreground text-xs"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Failed",
+                                    "key": "root.0.0.2.1.1.2.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.1.2.0"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "mt-2 text-2xl font-semibold tabular-nums"
+                                },
+                                "children": [
+                                  {
+                                    "text": "1",
+                                    "key": "root.0.0.2.1.1.2.1.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.1.2.1"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.1.2"
+                          }
+                        ],
+                        "key": "root.0.0.2.1.1"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "flex flex-wrap justify-between gap-2"
+                        },
+                        "children": [
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "type": "button",
+                              "role": "combobox",
+                              "data-state": "closed",
+                              "class": "border-input ring-offset-background placeholder:text-muted-foreground focus:ring-ring flex h-9 items-center justify-between rounded-md border bg-transparent px-3 py-2 text-sm whitespace-nowrap shadow-xs focus:ring-1 focus:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 w-auto min-w-36",
+                              "aria-label": "Evaluation result filter"
+                            },
+                            "options": [
+                              "All examples",
+                              "Passed only",
+                              "Failed only"
+                            ],
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "style": "pointer-events:none"
+                                },
+                                "children": [
+                                  {
+                                    "text": "All examples",
+                                    "key": "root.0.0.2.1.2.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.2.0.0"
+                              },
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-chevron-down",
+                                  "class": "lucide lucide-chevron-down h-4 w-4 opacity-50"
+                                },
+                                "key": "root.0.0.2.1.2.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.2.0"
+                          },
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs"
+                            },
+                            "children": [
+                              {
+                                "text": "Export results",
+                                "key": "root.0.0.2.1.2.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.2.1"
+                          }
+                        ],
+                        "key": "root.0.0.2.1.2"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "space-y-3"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "rounded-lg border p-4"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-start justify-between gap-3"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "p",
+                                    "attrs": {
+                                      "class": "text-sm font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "How long do refunds take?",
+                                        "key": "root.0.0.2.1.3.0.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.3.0.0.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 text-success"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Passed",
+                                        "key": "root.0.0.2.1.3.0.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.3.0.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.3.0.0"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-muted-foreground mt-3 text-[11px]"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Expected",
+                                    "key": "root.0.0.2.1.3.0.1.0"
+                                  },
+                                  {
+                                    "text": "phrase",
+                                    "key": "root.0.0.2.1.3.0.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.3.0.1"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "mt-1 text-xs leading-5"
+                                },
+                                "children": [
+                                  {
+                                    "text": "5–10 business days",
+                                    "key": "root.0.0.2.1.3.0.2.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.3.0.2"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-muted-foreground mt-3 text-[11px]"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Candidate output",
+                                    "key": "root.0.0.2.1.3.0.3.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.3.0.3"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "mt-1 text-sm leading-6"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Refunds arrive within 5–10 business days after approval.",
+                                    "key": "root.0.0.2.1.3.0.4.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.3.0.4"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.3.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "rounded-lg border p-4"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-start justify-between gap-3"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "p",
+                                    "attrs": {
+                                      "class": "text-sm font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Can I change my delivery address?",
+                                        "key": "root.0.0.2.1.3.1.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.3.1.0.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 text-success"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Passed",
+                                        "key": "root.0.0.2.1.3.1.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.3.1.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.3.1.0"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-muted-foreground mt-3 text-[11px]"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Expected",
+                                    "key": "root.0.0.2.1.3.1.1.0"
+                                  },
+                                  {
+                                    "text": "phrase",
+                                    "key": "root.0.0.2.1.3.1.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.3.1.1"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "mt-1 text-xs leading-5"
+                                },
+                                "children": [
+                                  {
+                                    "text": "before dispatch",
+                                    "key": "root.0.0.2.1.3.1.2.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.3.1.2"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-muted-foreground mt-3 text-[11px]"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Candidate output",
+                                    "key": "root.0.0.2.1.3.1.3.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.3.1.3"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "mt-1 text-sm leading-6"
+                                },
+                                "children": [
+                                  {
+                                    "text": "You can update your address before dispatch in your order details.",
+                                    "key": "root.0.0.2.1.3.1.4.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.3.1.4"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.3.1"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "rounded-lg border p-4"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-start justify-between gap-3"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "p",
+                                    "attrs": {
+                                      "class": "text-sm font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "My package is missing.",
+                                        "key": "root.0.0.2.1.3.2.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.3.2.0.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 text-success"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Passed",
+                                        "key": "root.0.0.2.1.3.2.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.3.2.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.3.2.0"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-muted-foreground mt-3 text-[11px]"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Expected",
+                                    "key": "root.0.0.2.1.3.2.1.0"
+                                  },
+                                  {
+                                    "text": "phrase",
+                                    "key": "root.0.0.2.1.3.2.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.3.2.1"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "mt-1 text-xs leading-5"
+                                },
+                                "children": [
+                                  {
+                                    "text": "tracking",
+                                    "key": "root.0.0.2.1.3.2.2.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.3.2.2"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-muted-foreground mt-3 text-[11px]"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Candidate output",
+                                    "key": "root.0.0.2.1.3.2.3.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.3.2.3"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "mt-1 text-sm leading-6"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Please share your tracking number so we can investigate.",
+                                    "key": "root.0.0.2.1.3.2.4.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.3.2.4"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.3.2"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "rounded-lg border p-4"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-start justify-between gap-3"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "p",
+                                    "attrs": {
+                                      "class": "text-sm font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "How do I cancel my subscription?",
+                                        "key": "root.0.0.2.1.3.3.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.3.3.0.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 text-destructive"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Failed",
+                                        "key": "root.0.0.2.1.3.3.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.3.3.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.3.3.0"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-muted-foreground mt-3 text-[11px]"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Expected",
+                                    "key": "root.0.0.2.1.3.3.1.0"
+                                  },
+                                  {
+                                    "text": "phrase",
+                                    "key": "root.0.0.2.1.3.3.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.3.3.1"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "mt-1 text-xs leading-5"
+                                },
+                                "children": [
+                                  {
+                                    "text": "billing settings",
+                                    "key": "root.0.0.2.1.3.3.2.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.3.3.2"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-muted-foreground mt-3 text-[11px]"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Candidate output",
+                                    "key": "root.0.0.2.1.3.3.3.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.3.3.3"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "mt-1 text-sm leading-6"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Contact support to cancel your subscription.",
+                                    "key": "root.0.0.2.1.3.3.4.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.3.3.4"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.3.3"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "rounded-lg border p-4"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex items-start justify-between gap-3"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "p",
+                                    "attrs": {
+                                      "class": "text-sm font-medium"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Can I export my data?",
+                                        "key": "root.0.0.2.1.3.4.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.3.4.0.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 text-success"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Passed",
+                                        "key": "root.0.0.2.1.3.4.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.1.3.4.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.3.4.0"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-muted-foreground mt-3 text-[11px]"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Expected",
+                                    "key": "root.0.0.2.1.3.4.1.0"
+                                  },
+                                  {
+                                    "text": "phrase",
+                                    "key": "root.0.0.2.1.3.4.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.3.4.1"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "mt-1 text-xs leading-5"
+                                },
+                                "children": [
+                                  {
+                                    "text": "settings",
+                                    "key": "root.0.0.2.1.3.4.2.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.3.4.2"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "text-muted-foreground mt-3 text-[11px]"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Candidate output",
+                                    "key": "root.0.0.2.1.3.4.3.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.3.4.3"
+                              },
+                              {
+                                "tag": "p",
+                                "attrs": {
+                                  "class": "mt-1 text-sm leading-6"
+                                },
+                                "children": [
+                                  {
+                                    "text": "Open Settings, then Data controls, and choose Export.",
+                                    "key": "root.0.0.2.1.3.4.4.0"
+                                  }
+                                ],
+                                "key": "root.0.0.2.1.3.4.4"
+                              }
+                            ],
+                            "key": "root.0.0.2.1.3.4"
+                          }
+                        ],
+                        "key": "root.0.0.2.1.3"
+                      }
+                    ],
+                    "key": "root.0.0.2.1"
+                  }
+                ],
+                "key": "root.0.0.2"
+              }
+            ],
+            "key": "root.0.0"
+          }
+        ],
+        "key": "root.0"
+      }
+    ],
+    "key": "root"
+  },
+  "headings": [
+    "Evaluations"
+  ]
+}

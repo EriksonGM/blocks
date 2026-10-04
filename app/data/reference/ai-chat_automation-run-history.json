@@ -1,0 +1,1271 @@
+{
+  "label": "Automation 2",
+  "path": "/ai-chat/automation-run-history",
+  "appTitle": "",
+  "tree": {
+    "tag": "div",
+    "attrs": {
+      "id": "ai-workspace-content",
+      "class": "flex min-h-0 flex-1 flex-col"
+    },
+    "children": [
+      {
+        "tag": "div",
+        "attrs": {
+          "class": "flex-1 overflow-auto px-6 py-8 lg:px-10"
+        },
+        "children": [
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "mx-auto max-w-5xl"
+            },
+            "children": [
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "mb-8"
+                },
+                "children": [
+                  {
+                    "tag": "p",
+                    "attrs": {
+                      "class": "text-muted-foreground mb-3 text-xs tracking-widest uppercase"
+                    },
+                    "children": [
+                      {
+                        "text": "Automation observability",
+                        "key": "root.0.0.0.0.0"
+                      }
+                    ],
+                    "key": "root.0.0.0.0"
+                  },
+                  {
+                    "tag": "h1",
+                    "attrs": {
+                      "class": "text-2xl font-semibold tracking-tight"
+                    },
+                    "children": [
+                      {
+                        "text": "Every trigger leaves a record.",
+                        "key": "root.0.0.0.1.0"
+                      }
+                    ],
+                    "key": "root.0.0.0.1"
+                  },
+                  {
+                    "tag": "p",
+                    "attrs": {
+                      "class": "text-muted-foreground mt-3 text-sm"
+                    },
+                    "children": [
+                      {
+                        "text": "Inspect outcomes, trace captured inputs and replay a failed demo event.",
+                        "key": "root.0.0.0.2.0"
+                      }
+                    ],
+                    "key": "root.0.0.0.2"
+                  }
+                ],
+                "key": "root.0.0.0"
+              },
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "mb-4 flex flex-wrap gap-1",
+                  "aria-label": "Filter automation"
+                },
+                "children": [
+                  {
+                    "tag": "button",
+                    "attrs": {
+                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80 h-8 rounded-md px-3 text-xs"
+                    },
+                    "children": [
+                      {
+                        "text": "All automations",
+                        "key": "root.0.0.1.0.0"
+                      }
+                    ],
+                    "key": "root.0.0.1.0"
+                  },
+                  {
+                    "tag": "button",
+                    "attrs": {
+                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs"
+                    },
+                    "children": [
+                      {
+                        "text": "Weekly project brief",
+                        "key": "root.0.0.1.1.0"
+                      }
+                    ],
+                    "key": "root.0.0.1.1"
+                  },
+                  {
+                    "tag": "button",
+                    "attrs": {
+                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs"
+                    },
+                    "children": [
+                      {
+                        "text": "Support digest",
+                        "key": "root.0.0.1.2.0"
+                      }
+                    ],
+                    "key": "root.0.0.1.2"
+                  },
+                  {
+                    "tag": "button",
+                    "attrs": {
+                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs"
+                    },
+                    "children": [
+                      {
+                        "text": "Document review",
+                        "key": "root.0.0.1.3.0"
+                      }
+                    ],
+                    "key": "root.0.0.1.3"
+                  }
+                ],
+                "key": "root.0.0.1"
+              },
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "mb-8 flex flex-wrap items-center justify-between gap-4 border-b pb-4"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "flex flex-wrap gap-1",
+                      "aria-label": "Filter run outcome"
+                    },
+                    "children": [
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs"
+                        },
+                        "children": [
+                          {
+                            "text": "All outcomes",
+                            "key": "root.0.0.2.0.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.2.0.0"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs"
+                        },
+                        "children": [
+                          {
+                            "text": "Success",
+                            "key": "root.0.0.2.0.1.0"
+                          }
+                        ],
+                        "key": "root.0.0.2.0.1"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs"
+                        },
+                        "children": [
+                          {
+                            "text": "Error",
+                            "key": "root.0.0.2.0.2.0"
+                          }
+                        ],
+                        "key": "root.0.0.2.0.2"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs"
+                        },
+                        "children": [
+                          {
+                            "text": "Blocked",
+                            "key": "root.0.0.2.0.3.0"
+                          }
+                        ],
+                        "key": "root.0.0.2.0.3"
+                      }
+                    ],
+                    "key": "root.0.0.2.0"
+                  },
+                  {
+                    "tag": "p",
+                    "attrs": {
+                      "class": "text-muted-foreground text-xs"
+                    },
+                    "children": [
+                      {
+                        "text": "5",
+                        "key": "root.0.0.2.1.0"
+                      },
+                      {
+                        "text": " runs ·",
+                        "key": "root.0.0.2.1.1"
+                      },
+                      {
+                        "text": "3",
+                        "key": "root.0.0.2.1.2"
+                      },
+                      {
+                        "text": " successful",
+                        "key": "root.0.0.2.1.3"
+                      }
+                    ],
+                    "key": "root.0.0.2.1"
+                  }
+                ],
+                "key": "root.0.0.2"
+              },
+              {
+                "tag": "h2",
+                "attrs": {
+                  "class": "text-muted-foreground mb-5 text-xs font-medium"
+                },
+                "children": [
+                  {
+                    "text": "September 6, 2026 · Demo history",
+                    "key": "root.0.0.3.0"
+                  }
+                ],
+                "key": "root.0.0.3"
+              },
+              {
+                "tag": "ol",
+                "attrs": {
+                  "class": "space-y-2"
+                },
+                "children": [
+                  {
+                    "tag": "li",
+                    "attrs": {
+                      "class": "grid grid-cols-[54px_minmax(0,1fr)] gap-3 sm:grid-cols-[70px_minmax(0,1fr)]"
+                    },
+                    "children": [
+                      {
+                        "tag": "span",
+                        "attrs": {
+                          "class": "text-muted-foreground pt-5 font-mono text-xs"
+                        },
+                        "children": [
+                          {
+                            "text": "09:00",
+                            "key": "root.0.0.4.0.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.4.0.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "data-state": "closed",
+                          "class": "overflow-hidden rounded-lg border"
+                        },
+                        "children": [
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "type": "button",
+                              "data-state": "closed",
+                              "class": "group focus-visible:outline-ring flex w-full items-center gap-3 p-4 text-left focus-visible:outline-2"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "bg-muted grid size-8 shrink-0 place-items-center rounded-full"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-check",
+                                      "class": "lucide lucide-check size-4"
+                                    },
+                                    "key": "root.0.0.4.0.1.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.4.0.1.0.0"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "min-w-0 flex-1"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "flex flex-wrap items-center gap-2"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "text-sm font-medium"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Weekly project brief",
+                                            "key": "root.0.0.4.0.1.0.1.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.4.0.1.0.1.0.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Success",
+                                            "key": "root.0.0.4.0.1.0.1.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.4.0.1.0.1.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.4.0.1.0.1.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-muted-foreground mt-1.5 block font-mono text-xs"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "exec-205",
+                                        "key": "root.0.0.4.0.1.0.1.1.0"
+                                      },
+                                      {
+                                        "text": " · ",
+                                        "key": "root.0.0.4.0.1.0.1.1.1"
+                                      },
+                                      {
+                                        "text": "schedule.weekly",
+                                        "key": "root.0.0.4.0.1.0.1.1.2"
+                                      }
+                                    ],
+                                    "key": "root.0.0.4.0.1.0.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.4.0.1.0.1"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-muted-foreground text-xs"
+                                },
+                                "children": [
+                                  {
+                                    "text": "8.2s",
+                                    "key": "root.0.0.4.0.1.0.2.0"
+                                  }
+                                ],
+                                "key": "root.0.0.4.0.1.0.2"
+                              },
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-chevron-down",
+                                  "class": "lucide lucide-chevron-down text-muted-foreground size-4 transition-transform group-data-[state=open]:rotate-180"
+                                },
+                                "key": "root.0.0.4.0.1.0.3"
+                              }
+                            ],
+                            "key": "root.0.0.4.0.1.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "data-state": "closed",
+                              "id": "radix-_R_8rdbsnpfknmlb_",
+                              "style": ""
+                            },
+                            "children": [],
+                            "key": "root.0.0.4.0.1.1"
+                          }
+                        ],
+                        "key": "root.0.0.4.0.1"
+                      }
+                    ],
+                    "key": "root.0.0.4.0"
+                  },
+                  {
+                    "tag": "li",
+                    "attrs": {
+                      "class": "grid grid-cols-[54px_minmax(0,1fr)] gap-3 sm:grid-cols-[70px_minmax(0,1fr)]"
+                    },
+                    "children": [
+                      {
+                        "tag": "span",
+                        "attrs": {
+                          "class": "text-muted-foreground pt-5 font-mono text-xs"
+                        },
+                        "children": [
+                          {
+                            "text": "08:45",
+                            "key": "root.0.0.4.1.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.4.1.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "data-state": "open",
+                          "class": "overflow-hidden rounded-lg border"
+                        },
+                        "children": [
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "type": "button",
+                              "data-state": "open",
+                              "class": "group focus-visible:outline-ring flex w-full items-center gap-3 p-4 text-left focus-visible:outline-2"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "grid size-8 shrink-0 place-items-center rounded-full bg-destructive/10 text-destructive"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-x",
+                                      "class": "lucide lucide-x size-4"
+                                    },
+                                    "key": "root.0.0.4.1.1.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.4.1.1.0.0"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "min-w-0 flex-1"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "flex flex-wrap items-center gap-2"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "text-sm font-medium"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Support digest",
+                                            "key": "root.0.0.4.1.1.0.1.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.4.1.1.0.1.0.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Error",
+                                            "key": "root.0.0.4.1.1.0.1.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.4.1.1.0.1.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.4.1.1.0.1.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-muted-foreground mt-1.5 block font-mono text-xs"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "exec-204",
+                                        "key": "root.0.0.4.1.1.0.1.1.0"
+                                      },
+                                      {
+                                        "text": " · ",
+                                        "key": "root.0.0.4.1.1.0.1.1.1"
+                                      },
+                                      {
+                                        "text": "support.digest.ready",
+                                        "key": "root.0.0.4.1.1.0.1.1.2"
+                                      }
+                                    ],
+                                    "key": "root.0.0.4.1.1.0.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.4.1.1.0.1"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-muted-foreground text-xs"
+                                },
+                                "children": [
+                                  {
+                                    "text": "10.0s",
+                                    "key": "root.0.0.4.1.1.0.2.0"
+                                  }
+                                ],
+                                "key": "root.0.0.4.1.1.0.2"
+                              },
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-chevron-down",
+                                  "class": "lucide lucide-chevron-down text-muted-foreground size-4 transition-transform group-data-[state=open]:rotate-180"
+                                },
+                                "key": "root.0.0.4.1.1.0.3"
+                              }
+                            ],
+                            "key": "root.0.0.4.1.1.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "data-state": "open",
+                              "id": "radix-_R_9bdbsnpfknmlb_",
+                              "style": "transition-duration: 0s; animation-name: none; --radix-collapsible-content-height: 327px; --radix-collapsible-content-width: 940px;"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "border-t px-4 py-5 sm:pl-15"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "p",
+                                    "attrs": {
+                                      "class": "mb-4 text-sm leading-6"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "The demo delivery endpoint did not respond before the timeout.",
+                                        "key": "root.0.0.4.1.1.1.0.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.4.1.1.1.0.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "data-orientation": "horizontal",
+                                      "data-slot": "tabs"
+                                    },
+                                    "panels": [
+                                      {
+                                        "label": "Response",
+                                        "tree": {
+                                          "tag": "div",
+                                          "attrs": {
+                                            "data-state": "active",
+                                            "data-orientation": "horizontal",
+                                            "role": "tabpanel",
+                                            "id": "radix-_R_epbdbsnpfknmlb_-content-response",
+                                            "class": "ring-offset-background focus-visible:ring-ring mt-2 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden",
+                                            "style": "animation-duration:0s"
+                                          },
+                                          "children": [
+                                            {
+                                              "tag": "pre",
+                                              "attrs": {
+                                                "class": "bg-muted/40 max-h-48 overflow-auto rounded-md border p-4 font-mono text-xs leading-6"
+                                              },
+                                              "children": [
+                                                {
+                                                  "text": "{\n  \"status\": \"504\",\n  \"message\": \"The demo delivery endpoint did not respond before the timeout.\",\n  \"duration\": \"10.0s\"\n}",
+                                                  "key": "root.0.0.4.1.1.1.0.1.panel0.0.0"
+                                                }
+                                              ],
+                                              "key": "root.0.0.4.1.1.1.0.1.panel0.0"
+                                            }
+                                          ],
+                                          "key": "root.0.0.4.1.1.1.0.1.panel0"
+                                        }
+                                      },
+                                      {
+                                        "label": "Captured event",
+                                        "tree": {
+                                          "tag": "div",
+                                          "attrs": {
+                                            "data-state": "active",
+                                            "data-orientation": "horizontal",
+                                            "role": "tabpanel",
+                                            "id": "radix-_R_epbdbsnpfknmlb_-content-response",
+                                            "class": "ring-offset-background focus-visible:ring-ring mt-2 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden",
+                                            "style": "animation-duration:0s"
+                                          },
+                                          "children": [
+                                            {
+                                              "tag": "pre",
+                                              "attrs": {
+                                                "class": "bg-muted/40 max-h-48 overflow-auto rounded-md border p-4 font-mono text-xs leading-6"
+                                              },
+                                              "children": [
+                                                {
+                                                  "text": "{\n  \"status\": \"504\",\n  \"message\": \"The demo delivery endpoint did not respond before the timeout.\",\n  \"duration\": \"10.0s\"\n}",
+                                                  "key": "root.0.0.4.1.1.1.0.1.panel1.0.0"
+                                                }
+                                              ],
+                                              "key": "root.0.0.4.1.1.1.0.1.panel1.0"
+                                            }
+                                          ],
+                                          "key": "root.0.0.4.1.1.1.0.1.panel1"
+                                        }
+                                      }
+                                    ],
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "role": "tablist",
+                                          "class": "bg-muted text-muted-foreground inline-flex h-9 items-center justify-center rounded-lg p-1",
+                                          "aria-label": "exec-204 details",
+                                          "data-orientation": "horizontal",
+                                          "style": "outline:none"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "button",
+                                            "attrs": {
+                                              "type": "button",
+                                              "role": "tab",
+                                              "data-state": "active",
+                                              "id": "radix-_R_epbdbsnpfknmlb_-trigger-response",
+                                              "class": "ring-offset-background focus-visible:ring-ring data-[state=active]:bg-background data-[state=active]:text-foreground inline-flex items-center justify-center rounded-md px-3 py-1 text-sm font-medium whitespace-nowrap transition-all focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-[state=active]:shadow-sm",
+                                              "data-orientation": "horizontal"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Response",
+                                                "key": "root.0.0.4.1.1.1.0.1.0.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.4.1.1.1.0.1.0.0"
+                                          },
+                                          {
+                                            "tag": "button",
+                                            "attrs": {
+                                              "type": "button",
+                                              "role": "tab",
+                                              "data-state": "inactive",
+                                              "id": "radix-_R_epbdbsnpfknmlb_-trigger-input",
+                                              "class": "ring-offset-background focus-visible:ring-ring data-[state=active]:bg-background data-[state=active]:text-foreground inline-flex items-center justify-center rounded-md px-3 py-1 text-sm font-medium whitespace-nowrap transition-all focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-[state=active]:shadow-sm",
+                                              "data-orientation": "horizontal"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "Captured event",
+                                                "key": "root.0.0.4.1.1.1.0.1.0.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.4.1.1.1.0.1.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.4.1.1.1.0.1.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "data-state": "active",
+                                          "data-orientation": "horizontal",
+                                          "role": "tabpanel",
+                                          "id": "radix-_R_epbdbsnpfknmlb_-content-response",
+                                          "class": "ring-offset-background focus-visible:ring-ring mt-2 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden",
+                                          "style": "animation-duration:0s"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "pre",
+                                            "attrs": {
+                                              "class": "bg-muted/40 max-h-48 overflow-auto rounded-md border p-4 font-mono text-xs leading-6"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "{\n  \"status\": \"504\",\n  \"message\": \"The demo delivery endpoint did not respond before the timeout.\",\n  \"duration\": \"10.0s\"\n}",
+                                                "key": "root.0.0.4.1.1.1.0.1.1.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.4.1.1.1.0.1.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.4.1.1.1.0.1.1"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "data-state": "inactive",
+                                          "data-orientation": "horizontal",
+                                          "role": "tabpanel",
+                                          "id": "radix-_R_epbdbsnpfknmlb_-content-input",
+                                          "class": "ring-offset-background focus-visible:ring-ring mt-2 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden"
+                                        },
+                                        "children": [],
+                                        "key": "root.0.0.4.1.1.1.0.1.2"
+                                      }
+                                    ],
+                                    "key": "root.0.0.4.1.1.1.0.1"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "mt-4 flex flex-wrap items-center gap-3"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "button",
+                                        "attrs": {
+                                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-rotate-ccw",
+                                              "class": "lucide lucide-rotate-ccw"
+                                            },
+                                            "key": "root.0.0.4.1.1.1.0.2.0.0"
+                                          },
+                                          {
+                                            "text": "Replay demo event",
+                                            "key": "root.0.0.4.1.1.1.0.2.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.4.1.1.1.0.2.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.4.1.1.1.0.2"
+                                  }
+                                ],
+                                "key": "root.0.0.4.1.1.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.4.1.1.1"
+                          }
+                        ],
+                        "key": "root.0.0.4.1.1"
+                      }
+                    ],
+                    "key": "root.0.0.4.1"
+                  },
+                  {
+                    "tag": "li",
+                    "attrs": {
+                      "class": "grid grid-cols-[54px_minmax(0,1fr)] gap-3 sm:grid-cols-[70px_minmax(0,1fr)]"
+                    },
+                    "children": [
+                      {
+                        "tag": "span",
+                        "attrs": {
+                          "class": "text-muted-foreground pt-5 font-mono text-xs"
+                        },
+                        "children": [
+                          {
+                            "text": "08:30",
+                            "key": "root.0.0.4.2.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.4.2.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "data-state": "closed",
+                          "class": "overflow-hidden rounded-lg border"
+                        },
+                        "children": [
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "type": "button",
+                              "data-state": "closed",
+                              "class": "group focus-visible:outline-ring flex w-full items-center gap-3 p-4 text-left focus-visible:outline-2"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "bg-muted grid size-8 shrink-0 place-items-center rounded-full"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-shield-alert",
+                                      "class": "lucide lucide-shield-alert size-4"
+                                    },
+                                    "key": "root.0.0.4.2.1.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.4.2.1.0.0"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "min-w-0 flex-1"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "flex flex-wrap items-center gap-2"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "text-sm font-medium"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Document review",
+                                            "key": "root.0.0.4.2.1.0.1.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.4.2.1.0.1.0.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Blocked",
+                                            "key": "root.0.0.4.2.1.0.1.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.4.2.1.0.1.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.4.2.1.0.1.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-muted-foreground mt-1.5 block font-mono text-xs"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "exec-203",
+                                        "key": "root.0.0.4.2.1.0.1.1.0"
+                                      },
+                                      {
+                                        "text": " · ",
+                                        "key": "root.0.0.4.2.1.0.1.1.1"
+                                      },
+                                      {
+                                        "text": "document.updated",
+                                        "key": "root.0.0.4.2.1.0.1.1.2"
+                                      }
+                                    ],
+                                    "key": "root.0.0.4.2.1.0.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.4.2.1.0.1"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-muted-foreground text-xs"
+                                },
+                                "children": [
+                                  {
+                                    "text": "0.2s",
+                                    "key": "root.0.0.4.2.1.0.2.0"
+                                  }
+                                ],
+                                "key": "root.0.0.4.2.1.0.2"
+                              },
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-chevron-down",
+                                  "class": "lucide lucide-chevron-down text-muted-foreground size-4 transition-transform group-data-[state=open]:rotate-180"
+                                },
+                                "key": "root.0.0.4.2.1.0.3"
+                              }
+                            ],
+                            "key": "root.0.0.4.2.1.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "data-state": "closed",
+                              "id": "radix-_R_9rdbsnpfknmlb_",
+                              "style": ""
+                            },
+                            "children": [],
+                            "key": "root.0.0.4.2.1.1"
+                          }
+                        ],
+                        "key": "root.0.0.4.2.1"
+                      }
+                    ],
+                    "key": "root.0.0.4.2"
+                  },
+                  {
+                    "tag": "li",
+                    "attrs": {
+                      "class": "grid grid-cols-[54px_minmax(0,1fr)] gap-3 sm:grid-cols-[70px_minmax(0,1fr)]"
+                    },
+                    "children": [
+                      {
+                        "tag": "span",
+                        "attrs": {
+                          "class": "text-muted-foreground pt-5 font-mono text-xs"
+                        },
+                        "children": [
+                          {
+                            "text": "08:00",
+                            "key": "root.0.0.4.3.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.4.3.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "data-state": "closed",
+                          "class": "overflow-hidden rounded-lg border"
+                        },
+                        "children": [
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "type": "button",
+                              "data-state": "closed",
+                              "class": "group focus-visible:outline-ring flex w-full items-center gap-3 p-4 text-left focus-visible:outline-2"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "bg-muted grid size-8 shrink-0 place-items-center rounded-full"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-check",
+                                      "class": "lucide lucide-check size-4"
+                                    },
+                                    "key": "root.0.0.4.3.1.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.4.3.1.0.0"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "min-w-0 flex-1"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "flex flex-wrap items-center gap-2"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "text-sm font-medium"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Support digest",
+                                            "key": "root.0.0.4.3.1.0.1.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.4.3.1.0.1.0.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Success",
+                                            "key": "root.0.0.4.3.1.0.1.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.4.3.1.0.1.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.4.3.1.0.1.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-muted-foreground mt-1.5 block font-mono text-xs"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "exec-202",
+                                        "key": "root.0.0.4.3.1.0.1.1.0"
+                                      },
+                                      {
+                                        "text": " · ",
+                                        "key": "root.0.0.4.3.1.0.1.1.1"
+                                      },
+                                      {
+                                        "text": "support.digest.ready",
+                                        "key": "root.0.0.4.3.1.0.1.1.2"
+                                      }
+                                    ],
+                                    "key": "root.0.0.4.3.1.0.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.4.3.1.0.1"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-muted-foreground text-xs"
+                                },
+                                "children": [
+                                  {
+                                    "text": "4.6s",
+                                    "key": "root.0.0.4.3.1.0.2.0"
+                                  }
+                                ],
+                                "key": "root.0.0.4.3.1.0.2"
+                              },
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-chevron-down",
+                                  "class": "lucide lucide-chevron-down text-muted-foreground size-4 transition-transform group-data-[state=open]:rotate-180"
+                                },
+                                "key": "root.0.0.4.3.1.0.3"
+                              }
+                            ],
+                            "key": "root.0.0.4.3.1.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "data-state": "closed",
+                              "id": "radix-_R_abdbsnpfknmlb_",
+                              "style": ""
+                            },
+                            "children": [],
+                            "key": "root.0.0.4.3.1.1"
+                          }
+                        ],
+                        "key": "root.0.0.4.3.1"
+                      }
+                    ],
+                    "key": "root.0.0.4.3"
+                  },
+                  {
+                    "tag": "li",
+                    "attrs": {
+                      "class": "grid grid-cols-[54px_minmax(0,1fr)] gap-3 sm:grid-cols-[70px_minmax(0,1fr)]"
+                    },
+                    "children": [
+                      {
+                        "tag": "span",
+                        "attrs": {
+                          "class": "text-muted-foreground pt-5 font-mono text-xs"
+                        },
+                        "children": [
+                          {
+                            "text": "07:30",
+                            "key": "root.0.0.4.4.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.4.4.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "data-state": "closed",
+                          "class": "overflow-hidden rounded-lg border"
+                        },
+                        "children": [
+                          {
+                            "tag": "button",
+                            "attrs": {
+                              "type": "button",
+                              "data-state": "closed",
+                              "class": "group focus-visible:outline-ring flex w-full items-center gap-3 p-4 text-left focus-visible:outline-2"
+                            },
+                            "children": [
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "bg-muted grid size-8 shrink-0 place-items-center rounded-full"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "icon",
+                                    "attrs": {
+                                      "name": "i-lucide-check",
+                                      "class": "lucide lucide-check size-4"
+                                    },
+                                    "key": "root.0.0.4.4.1.0.0.0"
+                                  }
+                                ],
+                                "key": "root.0.0.4.4.1.0.0"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "min-w-0 flex-1"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "flex flex-wrap items-center gap-2"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "text-sm font-medium"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Document review",
+                                            "key": "root.0.0.4.4.1.0.1.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.4.4.1.0.1.0.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Success",
+                                            "key": "root.0.0.4.4.1.0.1.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.4.4.1.0.1.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.4.4.1.0.1.0"
+                                  },
+                                  {
+                                    "tag": "span",
+                                    "attrs": {
+                                      "class": "text-muted-foreground mt-1.5 block font-mono text-xs"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "exec-201",
+                                        "key": "root.0.0.4.4.1.0.1.1.0"
+                                      },
+                                      {
+                                        "text": " · ",
+                                        "key": "root.0.0.4.4.1.0.1.1.1"
+                                      },
+                                      {
+                                        "text": "document.updated",
+                                        "key": "root.0.0.4.4.1.0.1.1.2"
+                                      }
+                                    ],
+                                    "key": "root.0.0.4.4.1.0.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.4.4.1.0.1"
+                              },
+                              {
+                                "tag": "span",
+                                "attrs": {
+                                  "class": "text-muted-foreground text-xs"
+                                },
+                                "children": [
+                                  {
+                                    "text": "3.1s",
+                                    "key": "root.0.0.4.4.1.0.2.0"
+                                  }
+                                ],
+                                "key": "root.0.0.4.4.1.0.2"
+                              },
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-chevron-down",
+                                  "class": "lucide lucide-chevron-down text-muted-foreground size-4 transition-transform group-data-[state=open]:rotate-180"
+                                },
+                                "key": "root.0.0.4.4.1.0.3"
+                              }
+                            ],
+                            "key": "root.0.0.4.4.1.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "data-state": "closed",
+                              "id": "radix-_R_ardbsnpfknmlb_",
+                              "style": ""
+                            },
+                            "children": [],
+                            "key": "root.0.0.4.4.1.1"
+                          }
+                        ],
+                        "key": "root.0.0.4.4.1"
+                      }
+                    ],
+                    "key": "root.0.0.4.4"
+                  }
+                ],
+                "key": "root.0.0.4"
+              },
+              {
+                "tag": "p",
+                "attrs": {
+                  "class": "text-muted-foreground mt-6 text-xs"
+                },
+                "children": [
+                  {
+                    "text": "Replay uses the captured local fixture. No webhook is sent and no schedule is changed.",
+                    "key": "root.0.0.5.0"
+                  }
+                ],
+                "key": "root.0.0.5"
+              }
+            ],
+            "key": "root.0.0"
+          }
+        ],
+        "key": "root.0"
+      }
+    ],
+    "key": "root"
+  },
+  "headings": [
+    "Every trigger leaves a record.",
+    "September 6, 2026 · Demo history"
+  ]
+}

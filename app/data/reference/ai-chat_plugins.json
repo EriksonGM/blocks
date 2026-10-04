@@ -1,0 +1,2273 @@
+{
+  "label": "Plugins",
+  "path": "/ai-chat/plugins",
+  "appTitle": "",
+  "tree": {
+    "tag": "div",
+    "attrs": {
+      "id": "ai-workspace-content",
+      "class": "flex min-h-0 flex-1 flex-col"
+    },
+    "children": [
+      {
+        "tag": "div",
+        "attrs": {
+          "class": "min-h-0 flex-1 overflow-y-auto"
+        },
+        "children": [
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "mx-auto flex flex-col px-4 sm:px-8 gap-6 py-6 sm:py-8"
+            },
+            "children": [
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "flex flex-wrap gap-4 items-start justify-between"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "flex flex-col gap-1"
+                    },
+                    "children": [
+                      {
+                        "tag": "h1",
+                        "attrs": {
+                          "class": "text-2xl font-semibold tracking-tight"
+                        },
+                        "children": [
+                          {
+                            "text": "Plugins",
+                            "key": "root.0.0.0.0.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.0"
+                      },
+                      {
+                        "tag": "p",
+                        "attrs": {
+                          "class": "text-muted-foreground max-w-2xl text-sm"
+                        },
+                        "children": [
+                          {
+                            "text": "Connect the tools your team already uses and make them available to assistants.",
+                            "key": "root.0.0.0.0.1.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.0.1"
+                      }
+                    ],
+                    "key": "root.0.0.0.0"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "flex flex-wrap items-center gap-2"
+                    },
+                    "children": [
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs"
+                        },
+                        "children": [
+                          {
+                            "text": "Request integration",
+                            "key": "root.0.0.0.1.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.0.1.0"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 h-8 rounded-md px-3 text-xs"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-plus",
+                              "class": "lucide lucide-plus"
+                            },
+                            "key": "root.0.0.0.1.1.0"
+                          },
+                          {
+                            "text": "Browse all",
+                            "key": "root.0.0.0.1.1.1"
+                          }
+                        ],
+                        "key": "root.0.0.0.1.1"
+                      }
+                    ],
+                    "key": "root.0.0.0.1"
+                  }
+                ],
+                "key": "root.0.0.0"
+              },
+              {
+                "tag": "section",
+                "attrs": {
+                  "class": "bg-card overflow-hidden rounded-xl border"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "flex flex-col gap-4 border-b px-4 py-4 lg:flex-row lg:items-center lg:justify-between lg:px-5"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "min-w-0"
+                        },
+                        "children": [
+                          {
+                            "tag": "p",
+                            "attrs": {
+                              "class": "text-sm font-medium"
+                            },
+                            "children": [
+                              {
+                                "text": "Connection gallery",
+                                "key": "root.0.0.1.0.0.0.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.0.0"
+                          },
+                          {
+                            "tag": "p",
+                            "attrs": {
+                              "class": "text-muted-foreground truncate text-xs"
+                            },
+                            "children": [
+                              {
+                                "text": "3",
+                                "key": "root.0.0.1.0.0.1.0"
+                              },
+                              {
+                                "text": " active ·",
+                                "key": "root.0.0.1.0.0.1.1"
+                              },
+                              {
+                                "text": "8",
+                                "key": "root.0.0.1.0.0.1.2"
+                              },
+                              {
+                                "text": " available",
+                                "key": "root.0.0.1.0.0.1.3"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.0.1"
+                          }
+                        ],
+                        "key": "root.0.0.1.0.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "relative w-full lg:w-80"
+                        },
+                        "children": [
+                          {
+                            "tag": "icon",
+                            "attrs": {
+                              "name": "i-lucide-search",
+                              "class": "lucide lucide-search text-muted-foreground pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2"
+                            },
+                            "key": "root.0.0.1.0.1.0"
+                          },
+                          {
+                            "tag": "input",
+                            "attrs": {
+                              "class": "border-input file:text-foreground placeholder:text-muted-foreground focus-visible:ring-ring flex w-full rounded-md border px-3 py-1 text-base shadow-xs transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium focus-visible:ring-1 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 md:text-sm bg-background h-9 pl-9",
+                              "aria-label": "Search plugins",
+                              "placeholder": "Search integrations…",
+                              "value": ""
+                            },
+                            "children": [],
+                            "key": "root.0.0.1.0.1.1"
+                          }
+                        ],
+                        "key": "root.0.0.1.0.1"
+                      }
+                    ],
+                    "key": "root.0.0.1.0"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "flex gap-1 overflow-x-auto border-b px-3 py-2 [scrollbar-width:none] lg:px-5"
+                    },
+                    "children": [
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center whitespace-nowrap transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:text-accent-foreground h-8 text-xs shrink-0 gap-1.5 rounded-lg px-3 bg-muted text-foreground hover:bg-muted font-medium"
+                        },
+                        "children": [
+                          {
+                            "text": "All apps",
+                            "key": "root.0.0.1.1.0.0"
+                          },
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "text-[11px] tabular-nums text-foreground/65"
+                            },
+                            "children": [
+                              {
+                                "text": "8",
+                                "key": "root.0.0.1.1.0.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.0.1"
+                          }
+                        ],
+                        "key": "root.0.0.1.1.0"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center whitespace-nowrap transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-8 text-xs text-muted-foreground shrink-0 gap-1.5 rounded-lg px-3 font-normal"
+                        },
+                        "children": [
+                          {
+                            "text": "Connected",
+                            "key": "root.0.0.1.1.1.0"
+                          },
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "text-muted-foreground text-[11px] tabular-nums"
+                            },
+                            "children": [
+                              {
+                                "text": "3",
+                                "key": "root.0.0.1.1.1.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.1.1"
+                          }
+                        ],
+                        "key": "root.0.0.1.1.1"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center whitespace-nowrap transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-8 text-xs text-muted-foreground shrink-0 gap-1.5 rounded-lg px-3 font-normal"
+                        },
+                        "children": [
+                          {
+                            "text": "Developer tools",
+                            "key": "root.0.0.1.1.2.0"
+                          },
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "text-muted-foreground text-[11px] tabular-nums"
+                            },
+                            "children": [
+                              {
+                                "text": "1",
+                                "key": "root.0.0.1.1.2.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.2.1"
+                          }
+                        ],
+                        "key": "root.0.0.1.1.2"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center whitespace-nowrap transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-8 text-xs text-muted-foreground shrink-0 gap-1.5 rounded-lg px-3 font-normal"
+                        },
+                        "children": [
+                          {
+                            "text": "Communication",
+                            "key": "root.0.0.1.1.3.0"
+                          },
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "text-muted-foreground text-[11px] tabular-nums"
+                            },
+                            "children": [
+                              {
+                                "text": "2",
+                                "key": "root.0.0.1.1.3.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.3.1"
+                          }
+                        ],
+                        "key": "root.0.0.1.1.3"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center whitespace-nowrap transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-8 text-xs text-muted-foreground shrink-0 gap-1.5 rounded-lg px-3 font-normal"
+                        },
+                        "children": [
+                          {
+                            "text": "Productivity",
+                            "key": "root.0.0.1.1.4.0"
+                          },
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "text-muted-foreground text-[11px] tabular-nums"
+                            },
+                            "children": [
+                              {
+                                "text": "3",
+                                "key": "root.0.0.1.1.4.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.4.1"
+                          }
+                        ],
+                        "key": "root.0.0.1.1.4"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center whitespace-nowrap transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-8 text-xs text-muted-foreground shrink-0 gap-1.5 rounded-lg px-3 font-normal"
+                        },
+                        "children": [
+                          {
+                            "text": "Design tools",
+                            "key": "root.0.0.1.1.5.0"
+                          },
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "text-muted-foreground text-[11px] tabular-nums"
+                            },
+                            "children": [
+                              {
+                                "text": "1",
+                                "key": "root.0.0.1.1.5.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.5.1"
+                          }
+                        ],
+                        "key": "root.0.0.1.1.5"
+                      },
+                      {
+                        "tag": "button",
+                        "attrs": {
+                          "class": "inline-flex items-center justify-center whitespace-nowrap transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-8 text-xs text-muted-foreground shrink-0 gap-1.5 rounded-lg px-3 font-normal"
+                        },
+                        "children": [
+                          {
+                            "text": "Storage",
+                            "key": "root.0.0.1.1.6.0"
+                          },
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "text-muted-foreground text-[11px] tabular-nums"
+                            },
+                            "children": [
+                              {
+                                "text": "1",
+                                "key": "root.0.0.1.1.6.1.0"
+                              }
+                            ],
+                            "key": "root.0.0.1.1.6.1"
+                          }
+                        ],
+                        "key": "root.0.0.1.1.6"
+                      }
+                    ],
+                    "key": "root.0.0.1.1"
+                  },
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "class": "p-4 lg:p-5"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "grid gap-5 md:grid-cols-2 2xl:grid-cols-3"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "bg-card text-card-foreground rounded-lg border group hover:border-foreground/20 gap-0 overflow-hidden py-0 shadow-none transition-[border-color,box-shadow] duration-200 hover:shadow-sm"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex flex-col space-y-1.5 p-6 gap-0 px-6 pt-6 pb-5"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-start justify-between gap-4"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "flex min-w-0 items-center gap-3"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "bg-background flex size-11 shrink-0 items-center justify-center rounded-xl border shadow-xs"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "svg",
+                                                "attrs": {
+                                                  "stroke": "currentColor",
+                                                  "fill": "currentColor",
+                                                  "stroke-width": "0",
+                                                  "role": "img",
+                                                  "viewBox": "0 0 24 24",
+                                                  "class": "size-6 text-foreground",
+                                                  "height": "100%",
+                                                  "width": "100%"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "path",
+                                                    "attrs": {
+                                                      "d": "M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+                                                    },
+                                                    "children": [],
+                                                    "key": "root.0.0.1.2.0.0.0.0.0.0.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.2.0.0.0.0.0.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.2.0.0.0.0.0.0"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "min-w-0"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "flex items-center gap-2"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "h2",
+                                                    "attrs": {
+                                                      "class": "truncate text-base font-semibold tracking-tight"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "GitHub",
+                                                        "key": "root.0.0.1.2.0.0.0.0.0.1.0.0.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.1.2.0.0.0.0.0.1.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.2.0.0.0.0.0.1.0"
+                                              },
+                                              {
+                                                "tag": "p",
+                                                "attrs": {
+                                                  "class": "text-muted-foreground truncate text-xs"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "By ",
+                                                    "key": "root.0.0.1.2.0.0.0.0.0.1.1.0"
+                                                  },
+                                                  {
+                                                    "text": "GitHub, Inc.",
+                                                    "key": "root.0.0.1.2.0.0.0.0.0.1.1.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.2.0.0.0.0.0.1.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.2.0.0.0.0.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.2.0.0.0.0.0"
+                                      },
+                                      {
+                                        "tag": "button",
+                                        "attrs": {
+                                          "type": "button",
+                                          "role": "switch",
+                                          "aria-checked": "true",
+                                          "data-state": "checked",
+                                          "value": "on",
+                                          "class": "peer focus-visible:ring-ring focus-visible:ring-offset-background data-[state=checked]:bg-primary data-[state=unchecked]:bg-input inline-flex h-5 w-9 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent shadow-xs transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50",
+                                          "aria-label": "Disable GitHub"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "data-state": "checked",
+                                              "class": "bg-background pointer-events-none block h-4 w-4 rounded-full ring-0 shadow-lg transition-transform data-[state=checked]:translate-x-4 data-[state=unchecked]:translate-x-0"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.1.2.0.0.0.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.2.0.0.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.2.0.0.0.0"
+                                  },
+                                  {
+                                    "tag": "p",
+                                    "attrs": {
+                                      "class": "text-muted-foreground mt-7 truncate text-sm leading-5",
+                                      "title": "GitHub: Search repositories, inspect pull requests, and bring code context into conversations."
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "GitHub: Search repositories, inspect pull requests, and bring code context into conversations.",
+                                        "key": "root.0.0.1.2.0.0.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.2.0.0.0.1"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "mt-5 flex flex-wrap items-center gap-1.5"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "inline-flex items-center border px-2.5 py-0.5 transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-md text-[10px] font-medium tracking-wide uppercase"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Developer tools",
+                                            "key": "root.0.0.1.2.0.0.0.2.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.2.0.0.0.2.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "inline-flex items-center border px-2.5 py-0.5 transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-md text-[10px] font-medium tracking-wide uppercase"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "2",
+                                            "key": "root.0.0.1.2.0.0.0.2.1.0"
+                                          },
+                                          {
+                                            "text": " steps",
+                                            "key": "root.0.0.1.2.0.0.0.2.1.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.2.0.0.0.2.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.2.0.0.0.2"
+                                  }
+                                ],
+                                "key": "root.0.0.1.2.0.0.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "bg-muted/35 mt-auto flex min-h-14 items-center justify-between gap-3 border-t px-6 py-3"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-w-0 items-center"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.1.2.0.0.1.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent h-8 rounded-md px-3 text-xs text-muted-foreground hover:text-foreground -mr-2 shrink-0 font-normal"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "View instruction",
+                                        "key": "root.0.0.1.2.0.0.1.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.2.0.0.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.2.0.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.1.2.0.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "bg-card text-card-foreground rounded-lg border group hover:border-foreground/20 gap-0 overflow-hidden py-0 shadow-none transition-[border-color,box-shadow] duration-200 hover:shadow-sm"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex flex-col space-y-1.5 p-6 gap-0 px-6 pt-6 pb-5"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-start justify-between gap-4"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "flex min-w-0 items-center gap-3"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "bg-background flex size-11 shrink-0 items-center justify-center rounded-xl border shadow-xs"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "svg",
+                                                "attrs": {
+                                                  "stroke": "currentColor",
+                                                  "fill": "currentColor",
+                                                  "stroke-width": "0",
+                                                  "role": "img",
+                                                  "viewBox": "0 0 24 24",
+                                                  "class": "size-6 text-[#f24e1e]",
+                                                  "height": "100%",
+                                                  "width": "100%"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "path",
+                                                    "attrs": {
+                                                      "d": "M15.852 8.981h-4.588V0h4.588c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.491-4.49 4.491zM12.735 7.51h3.117c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-3.117V7.51zm0 1.471H8.148c-2.476 0-4.49-2.014-4.49-4.49S5.672 0 8.148 0h4.588v8.981zm-4.587-7.51c-1.665 0-3.019 1.355-3.019 3.019s1.354 3.02 3.019 3.02h3.117V1.471H8.148zm4.587 15.019H8.148c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h4.588v8.98zM8.148 8.981c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h3.117V8.981H8.148zM8.172 24c-2.489 0-4.515-2.014-4.515-4.49s2.014-4.49 4.49-4.49h4.588v4.441c0 2.503-2.047 4.539-4.563 4.539zm-.024-7.51a3.023 3.023 0 0 0-3.019 3.019c0 1.665 1.365 3.019 3.044 3.019 1.705 0 3.093-1.376 3.093-3.068v-2.97H8.148zm7.704 0h-.098c-2.476 0-4.49-2.014-4.49-4.49s2.014-4.49 4.49-4.49h.098c2.476 0 4.49 2.014 4.49 4.49s-2.014 4.49-4.49 4.49zm-.097-7.509c-1.665 0-3.019 1.355-3.019 3.019s1.355 3.019 3.019 3.019h.098c1.665 0 3.019-1.355 3.019-3.019s-1.355-3.019-3.019-3.019h-.098z"
+                                                    },
+                                                    "children": [],
+                                                    "key": "root.0.0.1.2.0.1.0.0.0.0.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.2.0.1.0.0.0.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.2.0.1.0.0.0.0"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "min-w-0"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "flex items-center gap-2"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "h2",
+                                                    "attrs": {
+                                                      "class": "truncate text-base font-semibold tracking-tight"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Figma",
+                                                        "key": "root.0.0.1.2.0.1.0.0.0.1.0.0.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.1.2.0.1.0.0.0.1.0.0"
+                                                  },
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "inline-flex items-center rounded-md border py-0.5 font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground shadow-sm hover:bg-primary/80 h-5 px-1.5 text-[10px]"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "New",
+                                                        "key": "root.0.0.1.2.0.1.0.0.0.1.0.1.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.1.2.0.1.0.0.0.1.0.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.2.0.1.0.0.0.1.0"
+                                              },
+                                              {
+                                                "tag": "p",
+                                                "attrs": {
+                                                  "class": "text-muted-foreground truncate text-xs"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "By ",
+                                                    "key": "root.0.0.1.2.0.1.0.0.0.1.1.0"
+                                                  },
+                                                  {
+                                                    "text": "Figma, Inc.",
+                                                    "key": "root.0.0.1.2.0.1.0.0.0.1.1.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.2.0.1.0.0.0.1.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.2.0.1.0.0.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.2.0.1.0.0.0"
+                                      },
+                                      {
+                                        "tag": "button",
+                                        "attrs": {
+                                          "type": "button",
+                                          "role": "switch",
+                                          "aria-checked": "false",
+                                          "data-state": "unchecked",
+                                          "value": "on",
+                                          "class": "peer focus-visible:ring-ring focus-visible:ring-offset-background data-[state=checked]:bg-primary data-[state=unchecked]:bg-input inline-flex h-5 w-9 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent shadow-xs transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50",
+                                          "aria-label": "Enable Figma"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "data-state": "unchecked",
+                                              "class": "bg-background pointer-events-none block h-4 w-4 rounded-full ring-0 shadow-lg transition-transform data-[state=checked]:translate-x-4 data-[state=unchecked]:translate-x-0"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.1.2.0.1.0.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.2.0.1.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.2.0.1.0.0"
+                                  },
+                                  {
+                                    "tag": "p",
+                                    "attrs": {
+                                      "class": "text-muted-foreground mt-7 truncate text-sm leading-5",
+                                      "title": "Figma: Read design files, inspect component properties, and connect product context to your assistant."
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Figma: Read design files, inspect component properties, and connect product context to your assistant.",
+                                        "key": "root.0.0.1.2.0.1.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.2.0.1.0.1"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "mt-5 flex flex-wrap items-center gap-1.5"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "inline-flex items-center border px-2.5 py-0.5 transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-md text-[10px] font-medium tracking-wide uppercase"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Design tools",
+                                            "key": "root.0.0.1.2.0.1.0.2.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.2.0.1.0.2.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "inline-flex items-center border px-2.5 py-0.5 transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-md text-[10px] font-medium tracking-wide uppercase"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "4",
+                                            "key": "root.0.0.1.2.0.1.0.2.1.0"
+                                          },
+                                          {
+                                            "text": " steps",
+                                            "key": "root.0.0.1.2.0.1.0.2.1.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.2.0.1.0.2.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.2.0.1.0.2"
+                                  }
+                                ],
+                                "key": "root.0.0.1.2.0.1.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "bg-muted/35 mt-auto flex min-h-14 items-center justify-between gap-3 border-t px-6 py-3"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-w-0 items-center"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.1.2.0.1.1.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent h-8 rounded-md px-3 text-xs text-muted-foreground hover:text-foreground -mr-2 shrink-0 font-normal"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "View instruction",
+                                        "key": "root.0.0.1.2.0.1.1.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.2.0.1.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.2.0.1.1"
+                              }
+                            ],
+                            "key": "root.0.0.1.2.0.1"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "bg-card text-card-foreground rounded-lg border group hover:border-foreground/20 gap-0 overflow-hidden py-0 shadow-none transition-[border-color,box-shadow] duration-200 hover:shadow-sm"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex flex-col space-y-1.5 p-6 gap-0 px-6 pt-6 pb-5"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-start justify-between gap-4"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "flex min-w-0 items-center gap-3"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "bg-background flex size-11 shrink-0 items-center justify-center rounded-xl border shadow-xs"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "svg",
+                                                "attrs": {
+                                                  "stroke": "currentColor",
+                                                  "fill": "currentColor",
+                                                  "stroke-width": "0",
+                                                  "role": "img",
+                                                  "viewBox": "0 0 24 24",
+                                                  "class": "size-6 text-foreground",
+                                                  "height": "100%",
+                                                  "width": "100%"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "path",
+                                                    "attrs": {
+                                                      "d": "M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952L12.21 19s0 .84-1.168.84l-3.222.186c-.093-.186 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.139c-.093-.514.28-.887.747-.933zM1.936 1.035l13.31-.98c1.634-.14 2.055-.047 3.082.7l4.249 2.986c.7.513.934.653.934 1.213v16.378c0 1.026-.373 1.634-1.68 1.726l-15.458.934c-.98.047-1.448-.093-1.962-.747l-3.129-4.06c-.56-.747-.793-1.306-.793-1.96V2.667c0-.839.374-1.54 1.447-1.632z"
+                                                    },
+                                                    "children": [],
+                                                    "key": "root.0.0.1.2.0.2.0.0.0.0.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.2.0.2.0.0.0.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.2.0.2.0.0.0.0"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "min-w-0"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "flex items-center gap-2"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "h2",
+                                                    "attrs": {
+                                                      "class": "truncate text-base font-semibold tracking-tight"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Notion",
+                                                        "key": "root.0.0.1.2.0.2.0.0.0.1.0.0.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.1.2.0.2.0.0.0.1.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.2.0.2.0.0.0.1.0"
+                                              },
+                                              {
+                                                "tag": "p",
+                                                "attrs": {
+                                                  "class": "text-muted-foreground truncate text-xs"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "By ",
+                                                    "key": "root.0.0.1.2.0.2.0.0.0.1.1.0"
+                                                  },
+                                                  {
+                                                    "text": "Notion Labs, Inc.",
+                                                    "key": "root.0.0.1.2.0.2.0.0.0.1.1.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.2.0.2.0.0.0.1.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.2.0.2.0.0.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.2.0.2.0.0.0"
+                                      },
+                                      {
+                                        "tag": "button",
+                                        "attrs": {
+                                          "type": "button",
+                                          "role": "switch",
+                                          "aria-checked": "true",
+                                          "data-state": "checked",
+                                          "value": "on",
+                                          "class": "peer focus-visible:ring-ring focus-visible:ring-offset-background data-[state=checked]:bg-primary data-[state=unchecked]:bg-input inline-flex h-5 w-9 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent shadow-xs transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50",
+                                          "aria-label": "Disable Notion"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "data-state": "checked",
+                                              "class": "bg-background pointer-events-none block h-4 w-4 rounded-full ring-0 shadow-lg transition-transform data-[state=checked]:translate-x-4 data-[state=unchecked]:translate-x-0"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.1.2.0.2.0.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.2.0.2.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.2.0.2.0.0"
+                                  },
+                                  {
+                                    "tag": "p",
+                                    "attrs": {
+                                      "class": "text-muted-foreground mt-7 truncate text-sm leading-5",
+                                      "title": "Notion: Search team knowledge and retrieve pages from approved workspaces."
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Notion: Search team knowledge and retrieve pages from approved workspaces.",
+                                        "key": "root.0.0.1.2.0.2.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.2.0.2.0.1"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "mt-5 flex flex-wrap items-center gap-1.5"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "inline-flex items-center border px-2.5 py-0.5 transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-md text-[10px] font-medium tracking-wide uppercase"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Productivity",
+                                            "key": "root.0.0.1.2.0.2.0.2.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.2.0.2.0.2.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "inline-flex items-center border px-2.5 py-0.5 transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-md text-[10px] font-medium tracking-wide uppercase"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "4",
+                                            "key": "root.0.0.1.2.0.2.0.2.1.0"
+                                          },
+                                          {
+                                            "text": " steps",
+                                            "key": "root.0.0.1.2.0.2.0.2.1.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.2.0.2.0.2.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.2.0.2.0.2"
+                                  }
+                                ],
+                                "key": "root.0.0.1.2.0.2.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "bg-muted/35 mt-auto flex min-h-14 items-center justify-between gap-3 border-t px-6 py-3"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-w-0 items-center"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "inline-flex items-center border py-0.5 transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-destructive/15 bg-destructive/8 text-destructive h-6 gap-1.5 rounded-md px-2 text-[10px] font-medium tracking-wide uppercase"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-circle-alert",
+                                              "class": "lucide lucide-circle-alert size-3 shrink-0"
+                                            },
+                                            "key": "root.0.0.1.2.0.2.1.0.0.0"
+                                          },
+                                          {
+                                            "text": "Connection error",
+                                            "key": "root.0.0.1.2.0.2.1.0.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.2.0.2.1.0.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.2.0.2.1.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent h-8 rounded-md px-3 text-xs text-muted-foreground hover:text-foreground -mr-2 shrink-0 font-normal"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "View instruction",
+                                        "key": "root.0.0.1.2.0.2.1.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.2.0.2.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.2.0.2.1"
+                              }
+                            ],
+                            "key": "root.0.0.1.2.0.2"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "bg-card text-card-foreground rounded-lg border group hover:border-foreground/20 gap-0 overflow-hidden py-0 shadow-none transition-[border-color,box-shadow] duration-200 hover:shadow-sm"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex flex-col space-y-1.5 p-6 gap-0 px-6 pt-6 pb-5"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-start justify-between gap-4"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "flex min-w-0 items-center gap-3"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "bg-background flex size-11 shrink-0 items-center justify-center rounded-xl border shadow-xs"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "svg",
+                                                "attrs": {
+                                                  "stroke": "currentColor",
+                                                  "fill": "currentColor",
+                                                  "stroke-width": "0",
+                                                  "role": "img",
+                                                  "viewBox": "0 0 24 24",
+                                                  "class": "size-6 text-[#e01e5a]",
+                                                  "height": "100%",
+                                                  "width": "100%"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "path",
+                                                    "attrs": {
+                                                      "d": "M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zM8.834 6.313a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zM18.956 8.834a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zM17.688 8.834a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zM15.165 18.956a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zM15.165 17.688a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z"
+                                                    },
+                                                    "children": [],
+                                                    "key": "root.0.0.1.2.0.3.0.0.0.0.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.2.0.3.0.0.0.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.2.0.3.0.0.0.0"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "min-w-0"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "flex items-center gap-2"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "h2",
+                                                    "attrs": {
+                                                      "class": "truncate text-base font-semibold tracking-tight"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Slack",
+                                                        "key": "root.0.0.1.2.0.3.0.0.0.1.0.0.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.1.2.0.3.0.0.0.1.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.2.0.3.0.0.0.1.0"
+                                              },
+                                              {
+                                                "tag": "p",
+                                                "attrs": {
+                                                  "class": "text-muted-foreground truncate text-xs"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "By ",
+                                                    "key": "root.0.0.1.2.0.3.0.0.0.1.1.0"
+                                                  },
+                                                  {
+                                                    "text": "Slack Technologies",
+                                                    "key": "root.0.0.1.2.0.3.0.0.0.1.1.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.2.0.3.0.0.0.1.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.2.0.3.0.0.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.2.0.3.0.0.0"
+                                      },
+                                      {
+                                        "tag": "button",
+                                        "attrs": {
+                                          "type": "button",
+                                          "role": "switch",
+                                          "aria-checked": "true",
+                                          "data-state": "checked",
+                                          "value": "on",
+                                          "class": "peer focus-visible:ring-ring focus-visible:ring-offset-background data-[state=checked]:bg-primary data-[state=unchecked]:bg-input inline-flex h-5 w-9 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent shadow-xs transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50",
+                                          "aria-label": "Disable Slack"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "data-state": "checked",
+                                              "class": "bg-background pointer-events-none block h-4 w-4 rounded-full ring-0 shadow-lg transition-transform data-[state=checked]:translate-x-4 data-[state=unchecked]:translate-x-0"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.1.2.0.3.0.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.2.0.3.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.2.0.3.0.0"
+                                  },
+                                  {
+                                    "tag": "p",
+                                    "attrs": {
+                                      "class": "text-muted-foreground mt-7 truncate text-sm leading-5",
+                                      "title": "Slack: Search messages, summarize channels, and ground answers in recent team conversations."
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Slack: Search messages, summarize channels, and ground answers in recent team conversations.",
+                                        "key": "root.0.0.1.2.0.3.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.2.0.3.0.1"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "mt-5 flex flex-wrap items-center gap-1.5"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "inline-flex items-center border px-2.5 py-0.5 transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-md text-[10px] font-medium tracking-wide uppercase"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Communication",
+                                            "key": "root.0.0.1.2.0.3.0.2.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.2.0.3.0.2.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "inline-flex items-center border px-2.5 py-0.5 transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-md text-[10px] font-medium tracking-wide uppercase"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "4",
+                                            "key": "root.0.0.1.2.0.3.0.2.1.0"
+                                          },
+                                          {
+                                            "text": " steps",
+                                            "key": "root.0.0.1.2.0.3.0.2.1.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.2.0.3.0.2.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.2.0.3.0.2"
+                                  }
+                                ],
+                                "key": "root.0.0.1.2.0.3.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "bg-muted/35 mt-auto flex min-h-14 items-center justify-between gap-3 border-t px-6 py-3"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-w-0 items-center"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.1.2.0.3.1.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent h-8 rounded-md px-3 text-xs text-muted-foreground hover:text-foreground -mr-2 shrink-0 font-normal"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "View instruction",
+                                        "key": "root.0.0.1.2.0.3.1.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.2.0.3.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.2.0.3.1"
+                              }
+                            ],
+                            "key": "root.0.0.1.2.0.3"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "bg-card text-card-foreground rounded-lg border group hover:border-foreground/20 gap-0 overflow-hidden py-0 shadow-none transition-[border-color,box-shadow] duration-200 hover:shadow-sm"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex flex-col space-y-1.5 p-6 gap-0 px-6 pt-6 pb-5"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-start justify-between gap-4"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "flex min-w-0 items-center gap-3"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "bg-background flex size-11 shrink-0 items-center justify-center rounded-xl border shadow-xs"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "svg",
+                                                "attrs": {
+                                                  "stroke": "currentColor",
+                                                  "fill": "currentColor",
+                                                  "stroke-width": "0",
+                                                  "role": "img",
+                                                  "viewBox": "0 0 24 24",
+                                                  "class": "size-6 text-[#1868db]",
+                                                  "height": "100%",
+                                                  "width": "100%"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "path",
+                                                    "attrs": {
+                                                      "d": "M11.571 11.513H0a5.218 5.218 0 0 0 5.232 5.215h2.13v2.057A5.215 5.215 0 0 0 12.575 24V12.518a1.005 1.005 0 0 0-1.005-1.005zm5.723-5.756H5.736a5.215 5.215 0 0 0 5.215 5.214h2.129v2.058a5.218 5.218 0 0 0 5.215 5.214V6.758a1.001 1.001 0 0 0-1.001-1.001zM23.013 0H11.455a5.215 5.215 0 0 0 5.215 5.215h2.129v2.057A5.215 5.215 0 0 0 24 12.483V1.005A1.001 1.001 0 0 0 23.013 0Z"
+                                                    },
+                                                    "children": [],
+                                                    "key": "root.0.0.1.2.0.4.0.0.0.0.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.2.0.4.0.0.0.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.2.0.4.0.0.0.0"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "min-w-0"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "flex items-center gap-2"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "h2",
+                                                    "attrs": {
+                                                      "class": "truncate text-base font-semibold tracking-tight"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Jira",
+                                                        "key": "root.0.0.1.2.0.4.0.0.0.1.0.0.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.1.2.0.4.0.0.0.1.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.2.0.4.0.0.0.1.0"
+                                              },
+                                              {
+                                                "tag": "p",
+                                                "attrs": {
+                                                  "class": "text-muted-foreground truncate text-xs"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "By ",
+                                                    "key": "root.0.0.1.2.0.4.0.0.0.1.1.0"
+                                                  },
+                                                  {
+                                                    "text": "Atlassian",
+                                                    "key": "root.0.0.1.2.0.4.0.0.0.1.1.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.2.0.4.0.0.0.1.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.2.0.4.0.0.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.2.0.4.0.0.0"
+                                      },
+                                      {
+                                        "tag": "button",
+                                        "attrs": {
+                                          "type": "button",
+                                          "role": "switch",
+                                          "aria-checked": "false",
+                                          "data-state": "unchecked",
+                                          "value": "on",
+                                          "class": "peer focus-visible:ring-ring focus-visible:ring-offset-background data-[state=checked]:bg-primary data-[state=unchecked]:bg-input inline-flex h-5 w-9 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent shadow-xs transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50",
+                                          "aria-label": "Enable Jira"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "data-state": "unchecked",
+                                              "class": "bg-background pointer-events-none block h-4 w-4 rounded-full ring-0 shadow-lg transition-transform data-[state=checked]:translate-x-4 data-[state=unchecked]:translate-x-0"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.1.2.0.4.0.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.2.0.4.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.2.0.4.0.0"
+                                  },
+                                  {
+                                    "tag": "p",
+                                    "attrs": {
+                                      "class": "text-muted-foreground mt-7 truncate text-sm leading-5",
+                                      "title": "Jira: Find issues, review sprint progress, and pull delivery context into project conversations."
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Jira: Find issues, review sprint progress, and pull delivery context into project conversations.",
+                                        "key": "root.0.0.1.2.0.4.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.2.0.4.0.1"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "mt-5 flex flex-wrap items-center gap-1.5"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "inline-flex items-center border px-2.5 py-0.5 transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-md text-[10px] font-medium tracking-wide uppercase"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Productivity",
+                                            "key": "root.0.0.1.2.0.4.0.2.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.2.0.4.0.2.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "inline-flex items-center border px-2.5 py-0.5 transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-md text-[10px] font-medium tracking-wide uppercase"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "3",
+                                            "key": "root.0.0.1.2.0.4.0.2.1.0"
+                                          },
+                                          {
+                                            "text": " steps",
+                                            "key": "root.0.0.1.2.0.4.0.2.1.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.2.0.4.0.2.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.2.0.4.0.2"
+                                  }
+                                ],
+                                "key": "root.0.0.1.2.0.4.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "bg-muted/35 mt-auto flex min-h-14 items-center justify-between gap-3 border-t px-6 py-3"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-w-0 items-center"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.1.2.0.4.1.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent h-8 rounded-md px-3 text-xs text-muted-foreground hover:text-foreground -mr-2 shrink-0 font-normal"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "View instruction",
+                                        "key": "root.0.0.1.2.0.4.1.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.2.0.4.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.2.0.4.1"
+                              }
+                            ],
+                            "key": "root.0.0.1.2.0.4"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "bg-card text-card-foreground rounded-lg border group hover:border-foreground/20 gap-0 overflow-hidden py-0 shadow-none transition-[border-color,box-shadow] duration-200 hover:shadow-sm"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex flex-col space-y-1.5 p-6 gap-0 px-6 pt-6 pb-5"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-start justify-between gap-4"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "flex min-w-0 items-center gap-3"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "bg-background flex size-11 shrink-0 items-center justify-center rounded-xl border shadow-xs"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "svg",
+                                                "attrs": {
+                                                  "stroke": "currentColor",
+                                                  "fill": "currentColor",
+                                                  "stroke-width": "0",
+                                                  "role": "img",
+                                                  "viewBox": "0 0 24 24",
+                                                  "class": "size-6 text-[#0061ff]",
+                                                  "height": "100%",
+                                                  "width": "100%"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "path",
+                                                    "attrs": {
+                                                      "d": "M6 1.807L0 5.629l6 3.822 6.001-3.822L6 1.807zM18 1.807l-6 3.822 6 3.822 6-3.822-6-3.822zM0 13.274l6 3.822 6.001-3.822L6 9.452l-6 3.822zM18 9.452l-6 3.822 6 3.822 6-3.822-6-3.822zM6 18.371l6.001 3.822 6-3.822-6-3.822L6 18.371z"
+                                                    },
+                                                    "children": [],
+                                                    "key": "root.0.0.1.2.0.5.0.0.0.0.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.2.0.5.0.0.0.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.2.0.5.0.0.0.0"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "min-w-0"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "flex items-center gap-2"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "h2",
+                                                    "attrs": {
+                                                      "class": "truncate text-base font-semibold tracking-tight"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Dropbox",
+                                                        "key": "root.0.0.1.2.0.5.0.0.0.1.0.0.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.1.2.0.5.0.0.0.1.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.2.0.5.0.0.0.1.0"
+                                              },
+                                              {
+                                                "tag": "p",
+                                                "attrs": {
+                                                  "class": "text-muted-foreground truncate text-xs"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "By ",
+                                                    "key": "root.0.0.1.2.0.5.0.0.0.1.1.0"
+                                                  },
+                                                  {
+                                                    "text": "Dropbox, Inc.",
+                                                    "key": "root.0.0.1.2.0.5.0.0.0.1.1.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.2.0.5.0.0.0.1.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.2.0.5.0.0.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.2.0.5.0.0.0"
+                                      },
+                                      {
+                                        "tag": "button",
+                                        "attrs": {
+                                          "type": "button",
+                                          "role": "switch",
+                                          "aria-checked": "false",
+                                          "data-state": "unchecked",
+                                          "value": "on",
+                                          "class": "peer focus-visible:ring-ring focus-visible:ring-offset-background data-[state=checked]:bg-primary data-[state=unchecked]:bg-input inline-flex h-5 w-9 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent shadow-xs transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50",
+                                          "aria-label": "Enable Dropbox"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "data-state": "unchecked",
+                                              "class": "bg-background pointer-events-none block h-4 w-4 rounded-full ring-0 shadow-lg transition-transform data-[state=checked]:translate-x-4 data-[state=unchecked]:translate-x-0"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.1.2.0.5.0.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.2.0.5.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.2.0.5.0.0"
+                                  },
+                                  {
+                                    "tag": "p",
+                                    "attrs": {
+                                      "class": "text-muted-foreground mt-7 truncate text-sm leading-5",
+                                      "title": "Dropbox: Locate files and retrieve approved workspace documents without leaving the conversation."
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Dropbox: Locate files and retrieve approved workspace documents without leaving the conversation.",
+                                        "key": "root.0.0.1.2.0.5.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.2.0.5.0.1"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "mt-5 flex flex-wrap items-center gap-1.5"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "inline-flex items-center border px-2.5 py-0.5 transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-md text-[10px] font-medium tracking-wide uppercase"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Storage",
+                                            "key": "root.0.0.1.2.0.5.0.2.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.2.0.5.0.2.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "inline-flex items-center border px-2.5 py-0.5 transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-md text-[10px] font-medium tracking-wide uppercase"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "2",
+                                            "key": "root.0.0.1.2.0.5.0.2.1.0"
+                                          },
+                                          {
+                                            "text": " steps",
+                                            "key": "root.0.0.1.2.0.5.0.2.1.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.2.0.5.0.2.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.2.0.5.0.2"
+                                  }
+                                ],
+                                "key": "root.0.0.1.2.0.5.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "bg-muted/35 mt-auto flex min-h-14 items-center justify-between gap-3 border-t px-6 py-3"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-w-0 items-center"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.1.2.0.5.1.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent h-8 rounded-md px-3 text-xs text-muted-foreground hover:text-foreground -mr-2 shrink-0 font-normal"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "View instruction",
+                                        "key": "root.0.0.1.2.0.5.1.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.2.0.5.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.2.0.5.1"
+                              }
+                            ],
+                            "key": "root.0.0.1.2.0.5"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "bg-card text-card-foreground rounded-lg border group hover:border-foreground/20 gap-0 overflow-hidden py-0 shadow-none transition-[border-color,box-shadow] duration-200 hover:shadow-sm"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex flex-col space-y-1.5 p-6 gap-0 px-6 pt-6 pb-5"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-start justify-between gap-4"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "flex min-w-0 items-center gap-3"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "bg-background flex size-11 shrink-0 items-center justify-center rounded-xl border shadow-xs"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "svg",
+                                                "attrs": {
+                                                  "stroke": "currentColor",
+                                                  "fill": "currentColor",
+                                                  "stroke-width": "0",
+                                                  "role": "img",
+                                                  "viewBox": "0 0 24 24",
+                                                  "class": "size-6 text-[#ea4335]",
+                                                  "height": "100%",
+                                                  "width": "100%"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "path",
+                                                    "attrs": {
+                                                      "d": "M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"
+                                                    },
+                                                    "children": [],
+                                                    "key": "root.0.0.1.2.0.6.0.0.0.0.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.2.0.6.0.0.0.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.2.0.6.0.0.0.0"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "min-w-0"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "flex items-center gap-2"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "h2",
+                                                    "attrs": {
+                                                      "class": "truncate text-base font-semibold tracking-tight"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Gmail",
+                                                        "key": "root.0.0.1.2.0.6.0.0.0.1.0.0.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.1.2.0.6.0.0.0.1.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.2.0.6.0.0.0.1.0"
+                                              },
+                                              {
+                                                "tag": "p",
+                                                "attrs": {
+                                                  "class": "text-muted-foreground truncate text-xs"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "By ",
+                                                    "key": "root.0.0.1.2.0.6.0.0.0.1.1.0"
+                                                  },
+                                                  {
+                                                    "text": "Google",
+                                                    "key": "root.0.0.1.2.0.6.0.0.0.1.1.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.2.0.6.0.0.0.1.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.2.0.6.0.0.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.2.0.6.0.0.0"
+                                      },
+                                      {
+                                        "tag": "button",
+                                        "attrs": {
+                                          "type": "button",
+                                          "role": "switch",
+                                          "aria-checked": "false",
+                                          "data-state": "unchecked",
+                                          "value": "on",
+                                          "class": "peer focus-visible:ring-ring focus-visible:ring-offset-background data-[state=checked]:bg-primary data-[state=unchecked]:bg-input inline-flex h-5 w-9 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent shadow-xs transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50",
+                                          "aria-label": "Enable Gmail"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "data-state": "unchecked",
+                                              "class": "bg-background pointer-events-none block h-4 w-4 rounded-full ring-0 shadow-lg transition-transform data-[state=checked]:translate-x-4 data-[state=unchecked]:translate-x-0"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.1.2.0.6.0.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.2.0.6.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.2.0.6.0.0"
+                                  },
+                                  {
+                                    "tag": "p",
+                                    "attrs": {
+                                      "class": "text-muted-foreground mt-7 truncate text-sm leading-5",
+                                      "title": "Gmail: Find approved email threads and use customer context in assistant responses."
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Gmail: Find approved email threads and use customer context in assistant responses.",
+                                        "key": "root.0.0.1.2.0.6.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.2.0.6.0.1"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "mt-5 flex flex-wrap items-center gap-1.5"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "inline-flex items-center border px-2.5 py-0.5 transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-md text-[10px] font-medium tracking-wide uppercase"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Communication",
+                                            "key": "root.0.0.1.2.0.6.0.2.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.2.0.6.0.2.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "inline-flex items-center border px-2.5 py-0.5 transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-md text-[10px] font-medium tracking-wide uppercase"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "3",
+                                            "key": "root.0.0.1.2.0.6.0.2.1.0"
+                                          },
+                                          {
+                                            "text": " steps",
+                                            "key": "root.0.0.1.2.0.6.0.2.1.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.2.0.6.0.2.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.2.0.6.0.2"
+                                  }
+                                ],
+                                "key": "root.0.0.1.2.0.6.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "bg-muted/35 mt-auto flex min-h-14 items-center justify-between gap-3 border-t px-6 py-3"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-w-0 items-center"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.1.2.0.6.1.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent h-8 rounded-md px-3 text-xs text-muted-foreground hover:text-foreground -mr-2 shrink-0 font-normal"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "View instruction",
+                                        "key": "root.0.0.1.2.0.6.1.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.2.0.6.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.2.0.6.1"
+                              }
+                            ],
+                            "key": "root.0.0.1.2.0.6"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "class": "bg-card text-card-foreground rounded-lg border group hover:border-foreground/20 gap-0 overflow-hidden py-0 shadow-none transition-[border-color,box-shadow] duration-200 hover:shadow-sm"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex flex-col space-y-1.5 p-6 gap-0 px-6 pt-6 pb-5"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex items-start justify-between gap-4"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "flex min-w-0 items-center gap-3"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "bg-background flex size-11 shrink-0 items-center justify-center rounded-xl border shadow-xs"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "svg",
+                                                "attrs": {
+                                                  "stroke": "currentColor",
+                                                  "fill": "currentColor",
+                                                  "stroke-width": "0",
+                                                  "role": "img",
+                                                  "viewBox": "0 0 24 24",
+                                                  "class": "size-6 text-[#0c66e4]",
+                                                  "height": "100%",
+                                                  "width": "100%"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "path",
+                                                    "attrs": {
+                                                      "d": "M21.147 0H2.853A2.86 2.86 0 000 2.853v18.294A2.86 2.86 0 002.853 24h18.294A2.86 2.86 0 0024 21.147V2.853A2.86 2.86 0 0021.147 0zM10.34 17.287a.953.953 0 01-.953.953h-4a.954.954 0 01-.954-.953V5.38a.953.953 0 01.954-.953h4a.954.954 0 01.953.953zm9.233-5.467a.944.944 0 01-.953.947h-4a.947.947 0 01-.953-.947V5.38a.953.953 0 01.953-.953h4a.954.954 0 01.953.953z"
+                                                    },
+                                                    "children": [],
+                                                    "key": "root.0.0.1.2.0.7.0.0.0.0.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.2.0.7.0.0.0.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.2.0.7.0.0.0.0"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "min-w-0"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "flex items-center gap-2"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "h2",
+                                                    "attrs": {
+                                                      "class": "truncate text-base font-semibold tracking-tight"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "text": "Trello",
+                                                        "key": "root.0.0.1.2.0.7.0.0.0.1.0.0.0"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.1.2.0.7.0.0.0.1.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.2.0.7.0.0.0.1.0"
+                                              },
+                                              {
+                                                "tag": "p",
+                                                "attrs": {
+                                                  "class": "text-muted-foreground truncate text-xs"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "By ",
+                                                    "key": "root.0.0.1.2.0.7.0.0.0.1.1.0"
+                                                  },
+                                                  {
+                                                    "text": "Atlassian",
+                                                    "key": "root.0.0.1.2.0.7.0.0.0.1.1.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.2.0.7.0.0.0.1.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.2.0.7.0.0.0.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.2.0.7.0.0.0"
+                                      },
+                                      {
+                                        "tag": "button",
+                                        "attrs": {
+                                          "type": "button",
+                                          "role": "switch",
+                                          "aria-checked": "false",
+                                          "data-state": "unchecked",
+                                          "value": "on",
+                                          "class": "peer focus-visible:ring-ring focus-visible:ring-offset-background data-[state=checked]:bg-primary data-[state=unchecked]:bg-input inline-flex h-5 w-9 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent shadow-xs transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50",
+                                          "aria-label": "Enable Trello"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "data-state": "unchecked",
+                                              "class": "bg-background pointer-events-none block h-4 w-4 rounded-full ring-0 shadow-lg transition-transform data-[state=checked]:translate-x-4 data-[state=unchecked]:translate-x-0"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.1.2.0.7.0.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.2.0.7.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.2.0.7.0.0"
+                                  },
+                                  {
+                                    "tag": "p",
+                                    "attrs": {
+                                      "class": "text-muted-foreground mt-7 truncate text-sm leading-5",
+                                      "title": "Trello: Read boards, cards, and checklists to keep project answers current and actionable."
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "Trello: Read boards, cards, and checklists to keep project answers current and actionable.",
+                                        "key": "root.0.0.1.2.0.7.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.2.0.7.0.1"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "mt-5 flex flex-wrap items-center gap-1.5"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "inline-flex items-center border px-2.5 py-0.5 transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-md text-[10px] font-medium tracking-wide uppercase"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Productivity",
+                                            "key": "root.0.0.1.2.0.7.0.2.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.2.0.7.0.2.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "inline-flex items-center border px-2.5 py-0.5 transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-md text-[10px] font-medium tracking-wide uppercase"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "3",
+                                            "key": "root.0.0.1.2.0.7.0.2.1.0"
+                                          },
+                                          {
+                                            "text": " steps",
+                                            "key": "root.0.0.1.2.0.7.0.2.1.1"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.2.0.7.0.2.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.2.0.7.0.2"
+                                  }
+                                ],
+                                "key": "root.0.0.1.2.0.7.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "bg-muted/35 mt-auto flex min-h-14 items-center justify-between gap-3 border-t px-6 py-3"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "flex min-w-0 items-center"
+                                    },
+                                    "children": [],
+                                    "key": "root.0.0.1.2.0.7.1.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent h-8 rounded-md px-3 text-xs text-muted-foreground hover:text-foreground -mr-2 shrink-0 font-normal"
+                                    },
+                                    "children": [
+                                      {
+                                        "text": "View instruction",
+                                        "key": "root.0.0.1.2.0.7.1.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.2.0.7.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.1.2.0.7.1"
+                              }
+                            ],
+                            "key": "root.0.0.1.2.0.7"
+                          }
+                        ],
+                        "key": "root.0.0.1.2.0"
+                      }
+                    ],
+                    "key": "root.0.0.1.2"
+                  }
+                ],
+                "key": "root.0.0.1"
+              },
+              {
+                "tag": "p",
+                "attrs": {
+                  "class": "text-muted-foreground px-1 text-xs"
+                },
+                "children": [
+                  {
+                    "text": "Connections use scripted sample results. Configuration stays in this demo workspace.",
+                    "key": "root.0.0.2.0"
+                  }
+                ],
+                "key": "root.0.0.2"
+              }
+            ],
+            "key": "root.0.0"
+          }
+        ],
+        "key": "root.0"
+      }
+    ],
+    "key": "root"
+  },
+  "headings": [
+    "Plugins",
+    "GitHub",
+    "Figma",
+    "Notion",
+    "Slack",
+    "Jira",
+    "Dropbox",
+    "Gmail",
+    "Trello"
+  ]
+}

@@ -1,0 +1,1124 @@
+{
+  "label": "Conversation 8",
+  "path": "/ai-chat/conversation-8",
+  "appTitle": "",
+  "tree": {
+    "tag": "div",
+    "attrs": {
+      "id": "ai-workspace-content",
+      "class": "flex min-h-0 flex-1 flex-col"
+    },
+    "children": [
+      {
+        "tag": "div",
+        "attrs": {
+          "class": "flex min-h-0 flex-1 overflow-hidden"
+        },
+        "children": [
+          {
+            "tag": "div",
+            "attrs": {
+              "class": "flex min-h-0 min-w-0 flex-1 flex-col"
+            },
+            "children": [
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "flex h-12 shrink-0 items-center border-b px-4"
+                },
+                "children": [
+                  {
+                    "tag": "span",
+                    "attrs": {
+                      "class": "text-xs font-medium"
+                    },
+                    "children": [
+                      {
+                        "text": "Create content",
+                        "key": "root.0.0.0.0.0"
+                      }
+                    ],
+                    "key": "root.0.0.0.0"
+                  },
+                  {
+                    "tag": "button",
+                    "attrs": {
+                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground ml-auto size-7",
+                      "aria-label": "Toggle recording transcript"
+                    },
+                    "children": [
+                      {
+                        "tag": "icon",
+                        "attrs": {
+                          "name": "i-lucide-panel-right",
+                          "class": "lucide lucide-panel-right"
+                        },
+                        "key": "root.0.0.0.1.0"
+                      }
+                    ],
+                    "key": "root.0.0.0.1"
+                  }
+                ],
+                "key": "root.0.0.0"
+              },
+              {
+                "tag": "div",
+                "attrs": {
+                  "data-slot": "message-scroller",
+                  "class": "group/message-scroller relative flex size-full flex-col overflow-hidden min-h-0 flex-1"
+                },
+                "children": [
+                  {
+                    "tag": "div",
+                    "attrs": {
+                      "role": "region",
+                      "aria-label": "Conversation messages",
+                      "data-slot": "message-scroller-viewport",
+                      "class": "size-full min-h-0 min-w-0 scroll-fade-b scrollbar-thin scrollbar-gutter-stable overflow-y-auto overscroll-contain contain-content data-autoscrolling:scrollbar-thumb-transparent data-autoscrolling:scrollbar-track-transparent"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "role": "log",
+                          "data-slot": "message-scroller-content",
+                          "class": "flex h-max flex-col min-h-full gap-0"
+                        },
+                        "children": [
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "data-slot": "message-scroller-item",
+                              "class": "min-w-0 shrink-0 [contain-intrinsic-size:auto_10rem] [content-visibility:auto] min-h-full"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "mx-auto flex w-full max-w-2xl flex-col gap-7 px-4 py-7 sm:px-6 md:py-9"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "class": "ml-auto grid w-fit max-w-full gap-1.5"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "bg-background flex max-w-72 items-center gap-2 rounded-lg border px-2.5 py-2 text-xs shadow-xs"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-file-play",
+                                              "class": "lucide lucide-file-play size-4 shrink-0 text-violet-500"
+                                            },
+                                            "key": "root.0.0.1.0.0.0.0.0.0.0"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-0 truncate"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "creative-work-roundtable.mp4",
+                                                "key": "root.0.0.1.0.0.0.0.0.0.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.0.0.0.0.0.0.1"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "text-muted-foreground shrink-0"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "38:12",
+                                                "key": "root.0.0.1.0.0.0.0.0.0.2.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.0.0.0.0.0.0.2"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.0.0.0.0.0.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "class": "bg-background flex max-w-72 items-center gap-2 rounded-lg border px-2.5 py-2 text-xs shadow-xs"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "icon",
+                                            "attrs": {
+                                              "name": "i-lucide-file-text",
+                                              "class": "lucide lucide-file-text size-4 shrink-0 text-orange-500"
+                                            },
+                                            "key": "root.0.0.1.0.0.0.0.0.1.0"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "min-w-0 truncate"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "editorial-research-notes.pdf",
+                                                "key": "root.0.0.1.0.0.0.0.0.1.1.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.0.0.0.0.0.1.1"
+                                          },
+                                          {
+                                            "tag": "span",
+                                            "attrs": {
+                                              "class": "text-muted-foreground shrink-0"
+                                            },
+                                            "children": [
+                                              {
+                                                "text": "12 pages",
+                                                "key": "root.0.0.1.0.0.0.0.0.1.2.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.0.0.0.0.0.1.2"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.0.0.0.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.0.0.0.0"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "data-slot": "message",
+                                      "class": "group/message relative flex w-full min-w-0 gap-2 text-sm data-[align=end]:flex-row-reverse"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "data-slot": "message-content",
+                                          "class": "flex w-full min-w-0 flex-col gap-2.5 wrap-break-word group-data-[align=end]/message:*:data-slot:self-end"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "data-slot": "bubble",
+                                              "class": "group/bubble relative flex w-fit min-w-0 flex-col gap-1 group-data-[align=end]/message:self-end data-[align=end]:self-end data-[variant=ghost]:max-w-full *:data-[slot=bubble-content]:bg-muted [&>[data-slot=bubble-content]:is(button,a):hover]:bg-[color-mix(in_oklch,var(--muted),var(--foreground)_5%)] max-w-[88%] md:max-w-[72%]"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "data-slot": "bubble-content",
+                                                  "class": "w-fit max-w-full min-w-0 overflow-hidden rounded-3xl border-transparent px-3 py-2.5 text-sm wrap-break-word group-data-[align=end]/bubble:self-end [button]:text-left [button,a]:transition-colors [button,a]:outline-none [button,a]:focus-visible:border-ring [button,a]:focus-visible:ring-3 [button,a]:focus-visible:ring-ring/30 border-0 leading-6"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Summarize this recording and create an editorial brief with the key takeaways, supporting moments, and a publishable opening paragraph.",
+                                                    "key": "root.0.0.1.0.0.0.0.1.0.0.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.0.0.0.0.1.0.0.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.0.0.0.0.1.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.0.0.0.0.1.0"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.0.0.0.1"
+                                  },
+                                  {
+                                    "tag": "div",
+                                    "attrs": {
+                                      "data-slot": "message",
+                                      "class": "group/message relative flex w-full min-w-0 gap-2 text-sm data-[align=end]:flex-row-reverse"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "data-slot": "message-avatar",
+                                          "class": "flex w-fit min-w-8 shrink-0 items-center justify-center group-has-data-[slot=message-footer]/message:-translate-y-8 self-start overflow-visible rounded-none bg-transparent"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "svg",
+                                            "attrs": {
+                                              "viewBox": "0 0 64 64",
+                                              "class": "drop-shadow-sm size-8",
+                                              "width": "100%",
+                                              "height": "100%"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "defs",
+                                                "attrs": {},
+                                                "children": [
+                                                  {
+                                                    "tag": "linearGradient",
+                                                    "attrs": {
+                                                      "id": "_R_6imbdbsnpfknmlb_",
+                                                      "x1": "10",
+                                                      "y1": "8",
+                                                      "x2": "54",
+                                                      "y2": "56"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "stop",
+                                                        "attrs": {
+                                                          "offset": "0",
+                                                          "stop-color": "#111827"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.1.0.0.0.0.2.0.0.0.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "stop",
+                                                        "attrs": {
+                                                          "offset": "0.52",
+                                                          "stop-color": "#7c3aed"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.1.0.0.0.0.2.0.0.0.0.1"
+                                                      },
+                                                      {
+                                                        "tag": "stop",
+                                                        "attrs": {
+                                                          "offset": "1",
+                                                          "stop-color": "#f97316"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.1.0.0.0.0.2.0.0.0.0.2"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.1.0.0.0.0.2.0.0.0.0"
+                                                  },
+                                                  {
+                                                    "tag": "mask",
+                                                    "attrs": {
+                                                      "id": "_R_6imbdbsnpfknmlb_-mask",
+                                                      "x": "0",
+                                                      "y": "0",
+                                                      "width": "64",
+                                                      "height": "64"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "rect",
+                                                        "attrs": {
+                                                          "width": "64",
+                                                          "height": "64",
+                                                          "fill": "black"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.1.0.0.0.0.2.0.0.0.1.0"
+                                                      },
+                                                      {
+                                                        "tag": "path",
+                                                        "attrs": {
+                                                          "d": "M 54.70 32.11 C 54.82 33.21 54.86 34.33 54.85 35.42 C 54.84 36.52 54.77 37.61 54.64 38.68 C 54.51 39.75 54.32 40.81 54.09 41.83 C 53.86 42.85 53.57 43.85 53.24 44.81 C 52.91 45.76 52.53 46.69 52.11 47.57 C 51.68 48.45 51.22 49.29 50.70 50.07 C 50.19 50.85 49.63 51.59 49.01 52.26 C 48.40 52.93 47.74 53.55 47.01 54.10 C 46.28 54.66 45.50 55.15 44.62 55.57 C 43.75 56.00 42.83 56.36 41.74 56.64 C 40.65 56.93 39.75 57.15 38.08 57.29 C 36.40 57.43 33.82 57.51 31.69 57.51 C 29.57 57.51 26.99 57.43 25.32 57.29 C 23.65 57.15 22.76 56.93 21.67 56.64 C 20.59 56.36 19.68 56.00 18.81 55.57 C 17.94 55.15 17.18 54.66 16.46 54.10 C 15.74 53.55 15.10 52.93 14.50 52.26 C 13.90 51.59 13.36 50.85 12.87 50.07 C 12.37 49.29 11.92 48.45 11.52 47.57 C 11.12 46.69 10.76 45.76 10.45 44.81 C 10.15 43.85 9.88 42.85 9.67 41.83 C 9.47 40.81 9.30 39.75 9.20 38.68 C 9.10 37.61 9.05 36.52 9.07 35.42 C 9.08 34.33 9.16 33.21 9.30 32.11 C 9.44 31.00 9.65 29.89 9.93 28.79 C 10.21 27.70 10.55 26.60 10.97 25.53 C 11.39 24.47 11.87 23.41 12.42 22.39 C 12.97 21.37 13.60 20.36 14.27 19.41 C 14.94 18.45 15.68 17.52 16.45 16.65 C 17.22 15.77 18.06 14.93 18.90 14.15 C 19.74 13.37 20.63 12.63 21.51 11.96 C 22.39 11.28 23.29 10.66 24.17 10.11 C 25.04 9.56 25.92 9.06 26.74 8.64 C 27.56 8.22 28.37 7.86 29.09 7.57 C 29.81 7.29 30.52 7.07 31.06 6.93 C 31.59 6.78 31.89 6.71 32.31 6.71 C 32.72 6.71 33.02 6.78 33.55 6.93 C 34.08 7.07 34.79 7.29 35.50 7.57 C 36.22 7.86 37.02 8.22 37.83 8.64 C 38.64 9.06 39.51 9.56 40.36 10.11 C 41.22 10.66 42.11 11.28 42.98 11.96 C 43.84 12.63 44.71 13.37 45.53 14.15 C 46.36 14.93 47.17 15.77 47.92 16.65 C 48.67 17.52 49.39 18.45 50.04 19.41 C 50.69 20.36 51.29 21.37 51.81 22.39 C 52.34 23.41 52.80 24.47 53.19 25.53 C 53.58 26.60 53.90 27.70 54.15 28.79 C 54.40 29.89 54.58 31.00 54.70 32.11 Z",
+                                                          "transform": "translate(0 0) rotate(0.00 32 32)",
+                                                          "fill": "white"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.1.0.0.0.0.2.0.0.0.1.1"
+                                                      },
+                                                      {
+                                                        "tag": "rect",
+                                                        "attrs": {
+                                                          "x": "25.599999999999998",
+                                                          "y": "26.700000000000003",
+                                                          "width": "3.6",
+                                                          "height": "7.8",
+                                                          "rx": "1.8",
+                                                          "fill": "black",
+                                                          "transform": "translate(0.00 0.00) rotate(-11 27.4 30.6) translate(0 30.6) scale(1 1.000) translate(0 -30.6)"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.1.0.0.0.0.2.0.0.0.1.2"
+                                                      },
+                                                      {
+                                                        "tag": "rect",
+                                                        "attrs": {
+                                                          "x": "34.800000000000004",
+                                                          "y": "26.700000000000003",
+                                                          "width": "3.6",
+                                                          "height": "7.8",
+                                                          "rx": "1.8",
+                                                          "fill": "black",
+                                                          "transform": "translate(0.00 0.00) rotate(-11 36.6 30.6) translate(0 30.6) scale(1 1.000) translate(0 -30.6)"
+                                                        },
+                                                        "children": [],
+                                                        "key": "root.0.0.1.0.0.0.0.2.0.0.0.1.3"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.1.0.0.0.0.2.0.0.0.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.0.0.0.0.2.0.0.0"
+                                              },
+                                              {
+                                                "tag": "rect",
+                                                "attrs": {
+                                                  "width": "64",
+                                                  "height": "64",
+                                                  "fill": "url(#_R_6imbdbsnpfknmlb_)"
+                                                },
+                                                "children": [],
+                                                "key": "root.0.0.1.0.0.0.0.2.0.0.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.0.0.0.0.2.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.0.0.0.0.2.0"
+                                      },
+                                      {
+                                        "tag": "div",
+                                        "attrs": {
+                                          "data-slot": "message-content",
+                                          "class": "flex w-full min-w-0 flex-col wrap-break-word group-data-[align=end]/message:*:data-slot:self-end gap-3"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "mb-1 flex items-center gap-2"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "text-[13px] font-medium"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Shadcnblocks AI",
+                                                    "key": "root.0.0.1.0.0.0.0.2.1.0.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.0.0.0.0.2.1.0.0"
+                                              },
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "text-muted-foreground text-xs"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "Content agent",
+                                                    "key": "root.0.0.1.0.0.0.0.2.1.0.1.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.0.0.0.0.2.1.0.1"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.0.0.0.0.2.1.0"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "text-muted-foreground flex items-center gap-2 px-1.5 text-sm"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "icon",
+                                                "attrs": {
+                                                  "name": "i-lucide-circle-check",
+                                                  "class": "lucide lucide-circle-check size-4"
+                                                },
+                                                "key": "root.0.0.1.0.0.0.0.2.1.1.0"
+                                              },
+                                              {
+                                                "tag": "span",
+                                                "attrs": {},
+                                                "children": [
+                                                  {
+                                                    "text": "Transcribed 38-minute video",
+                                                    "key": "root.0.0.1.0.0.0.0.2.1.1.1.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.0.0.0.0.2.1.1.1"
+                                              },
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "text-muted-foreground/70 min-w-0 truncate text-xs"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "4 speakers",
+                                                    "key": "root.0.0.1.0.0.0.0.2.1.1.2.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.0.0.0.0.2.1.1.2"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.0.0.0.0.2.1.1"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "text-muted-foreground flex items-center gap-2 px-1.5 text-sm"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "icon",
+                                                "attrs": {
+                                                  "name": "i-lucide-circle-check",
+                                                  "class": "lucide lucide-circle-check size-4"
+                                                },
+                                                "key": "root.0.0.1.0.0.0.0.2.1.2.0"
+                                              },
+                                              {
+                                                "tag": "span",
+                                                "attrs": {},
+                                                "children": [
+                                                  {
+                                                    "text": "Reviewed linked source material",
+                                                    "key": "root.0.0.1.0.0.0.0.2.1.2.1.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.0.0.0.0.2.1.2.1"
+                                              },
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "text-muted-foreground/70 min-w-0 truncate text-xs"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "5 sources",
+                                                    "key": "root.0.0.1.0.0.0.0.2.1.2.2.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.0.0.0.0.2.1.2.2"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.0.0.0.0.2.1.2"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "text-muted-foreground flex items-center gap-2 px-1.5 text-sm"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "icon",
+                                                "attrs": {
+                                                  "name": "i-lucide-circle-check",
+                                                  "class": "lucide lucide-circle-check size-4"
+                                                },
+                                                "key": "root.0.0.1.0.0.0.0.2.1.3.0"
+                                              },
+                                              {
+                                                "tag": "span",
+                                                "attrs": {},
+                                                "children": [
+                                                  {
+                                                    "text": "Aligned claims with transcript moments",
+                                                    "key": "root.0.0.1.0.0.0.0.2.1.3.1.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.0.0.0.0.2.1.3.1"
+                                              },
+                                              {
+                                                "tag": "span",
+                                                "attrs": {
+                                                  "class": "text-muted-foreground/70 min-w-0 truncate text-xs"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "text": "12 references",
+                                                    "key": "root.0.0.1.0.0.0.0.2.1.3.2.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.0.0.0.0.2.1.3.2"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.0.0.0.0.2.1.3"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {
+                                              "class": "prose prose-sm dark:prose-invert prose-headings:font-semibold prose-headings:tracking-tight prose-p:leading-7 prose-li:my-0 prose-pre:overflow-x-auto prose-pre:rounded-xl prose-pre:border prose-pre:bg-muted/40 prose-code:before:content-none prose-code:after:content-none prose-a:font-medium prose-a:underline prose-a:underline-offset-4 max-w-none px-1.5 text-[15px] leading-7 [&>*:first-child]:mt-0 [&>*:last-child]:mb-0"
+                                            },
+                                            "children": [
+                                              {
+                                                "tag": "p",
+                                                "attrs": {},
+                                                "children": [
+                                                  {
+                                                    "text": "AI is not replacing creativity—it is changing where creative professionals spend their attention. Repetitive execution is becoming faster, while direction, taste, storytelling, and accountable decision-making become more important.",
+                                                    "key": "root.0.0.1.0.0.0.0.2.1.4.0.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.0.0.0.0.2.1.4.0"
+                                              },
+                                              {
+                                                "tag": "h3",
+                                                "attrs": {},
+                                                "children": [
+                                                  {
+                                                    "text": "Key takeaways",
+                                                    "key": "root.0.0.1.0.0.0.0.2.1.4.1.0"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.0.0.0.0.2.1.4.1"
+                                              },
+                                              {
+                                                "tag": "ul",
+                                                "attrs": {},
+                                                "children": [
+                                                  {
+                                                    "tag": "li",
+                                                    "attrs": {},
+                                                    "children": [
+                                                      {
+                                                        "tag": "strong",
+                                                        "attrs": {},
+                                                        "children": [
+                                                          {
+                                                            "text": "Creative judgment moves upstream.",
+                                                            "key": "root.0.0.1.0.0.0.0.2.1.4.2.0.0.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.1.0.0.0.0.2.1.4.2.0.0"
+                                                      },
+                                                      {
+                                                        "text": " Teams spend less time producing variations and more time defining the right problem and selecting a direction.",
+                                                        "key": "root.0.0.1.0.0.0.0.2.1.4.2.0.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.1.0.0.0.0.2.1.4.2.0"
+                                                  },
+                                                  {
+                                                    "tag": "li",
+                                                    "attrs": {},
+                                                    "children": [
+                                                      {
+                                                        "tag": "strong",
+                                                        "attrs": {},
+                                                        "children": [
+                                                          {
+                                                            "text": "Traceability matters.",
+                                                            "key": "root.0.0.1.0.0.0.0.2.1.4.2.1.0.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.1.0.0.0.0.2.1.4.2.1.0"
+                                                      },
+                                                      {
+                                                        "text": " Generated claims should remain connected to the recording and supporting source material.",
+                                                        "key": "root.0.0.1.0.0.0.0.2.1.4.2.1.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.1.0.0.0.0.2.1.4.2.1"
+                                                  },
+                                                  {
+                                                    "tag": "li",
+                                                    "attrs": {},
+                                                    "children": [
+                                                      {
+                                                        "tag": "strong",
+                                                        "attrs": {},
+                                                        "children": [
+                                                          {
+                                                            "text": "Review remains essential.",
+                                                            "key": "root.0.0.1.0.0.0.0.2.1.4.2.2.0.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.1.0.0.0.0.2.1.4.2.2.0"
+                                                      },
+                                                      {
+                                                        "text": " Faster production still needs explicit editorial checkpoints and clear ownership.",
+                                                        "key": "root.0.0.1.0.0.0.0.2.1.4.2.2.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.1.0.0.0.0.2.1.4.2.2"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.0.0.0.0.2.1.4.2"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.0.0.0.0.2.1.4"
+                                          },
+                                          {
+                                            "tag": "div",
+                                            "attrs": {},
+                                            "children": [
+                                              {
+                                                "tag": "div",
+                                                "attrs": {
+                                                  "class": "space-y-3 px-1.5"
+                                                },
+                                                "children": [
+                                                  {
+                                                    "tag": "button",
+                                                    "attrs": {
+                                                      "type": "button",
+                                                      "class": "hover:bg-muted/40 focus-visible:ring-ring flex w-full items-center gap-3 rounded-xl border p-3 text-left shadow-xs transition-colors focus-visible:ring-2 focus-visible:outline-none"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {
+                                                          "class": "bg-muted flex size-9 shrink-0 items-center justify-center rounded-lg"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "icon",
+                                                            "attrs": {
+                                                              "name": "i-lucide-file-text",
+                                                              "class": "lucide lucide-file-text size-4"
+                                                            },
+                                                            "key": "root.0.0.1.0.0.0.0.2.1.5.0.0.0.0"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.1.0.0.0.0.2.1.5.0.0.0"
+                                                      },
+                                                      {
+                                                        "tag": "span",
+                                                        "attrs": {
+                                                          "class": "min-w-0 flex-1"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "span",
+                                                            "attrs": {
+                                                              "class": "block truncate text-sm font-medium"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "Future of creative work — editorial brief",
+                                                                "key": "root.0.0.1.0.0.0.0.2.1.5.0.0.1.0.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.1.0.0.0.0.2.1.5.0.0.1.0"
+                                                          },
+                                                          {
+                                                            "tag": "span",
+                                                            "attrs": {
+                                                              "class": "text-muted-foreground block text-xs"
+                                                            },
+                                                            "children": [
+                                                              {
+                                                                "text": "Generated document · 3 sections",
+                                                                "key": "root.0.0.1.0.0.0.0.2.1.5.0.0.1.1.0"
+                                                              }
+                                                            ],
+                                                            "key": "root.0.0.1.0.0.0.0.2.1.5.0.0.1.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.1.0.0.0.0.2.1.5.0.0.1"
+                                                      },
+                                                      {
+                                                        "tag": "icon",
+                                                        "attrs": {
+                                                          "name": "i-lucide-book-open",
+                                                          "class": "lucide lucide-book-open text-muted-foreground size-4"
+                                                        },
+                                                        "key": "root.0.0.1.0.0.0.0.2.1.5.0.0.2"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.1.0.0.0.0.2.1.5.0.0"
+                                                  },
+                                                  {
+                                                    "tag": "div",
+                                                    "attrs": {
+                                                      "class": "flex flex-wrap gap-2"
+                                                    },
+                                                    "children": [
+                                                      {
+                                                        "tag": "button",
+                                                        "attrs": {
+                                                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "icon",
+                                                            "attrs": {
+                                                              "name": "i-lucide-captions",
+                                                              "class": "lucide lucide-captions"
+                                                            },
+                                                            "key": "root.0.0.1.0.0.0.0.2.1.5.0.1.0.0"
+                                                          },
+                                                          {
+                                                            "text": "Review transcript",
+                                                            "key": "root.0.0.1.0.0.0.0.2.1.5.0.1.0.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.1.0.0.0.0.2.1.5.0.1.0"
+                                                      },
+                                                      {
+                                                        "tag": "button",
+                                                        "attrs": {
+                                                          "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs"
+                                                        },
+                                                        "children": [
+                                                          {
+                                                            "tag": "icon",
+                                                            "attrs": {
+                                                              "name": "i-lucide-file-plus-corner",
+                                                              "class": "lucide lucide-file-plus-corner"
+                                                            },
+                                                            "key": "root.0.0.1.0.0.0.0.2.1.5.0.1.1.0"
+                                                          },
+                                                          {
+                                                            "text": "Create social draft",
+                                                            "key": "root.0.0.1.0.0.0.0.2.1.5.0.1.1.1"
+                                                          }
+                                                        ],
+                                                        "key": "root.0.0.1.0.0.0.0.2.1.5.0.1.1"
+                                                      }
+                                                    ],
+                                                    "key": "root.0.0.1.0.0.0.0.2.1.5.0.1"
+                                                  }
+                                                ],
+                                                "key": "root.0.0.1.0.0.0.0.2.1.5.0"
+                                              }
+                                            ],
+                                            "key": "root.0.0.1.0.0.0.0.2.1.5"
+                                          }
+                                        ],
+                                        "key": "root.0.0.1.0.0.0.0.2.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.1.0.0.0.0.2"
+                                  }
+                                ],
+                                "key": "root.0.0.1.0.0.0.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "mx-auto w-full max-w-3xl space-y-6 px-4 pb-6"
+                                },
+                                "children": [],
+                                "key": "root.0.0.1.0.0.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.1.0.0.0"
+                          }
+                        ],
+                        "key": "root.0.0.1.0.0"
+                      }
+                    ],
+                    "key": "root.0.0.1.0"
+                  },
+                  {
+                    "tag": "button",
+                    "attrs": {
+                      "class": "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 size-6 absolute inset-s-1/2 -translate-x-1/2 border-border bg-background text-foreground transition-[translate,scale,opacity] duration-200 hover:bg-muted hover:text-foreground data-[active=false]:pointer-events-none data-[active=false]:scale-95 data-[active=false]:opacity-0 data-[active=false]:duration-400 data-[active=false]:ease-[cubic-bezier(0.7,0,0.84,0)] data-[active=true]:translate-y-0 data-[active=true]:scale-100 data-[active=true]:opacity-100 data-[active=true]:ease-[cubic-bezier(0.23,1,0.32,1)] data-[direction=end]:bottom-4 data-[direction=end]:data-[active=false]:translate-y-full data-[direction=start]:top-4 data-[direction=start]:data-[active=false]:-translate-y-full rtl:translate-x-1/2 data-[direction=start]:[&_svg]:rotate-180 bottom-3 shadow-md",
+                      "type": "button",
+                      "data-slot": "message-scroller-button",
+                      "aria-label": "Scroll to latest message"
+                    },
+                    "children": [
+                      {
+                        "tag": "icon",
+                        "attrs": {
+                          "name": "i-lucide-arrow-down",
+                          "class": "lucide lucide-arrow-down"
+                        },
+                        "key": "root.0.0.1.1.0"
+                      }
+                    ],
+                    "key": "root.0.0.1.1"
+                  }
+                ],
+                "key": "root.0.0.1"
+              },
+              {
+                "tag": "div",
+                "attrs": {
+                  "class": "bg-background shrink-0 px-4 pt-3 pb-4 sm:px-6"
+                },
+                "children": [
+                  {
+                    "tag": "form",
+                    "attrs": {
+                      "class": "relative mx-auto w-full max-w-2xl",
+                      "aria-label": "Continue recording conversation"
+                    },
+                    "children": [
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "data-slot": "input-group",
+                          "role": "group",
+                          "class": "group/input-group relative flex w-full min-w-0 border outline-none in-data-[slot=combobox-content]:focus-within:border-inherit in-data-[slot=combobox-content]:focus-within:ring-0 has-[[data-slot=input-group-control]:focus-visible]:border-ring has-[[data-slot][aria-invalid=true]]:border-destructive has-[[data-slot][aria-invalid=true]]:ring-3 has-[[data-slot][aria-invalid=true]]:ring-destructive/20 has-[>[data-align=block-end]]:h-auto has-[>[data-align=block-end]]:flex-col has-[>[data-align=block-start]]:h-auto has-[>[data-align=block-start]]:flex-col has-[>textarea]:h-auto dark:bg-input/30 dark:has-[[data-slot][aria-invalid=true]]:ring-destructive/40 has-[>[data-align=block-end]]:[&>input]:pt-3 has-[>[data-align=block-start]]:[&>input]:pb-3 has-[>[data-align=inline-end]]:[&>input]:pr-1.5 has-[>[data-align=inline-start]]:[&>input]:pl-1.5 h-auto flex-col items-stretch transition-[border-color,box-shadow] duration-200 bg-background border-input has-[[data-slot=input-group-control]:focus-visible]:ring-ring/30 gap-0 rounded-2xl shadow-sm has-[[data-slot=input-group-control]:focus-visible]:ring-3"
+                        },
+                        "children": [
+                          {
+                            "tag": "textarea",
+                            "attrs": {
+                              "class": "border-input focus-visible:ring-ring flex w-full focus-visible:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 md:text-sm flex-1 resize-none rounded-none border-0 bg-transparent py-2 shadow-none ring-0 focus-visible:ring-0 aria-invalid:ring-0 dark:bg-transparent placeholder:text-muted-foreground/55 [field-sizing:content] max-h-60 overflow-y-auto px-4 pt-4 pb-2.5 text-sm leading-6 min-h-16",
+                              "data-slot": "input-group-control",
+                              "aria-label": "Ask the content agent",
+                              "name": "message",
+                              "placeholder": "Ask for another format, clip, or revision",
+                              "value": ""
+                            },
+                            "children": [],
+                            "key": "root.0.0.2.0.0.0"
+                          },
+                          {
+                            "tag": "div",
+                            "attrs": {
+                              "role": "group",
+                              "data-slot": "input-group-addon",
+                              "class": "h-auto py-1.5 text-sm font-medium text-muted-foreground select-none group-data-[disabled=true]/input-group:opacity-50 [&>kbd]:rounded-[calc(var(--radius)-5px)] [&>svg:not([class*='size-'])]:size-4 order-last justify-start group-has-[>input]/input-group:pb-2 [.border-t]:pt-2 grid w-full cursor-default grid-cols-[minmax(0,1fr)_auto] items-center gap-2 px-3 pt-0 pb-3"
+                            },
+                            "children": [
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex min-w-0 items-center gap-1"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "class": "justify-center whitespace-nowrap rounded-md font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground flex items-center gap-2 text-sm shadow-none size-8 p-0 has-[>svg]:p-0",
+                                      "type": "button",
+                                      "aria-label": "Add source",
+                                      "data-state": "closed"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-plus",
+                                          "class": "lucide lucide-plus"
+                                        },
+                                        "key": "root.0.0.2.0.0.1.0.0.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "sr-only"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Add source",
+                                            "key": "root.0.0.2.0.0.1.0.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.0.1.0.0.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.0.1.0.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "class": "justify-center whitespace-nowrap transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground py-2 flex items-center shadow-none h-8 gap-1.5 rounded-lg px-2 text-xs font-normal",
+                                      "type": "button"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-clipboard",
+                                          "class": "lucide lucide-clipboard"
+                                        },
+                                        "key": "root.0.0.2.0.0.1.0.1.0"
+                                      },
+                                      {
+                                        "text": "Sources",
+                                        "key": "root.0.0.2.0.0.1.0.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.0.1.0.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.0.0.1.0"
+                              },
+                              {
+                                "tag": "div",
+                                "attrs": {
+                                  "class": "flex min-w-0 items-center gap-1 shrink-0"
+                                },
+                                "children": [
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "class": "justify-center whitespace-nowrap transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground py-2 flex items-center shadow-none h-8 max-w-48 gap-1.5 rounded-lg px-2 text-xs font-normal",
+                                      "type": "button",
+                                      "aria-label": "Model: GPT-5.6 Sol",
+                                      "aria-haspopup": "dialog",
+                                      "data-state": "closed"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "svg",
+                                        "attrs": {
+                                          "stroke": "currentColor",
+                                          "fill": "currentColor",
+                                          "stroke-width": "0",
+                                          "role": "img",
+                                          "viewBox": "0 0 24 24",
+                                          "class": "size-3.5 shrink-0",
+                                          "height": "100%",
+                                          "width": "100%"
+                                        },
+                                        "children": [
+                                          {
+                                            "tag": "path",
+                                            "attrs": {
+                                              "d": "M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"
+                                            },
+                                            "children": [],
+                                            "key": "root.0.0.2.0.0.1.1.0.0.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.0.1.1.0.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "truncate"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "5.6 Sol",
+                                            "key": "root.0.0.2.0.0.1.1.0.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.0.1.1.0.1"
+                                      },
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-chevron-down",
+                                          "class": "lucide lucide-chevron-down text-muted-foreground size-3.5 shrink-0"
+                                        },
+                                        "key": "root.0.0.2.0.0.1.1.0.2"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.0.1.1.0"
+                                  },
+                                  {
+                                    "tag": "button",
+                                    "attrs": {
+                                      "class": "justify-center whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 flex items-center gap-2 text-sm shadow-none size-8 p-0 has-[>svg]:p-0 rounded-full",
+                                      "type": "submit",
+                                      "aria-label": "Send message",
+                                      "disabled": "",
+                                      "data-state": "closed"
+                                    },
+                                    "children": [
+                                      {
+                                        "tag": "icon",
+                                        "attrs": {
+                                          "name": "i-lucide-arrow-up",
+                                          "class": "lucide lucide-arrow-up"
+                                        },
+                                        "key": "root.0.0.2.0.0.1.1.1.0"
+                                      },
+                                      {
+                                        "tag": "span",
+                                        "attrs": {
+                                          "class": "sr-only"
+                                        },
+                                        "children": [
+                                          {
+                                            "text": "Send message",
+                                            "key": "root.0.0.2.0.0.1.1.1.1.0"
+                                          }
+                                        ],
+                                        "key": "root.0.0.2.0.0.1.1.1.1"
+                                      }
+                                    ],
+                                    "key": "root.0.0.2.0.0.1.1.1"
+                                  }
+                                ],
+                                "key": "root.0.0.2.0.0.1.1"
+                              }
+                            ],
+                            "key": "root.0.0.2.0.0.1"
+                          }
+                        ],
+                        "key": "root.0.0.2.0.0"
+                      },
+                      {
+                        "tag": "div",
+                        "attrs": {
+                          "class": "bg-muted/45 text-muted-foreground items-center gap-4 text-xs mx-5 -mt-1 min-h-10 rounded-b-xl px-3 pt-1 hidden sm:flex"
+                        },
+                        "children": [
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "flex items-center gap-1.5"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-folder",
+                                  "class": "lucide lucide-folder size-3.5"
+                                },
+                                "key": "root.0.0.2.0.1.0.0"
+                              },
+                              {
+                                "text": " Future of creative work",
+                                "key": "root.0.0.2.0.1.0.1"
+                              }
+                            ],
+                            "key": "root.0.0.2.0.1.0"
+                          },
+                          {
+                            "tag": "span",
+                            "attrs": {
+                              "class": "flex items-center gap-1.5"
+                            },
+                            "children": [
+                              {
+                                "tag": "icon",
+                                "attrs": {
+                                  "name": "i-lucide-file-play",
+                                  "class": "lucide lucide-file-play size-3.5"
+                                },
+                                "key": "root.0.0.2.0.1.1.0"
+                              },
+                              {
+                                "text": " Video recording",
+                                "key": "root.0.0.2.0.1.1.1"
+                              }
+                            ],
+                            "key": "root.0.0.2.0.1.1"
+                          }
+                        ],
+                        "key": "root.0.0.2.0.1"
+                      }
+                    ],
+                    "key": "root.0.0.2.0"
+                  }
+                ],
+                "key": "root.0.0.2"
+              }
+            ],
+            "key": "root.0.0"
+          }
+        ],
+        "key": "root.0"
+      }
+    ],
+    "key": "root"
+  },
+  "headings": [
+    "Key takeaways"
+  ]
+}
