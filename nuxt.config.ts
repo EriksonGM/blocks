@@ -4,6 +4,6 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
   modules: ['@nuxt/ui'],
   colorMode: { preference: 'light' },
-  app: { head: { title: 'Blocks Admin · Nuxt UI', meta: [{ name: 'description', content: 'Reusable admin blocks built with Nuxt UI.' }] } },
+  app: { head: { title: 'Blocks Admin · Nuxt UI', meta: [{ name: 'description', content: 'Complete admin pages written directly with Nuxt UI.' }] } },
   icon: { serverBundle: { collections: ['lucide'] } },
 })

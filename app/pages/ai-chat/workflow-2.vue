@@ -1,0 +1,785 @@
+<!-- Page: /ai-chat/workflow-2 | All content, state and styles live in this file. -->
+<script setup lang="ts">
+const route = useRoute()
+
+useHead({ title: "Workflow 2 · Blocks Admin" })
+
+const toast = useToast()
+
+// Page-local form values. Edit these defaults when copying the page.
+
+const form = reactive({
+  "message": ""
+})
+
+// Restore drafts after hydration; the first client render matches SSR.
+onMounted(() => {
+  const key = 'nuxt-ui-page:' + route.path
+  try {
+    const draft = localStorage.getItem(key)
+    if (draft) Object.assign(form, JSON.parse(draft))
+  } catch { /* Use the defaults when no draft exists. */ }
+  watch(form, value => localStorage.setItem(key, JSON.stringify(value)), { deep: true, flush: 'sync' })
+})
+
+function saveForm() {
+  toast.add({ title: "Changes saved", color: 'success', icon: 'i-lucide-check' })
+}
+
+const actionDialog = reactive({ open: false, title: '', mode: 'edit', name: '', description: '', recordId: '', table: 0 })
+function openAction(label: string, recordId = '', table = 0) {
+  Object.assign(actionDialog, { open: true, title: label, mode: /delete|remove|archive/i.test(label) ? 'delete' : 'edit', recordId, table })
+}
+function confirmAction() {
+  toast.add({ title: actionDialog.mode === 'delete' ? 'Item removed' : 'Changes saved', color: 'success', icon: 'i-lucide-check' })
+  actionDialog.open = false
+}
+
+const messages = ref<{ id: string, role: 'user' | 'assistant', text: string }[]>([])
+function sendMessage(field: keyof typeof form) {
+  const message = String(form[field]).trim()
+  if (!message) return
+  messages.value.push({ id: 'user-' + messages.value.length, role: 'user', text: message })
+  messages.value.push({ id: 'assistant-' + messages.value.length, role: 'assistant', text: 'Your message has been added to this demo conversation. Connect sendMessage to your AI API for real responses.' })
+  Object.assign(form, { [field]: '' })
+}
+
+// Canvas interaction is local to this page; no graph renderer is imported.
+const canvasRoots = new Map<number, HTMLElement>()
+const canvasViews = new Map<number, { x: number, y: number, scale: number }>()
+let canvasDrag: { canvas: number, element?: HTMLElement, startX: number, startY: number, x: number, y: number } | undefined
+function setCanvasRoot(index: number, element: unknown) {
+  if (element instanceof HTMLElement) { canvasRoots.set(index, element); nextTick(() => fitCanvas(index)) }
+  else canvasRoots.delete(index)
+}
+function canvasView(index: number) {
+  if (!canvasViews.has(index)) canvasViews.set(index, { x: 0, y: 0, scale: 1 })
+  return canvasViews.get(index)!
+}
+function paintCanvas(index: number) {
+  const element = canvasRoots.get(index)?.querySelector<HTMLElement>('.workflow-canvas__viewport')
+  const view = canvasView(index)
+  if (element) element.style.transform = 'translate(' + view.x + 'px, ' + view.y + 'px) scale(' + view.scale + ')'
+}
+function zoomCanvas(index: number, factor: number) {
+  const view = canvasView(index)
+  view.scale = Math.max(0.15, Math.min(2.5, view.scale * factor))
+  paintCanvas(index)
+}
+function fitCanvas(index: number) {
+  const root = canvasRoots.get(index)
+  const nodes = root?.querySelectorAll<HTMLElement>('.workflow-canvas__node')
+  if (!root || !nodes?.length || !root.clientWidth || !root.clientHeight) return
+  const bounds = [...nodes].map(node => {
+    const match = node.style.transform.match(/translate\(([-\d.]+)px,?\s*([-\d.]+)px\)/)
+    return { x: Number(match?.[1] || 0), y: Number(match?.[2] || 0), width: node.offsetWidth, height: node.offsetHeight }
+  })
+  const x = Math.min(...bounds.map(node => node.x)), y = Math.min(...bounds.map(node => node.y))
+  const width = Math.max(...bounds.map(node => node.x + node.width)) - x
+  const height = Math.max(...bounds.map(node => node.y + node.height)) - y
+  const view = canvasView(index)
+  view.scale = Math.max(0.15, Math.min(1, (root.clientWidth - 90) / width, (root.clientHeight - 130) / height))
+  view.x = (root.clientWidth - width * view.scale) / 2 - x * view.scale
+  view.y = (root.clientHeight - height * view.scale) / 2 - y * view.scale
+  paintCanvas(index)
+}
+function canvasPointerDown(index: number, event: PointerEvent) {
+  const target = event.target as HTMLElement
+  if (target.closest('button, input, textarea, a, .nodrag')) return
+  const element = target.closest<HTMLElement>('.workflow-canvas__node') || undefined
+  const match = element?.style.transform.match(/translate\(([-\d.]+)px,?\s*([-\d.]+)px\)/)
+  const view = canvasView(index)
+  canvasDrag = { canvas: index, element, startX: event.clientX, startY: event.clientY, x: element ? Number(match?.[1] || 0) : view.x, y: element ? Number(match?.[2] || 0) : view.y }
+  canvasRoots.get(index)?.setPointerCapture(event.pointerId)
+}
+function canvasPointerMove(event: PointerEvent) {
+  if (!canvasDrag) return
+  const view = canvasView(canvasDrag.canvas)
+  const dx = event.clientX - canvasDrag.startX, dy = event.clientY - canvasDrag.startY
+  if (canvasDrag.element) canvasDrag.element.style.transform = 'translate(' + (canvasDrag.x + dx / view.scale) + 'px, ' + (canvasDrag.y + dy / view.scale) + 'px)'
+  else { view.x = canvasDrag.x + dx; view.y = canvasDrag.y + dy; paintCanvas(canvasDrag.canvas) }
+}
+</script>
+
+<template>
+  <div class="page-content flex h-full min-h-0 w-full flex-col text-default" data-page="/ai-chat/workflow-2">
+    <div id="ai-workspace-content" class="flex min-h-0 flex-1 flex-col">
+      <div class="flex min-h-0 flex-1 overflow-hidden">
+        <div class="flex min-h-0 min-w-0 flex-1 flex-col">
+          <div class="flex min-h-0 flex-1 flex-col">
+            <h1 class="sr-only text-highlighted">Workflow 2 · Live execution</h1>
+            <div class="flex h-12 shrink-0 items-center border-b px-4 border-default">
+              <span class="text-xs font-medium">Workflow thread</span>
+              <UButton color="neutral" variant="soft" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-elevated hover:text-default ml-auto size-7" aria-label="Close workflow" type="button" @click="openAction(&quot;Close workflow&quot;)">
+                <UIcon name="i-lucide-panel-right-open" class="size-4" />
+              </UButton>
+            </div>
+            <div data-slot="message-scroller" class="group/message-scroller relative flex size-full flex-col overflow-hidden min-h-0 flex-1">
+              <div role="region" aria-label="Conversation messages" data-slot="message-scroller-viewport" class="size-full min-h-0 min-w-0 scroll-fade-b scrollbar-thin scrollbar-gutter-stable overflow-y-auto overscroll-contain contain-content data-autoscrolling:scrollbar-thumb-transparent data-autoscrolling:scrollbar-track-transparent">
+                <div role="log" data-slot="message-scroller-content" class="flex h-max flex-col min-h-full gap-0">
+                  <div data-slot="message-scroller-item" class="min-w-0 shrink-0 [contain-intrinsic-size:auto_10rem] [content-visibility:auto] min-h-full">
+                    <div class="mx-auto flex w-full max-w-xl flex-col gap-8 px-4 py-8 sm:px-5">
+                      <div data-slot="message" class="group/message relative flex w-full min-w-0 gap-2 text-sm data-[align=end]:flex-row-reverse">
+                        <div data-slot="message-content" class="flex w-full min-w-0 flex-col gap-2.5 wrap-break-word group-data-[align=end]/message:*:data-slot:self-end">
+                          <div data-slot="bubble" class="group/bubble relative flex w-fit min-w-0 flex-col gap-1 group-data-[align=end]/message:self-end data-[align=end]:self-end data-[variant=ghost]:max-w-full *:data-[slot=bubble-content]:bg-muted [&amp;&gt;[data-slot=bubble-content]:is(button,a):hover]:bg-[color-mix(in_oklch,var(--ui-bg-muted),var(--ui-text-highlighted)_5%)] max-w-[88%] md:max-w-[72%]">
+                            <div data-slot="bubble-content" class="w-fit max-w-full min-w-0 overflow-hidden rounded-3xl border-transparent px-3 py-2.5 text-sm wrap-break-word group-data-[align=end]/bubble:self-end [button]:text-left [button,a]:transition-colors [button,a]:outline-none [button,a]:focus-visible:border-accented [button,a]:focus-visible:ring-3 [button,a]:focus-visible:ring-(--ui-border-accented)/30 border-0 leading-6">Run the workflow and keep the execution visible. I want to know which step is active, what tool it is using, and which file it is touching.</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div data-slot="message" class="group/message relative flex w-full min-w-0 gap-2 text-sm data-[align=end]:flex-row-reverse">
+                        <div data-slot="message-avatar" class="flex w-fit min-w-8 shrink-0 items-center justify-center group-has-data-[slot=message-footer]/message:-translate-y-8 self-start overflow-visible rounded-none bg-transparent">
+                          <svg viewBox="0 0 64 64" class="drop-shadow-sm size-8" width="100%" height="100%">
+                            <defs>
+                              <linearGradient id="_R_pardbsnpfknmlb_" x1="10" y1="8" x2="54" y2="56" gradientUnits="userSpaceOnUse">
+                                <stop offset="0" stop-color="var(--ui-text-highlighted)" />
+                                <stop offset="0.52" stop-color="var(--ui-text-muted)" />
+                                <stop offset="1" stop-color="var(--ui-text-highlighted)" />
+                              </linearGradient>
+                              <mask id="_R_pardbsnpfknmlb_-mask" x="0" y="0" width="64" height="64">
+                                <rect width="64" height="64" fill="var(--ui-text-highlighted)" />
+                                <path d="M 56.62 32.00 C 56.62 33.07 56.54 34.15 56.41 35.21 C 56.27 36.27 56.05 37.34 55.78 38.37 C 55.50 39.41 55.15 40.43 54.74 41.42 C 54.33 42.41 53.85 43.38 53.32 44.31 C 52.78 45.24 52.18 46.14 51.53 46.99 C 50.88 47.83 50.16 48.65 49.41 49.41 C 48.65 50.16 47.83 50.88 46.99 51.53 C 46.14 52.18 45.24 52.78 44.31 53.32 C 43.38 53.85 42.41 54.33 41.42 54.74 C 40.43 55.15 39.41 55.50 38.37 55.78 C 37.34 56.05 36.27 56.27 35.21 56.41 C 34.15 56.54 33.07 56.62 32.00 56.62 C 30.93 56.62 29.85 56.54 28.79 56.41 C 27.73 56.27 26.66 56.05 25.63 55.78 C 24.59 55.50 23.57 55.15 22.58 54.74 C 21.59 54.33 20.62 53.85 19.69 53.32 C 18.76 52.78 17.86 52.18 17.01 51.53 C 16.17 50.88 15.35 50.16 14.59 49.41 C 13.84 48.65 13.12 47.83 12.47 46.99 C 11.82 46.14 11.22 45.24 10.68 44.31 C 10.15 43.38 9.67 42.41 9.26 41.42 C 8.85 40.43 8.50 39.41 8.22 38.37 C 7.95 37.34 7.73 36.27 7.59 35.21 C 7.46 34.15 7.38 33.07 7.38 32.00 C 7.38 30.93 7.46 29.85 7.59 28.79 C 7.73 27.73 7.95 26.66 8.22 25.63 C 8.50 24.59 8.85 23.57 9.26 22.58 C 9.67 21.59 10.15 20.62 10.68 19.69 C 11.22 18.76 11.82 17.86 12.47 17.01 C 13.12 16.17 13.84 15.35 14.59 14.59 C 15.35 13.84 16.17 13.12 17.01 12.47 C 17.86 11.82 18.76 11.22 19.69 10.68 C 20.62 10.15 21.59 9.67 22.58 9.26 C 23.57 8.85 24.59 8.50 25.63 8.22 C 26.66 7.95 27.73 7.73 28.79 7.59 C 29.85 7.46 30.93 7.38 32.00 7.38 C 33.07 7.38 34.15 7.46 35.21 7.59 C 36.27 7.73 37.34 7.95 38.37 8.22 C 39.41 8.50 40.43 8.85 41.42 9.26 C 42.41 9.67 43.38 10.15 44.31 10.68 C 45.24 11.22 46.14 11.82 46.99 12.47 C 47.83 13.12 48.65 13.84 49.41 14.59 C 50.16 15.35 50.88 16.17 51.53 17.01 C 52.18 17.86 52.78 18.76 53.32 19.69 C 53.85 20.62 54.33 21.59 54.74 22.58 C 55.15 23.57 55.50 24.59 55.78 25.63 C 56.05 26.66 56.27 27.73 56.41 28.79 C 56.54 29.85 56.62 30.93 56.62 32.00 Z" transform="translate(0 0) rotate(0.00 32 32)" fill="var(--ui-text-inverted)" />
+                                <rect x="25.1" y="25.200000000000003" width="3.8" height="8.2" rx="1.9" fill="var(--ui-text-highlighted)" transform="translate(-0.69 -0.55) rotate(-11 27 29.3) translate(0 29.3) scale(1 1.000) translate(0 -29.3)" />
+                                <rect x="35.1" y="25.200000000000003" width="3.8" height="8.2" rx="1.9" fill="var(--ui-text-highlighted)" transform="translate(-0.69 -0.55) rotate(-11 37 29.3) translate(0 29.3) scale(1 1.000) translate(0 -29.3)" />
+                              </mask>
+                            </defs>
+                            <rect width="64" height="64" fill="url(#_R_pardbsnpfknmlb_)" mask="url(#_R_pardbsnpfknmlb_-mask)" />
+                          </svg>
+                        </div>
+                        <div data-slot="message-content" class="flex w-full min-w-0 flex-col wrap-break-word group-data-[align=end]/message:*:data-slot:self-end gap-3">
+                          <div class="mb-1 flex items-center gap-2">
+                            <span class="text-[13px] font-medium">Shadcnblocks AI</span>
+                            <span class="text-muted text-xs">Workflow agent</span>
+                          </div>
+                          <div class="prose prose-sm dark:prose-invert prose-headings:font-semibold prose-headings:tracking-tight prose-p:leading-7 prose-li:my-0 prose-pre:overflow-x-auto prose-pre:rounded-xl prose-pre:border prose-pre:bg-(--ui-bg-muted)/40 prose-code:before:content-none prose-code:after:content-none prose-a:font-medium prose-a:underline prose-a:underline-offset-4 max-w-none px-1.5 text-[15px] leading-7 [&amp;&gt;*:first-child]:mt-0 [&amp;&gt;*:last-child]:mb-0 border-default">
+                            <p>The execution map separates declared workflow progress from observed tool and file activity. The active route moves as the run advances, while each node retains its evidence.</p>
+                          </div>
+                          <section class="bg-default mt-1 overflow-hidden rounded-xl border shadow-xs border-default">
+                            <header class="bg-(--ui-bg-muted)/25 flex h-11 items-center gap-2.5 border-b px-3 border-default">
+                              <span class="bg-default grid size-7 shrink-0 place-items-center rounded-lg border shadow-xs border-default">
+                                <UIcon name="i-lucide-git-branch" class="text-muted size-3.5" />
+                              </span>
+                              <div class="min-w-0 flex-1">
+                                <p class="truncate text-xs font-medium">Workflow implementation run</p>
+                                <p class="text-muted truncate text-[10px]">Interactive workflow workspace</p>
+                              </div>
+                              <div class="inline-flex items-center border py-0.5 transition-colors focus:outline-hidden focus:ring-2 focus:ring-accented focus:ring-offset-2 border-transparent bg-elevated text-default hover:bg-(--ui-bg-elevated)/80 h-5 rounded-md px-1.5 text-[9px] font-normal border-default">Live</div>
+                            </header>
+                            <div class="p-2.5">
+                              <div class="mt-2 grid grid-cols-3 divide-x overflow-hidden rounded-lg border border-default">
+                                <div class="bg-(--ui-bg-muted)/10 min-w-0 px-2 py-1.5">
+                                  <p class="truncate text-[11px] font-medium tabular-nums">2/6</p>
+                                  <p class="text-muted mt-0.5 truncate text-[9px]">Completed</p>
+                                </div>
+                                <div class="bg-(--ui-bg-muted)/10 min-w-0 px-2 py-1.5">
+                                  <p class="truncate text-[11px] font-medium tabular-nums">1</p>
+                                  <p class="text-muted mt-0.5 truncate text-[9px]">Active agents</p>
+                                </div>
+                                <div class="bg-(--ui-bg-muted)/10 min-w-0 px-2 py-1.5">
+                                  <p class="truncate text-[11px] font-medium tabular-nums">00:18</p>
+                                  <p class="text-muted mt-0.5 truncate text-[9px]">Elapsed</p>
+                                </div>
+                              </div>
+                            </div>
+                            <footer class="flex h-10 items-center justify-between gap-2 border-t px-3 border-default">
+                              <span class="text-muted flex items-center gap-1.5 text-[10px]">
+                                <span class="size-1.5 rounded-full bg-success" />
+                                Workspace ready
+                              </span>
+                              <UButton color="neutral" variant="outline" class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-default bg-default hover:bg-elevated hover:text-default rounded-md h-7 px-2.5 text-[10px] shadow-xs" aria-label="Open workflow" type="button" @click="openAction(&quot;Open workflow&quot;)">
+                                <UIcon name="i-lucide-maximize-2" class="size-4" />
+                                Open workflow
+                              </UButton>
+                            </footer>
+                          </section>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <UButton color="neutral" variant="outline" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 size-6 absolute inset-s-1/2 -translate-x-1/2 border-default bg-default text-highlighted transition-[translate,scale,opacity] duration-200 hover:bg-muted hover:text-highlighted data-[active=false]:pointer-events-none data-[active=false]:scale-95 data-[active=false]:opacity-0 data-[active=false]:duration-400 data-[active=false]:ease-[cubic-bezier(0.7,0,0.84,0)] data-[active=true]:translate-y-0 data-[active=true]:scale-100 data-[active=true]:opacity-100 data-[active=true]:ease-[cubic-bezier(0.23,1,0.32,1)] data-[direction=end]:bottom-4 data-[direction=end]:data-[active=false]:translate-y-full data-[direction=start]:top-4 data-[direction=start]:data-[active=false]:-translate-y-full rtl:translate-x-1/2 data-[direction=start]:[&amp;_svg]:rotate-180 bottom-3 shadow-md" data-slot="message-scroller-button" aria-label="Scroll to latest message" type="button" @click="openAction(&quot;Scroll to latest message&quot;)">
+                <UIcon name="i-lucide-arrow-down" class="size-4" />
+              </UButton>
+            </div>
+            <div class="bg-default shrink-0 px-4 pt-3 pb-4 sm:px-5">
+              <!-- Form: controls and draft state are declared in this page -->
+              <UForm :state="form" @submit="saveForm" class="relative mx-auto w-full max-w-xl" aria-label="Continue Workflow 2 · Live execution">
+                <!-- Chat composer: form.message -->
+                <div v-if="messages.length" class="my-4 space-y-4">
+                  <UChatMessage v-for="message in messages" :key="message.id" :id="message.id" :role="message.role" :parts="[{ type: 'text', text: message.text }]" :side="message.role === 'user' ? 'right' : 'left'" :variant="message.role === 'user' ? 'soft' : 'naked'" />
+                </div>
+                <UChatPrompt v-model="form.message" :autofocus="false" color="primary" :rows="3" placeholder="Ask for a workflow change…" data-slot="input-group" class="group/input-group relative flex w-full min-w-0 border outline-none in-data-[slot=combobox-content]:focus-within:border-inherit in-data-[slot=combobox-content]:focus-within:ring-0 has-[[data-slot=input-group-control]:focus-visible]:border-accented has-[[data-slot][aria-invalid=true]]:border-(--ui-error) has-[[data-slot][aria-invalid=true]]:ring-3 has-[[data-slot][aria-invalid=true]]:ring-(--ui-error)/20 has-[&gt;[data-align=block-end]]:h-auto has-[&gt;[data-align=block-end]]:flex-col has-[&gt;[data-align=block-start]]:h-auto has-[&gt;[data-align=block-start]]:flex-col has-[&gt;textarea]:h-auto dark:bg-(--ui-border)/30 dark:has-[[data-slot][aria-invalid=true]]:ring-(--ui-error)/40 has-[&gt;[data-align=block-end]]:[&amp;&gt;input]:pt-3 has-[&gt;[data-align=block-start]]:[&amp;&gt;input]:pb-3 has-[&gt;[data-align=inline-end]]:[&amp;&gt;input]:pr-1.5 has-[&gt;[data-align=inline-start]]:[&amp;&gt;input]:pl-1.5 h-auto flex-col items-stretch transition-[border-color,box-shadow] duration-200 bg-default border-default has-[[data-slot=input-group-control]:focus-visible]:ring-(--ui-border-accented)/30 gap-0 rounded-2xl shadow-sm has-[[data-slot=input-group-control]:focus-visible]:ring-3" @submit="sendMessage(&quot;message&quot;)" :ui="{ base: 'px-4 py-3 text-sm', footer: 'p-0 w-full' }">
+                  <template #footer>
+                    <div role="group" data-slot="input-group-addon" class="h-auto py-1.5 text-sm font-medium text-muted select-none group-data-[disabled=true]/input-group:opacity-50 [&amp;&gt;kbd]:rounded-[calc(var(--radius)-5px)] [&amp;&gt;svg:not([class*='size-'])]:size-4 order-last justify-start group-has-[&gt;input]/input-group:pb-2 [.border-t]:pt-2 grid w-full cursor-default grid-cols-[minmax(0,1fr)_auto] items-center gap-2 px-3 pt-0 pb-3">
+                      <div class="flex min-w-0 items-center gap-1">
+                        <UButton color="neutral" variant="soft" class="justify-center whitespace-nowrap rounded-md font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-elevated hover:text-default flex items-center gap-2 text-sm shadow-none size-8 p-0 has-[&gt;svg]:p-0" aria-label="Add workflow context" type="button" @click="openAction(&quot;Add workflow context&quot;)">
+                          <UIcon name="i-lucide-plus" class="size-4" />
+                          <span class="sr-only">Add workflow context</span>
+                        </UButton>
+                        <UButton color="neutral" variant="soft" class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-elevated hover:text-default rounded-md px-3 h-8 text-xs" aria-label="Canvas" type="button" @click="openAction(&quot;Canvas&quot;)">
+                          <UIcon name="i-lucide-git-branch" class="size-4" />
+                          Canvas
+                        </UButton>
+                      </div>
+                      <div class="flex min-w-0 items-center gap-1 shrink-0">
+                        <UButton color="neutral" variant="soft" class="justify-center whitespace-nowrap transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-elevated hover:text-default py-2 flex items-center shadow-none h-8 max-w-48 gap-1.5 rounded-lg px-2 text-xs font-normal" aria-label="5.6 Sol" type="button" @click="openAction(&quot;5.6 Sol&quot;)">
+                          <svg stroke="currentColor" fill="currentColor" stroke-width="0" role="img" viewBox="0 0 24 24" class="size-3.5 shrink-0" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z" />
+                          </svg>
+                          <span class="truncate">5.6 Sol</span>
+                          <UIcon name="i-lucide-chevron-down" class="text-muted size-3.5 shrink-0" />
+                        </UButton>
+                        <UButton color="primary" variant="solid" class="justify-center whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-inverted hover:bg-primary/90 flex items-center gap-2 text-sm shadow-none size-8 p-0 has-[&gt;svg]:p-0 rounded-full" aria-label="Send message" type="button" :disabled="!form.message.trim()" @click="sendMessage(&quot;message&quot;)">
+                          <UIcon name="i-lucide-arrow-up" class="size-4" />
+                          <span class="sr-only">Send message</span>
+                        </UButton>
+                      </div>
+                    </div>
+                  </template>
+                </UChatPrompt>
+              </UForm>
+            </div>
+          </div>
+        </div>
+        <USeparator orientation="horizontal" aria-label="Resize workflow workspace" class="group bg-(--ui-border) relative z-10 hidden w-px shrink-0 cursor-col-resize outline-none min-[980px]:block" />
+        <div class="hidden min-h-0 min-w-[360px] min-[980px]:flex shrink-0" style="width:72%">
+          <section class="bg-default flex size-full min-h-0 flex-col overflow-hidden">
+            <header class="flex min-h-12 shrink-0 items-center gap-3 border-b px-3 border-default">
+              <div class="min-w-0 flex-1">
+                <p class="truncate text-xs font-medium">Live agent execution map</p>
+                <p class="text-muted truncate text-[10px]">Observed activity · repository workflow</p>
+              </div>
+              <div class="items-center border py-0.5 transition-colors focus:outline-hidden focus:ring-2 focus:ring-accented focus:ring-offset-2 border-transparent bg-elevated text-default hover:bg-(--ui-bg-elevated)/80 hidden h-6 gap-1.5 rounded-md px-2 text-[10px] font-normal sm:flex border-default">
+                <span class="size-1.5 rounded-full animate-pulse bg-info" />
+                Agent working
+              </div>
+              <UButton color="neutral" variant="outline" class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-default bg-default hover:bg-elevated hover:text-default rounded-md size-7 px-0 text-xs shadow-xs sm:h-7 sm:w-auto sm:px-2.5" aria-label="Restart run" type="button" @click="openAction(&quot;Restart run&quot;)">
+                <UIcon name="i-lucide-play" class="size-4" />
+                <span class="hidden sm:inline">Restart run</span>
+              </UButton>
+              <UButton color="neutral" variant="soft" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-elevated hover:text-default size-7" aria-label="Expand workflow workspace" type="button" @click="openAction(&quot;Expand workflow workspace&quot;)">
+                <UIcon name="i-lucide-expand" class="size-4" />
+              </UButton>
+              <UButton color="neutral" variant="soft" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-elevated hover:text-default size-7" aria-label="Close workflow workspace" type="button" @click="openAction(&quot;Close workflow workspace&quot;)">
+                <UIcon name="i-lucide-x" class="size-4" />
+              </UButton>
+            </header>
+            <div class="relative flex min-h-0 flex-1">
+              <div class="relative min-h-0 min-w-0 flex-1 overflow-hidden">
+                <!-- Workflow canvas 1: local pointer and zoom handlers -->
+                <div aria-label="Live agent execution map" class="workflow-canvas !bg-default light" style="width: 100%; height: 100%; overflow: hidden; position: relative; z-index: 0;" role="application" :ref="element => setCanvasRoot(1, element)" @pointerdown="canvasPointerDown(1, $event)" @pointermove="canvasPointerMove($event)" @pointerup="canvasDrag = undefined" @pointercancel="canvasDrag = undefined" @wheel.ctrl.prevent="zoomCanvas(1, $event.deltaY < 0 ? 1.1 : 1 / 1.1)">
+                  <div class="workflow-canvas__renderer" style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;">
+                    <div class="workflow-canvas__pane selection" style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;">
+                      <div class="workflow-canvas__viewport workflow-canvas__viewport workflow-canvas__container" style="transform: translate(-183.35px, 313.25px) scale(0.55);">
+                        <div class="workflow-canvas__edges">
+                          <svg class="workflow-canvas__marker" width="100%" height="100%">
+                            <defs>
+                              <marker class="workflow-canvas__arrowhead" id="1__color=var(--border)&amp;height=14&amp;type=arrowclosed&amp;width=14">
+                                <polyline class="arrowclosed" stroke-linecap="round" stroke-linejoin="round" points="-5,-4 0,0 -5,4 -5,-4" style="stroke-width: 1; stroke: var(--ui-border); fill: var(--ui-border);" />
+                              </marker>
+                              <marker class="workflow-canvas__arrowhead" id="1__color=var(--foreground)&amp;height=14&amp;type=arrowclosed&amp;width=14">
+                                <polyline class="arrowclosed" stroke-linecap="round" stroke-linejoin="round" points="-5,-4 0,0 -5,4 -5,-4" style="stroke-width: 1; stroke: var(--ui-text-highlighted); fill: var(--ui-text-highlighted);" />
+                              </marker>
+                            </defs>
+                          </svg>
+                          <svg style="z-index: 0;" viewBox="0 0 165.00003051757812 82.5" width="100%" height="100%">
+                            <g class="workflow-canvas__edge workflow-canvas__edge-default nopan selectable" role="group" data-id="context-map" aria-label="Edge from context to map">
+                              <path id="context-map" d="M267.9999889026988,240.99997780539772 C301.99998335404825,240.99997780539772 301.99998335404825,240.99997780539772 335.99997780539775,240.99997780539772" fill="none" class="workflow-canvas__edge-path" style="stroke: var(--ui-border); stroke-width: 1.5;" />
+                              <path d="M267.9999889026988,240.99997780539772 C301.99998335404825,240.99997780539772 301.99998335404825,240.99997780539772 335.99997780539775,240.99997780539772" fill="none" stroke-opacity="0" stroke-width="20" class="workflow-canvas__edge-interaction" />
+                            </g>
+                          </svg>
+                          <svg style="z-index: 0;" viewBox="0 0 165.00003051757812 82.5" width="100%" height="100%">
+                            <g class="workflow-canvas__edge workflow-canvas__edge-animated nopan selectable" role="group" data-id="map-build" aria-label="Edge from map to build">
+                              <path id="map-build" d="M607.9999334161932,240.99997780539772 C641.9999556107955,240.99997780539772 641.9999556107955,240.99997780539772 675.9999778053977,240.99997780539772" fill="none" class="workflow-canvas__edge-path" style="stroke: var(--ui-text-highlighted); stroke-width: 1.5;" />
+                              <path d="M607.9999334161932,240.99997780539772 C641.9999556107955,240.99997780539772 641.9999556107955,240.99997780539772 675.9999778053977,240.99997780539772" fill="none" stroke-opacity="0" stroke-width="20" class="workflow-canvas__edge-interaction" />
+                              <circle fill="var(--ui-primary)" r="3.5">
+                                <animatemotion />
+                              </circle>
+                            </g>
+                          </svg>
+                          <svg style="z-index: 0;" viewBox="0 0 165.00003051757812 82.5" width="100%" height="100%">
+                            <g class="workflow-canvas__edge workflow-canvas__edge-temporary nopan selectable" role="group" data-id="build-tests" aria-label="Edge from build to tests">
+                              <path id="build-tests" d="M948.0000443892045 240.99997780539772L968.0000443892045 240.99997780539772L 975,240.99997780539772Q 981.9999556107955,240.99997780539772 981.9999556107955,234.00002219460222L 981.9999556107955,139.9999445134943Q 981.9999556107955,132.99998890269887 988.999911221591,132.99998890269887L995.9998668323864 132.99998890269887L1015.9998668323864 132.99998890269887" fill="none" class="workflow-canvas__edge-path" style="stroke: var(--ui-text-muted); stroke-dasharray: 3, 7; stroke-linecap: round; stroke-width: 1.25; opacity: 0.55;" />
+                              <path d="M948.0000443892045 240.99997780539772L968.0000443892045 240.99997780539772L 975,240.99997780539772Q 981.9999556107955,240.99997780539772 981.9999556107955,234.00002219460222L 981.9999556107955,139.9999445134943Q 981.9999556107955,132.99998890269887 988.999911221591,132.99998890269887L995.9998668323864 132.99998890269887L1015.9998668323864 132.99998890269887" fill="none" stroke-opacity="0" stroke-width="20" class="workflow-canvas__edge-interaction" />
+                            </g>
+                          </svg>
+                          <svg style="z-index: 0;" viewBox="0 0 165.00003051757812 82.5" width="100%" height="100%">
+                            <g class="workflow-canvas__edge workflow-canvas__edge-temporary nopan selectable" role="group" data-id="build-review" aria-label="Edge from build to review">
+                              <path id="build-review" d="M948.0000443892045 240.99997780539772L968.0000443892045 240.99997780539772L 975,240.99997780539772Q 981.9999556107955,240.99997780539772 981.9999556107955,247.99993341619322L 981.9999556107955,353.00004438920456Q 981.9999556107955,360 988.999911221591,360L995.9998668323864 360L1015.9998668323864 360" fill="none" class="workflow-canvas__edge-path" style="stroke: var(--ui-text-muted); stroke-dasharray: 3, 7; stroke-linecap: round; stroke-width: 1.25; opacity: 0.55;" />
+                              <path d="M948.0000443892045 240.99997780539772L968.0000443892045 240.99997780539772L 975,240.99997780539772Q 981.9999556107955,240.99997780539772 981.9999556107955,247.99993341619322L 981.9999556107955,353.00004438920456Q 981.9999556107955,360 988.999911221591,360L995.9998668323864 360L1015.9998668323864 360" fill="none" stroke-opacity="0" stroke-width="20" class="workflow-canvas__edge-interaction" />
+                            </g>
+                          </svg>
+                          <svg style="z-index: 0;" viewBox="0 0 165.00003051757812 82.5" width="100%" height="100%">
+                            <g class="workflow-canvas__edge workflow-canvas__edge-default nopan selectable" role="group" data-id="tests-complete" aria-label="Edge from tests to complete">
+                              <path id="tests-complete" d="M1288.0000443892045,132.99998890269887 C1326.9999556107955,132.99998890269887 1326.9999556107955,230 1365.9998668323863,230" fill="none" class="workflow-canvas__edge-path" style="stroke: var(--ui-border); stroke-width: 1.5;" />
+                              <path d="M1288.0000443892045,132.99998890269887 C1326.9999556107955,132.99998890269887 1326.9999556107955,230 1365.9998668323863,230" fill="none" stroke-opacity="0" stroke-width="20" class="workflow-canvas__edge-interaction" />
+                            </g>
+                          </svg>
+                          <svg style="z-index: 0;" viewBox="0 0 165.00003051757812 82.5" width="100%" height="100%">
+                            <g class="workflow-canvas__edge workflow-canvas__edge-default nopan selectable" role="group" data-id="review-complete" aria-label="Edge from review to complete">
+                              <path id="review-complete" d="M1288.0000443892045,360 C1326.9999556107955,360 1326.9999556107955,230 1365.9998668323863,230" fill="none" class="workflow-canvas__edge-path" style="stroke: var(--ui-border); stroke-width: 1.5;" />
+                              <path d="M1288.0000443892045,360 C1326.9999556107955,360 1326.9999556107955,230 1365.9998668323863,230" fill="none" stroke-opacity="0" stroke-width="20" class="workflow-canvas__edge-interaction" />
+                            </g>
+                          </svg>
+                        </div>
+                        <div class="workflow-canvas__edgelabel-renderer" />
+                        <div class="workflow-canvas__nodes" style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;">
+                          <div class="workflow-canvas__node workflow-canvas__node-workflow selectable" data-id="context" role="group" style="z-index: 0; transform: translate(0px, 130px); pointer-events: all; visibility: visible;">
+                            <div class="text-default border group/node node-container bg-default relative h-auto w-[16.5rem] gap-0 overflow-visible rounded-xl py-0 shadow-[0_8px_24px_color-mix(in_oklab,_var(--ui-info)_7.000000000000001%,_transparent)] transition-[border-color,box-shadow,transform] duration-200 border-default">
+                              <div data-nodeid="context" data-id="1-context-null-source" class="workflow-canvas__handle workflow-canvas__handle-right nodrag nopan size-2.5! border-2! border-(--ui-bg)! bg-(--ui-text-muted)! shadow-[0_0_0_1px_var(--ui-border)]! transition-colors group-hover/node:bg-(--ui-text-highlighted)! source connectable connectablestart connectableend connectionindicator" />
+                              <div class="flex flex-col space-y-1.5 p-6 bg-(--ui-bg-muted)/25 gap-1 rounded-t-xl border-b py-3 pr-20 pl-3.5 border-default">
+                                <div class="flex min-w-0 items-center gap-2.5">
+                                  <span class="grid size-8 shrink-0 place-items-center rounded-lg ring-1 bg-muted text-muted ring-default">
+                                    <UIcon name="i-lucide-file-input" class="size-3.5" />
+                                  </span>
+                                  <div class="min-w-0">
+                                    <p class="text-muted truncate font-mono text-[9px] tracking-[0.08em] uppercase">Context</p>
+                                    <div class="font-semibold tracking-tight text-[13px] truncate">Read project context</div>
+                                  </div>
+                                </div>
+                                <div class="absolute top-3 right-3 flex items-center">
+                                  <span class="inline-flex items-center gap-1 text-[10px] font-medium text-success dark:text-success">
+                                    <UIcon name="i-lucide-circle-check" class="size-3" />
+                                    Completed
+                                  </span>
+                                </div>
+                                <div class="text-muted text-[11px] leading-4 mt-1.5 line-clamp-2">Resolve the requested change against the current repository.</div>
+                              </div>
+                              <div class="p-6 px-3.5 py-3">
+                                <div class="bg-(--ui-bg-muted)/35 space-y-1.5 rounded-lg border px-2.5 py-2 border-default">
+                                  <div class="flex min-w-0 items-center gap-2 text-[10px]">
+                                    <UIcon name="i-lucide-square-terminal" class="text-muted size-3 shrink-0" />
+                                    <span class="text-muted shrink-0">Tool</span>
+                                    <span class="min-w-0 truncate font-mono">read</span>
+                                  </div>
+                                  <div class="flex min-w-0 items-center gap-2 text-[10px]">
+                                    <UIcon name="i-lucide-file-code-corner" class="text-muted size-3 shrink-0" />
+                                    <span class="text-muted shrink-0">File</span>
+                                    <span class="min-w-0 truncate font-mono">AGENTS.md</span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="flex items-center p-6 bg-(--ui-bg-muted)/15 min-h-9 rounded-b-xl border-t px-3.5 py-2 justify-between gap-3 border-default">
+                                <div class="flex min-w-0 items-center gap-1.5 text-[10px]">
+                                  <span class="size-1.5 shrink-0 rounded-full bg-success" />
+                                  <span class="text-muted truncate">Codex</span>
+                                </div>
+                                <div class="flex shrink-0 items-center gap-2">
+                                  <span class="text-muted font-mono text-[9px]">100%</span>
+                                  <span class="bg-muted block h-1 w-10 overflow-hidden rounded-full">
+                                    <span class="block h-full rounded-full bg-(--ui-text-highlighted)/65" style="width: 100%;" />
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="workflow-canvas__node workflow-canvas__node-workflow selectable" data-id="map" role="group" style="z-index: 0; transform: translate(340px, 130px); pointer-events: all; visibility: visible;">
+                            <div class="text-default border group/node node-container bg-default relative h-auto w-[16.5rem] gap-0 overflow-visible rounded-xl py-0 shadow-[0_8px_24px_color-mix(in_oklab,_var(--ui-info)_7.000000000000001%,_transparent)] transition-[border-color,box-shadow,transform] duration-200 border-default">
+                              <div data-nodeid="map" data-id="1-map-null-target" class="workflow-canvas__handle workflow-canvas__handle-left nodrag nopan size-2.5! border-2! border-(--ui-bg)! bg-(--ui-text-muted)! shadow-[0_0_0_1px_var(--ui-border)]! transition-colors group-hover/node:bg-(--ui-text-highlighted)! target connectable connectablestart connectableend connectionindicator" />
+                              <div data-nodeid="map" data-id="1-map-null-source" class="workflow-canvas__handle workflow-canvas__handle-right nodrag nopan size-2.5! border-2! border-(--ui-bg)! bg-(--ui-text-muted)! shadow-[0_0_0_1px_var(--ui-border)]! transition-colors group-hover/node:bg-(--ui-text-highlighted)! source connectable connectablestart connectableend connectionindicator" />
+                              <div class="flex flex-col space-y-1.5 p-6 bg-(--ui-bg-muted)/25 gap-1 rounded-t-xl border-b py-3 pr-20 pl-3.5 border-default">
+                                <div class="flex min-w-0 items-center gap-2.5">
+                                  <span class="grid size-8 shrink-0 place-items-center rounded-lg ring-1 bg-muted text-muted ring-default">
+                                    <UIcon name="i-lucide-user-round" class="size-3.5" />
+                                  </span>
+                                  <div class="min-w-0">
+                                    <p class="text-muted truncate font-mono text-[9px] tracking-[0.08em] uppercase">Research</p>
+                                    <div class="font-semibold tracking-tight text-[13px] truncate">Map affected surfaces</div>
+                                  </div>
+                                </div>
+                                <div class="absolute top-3 right-3 flex items-center">
+                                  <span class="inline-flex items-center gap-1 text-[10px] font-medium text-success dark:text-success">
+                                    <UIcon name="i-lucide-circle-check" class="size-3" />
+                                    Completed
+                                  </span>
+                                </div>
+                                <div class="text-muted text-[11px] leading-4 mt-1.5 line-clamp-2">Inspect routes, components, and their nearest design patterns.</div>
+                              </div>
+                              <div class="p-6 px-3.5 py-3">
+                                <div class="bg-(--ui-bg-muted)/35 space-y-1.5 rounded-lg border px-2.5 py-2 border-default">
+                                  <div class="flex min-w-0 items-center gap-2 text-[10px]">
+                                    <UIcon name="i-lucide-square-terminal" class="text-muted size-3 shrink-0" />
+                                    <span class="text-muted shrink-0">Tool</span>
+                                    <span class="min-w-0 truncate font-mono">search</span>
+                                  </div>
+                                  <div class="flex min-w-0 items-center gap-2 text-[10px]">
+                                    <UIcon name="i-lucide-file-code-corner" class="text-muted size-3 shrink-0" />
+                                    <span class="text-muted shrink-0">File</span>
+                                    <span class="min-w-0 truncate font-mono">src/components/ai-chat</span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="flex items-center p-6 bg-(--ui-bg-muted)/15 min-h-9 rounded-b-xl border-t px-3.5 py-2 justify-between gap-3 border-default">
+                                <div class="flex min-w-0 items-center gap-1.5 text-[10px]">
+                                  <span class="size-1.5 shrink-0 rounded-full bg-success" />
+                                  <span class="text-muted truncate">Codex</span>
+                                </div>
+                                <div class="flex shrink-0 items-center gap-2">
+                                  <span class="text-muted font-mono text-[9px]">100%</span>
+                                  <span class="bg-muted block h-1 w-10 overflow-hidden rounded-full">
+                                    <span class="block h-full rounded-full bg-(--ui-text-highlighted)/65" style="width: 100%;" />
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="workflow-canvas__node workflow-canvas__node-workflow selected selectable" data-id="build" role="group" style="z-index: 1000; transform: translate(680px, 130px); pointer-events: all; visibility: visible;">
+                            <div class="text-default border group/node node-container bg-default relative h-auto w-[16.5rem] gap-0 overflow-visible rounded-xl py-0 transition-[border-color,box-shadow,transform] duration-200 ring-(--ui-text-highlighted)/10 ring-4 border-info/45 shadow-[0_10px_32px_color-mix(in_oklab,_var(--ui-info)_14.000000000000002%,_transparent)]">
+                              <div data-nodeid="build" data-id="1-build-null-target" class="workflow-canvas__handle workflow-canvas__handle-left nodrag nopan size-2.5! border-2! border-(--ui-bg)! bg-(--ui-text-muted)! shadow-[0_0_0_1px_var(--ui-border)]! transition-colors group-hover/node:bg-(--ui-text-highlighted)! target connectable connectablestart connectableend connectionindicator" />
+                              <div data-nodeid="build" data-id="1-build-null-source" class="workflow-canvas__handle workflow-canvas__handle-right nodrag nopan size-2.5! border-2! border-(--ui-bg)! bg-(--ui-text-muted)! shadow-[0_0_0_1px_var(--ui-border)]! transition-colors group-hover/node:bg-(--ui-text-highlighted)! source connectable connectablestart connectableend connectionindicator" />
+                              <div class="flex flex-col space-y-1.5 p-6 bg-(--ui-bg-muted)/25 gap-1 rounded-t-xl border-b py-3 pr-20 pl-3.5 border-default">
+                                <div class="flex min-w-0 items-center gap-2.5">
+                                  <span class="grid size-8 shrink-0 place-items-center rounded-lg ring-1 bg-muted text-muted ring-default">
+                                    <UIcon name="i-lucide-braces" class="size-3.5" />
+                                  </span>
+                                  <div class="min-w-0">
+                                    <p class="text-muted truncate font-mono text-[9px] tracking-[0.08em] uppercase">Implementation</p>
+                                    <div class="font-semibold tracking-tight text-[13px] truncate">Build workflow primitives</div>
+                                  </div>
+                                </div>
+                                <div class="absolute top-3 right-3 flex items-center">
+                                  <span class="inline-flex items-center gap-1 text-[10px] font-medium text-info dark:text-info">
+                                    <UIcon name="i-lucide-loader-circle" class="size-3 animate-spin motion-reduce:animate-none" />
+                                    Running
+                                  </span>
+                                </div>
+                                <div class="text-muted text-[11px] leading-4 mt-1.5 line-clamp-2">Compose repository-native canvas, node, edge, and panel blocks.</div>
+                              </div>
+                              <div class="p-6 px-3.5 py-3">
+                                <div class="space-y-1.5 rounded-lg border px-2.5 py-2 border-info/20 bg-info/5">
+                                  <div class="flex min-w-0 items-center gap-2 text-[10px]">
+                                    <UIcon name="i-lucide-square-terminal" class="size-3 shrink-0 text-info" />
+                                    <span class="text-muted shrink-0">Tool</span>
+                                    <span class="min-w-0 truncate font-mono">apply_patch</span>
+                                  </div>
+                                  <div class="flex min-w-0 items-center gap-2 text-[10px]">
+                                    <UIcon name="i-lucide-file-code-corner" class="text-muted size-3 shrink-0" />
+                                    <span class="text-muted shrink-0">File</span>
+                                    <span class="min-w-0 truncate font-mono">src/components/ai-elements/node.tsx</span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="flex items-center p-6 bg-(--ui-bg-muted)/15 min-h-9 rounded-b-xl border-t px-3.5 py-2 justify-between gap-3 border-default">
+                                <div class="flex min-w-0 items-center gap-1.5 text-[10px]">
+                                  <span class="size-1.5 shrink-0 rounded-full bg-info" />
+                                  <span class="text-muted truncate">Codex</span>
+                                </div>
+                                <div class="flex shrink-0 items-center gap-2">
+                                  <span class="text-muted font-mono text-[9px]">58%</span>
+                                  <span class="bg-muted block h-1 w-10 overflow-hidden rounded-full">
+                                    <span class="block h-full rounded-full bg-info" style="width: 58%;" />
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="workflow-canvas__node workflow-canvas__node-workflow selectable" data-id="tests" role="group" style="z-index: 0; transform: translate(1020px, 30px); pointer-events: all; visibility: visible;">
+                            <div class="text-default border group/node node-container bg-default relative h-auto w-[16.5rem] gap-0 overflow-visible rounded-xl py-0 shadow-[0_8px_24px_color-mix(in_oklab,_var(--ui-info)_7.000000000000001%,_transparent)] transition-[border-color,box-shadow,transform] duration-200 border-default">
+                              <div data-nodeid="tests" data-id="1-tests-null-target" class="workflow-canvas__handle workflow-canvas__handle-left nodrag nopan size-2.5! border-2! border-(--ui-bg)! bg-(--ui-text-muted)! shadow-[0_0_0_1px_var(--ui-border)]! transition-colors group-hover/node:bg-(--ui-text-highlighted)! target connectable connectablestart connectableend connectionindicator" />
+                              <div data-nodeid="tests" data-id="1-tests-null-source" class="workflow-canvas__handle workflow-canvas__handle-right nodrag nopan size-2.5! border-2! border-(--ui-bg)! bg-(--ui-text-muted)! shadow-[0_0_0_1px_var(--ui-border)]! transition-colors group-hover/node:bg-(--ui-text-highlighted)! source connectable connectablestart connectableend connectionindicator" />
+                              <div class="flex flex-col space-y-1.5 p-6 bg-(--ui-bg-muted)/25 gap-1 rounded-t-xl border-b py-3 pr-20 pl-3.5 border-default">
+                                <div class="flex min-w-0 items-center gap-2.5">
+                                  <span class="grid size-8 shrink-0 place-items-center rounded-lg ring-1 bg-muted text-muted ring-default">
+                                    <UIcon name="i-lucide-wrench" class="size-3.5" />
+                                  </span>
+                                  <div class="min-w-0">
+                                    <p class="text-muted truncate font-mono text-[9px] tracking-[0.08em] uppercase">Verification</p>
+                                    <div class="font-semibold tracking-tight text-[13px] truncate">Run focused checks</div>
+                                  </div>
+                                </div>
+                                <div class="absolute top-3 right-3 flex items-center">
+                                  <span class="inline-flex items-center gap-1 text-[10px] font-medium text-muted">
+                                    <UIcon name="i-lucide-clock-3" class="size-3" />
+                                    Waiting
+                                  </span>
+                                </div>
+                                <div class="text-muted text-[11px] leading-4 mt-1.5 line-clamp-2">Validate behavior, responsiveness, and typed integrations.</div>
+                              </div>
+                              <div class="p-6 px-3.5 py-3">
+                                <div class="space-y-2">
+                                  <div class="flex min-w-0 items-center gap-2 text-[10px]">
+                                    <span class="relative grid size-3 shrink-0 place-items-center rounded-full border border-(--ui-text-muted)/45 border-default" />
+                                    <span class="min-w-0 truncate text-muted">Lint changed files</span>
+                                  </div>
+                                  <div class="flex min-w-0 items-center gap-2 text-[10px]">
+                                    <span class="relative grid size-3 shrink-0 place-items-center rounded-full border border-(--ui-text-muted)/45 border-default" />
+                                    <span class="min-w-0 truncate text-muted">Exercise interactions</span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="flex items-center p-6 bg-(--ui-bg-muted)/15 min-h-9 rounded-b-xl border-t px-3.5 py-2 justify-between gap-3 border-default">
+                                <div class="flex min-w-0 items-center gap-1.5 text-[10px]">
+                                  <span class="size-1.5 shrink-0 rounded-full bg-(--ui-text-muted)/50" />
+                                  <span class="text-muted truncate">Verification agent</span>
+                                </div>
+                                <div class="flex shrink-0 items-center gap-2">
+                                  <span class="text-muted font-mono text-[9px]">0%</span>
+                                  <span class="bg-muted block h-1 w-10 overflow-hidden rounded-full">
+                                    <span class="block h-full rounded-full bg-(--ui-text-highlighted)/65" style="width: 0%;" />
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="workflow-canvas__node workflow-canvas__node-workflow selectable" data-id="review" role="group" style="z-index: 0; transform: translate(1020px, 260px); pointer-events: all; visibility: visible;">
+                            <div class="text-default border group/node node-container bg-default relative h-auto w-[16.5rem] gap-0 overflow-visible rounded-xl py-0 shadow-[0_8px_24px_color-mix(in_oklab,_var(--ui-info)_7.000000000000001%,_transparent)] transition-[border-color,box-shadow,transform] duration-200 border-default">
+                              <div data-nodeid="review" data-id="1-review-null-target" class="workflow-canvas__handle workflow-canvas__handle-left nodrag nopan size-2.5! border-2! border-(--ui-bg)! bg-(--ui-text-muted)! shadow-[0_0_0_1px_var(--ui-border)]! transition-colors group-hover/node:bg-(--ui-text-highlighted)! target connectable connectablestart connectableend connectionindicator" />
+                              <div data-nodeid="review" data-id="1-review-null-source" class="workflow-canvas__handle workflow-canvas__handle-right nodrag nopan size-2.5! border-2! border-(--ui-bg)! bg-(--ui-text-muted)! shadow-[0_0_0_1px_var(--ui-border)]! transition-colors group-hover/node:bg-(--ui-text-highlighted)! source connectable connectablestart connectableend connectionindicator" />
+                              <div class="flex flex-col space-y-1.5 p-6 bg-(--ui-bg-muted)/25 gap-1 rounded-t-xl border-b py-3 pr-20 pl-3.5 border-default">
+                                <div class="flex min-w-0 items-center gap-2.5">
+                                  <span class="grid size-8 shrink-0 place-items-center rounded-lg ring-1 bg-muted text-muted ring-default">
+                                    <UIcon name="i-lucide-shield-check" class="size-3.5" />
+                                  </span>
+                                  <div class="min-w-0">
+                                    <p class="text-muted truncate font-mono text-[9px] tracking-[0.08em] uppercase">Review</p>
+                                    <div class="font-semibold tracking-tight text-[13px] truncate">Visual quality review</div>
+                                  </div>
+                                </div>
+                                <div class="absolute top-3 right-3 flex items-center">
+                                  <span class="inline-flex items-center gap-1 text-[10px] font-medium text-muted">
+                                    <UIcon name="i-lucide-clock-3" class="size-3" />
+                                    Waiting
+                                  </span>
+                                </div>
+                                <div class="text-muted text-[11px] leading-4 mt-1.5 line-clamp-2">Inspect spacing, edge alignment, themes, and mobile behavior.</div>
+                              </div>
+                              <div class="p-6 px-3.5 py-3">
+                                <p class="text-muted text-[10px] leading-4">Select the node to inspect its configuration and dependencies.</p>
+                              </div>
+                              <div class="flex items-center p-6 bg-(--ui-bg-muted)/15 min-h-9 rounded-b-xl border-t px-3.5 py-2 justify-between gap-3 border-default">
+                                <div class="flex min-w-0 items-center gap-1.5 text-[10px]">
+                                  <span class="size-1.5 shrink-0 rounded-full bg-(--ui-text-muted)/50" />
+                                  <span class="text-muted truncate">Design reviewer</span>
+                                </div>
+                                <div class="flex shrink-0 items-center gap-2">
+                                  <span class="text-muted font-mono text-[9px]">0%</span>
+                                  <span class="bg-muted block h-1 w-10 overflow-hidden rounded-full">
+                                    <span class="block h-full rounded-full bg-(--ui-text-highlighted)/65" style="width: 0%;" />
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="workflow-canvas__node workflow-canvas__node-workflow selectable" data-id="complete" role="group" style="z-index: 0; transform: translate(1370px, 130px); pointer-events: all; visibility: visible;">
+                            <div class="text-default border group/node node-container bg-default relative h-auto w-[16.5rem] gap-0 overflow-visible rounded-xl py-0 shadow-[0_8px_24px_color-mix(in_oklab,_var(--ui-info)_7.000000000000001%,_transparent)] transition-[border-color,box-shadow,transform] duration-200 border-default">
+                              <div data-nodeid="complete" data-id="1-complete-null-target" class="workflow-canvas__handle workflow-canvas__handle-left nodrag nopan size-2.5! border-2! border-(--ui-bg)! bg-(--ui-text-muted)! shadow-[0_0_0_1px_var(--ui-border)]! transition-colors group-hover/node:bg-(--ui-text-highlighted)! target connectable connectablestart connectableend connectionindicator" />
+                              <div class="flex flex-col space-y-1.5 p-6 bg-(--ui-bg-muted)/25 gap-1 rounded-t-xl border-b py-3 pr-20 pl-3.5 border-default">
+                                <div class="flex min-w-0 items-center gap-2.5">
+                                  <span class="grid size-8 shrink-0 place-items-center rounded-lg ring-1 bg-muted text-muted ring-default">
+                                    <UIcon name="i-lucide-lock-keyhole" class="size-3.5" />
+                                  </span>
+                                  <div class="min-w-0">
+                                    <p class="text-muted truncate font-mono text-[9px] tracking-[0.08em] uppercase">Output</p>
+                                    <div class="font-semibold tracking-tight text-[13px] truncate">Publish evidence</div>
+                                  </div>
+                                </div>
+                                <div class="absolute top-3 right-3 flex items-center">
+                                  <span class="inline-flex items-center gap-1 text-[10px] font-medium text-muted">
+                                    <UIcon name="i-lucide-clock-3" class="size-3" />
+                                    Waiting
+                                  </span>
+                                </div>
+                                <div class="text-muted text-[11px] leading-4 mt-1.5 line-clamp-2">Summarize changes and attach validation evidence to the run.</div>
+                              </div>
+                              <div class="p-6 px-3.5 py-3">
+                                <p class="text-muted text-[10px] leading-4">Select the node to inspect its configuration and dependencies.</p>
+                              </div>
+                              <div class="flex items-center p-6 bg-(--ui-bg-muted)/15 min-h-9 rounded-b-xl border-t px-3.5 py-2 justify-between gap-3 border-default">
+                                <div class="flex min-w-0 items-center gap-1.5 text-[10px]">
+                                  <span class="size-1.5 shrink-0 rounded-full bg-(--ui-text-muted)/50" />
+                                  <span class="text-muted truncate">Release owner</span>
+                                </div>
+                                <div class="flex shrink-0 items-center gap-2">
+                                  <span class="text-muted font-mono text-[9px]">0%</span>
+                                  <span class="bg-muted block h-1 w-10 overflow-hidden rounded-full">
+                                    <span class="block h-full rounded-full bg-(--ui-text-highlighted)/65" style="width: 0%;" />
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="workflow-canvas__viewport-portal" />
+                      </div>
+                    </div>
+                  </div>
+                  <svg class="workflow-canvas__background" style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px; --xy-background-pattern-color-props: color-mix(in oklab, var(--ui-text-muted) 32%, transparent);" width="100%" height="100%">
+                    <pattern id="pattern-1" x="-7.3500000000000085" y="5.249999999999975" width="8.8" height="8.8" patternUnits="userSpaceOnUse" patternTransform="translate(-4.4,-4.4)">
+                      <circle cx="0.41250000000000003" cy="0.41250000000000003" r="0.41250000000000003" class="workflow-canvas__background-pattern dots" />
+                    </pattern>
+                    <rect x="0" y="0" width="100%" height="100%" fill="url(#pattern-1)" />
+                  </svg>
+                  <div class="workflow-canvas__panel workflow-canvas__controls vertical bg-default! m-3! gap-0.5 overflow-hidden rounded-xl! border p-1 shadow-lg! [&amp;&gt;button]:text-muted! [&amp;&gt;button]:hover:bg-muted! [&amp;&gt;button]:hover:text-highlighted! [&amp;&gt;button]:size-8! [&amp;&gt;button]:rounded-lg! [&amp;&gt;button]:border-0! [&amp;&gt;button]:bg-transparent! bottom left border-default" aria-label="Control Panel">
+                    <UButton color="neutral" variant="ghost" class="workflow-canvas__controls-button workflow-canvas__controls-zoomin" title="Zoom In" aria-label="Zoom In" type="button" @click="zoomCanvas(1, 1.15)">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="100%" height="100%">
+                        <path d="M32 18.133H18.133V32h-4.266V18.133H0v-4.266h13.867V0h4.266v13.867H32z" />
+                      </svg>
+                    </UButton>
+                    <UButton color="neutral" variant="ghost" class="workflow-canvas__controls-button workflow-canvas__controls-zoomout" title="Zoom Out" aria-label="Zoom Out" type="button" @click="zoomCanvas(1, 1 / 1.15)">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 5" width="100%" height="100%">
+                        <path d="M0 0h32v4.2H0z" />
+                      </svg>
+                    </UButton>
+                    <UButton color="neutral" variant="ghost" class="workflow-canvas__controls-button workflow-canvas__controls-fitview" title="Fit View" aria-label="Fit View" type="button" @click="fitCanvas(1)">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 30" width="100%" height="100%">
+                        <path d="M3.692 4.63c0-.53.4-.938.939-.938h5.215V0H4.708C2.13 0 0 2.054 0 4.63v5.216h3.692V4.631zM27.354 0h-5.2v3.692h5.17c.53 0 .984.4.984.939v5.215H32V4.631A4.624 4.624 0 0027.354 0zm.954 24.83c0 .532-.4.94-.939.94h-5.215v3.768h5.215c2.577 0 4.631-2.13 4.631-4.707v-5.139h-3.692v5.139zm-23.677.94c-.531 0-.939-.4-.939-.94v-5.138H0v5.139c0 2.577 2.13 4.707 4.708 4.707h5.138V25.77H4.631z" />
+                      </svg>
+                    </UButton>
+                  </div>
+                  <div id="react-flow__node-desc-1" style="display: none;">Press enter or space to select a node. You can then use the arrow keys to move the node around. Press delete to remove it and escape to cancel.</div>
+                  <div id="react-flow__edge-desc-1" style="display: none;">Press enter or space to select an edge. You can then press delete to remove it or escape to cancel.</div>
+                  <div id="react-flow__aria-live-1" style="position: absolute; width: 1px; height: 1px; margin: -1px; border: 0px; padding: 0px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); clip-path: inset(100%);" />
+                </div>
+                <div class="bg-(--ui-bg)/90 absolute right-3 bottom-3 z-10 hidden rounded-lg border px-1 shadow-sm backdrop-blur lg:block border-default">
+                  <div class="flex items-center gap-3 px-2 py-1 text-[10px]">
+                    <span class="text-muted flex items-center gap-1.5 capitalize">
+                      <span class="size-1.5 rounded-full bg-info" />
+                      running
+                    </span>
+                    <span class="text-muted flex items-center gap-1.5 capitalize">
+                      <span class="size-1.5 rounded-full bg-success" />
+                      completed
+                    </span>
+                    <span class="text-muted flex items-center gap-1.5 capitalize">
+                      <span class="size-1.5 rounded-full bg-(--ui-text-muted)/50" />
+                      waiting
+                    </span>
+                    <span class="text-muted flex items-center gap-1.5 capitalize">
+                      <span class="size-1.5 rounded-full bg-warning" />
+                      blocked
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="bg-default z-20 min-h-0 w-80 shrink-0 overflow-hidden border-l max-[759px]:absolute max-[759px]:inset-3 max-[759px]:w-auto max-[759px]:rounded-xl max-[759px]:border max-[759px]:shadow-xl max-[759px]:hidden border-default">
+                <aside class="bg-default flex size-full min-h-0 flex-col">
+                  <div class="flex h-12 shrink-0 items-center gap-2.5 border-b px-3 border-default">
+                    <div class="min-w-0 flex-1">
+                      <p class="text-xs font-medium">Live trace</p>
+                      <p class="text-muted text-[9px]">Following active step</p>
+                    </div>
+                    <UButton color="neutral" variant="soft" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-elevated hover:text-default size-7" aria-label="Close live trace" type="button" @click="openAction(&quot;Close live trace&quot;)">
+                      <UIcon name="i-lucide-x" class="size-4" />
+                    </UButton>
+                  </div>
+                  <div class="min-h-0 flex-1 overflow-y-auto">
+                    <section class="border-b p-3 border-default">
+                      <div class="flex items-end justify-between gap-3">
+                        <div>
+                          <p class="text-muted text-[9px] tracking-wide uppercase">Run progress</p>
+                          <p class="mt-1 text-sm font-semibold tabular-nums text-highlighted">2 of 6 steps</p>
+                        </div>
+                        <span class="text-muted font-mono text-[10px]">33%</span>
+                      </div>
+                      <div class="bg-muted mt-2 h-1.5 overflow-hidden rounded-full">
+                        <span class="bg-(--ui-text-highlighted) block h-full rounded-full transition-[width]" style="width: 33%;" />
+                      </div>
+                    </section>
+                    <section class="border-b p-3 border-default">
+                      <div class="flex items-center justify-between gap-2">
+                        <p class="text-muted text-[9px] tracking-wide uppercase">Now executing</p>
+                        <span class="text-muted font-mono text-[9px] tabular-nums">00:18</span>
+                      </div>
+                      <p class="mt-2 text-xs font-medium">Build workflow primitives</p>
+                      <p class="text-muted mt-1 text-[10px] leading-4">Compose repository-native canvas, node, edge, and panel blocks.</p>
+                      <div class="mt-3 overflow-hidden rounded-lg border text-[10px] border-default">
+                        <div class="flex items-center gap-2 border-b px-2.5 py-2 last:border-0 border-default">
+                          <UIcon name="i-lucide-wrench" class="text-muted size-3" />
+                          <span class="text-muted">Tool</span>
+                          <span class="ml-auto truncate font-mono">apply_patch</span>
+                        </div>
+                        <div class="flex items-center gap-2 px-2.5 py-2">
+                          <UIcon name="i-lucide-file-code-corner" class="text-muted size-3" />
+                          <span class="text-muted">File</span>
+                          <span class="ml-auto min-w-0 truncate font-mono">src/components/ai-elements/node.tsx</span>
+                        </div>
+                      </div>
+                    </section>
+                    <section class="p-3">
+                      <p class="text-muted mb-2 text-[9px] tracking-wide uppercase">Activity</p>
+                      <div class="space-y-1">
+                        <div class="flex w-full items-center gap-2 rounded-lg px-2 py-2 text-left">
+                          <span class="grid size-4 shrink-0 place-items-center rounded-full border border-success bg-success">
+                            <UIcon name="i-lucide-check" class="size-2.5 text-inverted" />
+                          </span>
+                          <span class="min-w-0 flex-1 truncate text-[10px]">Read project context</span>
+                          <span class="text-muted font-mono text-[9px]">1.2s</span>
+                        </div>
+                        <div class="flex w-full items-center gap-2 rounded-lg px-2 py-2 text-left">
+                          <span class="grid size-4 shrink-0 place-items-center rounded-full border border-success bg-success">
+                            <UIcon name="i-lucide-check" class="size-2.5 text-inverted" />
+                          </span>
+                          <span class="min-w-0 flex-1 truncate text-[10px]">Map affected surfaces</span>
+                          <span class="text-muted font-mono text-[9px]">3.8s</span>
+                        </div>
+                        <div class="flex w-full items-center gap-2 rounded-lg px-2 py-2 text-left bg-muted">
+                          <span class="grid size-4 shrink-0 place-items-center rounded-full border border-info">
+                            <span class="size-1 animate-pulse rounded-full bg-info" />
+                          </span>
+                          <span class="min-w-0 flex-1 truncate text-[10px]">Build workflow primitives</span>
+                          <span class="text-muted font-mono text-[9px]">00:18</span>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </aside>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+    <!-- Page-local action dialog -->
+    <UModal v-model:open="actionDialog.open" :title="actionDialog.title" description="Update the details below.">
+      <template #body>
+        <p v-if="actionDialog.mode === 'delete'" class="text-sm text-muted">Are you sure you want to remove this item?</p>
+        <div v-else class="space-y-4">
+          <UFormField label="Name"><UInput v-model="actionDialog.name" class="w-full" /></UFormField>
+          <UFormField label="Description"><UTextarea v-model="actionDialog.description" class="w-full" /></UFormField>
+        </div>
+      </template>
+      <template #footer>
+        <div class="flex w-full justify-end gap-2">
+          <UButton color="neutral" variant="outline" @click="actionDialog.open = false">Cancel</UButton>
+          <UButton :color="actionDialog.mode === 'delete' ? 'error' : 'primary'" @click="confirmAction">{{ actionDialog.mode === 'delete' ? 'Remove' : 'Save changes' }}</UButton>
+        </div>
+      </template>
+    </UModal>
+  </div>
+</template>
+
+<style scoped>
+
+.page-content { min-height: 0; color: var(--ui-text); --chart-1: var(--ui-primary); --chart-2: var(--ui-text-highlighted); --chart-3: var(--ui-text-muted); --chart-4: var(--ui-text-dimmed); --chart-5: var(--ui-border-accented); --chart-6: var(--ui-border); --radius: var(--ui-radius); }
+.page-content > div { min-height: 100%; }
+.page-content *, .page-content ::before, .page-content ::after { border-color: var(--ui-border); }
+.page-content [data-slot="scroll-area-viewport"] { overflow: auto !important; scrollbar-width: thin; }
+.page-content [data-slot="scroll-area-scrollbar"] { display: none; }
+.page-content pre { overflow: auto; }
+.page-content img { object-fit: cover; }
+
+.workflow-canvas { position: relative; overflow: hidden; touch-action: none; }
+.workflow-canvas__renderer, .workflow-canvas__pane, .workflow-canvas__container { position: absolute; inset: 0; }
+.workflow-canvas__viewport { transform-origin: 0 0; z-index: 2; }
+.workflow-canvas__nodes, .workflow-canvas__edges, .workflow-canvas__edgelabel-renderer { position: absolute; inset: 0; pointer-events: none; }
+.workflow-canvas__node { position: absolute; user-select: none; pointer-events: auto; cursor: grab; }
+.workflow-canvas__node:active { cursor: grabbing; }
+.workflow-canvas__edges svg { position: absolute; width: 100%; height: 100%; overflow: visible; }
+.workflow-canvas__edge-path { fill: none; stroke: var(--ui-text-muted); stroke-width: 1.5; }
+.workflow-canvas__edge-interaction { fill: none; stroke-opacity: 0; }
+.workflow-canvas__background-pattern { fill: var(--ui-border-accented); }
+.workflow-canvas__handle { position: absolute; width: 6px; height: 6px; border-radius: 100%; background: var(--ui-text-muted); }
+.workflow-canvas__handle-left { left: 0; top: 50%; transform: translate(-50%, -50%); }
+.workflow-canvas__handle-right { right: 0; top: 50%; transform: translate(50%, -50%); }
+.workflow-canvas__handle-top { top: 0; left: 50%; transform: translate(-50%, -50%); }
+.workflow-canvas__handle-bottom { bottom: 0; left: 50%; transform: translate(-50%, 50%); }
+.workflow-canvas__panel { position: absolute; z-index: 5; margin: 12px; }
+.workflow-canvas__panel.top { top: 0; }
+.workflow-canvas__panel.bottom { bottom: 0; }
+.workflow-canvas__panel.left { left: 0; }
+.workflow-canvas__panel.right { right: 0; }
+.workflow-canvas__controls { display: flex; flex-direction: column; }
+.workflow-canvas__controls button { padding: 8px; }
+.workflow-canvas__controls svg { width: 14px; height: 14px; }
+.workflow-canvas__attribution { font-size: 10px; opacity: 0.6; }
+</style>

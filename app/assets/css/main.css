@@ -1,94 +1,26 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
 
-/* Include the portable block layouts in Tailwind's build-time class detection. */
-@source "../../data/reference";
+/* Migration inputs are not runtime styles. Actual classes live in app/pages. */
+@source not "../../data/reference";
+@source not "../../../scripts";
 
-@font-face { font-family: 'Inter'; font-style: normal; font-weight: 100 900; font-display: swap; src: url('/reference/inter-latin.woff2') format('woff2'); }
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/reference/inter-latin.woff2') format('woff2');
+}
 
-@theme inline {
-  --color-background: var(--ui-bg);
-  --color-foreground: var(--ui-text);
-  --color-card: var(--ui-bg);
-  --color-card-foreground: var(--ui-text);
-  --color-popover: var(--ui-bg);
-  --color-popover-foreground: var(--ui-text);
-  --color-muted: var(--ui-bg-muted);
-  --color-muted-foreground: var(--ui-text-muted);
-  --color-secondary: var(--ui-bg-elevated);
-  --color-secondary-foreground: var(--ui-text);
-  --color-accent: var(--ui-bg-elevated);
-  --color-accent-foreground: var(--ui-text);
-  --color-destructive: var(--ui-error);
-  --color-destructive-foreground: white;
-  --color-primary-foreground: var(--ui-bg);
-  --color-border: var(--ui-border);
-  --color-input: var(--ui-border);
-  --color-ring: var(--ui-border-accented);
-  --color-sidebar: var(--ui-bg-muted);
-  --color-sidebar-foreground: var(--ui-text);
-  --color-sidebar-accent: var(--ui-bg-elevated);
-  --color-sidebar-accent-foreground: var(--ui-text);
-  --color-sidebar-border: var(--ui-border);
+@theme {
   --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
 }
 
-:root {
-  --ui-primary: #171717;
-  --ui-text: #0a0a0a;
-  --background: var(--ui-bg);
-  --foreground: var(--ui-text);
-  --border: var(--ui-border);
-  --muted: var(--ui-bg-muted);
-  --muted-foreground: var(--ui-text-muted);
-  --primary: var(--ui-primary);
-  --primary-foreground: var(--ui-bg);
-  --radius: 0.625rem;
-  --chart-1: #171717;
-  --chart-2: #525252;
-  --chart-3: #737373;
-  --chart-4: #a3a3a3;
-  --chart-5: #d4d4d4;
-  --chart-6: #e5e5e5;
-}
-.dark { --ui-primary: #fafafa; --ui-text: #fafafa; --chart-1: #fafafa; --chart-2: #d4d4d4; --chart-3: #a3a3a3; --chart-4: #737373; --chart-5: #525252; }
+/* Colors, surfaces, contrast and light/dark values are provided by Nuxt UI. */
 body { font-size: 14px; }
 button, a, [role="button"] { -webkit-tap-highlight-color: transparent; }
-.block-page { color: var(--ui-text); }
-.block-page *, .block-page ::before, .block-page ::after { border-color: var(--ui-border); }
-.block-page > div { min-height: 100%; }
-.block-page [data-slot="scroll-area-viewport"] { overflow: auto !important; scrollbar-width: thin; }
-.block-page [data-slot="scroll-area-scrollbar"] { display: none; }
-.block-chart { min-width: 0; }
-.block-chart .recharts-wrapper { width: 100% !important; }
-.block-chart .recharts-responsive-container > div { width: 100% !important; height: 100% !important; }
-.block-chart svg.recharts-surface { width: 100%; overflow: visible; }
-.recharts-cartesian-axis-tick text { fill: var(--ui-text-muted); font-size: 11px; }
-.recharts-cartesian-grid line { stroke: var(--ui-border); }
-.block-page pre { overflow: auto; }
-.block-page img { object-fit: cover; }
-.block-canvas { position: relative; overflow: hidden; touch-action: none; }
-.block-canvas .react-flow__renderer, .block-canvas .react-flow__pane, .block-canvas .react-flow__container { position: absolute; inset: 0; }
-.block-canvas .react-flow__viewport { transform-origin: 0 0; z-index: 2; }
-.block-canvas .react-flow__nodes, .block-canvas .react-flow__edges, .block-canvas .react-flow__edgelabel-renderer { position: absolute; inset: 0; pointer-events: none; }
-.block-canvas .react-flow__node { position: absolute; user-select: none; pointer-events: auto; cursor: grab; }
-.block-canvas .react-flow__node:active { cursor: grabbing; }
-.block-canvas .react-flow__edges svg { position: absolute; width: 100%; height: 100%; overflow: visible; }
-.block-canvas .react-flow__edge-path { fill: none; stroke: var(--ui-text-muted); stroke-width: 1.5; }
-.block-canvas .react-flow__edge-interaction { fill: none; stroke-opacity: 0; }
-.block-canvas .react-flow__background-pattern { fill: var(--ui-border-accented); }
-.block-canvas .react-flow__handle { position: absolute; width: 6px; height: 6px; border-radius: 100%; background: var(--ui-text-muted); }
-.block-canvas .react-flow__handle-left { left: 0; top: 50%; transform: translate(-50%, -50%); }
-.block-canvas .react-flow__handle-right { right: 0; top: 50%; transform: translate(50%, -50%); }
-.block-canvas .react-flow__handle-top { top: 0; left: 50%; transform: translate(-50%, -50%); }
-.block-canvas .react-flow__handle-bottom { bottom: 0; left: 50%; transform: translate(-50%, 50%); }
-.block-canvas .react-flow__panel { position: absolute; z-index: 5; margin: 12px; }
-.block-canvas .react-flow__panel.top { top: 0; }
-.block-canvas .react-flow__panel.bottom { bottom: 0; }
-.block-canvas .react-flow__panel.left { left: 0; }
-.block-canvas .react-flow__panel.right { right: 0; }
-.block-canvas .react-flow__controls { display: flex; flex-direction: column; }
-.block-canvas .react-flow__controls button { padding: 8px; }
-.block-canvas .react-flow__controls svg { width: 14px; height: 14px; }
-.block-canvas .react-flow__attribution { font-size: 10px; opacity: 0.6; }
-@media print { .admin-shell > aside, .admin-shell header { display: none; } .admin-shell { height: auto; overflow: visible; } }
+@media print {
+  .admin-shell > aside, .admin-shell > div > header { display: none; }
+  .admin-shell { height: auto; overflow: visible; }
+}

@@ -1,13 +1,8 @@
-# Blocks Admin — Nuxt UI
+# Blocks Admin — páginas Nuxt UI
 
-Conversión de [Shadcnblocks Admin](https://shadcnblocks-admin.vercel.app) a **Nuxt 4 + Nuxt UI 4**.
+La aplicación contiene **261 páginas completas**, escritas directamente con **Nuxt 4 y Nuxt UI 4**, y conserva las **219 entradas del menú original** de [Shadcnblocks Admin](https://shadcnblocks-admin.vercel.app).
 
-- **219 entradas de navegación** con los nombres, grupos, variantes y URLs originales.
-- **261 páginas** incluyendo detalles de productos, tareas y enlaces internos adicionales.
-- Navegación adaptable con **`USidebar`**, `UNavigationMenu` y búsqueda global con `⌘/Ctrl + K`.
-- Bloques reutilizables para dashboards, listas, formularios, detalles, Kanban, calendarios, chat, workflows, ajustes y autenticación.
-- Tema claro/oscuro, imágenes y documentos locales, iconos Lucide locales y tipografía Inter.
-- Carga diferida del contenido de cada página.
+Cada ruta tiene su propio archivo `.vue` dentro de **`app/pages/`** (el directorio de páginas de Nuxt 4). La plantilla, los datos de ejemplo, el estado, las acciones y los estilos específicos están en ese archivo. No se utilizan componentes de bloques, renderizadores genéricos ni contenido JSON en tiempo de ejecución.
 
 ## Ejecutar
 
@@ -16,76 +11,68 @@ pnpm install
 pnpm dev
 ```
 
-Abrir **http://localhost:3020**. La raíz redirige a `/ecommerce/dashboard-1`.
+Abrir **http://localhost:3020**.
 
 ```sh
 pnpm typecheck
-pnpm check:blocks
+pnpm check:pages
 pnpm build
 pnpm preview --port 3020
 ```
 
-Con el servidor en funcionamiento se pueden comprobar todas las páginas:
+Con un servidor en ejecución se pueden comprobar las 261 rutas:
 
 ```sh
-node scripts/verify-blocks.mjs --http
+node scripts/verify-pages.mjs --http
 ```
 
-`BLOCKS_BASE_URL` permite indicar otra URL para esta comprobación.
+`BLOCKS_BASE_URL` permite indicar otra URL.
 
-## Estructura
+## Dónde encontrar el código
 
 ```text
-app/
-  components/
-    app/                    # USidebar, cabecera, búsqueda y diálogos
-    blocks/                 # Componentes Nuxt UI y bloques de composición
-  composables/
-    usePageBlocks.ts         # Carga diferida de una página
-    useBlockCatalog.ts       # Selección de bloques individuales
-    useBlockActions.ts       # Acciones e interacción de demostración
-  data/
-    reference/              # Contenido y layouts portables de cada página
-    pages.json              # Inventario de las 261 páginas
-  pages/[...slug].vue         # Resolución de las URLs originales
-public/reference/            # Recursos locales de los bloques
-docs/BLOCKS.md               # Guía de reutilización
+app/pages/
+  ecommerce/
+    dashboard-1.vue
+    product-list-1.vue
+    add-product.vue
+    edit-product/radiance-ritual-set.vue
+  project-management/
+    issue-kanban-1.vue
+    issue-calendar-2.vue
+  payment-processor/
+    create-invoice-3.vue
+  ai-chat/
+    composer-1.vue
+    workflow-1.vue
+  todo/index.vue
+  original/settings/index.vue
+  developers/events-&-logs.vue
+  login.vue
 ```
 
-## Reutilizar un bloque
+- **[docs/PAGES.md](docs/PAGES.md)**: índice de las 261 rutas, con enlaces a sus archivos y número de tarjetas, tablas, gráficos y lienzos.
+- `app/layouts/default.vue`: navegación común escrita directamente con `USidebar`, `UNavigationMenu`, `UCommandPalette` y otros componentes Nuxt UI.
+- `app/app.config.ts`: paletas semánticas y configuración global de componentes.
+- `app/assets/css/main.css`: imports oficiales, tipografía local y reglas globales mínimas.
 
-Los componentes se autoimportan siguiendo las convenciones de Nuxt:
+## Copiar una página o un bloque
 
-```vue
-<template>
-  <BlocksDashboard domain="ecommerce" :variant="1" />
-  <BlocksDataList domain="ecommerce" entity="product" :variant="2" />
-  <BlocksProductForm :variant="2" />
-  <BlocksKanban :variant="1" />
-</template>
-```
+1. Busca la ruta en `app/pages/` o en [docs/PAGES.md](docs/PAGES.md).
+2. Copia el archivo Vue completo o la sección que necesites de su `<template>`.
+3. Incluye las variables y funciones locales utilizadas por esa sección, y sus estilos `<style scoped>` si los necesita.
+4. Copia los recursos de `public/reference/` utilizados por las imágenes o documentos.
 
-También se puede reutilizar cualquier página o un bloque concreto sin incluir la navegación:
+Las secciones incluyen comentarios `Card`, `Table`, `Chart`, `Form`, `Chat composer` y `Workflow canvas` para localizarlas rápidamente.
 
-```vue
-<script setup lang="ts">
-const { blocks } = await useBlockCatalog('/ecommerce/dashboard-1')
-const revenue = blocks.find(block => blockText(block).includes('Total Revenue'))
-</script>
+## Temas Nuxt UI
 
-<template>
-  <BlocksRenderer v-if="revenue" :node="revenue" />
-</template>
-```
+Los colores se configuran en `app/app.config.ts` mediante `ui.colors`: `primary`, `secondary`, `neutral`, `success`, `info`, `warning` y `error`.
 
-Ver [docs/BLOCKS.md](docs/BLOCKS.md) para las propiedades, variantes y formas de personalización.
+Las páginas utilizan componentes Nuxt UI, utilidades semánticas (`bg-default`, `text-muted`, `text-highlighted`, `border-default`, etc.) y variables públicas `--ui-*`. No se fijan `--ui-primary`, `--ui-text` ni los colores de los modos claro/oscuro. Los gráficos y los lienzos usan estos mismos tokens.
 
-## Datos e interacciones
+Los cambios de paleta y el modo claro/oscuro se aplican sin modificar las páginas. Consulta [docs/THEMING.md](docs/THEMING.md).
 
-Los contenidos de referencia están separados de los componentes en un esquema `BlockNode` tipado. `BlocksRenderer` convierte sus elementos en componentes Nuxt UI: `UCard`, `UTable`, `UForm`, `UInput`, `UTextarea`, `USelect`, `UCheckbox`, `USwitch`, `UTabs`, `UAvatar`, `UBadge`, `UChatPrompt` y otros.
+Los contenidos y acciones de negocio utilizan datos de demostración. Las APIs de autenticación, pagos e IA se conectan en las funciones locales de cada página.
 
-Las tablas permiten buscar, ordenar y seleccionar filas; los desplegables y pestañas conservan las opciones capturadas; los campos de formularios persisten localmente; se incluyen exportación CSV y composición de mensajes. Los gráficos mantienen la geometría SVG de la referencia.
-
-Esta aplicación es una **biblioteca de interfaces con datos de demostración**. Las acciones de negocio, la autenticación, las respuestas de IA y los canvases utilizan datos locales y necesitan conectarse a las APIs de la aplicación que reutilice los bloques. El componente `BlocksComposer` emite `submit` para integrar un proveedor de IA.
-
-Los scripts `reference-capture.mjs` y `prepare-blocks.mjs` son herramientas de importación de desarrollo; no son necesarios para ejecutar ni desplegar la aplicación.
+Los archivos de `app/data/reference/` y los scripts de migración se conservan únicamente como entradas históricas de la conversión. La aplicación no los importa ni los utiliza para renderizar las páginas.
