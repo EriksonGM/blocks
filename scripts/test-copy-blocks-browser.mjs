@@ -210,7 +210,7 @@ try {
       await waitFor('document.querySelector("[data-paste-test]").textContent.includes("Your message has been added")')
       assert.equal(await evaluate('document.querySelector("textarea").value'), '')
     }
-    if (block.id === 'unauthorized-screen') {
+    if (['unauthorized-screen', 'forbidden-screen', 'not-found-screen'].includes(block.id)) {
       const destination = await evaluate(`document.querySelector('a').getAttribute('href')`)
       assert.equal(destination, '/', 'Portable home link')
       await navigate(pasteBase + '/', 'main')
