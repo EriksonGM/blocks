@@ -3,12 +3,17 @@ import { existsSync } from 'node:fs'
 import { mkdir, mkdtemp, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 import { spawn } from 'node:child_process'
-import { buildPageBlocks, pilotPages } from './block-catalog.mjs'
+import { buildPageBlocks, catalogPages, pilotPages } from './block-catalog.mjs'
 
 // Dependency-free Chromium smoke test using its DevTools protocol and real clipboard.
 // Run the catalogue and `pnpm preview:copy-blocks` before this script.
 const base = process.env.BLOCKS_BASE_URL || 'http://127.0.0.1:3030'
 const pasteBase = process.env.BLOCKS_PASTE_URL || 'http://127.0.0.1:3031'
+const selectedPath = process.argv.find(argument => argument.startsWith('--page='))?.slice(7)
+const selectedPages = selectedPath ? catalogPages.filter(page => page.path === selectedPath) : process.argv.includes('--all') ? catalogPages : pilotPages
+assert.ok(selectedPages.length, `No registered pages: ${selectedPath || 'pilot'}`)
+const exports = (await Promise.all(selectedPages.map(page => buildPageBlocks(page)))).flat()
+const lastBlock = exports.at(-1)
 const chrome = process.env.CHROME_PATH || [
   'C:/Program Files/Google/Chrome/Application/chrome.exe',
   'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',
@@ -121,8 +126,7 @@ try {
   await send('Runtime.enable')
   await send('Browser.grantPermissions', { origin: new URL(base).origin, permissions: ['clipboardReadWrite', 'clipboardSanitizedWrite'] }, null)
   await send('Emulation.setDeviceMetricsOverride', { width: 1440, height: 1000, deviceScaleFactor: 1, mobile: false })
-  const exports = (await Promise.all(pilotPages.map(page => buildPageBlocks(page)))).flat()
-  for (const page of pilotPages) {
+  for (const page of selectedPages) {
     await navigate(base + page.path, '[data-copy-block]')
     if (previousClipboard === undefined) previousClipboard = await evaluate('navigator.clipboard.readText()')
     const hoverPoint = await evaluate(`(() => { const r = document.querySelector('[data-copy-block]').getBoundingClientRect(); return { x: r.left + 16, y: r.top + 16 }; })()`)
@@ -140,16 +144,22 @@ try {
     }
     assert.deepEqual(errors, [], `${page.path}: browser errors`)
     await screenshot(page.key + '.png')
+    const lightColor = await evaluate(`getComputedStyle(document.querySelector('[data-page]')).color`)
+    await evaluate(`document.documentElement.classList.add('dark')`)
+    await evaluate('new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)))')
+    assert.notEqual(await evaluate(`getComputedStyle(document.querySelector('[data-page]')).color`), lightColor, `${page.path}: dark theme must update semantic text`)
+    await screenshot(page.key + '-dark.png')
+    await evaluate(`document.documentElement.classList.remove('dark')`)
   }
   await click('button[aria-label="Ver código del bloque"]')
   await waitFor('document.querySelector("[role=dialog] pre code")')
-  assert.equal(await evaluate('document.querySelector("[role=dialog] pre code").textContent'), exports.find(block => block.id === 'chat-composer').component)
+  assert.equal(await evaluate('document.querySelector("[role=dialog] pre code").textContent'), lastBlock.component)
   await screenshot('code.png')
   await click('button[aria-pressed="false"]')
   await click('button[aria-label="Copiar código mostrado"]')
-  await waitFor(`document.querySelector('[role="dialog"] pre code')?.textContent === ${JSON.stringify(exports.find(block => block.id === 'chat-composer').template)}`)
-  await waitFor(`(await navigator.clipboard.readText()).replaceAll('\\r\\n', '\\n') === ${JSON.stringify(exports.find(block => block.id === 'chat-composer').template)}`)
-  assert.equal(normalize(await evaluate('navigator.clipboard.readText()')), normalize(exports.find(block => block.id === 'chat-composer').template), 'Template clipboard contents')
+  await waitFor(`document.querySelector('[role="dialog"] pre code')?.textContent === ${JSON.stringify(lastBlock.template)}`)
+  await waitFor(`(await navigator.clipboard.readText()).replaceAll('\\r\\n', '\\n') === ${JSON.stringify(lastBlock.template)}`)
+  assert.equal(normalize(await evaluate('navigator.clipboard.readText()')), normalize(lastBlock.template), 'Template clipboard contents')
   result.viewerAndTemplate = true
   for (let i = 0; i < 2; i++) {
     await send('Input.dispatchKeyEvent', { type: 'keyDown', key: 'Escape', code: 'Escape', windowsVirtualKeyCode: 27 })
@@ -159,25 +169,29 @@ try {
   result.keyboardEscape = true
 
   // Clipboard rejection must open the manual-selection fallback, not report success.
-  await navigate(base + '/ai-chat/composer-1', '[data-copy-block]')
+  await navigate(base + lastBlock.page, '[data-copy-block]')
   await evaluate(`Object.defineProperty(navigator, 'clipboard', { configurable: true, value: { writeText: () => Promise.reject(new Error('Denied')) } })`)
-  await selectBlock('chat-composer')
+  await selectBlock(lastBlock.id)
   await click('button[aria-label="Copiar componente completo"]')
   await waitFor('document.querySelector("[role=dialog]")?.textContent.includes("El navegador no permite copiar")')
   await evaluate(`(() => { const b = [...document.querySelectorAll('[role=dialog] button')].find(b => b.textContent.includes('Seleccionar código')); b.click(); })()`)
-  assert.ok(normalize(await evaluate('window.getSelection().toString()')).trimEnd() === normalize(exports.find(block => block.id === 'chat-composer').component).trimEnd(), 'Manual selection must include the complete component')
+  assert.ok(normalize(await evaluate('window.getSelection().toString()')).trimEnd() === normalize(lastBlock.component).trimEnd(), 'Manual selection must include the complete component')
   result.clipboardFallback = true
 
   // Touch selection must fit the viewport and leave native controls usable.
   await send('Emulation.setDeviceMetricsOverride', { width: 390, height: 844, deviceScaleFactor: 1, mobile: true })
   await send('Emulation.setTouchEmulationEnabled', { enabled: true })
-  await navigate(base + '/ai-chat/composer-1', '[data-copy-block]')
-  await tap('button[aria-label="Elegir un bloque para copiar"]')
-  await waitFor('document.querySelector("[role=menuitem]")')
-  await tap('[role="menuitem"]')
-  await waitFor('document.querySelector("[role=toolbar]")')
-  assert.equal(await evaluate(`(() => { const r = document.querySelector('[role=toolbar]').getBoundingClientRect(); return r.left >= 0 && r.right <= window.innerWidth; })()`), true)
-  await screenshot('mobile.png')
+  for (const page of selectedPages) {
+    await navigate(base + page.path, '[data-copy-block]')
+    assert.equal(await evaluate('document.documentElement.scrollWidth <= window.innerWidth'), true, `${page.path}: mobile horizontal overflow`)
+    await tap('button[aria-label="Elegir un bloque para copiar"]')
+    await waitFor('document.querySelector("[role=menuitem]")')
+    await tap('[role="menuitem"]')
+    await waitFor('document.querySelector("[role=toolbar]")')
+    assert.equal(await evaluate(`(() => { const r = document.querySelector('[role=toolbar]').getBoundingClientRect(); return r.left >= 0 && r.right <= window.innerWidth; })()`), true)
+    await screenshot(page.key + '-mobile.png')
+    assert.deepEqual(errors, [], `${page.path}: mobile browser errors`)
+  }
   result.mobileSelector = true
 
   await send('Emulation.setDeviceMetricsOverride', { width: 1440, height: 1000, deviceScaleFactor: 1, mobile: false })
@@ -196,6 +210,15 @@ try {
       await waitFor('document.querySelector("[data-paste-test]").textContent.includes("Your message has been added")')
       assert.equal(await evaluate('document.querySelector("textarea").value'), '')
     }
+    if (block.id === 'unauthorized-screen') {
+      const destination = await evaluate(`document.querySelector('a').getAttribute('href')`)
+      assert.equal(destination, '/', 'Portable home link')
+      await navigate(pasteBase + '/', 'main')
+      await navigate(pasteBase + '/' + block.id, '[data-paste-test]')
+      await click('[data-paste-test] button')
+      await waitFor(`location.pathname === '/'`)
+      result.goBack = true
+    }
     result.pasteTests.push(block.id)
   }
   console.log(JSON.stringify(result, null, 2))
@@ -205,7 +228,7 @@ try {
   throw error
 } finally {
   if (previousClipboard !== undefined) {
-    await navigate(base + '/ai-chat/composer-1', '[data-copy-block]').catch(() => {})
+    await navigate(base + lastBlock.page, '[data-copy-block]').catch(() => {})
     await evaluate(`navigator.clipboard.writeText(${JSON.stringify(previousClipboard)})`).catch(() => {})
   }
   await send('Browser.close', {}, null).catch(() => browser.kill())

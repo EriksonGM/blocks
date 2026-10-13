@@ -1,10 +1,12 @@
-# Piloto: bloques copiables
+# Bloques copiables: piloto y ampliación por página
 
-Disponible solamente en estas tres páginas:
+El piloto inicial está disponible en estas tres páginas:
 
 - `/ecommerce/dashboard-1`: seis tarjetas independientes.
 - `/developers/webhooks`: tabla con búsqueda, ordenación y copia de identificadores.
 - `/ai-chat/composer-1`: compositor con conversación de demostración.
+
+Las páginas adicionales se habilitan individualmente; consulta el [ToDo del README](../README.md#todo-por-página-261-páginas-de-contenido) para conocer el estado de validación y publicación. `/401` añade una pantalla de acceso no autorizado como un componente independiente.
 
 Pasa el cursor sobre un bloque o enfócalo con Tab. Aparecerán el contorno y las acciones **Ver código**, **Copiar** y **Más opciones de copia**. El botón **N bloques copiables** permite elegir un bloque también desde el teclado o una pantalla táctil. Escape oculta las herramientas.
 
@@ -46,3 +48,5 @@ La comprobación compila los ocho SFC exportados y sus plantillas, comprueba ref
 Los scripts históricos de migración **no deben ejecutarse sobre páginas habilitadas para copia**: podrían borrar las marcas y los cambios revisados. `materialize-pages.mjs` se detiene antes de sobrescribirlas. El [ToDo del README](../README.md#todo-por-página-261-páginas-de-contenido) define la cola, criterios de validación y los commits/push por página. Las rutas no marcadas como terminadas todavía no han pasado el proceso completo.
 
 Con el catálogo de producción en el puerto 3030 y la aplicación de pegado en 3031, `pnpm check:copy-browser` comprueba la copia real de los ocho bloques, el visor, la copia de plantilla, la alternativa manual, el selector móvil y el renderizado independiente. En Windows detecta Chrome o Edge; en otros entornos indica su ejecutable mediante `CHROME_PATH`. `BLOCKS_BASE_URL` y `BLOCKS_PASTE_URL` permiten cambiar las URLs. Las capturas se guardan en una carpeta temporal; el contenido anterior del portapapeles se restaura al terminar.
+
+Usa `pnpm check:copy-browser --page=/401` para comprobar solo la página actual o `--all` para todas las páginas registradas. Las pruebas también verifican el cambio de tema y el desbordamiento móvil; no sustituyen la inspección visual de las capturas y de los controles de cada página.

@@ -2,9 +2,9 @@
 
 ## Bloques copiables y seguimiento
 
-En `/ecommerce/dashboard-1`, `/developers/webhooks` y `/ai-chat/composer-1`, pasa el cursor sobre un bloque para **copiar su componente Vue**, copiar solo su plantilla o ver el código. También hay un selector de bloques accesible desde teclado y móvil. El resto de páginas no cambia. Consulta [docs/COPYABLE-BLOCKS.md](docs/COPYABLE-BLOCKS.md).
+En las páginas marcadas en el ToDo, pasa el cursor sobre un bloque para **copiar su componente Vue**, copiar solo su plantilla o ver el código. También hay un selector de bloques accesible desde teclado y móvil. El piloto comprende `/ecommerce/dashboard-1`, `/developers/webhooks` y `/ai-chat/composer-1`; `/401` es la primera página adicional. Consulta [docs/COPYABLE-BLOCKS.md](docs/COPYABLE-BLOCKS.md).
 
-`pnpm check:copy-blocks` valida los ocho bloques exportables del piloto.
+`pnpm check:copy-blocks` valida todos los bloques registrados. `--page=/401` limita la comprobación a una página.
 
 La ampliación se realiza **una página a la vez** en `feat/copyable-blocks-pilot`. El ToDo de este README es el registro de pendientes; no se marcará una página como terminada solo por añadir un botón de copia.
 
@@ -121,15 +121,16 @@ La casilla de una página representa **interfaz revisada + copia funcional + pru
 | Infraestructura compartida de copia | No aplica | Visor, portapapeles, extracción y registros independientes | `pnpm check:copy-blocks`, `pnpm check:pages` y `pnpm typecheck` aprobados | `8d40a3f`, push confirmado | Publicada |
 | `/ecommerce/dashboard-1` | Piloto revisado | 6 bloques | Tipos, build, navegador y pegado aprobados; validación de ruta/exportación repetida con `--page=/ecommerce/dashboard-1 --http` | `ccacd15`, push confirmado | Terminada |
 | `/developers/webhooks` | Piloto revisado; copia de ID y enlaces corregidos | 1 bloque | Tipos, build, navegador, búsqueda y pegado aprobados; ruta/exportación repetida con `--page=/developers/webhooks --http` | `af80828`, push confirmado | Terminada |
-| `/ai-chat/composer-1` | Piloto revisado; formularios anidados, tokens CSS y recurso externo corregidos | 1 bloque | Tipos, build, envío de mensajes, navegador, teclado/móvil y pegado aprobados; ruta/exportación repetida con `--page=/ai-chat/composer-1 --http` | Commit de página; push pendiente de confirmación | Publicar antes de continuar |
+| `/ai-chat/composer-1` | Piloto revisado; formularios anidados, tokens CSS y recurso externo corregidos | 1 bloque | Tipos, build, envío de mensajes, navegador, teclado/móvil y pegado aprobados; ruta/exportación repetida con `--page=/ai-chat/composer-1 --http` | `d5a52e2`, push confirmado | Terminada |
+| `/401` | Escritorio, móvil y tema oscuro revisados; controles Nuxt UI nativos; vuelta atrás real; eliminados residuos del sitio original | 1 bloque autónomo, sin recursos externos | `check:pages`, `check:copy-blocks --page=/401 --http`, `typecheck` y `check:copy-browser --page=/401` aprobados; portapapeles, plantilla, fallback, pegado y navegación probados | Commit de página; push pendiente de confirmación | Publicar y después integrar la rama en `main` |
 
-Las otras **258 páginas de contenido** siguen pendientes. Las casillas reflejan páginas guardadas; la columna commit/push confirma su publicación. Actualiza esta tabla al terminar una página o encontrar un bloqueo; no dar a entender que la cola continúa ejecutándose en segundo plano cuando no hay una ejecución activa.
+Avance: **4 de 261 páginas de contenido guardadas; 257 pendientes**, además de las 2 rutas auxiliares. Las casillas reflejan páginas guardadas; la columna commit/push confirma su publicación. Actualiza esta tabla al terminar una página o encontrar un bloqueo; no dar a entender que la cola continúa ejecutándose en segundo plano cuando no hay una ejecución activa.
 
 ### ToDo por página (261 páginas de contenido)
 
 Cada casilla exige las dos tareas solicitadas: **validar la coherencia de toda la interfaz y corregir errores**, e **implementar y validar la copia de sus bloques**, además del flujo de commit/push anterior. El enlace abre el archivo fuente. Empezar por guardar las tres páginas del piloto y continuar en el orden de esta lista.
 
-- [ ] [/401](app/pages/401.vue)
+- [x] [/401](app/pages/401.vue)
 - [ ] [/403](app/pages/403.vue)
 - [ ] [/404](app/pages/404.vue)
 - [ ] [/503](app/pages/503.vue)
