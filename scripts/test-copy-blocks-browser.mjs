@@ -386,6 +386,108 @@ async function checkWorkspacePanel(root) {
   result.workspacePanel = { distinctTabs: true, expandDetails: true, validation: true, profileSave: true }
 }
 
+async function checkPlanningActions(root) {
+  for (const kind of ['issue', 'milestone', 'sprint', 'project']) {
+    await click(root + ` button[aria-label="Create demo ${kind}"]`)
+    await click('button[aria-label="Save planning record"]')
+    await waitFor(`document.querySelector('[role=dialog]').textContent.includes('Enter a name for this record.')`)
+    await setInput('input[name="planningRecordName"]', `Portable ${kind}`)
+    if (kind === 'issue') {
+      await setInput('[aria-label="Planning record end"]', '2026-04-14')
+      await click('button[aria-label="Save planning record"]')
+      await waitFor(`document.querySelector('[role=dialog]').textContent.includes('end date must be on or after')`)
+      await setInput('[aria-label="Planning record end"]', '2026-04-20')
+    }
+    await click('button[aria-label="Save planning record"]')
+    await waitFor(`!document.querySelector('[role=dialog]') && document.querySelector(${JSON.stringify(root)}).textContent.includes(${JSON.stringify(`“Portable ${kind}” created locally.`)})`)
+  }
+  result.planningActions = { issue: true, milestone: true, sprint: true, project: true, validation: true }
+}
+async function checkPlanningMap(root) {
+  const count = `document.querySelectorAll(${JSON.stringify(root + ' [data-issue-map-row]')}).length`
+  await waitFor(`${count} === 2`)
+  const initial = await evaluate(`document.querySelector(${JSON.stringify(root + ' [data-issue-map-row="RFC-103"] button')}).getAttribute('style')`)
+  await chooseTab(root, 'Month')
+  await waitFor(`${count} === 6`)
+  assert.notEqual(await evaluate(`document.querySelector(${JSON.stringify(root + ' [data-issue-map-row="RFC-103"] button')}).getAttribute('style')`), initial, 'Range changes must reposition timeline bars')
+  await chooseTab(root, 'Quarter')
+  await waitFor(`document.querySelector(${JSON.stringify(root)}).textContent.includes('2026-06-30')`)
+  await click(root + ' button[aria-label="Open RFC-102 timeline details"]')
+  await waitFor(`document.querySelector('[role=dialog]')?.textContent.includes('Review gantt interaction states')`)
+  assert.equal(await evaluate(`document.querySelectorAll('[role=dialog] input, [role=dialog] textarea').length`), 0)
+  await click('button[aria-label="Close timeline issue details"]')
+  await waitFor(`!document.querySelector('[role=dialog]')`)
+  await chooseTab(root, 'Week')
+  result.planningMap = { ranges: true, clipping: true, correctDetails: true }
+}
+async function checkCurrentProjects(root) {
+  const count = `document.querySelectorAll(${JSON.stringify(root + ' [data-planning-project]')}).length`
+  const before = await evaluate(count)
+  await setInput(root + ' input[aria-label="Search current projects"]', 'ONB-118')
+  await waitFor(`${count} === 1`)
+  await click(root + ' button[aria-label="Open ONB-118 project details"]')
+  await waitFor(`document.querySelector('[role=dialog]')?.textContent.includes('Cameron Williamson')`)
+  assert.ok(await evaluate(`document.querySelector('[role=dialog]').textContent.includes('Enterprise Onboarding Flow')`))
+  await click('button[aria-label="Close current project details"]')
+  await waitFor(`!document.querySelector('[role=dialog]')`)
+  await setInput(root + ' input[aria-label="Search current projects"]', 'does-not-exist')
+  await waitFor(`document.querySelector(${JSON.stringify(root)}).textContent.includes('No projects match your search.')`)
+  await setInput(root + ' input[aria-label="Search current projects"]', '')
+  await click(root + ' button[aria-label="Add current demo project"]')
+  await setInput('input[name="planningRecordName"]', 'Portable additional project')
+  await click('button[aria-label="Save planning record"]')
+  await waitFor(`!document.querySelector('[role=dialog]') && ${count} === ${before + 1}`)
+  result.currentProjects = { search: true, details: true, creation: true }
+}
+async function checkPlanningNotes(root) {
+  await click(root + ' [aria-label="Complete note 1"]')
+  await waitFor(`document.querySelector(${JSON.stringify(root)}).textContent.includes('3 of 3 notes complete')`)
+  await click(root + ' button[aria-label="Add planning note"]')
+  await click('button[aria-label="Save planning note"]')
+  await waitFor(`document.querySelector('[role=dialog]')?.textContent.includes('Enter a note title.')`)
+  await setInput('input[name="planningNoteTitle"]', 'Portable planning note')
+  await setInput('textarea[name="planningNoteDescription"]', 'Local notes test')
+  await click('button[aria-label="Save planning note"]')
+  await waitFor(`!document.querySelector('[role=dialog]') && document.querySelector(${JSON.stringify(root)}).textContent.includes('3 of 4 notes complete')`)
+  result.planningNotes = { completion: true, validation: true, creation: true }
+}
+async function checkPlanningMembers(root) {
+  await click(root + ' button[aria-label="Add planning demo member"]')
+  await click('button[aria-label="Save demo member"]')
+  await waitFor(`document.querySelector('[role=dialog]').textContent.includes('Enter a member name.')`)
+  await setInput('input[name="planningMemberName"]', 'Portable member')
+  await setInput('input[name="planningMemberEmail"]', 'kiara@example.com')
+  await click('button[aria-label="Save demo member"]')
+  await waitFor(`document.querySelector('[role=dialog]').textContent.includes('already belongs to a demo member')`)
+  await setInput('input[name="planningMemberEmail"]', 'portable@example.com')
+  await chooseOption('[aria-label="Demo member role"]', 'Editor')
+  await click('button[aria-label="Save demo member"]')
+  await waitFor(`!document.querySelector('[role=dialog]') && document.querySelector(${JSON.stringify(root)}).textContent.includes('Portable member added locally. No invitation was sent.')`)
+  assert.equal(await evaluate(`document.querySelectorAll(${JSON.stringify(root + ' ul > li')}).length`), 6)
+  result.planningMembers = { validation: true, duplicates: true, localAdd: true }
+}
+async function checkPlanningActivity(root) {
+  await click(root + ' button[aria-label="Open planning activity log"]')
+  await waitFor(`document.querySelector('[role=dialog]')?.textContent.includes('Checkout flow screens moved to review')`)
+  await click('button[aria-label="Close planning activity log"]')
+  await waitFor(`!document.querySelector('[role=dialog]')`)
+  await click(root + ' button[aria-label="Open planning notifications"]')
+  await click('button[aria-label="Mark planning notifications read"]')
+  await waitFor(`document.querySelector('[role=dialog]').textContent.includes('No unread demo notifications.')`)
+  await click('button[aria-label="Close planning notifications"]')
+  await waitFor(`!document.querySelector('[role=dialog]')`)
+  result.planningActivity = true
+}
+async function checkPlanningMilestones(root) {
+  await chooseOption(root + ' [aria-label="Milestone history range"]', '1 Year')
+  await waitFor(`document.querySelectorAll(${JSON.stringify(root + ' svg rect')}).length === 24`)
+  await chooseOption(root + ' [aria-label="Milestone history range"]', '3 Months')
+  await waitFor(`document.querySelectorAll(${JSON.stringify(root + ' svg rect')}).length === 6`)
+  await chooseOption(root + ' [aria-label="Milestone history range"]', '1 Month')
+  await waitFor(`document.querySelectorAll(${JSON.stringify(root + ' svg rect')}).length === 2`)
+  result.planningMilestones = true
+}
+
 let previousClipboard
 const normalize = value => value.replaceAll('\r\n', '\n')
 const result = { copied: [], pasteTests: [], screenshots: profile }
@@ -457,6 +559,21 @@ try {
       await checkWorkspaceIssues('[data-copy-block="project-my-issues"]')
       await checkWorkspacePanel('[data-copy-block="project-workspace-panel"]')
       await selectBlock('project-workspace-panel')
+    }
+    if (page.path === '/project-management/dashboard-2') {
+      await checkPlanningMap('[data-copy-block="project-issue-map"]')
+      await checkPlanningActions('[data-copy-block="project-planning-actions"]')
+      await waitFor(`document.querySelector('[data-planning-metric="Total projects"]').textContent === '3' && document.querySelector('[data-planning-metric="Total issues"]').textContent === '7'`)
+      await checkCurrentProjects('[data-copy-block="project-current-projects"]')
+      await checkPlanningMilestones('[data-copy-block="project-milestone-tracker"]')
+      await checkPlanningNotes('[data-copy-block="project-planning-notes"]')
+      await evaluate(`document.querySelector('[data-copy-block="project-milestone-tracker"]').scrollIntoView({ block: 'start' })`)
+      await screenshot(page.key + '-milestones-notes.png')
+      await checkPlanningMembers('[data-copy-block="project-planning-members"]')
+      await checkPlanningActivity('[data-copy-block="project-planning-activity"]')
+      assert.ok(await evaluate(`document.querySelector('[data-copy-block="project-milestone-tracker"]').textContent.includes('Portable milestone')`))
+      assert.ok(await evaluate(`document.querySelector('[data-copy-block="project-planning-status"]').textContent.includes('7 issues')`))
+      await selectBlock('project-planning-status')
     }
     assert.deepEqual(errors, [], `${page.path}: browser errors`)
     await screenshot(page.key + '.png')
@@ -553,6 +670,19 @@ try {
       await evaluate(`document.querySelector('[data-copy-block="project-workspace-panel"]').scrollIntoView({ block: 'start' })`)
       await screenshot(page.key + '-mobile-agenda.png')
     }
+    if (page.path === '/project-management/dashboard-2') {
+      await evaluate(`document.querySelector('[data-copy-block="project-issue-map"]').scrollIntoView({ block: 'start' })`)
+      await screenshot(page.key + '-mobile-map.png')
+      await evaluate(`document.querySelector('[data-copy-block="project-current-projects"]').scrollIntoView({ block: 'start' })`)
+      await click('button[aria-label="Add current demo project"]')
+      await waitFor(`document.querySelector('input[name="planningRecordName"]')`)
+      await screenshot(page.key + '-mobile-create.png')
+      await click('button[aria-label="Cancel planning record"]')
+      await waitFor(`!document.querySelector('[role=dialog]')`)
+      await evaluate(`document.querySelector('[data-copy-block="project-planning-members"]').scrollIntoView({ block: 'start' })`)
+      await screenshot(page.key + '-mobile-members.png')
+      assert.equal(await evaluate('document.documentElement.scrollWidth <= window.innerWidth'), true, 'Planning timeline scrolls internally, not the entire page')
+    }
     assert.deepEqual(errors, [], `${page.path}: mobile browser errors`)
   }
   result.mobileSelector = true
@@ -600,6 +730,18 @@ try {
     if (block.id === 'project-time-tracker') await checkWorkspaceTimer('[data-paste-test]')
     if (block.id === 'project-my-issues') await checkWorkspaceIssues('[data-paste-test]')
     if (block.id === 'project-workspace-panel') await checkWorkspacePanel('[data-paste-test]')
+    if (block.id === 'project-planning-actions') await checkPlanningActions('[data-paste-test]')
+    if (block.id === 'project-issue-map') await checkPlanningMap('[data-paste-test]')
+    if (block.id === 'project-current-projects') await checkCurrentProjects('[data-paste-test]')
+    if (block.id === 'project-milestone-tracker') await checkPlanningMilestones('[data-paste-test]')
+    if (block.id === 'project-planning-notes') await checkPlanningNotes('[data-paste-test]')
+    if (block.id === 'project-planning-activity') await checkPlanningActivity('[data-paste-test]')
+    if (block.id === 'project-planning-members') await checkPlanningMembers('[data-paste-test]')
+    if (block.id === 'project-planning-status') {
+      assert.equal(await evaluate(`document.querySelectorAll('[role=progressbar]').length`), 5)
+      assert.ok(await evaluate(`[...document.querySelectorAll('[role=progressbar]')].every(element => Number(element.getAttribute('aria-valuenow')) >= 0 && Number(element.getAttribute('aria-valuenow')) <= 100 && element.hasAttribute('aria-valuenow'))`), 'Status progress bars must be determinate')
+      assert.ok(await evaluate(`Math.abs([...document.querySelectorAll('[role=progressbar]')].reduce((sum, element) => sum + Number(element.getAttribute('aria-valuenow')), 0) - 100) < 0.01`), 'Status shares must sum to 100 percent')
+    }
     if (block.id.startsWith('agent-') && block.id.endsWith('-run')) {
       if (['agent-report-run', 'agent-discount-run'].includes(block.id)) {
         const selector = '[data-paste-test] button[aria-expanded]'

@@ -1,0 +1,16 @@
+{
+  "path": "/project-management/dashboard-2",
+  "file": "app/pages/project-management/dashboard-2.vue",
+  "key": "project-dashboard-2",
+  "blocks": [
+    { "id": "project-planning-actions", "title": "Quick planning actions", "script": ["planning-base", "planning-data", "planning-actions"], "fragments": ["planning-dialog"] },
+    { "id": "project-planning-metrics", "title": "Project planning totals", "script": ["planning-base", "planning-data", "planning-metrics"] },
+    { "id": "project-issue-map", "title": "Time-based issue map", "script": ["planning-base", "planning-data", "planning-timeline"] },
+    { "id": "project-current-projects", "title": "Current demo projects", "script": ["planning-base", "planning-data", "planning-actions", "planning-projects"], "fragments": ["planning-dialog"] },
+    { "id": "project-milestone-tracker", "title": "Milestone tracker", "script": ["planning-base", "planning-data", "planning-milestones"] },
+    { "id": "project-planning-notes", "title": "Local planning notes", "script": ["planning-base", "planning-notes"] },
+    { "id": "project-planning-activity", "title": "Planning activity log", "script": ["planning-base", "planning-data", "planning-activity"] },
+    { "id": "project-planning-members", "title": "Demo project members", "script": ["planning-base", "planning-members"] },
+    { "id": "project-planning-status", "title": "Planning issue status", "script": ["planning-base", "planning-data", "planning-metrics"] }
+  ]
+}
