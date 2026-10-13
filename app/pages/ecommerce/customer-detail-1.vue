@@ -1,360 +1,115 @@
-<!-- Page: /ecommerce/customer-detail-1 | All content, state and styles live in this file. -->
+<!-- Page: /ecommerce/customer-detail-1 | Local example profile, history and message drafts. -->
 <script setup lang="ts">
-const route = useRoute()
+useHead({ title: 'Customer Detail 1 · Blocks Admin' })
 
-useHead({ title: "Customer Detail 1 · Blocks Admin" })
+// @copy:customer-detail-data:start
+import { computed, reactive, ref } from 'vue'
+import type { FormError } from '@nuxt/ui'
+const profile = reactive({ id: 'CUS-1742', name: 'Theo Hammond', status: 'VIP', email: 'theo.hammond@example.com', phone: '+1 (206) 555-0198', source: 'Online store', lastOnline: 'Mar 22, 2026, 11:24 AM UTC', recipient: 'Theo Hammond', street: '7841 Mercer Street, Suite 12', unit: 'Capitol Hill, Building North', city: 'Seattle', state: 'WA', postalCode: '98102', country: 'United States', segments: ['VIP', 'Skincare Routine', 'High retention'] })
+const history = ref([
+  { id: 3, title: 'Order ORD-34021 placed', detail: 'Online store · Processing · $389.00', date: 'Mar 18, 2026' },
+  { id: 2, title: 'Product review submitted', detail: 'Botanical Body Polish · 5 out of 5', date: 'Mar 04, 2026' },
+  { id: 1, title: 'Order ORD-33682 delivered', detail: 'Marketplace · $168.00', date: 'Mar 02, 2026' },
+])
+let nextHistoryId = 4
+function recordLocalActivity(title: string, detail: string) { history.value.unshift({ id: nextHistoryId++, title, detail, date: 'Local session' }) }
+const profileStatusColor = computed(() => profile.status === 'VIP' ? 'warning' as const : profile.status === 'Active' ? 'success' as const : 'error' as const)
+// @copy:customer-detail-data:end
 
-const toast = useToast()
+// @copy:customer-detail-header:start
+const messageOpen = ref(false)
+const messageVersion = ref(0)
+const messageDraft = reactive({ subject: '', body: '' })
+const savedMessages = ref<{ recipient: string, subject: string, body: string }[]>([])
+function openMessage() { messageVersion.value += 1; messageOpen.value = true }
+function validateMessage(state: Partial<typeof messageDraft>): FormError[] {
+  const errors: FormError[] = []
+  if (!state.subject?.trim()) errors.push({ name: 'subject', message: 'Enter a subject.' })
+  if (!state.body?.trim()) errors.push({ name: 'body', message: 'Enter a message.' })
+  return errors
+}
+function saveMessage() {
+  if (validateMessage(messageDraft).length) return
+  savedMessages.value.unshift({ recipient: profile.email, subject: messageDraft.subject.trim(), body: messageDraft.body.trim() })
+  recordLocalActivity('Message draft saved locally', messageDraft.subject.trim())
+  messageDraft.subject = ''; messageDraft.body = ''; messageOpen.value = false
+}
+// @copy:customer-detail-header:end
 
-const tabs1Active = ref("0")
-
-const tabs1Items = [
-  {
-    "label": "Purchases",
-    "value": "0"
-  },
-  {
-    "label": "Reviews",
-    "value": "1"
-  },
-  {
-    "label": "Activity",
-    "value": "2"
-  }
+// @copy:customer-detail-history:start
+const historyTab = ref('purchases')
+const historyTabs = [{ label: 'Purchases', value: 'purchases' }, { label: 'Reviews', value: 'reviews' }, { label: 'Activity', value: 'activity' }]
+const purchases = [
+  { id: 'ORD-34021', status: 'Processing', date: 'Mar 18, 2026', source: 'Online store', items: [{ name: 'Radiance Ritual Set', sku: 'SKU-SKIN-4006', quantity: 1, price: 305 }, { name: 'Barrier Repair Drops', sku: 'SKU-TREAT-6612', quantity: 1, price: 84 }] },
+  { id: 'ORD-33682', status: 'Delivered', date: 'Feb 27, 2026', source: 'Marketplace', items: [{ name: 'Botanical Body Polish', sku: 'SKU-BODY-6118', quantity: 2, price: 84 }] },
+  { id: 'ORD-33340', status: 'Delivered', date: 'Jan 19, 2026', source: 'Subscription', items: [{ name: 'Barrier Repair Drops', sku: 'SKU-TREAT-6612', quantity: 1, price: 84 }] },
 ]
+const reviews = [
+  { id: 1, product: 'Botanical Body Polish', rating: 5, date: 'Mar 04, 2026', title: 'A staple in my routine', body: 'The texture is gentle and the scent is subtle. I ordered a second jar.' },
+  { id: 2, product: 'Barrier Repair Drops', rating: 4, date: 'Jan 26, 2026', title: 'Easy to use', body: 'Works well in my evening routine. I would prefer a smaller travel bottle.' },
+]
+const purchaseTotal = (purchase: typeof purchases[number]) => purchase.items.reduce((sum, item) => sum + item.quantity * item.price, 0)
+const detailMoney = (value: number) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(value)
+// @copy:customer-detail-history:end
 
-const actionDialog = reactive({ open: false, title: '', mode: 'edit', name: '', description: '', recordId: '', table: 0 })
-function openAction(label: string, recordId = '', table = 0) {
-  Object.assign(actionDialog, { open: true, title: label, mode: /delete|remove|archive/i.test(label) ? 'delete' : 'edit', recordId, table })
+// @copy:customer-detail-info:start
+const infoOpen = ref(false)
+const infoVersion = ref(0)
+const infoMode = ref<'contact' | 'address' | 'segments'>('contact')
+const infoState = reactive({ name: '', status: 'VIP', email: '', phone: '', recipient: '', street: '', unit: '', city: '', state: '', postalCode: '', country: '', segmentsText: '' })
+const infoFeedback = ref('Example profile. Edits affect only this component’s memory.')
+const infoAddressFields = [{ key: 'recipient', label: 'Recipient' }, { key: 'street', label: 'Street address' }, { key: 'unit', label: 'Suite, building, floor' }, { key: 'city', label: 'City' }, { key: 'state', label: 'State / region' }, { key: 'postalCode', label: 'Postal code' }, { key: 'country', label: 'Country' }] as const
+function editInfo(mode: typeof infoMode.value) { infoMode.value = mode; Object.assign(infoState, profile, { segmentsText: profile.segments.join('\n') }); infoVersion.value += 1; infoOpen.value = true }
+function validateInfo(state: Partial<typeof infoState>): FormError[] {
+  const errors: FormError[] = []
+  if (infoMode.value === 'contact') {
+    if (!state.name?.trim()) errors.push({ name: 'name', message: 'Enter a customer name.' })
+    if (!state.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(state.email.trim())) errors.push({ name: 'email', message: 'Enter a valid example email.' })
+    if (state.phone && (!/^\+?[\d ().-]+$/.test(state.phone) || state.phone.replace(/\D/g, '').length < 6 || state.phone.replace(/\D/g, '').length > 15)) errors.push({ name: 'phone', message: 'Use a phone number with 6–15 digits.' })
+  } else if (infoMode.value === 'address') {
+    for (const key of ['recipient', 'street', 'city', 'postalCode', 'country'] as const) if (!state[key]?.trim()) errors.push({ name: key, message: 'Complete this address field.' })
+  } else {
+    const segments = (state.segmentsText || '').split('\n').map(value => value.trim()).filter(Boolean)
+    if (new Set(segments.map(value => value.toLowerCase())).size !== segments.length) errors.push({ name: 'segmentsText', message: 'Segment names must be unique.' })
+  }
+  return errors
 }
-function confirmAction() {
-  toast.add({ title: actionDialog.mode === 'delete' ? 'Item removed' : 'Changes saved', color: 'success', icon: 'i-lucide-check' })
-  actionDialog.open = false
+function saveInfo() {
+  if (validateInfo(infoState).length) return
+  if (infoMode.value === 'contact') Object.assign(profile, { name: infoState.name.trim(), email: infoState.email.trim(), phone: infoState.phone.trim(), status: infoState.status })
+  else if (infoMode.value === 'address') for (const field of infoAddressFields) profile[field.key] = infoState[field.key].trim()
+  else profile.segments = infoState.segmentsText.split('\n').map(value => value.trim()).filter(Boolean)
+  recordLocalActivity(`Customer ${infoMode.value} updated locally`, 'No external record was changed.')
+  infoFeedback.value = `Customer ${infoMode.value} updated in memory only.`
+  infoOpen.value = false
 }
+// @copy:customer-detail-info:end
 </script>
 
 <template>
   <div class="page-content flex h-full min-h-0 w-full flex-col text-default" data-page="/ecommerce/customer-detail-1">
-    <div class="flex h-full flex-col overflow-hidden">
-      <div class="flex min-h-0 flex-1 flex-col overflow-hidden">
-        <div class="flex min-h-0 flex-1 flex-col">
-          <header class="bg-default hidden shrink-0 border-b px-4 py-4 sm:px-6 md:block border-default">
-            <div class="flex flex-col gap-4 xl:flex-row xl:items-center xl:gap-6">
-              <div class="flex min-w-0 flex-wrap items-center gap-3 text-sm">
-                <span class="text-highlighted font-medium">Shadcnblocks Admin Kit</span>
-                <span class="text-muted">/</span>
-                <span class="text-highlighted font-medium">Customers</span>
-                <span class="text-muted">/</span>
-                <span class="text-muted">Customer Detail 1</span>
-              </div>
-              <div class="relative xl:mx-auto xl:w-full xl:max-w-md">
-                <UButton color="neutral" variant="outline" class="inline-flex items-center gap-2 whitespace-nowrap text-sm transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-default py-2 bg-(--ui-bg-muted)/70 text-muted hover:bg-(--ui-bg-muted)/90 hover:text-highlighted h-10 w-full justify-start rounded-full border-none px-3 font-normal shadow-none" aria-label="Search pages or run commands⌘K" type="button" @click="openAction(&quot;Search pages or run commands⌘K&quot;)">
-                  <UIcon name="i-lucide-search" class="size-4 shrink-0" />
-                  <span class="min-w-0 flex-1 truncate text-left">Search pages or run commands</span>
-                  <UKbd class="bg-default pointer-events-none hidden h-6 shrink-0 items-center gap-1 rounded-full border px-2 font-mono text-[10px] font-medium opacity-100 select-none sm:inline-flex border-default">⌘K</UKbd>
-                </UButton>
-              </div>
-            </div>
-          </header>
-          <div class="min-h-0 flex-1 overflow-auto">
-            <div class="flex flex-col">
-              <div class="flex flex-col p-6 md:p-8">
-                <div class="flex flex-col gap-5 pb-6 md:hidden">
-                  <div class="flex items-center gap-2 text-xs">
-                    <span class="text-highlighted font-medium">Acme Store</span>
-                    <span class="text-muted">/</span>
-                    <span class="text-highlighted font-medium">Customers</span>
-                  </div>
-                  <UButton color="neutral" variant="outline" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-elevated hover:text-default size-9 rounded-md border shadow-none border-default" aria-label="Actions" type="button" @click="openAction(&quot;Actions&quot;)">
-                    <UIcon name="i-lucide-arrow-left" class="size-4" />
-                  </UButton>
-                  <div class="flex items-start gap-3">
-                    <span class="relative flex shrink-0 overflow-hidden rounded-full size-14">
-                      <img class="aspect-square h-full w-full" alt="Theo Hammond" src="/reference/ac13c01a479a177b.png" loading="lazy" />
-                    </span>
-                    <div class="flex min-w-0 flex-1 flex-col gap-2">
-                      <h1 class="text-2xl font-semibold tracking-tight text-highlighted">Theo Hammond</h1>
-                      <div class="flex flex-wrap items-center gap-2">
-                        <div class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-accented focus:ring-offset-2 border-transparent shadow-sm bg-success/10 text-success hover:bg-success/10 border-default">Active</div>
-                        <span class="text-muted text-sm">CUS-1742</span>
-                      </div>
-                    </div>
-                  </div>
-                  <UButton color="primary" variant="solid" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-inverted hover:bg-primary/90 px-4 py-2 h-11 rounded-xl shadow-none" aria-label="Send message" type="button" @click="openAction(&quot;Send message&quot;)">
-                    <UIcon name="i-lucide-message-square-more" class="size-4" />
-                    Send message
-                  </UButton>
-                </div>
-                <div class="hidden items-start justify-between gap-6 pb-8 md:flex">
-                  <div class="flex min-w-0 items-start gap-4">
-                    <UButton color="neutral" variant="outline" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-default bg-default shadow-xs hover:bg-elevated hover:text-default size-10 rounded-full" aria-label="Actions" type="button" @click="openAction(&quot;Actions&quot;)">
-                      <UIcon name="i-lucide-arrow-left" class="size-4" />
-                    </UButton>
-                    <span class="relative flex shrink-0 overflow-hidden rounded-full size-16">
-                      <img class="aspect-square h-full w-full" alt="Theo Hammond" src="/reference/ac13c01a479a177b.png" loading="lazy" />
-                    </span>
-                    <div class="flex min-w-0 flex-col gap-3">
-                      <h1 class="text-4xl font-medium tracking-tight text-highlighted">Theo Hammond</h1>
-                      <div class="flex flex-wrap items-center gap-2 text-sm">
-                        <div class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-accented focus:ring-offset-2 border-transparent shadow-sm bg-success/10 text-success hover:bg-success/10 border-default">Active</div>
-                        <span class="text-muted">•</span>
-                        <span class="text-muted">Customer ID CUS-1742</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="flex flex-col items-end gap-3">
-                    <div class="flex items-center gap-2">
-                      <UButton color="neutral" variant="soft" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-elevated hover:text-default size-9 rounded-lg" aria-label="Actions" type="button" @click="openAction(&quot;Actions&quot;)">
-                        <UIcon name="i-lucide-ellipsis" class="size-4" />
-                      </UButton>
-                      <UButton color="neutral" variant="outline" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-default bg-default shadow-xs hover:bg-elevated hover:text-default h-9 px-4 py-2 rounded-lg" aria-label="Send Message" type="button" @click="openAction(&quot;Send Message&quot;)">
-                        <UIcon name="i-lucide-message-square-more" class="size-4" />
-                        Send Message
-                      </UButton>
-                    </div>
-                  </div>
-                </div>
-                <div data-orientation="horizontal" class="pb-2">
-                  <div class="overflow-x-auto border-b border-default">
-                    <UTabs v-model="tabs1Active" :items="tabs1Items" :content="false" color="primary" variant="link" class="text-muted inline-flex items-center rounded-lg h-auto justify-start gap-5 bg-transparent p-0" data-orientation="horizontal" style="outline:none" />
-                  </div>
-                  <div class="grid gap-8 pt-6 xl:grid-cols-[minmax(0,1fr)_1px_340px] xl:gap-8">
-                    <div class="flex flex-col gap-6">
-                      <div data-orientation="horizontal" id="radix-_R_3av5uiv5uknmlb_-content-reviews" class="ring-offset-background focus-visible:ring-accented focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden mt-0 flex flex-col gap-6" />
-                      <div data-orientation="horizontal" id="radix-_R_3av5uiv5uknmlb_-content-purchases" class="ring-offset-background focus-visible:ring-accented focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden mt-0 flex flex-col gap-5" style="animation-duration:0s">
-                        <div class="flex flex-col gap-5">
-                          <article class="flex flex-col gap-5">
-                            <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-                              <div class="flex flex-col gap-1">
-                                <div class="flex flex-wrap items-center gap-2">
-                                  <span class="text-base font-semibold">ORD-34021</span>
-                                  <div class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs transition-colors focus:outline-hidden focus:ring-2 focus:ring-accented focus:ring-offset-2 border-transparent font-normal bg-warning/10 text-warning hover:bg-warning/10 border-default">Processing</div>
-                                </div>
-                                <p class="text-muted text-sm">Placed on Mar 18, 2026 • Online Store</p>
-                              </div>
-                              <div class="text-left sm:text-right">
-                                <p class="text-muted text-xs tracking-[0.16em] uppercase">Order total</p>
-                                <p class="text-lg font-semibold text-highlighted">$389.00</p>
-                              </div>
-                            </div>
-                            <div class="mt-5 flex flex-col gap-4">
-                              <div class="flex items-center gap-3">
-                                <div class="bg-muted relative size-12 overflow-hidden rounded-md">
-                                  <img alt="Radiance Ritual Set" class="object-cover" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="/reference/6316e6ac87fcaa0e.jpg" loading="lazy" />
-                                </div>
-                                <div class="min-w-0">
-                                  <p class="truncate text-sm font-medium">Radiance Ritual Set</p>
-                                  <p class="text-muted text-xs">SKU-SKIN-4006</p>
-                                </div>
-                              </div>
-                              <div class="flex items-center gap-3">
-                                <div class="bg-muted relative size-12 overflow-hidden rounded-md">
-                                  <img alt="Barrier Repair Drops" class="object-cover" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="/reference/a6971d86435f2b61.jpg" loading="lazy" />
-                                </div>
-                                <div class="min-w-0">
-                                  <p class="truncate text-sm font-medium">Barrier Repair Drops</p>
-                                  <p class="text-muted text-xs">SKU-TREAT-6612</p>
-                                </div>
-                              </div>
-                            </div>
-                          </article>
-                          <div data-orientation="horizontal" role="none" class="bg-(--ui-border) shrink-0 h-[1px] w-full" />
-                        </div>
-                        <div class="flex flex-col gap-5">
-                          <article class="flex flex-col gap-5">
-                            <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-                              <div class="flex flex-col gap-1">
-                                <div class="flex flex-wrap items-center gap-2">
-                                  <span class="text-base font-semibold">ORD-33682</span>
-                                  <div class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs transition-colors focus:outline-hidden focus:ring-2 focus:ring-accented focus:ring-offset-2 border-transparent font-normal bg-success/10 text-success hover:bg-success/10 border-default">Delivered</div>
-                                </div>
-                                <p class="text-muted text-sm">Placed on Feb 27, 2026 • Marketplace</p>
-                              </div>
-                              <div class="text-left sm:text-right">
-                                <p class="text-muted text-xs tracking-[0.16em] uppercase">Order total</p>
-                                <p class="text-lg font-semibold text-highlighted">$168.00</p>
-                              </div>
-                            </div>
-                            <div class="mt-5 flex flex-col gap-4">
-                              <div class="flex items-center gap-3">
-                                <div class="bg-muted relative size-12 overflow-hidden rounded-md">
-                                  <img alt="Botanical Body Polish" class="object-cover" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="/reference/8b166c336110df82.jpg" loading="lazy" />
-                                </div>
-                                <div class="min-w-0">
-                                  <p class="truncate text-sm font-medium">Botanical Body Polish</p>
-                                  <p class="text-muted text-xs">SKU-BODY-6118</p>
-                                </div>
-                              </div>
-                            </div>
-                          </article>
-                          <div data-orientation="horizontal" role="none" class="bg-(--ui-border) shrink-0 h-[1px] w-full" />
-                        </div>
-                        <div class="flex flex-col gap-5">
-                          <article class="flex flex-col gap-5">
-                            <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-                              <div class="flex flex-col gap-1">
-                                <div class="flex flex-wrap items-center gap-2">
-                                  <span class="text-base font-semibold">ORD-33340</span>
-                                  <div class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs transition-colors focus:outline-hidden focus:ring-2 focus:ring-accented focus:ring-offset-2 border-transparent font-normal bg-success/10 text-success hover:bg-success/10 border-default">Delivered</div>
-                                </div>
-                                <p class="text-muted text-sm">Placed on Jan 19, 2026 • Subscription</p>
-                              </div>
-                              <div class="text-left sm:text-right">
-                                <p class="text-muted text-xs tracking-[0.16em] uppercase">Order total</p>
-                                <p class="text-lg font-semibold text-highlighted">$84.00</p>
-                              </div>
-                            </div>
-                            <div class="mt-5 flex flex-col gap-4">
-                              <div class="flex items-center gap-3">
-                                <div class="bg-muted relative size-12 overflow-hidden rounded-md">
-                                  <img alt="Barrier Repair Drops" class="object-cover" style="position:absolute;height:100%;width:100%;left:0;top:0;right:0;bottom:0;color:transparent" src="/reference/a6971d86435f2b61.jpg" loading="lazy" />
-                                </div>
-                                <div class="min-w-0">
-                                  <p class="truncate text-sm font-medium">Barrier Repair Drops</p>
-                                  <p class="text-muted text-xs">SKU-TREAT-6612</p>
-                                </div>
-                              </div>
-                            </div>
-                          </article>
-                        </div>
-                      </div>
-                      <div data-orientation="horizontal" id="radix-_R_3av5uiv5uknmlb_-content-activity" class="ring-offset-background focus-visible:ring-accented focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden mt-0 flex flex-col gap-6" />
-                    </div>
-                    <div data-orientation="vertical" role="none" class="bg-(--ui-border) shrink-0 h-full w-[1px] hidden xl:block xl:h-auto" />
-                    <div class="flex flex-col gap-5">
-                      <!-- Card 1: Customer details -->
-                      <UCard class="rounded-lg shadow-none" :ui="{ body: 'contents' }">
-                        <div class="p-6 flex flex-col gap-6 pt-5">
-                          <div class="flex flex-col gap-5">
-                            <div class="flex items-center justify-between gap-3">
-                              <h3 class="font-medium text-highlighted">Customer details</h3>
-                            </div>
-                            <div class="grid gap-4 text-sm">
-                              <div class="flex items-start justify-between gap-4">
-                                <span class="text-muted">Customer source</span>
-                                <span class="font-medium">Online Store</span>
-                              </div>
-                              <div class="flex items-start justify-between gap-4">
-                                <span class="text-muted">Last online</span>
-                                <span class="font-medium">22 Mar 2026, 11:24 AM</span>
-                              </div>
-                            </div>
-                          </div>
-                          <div data-orientation="horizontal" role="none" class="bg-(--ui-border) shrink-0 h-[1px] w-full" />
-                          <div class="flex flex-col gap-5">
-                            <div class="flex items-center justify-between gap-3">
-                              <h3 class="font-medium text-highlighted">Shipping address</h3>
-                              <NuxtLink class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-elevated hover:text-default size-8 rounded-md" to="/ecommerce/edit-customer/cus-1742">
-                                <UIcon name="i-lucide-pencil" class="size-4" />
-                              </NuxtLink>
-                            </div>
-                            <div class="relative overflow-hidden rounded-md border border-default">
-                              <div class="h-36 w-full">
-                                <div class="relative h-full w-full maplibregl-map">
-                                  <div class="bg-(--ui-bg)/50 absolute inset-0 z-10 flex items-center justify-center backdrop-blur-xs">
-                                    <div class="flex gap-1">
-                                      <span class="bg-(--ui-text-muted)/60 size-1.5 animate-pulse rounded-full" />
-                                      <span class="bg-(--ui-text-muted)/60 size-1.5 animate-pulse rounded-full [animation-delay:150ms]" />
-                                      <span class="bg-(--ui-text-muted)/60 size-1.5 animate-pulse rounded-full [animation-delay:300ms]" />
-                                    </div>
-                                  </div>
-                                  <div class="maplibregl-canvas-container">
-                                    <canvas class="maplibregl-canvas" aria-label="Map" role="region" width="288" height="144" style="width: 288px; height: 144px;" />
-                                  </div>
-                                  <div class="maplibregl-control-container">
-                                    <div class="maplibregl-ctrl-top-left" />
-                                    <div class="maplibregl-ctrl-top-right" />
-                                    <div class="maplibregl-ctrl-bottom-left" />
-                                    <div class="maplibregl-ctrl-bottom-right" />
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="pointer-events-none absolute inset-0 flex items-center justify-center">
-                                <div class="relative flex items-center justify-center">
-                                  <span class="bg-primary/15 absolute size-10 rounded-full" />
-                                  <div class="bg-primary text-inverted relative flex size-8 items-center justify-center rounded-full border-2 border-inverted shadow-sm">
-                                    <UIcon name="i-lucide-map-pin" class="size-4" />
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="pointer-events-none absolute top-3 left-3">
-                                <div class="bg-(--ui-bg)/95 rounded-sm border px-2.5 py-1 text-xs font-medium shadow-sm border-default">Seattle, WA</div>
-                              </div>
-                            </div>
-                            <div class="flex flex-col gap-3 px-1">
-                              <div class="flex flex-col gap-1">
-                                <p class="font-medium">Theo Hammond</p>
-                                <p class="text-muted text-sm leading-6">
-                                  7841 Mercer Street, Suite 12
-                                  <br />
-                                  Capitol Hill, Building North
-                                  <br />
-                                  Seattle, WA 98102,United States
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                          <div data-orientation="horizontal" role="none" class="bg-(--ui-border) shrink-0 h-[1px] w-full" />
-                          <div class="flex flex-col gap-5">
-                            <div class="flex items-center justify-between gap-3">
-                              <h3 class="font-medium text-highlighted">Contact information</h3>
-                              <NuxtLink class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-elevated hover:text-default size-8 rounded-md" to="/ecommerce/edit-customer/cus-1742">
-                                <UIcon name="i-lucide-pencil" class="size-4" />
-                              </NuxtLink>
-                            </div>
-                            <div class="flex flex-wrap gap-2">
-                              <div class="inline-flex items-center border text-xs transition-colors focus:outline-hidden focus:ring-2 focus:ring-accented focus:ring-offset-2 text-highlighted rounded-md px-3 py-1 font-normal border-default">theo.hammond@caldwell.app</div>
-                              <div class="inline-flex items-center border text-xs transition-colors focus:outline-hidden focus:ring-2 focus:ring-accented focus:ring-offset-2 text-highlighted rounded-md px-3 py-1 font-normal border-default">+1 (206) 555-0198</div>
-                            </div>
-                          </div>
-                          <div data-orientation="horizontal" role="none" class="bg-(--ui-border) shrink-0 h-[1px] w-full" />
-                          <div class="flex flex-col gap-4">
-                            <div class="flex items-center justify-between gap-3">
-                              <h3 class="font-medium text-highlighted">Segments</h3>
-                            </div>
-                            <div class="flex flex-wrap gap-2">
-                              <div class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs transition-colors focus:outline-hidden focus:ring-2 focus:ring-accented focus:ring-offset-2 border-transparent bg-elevated text-default hover:bg-(--ui-bg-elevated)/80 font-normal border-default">VIP</div>
-                              <div class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs transition-colors focus:outline-hidden focus:ring-2 focus:ring-accented focus:ring-offset-2 border-transparent bg-elevated text-default hover:bg-(--ui-bg-elevated)/80 font-normal border-default">Skincare Routine</div>
-                              <div class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs transition-colors focus:outline-hidden focus:ring-2 focus:ring-accented focus:ring-offset-2 border-transparent bg-elevated text-default hover:bg-(--ui-bg-elevated)/80 font-normal border-default">High retention</div>
-                            </div>
-                          </div>
-                        </div>
-                      </UCard>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div class="min-h-0 flex-1 overflow-y-auto"><main class="mx-auto w-full max-w-7xl space-y-6 p-4 sm:p-6">
+      <nav aria-label="Customer detail navigation" class="flex flex-wrap gap-2"><UButton to="/ecommerce/customer-list-1" label="Customer list" icon="i-lucide-arrow-left" color="neutral" variant="ghost" /><UButton to="/ecommerce/edit-customer/cus-1742" label="Full example editor" color="neutral" variant="ghost" /></nav>
+      <section data-copy-block="ecommerce-customer-profile" tabindex="0" aria-label="Customer profile and message drafts" class="space-y-4">
+        <div class="flex flex-col justify-between gap-4 sm:flex-row sm:items-center"><div class="flex min-w-0 items-center gap-4"><span class="flex size-14 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xl font-semibold text-primary" aria-hidden="true">{{ profile.name.split(' ').map(part => part[0]).slice(0, 2).join('') }}</span><div class="min-w-0"><h1 class="break-words text-2xl font-semibold text-highlighted sm:text-3xl">{{ profile.name }}</h1><div class="mt-2 flex flex-wrap items-center gap-2"><UBadge :label="profile.status" :color="profileStatusColor" variant="subtle" /><span class="text-sm text-muted">{{ profile.id }}</span></div></div></div><UButton label="Compose demo message" aria-label="Compose customer message" icon="i-lucide-message-square-more" class="shrink-0 justify-center" @click="openMessage" /></div>
+        <p class="text-sm text-muted">Example profile. Message drafts are saved locally in memory, never sent by email or SMS.</p>
+        <UCard v-if="savedMessages.length"><template #header><h2 class="font-semibold text-highlighted">Local message drafts ({{ savedMessages.length }})</h2></template><ul class="space-y-4"><li v-for="(message, index) in savedMessages" :key="index" data-customer-message><p class="break-all text-xs text-muted">Draft for {{ message.recipient }} · Not sent</p><p class="mt-1 font-medium">{{ message.subject }}</p><p class="mt-1 whitespace-pre-wrap break-words text-sm text-muted">{{ message.body }}</p></li></ul></UCard>
+        <UModal v-model:open="messageOpen" title="Compose demo message" description="A local draft only. No email provider, message service or network request."><template #body><UForm :key="messageVersion" :state="messageDraft" :validate="validateMessage" class="space-y-4" @submit="saveMessage"><p class="break-all text-sm text-muted">Example recipient: {{ profile.email }}</p><UFormField label="Subject" name="subject" required><UInput v-model="messageDraft.subject" name="customerMessageSubject" class="w-full" /></UFormField><UFormField label="Message" name="body" required><UTextarea v-model="messageDraft.body" name="customerMessageBody" :rows="5" class="w-full" /></UFormField><div class="flex justify-end gap-2"><UButton label="Close" aria-label="Close customer message" color="neutral" variant="outline" @click="messageOpen = false" /><UButton label="Save local draft" aria-label="Save customer message draft" type="submit" /></div></UForm></template></UModal>
+      </section>
+      <div class="grid min-w-0 items-start gap-6 xl:grid-cols-[minmax(0,1fr)_340px]">
+        <section data-copy-block="ecommerce-customer-history" tabindex="0" aria-label="Customer purchase, review and activity history" class="min-w-0 space-y-4">
+          <UTabs v-model="historyTab" :items="historyTabs" :content="false" variant="link" :ui="{ list: 'overflow-x-auto overflow-y-hidden', trigger: 'shrink-0' }" />
+          <div v-if="historyTab === 'purchases'" class="space-y-4"><p class="text-sm text-muted">Three sample purchases, not the full lifetime order history. Item subtotals include no additional tax or shipping.</p><UCard v-for="purchase in purchases" :key="purchase.id" :data-customer-purchase="purchase.id"><div class="flex flex-wrap items-start justify-between gap-3"><div><div class="flex flex-wrap items-center gap-2"><h2 class="font-semibold text-highlighted">{{ purchase.id }}</h2><UBadge :label="purchase.status" :color="purchase.status === 'Delivered' ? 'success' : 'warning'" variant="subtle" /></div><p class="mt-1 text-sm text-muted">Placed {{ purchase.date }} · {{ purchase.source }}</p></div><div><p class="text-xs text-muted">Order total</p><p class="text-lg font-semibold text-highlighted">{{ detailMoney(purchaseTotal(purchase)) }}</p></div></div><ul class="mt-5 space-y-3"><li v-for="item in purchase.items" :key="item.sku" class="flex items-start gap-3"><span class="flex size-11 shrink-0 items-center justify-center rounded-md bg-muted" aria-hidden="true"><UIcon name="i-lucide-package" class="size-5 text-muted" /></span><div class="min-w-0 flex-1"><p class="text-sm font-medium">{{ item.name }}</p><p class="text-xs text-muted">{{ item.sku }} · Qty {{ item.quantity }} × {{ detailMoney(item.price) }}</p></div><p class="text-sm">{{ detailMoney(item.quantity * item.price) }}</p></li></ul></UCard></div>
+          <div v-else-if="historyTab === 'reviews'" class="space-y-4"><p class="text-sm text-muted">Sample product reviews from the example customer.</p><UCard v-for="review in reviews" :key="review.id" data-customer-review><h2 class="font-semibold text-highlighted">{{ review.product }}</h2><p class="mt-1 text-sm text-muted">{{ review.date }} · {{ review.rating }} out of 5 stars</p><div class="mt-3 flex gap-1" aria-hidden="true"><UIcon v-for="star in 5" :key="star" name="i-lucide-star" class="size-4" :class="star <= review.rating ? 'text-warning' : 'text-dimmed'" /></div><h3 class="mt-3 text-sm font-medium">{{ review.title }}</h3><p class="mt-1 text-sm text-muted">{{ review.body }}</p></UCard></div>
+          <UCard v-else><template #header><h2 class="font-semibold text-highlighted">Customer activity</h2><p class="mt-1 text-sm text-muted">Historical examples plus local changes in this component. No external events are fetched.</p></template><ol class="space-y-5"><li v-for="activity in history" :key="activity.id" data-customer-activity class="border-l-2 border-default pl-4"><p class="text-xs text-muted">{{ activity.date }}</p><h3 class="mt-1 text-sm font-medium">{{ activity.title }}</h3><p class="mt-1 text-sm text-muted">{{ activity.detail }}</p></li></ol></UCard>
+        </section>
+        <section data-copy-block="ecommerce-customer-details" tabindex="0" aria-label="Customer details and local editors" class="min-w-0 space-y-3">
+          <UCard><template #header><h2 class="font-semibold text-highlighted">Customer details</h2><p class="mt-1 text-xs text-muted">{{ profile.name }} · {{ profile.id }}</p></template><div class="space-y-5"><dl class="space-y-3 text-sm"><div class="flex justify-between gap-3"><dt class="text-muted">Customer source</dt><dd>{{ profile.source }}</dd></div><div><dt class="text-muted">Last online (example)</dt><dd class="mt-1">{{ profile.lastOnline }}</dd></div></dl><USeparator /><div><div class="flex items-center justify-between gap-2"><h3 class="text-sm font-semibold">Shipping address</h3><UButton icon="i-lucide-pencil" aria-label="Edit customer shipping address" color="neutral" variant="ghost" @click="editInfo('address')" /></div><div class="mt-3 flex items-center gap-3 rounded-lg border border-default bg-muted p-4"><UIcon name="i-lucide-map-pin" class="size-6 shrink-0 text-primary" /><div><p class="text-sm font-medium">{{ profile.city }}, {{ profile.state }}</p><p class="text-xs text-muted">Location summary · not a live map</p></div></div><address class="mt-3 break-words text-sm not-italic leading-6"><p class="font-medium">{{ profile.recipient }}</p><p class="text-muted">{{ profile.street }}</p><p v-if="profile.unit" class="text-muted">{{ profile.unit }}</p><p class="text-muted">{{ profile.city }}, {{ profile.state }} {{ profile.postalCode }}</p><p class="text-muted">{{ profile.country }}</p></address></div><USeparator /><div><div class="flex items-center justify-between gap-2"><h3 class="text-sm font-semibold">Contact information</h3><UButton icon="i-lucide-pencil" aria-label="Edit customer contact information" color="neutral" variant="ghost" @click="editInfo('contact')" /></div><p class="mt-2 break-all text-sm">{{ profile.email }}</p><p class="mt-1 text-sm text-muted">{{ profile.phone || 'No phone number' }}</p></div><USeparator /><div><div class="flex items-center justify-between gap-2"><h3 class="text-sm font-semibold">Segments</h3><UButton icon="i-lucide-pencil" aria-label="Edit customer detail segments" color="neutral" variant="ghost" @click="editInfo('segments')" /></div><div class="mt-2 flex flex-wrap gap-2"><UBadge v-for="segment in profile.segments" :key="segment" :label="segment" color="neutral" variant="subtle" class="max-w-full break-all whitespace-normal" /><p v-if="!profile.segments.length" class="text-sm text-muted">No segments assigned.</p></div></div></div></UCard>
+          <p class="text-xs text-muted" role="status">{{ infoFeedback }}</p>
+          <UModal v-model:open="infoOpen" :title="`Edit customer ${infoMode}`" description="Edit fictional profile details in memory only."><template #body><UForm :key="infoVersion" :state="infoState" :validate="validateInfo" class="space-y-4" @submit="saveInfo"><template v-if="infoMode === 'contact'"><UFormField label="Customer name" name="name" required><UInput v-model="infoState.name" name="detailCustomerName" class="w-full" /></UFormField><UFormField label="Status"><USelect v-model="infoState.status" :items="['Active', 'VIP', 'At risk']" aria-label="Detail customer status" class="w-full" /></UFormField><UFormField label="Email" name="email" required><UInput v-model="infoState.email" name="detailCustomerEmail" class="w-full" /></UFormField><UFormField label="Phone" name="phone"><UInput v-model="infoState.phone" name="detailCustomerPhone" type="tel" class="w-full" /></UFormField></template><div v-else-if="infoMode === 'address'" class="grid gap-4 sm:grid-cols-2"><UFormField v-for="field in infoAddressFields" :key="field.key" :label="field.label" :name="field.key"><UInput v-model="infoState[field.key]" :name="`detailAddress${field.key}`" class="w-full" /></UFormField></div><UFormField v-else label="Segments (one per line)" name="segmentsText"><UTextarea v-model="infoState.segmentsText" name="detailCustomerSegments" :rows="5" class="w-full" /></UFormField><div class="flex justify-end gap-2"><UButton label="Cancel" aria-label="Cancel customer detail edit" color="neutral" variant="outline" @click="infoOpen = false" /><UButton label="Save locally" aria-label="Save customer detail edit" type="submit" /></div></UForm></template></UModal>
+        </section>
       </div>
-    </div>
-    <!-- Page-local action dialog -->
-    <UModal v-model:open="actionDialog.open" :title="actionDialog.title" description="Update the details below.">
-      <template #body>
-        <p v-if="actionDialog.mode === 'delete'" class="text-sm text-muted">Are you sure you want to remove this item?</p>
-        <div v-else class="space-y-4">
-          <UFormField label="Name"><UInput v-model="actionDialog.name" class="w-full" /></UFormField>
-          <UFormField label="Description"><UTextarea v-model="actionDialog.description" class="w-full" /></UFormField>
-        </div>
-      </template>
-      <template #footer>
-        <div class="flex w-full justify-end gap-2">
-          <UButton color="neutral" variant="outline" @click="actionDialog.open = false">Cancel</UButton>
-          <UButton :color="actionDialog.mode === 'delete' ? 'error' : 'primary'" @click="confirmAction">{{ actionDialog.mode === 'delete' ? 'Remove' : 'Save changes' }}</UButton>
-        </div>
-      </template>
-    </UModal>
+    </main></div>
+    <BlockCopyTools page="/ecommerce/customer-detail-1" />
   </div>
 </template>
-
-<style scoped>
-
-.page-content { min-height: 0; color: var(--ui-text); --chart-1: var(--ui-primary); --chart-2: var(--ui-text-highlighted); --chart-3: var(--ui-text-muted); --chart-4: var(--ui-text-dimmed); --chart-5: var(--ui-border-accented); --chart-6: var(--ui-border); --radius: var(--ui-radius); }
-.page-content > div { min-height: 100%; }
-.page-content *, .page-content ::before, .page-content ::after { border-color: var(--ui-border); }
-.page-content [data-slot="scroll-area-viewport"] { overflow: auto !important; scrollbar-width: thin; }
-.page-content [data-slot="scroll-area-scrollbar"] { display: none; }
-.page-content pre { overflow: auto; }
-.page-content img { object-fit: cover; }
-</style>

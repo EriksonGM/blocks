@@ -639,6 +639,79 @@ async function checkCustomerEditing(root) {
   result.customerEditing = { immutableId: true, validation: true, collections: true, singleDefaultCard: true, segments: true, draft: true, latestSavedReset: true, localSave: true }
 }
 
+async function checkCustomerProfile(root) {
+  await click(root + ' button[aria-label="Compose customer message"]')
+  await click('button[aria-label="Save customer message draft"]')
+  await waitFor(`document.querySelector('[role=dialog]').textContent.includes('Enter a subject.') && document.querySelector('[role=dialog]').textContent.includes('Enter a message.')`)
+  await setInput('input[name="customerMessageSubject"]', 'Portable draft')
+  await setInput('textarea[name="customerMessageBody"]', 'This example is not sent to a customer.')
+  await click('button[aria-label="Close customer message"]')
+  await waitFor(`!document.querySelector('[role=dialog]')`)
+  assert.equal(await evaluate('document.querySelectorAll("[data-customer-message]").length'), 0)
+  await click(root + ' button[aria-label="Compose customer message"]')
+  await waitFor(`document.querySelector('input[name="customerMessageSubject"]')?.value === 'Portable draft'`)
+  await click('button[aria-label="Save customer message draft"]')
+  await waitFor(`!document.querySelector('[role=dialog]') && document.querySelector('[data-customer-message]')?.textContent.includes('Portable draft')`)
+  assert.ok(await evaluate(`document.querySelector('[data-customer-message]').textContent.includes('Not sent')`))
+  await click(root + ' button[aria-label="Compose customer message"]')
+  await waitFor(`document.querySelector('input[name="customerMessageSubject"]')?.value === ''`)
+  await click('button[aria-label="Close customer message"]')
+  await waitFor(`!document.querySelector('[role=dialog]')`)
+  result.customerProfile = { validatedDraft: true, closeReopen: true, noSendClaim: true, savedPreview: true }
+}
+
+async function checkCustomerHistory(root) {
+  assert.equal(await evaluate(`document.querySelectorAll(${JSON.stringify(root + ' [data-customer-purchase]')}).length`), 3)
+  assert.ok(await evaluate(`document.querySelector(${JSON.stringify(root + ' [data-customer-purchase="ORD-34021"]')}).textContent.includes('$389.00') && document.querySelector(${JSON.stringify(root + ' [data-customer-purchase="ORD-33682"]')}).textContent.includes('Qty 2')`))
+  await chooseTab(root, 'Reviews')
+  await waitFor(`document.querySelectorAll(${JSON.stringify(root + ' [data-customer-review]')}).length === 2`)
+  assert.equal(await evaluate(`document.querySelectorAll(${JSON.stringify(root + ' [data-customer-purchase]')}).length`), 0)
+  await chooseTab(root, 'Activity')
+  await waitFor(`document.querySelector(${JSON.stringify(root + ' [data-customer-activity]')})`)
+  assert.equal(await evaluate(`document.querySelectorAll(${JSON.stringify(root + ' [data-customer-review]')}).length`), 0)
+  await chooseTab(root, 'Purchases')
+  result.customerHistory = { distinctTabs: true, calculatedItemTotals: true, reviewRatings: true, activity: true }
+}
+
+async function checkCustomerDetails(root) {
+  await click(root + ' button[aria-label="Edit customer contact information"]')
+  await waitFor(`document.querySelector('input[name="detailCustomerName"]')?.value === 'Theo Hammond'`)
+  await setInput('input[name="detailCustomerName"]', '')
+  await setInput('input[name="detailCustomerEmail"]', 'invalid')
+  await setInput('input[name="detailCustomerPhone"]', 'abc')
+  await click('button[aria-label="Save customer detail edit"]')
+  await waitFor(`document.querySelector('[role=dialog]').textContent.includes('Enter a customer name.') && document.querySelector('[role=dialog]').textContent.includes('Enter a valid example email.') && document.querySelector('[role=dialog]').textContent.includes('6–15 digits')`)
+  await setInput('input[name="detailCustomerName"]', 'Theo Local')
+  await setInput('input[name="detailCustomerEmail"]', 'theo.local@example.com')
+  await setInput('input[name="detailCustomerPhone"]', '+1 206 555 0110')
+  await chooseOption('[aria-label="Detail customer status"]', 'Active')
+  await click('button[aria-label="Save customer detail edit"]')
+  await waitFor(`!document.querySelector('[role=dialog]') && document.querySelector(${JSON.stringify(root)}).textContent.includes('theo.local@example.com')`)
+  await click(root + ' button[aria-label="Edit customer shipping address"]')
+  await setInput('input[name="detailAddresscity"]', '')
+  await click('button[aria-label="Save customer detail edit"]')
+  await waitFor(`document.querySelector('[role=dialog]').textContent.includes('Complete this address field.')`)
+  await setInput('input[name="detailAddresscity"]', 'Vancouver')
+  await setInput('input[name="detailAddressstate"]', 'BC')
+  await setInput('input[name="detailAddresspostalCode"]', 'V6B 1A1')
+  await setInput('input[name="detailAddresscountry"]', 'Canada')
+  await click('button[aria-label="Save customer detail edit"]')
+  await waitFor(`!document.querySelector('[role=dialog]') && document.querySelector(${JSON.stringify(root)}).textContent.includes('Vancouver, BC')`)
+  await click(root + ' button[aria-label="Edit customer detail segments"]')
+  await setInput('textarea[name="detailCustomerSegments"]', 'VIP\nvip')
+  await click('button[aria-label="Save customer detail edit"]')
+  await waitFor(`document.querySelector('[role=dialog]').textContent.includes('Segment names must be unique.')`)
+  await setInput('textarea[name="detailCustomerSegments"]', 'Portable segment\nHigh retention')
+  await click('button[aria-label="Save customer detail edit"]')
+  await waitFor(`!document.querySelector('[role=dialog]') && document.querySelector(${JSON.stringify(root)}).textContent.includes('Portable segment')`)
+  await click(root + ' button[aria-label="Edit customer contact information"]')
+  await setInput('input[name="detailCustomerName"]', 'Cancelled edit')
+  await click('button[aria-label="Cancel customer detail edit"]')
+  await waitFor(`!document.querySelector('[role=dialog]')`)
+  assert.equal(await evaluate(`document.querySelector(${JSON.stringify(root)}).textContent.includes('Cancelled edit')`), false)
+  result.customerDetails = { contactValidation: true, localUpdate: true, addressValidation: true, locationSummary: true, uniqueSegments: true, cancellation: true }
+}
+
 async function checkCustomerDirectory(root, metrics = false) {
   const count = `${root} [data-directory-count]`
   const expectCount = async value => waitFor(`document.querySelector(${JSON.stringify(count)}).textContent.startsWith(${JSON.stringify(value)})`)
@@ -819,6 +892,19 @@ try {
       await checkCustomerDirectory('[data-copy-block="ecommerce-customer-directory"]', true)
       await selectBlock('ecommerce-customer-directory')
     }
+    if (page.path === '/ecommerce/customer-detail-1') {
+      await checkCustomerProfile('[data-copy-block="ecommerce-customer-profile"]')
+      await checkCustomerHistory('[data-copy-block="ecommerce-customer-history"]')
+      await checkCustomerDetails('[data-copy-block="ecommerce-customer-details"]')
+      assert.ok(await evaluate(`document.querySelector('[data-copy-block="ecommerce-customer-profile"]').textContent.includes('Theo Local') && document.querySelector('[data-copy-block="ecommerce-customer-profile"]').textContent.includes('Active')`))
+      await chooseTab('[data-copy-block="ecommerce-customer-history"]', 'Activity')
+      await waitFor(`document.querySelectorAll('[data-customer-activity]').length === 7`)
+      await screenshot(page.key + '-activity.png')
+      await chooseTab('[data-copy-block="ecommerce-customer-history"]', 'Reviews')
+      await screenshot(page.key + '-reviews.png')
+      await chooseTab('[data-copy-block="ecommerce-customer-history"]', 'Purchases')
+      await selectBlock('ecommerce-customer-details')
+    }
     assert.deepEqual(errors, [], `${page.path}: browser errors`)
     await screenshot(page.key + '.png')
     const lightColor = await evaluate(`getComputedStyle(document.querySelector('[data-page]')).color`)
@@ -950,6 +1036,16 @@ try {
       await screenshot(page.key + '-mobile-filtered.png')
       assert.equal(await evaluate('document.documentElement.scrollWidth <= window.innerWidth'), true)
     }
+    if (page.path === '/ecommerce/customer-detail-1') {
+      await chooseTab('[data-copy-block="ecommerce-customer-history"]', 'Reviews')
+      await screenshot(page.key + '-mobile-reviews.png')
+      await click('button[aria-label="Edit customer shipping address"]')
+      await waitFor(`document.querySelector('input[name="detailAddresscity"]')`)
+      await screenshot(page.key + '-mobile-address.png')
+      await click('button[aria-label="Cancel customer detail edit"]')
+      await waitFor(`!document.querySelector('[role=dialog]')`)
+      assert.equal(await evaluate('document.documentElement.scrollWidth <= window.innerWidth'), true)
+    }
     assert.deepEqual(errors, [], `${page.path}: mobile browser errors`)
   }
   result.mobileSelector = true
@@ -1000,6 +1096,9 @@ try {
     if (block.id === 'ecommerce-add-customer-editor') await checkCustomerCreation('[data-paste-test]')
     if (block.id === 'ecommerce-edit-customer-editor') await checkCustomerEditing('[data-paste-test]')
     if (block.id === 'ecommerce-customer-directory') await checkCustomerDirectory('[data-paste-test]')
+    if (block.id === 'ecommerce-customer-profile') await checkCustomerProfile('[data-paste-test]')
+    if (block.id === 'ecommerce-customer-history') await checkCustomerHistory('[data-paste-test]')
+    if (block.id === 'ecommerce-customer-details') await checkCustomerDetails('[data-paste-test]')
     if (block.id === 'ecommerce-customer-metrics') {
       assert.equal(await evaluate('document.querySelectorAll("[data-customer-metric]").length'), 4)
       assert.ok(await evaluate(`document.querySelector('[data-customer-metric="count"]').textContent.includes('11') && document.querySelector('[data-customer-metric="repeat"]').textContent.includes('100.0%')`))
