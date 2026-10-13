@@ -570,6 +570,75 @@ async function checkCustomerCreation(root) {
   result.customerCreation = { validation: true, contacts: true, addresses: true, cardMetadata: true, singleDefaultCard: true, segments: true, navigation: true, draft: true, reset: true, localPreview: true }
 }
 
+async function checkCustomerEditing(root) {
+  const text = `document.querySelector(${JSON.stringify(root)}).textContent`
+  const submit = root + ' button[aria-label="Submit demo customer"]'
+  const firstName = root + ' input[name="customerFirstName"]'
+  assert.equal(await evaluate(`document.querySelector(${JSON.stringify(firstName)}).value`), 'Theo')
+  assert.equal(await evaluate(`document.querySelector(${JSON.stringify(submit)}).disabled`), true, 'Unchanged record must not report a save')
+  assert.equal(await evaluate(`document.querySelector('input[aria-label="Immutable demo customer ID"]').readOnly`), true)
+  await setInput(firstName, '')
+  await click(submit)
+  await waitFor(`${text}.includes('Enter a first name.')`)
+  await setInput(firstName, 'Theo Updated')
+  await setInput(root + ' input[name="customerContactEmail0"]', 'invalid-email')
+  await click(submit)
+  await waitFor(`${text}.includes('Enter a valid example email address.')`)
+  await setInput(root + ' input[name="customerContactEmail0"]', 'theo.updated@example.com')
+  await click(root + ' button[aria-label="Add customer contact"]')
+  await waitFor(`document.querySelectorAll(${JSON.stringify(root + ' [data-customer-contact]')}).length === 2`)
+  await setInput(root + ' input[name="customerContactEmail1"]', 'secondary@example.com')
+  const contactId = await evaluate(`document.querySelectorAll(${JSON.stringify(root + ' [data-customer-contact]')})[1].dataset.customerContact`)
+  await click(root + ` button[aria-label="Remove customer contact ${contactId}"]`)
+  await click(root + ' button[aria-label="Add customer shipping"]')
+  const addressId = await evaluate(`document.querySelectorAll(${JSON.stringify(root + ' [data-customer-shipping]')})[1].dataset.customerShipping`)
+  await click(root + ` button[aria-label="Remove customer shipping ${addressId}"]`)
+  await click(root + ' button[aria-label="Set customer card 2 default"]')
+  await click(root + ' button[aria-label="Remove customer card 2"]')
+  await waitFor(`document.querySelector(${JSON.stringify(root + ' button[aria-label="Set customer card 1 default"]')}).disabled`)
+  await click(root + ' button[aria-label="Add customer demo card"]')
+  await setInput(root + ' input[name="customerCardLast41"]', 'abcd')
+  await setInput(root + ' input[name="customerCardExpiry1"]', '00/29')
+  await setInput(root + ' input[name="customerCardHolder1"]', 'Theo Updated')
+  await click(submit)
+  await waitFor(`${text}.includes('Enter exactly four demonstration digits.') && ${text}.includes('Use MM/YY with a valid month.')`)
+  await setInput(root + ' input[name="customerCardLast41"]', '9000')
+  await setInput(root + ' input[name="customerCardExpiry1"]', '07/30')
+  const newCardId = await evaluate(`document.querySelectorAll(${JSON.stringify(root + ' [data-customer-card]')})[1].dataset.customerCard`)
+  assert.notEqual(newCardId, '1', 'New rows must not reuse existing card IDs')
+  await click(root + ` button[aria-label="Set customer card ${newCardId} default"]`)
+  await click(root + ' button[aria-label="Remove customer segment VIP"]')
+  await setInput(root + ' input[name="customerSegment"]', 'SKINCARE ROUTINE')
+  await click(root + ' button[aria-label="Add customer segment"]')
+  await waitFor(`${text}.includes('This segment already exists.')`)
+  await setInput(root + ' input[name="customerSegment"]', 'Portable segment')
+  await click(root + ' button[aria-label="Add customer segment"]')
+  await chooseOption(root + ' [aria-label="Customer account status"]', 'Active')
+  await click(root + ' button[role="switch"]')
+  await setInput(root + ' textarea[name="customerNotes"]', 'Updated local example notes')
+  await click(root + ' button[aria-label="Save customer draft"]')
+  await setInput(firstName, 'Unsaved change')
+  await click(root + ' button[aria-label="Reset customer form"]')
+  await waitFor(`document.querySelector(${JSON.stringify(firstName)}).value === 'Theo'`)
+  await click(root + ' button[aria-label="Restore customer draft"]')
+  await waitFor(`document.querySelector(${JSON.stringify(firstName)}).value === 'Theo Updated'`)
+  await click(submit)
+  await waitFor(`document.querySelector(${JSON.stringify(root + ' [data-customer-snapshot]')})`)
+  const customer = JSON.parse(await evaluate(`document.querySelector(${JSON.stringify(root + ' [data-customer-snapshot]')}).textContent`))
+  assert.equal(customer.customerId, 'CUS-1742')
+  assert.equal(customer.firstName, 'Theo Updated')
+  assert.equal(customer.cards.length, 2)
+  assert.equal(customer.defaultCardId, Number(newCardId))
+  assert.equal(customer.cards[1].last4, '9000')
+  assert.equal(customer.marketingOptIn, false)
+  assert.ok(customer.segments.includes('Portable segment') && !customer.segments.includes('VIP'))
+  assert.equal(await evaluate(`document.querySelector(${JSON.stringify(submit)}).disabled`), true)
+  await setInput(firstName, 'Later unsaved change')
+  await click(root + ' button[aria-label="Reset customer form"]')
+  await waitFor(`document.querySelector(${JSON.stringify(firstName)}).value === 'Theo Updated'`)
+  result.customerEditing = { immutableId: true, validation: true, collections: true, singleDefaultCard: true, segments: true, draft: true, latestSavedReset: true, localSave: true }
+}
+
 let previousClipboard
 const normalize = value => value.replaceAll('\r\n', '\n')
 const result = { copied: [], pasteTests: [], screenshots: profile }
@@ -666,6 +735,14 @@ try {
       await click('button[aria-label="Go to customer preferences"]')
       await screenshot(page.key + '-preferences.png')
       await selectBlock('ecommerce-add-customer-editor')
+    }
+    if (page.path === '/ecommerce/edit-customer/cus-1742') {
+      await checkCustomerEditing('[data-copy-block="ecommerce-edit-customer-editor"]')
+      await click('button[aria-label="Go to customer account"]')
+      await screenshot(page.key + '-account.png')
+      await click('button[aria-label="Go to customer cards"]')
+      await screenshot(page.key + '-cards.png')
+      await selectBlock('ecommerce-edit-customer-editor')
     }
     assert.deepEqual(errors, [], `${page.path}: browser errors`)
     await screenshot(page.key + '.png')
@@ -775,7 +852,7 @@ try {
       await screenshot(page.key + '-mobile-members.png')
       assert.equal(await evaluate('document.documentElement.scrollWidth <= window.innerWidth'), true, 'Planning timeline scrolls internally, not the entire page')
     }
-    if (page.path === '/ecommerce/add-customer') {
+    if (['/ecommerce/add-customer', '/ecommerce/edit-customer/cus-1742'].includes(page.path)) {
       await click('button[aria-label="Go to customer contacts"]')
       await screenshot(page.key + '-mobile-contacts.png')
       await click('button[aria-label="Go to customer cards"]')
@@ -831,6 +908,7 @@ try {
     if (block.id === 'project-my-issues') await checkWorkspaceIssues('[data-paste-test]')
     if (block.id === 'project-workspace-panel') await checkWorkspacePanel('[data-paste-test]')
     if (block.id === 'ecommerce-add-customer-editor') await checkCustomerCreation('[data-paste-test]')
+    if (block.id === 'ecommerce-edit-customer-editor') await checkCustomerEditing('[data-paste-test]')
     if (block.id === 'project-planning-actions') await checkPlanningActions('[data-paste-test]')
     if (block.id === 'project-issue-map') await checkPlanningMap('[data-paste-test]')
     if (block.id === 'project-current-projects') await checkCurrentProjects('[data-paste-test]')
