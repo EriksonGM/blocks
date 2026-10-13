@@ -120,8 +120,8 @@ La casilla de una página representa **interfaz revisada + copia funcional + pru
 | Documentación y cola de trabajo | No aplica | No aplica | Inventario comprobado: 261 entradas únicas + 2 rutas auxiliares; `git diff --check` aprobado | `c30377a`, push confirmado | Plan publicado |
 | Infraestructura compartida de copia | No aplica | Visor, portapapeles, extracción y registros independientes | `pnpm check:copy-blocks`, `pnpm check:pages` y `pnpm typecheck` aprobados | `8d40a3f`, push confirmado | Publicada |
 | `/ecommerce/dashboard-1` | Piloto revisado | 6 bloques | Tipos, build, navegador y pegado aprobados; validación de ruta/exportación repetida con `--page=/ecommerce/dashboard-1 --http` | `ccacd15`, push confirmado | Terminada |
-| `/developers/webhooks` | Piloto revisado; copia de ID y enlaces corregidos | 1 bloque | Tipos, build, navegador, búsqueda y pegado aprobados; ruta/exportación repetida con `--page=/developers/webhooks --http` | Commit de página; push pendiente de confirmación | Publicar antes de continuar |
-| `/ai-chat/composer-1` | Piloto revisado | 1 bloque | Tipos, build, navegador y pegado aprobados | Pendiente | Guardar y publicar la página |
+| `/developers/webhooks` | Piloto revisado; copia de ID y enlaces corregidos | 1 bloque | Tipos, build, navegador, búsqueda y pegado aprobados; ruta/exportación repetida con `--page=/developers/webhooks --http` | `af80828`, push confirmado | Terminada |
+| `/ai-chat/composer-1` | Piloto revisado; formularios anidados, tokens CSS y recurso externo corregidos | 1 bloque | Tipos, build, envío de mensajes, navegador, teclado/móvil y pegado aprobados; ruta/exportación repetida con `--page=/ai-chat/composer-1 --http` | Commit de página; push pendiente de confirmación | Publicar antes de continuar |
 
 Las otras **258 páginas de contenido** siguen pendientes. Las casillas reflejan páginas guardadas; la columna commit/push confirma su publicación. Actualiza esta tabla al terminar una página o encontrar un bloqueo; no dar a entender que la cola continúa ejecutándose en segundo plano cuando no hay una ejecución activa.
 
@@ -150,7 +150,7 @@ Cada casilla exige las dos tareas solicitadas: **validar la coherencia de toda l
 - [ ] [/ai-chat/batch-jobs](app/pages/ai-chat/batch-jobs.vue)
 - [ ] [/ai-chat/billing](app/pages/ai-chat/billing.vue)
 - [ ] [/ai-chat/canvas-workbench](app/pages/ai-chat/canvas-workbench.vue)
-- [ ] [/ai-chat/composer-1](app/pages/ai-chat/composer-1.vue)
+- [x] [/ai-chat/composer-1](app/pages/ai-chat/composer-1.vue)
 - [ ] [/ai-chat/composer-2](app/pages/ai-chat/composer-2.vue)
 - [ ] [/ai-chat/composer-3](app/pages/ai-chat/composer-3.vue)
 - [ ] [/ai-chat/composer-4](app/pages/ai-chat/composer-4.vue)
