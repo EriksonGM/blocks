@@ -30,6 +30,8 @@ Cada página habilitada tiene un archivo JSON en `app/data/copy-blocks/` con `pa
 
 `/developers/api-keys` exporta el resumen de versión y el gestor de claves completo. Sus valores `demo_*_not_a_real_key` no autentican peticiones; creación y rotación son operaciones locales, sin persistencia. El gestor incluye cuenta, guía, confirmación de rotación, ocultar/revelar y copia manual ante rechazo del portapapeles. Las pruebas comprueban estos controles tanto en el catálogo como en el SFC pegado.
 
+`/developers/events-&-logs` exporta el explorador de logs y dos resúmenes independientes de visitantes/fuentes. Los períodos relativos terminan en una hora fija del ejemplo, no en el reloj del usuario. La importación reemplaza únicamente datos locales: exige un array de 1–100 registros, UTC válido, niveles y campos de texto conocidos; limita el JSON a 100 KB. No se sube información ni se conecta un flujo en vivo. Los resúmenes son datos de ejemplo independientes de los filtros de logs.
+
 `scripts/block-catalog.mjs` extrae el marcado desde el AST Vue, elimina los atributos de herramientas y agrega solo las dependencias registradas. `modules/block-catalog.mjs` genera fuentes por página durante `dev`, `build` y `generate`, y las actualiza al editar las páginas. No hay una segunda copia manual del código ni un endpoint que exponga archivos arbitrarios. Reinicia `pnpm dev` después de añadir o modificar un registro JSON para incorporar sus bloques y chunks.
 
 `app/components/BlockCopyTools.vue` muestra herramientas flotantes sin modificar el layout y carga el código de esa página cuando se selecciona un bloque. No se incluye en las exportaciones. Los componentes copiados no requieren los módulos ni archivos del catálogo.

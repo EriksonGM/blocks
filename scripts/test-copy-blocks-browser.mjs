@@ -192,6 +192,69 @@ async function checkDemoApiKeys(root) {
   result.demoApiKeys = { clipboard: true, reveal: true, rotation: true, creation: true, environments: true, account: true, fallback: true }
 }
 
+async function checkEventLogs(root) {
+  const rows = `document.querySelectorAll(${JSON.stringify(root + ' tbody tr')}).length`
+  const text = `document.querySelector(${JSON.stringify(root)}).textContent`
+  await waitFor(`${rows} === 7`)
+  assert.equal(await evaluate(`${text}.includes('$2,500')`), false, 'Log records must not include a currency total')
+  await click(root + ' [aria-label="Filter warning logs"]')
+  await waitFor(`${rows} === 2`)
+  await click(root + ' [aria-label="Filter error logs"]')
+  await waitFor(`${rows} === 3`)
+  await click(root + ' [aria-label="Filter warning logs"]')
+  await waitFor(`${rows} === 1`)
+  await click(root + ' button[aria-label="Reset log filters"]')
+  await chooseOption(root + ' [aria-label="Log environment"]', 'Development')
+  await waitFor(`${rows} === 2`)
+  await chooseOption(root + ' [aria-label="Log event type"]', 'Cache')
+  await waitFor(`${rows} === 1`)
+  await click(root + ' button[aria-label="Reset log filters"]')
+  await chooseOption(root + ' [aria-label="Log time period"]', 'Past 5 minutes')
+  await waitFor(`${rows} === 2`)
+  await chooseOption(root + ' [aria-label="Log time period"]', 'Custom')
+  await setInput(root + ' [aria-label="Log range start UTC"]', '2026-10-03T10:32')
+  await setInput(root + ' [aria-label="Log range end UTC"]', '2026-10-03T10:34')
+  await waitFor(`${rows} === 2`)
+  await setInput(root + ' [aria-label="Log range end UTC"]', '2026-10-03T10:31')
+  await waitFor(`${text}.includes('Enter a valid UTC range') && ${text}.includes('No logs match')`)
+  await click(root + ' button[aria-label="Reset log filters"]')
+  await setInput(root + ' [aria-label="Search event logs"]', 'database')
+  await waitFor(`${rows} === 1`)
+  await setInput(root + ' [aria-label="Search event logs"]', '')
+  await click(root + ' button[aria-label="Sort event timestamps"]')
+  await waitFor(`document.querySelector(${JSON.stringify(root + ' tbody tr')}).textContent.includes('10:36:05')`)
+  await click(root + ' button[aria-label="Toggle log filters"]')
+  await waitFor(`document.querySelector(${JSON.stringify(root + ' button[aria-label="Toggle log filters"]')}).getAttribute('aria-expanded') === 'false'`)
+  await click(root + ' button[aria-label="Toggle log filters"]')
+  await click(root + ' button[aria-label="Import local log JSON"]')
+  assert.notEqual(await evaluate(`document.querySelector('[aria-label="Local log JSON"]').getAttribute('aria-invalid')`), 'true', 'Fresh import form must not show an error')
+  await setInput('[aria-label="Local log JSON"]', '{')
+  await click('button[aria-label="Confirm local log import"]')
+  await waitFor(`document.querySelector('[role=dialog]').textContent.includes('Enter valid JSON')`)
+  await setInput('[aria-label="Local log JSON"]', '[{"timestamp":"2026-10-03T10:38:00Z","level":"INFO","message":"Invalid nested field","source":"example.js","environment":["Development"],"type":"Request"}]')
+  await click('button[aria-label="Confirm local log import"]')
+  await waitFor(`document.querySelector('[role=dialog]').textContent.includes('1–100 records')`)
+  await click('button[aria-label="Load example log JSON"]')
+  await screenshot('event-log-import.png')
+  await click('button[aria-label="Confirm local log import"]')
+  await waitFor(`!document.querySelector('[role=dialog]') && ${rows} === 1 && ${text}.includes('Imported demonstration event')`)
+  await click(root + ' button[aria-label="Reload example logs"]')
+  await waitFor(`${rows} === 7`)
+  result.eventLogs = { levels: true, environment: true, type: true, search: true, period: true, customRange: true, sorting: true, importValidation: true, import: true, reload: true }
+}
+async function checkVisitorSummary(root, referrers = false) {
+  await chooseTab(root, referrers ? 'UTM Parameters' : 'Routes')
+  await waitFor(`document.querySelector(${JSON.stringify(root)}).textContent.includes(${JSON.stringify(referrers ? 'utm_source=newsletter' : 'GET /api/users')})`)
+  if (!referrers) await chooseTab(root, 'Hostnames')
+  await click(root + ` button[aria-label="View all ${referrers ? 'referrer' : 'visitor'} records"]`)
+  await waitFor(`document.querySelector('[role=dialog]')?.textContent.includes(${JSON.stringify(referrers ? 'utm_medium=social' : 'preview.example.com')})`)
+  assert.equal(await evaluate(`document.querySelectorAll('[role=dialog] input, [role=dialog] textarea').length`), 0)
+  await click(`button[aria-label="Close ${referrers ? 'referrer' : 'visitor'} records"]`)
+  await waitFor(`!document.querySelector('[role=dialog]')`)
+  await chooseTab(root, referrers ? 'Referrers' : 'Pages')
+  result.visitorBreakdowns = true
+}
+
 let previousClipboard
 const normalize = value => value.replaceAll('\r\n', '\n')
 const result = { copied: [], pasteTests: [], screenshots: profile }
@@ -246,6 +309,12 @@ try {
     if (page.path === '/developers/api-keys') {
       await checkDemoApiKeys('[data-copy-block="developer-api-key-manager"]')
       await selectBlock('developer-api-key-manager')
+    }
+    if (page.path === '/developers/events-&-logs') {
+      await checkEventLogs('[data-copy-block="developer-log-explorer"]')
+      await checkVisitorSummary('[data-copy-block="developer-visitor-summary"]')
+      await checkVisitorSummary('[data-copy-block="developer-referrer-summary"]', true)
+      await selectBlock('developer-referrer-summary')
     }
     assert.deepEqual(errors, [], `${page.path}: browser errors`)
     await screenshot(page.key + '.png')
@@ -309,6 +378,19 @@ try {
       await click('button[aria-label="Cancel demo key creation"]')
       await waitFor(`!document.querySelector('[role=dialog]')`)
     }
+    if (page.path === '/developers/events-&-logs') {
+      const root = '[data-copy-block="developer-log-explorer"]'
+      await click(root + ' button[aria-label="Toggle log filters"]')
+      await screenshot(page.key + '-mobile-table.png')
+      await click(root + ' button[aria-label="Import local log JSON"]')
+      await waitFor(`document.querySelector('[role=dialog] textarea')`)
+      await screenshot(page.key + '-mobile-import.png')
+      await click('button[aria-label="Cancel log import"]')
+      await waitFor(`!document.querySelector('[role=dialog]')`)
+      await evaluate(`document.querySelector('[data-copy-block="developer-visitor-summary"]').scrollIntoView({ block: 'start' })`)
+      await screenshot(page.key + '-mobile-summaries.png')
+      assert.equal(await evaluate('document.documentElement.scrollWidth <= window.innerWidth'), true, 'Mobile log tables must scroll internally')
+    }
     assert.deepEqual(errors, [], `${page.path}: mobile browser errors`)
   }
   result.mobileSelector = true
@@ -348,6 +430,9 @@ try {
       result.maintenanceDialog = true
     }
     if (block.id === 'developer-api-key-manager') await checkDemoApiKeys('[data-paste-test]')
+    if (block.id === 'developer-log-explorer') await checkEventLogs('[data-paste-test]')
+    if (block.id === 'developer-visitor-summary') await checkVisitorSummary('[data-paste-test]')
+    if (block.id === 'developer-referrer-summary') await checkVisitorSummary('[data-paste-test]', true)
     if (block.id.startsWith('agent-') && block.id.endsWith('-run')) {
       if (['agent-report-run', 'agent-discount-run'].includes(block.id)) {
         const selector = '[data-paste-test] button[aria-expanded]'
