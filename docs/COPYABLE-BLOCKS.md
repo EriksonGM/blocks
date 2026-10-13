@@ -6,7 +6,7 @@ El piloto inicial está disponible en estas tres páginas:
 - `/developers/webhooks`: tabla con búsqueda, ordenación y copia de identificadores.
 - `/ai-chat/composer-1`: compositor con conversación de demostración.
 
-Las páginas adicionales se habilitan individualmente; consulta el [ToDo del README](../README.md#todo-por-página-261-páginas-de-contenido) para conocer el estado de validación y publicación. `/401` añade una pantalla de acceso no autorizado como un componente independiente.
+Las páginas adicionales se habilitan individualmente; consulta el [ToDo del README](../README.md#todo-por-página-261-páginas-de-contenido) para conocer el estado de validación y publicación. `/401`, `/403`, `/404` y `/503` añaden pantallas de estado como componentes independientes; mantenimiento incluye un modal informativo, no una integración con un servicio real.
 
 Pasa el cursor sobre un bloque o enfócalo con Tab. Aparecerán el contorno y las acciones **Ver código**, **Copiar** y **Más opciones de copia**. El botón **N bloques copiables** permite elegir un bloque también desde el teclado o una pantalla táctil. Escape oculta las herramientas.
 

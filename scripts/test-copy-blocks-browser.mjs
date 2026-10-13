@@ -219,6 +219,15 @@ try {
       await waitFor(`location.pathname === '/'`)
       result.goBack = true
     }
+    if (block.id === 'maintenance-screen') {
+      await click('[data-paste-test] button')
+      await waitFor(`document.querySelector('[role=dialog]')?.textContent.includes('Routine maintenance')`)
+      assert.equal(await evaluate(`document.querySelectorAll('[role=dialog] input, [role=dialog] textarea').length`), 0, 'Maintenance information must not show an edit form')
+      await screenshot('maintenance-dialog.png')
+      await click('button[aria-label="Close maintenance information"]')
+      await waitFor(`!document.querySelector('[role=dialog]')`)
+      result.maintenanceDialog = true
+    }
     result.pasteTests.push(block.id)
   }
   console.log(JSON.stringify(result, null, 2))

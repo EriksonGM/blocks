@@ -2,7 +2,7 @@
 
 ## Bloques copiables y seguimiento
 
-En las páginas marcadas en el ToDo, pasa el cursor sobre un bloque para **copiar su componente Vue**, copiar solo su plantilla o ver el código. También hay un selector de bloques accesible desde teclado y móvil. El piloto comprende `/ecommerce/dashboard-1`, `/developers/webhooks` y `/ai-chat/composer-1`; `/401` es la primera página adicional. Consulta [docs/COPYABLE-BLOCKS.md](docs/COPYABLE-BLOCKS.md).
+En las páginas marcadas en el ToDo, pasa el cursor sobre un bloque para **copiar su componente Vue**, copiar solo su plantilla o ver el código. También hay un selector de bloques accesible desde teclado y móvil. El piloto comprende `/ecommerce/dashboard-1`, `/developers/webhooks` y `/ai-chat/composer-1`; también están habilitadas `/401`, `/403`, `/404` y `/503`. Consulta [docs/COPYABLE-BLOCKS.md](docs/COPYABLE-BLOCKS.md).
 
 `pnpm check:copy-blocks` valida todos los bloques registrados. `--page=/401` limita la comprobación a una página.
 
@@ -125,9 +125,10 @@ La casilla de una página representa **interfaz revisada + copia funcional + pru
 | `/ai-chat/composer-1` | Piloto revisado; formularios anidados, tokens CSS y recurso externo corregidos | 1 bloque | Tipos, build, envío de mensajes, navegador, teclado/móvil y pegado aprobados; ruta/exportación repetida con `--page=/ai-chat/composer-1 --http` | `d5a52e2`, push confirmado | Terminada |
 | `/401` | Escritorio, móvil y tema oscuro revisados; controles Nuxt UI nativos; vuelta atrás real; eliminados residuos del sitio original | 1 bloque autónomo, sin recursos externos | `check:pages`, `check:copy-blocks --page=/401 --http`, `typecheck` y `check:copy-browser --page=/401` aprobados; portapapeles, plantilla, fallback, pegado y navegación probados | `5b41fbc`, push confirmado e integrado en `main` | Terminada |
 | `/403` | Pantalla y texto revisados en escritorio/móvil y claro/oscuro; navegación atrás funcional; retirados residuos originales | 1 bloque autónomo | `check:pages`, `check:copy-blocks --page=/403 --http`, `typecheck`, `preview:copy-blocks --typecheck` y `check:copy-browser --page=/403` aprobados | `2195ad6`, push confirmado en `main` | Terminada |
-| `/404` | Composición, texto, botones nativos y navegación revisados; escritorio/móvil y claro/oscuro sin errores | 1 bloque autónomo | `check:pages`, `check:copy-blocks --page=/404 --http`, `typecheck`, `preview:copy-blocks --typecheck` y `check:copy-browser --page=/404` aprobados | Commit de página; push pendiente de confirmación | Publicar antes de continuar con `/503` |
+| `/404` | Composición, texto, botones nativos y navegación revisados; escritorio/móvil y claro/oscuro sin errores | 1 bloque autónomo | `check:pages`, `check:copy-blocks --page=/404 --http`, `typecheck`, `preview:copy-blocks --typecheck` y `check:copy-browser --page=/404` aprobados | `42a5e0b`, push confirmado en `main` | Terminada |
+| `/503` | Escritorio/móvil y claro/oscuro revisados; «Learn more» muestra información de mantenimiento, no un formulario de edición | 1 bloque autónomo con su modal y estado | `check:pages`, `check:copy-blocks --page=/503 --http`, `typecheck`, `preview:copy-blocks --typecheck` y `check:copy-browser --page=/503` aprobados; modal copiado probado | Commit de página; push pendiente de confirmación | Publicar antes de continuar con `/ai-chat/agent-activity` |
 
-Avance: **6 de 261 páginas de contenido guardadas; 255 pendientes**, además de las 2 rutas auxiliares. Las casillas reflejan páginas guardadas; la columna commit/push confirma su publicación. Actualiza esta tabla al terminar una página o encontrar un bloqueo; no dar a entender que la cola continúa ejecutándose en segundo plano cuando no hay una ejecución activa.
+Avance: **7 de 261 páginas de contenido guardadas; 254 pendientes**, además de las 2 rutas auxiliares. Las casillas reflejan páginas guardadas; la columna commit/push confirma su publicación. Actualiza esta tabla al terminar una página o encontrar un bloqueo; no dar a entender que la cola continúa ejecutándose en segundo plano cuando no hay una ejecución activa.
 
 ### ToDo por página (261 páginas de contenido)
 
@@ -136,7 +137,7 @@ Cada casilla exige las dos tareas solicitadas: **validar la coherencia de toda l
 - [x] [/401](app/pages/401.vue)
 - [x] [/403](app/pages/403.vue)
 - [x] [/404](app/pages/404.vue)
-- [ ] [/503](app/pages/503.vue)
+- [x] [/503](app/pages/503.vue)
 - [ ] [/ai-chat/agent-activity](app/pages/ai-chat/agent-activity.vue)
 - [ ] [/ai-chat/agent-configuration](app/pages/ai-chat/agent-configuration.vue)
 - [ ] [/ai-chat/agent-detail](app/pages/ai-chat/agent-detail.vue)
