@@ -1,5 +1,6 @@
 <!-- Page: /ecommerce/dashboard-1 | All content, state and styles live in this file. -->
 <script setup lang="ts">
+// Keep this SFC in LF: HTML normalizes CRLF inside multiline SVG attributes.
 const route = useRoute()
 
 useHead({ title: "Dashboard 1 · Blocks Admin" })
