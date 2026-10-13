@@ -6,7 +6,7 @@ En las páginas marcadas en el ToDo, pasa el cursor sobre un bloque para **copia
 
 `pnpm check:copy-blocks` valida todos los bloques registrados. `--page=/401` limita la comprobación a una página.
 
-La ampliación se realiza **una página a la vez** en `feat/copyable-blocks-pilot`. El ToDo de este README es el registro de pendientes; no se marcará una página como terminada solo por añadir un botón de copia.
+La ampliación se realiza **una página a la vez sobre `main`**, según la instrucción actual del usuario. La rama `feat/copyable-blocks-pilot` ya se integró y publicó en `main` mediante `0bf9584`. El ToDo de este README es el registro de pendientes; no se marcará una página como terminada solo por añadir un botón de copia.
 
 La aplicación contiene **261 páginas completas**, escritas directamente con **Nuxt 4 y Nuxt UI 4**, y conserva las **219 entradas del menú original** de [Shadcnblocks Admin](https://shadcnblocks-admin.vercel.app).
 
@@ -101,7 +101,7 @@ Consulta [docs/COPYABLE-BLOCKS.md](docs/COPYABLE-BLOCKS.md) para los detalles, p
 ```sh
 git add README.md <archivo-de-la-pagina> <registro-y-dependencias-revisadas>
 git commit -m "feat(blocks): validate and enable copying for /ruta"
-git push -u origin feat/copyable-blocks-pilot
+git push origin main
 ```
 
 La casilla de una página representa **interfaz revisada + copia funcional + pruebas aprobadas + commit realizado**. El push se confirma en el registro de avance y se exige antes de continuar; si no se ha publicado, esa página permanece bloqueada. El SHA puede consultarse con `git log --oneline -- <archivo-de-la-pagina>`; no incluir el SHA del propio commit dentro de ese mismo commit.
@@ -111,7 +111,8 @@ La casilla de una página representa **interfaz revisada + copia funcional + pru
 - [ ] Completar todas las páginas de la lista siguiente, sin saltar validaciones.
 - [ ] Verificar que todos los commits por página están publicados en `origin`.
 - [ ] Ejecutar `pnpm build` y las pruebas finales del catálogo completo, incluyendo navegación entre páginas y limpieza de las herramientas al salir.
-- [ ] Crear el MR hacia `main` **solo después de completar todas las páginas**. En este repositorio GitHub se denomina Pull Request. Adjuntar resumen, resultados de pruebas e incidencias conocidas; no fusionarlo automáticamente.
+- [x] Integrar el piloto en `main` y publicar el merge (`0bf9584`). La instrucción posterior del usuario sustituyó el MR final por integración directa y continuación sobre `main`.
+- [ ] Publicar el resumen final, resultados de pruebas e incidencias conocidas una vez completadas todas las páginas. No crear un PR de `main` hacia sí misma.
 
 ### Registro de avance
 
@@ -122,7 +123,7 @@ La casilla de una página representa **interfaz revisada + copia funcional + pru
 | `/ecommerce/dashboard-1` | Piloto revisado | 6 bloques | Tipos, build, navegador y pegado aprobados; validación de ruta/exportación repetida con `--page=/ecommerce/dashboard-1 --http` | `ccacd15`, push confirmado | Terminada |
 | `/developers/webhooks` | Piloto revisado; copia de ID y enlaces corregidos | 1 bloque | Tipos, build, navegador, búsqueda y pegado aprobados; ruta/exportación repetida con `--page=/developers/webhooks --http` | `af80828`, push confirmado | Terminada |
 | `/ai-chat/composer-1` | Piloto revisado; formularios anidados, tokens CSS y recurso externo corregidos | 1 bloque | Tipos, build, envío de mensajes, navegador, teclado/móvil y pegado aprobados; ruta/exportación repetida con `--page=/ai-chat/composer-1 --http` | `d5a52e2`, push confirmado | Terminada |
-| `/401` | Escritorio, móvil y tema oscuro revisados; controles Nuxt UI nativos; vuelta atrás real; eliminados residuos del sitio original | 1 bloque autónomo, sin recursos externos | `check:pages`, `check:copy-blocks --page=/401 --http`, `typecheck` y `check:copy-browser --page=/401` aprobados; portapapeles, plantilla, fallback, pegado y navegación probados | Commit de página; push pendiente de confirmación | Publicar y después integrar la rama en `main` |
+| `/401` | Escritorio, móvil y tema oscuro revisados; controles Nuxt UI nativos; vuelta atrás real; eliminados residuos del sitio original | 1 bloque autónomo, sin recursos externos | `check:pages`, `check:copy-blocks --page=/401 --http`, `typecheck` y `check:copy-browser --page=/401` aprobados; portapapeles, plantilla, fallback, pegado y navegación probados | `5b41fbc`, push confirmado e integrado en `main` | Terminada; siguiente página: `/403` |
 
 Avance: **4 de 261 páginas de contenido guardadas; 257 pendientes**, además de las 2 rutas auxiliares. Las casillas reflejan páginas guardadas; la columna commit/push confirma su publicación. Actualiza esta tabla al terminar una página o encontrar un bloqueo; no dar a entender que la cola continúa ejecutándose en segundo plano cuando no hay una ejecución activa.
 
