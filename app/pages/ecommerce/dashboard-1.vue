@@ -4,6 +4,9 @@ const route = useRoute()
 
 useHead({ title: "Dashboard 1 · Blocks Admin" })
 
+// @copy:dashboard-actions:start
+import { reactive } from 'vue'
+
 const toast = useToast()
 
 const actionDialog = reactive({ open: false, title: '', mode: 'edit', name: '', description: '', recordId: '', table: 0 })
@@ -14,6 +17,7 @@ function confirmAction() {
   toast.add({ title: actionDialog.mode === 'delete' ? 'Item removed' : 'Changes saved', color: 'success', icon: 'i-lucide-check' })
   actionDialog.open = false
 }
+// @copy:dashboard-actions:end
 </script>
 
 <template>
@@ -28,7 +32,7 @@ function confirmAction() {
               </NuxtLink>
               <main id="dashboard-main" class="bg-default w-full flex-1 space-y-4 overflow-auto p-3 sm:space-y-6 sm:p-4 md:p-6">
                 <!-- Card 1: $189,540.75 -->
-                <UCard class="grid grid-cols-2 gap-3 rounded-xl p-4 sm:gap-4 sm:p-5 lg:grid-cols-4 lg:gap-6 lg:p-6" :ui="{ body: 'contents' }">
+                <UCard data-copy-block="commerce-metrics" tabindex="0" class="grid grid-cols-2 gap-3 rounded-xl p-4 sm:gap-4 sm:p-5 lg:grid-cols-4 lg:gap-6 lg:p-6" :ui="{ body: 'contents' }">
                   <div class="flex items-start">
                     <div class="flex-1 space-y-1 sm:space-y-2 lg:space-y-3">
                       <div class="text-muted flex items-center gap-1.5 sm:gap-2">
@@ -95,7 +99,7 @@ function confirmAction() {
                 </UCard>
                 <div class="flex flex-col gap-4 sm:gap-6 xl:flex-row">
                   <!-- Card 2: Total Revenue -->
-                  <UCard class="flex min-w-0 flex-1 flex-col rounded-xl" :ui="{ body: 'contents' }">
+                  <UCard data-copy-block="commerce-revenue" tabindex="0" class="flex min-w-0 flex-1 flex-col rounded-xl" :ui="{ body: 'contents' }">
                     <div class="flex h-14 items-center justify-between border-b px-4 sm:px-5 border-default">
                       <div class="flex items-center gap-2.5">
                         <UButton color="neutral" variant="outline" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-default bg-default shadow-xs hover:bg-elevated hover:text-default size-7 sm:size-8" aria-label="Revenue" type="button" @click="openAction(&quot;Revenue&quot;)">
@@ -313,7 +317,7 @@ function confirmAction() {
                     </div>
                   </UCard>
                   <!-- Card 3: Revenue by Channel -->
-                  <UCard class="flex min-w-0 flex-col rounded-xl xl:w-[410px]" :ui="{ body: 'contents' }">
+                  <UCard data-copy-block="commerce-channels" tabindex="0" class="flex min-w-0 flex-col rounded-xl xl:w-[410px]" :ui="{ body: 'contents' }">
                     <div class="flex h-14 items-center justify-between border-b px-4 sm:px-5 border-default">
                       <div class="flex items-center gap-2.5">
                         <UButton color="neutral" variant="outline" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-default bg-default shadow-xs hover:bg-elevated hover:text-default size-7 sm:size-8" aria-label="Revenue by Channel" type="button" @click="openAction(&quot;Revenue by Channel&quot;)">
@@ -626,7 +630,7 @@ function confirmAction() {
                 </div>
                 <div class="grid gap-4 lg:grid-cols-3">
                   <!-- Card 4: $959.00 -->
-                  <UCard class="flex flex-col gap-3 rounded-xl p-4 sm:p-5" :ui="{ body: 'contents' }">
+                  <UCard data-copy-block="commerce-order-value" tabindex="0" class="flex flex-col gap-3 rounded-xl p-4 sm:p-5" :ui="{ body: 'contents' }">
                     <div class="flex min-h-[64px] items-start justify-between gap-3">
                       <div class="flex items-start gap-3">
                         <div class="bg-(--ui-bg-muted)/40 flex size-8 items-center justify-center rounded-md border border-default">
@@ -876,7 +880,7 @@ function confirmAction() {
                     </div>
                   </UCard>
                   <!-- Card 5: 837 -->
-                  <UCard class="flex flex-col gap-3 rounded-xl p-4 sm:p-5" :ui="{ body: 'contents' }">
+                  <UCard data-copy-block="commerce-sales" tabindex="0" class="flex flex-col gap-3 rounded-xl p-4 sm:p-5" :ui="{ body: 'contents' }">
                     <div class="flex min-h-[64px] items-start justify-between gap-3">
                       <div class="flex items-start gap-3">
                         <div class="bg-(--ui-bg-muted)/40 flex size-8 items-center justify-center rounded-md border border-default">
@@ -958,7 +962,7 @@ function confirmAction() {
                     </div>
                   </UCard>
                   <!-- Card 6: 38% -->
-                  <UCard class="flex flex-col gap-3 rounded-xl p-4 sm:p-5" :ui="{ body: 'contents' }">
+                  <UCard data-copy-block="commerce-categories" tabindex="0" class="flex flex-col gap-3 rounded-xl p-4 sm:p-5" :ui="{ body: 'contents' }">
                     <div class="flex items-center justify-between">
                       <div class="flex items-center gap-3">
                         <div class="bg-(--ui-bg-muted)/40 flex size-8 items-center justify-center rounded-md border border-default">
@@ -1094,7 +1098,7 @@ function confirmAction() {
       </div>
     </div>
     <!-- Page-local action dialog -->
-    <UModal v-model:open="actionDialog.open" :title="actionDialog.title" description="Update the details below.">
+    <UModal data-copy-fragment="dashboard-actions" v-model:open="actionDialog.open" :title="actionDialog.title" description="Update the details below.">
       <template #body>
         <p v-if="actionDialog.mode === 'delete'" class="text-sm text-muted">Are you sure you want to remove this item?</p>
         <div v-else class="space-y-4">
@@ -1109,6 +1113,7 @@ function confirmAction() {
         </div>
       </template>
     </UModal>
+    <BlockCopyTools page="/ecommerce/dashboard-1" />
   </div>
 </template>
 
@@ -1122,10 +1127,12 @@ function confirmAction() {
 .page-content pre { overflow: auto; }
 .page-content img { object-fit: cover; }
 
+/* @copy:charts:start */
 .chart-container { min-width: 0; }
 .chart-wrapper { width: 100% !important; }
 .chart-responsive-container > div { width: 100% !important; height: 100% !important; }
 svg.chart-surface { width: 100%; overflow: visible; }
 .chart-cartesian-axis-tick text { fill: var(--ui-text-muted); font-size: 11px; }
 .chart-cartesian-grid line { stroke: var(--ui-border); }
+/* @copy:charts:end */
 </style>

@@ -118,12 +118,12 @@ La casilla de una página representa **interfaz revisada + copia funcional + pru
 | Página / tarea | Interfaz | Copia | Pruebas | Commit / push | Siguiente acción |
 | --- | --- | --- | --- | --- | --- |
 | Documentación y cola de trabajo | No aplica | No aplica | Inventario comprobado: 261 entradas únicas + 2 rutas auxiliares; `git diff --check` aprobado | `c30377a`, push confirmado | Plan publicado |
-| Infraestructura compartida de copia | No aplica | Visor, portapapeles, extracción y registros independientes | Piloto aprobado; registros separados comprobados con `pnpm check:copy-blocks` | Commit de infraestructura; push pendiente de confirmación | Publicar antes de guardar cada página |
-| `/ecommerce/dashboard-1` | Piloto revisado | 6 bloques | Tipos, build, navegador y pegado aprobados | Pendiente | Guardar y publicar la página |
+| Infraestructura compartida de copia | No aplica | Visor, portapapeles, extracción y registros independientes | `pnpm check:copy-blocks`, `pnpm check:pages` y `pnpm typecheck` aprobados | `8d40a3f`, push confirmado | Publicada |
+| `/ecommerce/dashboard-1` | Piloto revisado | 6 bloques | Tipos, build, navegador y pegado aprobados; validación de ruta/exportación repetida con `--page=/ecommerce/dashboard-1 --http` | Commit de página; push pendiente de confirmación | Publicar antes de continuar |
 | `/developers/webhooks` | Piloto revisado | 1 bloque | Tipos, build, navegador y pegado aprobados | Pendiente | Guardar y publicar la página |
 | `/ai-chat/composer-1` | Piloto revisado | 1 bloque | Tipos, build, navegador y pegado aprobados | Pendiente | Guardar y publicar la página |
 
-Las otras **258 páginas de contenido** siguen pendientes. Las tres del piloto tampoco se marcan terminadas hasta guardar y publicar su trabajo. Actualiza esta tabla al terminar una página o encontrar un bloqueo; no dar a entender que la cola continúa ejecutándose en segundo plano cuando no hay una ejecución activa.
+Las otras **258 páginas de contenido** siguen pendientes. Las casillas reflejan páginas guardadas; la columna commit/push confirma su publicación. Actualiza esta tabla al terminar una página o encontrar un bloqueo; no dar a entender que la cola continúa ejecutándose en segundo plano cuando no hay una ejecución activa.
 
 ### ToDo por página (261 páginas de contenido)
 
@@ -231,7 +231,7 @@ Cada casilla exige las dos tareas solicitadas: **validar la coherencia de toda l
 - [ ] [/ecommerce/add-shipping](app/pages/ecommerce/add-shipping.vue)
 - [ ] [/ecommerce/customer-detail-1](app/pages/ecommerce/customer-detail-1.vue)
 - [ ] [/ecommerce/customer-list-1](app/pages/ecommerce/customer-list-1.vue)
-- [ ] [/ecommerce/dashboard-1](app/pages/ecommerce/dashboard-1.vue)
+- [x] [/ecommerce/dashboard-1](app/pages/ecommerce/dashboard-1.vue)
 - [ ] [/ecommerce/dashboard-2](app/pages/ecommerce/dashboard-2.vue)
 - [ ] [/ecommerce/dashboard-3](app/pages/ecommerce/dashboard-3.vue)
 - [ ] [/ecommerce/dashboard-4](app/pages/ecommerce/dashboard-4.vue)
