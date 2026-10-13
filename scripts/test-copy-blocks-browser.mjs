@@ -295,6 +295,97 @@ async function checkOverviewMetrics(root) {
   result.overviewMetrics = { environment: true, period: true, totals: true, deviceSeries: true }
 }
 
+async function checkWorkspaceIssues(root) {
+  const rows = `document.querySelectorAll(${JSON.stringify(root + ' tbody tr')}).length`
+  await waitFor(`${rows} === 8`)
+  await chooseTab(root, 'Assigned to me')
+  await waitFor(`${rows} === 2`)
+  await chooseTab(root, 'Reported by me')
+  await waitFor(`${rows} === 4`)
+  await chooseTab(root, 'Watching')
+  await waitFor(`${rows} === 6`)
+  await chooseTab(root, 'Updates')
+  await waitFor(`document.querySelectorAll(${JSON.stringify(root + ' [aria-label="Workspace issue updates"] > li')}).length === 2`)
+  await chooseTab(root, 'Overview')
+  await setInput(root + ' input[aria-label="Search workspace issues"]', 'RFC-103')
+  await waitFor(`${rows} === 1`)
+  await setInput(root + ' input[aria-label="Search workspace issues"]', 'no-matching-issue')
+  await waitFor(`document.querySelector(${JSON.stringify(root)}).textContent.includes('No issues match your filters.')`)
+  await setInput(root + ' input[aria-label="Search workspace issues"]', '')
+  await chooseOption(root + ' [aria-label="Workspace issue status"]', 'Review')
+  await waitFor(`${rows} === 2`)
+  await chooseOption(root + ' [aria-label="Workspace issue status"]', 'All statuses')
+  await click(root + ' button[aria-label="Sort workspace issues"]')
+  await waitFor(`document.querySelector(${JSON.stringify(root + ' tbody tr')}).textContent.includes('RFC-108')`)
+  await click(root + ' button[aria-label="Edit RFC-102"]')
+  await waitFor(`document.querySelector('input[name="workspaceIssueTitle"]')?.value === 'Review gantt interaction states'`)
+  await setInput('input[name="workspaceIssueTitle"]', '')
+  await click('button[aria-label="Save workspace issue changes"]')
+  await waitFor(`document.querySelector('[role=dialog]')?.textContent.includes('Enter an issue title.')`)
+  await setInput('input[name="workspaceIssueTitle"]', 'Reviewed gantt interactions')
+  await chooseOption('[aria-label="Edited issue status"]', 'Done')
+  await chooseOption('[aria-label="Edited issue assignee"]', 'Nina Oliver')
+  await click('button[aria-label="Save workspace issue changes"]')
+  await waitFor(`!document.querySelector('[role=dialog]') && document.querySelector(${JSON.stringify(root)}).textContent.includes('Reviewed gantt interactions')`)
+  await chooseTab(root, 'Assigned to me')
+  await waitFor(`${rows} === 3`)
+  await chooseTab(root, 'Updates')
+  await waitFor(`document.querySelectorAll(${JSON.stringify(root + ' [aria-label="Workspace issue updates"] > li')}).length === 3`)
+  assert.ok(await evaluate(`document.querySelector(${JSON.stringify(root + ' [aria-label="Workspace issue updates"] > li')}).textContent.includes('RFC-102')`))
+  await chooseTab(root, 'Overview')
+  const statusSelector = '[data-workspace-status="Done"]'
+  if (await evaluate(`!!document.querySelector(${JSON.stringify(statusSelector)})`)) {
+    assert.equal(await evaluate(`document.querySelector(${JSON.stringify(statusSelector)}).textContent.trim()`), '2', 'Issue status summary updates with edited rows')
+  }
+  result.workspaceIssues = { views: true, filters: true, sorting: true, validation: true, correctRow: true, localSave: true, updates: true }
+}
+async function checkWorkspaceHours(root) {
+  await waitFor(`document.querySelector(${JSON.stringify(root + ' [data-work-total]')}).textContent === '38 hours · 12 mins'`)
+  const initial = await evaluate(`document.querySelector(${JSON.stringify(root + ' svg polyline')}).getAttribute('points')`)
+  await click(root + ' button[aria-label="Work history 2W"]')
+  await waitFor(`document.querySelector(${JSON.stringify(root + ' [data-work-total]')}).textContent === '74 hours · 12 mins'`)
+  assert.notEqual(await evaluate(`document.querySelector(${JSON.stringify(root + ' svg polyline')}).getAttribute('points')`), initial)
+  await click(root + ' button[aria-label="Work history 1Y"]')
+  await waitFor(`document.querySelectorAll(${JSON.stringify(root + ' svg circle')}).length === 4`)
+  await click(root + ' button[aria-label="Work history 5D"]')
+  result.workspaceHours = true
+}
+async function checkWorkspaceTimer(root) {
+  const display = `document.querySelector(${JSON.stringify(root + ' [data-work-timer]')}).textContent`
+  await click(root + ' button[aria-label="Toggle workspace timer"]')
+  await waitFor(`${display} !== '00:00:00'`)
+  await click(root + ' button[aria-label="Toggle workspace timer"]')
+  const paused = await evaluate(display)
+  await evaluate('new Promise(resolve => setTimeout(resolve, 1100))')
+  assert.equal(await evaluate(display), paused, 'Paused timer must not continue counting')
+  await click(root + ' button[aria-label="Toggle workspace timer"]')
+  await waitFor(`${display} !== ${JSON.stringify(paused)}`)
+  await click(root + ' button[aria-label="Reset workspace timer"]')
+  await waitFor(`${display} === '00:00:00'`)
+  await chooseOption(root + ' [aria-label="Tracked issue"]', 'RFC-102 · Review gantt interaction states')
+  result.workspaceTimer = { start: true, pause: true, resume: true, reset: true, issueSelection: true }
+}
+async function checkWorkspacePanel(root) {
+  await chooseTab(root, 'Events')
+  await waitFor(`document.querySelector(${JSON.stringify(root)}).textContent.includes('Product demo')`)
+  await chooseTab(root, 'Focus')
+  await waitFor(`document.querySelector(${JSON.stringify(root)}).textContent.includes('Architecture focus block')`)
+  await chooseTab(root, 'Meetings')
+  await click(root + ' button[aria-label="Toggle Timeline planning review details"]')
+  await waitFor(`document.querySelector(${JSON.stringify(root)}).textContent.includes('Example Google Meet room')`)
+  await click(root + ' button[aria-label="Edit workspace profile"]')
+  await setInput('input[name="workspaceProfileEmail"]', 'invalid-email')
+  await click('button[aria-label="Save workspace profile changes"]')
+  await waitFor(`document.querySelector('[role=dialog]')?.textContent.includes('Enter a valid example email address.')`)
+  await setInput('input[name="workspaceProfileEmail"]', 'nina.updated@example.com')
+  await setInput('input[name="workspaceProfileName"]', 'Nina Updated')
+  await chooseOption('[aria-label="Workspace profile timezone"]', 'Europe/London')
+  await screenshot('workspace-profile-edit.png')
+  await click('button[aria-label="Save workspace profile changes"]')
+  await waitFor(`!document.querySelector('[role=dialog]') && document.querySelector(${JSON.stringify(root)}).textContent.includes('Nina Updated')`)
+  result.workspacePanel = { distinctTabs: true, expandDetails: true, validation: true, profileSave: true }
+}
+
 let previousClipboard
 const normalize = value => value.replaceAll('\r\n', '\n')
 const result = { copied: [], pasteTests: [], screenshots: profile }
@@ -359,6 +450,13 @@ try {
     if (page.path === '/developers/overview') {
       await checkOverviewMetrics('[data-page]')
       await selectBlock('developer-recent-activities')
+    }
+    if (page.path === '/project-management/dashboard-1') {
+      await checkWorkspaceHours('[data-copy-block="project-work-hours"]')
+      await checkWorkspaceTimer('[data-copy-block="project-time-tracker"]')
+      await checkWorkspaceIssues('[data-copy-block="project-my-issues"]')
+      await checkWorkspacePanel('[data-copy-block="project-workspace-panel"]')
+      await selectBlock('project-workspace-panel')
     }
     assert.deepEqual(errors, [], `${page.path}: browser errors`)
     await screenshot(page.key + '.png')
@@ -442,6 +540,19 @@ try {
       await evaluate(`document.querySelector('[data-copy-block="developer-recent-activities"]').scrollIntoView({ block: 'start' })`)
       await screenshot(page.key + '-mobile-activities.png')
     }
+    if (page.path === '/project-management/dashboard-1') {
+      await evaluate(`document.querySelector('[data-copy-block="project-time-tracker"]').scrollIntoView({ block: 'start' })`)
+      await screenshot(page.key + '-mobile-timer.png')
+      await evaluate(`document.querySelector('[data-copy-block="project-my-issues"]').scrollIntoView({ block: 'start' })`)
+      assert.equal(await evaluate('document.querySelectorAll("[data-workspace-issue]").length'), 8, 'Mobile uses all the same issues as desktop')
+      await click('button[aria-label="Edit RFC-103 on mobile"]')
+      await waitFor(`document.querySelector('input[name="workspaceIssueTitle"]')?.value === 'Sync issue filters with project views'`)
+      await screenshot(page.key + '-mobile-issue-edit.png')
+      await click('button[aria-label="Cancel workspace issue changes"]')
+      await waitFor(`!document.querySelector('[role=dialog]')`)
+      await evaluate(`document.querySelector('[data-copy-block="project-workspace-panel"]').scrollIntoView({ block: 'start' })`)
+      await screenshot(page.key + '-mobile-agenda.png')
+    }
     assert.deepEqual(errors, [], `${page.path}: mobile browser errors`)
   }
   result.mobileSelector = true
@@ -485,6 +596,10 @@ try {
     if (block.id === 'developer-visitor-summary') await checkVisitorSummary('[data-paste-test]')
     if (block.id === 'developer-referrer-summary') await checkVisitorSummary('[data-paste-test]', true)
     if (['developer-request-metrics', 'developer-response-metrics', 'developer-visitor-metrics'].includes(block.id)) await checkOverviewMetrics('[data-paste-test]')
+    if (block.id === 'project-work-hours') await checkWorkspaceHours('[data-paste-test]')
+    if (block.id === 'project-time-tracker') await checkWorkspaceTimer('[data-paste-test]')
+    if (block.id === 'project-my-issues') await checkWorkspaceIssues('[data-paste-test]')
+    if (block.id === 'project-workspace-panel') await checkWorkspacePanel('[data-paste-test]')
     if (block.id.startsWith('agent-') && block.id.endsWith('-run')) {
       if (['agent-report-run', 'agent-discount-run'].includes(block.id)) {
         const selector = '[data-paste-test] button[aria-expanded]'

@@ -1,0 +1,13 @@
+{
+  "path": "/project-management/dashboard-1",
+  "file": "app/pages/project-management/dashboard-1.vue",
+  "key": "project-dashboard-1",
+  "blocks": [
+    { "id": "project-workspace-summary", "title": "Personal issue summary", "script": ["workspace-user", "workspace-issues", "workspace-summary"] },
+    { "id": "project-workspace-status", "title": "Issue status summary", "script": ["workspace-user", "workspace-issues", "workspace-status"] },
+    { "id": "project-work-hours", "title": "Work hour analysis", "script": ["workspace-user", "workspace-hours"] },
+    { "id": "project-time-tracker", "title": "Local issue time tracker", "script": ["workspace-user", "workspace-issues", "workspace-timer"] },
+    { "id": "project-my-issues", "title": "Personal workspace issues", "script": ["workspace-user", "workspace-issues", "workspace-issue-board"] },
+    { "id": "project-workspace-panel", "title": "Workspace profile and agenda", "script": ["workspace-user", "workspace-panel"] }
+  ]
+}

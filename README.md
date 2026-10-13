@@ -92,7 +92,7 @@ Consulta [docs/COPYABLE-BLOCKS.md](docs/COPYABLE-BLOCKS.md) para los detalles, p
 ### Procedimiento obligatorio por página
 
 1. Seleccionar **una** ruta pendiente, leer su archivo completo y delimitar sus bloques. No aplicar una conversión masiva sin revisar cada página.
-   **Prioridad actual:** completar primero las rutas fuera de `/ai-chat/*` (incluidas las auxiliares); dejar todas las implementaciones pendientes de `/ai-chat/*` para el final. El inventario conserva su orden alfabético, pero no determina la prioridad entre estas dos fases. Siguiente ruta pendiente: `/developers/webhooks/44ecb04e-9f49-4b2d-9626-01e6dc54eb6e`.
+   **Prioridad actual:** avanzar primero con `/project-management/*`, según la instrucción más reciente del usuario. Después continuar con las demás rutas fuera de `/ai-chat/*` (incluidas las auxiliares); dejar `/ai-chat/*` para el final. El inventario conserva su orden alfabético, pero no determina la prioridad entre estas fases. Siguiente ruta tras publicar dashboard-1: `/project-management/dashboard-2`.
 2. **Validar toda la interfaz:** composición visual, responsive de escritorio/móvil, tema claro/oscuro, foco y etiquetas accesibles, consola e hidratación, recursos y enlaces. Probar filtros, formularios, menús, modales y demás interacciones locales; corregir errores y controles engañosos. No añadir APIs reales a estas demostraciones.
 3. **Implementar la copia de bloques:** registrar cada bloque y sus dependencias, añadir las marcas y `BlockCopyTools`, comprobar que no tapa controles y que el componente copiado conserva su diseño y comportamiento.
 4. **Probar:** compilar los SFC exportados, ejecutar `pnpm check:pages`, `pnpm check:copy-blocks` y `pnpm typecheck`; comprobar la ruta en navegador, el portapapeles real y el pegado en un proyecto Nuxt UI independiente. Registrar comandos, resultados, incidencias y recursos necesarios. Un HTTP 200 no equivale a una revisión visual.
@@ -133,14 +133,15 @@ La casilla de una página representa **interfaz revisada + copia funcional + pru
 | `/developers/api-keys` | Entorno funcional; creación/rotación local con confirmación, valores reales de demostración al copiar, ocultar/revelar, cuenta y guía coherentes; móvil/claro/oscuro revisados | 2 bloques: versión y gestor completo con pestañas y modales; ningún secreto real ni API | `check:pages`, `check:copy-blocks --page=/developers/api-keys --http`, tipos del catálogo/pegado y navegador individual/conjunto aprobados; fallback nativo y modal móvil probados | `46b0a50`, push confirmado en `main` | Terminada |
 | `/developers/events-&-logs` | Filtros funcionales, UTC coherente, importación JSON validada, sin total monetario ajeno a logs; pestañas/resúmenes y modales móviles revisados | 3 bloques autónomos: explorador de logs, visitantes y fuentes | Estructura, exportación HTTP, tipos del catálogo/pegado y navegador aprobados; filtros/orden/importación/recarga/pestañas; prueba conjunta de 28 bloques y revalidación individual tras corregir error visual del formulario | `f0b88f9`, push confirmado en `main` | Terminada |
 | `/developers/overview` | Entorno/período y dispositivo funcionales; gráficas SVG responsive y semánticas; totales, medias y tendencias calculados; estados de actividades legibles en oscuro | 4 bloques independientes; las 3 métricas incluyen sus filtros al copiar | Estructura, tipos del catálogo/pegado, HTTP y navegador individual/conjunto aprobados; build de producción aprobado; 32 copias/pegados en producción y HTTP de las 261 rutas sin fallos | `970ab05`, push confirmado en `main` | Terminada |
+| `/project-management/dashboard-1` | Contadores calculados; temporizador real con pausa/reinicio; filtros y edición de la fila correcta; móvil/escritorio con los mismos datos; perfil y agenda locales sin imágenes internas | 6 bloques autónomos: resumen, estados, horas, temporizador, incidencias y panel de perfil/agenda | `check:pages`, `check:copy-blocks --page=/project-management/dashboard-1 --http`, tipos del catálogo/pegado y navegador aprobados; 6 copias/pegados; filtros/orden/validación/guardado/agenda/temporizador; móvil y claro/oscuro revisados | Commit de página; push pendiente de confirmación | Publicar antes de continuar con dashboard-2 |
 
-Avance: **11 de 261 páginas de contenido guardadas; 250 pendientes**, además de las 2 rutas auxiliares. Las casillas reflejan páginas guardadas; la columna commit/push confirma su publicación. Actualiza esta tabla al terminar una página o encontrar un bloqueo; no dar a entender que la cola continúa ejecutándose en segundo plano cuando no hay una ejecución activa.
+Avance: **12 de 261 páginas de contenido guardadas; 249 pendientes**, además de las 2 rutas auxiliares. Gestión de proyectos: **1 de 32 páginas**. Las casillas reflejan páginas guardadas; la columna commit/push confirma su publicación. Actualiza esta tabla al terminar una página o encontrar un bloqueo; no dar a entender que la cola continúa ejecutándose en segundo plano cuando no hay una ejecución activa.
 
 ### ToDo por página (261 páginas de contenido)
 
 Cada casilla exige las dos tareas solicitadas: **validar la coherencia de toda la interfaz y corregir errores**, e **implementar y validar la copia de sus bloques**, además del flujo de commit/push anterior. El enlace abre el archivo fuente. Empezar por guardar las tres páginas del piloto y continuar en el orden de esta lista.
 
-**Orden de ejecución actualizado:** primero todas las pendientes fuera de `/ai-chat/*`; después las pendientes de `/ai-chat/*`. No deshacer las páginas de IA ya terminadas. Al retomar configuración, inspeccionar el stash indicado arriba y recuperar sus cambios con cuidado: incluye el SFC, su registro JSON y pruebas compartidas que pueden requerir reconciliación con las nuevas pruebas. La casilla sigue pendiente.
+**Orden de ejecución actualizado:** primero `/project-management/*`, después las demás pendientes fuera de `/ai-chat/*`, y finalmente `/ai-chat/*`. No deshacer las páginas de IA ya terminadas. Al retomar configuración, inspeccionar el stash indicado arriba y recuperar sus cambios con cuidado: incluye el SFC, su registro JSON y pruebas compartidas que pueden requerir reconciliación con las nuevas pruebas. La casilla sigue pendiente.
 
 - [x] [/401](app/pages/401.vue)
 - [x] [/403](app/pages/403.vue)
@@ -355,7 +356,7 @@ Cada casilla exige las dos tareas solicitadas: **validar la coherencia de toda l
 - [ ] [/payment-processor/transactions](app/pages/payment-processor/transactions.vue)
 - [ ] [/payment-processor/webhooks](app/pages/payment-processor/webhooks.vue)
 - [ ] [/privacy](app/pages/privacy.vue)
-- [ ] [/project-management/dashboard-1](app/pages/project-management/dashboard-1.vue)
+- [x] [/project-management/dashboard-1](app/pages/project-management/dashboard-1.vue)
 - [ ] [/project-management/dashboard-2](app/pages/project-management/dashboard-2.vue)
 - [ ] [/project-management/dashboard-3](app/pages/project-management/dashboard-3.vue)
 - [ ] [/project-management/dashboard-4](app/pages/project-management/dashboard-4.vue)
