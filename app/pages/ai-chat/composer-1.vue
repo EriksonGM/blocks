@@ -4,6 +4,9 @@ const route = useRoute()
 
 useHead({ title: "Composer 1 · Blocks Admin" })
 
+// @copy:chat-composer:start
+import { reactive, ref } from 'vue'
+
 const toast = useToast()
 
 // Page-local form values. Edit these defaults when copying the page.
@@ -11,20 +14,6 @@ const toast = useToast()
 const form = reactive({
   "message": ""
 })
-
-// Restore drafts after hydration; the first client render matches SSR.
-onMounted(() => {
-  const key = 'nuxt-ui-page:' + route.path
-  try {
-    const draft = localStorage.getItem(key)
-    if (draft) Object.assign(form, JSON.parse(draft))
-  } catch { /* Use the defaults when no draft exists. */ }
-  watch(form, value => localStorage.setItem(key, JSON.stringify(value)), { deep: true, flush: 'sync' })
-})
-
-function saveForm() {
-  toast.add({ title: "Changes saved", color: 'success', icon: 'i-lucide-check' })
-}
 
 const actionDialog = reactive({ open: false, title: '', mode: 'edit', name: '', description: '', recordId: '', table: 0 })
 function openAction(label: string, recordId = '', table = 0) {
@@ -43,24 +32,25 @@ function sendMessage(field: keyof typeof form) {
   messages.value.push({ id: 'assistant-' + messages.value.length, role: 'assistant', text: 'Your message has been added to this demo conversation. Connect sendMessage to your AI API for real responses.' })
   Object.assign(form, { [field]: '' })
 }
+// @copy:chat-composer:end
 </script>
 
 <template>
   <div class="page-content flex h-full min-h-0 w-full flex-col text-default" data-page="/ai-chat/composer-1">
     <section class="flex min-w-0 flex-1 items-start justify-center overflow-y-auto px-4 pt-20 pb-12 sm:px-6 md:py-12">
-      <div class="my-auto flex w-full max-w-[720px] flex-col items-center gap-6">
+      <div data-copy-block="chat-composer" tabindex="0" class="chat-composer my-auto flex w-full max-w-[720px] flex-col items-center gap-6">
         <div class="flex flex-col items-center gap-2 text-center">
-          <img alt="Shadcnblocks" width="17" height="20" class="ai-home-reveal ai-home-reveal-kicker object-contain dark:hidden" style="color:transparent" src="/reference/4eb49a7be0892386.svg" loading="lazy" />
+          <UIcon name="i-lucide-box" class="size-5 text-highlighted" />
           <h1 class="ai-home-reveal ai-home-reveal-title text-2xl font-medium tracking-tight text-highlighted">What should we build?</h1>
           <p class="ai-home-reveal ai-home-reveal-title text-muted text-sm">Describe an admin screen, component, or workflow.</p>
         </div>
         <!-- Form: controls and draft state are declared in this page -->
-        <UForm :state="form" @submit="saveForm" class="relative mx-auto max-w-[720px] ai-home-reveal ai-home-reveal-composer w-full" aria-label="AI screen composer">
+        <div class="relative mx-auto max-w-[720px] ai-home-reveal ai-home-reveal-composer w-full">
           <!-- Chat composer: form.message -->
           <div v-if="messages.length" class="my-4 space-y-4">
             <UChatMessage v-for="message in messages" :key="message.id" :id="message.id" :role="message.role" :parts="[{ type: 'text', text: message.text }]" :side="message.role === 'user' ? 'right' : 'left'" :variant="message.role === 'user' ? 'soft' : 'naked'" />
           </div>
-          <UChatPrompt v-model="form.message" :autofocus="false" color="primary" :rows="3" placeholder="" data-slot="input-group" class="group/input-group relative flex w-full min-w-0 border shadow-xs outline-none in-data-[slot=combobox-content]:focus-within:border-inherit in-data-[slot=combobox-content]:focus-within:ring-0 has-[[data-slot=input-group-control]:focus-visible]:ring-(--ui-border-accented)/50 has-[[data-slot][aria-invalid=true]]:border-(--ui-error) has-[[data-slot][aria-invalid=true]]:ring-3 has-[[data-slot][aria-invalid=true]]:ring-(--ui-error)/20 has-[&gt;[data-align=block-end]]:h-auto has-[&gt;[data-align=block-end]]:flex-col has-[&gt;[data-align=block-start]]:h-auto has-[&gt;[data-align=block-start]]:flex-col has-[&gt;textarea]:h-auto dark:bg-(--ui-border)/30 dark:has-[[data-slot][aria-invalid=true]]:ring-(--ui-error)/40 has-[&gt;[data-align=block-end]]:[&amp;&gt;input]:pt-3 has-[&gt;[data-align=block-start]]:[&amp;&gt;input]:pb-3 has-[&gt;[data-align=inline-end]]:[&amp;&gt;input]:pr-1.5 has-[&gt;[data-align=inline-start]]:[&amp;&gt;input]:pl-1.5 h-auto flex-col items-stretch transition-[border-color,box-shadow] duration-200 border-[var(--ai-composer-line)] bg-[var(--ai-composer-surface)] shadow-[var(--ai-composer-shadow)] has-[[data-slot=input-group-control]:focus-visible]:border-[var(--ai-composer-line-strong)] gap-2.5 rounded-[22px] p-3.5 has-[[data-slot=input-group-control]:focus-visible]:ring-0" @submit="sendMessage(&quot;message&quot;)" :ui="{ base: 'px-4 py-3 text-sm', footer: 'p-0 w-full' }">
+          <UChatPrompt v-model="form.message" :autofocus="false" color="primary" :rows="3" placeholder="Describe your screen..." aria-label="Message" data-slot="input-group" class="group/input-group relative flex w-full min-w-0 border shadow-xs outline-none in-data-[slot=combobox-content]:focus-within:border-inherit in-data-[slot=combobox-content]:focus-within:ring-0 has-[[data-slot=input-group-control]:focus-visible]:ring-(--ui-border-accented)/50 has-[[data-slot][aria-invalid=true]]:border-(--ui-error) has-[[data-slot][aria-invalid=true]]:ring-3 has-[[data-slot][aria-invalid=true]]:ring-(--ui-error)/20 has-[&gt;[data-align=block-end]]:h-auto has-[&gt;[data-align=block-end]]:flex-col has-[&gt;[data-align=block-start]]:h-auto has-[&gt;[data-align=block-start]]:flex-col has-[&gt;textarea]:h-auto dark:bg-(--ui-border)/30 dark:has-[[data-slot][aria-invalid=true]]:ring-(--ui-error)/40 has-[&gt;[data-align=block-end]]:[&amp;&gt;input]:pt-3 has-[&gt;[data-align=block-start]]:[&amp;&gt;input]:pb-3 has-[&gt;[data-align=inline-end]]:[&amp;&gt;input]:pr-1.5 has-[&gt;[data-align=inline-start]]:[&amp;&gt;input]:pl-1.5 h-auto flex-col items-stretch transition-[border-color,box-shadow] duration-200 border-[var(--ai-composer-line)] bg-[var(--ai-composer-surface)] shadow-[var(--ai-composer-shadow)] has-[[data-slot=input-group-control]:focus-visible]:border-[var(--ai-composer-line-strong)] gap-2.5 rounded-[22px] p-3.5 has-[[data-slot=input-group-control]:focus-visible]:ring-0" @submit="sendMessage(&quot;message&quot;)" :ui="{ base: 'px-4 py-3 text-sm', footer: 'p-0 w-full' }">
             <template #footer>
               <div role="group" data-slot="input-group-addon" class="h-auto text-sm font-medium text-muted select-none group-data-[disabled=true]/input-group:opacity-50 [&amp;&gt;kbd]:rounded-[calc(var(--radius)-5px)] [&amp;&gt;svg:not([class*='size-'])]:size-4 order-last justify-start group-has-[&gt;input]/input-group:pb-2 [.border-t]:pt-2 grid w-full cursor-default grid-cols-[minmax(0,1fr)_auto] items-center gap-2 p-0">
                 <div class="flex min-w-0 items-center gap-1">
@@ -91,11 +81,11 @@ function sendMessage(field: keyof typeof form) {
               </div>
             </template>
           </UChatPrompt>
-        </UForm>
+        </div>
       </div>
     </section>
     <!-- Page-local action dialog -->
-    <UModal v-model:open="actionDialog.open" :title="actionDialog.title" description="Update the details below.">
+    <UModal data-copy-fragment="composer-actions" v-model:open="actionDialog.open" :title="actionDialog.title" description="Update the details below.">
       <template #body>
         <p v-if="actionDialog.mode === 'delete'" class="text-sm text-muted">Are you sure you want to remove this item?</p>
         <div v-else class="space-y-4">
@@ -110,10 +100,25 @@ function sendMessage(field: keyof typeof form) {
         </div>
       </template>
     </UModal>
+    <BlockCopyTools page="/ai-chat/composer-1" />
   </div>
 </template>
 
 <style scoped>
+
+/* @copy:composer:start */
+.chat-composer {
+  --ai-composer-line: var(--ui-border);
+  --ai-composer-surface: var(--ui-bg);
+  --ai-composer-shadow: 0 1px 3px color-mix(in oklab, var(--ui-text) 8%, transparent);
+  --ai-composer-line-strong: var(--ui-border-accented);
+  --ai-composer-ink-tertiary: var(--ui-text-muted);
+  --ai-composer-hover: var(--ui-bg-elevated);
+  --ai-composer-ink: var(--ui-text-highlighted);
+  --ai-composer-ink-secondary: var(--ui-text-muted);
+  --radius: var(--ui-radius);
+}
+/* @copy:composer:end */
 
 .page-content { min-height: 0; color: var(--ui-text); --chart-1: var(--ui-primary); --chart-2: var(--ui-text-highlighted); --chart-3: var(--ui-text-muted); --chart-4: var(--ui-text-dimmed); --chart-5: var(--ui-border-accented); --chart-6: var(--ui-border); --radius: var(--ui-radius); }
 .page-content > div { min-height: 100%; }

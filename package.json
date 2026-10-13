@@ -9,6 +9,9 @@
     "preview": "nuxt preview",
     "typecheck": "nuxt typecheck",
     "check:pages": "node scripts/verify-pages.mjs",
+    "check:copy-blocks": "node scripts/verify-copy-blocks.mjs",
+    "preview:copy-blocks": "node scripts/preview-copy-blocks.mjs",
+    "check:copy-browser": "node scripts/test-copy-blocks-browser.mjs",
     "postinstall": "nuxt prepare"
   },
   "dependencies": {

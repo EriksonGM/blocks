@@ -1,9 +1,15 @@
 import { readFile, writeFile, mkdir, access } from 'node:fs/promises'
+import { catalogPages } from './block-catalog.mjs'
 import { dirname, resolve } from 'node:path'
 import { themeClass, themeStyle, themeColor, pageStyles, chartStyles, canvasStyles } from './migration/theme.mjs'
 
 // One-time source migration. There is no renderer or reference-data dependency at runtime.
 const root = resolve('.')
+// Fail before any writes: the reviewed copyable pages are no longer disposable output.
+for (const page of catalogPages) {
+  const source = await readFile(resolve(root, page.file), 'utf8')
+  if (source.includes('data-copy-block=')) throw new Error(`Copyable-block pilot must be preserved: ${page.file}`)
+}
 const manifest = JSON.parse(await readFile(resolve(root, 'app/data/pages.json'), 'utf8'))
 const navigation = JSON.parse(await readFile(resolve(root, 'app/data/reference/navigation.json'), 'utf8'))
 const links = navigation.groups.flatMap(group => group.items.flatMap(item => item.links))
