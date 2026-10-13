@@ -131,6 +131,67 @@ async function chooseOption(selector, label) {
   await evaluate('new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)))')
 }
 
+async function setInput(selector, value) {
+  await evaluate(`(() => { const input = document.querySelector(${JSON.stringify(selector)}); input.value = ${JSON.stringify(value)}; input.dispatchEvent(new Event('input', { bubbles: true })); })()`)
+}
+async function chooseTab(root, label) {
+  await evaluate(`(() => { document.querySelectorAll('[data-browser-tab]').forEach(tab => tab.removeAttribute('data-browser-tab')); const tab = [...document.querySelectorAll(${JSON.stringify(root + ' [role=tab]')})].find(tab => tab.textContent.trim() === ${JSON.stringify(label)}); if (!tab) throw new Error('Missing tab: ' + ${JSON.stringify(label)}); tab.setAttribute('data-browser-tab', 'selected'); })()`)
+  await click('[data-browser-tab="selected"]')
+  await waitFor(`document.querySelector('[data-browser-tab="selected"]').getAttribute('aria-selected') === 'true'`)
+}
+async function checkDemoApiKeys(root) {
+  const firstValue = root + ' [data-demo-key-id="demo-key-1"] input'
+  const firstCopy = root + ' button[aria-label="Copy Server integration demo key"]'
+  const initialValue = await evaluate(`document.querySelector(${JSON.stringify(firstValue)}).value`)
+  assert.equal(await evaluate(`document.querySelector(${JSON.stringify(firstValue)}).type`), 'password')
+  await click(root + ' button[aria-label="Reveal Server integration demo key"]')
+  await waitFor(`document.querySelector(${JSON.stringify(firstValue)}).type === 'text'`)
+  await click(root + ' button[aria-label="Hide Server integration demo key"]')
+  await click(firstCopy)
+  await waitFor(`document.querySelector(${JSON.stringify(root)}).textContent.includes('copied to clipboard.')`)
+  assert.equal(await evaluate('navigator.clipboard.readText()'), initialValue, 'Native key copy must copy its actual value, not its button label')
+  await click(root + ' button[aria-label="Rotate Server integration demo key"]')
+  await click('button[aria-label="Cancel demo key rotation"]')
+  await waitFor(`!document.querySelector('[role=dialog]')`)
+  assert.equal(await evaluate(`document.querySelector(${JSON.stringify(firstValue)}).value`), initialValue)
+  await click(root + ' button[aria-label="Rotate Server integration demo key"]')
+  await click('button[aria-label="Confirm demo key rotation"]')
+  await waitFor(`!document.querySelector('[role=dialog]')`)
+  const rotated = await evaluate(`document.querySelector(${JSON.stringify(firstValue)}).value`)
+  assert.notEqual(rotated, initialValue)
+  assert.ok(rotated.startsWith('demo_sk_live_') && rotated.endsWith('_not_a_real_key'))
+  await click(root + ' button[aria-label="Create secret demo key"]')
+  await click('button[aria-label="Confirm demo key creation"]')
+  await waitFor(`document.querySelector('[role=dialog]')?.textContent.includes('Enter a name for the demo key.')`)
+  await setInput('[role=dialog] input[name="demoKeyName"]', 'Portable secret')
+  await chooseOption('[aria-label="New demo key environment"]', 'Development')
+  await click('button[aria-label="Confirm demo key creation"]')
+  await waitFor(`!document.querySelector('[role=dialog]') && document.querySelector(${JSON.stringify(root)}).textContent.includes('Portable secret')`)
+  assert.equal(await evaluate(`document.querySelectorAll(${JSON.stringify(root + ' [data-demo-key-id]')}).length`), 3)
+  await click(root + ' button[aria-label="Create publishable demo key"]')
+  await setInput('[role=dialog] input[name="demoKeyName"]', 'Portable storefront')
+  await click('button[aria-label="Confirm demo key creation"]')
+  await waitFor(`!document.querySelector('[role=dialog]') && document.querySelector(${JSON.stringify(root)}).textContent.includes('Portable storefront')`)
+  await chooseTab(root, 'Account')
+  await waitFor(`document.querySelector(${JSON.stringify(root)}).textContent.includes('4 in this environment · 6 total')`)
+  await chooseTab(root, 'API Keys')
+  await chooseOption(root + ' [aria-label="API key environment"]', 'Production')
+  assert.equal(await evaluate(`document.querySelectorAll(${JSON.stringify(root + ' [data-demo-key-id]')}).length`), 2)
+  await click(root + ' button[aria-label="Open demo key usage guide"]')
+  await waitFor(`document.querySelector('[role=dialog]')?.textContent.includes('trusted server')`)
+  await click('button[aria-label="Close demo key usage guide"]')
+  await waitFor(`!document.querySelector('[role=dialog]')`)
+  await evaluate(`Object.defineProperty(navigator, 'clipboard', { configurable: true, value: { writeText: () => Promise.reject(new Error('Denied')) } })`)
+  await click(firstCopy)
+  await waitFor(`document.querySelector('textarea[aria-label="Demo key for manual copying"]')`)
+  assert.equal(await evaluate(`document.querySelector('textarea[aria-label="Demo key for manual copying"]').value`), rotated)
+  await screenshot('demo-key-manual-copy.png')
+  await click('button[aria-label="Close manual demo key copying"]')
+  await waitFor(`!document.querySelector('[role=dialog]')`)
+  await evaluate('delete navigator.clipboard')
+  result.demoApiKeys = { clipboard: true, reveal: true, rotation: true, creation: true, environments: true, account: true, fallback: true }
+}
+
 let previousClipboard
 const normalize = value => value.replaceAll('\r\n', '\n')
 const result = { copied: [], pasteTests: [], screenshots: profile }
@@ -141,6 +202,7 @@ try {
   await send('Runtime.enable')
   await send('Browser.setDownloadBehavior', { behavior: 'allow', downloadPath: profile }, null)
   await send('Browser.grantPermissions', { origin: new URL(base).origin, permissions: ['clipboardReadWrite', 'clipboardSanitizedWrite'] }, null)
+  await send('Browser.grantPermissions', { origin: new URL(pasteBase).origin, permissions: ['clipboardReadWrite', 'clipboardSanitizedWrite'] }, null)
   await send('Emulation.setDeviceMetricsOverride', { width: 1440, height: 1000, deviceScaleFactor: 1, mobile: false })
   for (const page of selectedPages) {
     await navigate(base + page.path, '[data-copy-block]')
@@ -181,6 +243,10 @@ try {
       await selectBlock(exports.filter(block => block.page === page.path).at(-1).id)
       result.activityFilters = true
     }
+    if (page.path === '/developers/api-keys') {
+      await checkDemoApiKeys('[data-copy-block="developer-api-key-manager"]')
+      await selectBlock('developer-api-key-manager')
+    }
     assert.deepEqual(errors, [], `${page.path}: browser errors`)
     await screenshot(page.key + '.png')
     const lightColor = await evaluate(`getComputedStyle(document.querySelector('[data-page]')).color`)
@@ -194,7 +260,7 @@ try {
   await waitFor('document.querySelector("[role=dialog] pre code")')
   assert.equal(await evaluate('document.querySelector("[role=dialog] pre code").textContent'), lastBlock.component)
   await screenshot('code.png')
-  await click('button[aria-pressed="false"]')
+  await click('[role=dialog] button[aria-pressed="false"]')
   await click('button[aria-label="Copiar código mostrado"]')
   await waitFor(`document.querySelector('[role="dialog"] pre code')?.textContent === ${JSON.stringify(lastBlock.template)}`)
   await waitFor(`(await navigator.clipboard.readText()).replaceAll('\\r\\n', '\\n') === ${JSON.stringify(lastBlock.template)}`)
@@ -229,6 +295,20 @@ try {
     await waitFor('document.querySelector("[role=toolbar]")')
     assert.equal(await evaluate(`(() => { const r = document.querySelector('[role=toolbar]').getBoundingClientRect(); return r.left >= 0 && r.right <= window.innerWidth; })()`), true)
     await screenshot(page.key + '-mobile.png')
+    if (page.path === '/developers/api-keys') {
+      const root = '[data-copy-block="developer-api-key-manager"]'
+      await evaluate(`document.querySelector(${JSON.stringify(root)}).scrollIntoView({ block: 'start' })`)
+      await screenshot(page.key + '-mobile-manager.png')
+      await chooseTab(root, 'Account')
+      await screenshot(page.key + '-mobile-account.png')
+      await chooseTab(root, 'API Keys')
+      await click(root + ' button[aria-label="Create secret demo key"]')
+      await waitFor(`document.querySelector('[role=dialog] input[name="demoKeyName"]')`)
+      assert.equal(await evaluate(`(() => { const r = document.querySelector('[role=dialog]').getBoundingClientRect(); return r.left >= 0 && r.right <= window.innerWidth; })()`), true, 'Mobile creation modal fits the viewport')
+      await screenshot(page.key + '-mobile-create.png')
+      await click('button[aria-label="Cancel demo key creation"]')
+      await waitFor(`!document.querySelector('[role=dialog]')`)
+    }
     assert.deepEqual(errors, [], `${page.path}: mobile browser errors`)
   }
   result.mobileSelector = true
@@ -267,6 +347,7 @@ try {
       await waitFor(`!document.querySelector('[role=dialog]')`)
       result.maintenanceDialog = true
     }
+    if (block.id === 'developer-api-key-manager') await checkDemoApiKeys('[data-paste-test]')
     if (block.id.startsWith('agent-') && block.id.endsWith('-run')) {
       if (['agent-report-run', 'agent-discount-run'].includes(block.id)) {
         const selector = '[data-paste-test] button[aria-expanded]'
@@ -296,6 +377,7 @@ try {
       await click('button[aria-label="Close run details"]')
       await waitFor(`!document.querySelector('[role=dialog]')`)
     }
+    assert.deepEqual(errors, [], `${block.id}: standalone interaction errors`)
     result.pasteTests.push(block.id)
   }
   console.log(JSON.stringify(result, null, 2))

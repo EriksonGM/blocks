@@ -1,409 +1,175 @@
-<!-- Page: /developers/api-keys | All content, state and styles live in this file. -->
+<!-- Page: /developers/api-keys | Portable API-key UI with in-memory, non-functional demo values. -->
 <script setup lang="ts">
-const route = useRoute()
+useHead({ title: 'API Keys · Blocks Admin' })
 
-useHead({ title: "API Keys · Blocks Admin" })
+// @copy:developer-api-keys:start
+import { computed, reactive, ref } from 'vue'
+import type { FormError } from '@nuxt/ui'
 
-const toast = useToast()
-
-// Page-local form values. Edit these defaults when copying the page.
-
-const form = reactive({
-  "server": "Server",
-  "live08234153847256": "",
-  "live082341538472562": "",
-  "live082341538472563": "",
-  "live082341538472564": "",
-  "live082341538472565": "",
-  "live082341538472566": "",
-  "live082341538472567": "",
-  "live082341538472568": ""
-})
-
-const tabs1Active = ref("0")
-
-const tabs1Items = [
-  {
-    "label": "API Keys",
-    "value": "0"
-  },
-  {
-    "label": "Account",
-    "value": "1"
-  }
+type DemoKey = { id: string, name: string, kind: 'secret' | 'publishable', environment: 'Production' | 'Development', value: string }
+const environment = ref('Production')
+const environments = ['Production', 'Development']
+const activeTab = ref('keys')
+const tabs = [
+  { label: 'API Keys', value: 'keys', slot: 'keys' as const },
+  { label: 'Account', value: 'account', slot: 'account' as const },
 ]
-
-const serverOptions = [
-  "Production",
-  "Development"
+const keys = ref<DemoKey[]>([
+  { id: 'demo-key-1', name: 'Server integration', kind: 'secret', environment: 'Production', value: 'demo_sk_live_0001_not_a_real_key' },
+  { id: 'demo-key-2', name: 'Development server', kind: 'secret', environment: 'Development', value: 'demo_sk_test_0002_not_a_real_key' },
+  { id: 'demo-key-3', name: 'Web storefront', kind: 'publishable', environment: 'Production', value: 'demo_pk_live_0003_not_a_real_key' },
+  { id: 'demo-key-4', name: 'Development storefront', kind: 'publishable', environment: 'Development', value: 'demo_pk_test_0004_not_a_real_key' },
+])
+const keyGroups = [
+  { kind: 'secret' as const, title: 'Secret API Keys', description: 'Keep real secret keys on your server. The values below are demonstration strings only.' },
+  { kind: 'publishable' as const, title: 'Publishable API Keys', description: 'Publishable keys identify a client integration. These examples do not authenticate any request.' },
 ]
-
-// Restore drafts after hydration; the first client render matches SSR.
-onMounted(() => {
-  const key = 'nuxt-ui-page:' + route.path
+const filteredKeys = computed(() => keys.value.filter(key => key.environment === environment.value))
+const revealedKeys = ref<string[]>([])
+const serial = ref(4)
+const feedback = ref('Demo only: keys and changes stay in memory and reset when this component is reloaded.')
+const createOpen = ref(false)
+const createForm = reactive({ name: '', kind: 'secret' as DemoKey['kind'], environment: 'Production' as DemoKey['environment'] })
+function validateKey(state: Partial<typeof createForm>): FormError[] {
+  return state.name?.trim() ? [] : [{ name: 'name', message: 'Enter a name for the demo key.' }]
+}
+function openCreate(kind: DemoKey['kind']) {
+  Object.assign(createForm, { name: '', kind, environment: environment.value })
+  createOpen.value = true
+}
+function demoValue(kind: DemoKey['kind'], targetEnvironment: DemoKey['environment']) {
+  serial.value += 1
+  return `demo_${kind === 'secret' ? 'sk' : 'pk'}_${targetEnvironment === 'Production' ? 'live' : 'test'}_${String(serial.value).padStart(4, '0')}_not_a_real_key`
+}
+function createKey() {
+  if (validateKey(createForm).length) return
+  const value = demoValue(createForm.kind, createForm.environment)
+  keys.value.push({ id: `demo-key-${serial.value}`, name: createForm.name.trim(), kind: createForm.kind, environment: createForm.environment, value })
+  environment.value = createForm.environment
+  feedback.value = `Demo key “${createForm.name.trim()}” created locally. It cannot authenticate API requests.`
+  createOpen.value = false
+}
+function toggleReveal(id: string) {
+  revealedKeys.value = revealedKeys.value.includes(id) ? revealedKeys.value.filter(value => value !== id) : [...revealedKeys.value, id]
+}
+const rotateOpen = ref(false)
+const rotateId = ref('')
+const rotateTarget = computed(() => keys.value.find(key => key.id === rotateId.value))
+function requestRotation(id: string) {
+  rotateId.value = id
+  rotateOpen.value = true
+}
+function rotateKey() {
+  const key = rotateTarget.value
+  if (!key) return
+  key.value = demoValue(key.kind, key.environment)
+  revealedKeys.value = revealedKeys.value.filter(id => id !== key.id)
+  feedback.value = `Demo key “${key.name}” rotated locally. No real credential was changed.`
+  rotateOpen.value = false
+}
+const manualCopyOpen = ref(false)
+const manualCopyValue = ref('')
+async function copyKey(key: DemoKey) {
   try {
-    const draft = localStorage.getItem(key)
-    if (draft) Object.assign(form, JSON.parse(draft))
-  } catch { /* Use the defaults when no draft exists. */ }
-  watch(form, value => localStorage.setItem(key, JSON.stringify(value)), { deep: true, flush: 'sync' })
-})
-
-const actionDialog = reactive({ open: false, title: '', mode: 'edit', name: '', description: '', recordId: '', table: 0 })
-function openAction(label: string, recordId = '', table = 0) {
-  Object.assign(actionDialog, { open: true, title: label, mode: /delete|remove|archive/i.test(label) ? 'delete' : 'edit', recordId, table })
+    await navigator.clipboard.writeText(key.value)
+    feedback.value = `Demo key “${key.name}” copied to clipboard.`
+  } catch {
+    manualCopyValue.value = key.value
+    manualCopyOpen.value = true
+    feedback.value = 'Automatic copying is unavailable. Select the demo value and copy it manually.'
+  }
 }
-function confirmAction() {
-  toast.add({ title: actionDialog.mode === 'delete' ? 'Item removed' : 'Changes saved', color: 'success', icon: 'i-lucide-check' })
-  actionDialog.open = false
-}
-
-async function copyValue(value: string) {
-  await navigator.clipboard.writeText(value)
-  toast.add({ title: 'Copied to clipboard', color: 'success' })
-}
+const documentationOpen = ref(false)
+// @copy:developer-api-keys:end
 </script>
 
 <template>
   <div class="page-content flex h-full min-h-0 w-full flex-col text-default" data-page="/developers/api-keys">
-    <div class="flex h-full flex-col overflow-hidden">
-      <div class="flex min-h-0 flex-1 flex-col overflow-hidden">
-        <div class="flex min-h-0 flex-1 flex-col">
-          <header class="bg-default hidden shrink-0 border-b px-4 py-4 sm:px-6 md:block border-default">
-            <div class="flex flex-col gap-4 xl:flex-row xl:items-center xl:gap-6">
-              <div class="flex min-w-0 flex-wrap items-center gap-3 text-sm">
-                <span class="text-highlighted font-medium">Shadcnblocks Admin Kit</span>
-                <span class="text-muted">/</span>
-                <span class="text-highlighted font-medium">Developers</span>
-                <span class="text-muted">/</span>
-                <span class="text-muted">API Keys</span>
-              </div>
-              <div class="relative xl:mx-auto xl:w-full xl:max-w-md">
-                <UButton color="neutral" variant="outline" class="inline-flex items-center gap-2 whitespace-nowrap text-sm transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-default py-2 bg-(--ui-bg-muted)/70 text-muted hover:bg-(--ui-bg-muted)/90 hover:text-highlighted h-10 w-full justify-start rounded-full border-none px-3 font-normal shadow-none" aria-label="Search pages or run commands⌘K" type="button" @click="openAction(&quot;Search pages or run commands⌘K&quot;)">
-                  <UIcon name="i-lucide-search" class="size-4 shrink-0" />
-                  <span class="min-w-0 flex-1 truncate text-left">Search pages or run commands</span>
-                  <UKbd class="bg-default pointer-events-none hidden h-6 shrink-0 items-center gap-1 rounded-full border px-2 font-mono text-[10px] font-medium opacity-100 select-none sm:inline-flex border-default">⌘K</UKbd>
-                </UButton>
-              </div>
-            </div>
-          </header>
-          <div class="min-h-0 flex-1 overflow-auto has-[&gt;[data-layout=fixed]]:flex has-[&gt;[data-layout=fixed]]:overflow-hidden">
-            <main id="main-content" class="flex min-h-0 flex-1 flex-col p-4 sm:p-6">
-              <div class="flex w-full flex-col gap-2">
-                <div class="flex flex-wrap items-center justify-between gap-2">
-                  <div>
-                    <h2 class="text-2xl font-bold text-highlighted">API Keys</h2>
-                    <p class="text-muted text-sm">Secure, manage, and monitor your API keys with ease.</p>
+    <div class="min-h-0 flex-1 overflow-y-auto">
+      <main class="mx-auto w-full max-w-5xl space-y-6 p-4 sm:p-6">
+        <header class="space-y-1">
+          <h1 class="text-2xl font-bold text-highlighted">API Keys</h1>
+          <p class="text-sm text-muted">Manage example credentials in a local developer workspace.</p>
+        </header>
+        <UCard data-copy-block="developer-api-version" tabindex="0" aria-label="API version summary">
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <div><h2 class="font-semibold text-highlighted">API Version</h2><p class="mt-1 text-sm text-muted">Global version used by this UI example.</p></div>
+            <div class="flex flex-wrap items-center gap-3"><span class="text-sm font-medium">03-Oct-2026</span><UBadge label="Demo version" color="neutral" variant="subtle" /></div>
+          </div>
+        </UCard>
+        <section data-copy-block="developer-api-key-manager" tabindex="0" aria-label="Demo API key manager" class="min-w-0 space-y-4">
+          <div class="flex flex-wrap items-center justify-between gap-3">
+            <h2 class="font-semibold text-highlighted">Developer workspace</h2>
+            <USelect v-model="environment" :items="environments" aria-label="API key environment" class="w-44" />
+          </div>
+          <UTabs v-model="activeTab" :items="tabs" variant="link" :ui="{ list: 'justify-start' }" class="w-full gap-5">
+            <template #keys>
+              <div class="space-y-6">
+                <UCard v-for="group in keyGroups" :key="group.kind">
+                  <template #header>
+                    <div class="flex flex-wrap items-center justify-between gap-3">
+                      <h3 class="text-lg font-semibold text-highlighted">{{ group.title }}</h3>
+                      <UButton :label="group.kind === 'secret' ? 'Create secret key' : 'Create publishable key'" :aria-label="`Create ${group.kind} demo key`" icon="i-lucide-plus" size="sm" @click="openCreate(group.kind)" />
+                    </div>
+                    <p class="mt-2 text-sm text-muted">{{ group.description }}</p>
+                  </template>
+                  <div class="space-y-5">
+                    <div v-for="key in filteredKeys.filter(key => key.kind === group.kind)" :key="key.id" :data-demo-key-id="key.id" class="space-y-3 rounded-lg border border-default p-4">
+                      <div class="flex flex-wrap items-center justify-between gap-2"><p class="break-words font-medium">{{ key.name }}</p><UBadge :label="key.environment" color="neutral" variant="outline" /></div>
+                      <div class="flex flex-wrap items-center gap-2">
+                        <UInput :model-value="key.value" :type="key.kind === 'secret' && !revealedKeys.includes(key.id) ? 'password' : 'text'" :aria-label="`Demo key value for ${key.name}`" readonly class="min-w-0 flex-1 basis-48" :ui="{ base: 'font-mono text-xs' }" />
+                        <UButton v-if="key.kind === 'secret'" :icon="revealedKeys.includes(key.id) ? 'i-lucide-eye-off' : 'i-lucide-eye'" :aria-label="`${revealedKeys.includes(key.id) ? 'Hide' : 'Reveal'} ${key.name} demo key`" :aria-pressed="revealedKeys.includes(key.id)" color="neutral" variant="outline" @click="toggleReveal(key.id)" />
+                        <UButton icon="i-lucide-copy" :aria-label="`Copy ${key.name} demo key`" color="neutral" variant="outline" @click="copyKey(key)" />
+                        <UButton label="Rotate" icon="i-lucide-refresh-cw" :aria-label="`Rotate ${key.name} demo key`" color="neutral" variant="ghost" @click="requestRotation(key.id)" />
+                      </div>
+                    </div>
+                    <p v-if="!filteredKeys.some(key => key.kind === group.kind)" class="text-sm text-muted">No {{ group.kind }} keys in this environment.</p>
                   </div>
-                  <USelect v-model="form.server" :items="serverOptions" aria-label="Server" class="border-default ring-offset-background placeholder:text-muted focus:ring-accented flex h-9 items-center justify-between rounded-md border bg-transparent px-3 py-2 whitespace-nowrap shadow-xs focus:ring-1 focus:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 [&amp;&gt;span]:line-clamp-1 w-fit gap-2 text-sm" />
+                </UCard>
+                <div class="flex flex-wrap items-center justify-between gap-3 rounded-lg bg-muted p-4">
+                  <p class="max-w-xl text-sm text-muted">All values are explicitly fake. This block does not create, store, or rotate real credentials.</p>
+                  <UButton label="Key usage guide" aria-label="Open demo key usage guide" color="neutral" variant="outline" @click="documentationOpen = true" />
                 </div>
               </div>
-              <UTabs v-model="tabs1Active" :items="tabs1Items" color="primary" variant="link" data-orientation="horizontal" class="my-8" data-slot="tabs" :ui="{ root: 'gap-4', list: 'justify-start', content: 'min-h-0' }">
-                <template #content="{ item }">
-                  <template v-if="item.value === '0'">
-                    <div data-orientation="horizontal" id="radix-_R_2av5uiv5uknmlb_-content-api" class="ring-offset-background focus-visible:ring-accented focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden mt-5 w-full max-w-3xl" style="animation-duration:0s">
-                      <div class="flex flex-col gap-5">
-                        <div class="flex flex-col gap-3">
-                          <h2 class="text-lg font-semibold text-highlighted">API Version</h2>
-                          <div class="flex items-center justify-between">
-                            <h1 class="text-sm font-semibold text-highlighted">Global Version</h1>
-                            <div class="flex items-center gap-4">
-                              <p class="text-sm font-medium">03-Oct-2026</p>
-                              <div class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-accented focus:ring-offset-2 border-transparent bg-elevated text-default hover:bg-(--ui-bg-elevated)/80 border-default">Latest Version</div>
-                            </div>
-                          </div>
-                        </div>
-                        <div data-orientation="horizontal" role="none" class="bg-(--ui-border) shrink-0 h-[1px] w-full" />
-                        <div class="flex flex-col gap-3">
-                          <div class="flex items-center justify-between">
-                            <h2 class="text-lg font-semibold text-highlighted">Secret API Keys</h2>
-                            <UButton color="primary" variant="solid" class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-inverted shadow-sm hover:bg-primary/90 h-8 rounded-md px-3 text-xs" data-slot="dialog-trigger" aria-label="Create API Key" type="button" @click="openAction(&quot;Create API Key&quot;)">
-                              Create API Key
-                            </UButton>
-                          </div>
-                          <div role="alert" class="relative rounded-lg border px-4 py-3 text-sm [&amp;&gt;svg+div]:translate-y-[-3px] [&amp;&gt;svg]:absolute [&amp;&gt;svg]:left-4 [&amp;&gt;svg]:top-4 [&amp;&gt;svg]:text-highlighted [&amp;&gt;svg~*]:pl-7 bg-default text-highlighted w-full border-default">
-                            <UIcon name="i-lucide-terminal" class="h-4 w-4" />
-                            <h5 class="mb-1 leading-none font-medium tracking-tight text-highlighted">Reminder!</h5>
-                            <div class="text-sm [&amp;_p]:leading-relaxed">
-                              Live API keys can only be used for the v1/api-end point.See the
-                              <NuxtLink class="underline" to="/">
-                                documentation
-                              </NuxtLink>
-                              for more details.
-                            </div>
-                          </div>
-                          <div class="my-4 flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
-                            <h1 class="text-sm font-semibold text-highlighted">Live Environment</h1>
-                            <div class="flex w-full flex-col items-end gap-2 md:w-fit">
-                              <div class="relative w-full md:max-w-[280px]">
-                                <UInput v-model="form.live08234153847256" type="text" placeholder="Live_08234153847256" name="live08234153847256" class="flex h-9 w-full rounded-md text-base md:text-sm pr-10" :ui="{ base: 'h-full' }" />
-                                <UButton color="neutral" variant="outline" class="items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-default bg-default shadow-xs hover:bg-elevated hover:text-default absolute top-1/2 right-1 flex h-6 w-6 -translate-y-1/2" aria-label="Copy to clipboard" type="button" @click="copyValue(&quot;Copy to clipboard&quot;)">
-                                  <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-copy m-auto">
-                                    <path d="M7 9.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667l0 -8.666" />
-                                    <path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" />
-                                  </svg>
-                                </UButton>
-                              </div>
-                              <UButton color="neutral" variant="ghost" class="justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 underline-offset-4 hover:underline h-9 flex items-center gap-1 p-0 text-success dark:text-success" aria-label="Refresh" type="button" @click="openAction(&quot;Refresh&quot;)">
-                                <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-refresh">
-                                  <path d="M20 11a8.1 8.1 0 0 0 -15.5 -2m-.5 -4v4h4" />
-                                  <path d="M4 13a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4" />
-                                </svg>
-                                <p class="text-sm font-medium">Refresh</p>
-                              </UButton>
-                            </div>
-                          </div>
-                          <div class="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
-                            <h1 class="text-sm font-semibold text-highlighted">Test Environment</h1>
-                            <div class="flex w-full flex-col items-end gap-2 md:w-fit">
-                              <div class="relative w-full md:max-w-[280px]">
-                                <UInput v-model="form.live082341538472562" type="text" placeholder="Live_08234153847256" name="live082341538472562" class="flex h-9 w-full rounded-md text-base md:text-sm pr-10" :ui="{ base: 'h-full' }" />
-                                <UButton color="neutral" variant="outline" class="items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-default bg-default shadow-xs hover:bg-elevated hover:text-default absolute top-1/2 right-1 flex h-6 w-6 -translate-y-1/2" aria-label="Copy to clipboard" type="button" @click="copyValue(&quot;Copy to clipboard&quot;)">
-                                  <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-copy m-auto">
-                                    <path d="M7 9.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667l0 -8.666" />
-                                    <path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" />
-                                  </svg>
-                                </UButton>
-                              </div>
-                              <UButton color="neutral" variant="ghost" class="justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 underline-offset-4 hover:underline h-9 flex items-center gap-1 p-0 text-success dark:text-success" aria-label="Refresh" type="button" @click="openAction(&quot;Refresh&quot;)">
-                                <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-refresh">
-                                  <path d="M20 11a8.1 8.1 0 0 0 -15.5 -2m-.5 -4v4h4" />
-                                  <path d="M4 13a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4" />
-                                </svg>
-                                <p class="text-sm font-medium">Refresh</p>
-                              </UButton>
-                            </div>
-                          </div>
-                        </div>
-                        <div data-orientation="horizontal" role="none" class="bg-(--ui-border) shrink-0 h-[1px] w-full" />
-                        <div class="flex flex-col gap-3">
-                          <h2 class="text-lg font-semibold text-highlighted">Publishable API Keys</h2>
-                          <div role="alert" class="relative rounded-lg border px-4 py-3 text-sm [&amp;&gt;svg+div]:translate-y-[-3px] [&amp;&gt;svg]:absolute [&amp;&gt;svg]:left-4 [&amp;&gt;svg]:top-4 [&amp;&gt;svg]:text-highlighted [&amp;&gt;svg~*]:pl-7 bg-default text-highlighted w-full border-default">
-                            <div class="text-sm [&amp;_p]:leading-relaxed flex flex-col items-start gap-3 md:flex-row md:items-center">
-                              <UIcon name="i-lucide-terminal" class="h-4 w-4" />
-                              <p>
-                                Live API keys can only be used for the v1/api-end point.See the
-                                <NuxtLink class="underline" to="/">
-                                  documentation
-                                </NuxtLink>
-                                for more details.
-                              </p>
-                            </div>
-                          </div>
-                          <div class="my-4 flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
-                            <h1 class="text-sm font-semibold text-highlighted">Live Environment</h1>
-                            <div class="flex w-full flex-col items-end gap-2 md:w-fit">
-                              <div class="relative w-full md:max-w-[280px]">
-                                <UInput v-model="form.live082341538472563" type="text" placeholder="Live_08234153847256" name="live082341538472563" class="flex h-9 w-full rounded-md text-base md:text-sm pr-10" :ui="{ base: 'h-full' }" />
-                                <UButton color="neutral" variant="outline" class="items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-default bg-default shadow-xs hover:bg-elevated hover:text-default absolute top-1/2 right-1 flex h-6 w-6 -translate-y-1/2" aria-label="Copy to clipboard" type="button" @click="copyValue(&quot;Copy to clipboard&quot;)">
-                                  <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-copy m-auto">
-                                    <path d="M7 9.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667l0 -8.666" />
-                                    <path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" />
-                                  </svg>
-                                </UButton>
-                              </div>
-                              <UButton color="neutral" variant="ghost" class="justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 underline-offset-4 hover:underline h-9 flex items-center gap-1 p-0 text-success dark:text-success" aria-label="Refresh" type="button" @click="openAction(&quot;Refresh&quot;)">
-                                <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-refresh">
-                                  <path d="M20 11a8.1 8.1 0 0 0 -15.5 -2m-.5 -4v4h4" />
-                                  <path d="M4 13a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4" />
-                                </svg>
-                                <p class="text-sm font-medium">Refresh</p>
-                              </UButton>
-                            </div>
-                          </div>
-                          <div class="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
-                            <h1 class="text-sm font-semibold text-highlighted">Test Environment</h1>
-                            <div class="flex w-full flex-col items-end gap-2 md:w-fit">
-                              <div class="relative w-full md:max-w-[280px]">
-                                <UInput v-model="form.live082341538472564" type="text" placeholder="Live_08234153847256" name="live082341538472564" class="flex h-9 w-full rounded-md text-base md:text-sm pr-10" :ui="{ base: 'h-full' }" />
-                                <UButton color="neutral" variant="outline" class="items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-default bg-default shadow-xs hover:bg-elevated hover:text-default absolute top-1/2 right-1 flex h-6 w-6 -translate-y-1/2" aria-label="Copy to clipboard" type="button" @click="copyValue(&quot;Copy to clipboard&quot;)">
-                                  <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-copy m-auto">
-                                    <path d="M7 9.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667l0 -8.666" />
-                                    <path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" />
-                                  </svg>
-                                </UButton>
-                              </div>
-                              <UButton color="neutral" variant="ghost" class="justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 underline-offset-4 hover:underline h-9 flex items-center gap-1 p-0 text-success dark:text-success" aria-label="Refresh" type="button" @click="openAction(&quot;Refresh&quot;)">
-                                <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-refresh">
-                                  <path d="M20 11a8.1 8.1 0 0 0 -15.5 -2m-.5 -4v4h4" />
-                                  <path d="M4 13a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4" />
-                                </svg>
-                                <p class="text-sm font-medium">Refresh</p>
-                              </UButton>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </template>
-                  <template v-if="item.value === '1'">
-                    <div data-orientation="horizontal" id="radix-_R_2av5uiv5uknmlb_-content-api" class="ring-offset-background focus-visible:ring-accented focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden mt-5 w-full max-w-3xl" style="animation-duration:0s">
-                      <div class="flex flex-col gap-5">
-                        <div class="flex flex-col gap-3">
-                          <h2 class="text-lg font-semibold text-highlighted">API Version</h2>
-                          <div class="flex items-center justify-between">
-                            <h1 class="text-sm font-semibold text-highlighted">Global Version</h1>
-                            <div class="flex items-center gap-4">
-                              <p class="text-sm font-medium">03-Oct-2026</p>
-                              <div class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-accented focus:ring-offset-2 border-transparent bg-elevated text-default hover:bg-(--ui-bg-elevated)/80 border-default">Latest Version</div>
-                            </div>
-                          </div>
-                        </div>
-                        <div data-orientation="horizontal" role="none" class="bg-(--ui-border) shrink-0 h-[1px] w-full" />
-                        <div class="flex flex-col gap-3">
-                          <div class="flex items-center justify-between">
-                            <h2 class="text-lg font-semibold text-highlighted">Secret API Keys</h2>
-                            <UButton color="primary" variant="solid" class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-inverted shadow-sm hover:bg-primary/90 h-8 rounded-md px-3 text-xs" data-slot="dialog-trigger" aria-label="Create API Key" type="button" @click="openAction(&quot;Create API Key&quot;)">
-                              Create API Key
-                            </UButton>
-                          </div>
-                          <div role="alert" class="relative rounded-lg border px-4 py-3 text-sm [&amp;&gt;svg+div]:translate-y-[-3px] [&amp;&gt;svg]:absolute [&amp;&gt;svg]:left-4 [&amp;&gt;svg]:top-4 [&amp;&gt;svg]:text-highlighted [&amp;&gt;svg~*]:pl-7 bg-default text-highlighted w-full border-default">
-                            <UIcon name="i-lucide-terminal" class="h-4 w-4" />
-                            <h5 class="mb-1 leading-none font-medium tracking-tight text-highlighted">Reminder!</h5>
-                            <div class="text-sm [&amp;_p]:leading-relaxed">
-                              Live API keys can only be used for the v1/api-end point.See the
-                              <NuxtLink class="underline" to="/">
-                                documentation
-                              </NuxtLink>
-                              for more details.
-                            </div>
-                          </div>
-                          <div class="my-4 flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
-                            <h1 class="text-sm font-semibold text-highlighted">Live Environment</h1>
-                            <div class="flex w-full flex-col items-end gap-2 md:w-fit">
-                              <div class="relative w-full md:max-w-[280px]">
-                                <UInput v-model="form.live082341538472565" type="text" placeholder="Live_08234153847256" name="live082341538472565" class="flex h-9 w-full rounded-md text-base md:text-sm pr-10" :ui="{ base: 'h-full' }" />
-                                <UButton color="neutral" variant="outline" class="items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-default bg-default shadow-xs hover:bg-elevated hover:text-default absolute top-1/2 right-1 flex h-6 w-6 -translate-y-1/2" aria-label="Copy to clipboard" type="button" @click="copyValue(&quot;Copy to clipboard&quot;)">
-                                  <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-copy m-auto">
-                                    <path d="M7 9.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667l0 -8.666" />
-                                    <path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" />
-                                  </svg>
-                                </UButton>
-                              </div>
-                              <UButton color="neutral" variant="ghost" class="justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 underline-offset-4 hover:underline h-9 flex items-center gap-1 p-0 text-success dark:text-success" aria-label="Refresh" type="button" @click="openAction(&quot;Refresh&quot;)">
-                                <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-refresh">
-                                  <path d="M20 11a8.1 8.1 0 0 0 -15.5 -2m-.5 -4v4h4" />
-                                  <path d="M4 13a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4" />
-                                </svg>
-                                <p class="text-sm font-medium">Refresh</p>
-                              </UButton>
-                            </div>
-                          </div>
-                          <div class="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
-                            <h1 class="text-sm font-semibold text-highlighted">Test Environment</h1>
-                            <div class="flex w-full flex-col items-end gap-2 md:w-fit">
-                              <div class="relative w-full md:max-w-[280px]">
-                                <UInput v-model="form.live082341538472566" type="text" placeholder="Live_08234153847256" name="live082341538472566" class="flex h-9 w-full rounded-md text-base md:text-sm pr-10" :ui="{ base: 'h-full' }" />
-                                <UButton color="neutral" variant="outline" class="items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-default bg-default shadow-xs hover:bg-elevated hover:text-default absolute top-1/2 right-1 flex h-6 w-6 -translate-y-1/2" aria-label="Copy to clipboard" type="button" @click="copyValue(&quot;Copy to clipboard&quot;)">
-                                  <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-copy m-auto">
-                                    <path d="M7 9.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667l0 -8.666" />
-                                    <path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" />
-                                  </svg>
-                                </UButton>
-                              </div>
-                              <UButton color="neutral" variant="ghost" class="justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 underline-offset-4 hover:underline h-9 flex items-center gap-1 p-0 text-success dark:text-success" aria-label="Refresh" type="button" @click="openAction(&quot;Refresh&quot;)">
-                                <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-refresh">
-                                  <path d="M20 11a8.1 8.1 0 0 0 -15.5 -2m-.5 -4v4h4" />
-                                  <path d="M4 13a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4" />
-                                </svg>
-                                <p class="text-sm font-medium">Refresh</p>
-                              </UButton>
-                            </div>
-                          </div>
-                        </div>
-                        <div data-orientation="horizontal" role="none" class="bg-(--ui-border) shrink-0 h-[1px] w-full" />
-                        <div class="flex flex-col gap-3">
-                          <h2 class="text-lg font-semibold text-highlighted">Publishable API Keys</h2>
-                          <div role="alert" class="relative rounded-lg border px-4 py-3 text-sm [&amp;&gt;svg+div]:translate-y-[-3px] [&amp;&gt;svg]:absolute [&amp;&gt;svg]:left-4 [&amp;&gt;svg]:top-4 [&amp;&gt;svg]:text-highlighted [&amp;&gt;svg~*]:pl-7 bg-default text-highlighted w-full border-default">
-                            <div class="text-sm [&amp;_p]:leading-relaxed flex flex-col items-start gap-3 md:flex-row md:items-center">
-                              <UIcon name="i-lucide-terminal" class="h-4 w-4" />
-                              <p>
-                                Live API keys can only be used for the v1/api-end point.See the
-                                <NuxtLink class="underline" to="/">
-                                  documentation
-                                </NuxtLink>
-                                for more details.
-                              </p>
-                            </div>
-                          </div>
-                          <div class="my-4 flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
-                            <h1 class="text-sm font-semibold text-highlighted">Live Environment</h1>
-                            <div class="flex w-full flex-col items-end gap-2 md:w-fit">
-                              <div class="relative w-full md:max-w-[280px]">
-                                <UInput v-model="form.live082341538472567" type="text" placeholder="Live_08234153847256" name="live082341538472567" class="flex h-9 w-full rounded-md text-base md:text-sm pr-10" :ui="{ base: 'h-full' }" />
-                                <UButton color="neutral" variant="outline" class="items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-default bg-default shadow-xs hover:bg-elevated hover:text-default absolute top-1/2 right-1 flex h-6 w-6 -translate-y-1/2" aria-label="Copy to clipboard" type="button" @click="copyValue(&quot;Copy to clipboard&quot;)">
-                                  <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-copy m-auto">
-                                    <path d="M7 9.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667l0 -8.666" />
-                                    <path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" />
-                                  </svg>
-                                </UButton>
-                              </div>
-                              <UButton color="neutral" variant="ghost" class="justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 underline-offset-4 hover:underline h-9 flex items-center gap-1 p-0 text-success dark:text-success" aria-label="Refresh" type="button" @click="openAction(&quot;Refresh&quot;)">
-                                <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-refresh">
-                                  <path d="M20 11a8.1 8.1 0 0 0 -15.5 -2m-.5 -4v4h4" />
-                                  <path d="M4 13a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4" />
-                                </svg>
-                                <p class="text-sm font-medium">Refresh</p>
-                              </UButton>
-                            </div>
-                          </div>
-                          <div class="flex flex-col items-start justify-between gap-4 md:flex-row md:items-center">
-                            <h1 class="text-sm font-semibold text-highlighted">Test Environment</h1>
-                            <div class="flex w-full flex-col items-end gap-2 md:w-fit">
-                              <div class="relative w-full md:max-w-[280px]">
-                                <UInput v-model="form.live082341538472568" type="text" placeholder="Live_08234153847256" name="live082341538472568" class="flex h-9 w-full rounded-md text-base md:text-sm pr-10" :ui="{ base: 'h-full' }" />
-                                <UButton color="neutral" variant="outline" class="items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-default bg-default shadow-xs hover:bg-elevated hover:text-default absolute top-1/2 right-1 flex h-6 w-6 -translate-y-1/2" aria-label="Copy to clipboard" type="button" @click="copyValue(&quot;Copy to clipboard&quot;)">
-                                  <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-copy m-auto">
-                                    <path d="M7 9.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667l0 -8.666" />
-                                    <path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" />
-                                  </svg>
-                                </UButton>
-                              </div>
-                              <UButton color="neutral" variant="ghost" class="justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 underline-offset-4 hover:underline h-9 flex items-center gap-1 p-0 text-success dark:text-success" aria-label="Refresh" type="button" @click="openAction(&quot;Refresh&quot;)">
-                                <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-refresh">
-                                  <path d="M20 11a8.1 8.1 0 0 0 -15.5 -2m-.5 -4v4h4" />
-                                  <path d="M4 13a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4" />
-                                </svg>
-                                <p class="text-sm font-medium">Refresh</p>
-                              </UButton>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </template>
-                </template>
-              </UTabs>
-            </main>
-          </div>
-        </div>
-      </div>
+            </template>
+            <template #account>
+              <UCard>
+                <template #header><h3 class="font-semibold text-highlighted">Demo account</h3></template>
+                <dl class="grid grid-cols-[auto_minmax(0,1fr)] gap-x-4 gap-y-3 text-sm">
+                  <dt class="text-muted">Workspace</dt><dd>Example developer workspace</dd>
+                  <dt class="text-muted">Environment</dt><dd>{{ environment }}</dd>
+                  <dt class="text-muted">Demo keys</dt><dd>{{ filteredKeys.length }} in this environment · {{ keys.length }} total</dd>
+                  <dt class="text-muted">Storage</dt><dd>In memory only. Reloading resets all changes.</dd>
+                </dl>
+                <p class="mt-5 text-sm text-muted">No account, authentication provider, or external API is connected.</p>
+              </UCard>
+            </template>
+          </UTabs>
+          <p role="status" class="text-sm text-muted">{{ feedback }}</p>
+          <UModal v-model:open="createOpen" :title="`Create ${createForm.kind} demo key`" description="Generate a non-functional example value, stored in memory only.">
+            <template #body>
+              <UForm :state="createForm" :validate="validateKey" class="space-y-4" @submit="createKey">
+                <UFormField label="Name" name="name" required><UInput v-model="createForm.name" name="demoKeyName" class="w-full" /></UFormField>
+                <UFormField label="Environment" name="environment"><USelect v-model="createForm.environment" :items="environments" aria-label="New demo key environment" class="w-full" /></UFormField>
+                <div class="flex flex-wrap justify-end gap-2"><UButton label="Cancel" aria-label="Cancel demo key creation" color="neutral" variant="outline" @click="createOpen = false" /><UButton label="Create demo key" aria-label="Confirm demo key creation" type="submit" /></div>
+              </UForm>
+            </template>
+          </UModal>
+          <UModal v-model:open="rotateOpen" title="Rotate demo key" description="Replace the example value locally. This does not rotate a real credential.">
+            <template #body><p class="text-sm text-muted">Replace the current demo value for <strong>{{ rotateTarget?.name }}</strong>?</p></template>
+            <template #footer><div class="flex w-full justify-end gap-2"><UButton label="Cancel" aria-label="Cancel demo key rotation" color="neutral" variant="outline" @click="rotateOpen = false" /><UButton label="Rotate demo key" aria-label="Confirm demo key rotation" @click="rotateKey" /></div></template>
+          </UModal>
+          <UModal v-model:open="manualCopyOpen" title="Copy demo key manually" description="Automatic clipboard access is unavailable. Select the value below to copy it.">
+            <template #body><UTextarea :model-value="manualCopyValue" aria-label="Demo key for manual copying" readonly class="w-full" /></template>
+            <template #footer><UButton label="Close" aria-label="Close manual demo key copying" color="neutral" variant="outline" @click="manualCopyOpen = false" /></template>
+          </UModal>
+          <UModal v-model:open="documentationOpen" title="Demo key usage guide" description="Example guidance for an API-key management interface.">
+            <template #body><div class="space-y-3 text-sm text-muted"><p>Keep real secret keys on a trusted server. Never expose them in client code or commit them to source control.</p><p>Only keys documented as publishable by your API provider belong in a browser. These demo strings do not work with any endpoint.</p><p>Creating or rotating an example here changes only this component's in-memory state.</p></div></template>
+            <template #footer><UButton label="Close" aria-label="Close demo key usage guide" color="neutral" variant="outline" @click="documentationOpen = false" /></template>
+          </UModal>
+        </section>
+      </main>
     </div>
-    <!-- Page-local action dialog -->
-    <UModal v-model:open="actionDialog.open" :title="actionDialog.title" description="Update the details below.">
-      <template #body>
-        <p v-if="actionDialog.mode === 'delete'" class="text-sm text-muted">Are you sure you want to remove this item?</p>
-        <div v-else class="space-y-4">
-          <UFormField label="Name"><UInput v-model="actionDialog.name" class="w-full" /></UFormField>
-          <UFormField label="Description"><UTextarea v-model="actionDialog.description" class="w-full" /></UFormField>
-        </div>
-      </template>
-      <template #footer>
-        <div class="flex w-full justify-end gap-2">
-          <UButton color="neutral" variant="outline" @click="actionDialog.open = false">Cancel</UButton>
-          <UButton :color="actionDialog.mode === 'delete' ? 'error' : 'primary'" @click="confirmAction">{{ actionDialog.mode === 'delete' ? 'Remove' : 'Save changes' }}</UButton>
-        </div>
-      </template>
-    </UModal>
+    <BlockCopyTools page="/developers/api-keys" />
   </div>
 </template>
-
-<style scoped>
-
-.page-content { min-height: 0; color: var(--ui-text); --chart-1: var(--ui-primary); --chart-2: var(--ui-text-highlighted); --chart-3: var(--ui-text-muted); --chart-4: var(--ui-text-dimmed); --chart-5: var(--ui-border-accented); --chart-6: var(--ui-border); --radius: var(--ui-radius); }
-.page-content > div { min-height: 100%; }
-.page-content *, .page-content ::before, .page-content ::after { border-color: var(--ui-border); }
-.page-content [data-slot="scroll-area-viewport"] { overflow: auto !important; scrollbar-width: thin; }
-.page-content [data-slot="scroll-area-scrollbar"] { display: none; }
-.page-content pre { overflow: auto; }
-.page-content img { object-fit: cover; }
-</style>
