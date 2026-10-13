@@ -639,6 +639,72 @@ async function checkCustomerEditing(root) {
   result.customerEditing = { immutableId: true, validation: true, collections: true, singleDefaultCard: true, segments: true, draft: true, latestSavedReset: true, localSave: true }
 }
 
+async function checkCustomerDirectory(root, metrics = false) {
+  const count = `${root} [data-directory-count]`
+  const expectCount = async value => waitFor(`document.querySelector(${JSON.stringify(count)}).textContent.startsWith(${JSON.stringify(value)})`)
+  await expectCount('11 of 11')
+  await chooseTab(root, 'VIP'); await expectCount('4 of 11')
+  await chooseTab(root, 'Active'); await expectCount('5 of 11')
+  await chooseTab(root, 'At risk'); await expectCount('2 of 11')
+  await chooseTab(root, 'All customers')
+  await chooseOption(root + ' [aria-label="Directory date range"]', 'Last 30 days'); await expectCount('9 of 11')
+  await chooseOption(root + ' [aria-label="Directory date range"]', 'Last 90 days'); await expectCount('11 of 11')
+  await chooseOption(root + ' [aria-label="Directory value band"]', 'High value'); await expectCount('3 of 11')
+  await chooseOption(root + ' [aria-label="Directory value band"]', 'Mid value'); await expectCount('4 of 11')
+  await chooseOption(root + ' [aria-label="Directory value band"]', 'Entry value'); await expectCount('4 of 11')
+  await click(root + ' button[aria-label="Clear directory filters"]')
+  await setInput(root + ' input[name="directorySearch"]', 'avery.brooks'); await expectCount('1 of 11')
+  await setInput(root + ' input[name="directorySearch"]', 'not-present'); await expectCount('0 of 11')
+  await waitFor(`document.querySelector(${JSON.stringify(root)}).textContent.includes('No customers match')`)
+  await click(root + ' button[aria-label="Clear directory filters"]')
+  await chooseOption(root + ' [aria-label="Directory sort"]', 'Spend: high to low')
+  await waitFor(`document.querySelector(${JSON.stringify(root + ' tbody tr')}).textContent.includes('CUS-1742')`)
+  await chooseOption(root + ' [aria-label="Directory sort"]', 'Name A–Z')
+  await waitFor(`document.querySelector(${JSON.stringify(root + ' tbody tr')}).textContent.includes('CUS-7102')`)
+  await click(root + ' button[aria-label="Manage customer columns"]')
+  await click('button[aria-label="Show customer average"]')
+  await click('button[aria-label="Close customer columns"]')
+  await waitFor(`!document.querySelector('[role=dialog]')`)
+  assert.equal(await evaluate(`document.querySelector(${JSON.stringify(root + ' thead')}).textContent.includes('Avg. order value')`), false)
+  await click(root + ' button[aria-label="Edit directory customer CUS-7102"]')
+  await waitFor(`document.querySelector('input[name="directoryCustomerName"]')?.value === 'Avery Brooks'`)
+  await setInput('input[name="directoryCustomerName"]', 'Avery Updated')
+  await setInput('input[name="directoryCustomerEmail"]', 'theo.hammond@example.com')
+  await click('button[aria-label="Save directory customer"]')
+  await waitFor(`document.querySelector('[role=dialog]').textContent.includes('already belongs')`)
+  await setInput('input[name="directoryCustomerEmail"]', 'avery.updated@example.com')
+  await chooseOption('[aria-label="Directory customer status"]', 'VIP')
+  await click('button[aria-label="Save directory customer"]')
+  await waitFor(`!document.querySelector('[role=dialog]') && document.querySelector(${JSON.stringify(root)}).textContent.includes('Avery Updated')`)
+  await click(root + ' button[aria-label="Create directory customer"]')
+  await click('button[aria-label="Save directory customer"]')
+  await waitFor(`document.querySelector('[role=dialog]').textContent.includes('Enter a customer name.')`)
+  await setInput('input[name="directoryCustomerName"]', 'Portable Customer')
+  await setInput('input[name="directoryCustomerEmail"]', 'invalid-email')
+  await click('button[aria-label="Save directory customer"]')
+  await waitFor(`document.querySelector('[role=dialog]').textContent.includes('Enter a valid example email.')`)
+  await setInput('input[name="directoryCustomerEmail"]', 'portable@example.com')
+  await click('button[aria-label="Save directory customer"]')
+  await waitFor(`!document.querySelector('[role=dialog]')`)
+  await expectCount('12 of 12')
+  if (metrics) {
+    await waitFor(`document.querySelector('[data-customer-metric="count"]').textContent.includes('12') && document.querySelector('[data-customer-metric="repeat"]').textContent.includes('91.7%') && document.querySelector('[data-customer-metric="new"]').textContent.includes('1')`)
+  }
+  await chooseOption(root + ' [aria-label="Directory date range"]', 'This year'); await expectCount('11 of 12')
+  await click(root + ' button[aria-label="Clear directory filters"]')
+  await click(root + ' button[aria-label="Remove directory customer CUS-9001"]')
+  await waitFor(`document.querySelector('[role=dialog]').textContent.includes('Portable Customer')`)
+  await click('button[aria-label="Cancel customer removal"]')
+  await waitFor(`!document.querySelector('[role=dialog]')`)
+  await expectCount('12 of 12')
+  await click(root + ' button[aria-label="Remove directory customer CUS-9001"]')
+  await click('button[aria-label="Confirm customer removal"]')
+  await waitFor(`!document.querySelector('[role=dialog]')`)
+  await expectCount('11 of 11')
+  assert.equal(await evaluate(`document.querySelector(${JSON.stringify(root)}).textContent.includes('Portable Customer')`), false)
+  result.customerDirectory = { filters: true, numericSort: true, columns: true, correctRecordEditing: true, duplicateEmail: true, validatedCreation: true, cancelledRemoval: true, localRemoval: true, noOrderDates: true }
+}
+
 let previousClipboard
 const normalize = value => value.replaceAll('\r\n', '\n')
 const result = { copied: [], pasteTests: [], screenshots: profile }
@@ -743,6 +809,15 @@ try {
       await click('button[aria-label="Go to customer cards"]')
       await screenshot(page.key + '-cards.png')
       await selectBlock('ecommerce-edit-customer-editor')
+    }
+    if (page.path === '/ecommerce/customer-list-1') {
+      await evaluate(`document.querySelector('[data-copy-block="ecommerce-customer-metrics"]').scrollIntoView({ block: 'start' })`)
+      await screenshot(page.key + '-summary.png')
+      await evaluate(`document.documentElement.classList.add('dark')`)
+      await screenshot(page.key + '-summary-dark.png')
+      await evaluate(`document.documentElement.classList.remove('dark')`)
+      await checkCustomerDirectory('[data-copy-block="ecommerce-customer-directory"]', true)
+      await selectBlock('ecommerce-customer-directory')
     }
     assert.deepEqual(errors, [], `${page.path}: browser errors`)
     await screenshot(page.key + '.png')
@@ -860,6 +935,21 @@ try {
       await screenshot(page.key + '-mobile-cards.png')
       assert.equal(await evaluate('document.documentElement.scrollWidth <= window.innerWidth'), true, 'Customer fields and navigation must fit mobile')
     }
+    if (page.path === '/ecommerce/customer-list-1') {
+      const root = '[data-copy-block="ecommerce-customer-directory"]'
+      assert.equal(await evaluate('document.querySelectorAll("[data-directory-mobile]").length'), 11)
+      await chooseTab(root, 'VIP')
+      await waitFor('document.querySelectorAll("[data-directory-mobile]").length === 4')
+      await chooseOption(root + ' [aria-label="Directory value band"]', 'High value')
+      await waitFor('document.querySelectorAll("[data-directory-mobile]").length === 3')
+      await click(root + ' button[aria-label="Edit mobile customer CUS-2465"]')
+      await waitFor(`document.querySelector('input[name="directoryCustomerName"]')?.value === 'Sienna Blair'`)
+      await screenshot(page.key + '-mobile-edit.png')
+      await click('button[aria-label="Cancel directory edit"]')
+      await waitFor(`!document.querySelector('[role=dialog]')`)
+      await screenshot(page.key + '-mobile-filtered.png')
+      assert.equal(await evaluate('document.documentElement.scrollWidth <= window.innerWidth'), true)
+    }
     assert.deepEqual(errors, [], `${page.path}: mobile browser errors`)
   }
   result.mobileSelector = true
@@ -909,6 +999,11 @@ try {
     if (block.id === 'project-workspace-panel') await checkWorkspacePanel('[data-paste-test]')
     if (block.id === 'ecommerce-add-customer-editor') await checkCustomerCreation('[data-paste-test]')
     if (block.id === 'ecommerce-edit-customer-editor') await checkCustomerEditing('[data-paste-test]')
+    if (block.id === 'ecommerce-customer-directory') await checkCustomerDirectory('[data-paste-test]')
+    if (block.id === 'ecommerce-customer-metrics') {
+      assert.equal(await evaluate('document.querySelectorAll("[data-customer-metric]").length'), 4)
+      assert.ok(await evaluate(`document.querySelector('[data-customer-metric="count"]').textContent.includes('11') && document.querySelector('[data-customer-metric="repeat"]').textContent.includes('100.0%')`))
+    }
     if (block.id === 'project-planning-actions') await checkPlanningActions('[data-paste-test]')
     if (block.id === 'project-issue-map') await checkPlanningMap('[data-paste-test]')
     if (block.id === 'project-current-projects') await checkCurrentProjects('[data-paste-test]')
