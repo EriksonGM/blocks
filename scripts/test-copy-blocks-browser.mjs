@@ -639,6 +639,56 @@ async function checkCustomerEditing(root) {
   result.customerEditing = { immutableId: true, validation: true, collections: true, singleDefaultCard: true, segments: true, draft: true, latestSavedReset: true, localSave: true }
 }
 
+async function checkProcessorCustomers(root) {
+  const count = root + ' [data-processor-count]'
+  const pager = root + ' [data-processor-pagination]'
+  const expectCount = async value => waitFor(`document.querySelector(${JSON.stringify(count)}).textContent.startsWith(${JSON.stringify(value)})`)
+  await expectCount('10 of 10')
+  assert.equal(await evaluate(`document.querySelectorAll(${JSON.stringify(root + ' tbody tr')}).length`), 5)
+  assert.equal(await evaluate(`document.querySelector(${JSON.stringify(root + ' button[aria-label="Previous processor customers"]')}).disabled`), true)
+  await click(root + ' button[aria-label="Next processor customers"]')
+  await waitFor(`document.querySelector(${JSON.stringify(pager)}).textContent.includes('6–10 of 10')`)
+  assert.equal(await evaluate(`document.querySelector(${JSON.stringify(root + ' button[aria-label="Next processor customers"]')}).disabled`), true)
+  await chooseOption(root + ' [aria-label="Processor customer status filter"]', 'Blocked')
+  await expectCount('2 of 10')
+  await waitFor(`document.querySelector(${JSON.stringify(pager)}).textContent.includes('Page 1 / 1')`)
+  await chooseOption(root + ' [aria-label="Processor customer status filter"]', 'Review'); await expectCount('3 of 10')
+  await chooseOption(root + ' [aria-label="Processor customer status filter"]', 'Active'); await expectCount('5 of 10')
+  await click(root + ' button[aria-label="Reset processor customer filters"]')
+  await chooseOption(root + ' [aria-label="Processor customer date range"]', 'May 2026'); await expectCount('6 of 10')
+  await chooseOption(root + ' [aria-label="Processor customer date range"]', 'April 2026'); await expectCount('4 of 10')
+  await chooseOption(root + ' [aria-label="Processor customer date range"]', 'Custom range')
+  await setInput(root + ' input[name="processorCustomerFrom"]', '2026-05-21')
+  await setInput(root + ' input[name="processorCustomerTo"]', '2026-05-23')
+  await expectCount('2 of 10')
+  await setInput(root + ' input[name="processorCustomerFrom"]', '2026-05-24')
+  await expectCount('0 of 10')
+  await waitFor(`document.querySelector(${JSON.stringify(root)}).textContent.includes('Start date must not be after end date.')`)
+  await setInput(root + ' input[name="processorCustomerFrom"]', '')
+  await waitFor(`document.querySelector(${JSON.stringify(root)}).textContent.includes('Choose both UTC dates.')`)
+  await click(root + ' button[aria-label="Reset processor customer filters"]')
+  await setInput(root + ' input[name="processorCustomerSearch"]', 'cus_M7pQ1fC8yLw4DkS2nAaR5'); await expectCount('1 of 10')
+  await click(root + ' button[aria-label="View processor customer cus_M7pQ1fC8yLw4DkS2nAaR5"]')
+  await waitFor(`document.querySelector('[role=dialog]').textContent.includes('Maya Chen') && document.querySelector('[role=dialog]').textContent.includes('maya.chen@example.com')`)
+  assert.equal(await evaluate(`document.querySelectorAll('[role=dialog] input, [role=dialog] textarea').length`), 0)
+  await click('button[aria-label="Close processor customer details"]')
+  await waitFor(`!document.querySelector('[role=dialog]')`)
+  await setInput(root + ' input[name="processorCustomerSearch"]', 'not-present'); await expectCount('0 of 10')
+  await waitFor(`document.querySelector(${JSON.stringify(pager)}).textContent.includes('0–0 of 0')`)
+  await click(root + ' button[aria-label="Reset processor customer filters"]')
+  await click(root + ' button[aria-label="Sort processor customers by name"]')
+  await waitFor(`document.querySelector(${JSON.stringify(root + ' tbody tr')}).textContent.includes('Avery Stone')`)
+  await click(root + ' button[aria-label="Sort processor customers by name"]')
+  await waitFor(`document.querySelector(${JSON.stringify(root + ' tbody tr')}).textContent.includes('Theo Ramirez')`)
+  await chooseOption(root + ' [aria-label="Processor customers per page"]', '10 per page')
+  await waitFor(`document.querySelectorAll(${JSON.stringify(root + ' tbody tr')}).length === 10`)
+  await chooseOption(root + ' [aria-label="Processor customer sort field"]', 'Created at')
+  await waitFor(`document.querySelector(${JSON.stringify(root + ' tbody tr')}).textContent.includes('Avery Stone')`)
+  await click(root + ' button[aria-label="Toggle processor sort direction"]')
+  await waitFor(`document.querySelector(${JSON.stringify(root + ' tbody tr')}).textContent.includes('Cobalt Press')`)
+  result.processorCustomers = { accurateCounts: true, pagination: true, pageReset: true, statusFilter: true, datesUTC: true, customRangeValidation: true, searchById: true, correctDetails: true, dateSorting: true, pageSize: true, emptyResults: true }
+}
+
 async function checkCustomerProfile(root) {
   await click(root + ' button[aria-label="Compose customer message"]')
   await click('button[aria-label="Save customer message draft"]')
@@ -905,6 +955,10 @@ try {
       await chooseTab('[data-copy-block="ecommerce-customer-history"]', 'Purchases')
       await selectBlock('ecommerce-customer-details')
     }
+    if (page.path === '/payment-processor/customers') {
+      await checkProcessorCustomers('[data-copy-block="processor-customer-directory"]')
+      await selectBlock('processor-customer-directory')
+    }
     assert.deepEqual(errors, [], `${page.path}: browser errors`)
     await screenshot(page.key + '.png')
     const lightColor = await evaluate(`getComputedStyle(document.querySelector('[data-page]')).color`)
@@ -1046,6 +1100,21 @@ try {
       await waitFor(`!document.querySelector('[role=dialog]')`)
       assert.equal(await evaluate('document.documentElement.scrollWidth <= window.innerWidth'), true)
     }
+    if (page.path === '/payment-processor/customers') {
+      const root = '[data-copy-block="processor-customer-directory"]'
+      assert.equal(await evaluate('document.querySelectorAll("[data-processor-mobile]").length'), 5)
+      await click(root + ' button[aria-label="Next processor customers"]')
+      await waitFor(`document.querySelector('[data-processor-pagination]').textContent.includes('6–10 of 10')`)
+      await chooseOption(root + ' [aria-label="Processor customer status filter"]', 'Review')
+      await waitFor('document.querySelectorAll("[data-processor-mobile]").length === 3')
+      await click('button[aria-label="View mobile processor customer cus_R4cV0mN8uBd6TzQ1xLfP9"]')
+      await waitFor(`document.querySelector('[role=dialog]').textContent.includes('Orbit Kitchen')`)
+      await screenshot(page.key + '-mobile-details.png')
+      await click('button[aria-label="Close processor customer details"]')
+      await waitFor(`!document.querySelector('[role=dialog]')`)
+      await screenshot(page.key + '-mobile-filtered.png')
+      assert.equal(await evaluate('document.documentElement.scrollWidth <= window.innerWidth'), true)
+    }
     assert.deepEqual(errors, [], `${page.path}: mobile browser errors`)
   }
   result.mobileSelector = true
@@ -1099,6 +1168,7 @@ try {
     if (block.id === 'ecommerce-customer-profile') await checkCustomerProfile('[data-paste-test]')
     if (block.id === 'ecommerce-customer-history') await checkCustomerHistory('[data-paste-test]')
     if (block.id === 'ecommerce-customer-details') await checkCustomerDetails('[data-paste-test]')
+    if (block.id === 'processor-customer-directory') await checkProcessorCustomers('[data-paste-test]')
     if (block.id === 'ecommerce-customer-metrics') {
       assert.equal(await evaluate('document.querySelectorAll("[data-customer-metric]").length'), 4)
       assert.ok(await evaluate(`document.querySelector('[data-customer-metric="count"]').textContent.includes('11') && document.querySelector('[data-customer-metric="repeat"]').textContent.includes('100.0%')`))
