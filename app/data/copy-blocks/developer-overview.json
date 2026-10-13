@@ -1,0 +1,11 @@
+{
+  "path": "/developers/overview",
+  "file": "app/pages/developers/overview.vue",
+  "key": "developer-overview",
+  "blocks": [
+    { "id": "developer-request-metrics", "title": "API request metrics", "script": ["overview-chart-state", "overview-request-data"], "fragments": ["overview-filters"] },
+    { "id": "developer-response-metrics", "title": "API response time metrics", "script": ["overview-chart-state", "overview-response-data"], "fragments": ["overview-filters"] },
+    { "id": "developer-visitor-metrics", "title": "Visitor device metrics", "script": ["overview-chart-state", "overview-visitor-data"], "fragments": ["overview-filters"] },
+    { "id": "developer-recent-activities", "title": "Recent developer activities" }
+  ]
+}

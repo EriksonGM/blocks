@@ -255,6 +255,46 @@ async function checkVisitorSummary(root, referrers = false) {
   result.visitorBreakdowns = true
 }
 
+async function checkOverviewMetrics(root) {
+  const expected = async (selector, value) => {
+    const present = await evaluate(`!!document.querySelector(${JSON.stringify(root + ' ' + selector)})`)
+    if (present) await waitFor(`document.querySelector(${JSON.stringify(root + ' ' + selector)}).textContent.trim() === ${JSON.stringify(value)}`)
+  }
+  await expected('[data-overview-success]', '270')
+  await expected('[data-overview-failed]', '6')
+  await expected('[data-overview-average]', '260 ms')
+  await expected('[data-overview-desktop]', '24,828')
+  await expected('[data-overview-mobile]', '25,010')
+  const visitorButton = root + ' button[aria-label="Show mobile visitors"]'
+  if (await evaluate(`!!document.querySelector(${JSON.stringify(visitorButton)})`)) {
+    const plot = root + ' svg[aria-label^="Desktop visitors per week"] polyline'
+    const desktopPoints = await evaluate(`document.querySelector(${JSON.stringify(plot)}).getAttribute('points')`)
+    await click(visitorButton)
+    await waitFor(`document.querySelector(${JSON.stringify(root + ' svg[aria-label^="Mobile visitors per week"]')})`)
+    const mobilePoints = await evaluate(`document.querySelector(${JSON.stringify(root + ' svg[aria-label^="Mobile visitors per week"] polyline')}).getAttribute('points')`)
+    assert.notEqual(mobilePoints, desktopPoints, 'Device controls must change the visitor chart')
+    await click(root + ' button[aria-label="Show desktop visitors"]')
+  }
+  await chooseOption(root + ' [aria-label="Overview environment"]', 'Development')
+  await expected('[data-overview-success]', '66')
+  await expected('[data-overview-failed]', '2')
+  await expected('[data-overview-average]', '170 ms')
+  await expected('[data-overview-desktop]', '1,100')
+  await expected('[data-overview-mobile]', '860')
+  await chooseOption(root + ' [aria-label="Overview time period"]', 'Last 3 weeks')
+  await expected('[data-overview-success]', '43')
+  await expected('[data-overview-average]', '153 ms')
+  await chooseOption(root + ' [aria-label="Overview environment"]', 'Production')
+  await expected('[data-overview-success]', '176')
+  await expected('[data-overview-failed]', '4')
+  await expected('[data-overview-average]', '187 ms')
+  await expected('[data-overview-desktop]', '13,528')
+  await expected('[data-overview-mobile]', '13,610')
+  assert.equal(await evaluate(`[...document.querySelectorAll(${JSON.stringify(root + ' svg')})].every(svg => svg.querySelectorAll('circle').length === 3)`), true, 'Period selector must update every chart series')
+  await chooseOption(root + ' [aria-label="Overview time period"]', 'All 6 weeks')
+  result.overviewMetrics = { environment: true, period: true, totals: true, deviceSeries: true }
+}
+
 let previousClipboard
 const normalize = value => value.replaceAll('\r\n', '\n')
 const result = { copied: [], pasteTests: [], screenshots: profile }
@@ -315,6 +355,10 @@ try {
       await checkVisitorSummary('[data-copy-block="developer-visitor-summary"]')
       await checkVisitorSummary('[data-copy-block="developer-referrer-summary"]', true)
       await selectBlock('developer-referrer-summary')
+    }
+    if (page.path === '/developers/overview') {
+      await checkOverviewMetrics('[data-page]')
+      await selectBlock('developer-recent-activities')
     }
     assert.deepEqual(errors, [], `${page.path}: browser errors`)
     await screenshot(page.key + '.png')
@@ -391,6 +435,13 @@ try {
       await screenshot(page.key + '-mobile-summaries.png')
       assert.equal(await evaluate('document.documentElement.scrollWidth <= window.innerWidth'), true, 'Mobile log tables must scroll internally')
     }
+    if (page.path === '/developers/overview') {
+      await evaluate(`document.querySelector('[data-copy-block="developer-visitor-metrics"]').scrollIntoView({ block: 'start' })`)
+      await click('button[aria-label="Show mobile visitors"]')
+      await screenshot(page.key + '-mobile-visitors.png')
+      await evaluate(`document.querySelector('[data-copy-block="developer-recent-activities"]').scrollIntoView({ block: 'start' })`)
+      await screenshot(page.key + '-mobile-activities.png')
+    }
     assert.deepEqual(errors, [], `${page.path}: mobile browser errors`)
   }
   result.mobileSelector = true
@@ -433,6 +484,7 @@ try {
     if (block.id === 'developer-log-explorer') await checkEventLogs('[data-paste-test]')
     if (block.id === 'developer-visitor-summary') await checkVisitorSummary('[data-paste-test]')
     if (block.id === 'developer-referrer-summary') await checkVisitorSummary('[data-paste-test]', true)
+    if (['developer-request-metrics', 'developer-response-metrics', 'developer-visitor-metrics'].includes(block.id)) await checkOverviewMetrics('[data-paste-test]')
     if (block.id.startsWith('agent-') && block.id.endsWith('-run')) {
       if (['agent-report-run', 'agent-discount-run'].includes(block.id)) {
         const selector = '[data-paste-test] button[aria-expanded]'
