@@ -1,10 +1,12 @@
 <!-- Page: /developers/webhooks | All content, state and styles live in this file. -->
 <script setup lang="ts">
-import type { TableColumn } from '@nuxt/ui'
-
 const route = useRoute()
 
 useHead({ title: "Webhooks · Blocks Admin" })
+
+// @copy:webhooks-table:start
+import { computed, reactive, ref } from 'vue'
+import type { TableColumn } from '@nuxt/ui'
 
 const toast = useToast()
 
@@ -23,7 +25,6 @@ const table1Rows = ref([
     "iDText20": "530f5f19-d5fe-43bc-a6ca-dd5893b48078",
     "iDText26": "530f5f19-d5fe-43bc-a6ca-dd5893b48078",
     "uRLEndpoint": "https://extroverted-flood.com",
-    "uRLEndpointHref3": "/developers/webhooks/530f5f19-d5fe-43bc-a6ca-dd5893b48078",
     "events": "1",
     "type": "none",
     "status": "enabled",
@@ -35,7 +36,6 @@ const table1Rows = ref([
     "iDText20": "4ba1ee0e-1364-4d98-94b5-71f53098e02a",
     "iDText26": "4ba1ee0e-1364-4d98-94b5-71f53098e02a",
     "uRLEndpoint": "https://tall-alert.com",
-    "uRLEndpointHref3": "/developers/webhooks/4ba1ee0e-1364-4d98-94b5-71f53098e02a",
     "events": "5",
     "type": "none",
     "status": "disabled",
@@ -47,7 +47,6 @@ const table1Rows = ref([
     "iDText20": "c69a8ebb-b12a-43fc-88a6-2cd2417cd839",
     "iDText26": "c69a8ebb-b12a-43fc-88a6-2cd2417cd839",
     "uRLEndpoint": "https://innocent-tusk.net",
-    "uRLEndpointHref3": "/developers/webhooks/c69a8ebb-b12a-43fc-88a6-2cd2417cd839",
     "events": "5",
     "type": "platform",
     "status": "enabled",
@@ -59,7 +58,6 @@ const table1Rows = ref([
     "iDText20": "ff32e83f-7841-4c07-a27a-9c5b5a42fc52",
     "iDText26": "ff32e83f-7841-4c07-a27a-9c5b5a42fc52",
     "uRLEndpoint": "https://pink-knickers.name",
-    "uRLEndpointHref3": "/developers/webhooks/ff32e83f-7841-4c07-a27a-9c5b5a42fc52",
     "events": "2",
     "type": "application",
     "status": "enabled",
@@ -71,7 +69,6 @@ const table1Rows = ref([
     "iDText20": "6acc5263-e689-4921-9afd-bf0f7d72b2a2",
     "iDText26": "6acc5263-e689-4921-9afd-bf0f7d72b2a2",
     "uRLEndpoint": "https://ironclad-deck.com/",
-    "uRLEndpointHref3": "/developers/webhooks/6acc5263-e689-4921-9afd-bf0f7d72b2a2",
     "events": "1",
     "type": "platform",
     "status": "disabled",
@@ -83,7 +80,6 @@ const table1Rows = ref([
     "iDText20": "ce83557d-10f7-48ec-b266-96862228c2e2",
     "iDText26": "ce83557d-10f7-48ec-b266-96862228c2e2",
     "uRLEndpoint": "https://nippy-pine.net",
-    "uRLEndpointHref3": "/developers/webhooks/ce83557d-10f7-48ec-b266-96862228c2e2",
     "events": "2",
     "type": "none",
     "status": "disabled",
@@ -95,7 +91,6 @@ const table1Rows = ref([
     "iDText20": "44ecb04e-9f49-4b2d-9626-01e6dc54eb6e",
     "iDText26": "44ecb04e-9f49-4b2d-9626-01e6dc54eb6e",
     "uRLEndpoint": "https://moral-daughter.net",
-    "uRLEndpointHref3": "/developers/webhooks/44ecb04e-9f49-4b2d-9626-01e6dc54eb6e",
     "events": "5",
     "type": "application",
     "status": "disabled",
@@ -137,6 +132,16 @@ const table1FilteredRows = computed(() => {
   return table1Rows.value.filter(row => !query || keys.some(key => String(row[key]).toLowerCase().includes(query)))
 })
 
+async function copyValue(value: string) {
+  try {
+    await navigator.clipboard.writeText(value)
+    toast.add({ title: 'Copied to clipboard', color: 'success' })
+  } catch {
+    toast.add({ title: 'Clipboard unavailable', description: 'Select the ID and copy it manually.', color: 'error' })
+  }
+}
+// @copy:webhooks-table:end
+
 // Restore drafts after hydration; the first client render matches SSR.
 onMounted(() => {
   const key = 'nuxt-ui-page:' + route.path
@@ -159,10 +164,6 @@ function confirmAction() {
   actionDialog.open = false
 }
 
-async function copyValue(value: string) {
-  await navigator.clipboard.writeText(value)
-  toast.add({ title: 'Copied to clipboard', color: 'success' })
-}
 </script>
 
 <template>
@@ -201,9 +202,9 @@ async function copyValue(value: string) {
                 </UButton>
               </div>
               <div class="h-full flex-1">
-                <div class="mt-4 space-y-2">
+                <div data-copy-block="webhooks-table" tabindex="0" class="mt-4 space-y-2">
                   <div class="flex flex-1 flex-col-reverse items-start gap-y-2 sm:flex-row sm:items-center sm:space-x-2">
-                    <UInput v-model="form.filterURLEndpoint" type="text" placeholder="Filter URL endpoint..." name="filterURLEndpoint" class="flex rounded-md text-base md:text-sm h-8 w-[250px]" :ui="{ base: 'h-full' }" />
+                    <UInput v-model="form.filterURLEndpoint" type="text" placeholder="Filter URL endpoint..." aria-label="Filter webhooks" name="filterURLEndpoint" class="flex rounded-md text-base md:text-sm h-8 w-[250px]" :ui="{ base: 'h-full' }" />
                   </div>
                   <div class="rounded-md">
                     <div class="relative w-full overflow-auto">
@@ -214,7 +215,7 @@ async function copyValue(value: string) {
                         </template>
                         <template #iD-cell="{ row }">
                           <div class="flex items-center gap-2">
-                            <UButton color="neutral" variant="outline" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-default bg-default shadow-xs hover:bg-elevated hover:text-default size-6 scale-100 rounded-full" aria-label="Copy to clipboard" type="button" @click="copyValue(&quot;Copy to clipboard&quot;)">
+                            <UButton color="neutral" variant="outline" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-default bg-default shadow-xs hover:bg-elevated hover:text-default size-6 scale-100 rounded-full" aria-label="Copy to clipboard" type="button" @click="copyValue(row.original.iDText20)">
                               <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-copy m-auto">
                                 <path d="M7 9.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667l0 -8.666" />
                                 <path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" />
@@ -233,9 +234,9 @@ async function copyValue(value: string) {
                           <UButton color="neutral" variant="ghost" size="xs" label="URL Endpoint" :trailing-icon="column.getIsSorted() ? 'i-lucide-arrow-down' : undefined" @click="column.toggleSorting(column.getIsSorted() === 'asc')" />
                         </template>
                         <template #uRLEndpoint-cell="{ row }">
-                          <NuxtLink class="underline decoration-dashed underline-offset-2 hover:decoration-solid" :to="row.original.uRLEndpointHref3">
+                          <a class="underline decoration-dashed underline-offset-2 hover:decoration-solid" :href="row.original.uRLEndpoint" target="_blank" rel="noopener noreferrer">
                             <div class="truncate min-w-40">{{ row.original.uRLEndpoint }}</div>
-                          </NuxtLink>
+                          </a>
                         </template>
                         <template #events-header="{ column }">
                           <UButton color="neutral" variant="ghost" size="xs" label="Events" :trailing-icon="column.getIsSorted() ? 'i-lucide-arrow-down' : undefined" @click="column.toggleSorting(column.getIsSorted() === 'asc')" />
@@ -283,6 +284,7 @@ async function copyValue(value: string) {
         </div>
       </template>
     </UModal>
+    <BlockCopyTools page="/developers/webhooks" />
   </div>
 </template>
 

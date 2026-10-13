@@ -119,8 +119,8 @@ La casilla de una página representa **interfaz revisada + copia funcional + pru
 | --- | --- | --- | --- | --- | --- |
 | Documentación y cola de trabajo | No aplica | No aplica | Inventario comprobado: 261 entradas únicas + 2 rutas auxiliares; `git diff --check` aprobado | `c30377a`, push confirmado | Plan publicado |
 | Infraestructura compartida de copia | No aplica | Visor, portapapeles, extracción y registros independientes | `pnpm check:copy-blocks`, `pnpm check:pages` y `pnpm typecheck` aprobados | `8d40a3f`, push confirmado | Publicada |
-| `/ecommerce/dashboard-1` | Piloto revisado | 6 bloques | Tipos, build, navegador y pegado aprobados; validación de ruta/exportación repetida con `--page=/ecommerce/dashboard-1 --http` | Commit de página; push pendiente de confirmación | Publicar antes de continuar |
-| `/developers/webhooks` | Piloto revisado | 1 bloque | Tipos, build, navegador y pegado aprobados | Pendiente | Guardar y publicar la página |
+| `/ecommerce/dashboard-1` | Piloto revisado | 6 bloques | Tipos, build, navegador y pegado aprobados; validación de ruta/exportación repetida con `--page=/ecommerce/dashboard-1 --http` | `ccacd15`, push confirmado | Terminada |
+| `/developers/webhooks` | Piloto revisado; copia de ID y enlaces corregidos | 1 bloque | Tipos, build, navegador, búsqueda y pegado aprobados; ruta/exportación repetida con `--page=/developers/webhooks --http` | Commit de página; push pendiente de confirmación | Publicar antes de continuar |
 | `/ai-chat/composer-1` | Piloto revisado | 1 bloque | Tipos, build, navegador y pegado aprobados | Pendiente | Guardar y publicar la página |
 
 Las otras **258 páginas de contenido** siguen pendientes. Las casillas reflejan páginas guardadas; la columna commit/push confirma su publicación. Actualiza esta tabla al terminar una página o encontrar un bloqueo; no dar a entender que la cola continúa ejecutándose en segundo plano cuando no hay una ejecución activa.
@@ -216,7 +216,7 @@ Cada casilla exige las dos tareas solicitadas: **validar la coherencia de toda l
 - [ ] [/developers/api-keys](app/pages/developers/api-keys.vue)
 - [ ] [/developers/events-&amp;-logs](app/pages/developers/events-%26-logs.vue)
 - [ ] [/developers/overview](app/pages/developers/overview.vue)
-- [ ] [/developers/webhooks](app/pages/developers/webhooks/index.vue)
+- [x] [/developers/webhooks](app/pages/developers/webhooks/index.vue)
 - [ ] [/developers/webhooks/44ecb04e-9f49-4b2d-9626-01e6dc54eb6e](app/pages/developers/webhooks/44ecb04e-9f49-4b2d-9626-01e6dc54eb6e.vue)
 - [ ] [/developers/webhooks/4ba1ee0e-1364-4d98-94b5-71f53098e02a](app/pages/developers/webhooks/4ba1ee0e-1364-4d98-94b5-71f53098e02a.vue)
 - [ ] [/developers/webhooks/530f5f19-d5fe-43bc-a6ca-dd5893b48078](app/pages/developers/webhooks/530f5f19-d5fe-43bc-a6ca-dd5893b48078.vue)
