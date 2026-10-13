@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import { existsSync } from 'node:fs'
-import { mkdir, mkdtemp, writeFile } from 'node:fs/promises'
+import { mkdir, mkdtemp, readFile, writeFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 import { spawn } from 'node:child_process'
 import { buildPageBlocks, catalogPages, pilotPages } from './block-catalog.mjs'
@@ -62,6 +62,9 @@ socket.addEventListener('message', event => {
     errors.push(message.params.exceptionDetails.exception?.description || message.params.exceptionDetails.text)
   } else if (message.method === 'Runtime.consoleAPICalled' && message.params.type === 'error') {
     errors.push(message.params.args.map(arg => arg.value || arg.description).join(' '))
+  } else if (message.method === 'Runtime.consoleAPICalled' && message.params.type === 'warning') {
+    const warning = message.params.args.map(arg => arg.value || arg.description).join(' ')
+    if (/hydration/i.test(warning)) errors.push(warning)
   }
 })
 function send(method, params = {}, session = sessionId) {
@@ -93,6 +96,7 @@ async function navigate(url, selector) {
 }
 async function click(selector) {
   await waitFor(`document.querySelector(${JSON.stringify(selector)}) && !document.querySelector(${JSON.stringify(selector)}).disabled`)
+  await evaluate(`document.querySelector(${JSON.stringify(selector)}).scrollIntoView({ block: 'nearest' })`)
   // Like Playwright's stable-element check: allow the toolbar to finish layout.
   await evaluate('new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)))')
   const point = await evaluate(`(() => { const element = document.querySelector(${JSON.stringify(selector)}); const r = element.getBoundingClientRect(); return { x: r.left + r.width / 2, y: r.top + r.height / 2 }; })()`)
@@ -115,6 +119,17 @@ async function screenshot(name) {
   const result = await send('Page.captureScreenshot', { format: 'png' })
   await writeFile(resolve(profile, name), Buffer.from(result.data, 'base64'))
 }
+async function chooseOption(selector, label) {
+  await click(selector)
+  await waitFor(`document.querySelector(${JSON.stringify(selector)}).getAttribute('aria-expanded') === 'true'`)
+  await evaluate(`Promise.allSettled(document.getAnimations().filter(animation => Number.isFinite(animation.effect?.getComputedTiming().endTime)).map(animation => animation.finished))`)
+  await waitFor(`[...document.querySelectorAll('[role=option]')].some(option => option.textContent.trim() === ${JSON.stringify(label)} && !option.closest('[data-state="closed"]'))`)
+  await evaluate(`(() => { document.querySelectorAll('[data-browser-choice]').forEach(option => option.removeAttribute('data-browser-choice')); const option = [...document.querySelectorAll('[role=option]')].find(option => option.textContent.trim() === ${JSON.stringify(label)} && !option.closest('[data-state="closed"]')); if (!option) throw new Error('Missing option'); option.setAttribute('data-browser-choice', 'selected'); })()`)
+  await click('[data-browser-choice="selected"]')
+  await waitFor(`document.querySelector(${JSON.stringify(selector)}).getAttribute('aria-expanded') === 'false' && document.querySelector(${JSON.stringify(selector)}).textContent.includes(${JSON.stringify(label)})`)
+  await evaluate(`Promise.allSettled(document.getAnimations().filter(animation => Number.isFinite(animation.effect?.getComputedTiming().endTime)).map(animation => animation.finished))`)
+  await evaluate('new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)))')
+}
 
 let previousClipboard
 const normalize = value => value.replaceAll('\r\n', '\n')
@@ -124,6 +139,7 @@ try {
   sessionId = (await send('Target.attachToTarget', { targetId: target.targetId, flatten: true }, null)).sessionId
   await send('Page.enable')
   await send('Runtime.enable')
+  await send('Browser.setDownloadBehavior', { behavior: 'allow', downloadPath: profile }, null)
   await send('Browser.grantPermissions', { origin: new URL(base).origin, permissions: ['clipboardReadWrite', 'clipboardSanitizedWrite'] }, null)
   await send('Emulation.setDeviceMetricsOverride', { width: 1440, height: 1000, deviceScaleFactor: 1, mobile: false })
   for (const page of selectedPages) {
@@ -141,6 +157,29 @@ try {
       const copied = normalize(await evaluate('navigator.clipboard.readText()'))
       assert.ok(copied === normalize(block.component), `${block.id}: wrong clipboard source (${copied.split('\n')[0]})`)
       result.copied.push(block.id)
+    }
+    if (page.path === '/ai-chat/agent-activity') {
+      const rowCount = `document.querySelectorAll('ol[aria-label="Run timeline"] > li').length`
+      await waitFor(`${rowCount} === 11`)
+      await evaluate(`(() => { const input=document.querySelector('input[aria-label="Search runs or IDs"]'); input.value='run_84f2'; input.dispatchEvent(new Event('input', { bubbles:true })); })()`)
+      await waitFor(`${rowCount} === 1`)
+      assert.equal(await evaluate(`document.querySelector('[data-copy-block]').dataset.copyBlock`), 'agent-report-run')
+      await evaluate(`(() => { const input=document.querySelector('input[aria-label="Search runs or IDs"]'); input.value=''; input.dispatchEvent(new Event('input', { bubbles:true })); })()`)
+      await chooseOption('[aria-label="Time period"]', 'Last hour')
+      await waitFor(`${rowCount} === 8`)
+      await chooseOption('[aria-label="Time period"]', 'Last 24 hours')
+      await waitFor(`${rowCount} === 11`)
+      await click('button[aria-label="3 runs need attention"]')
+      await waitFor(`${rowCount} === 3`)
+      await chooseOption('[aria-label="Run status"]', 'Completed')
+      await waitFor(`${rowCount} === 7`)
+      await chooseOption('[aria-label="Run status"]', 'Cancelled')
+      await waitFor(`${rowCount} === 0 && document.querySelector('[data-page]').textContent.includes('No runs match your filters.')`)
+      await chooseOption('[aria-label="Run status"]', 'Status')
+      await waitFor(`${rowCount} === 11`)
+      assert.equal(await evaluate(`document.querySelector('button[aria-label="Resume paused runs"]').disabled`), true)
+      await selectBlock(exports.filter(block => block.page === page.path).at(-1).id)
+      result.activityFilters = true
     }
     assert.deepEqual(errors, [], `${page.path}: browser errors`)
     await screenshot(page.key + '.png')
@@ -227,6 +266,35 @@ try {
       await click('button[aria-label="Close maintenance information"]')
       await waitFor(`!document.querySelector('[role=dialog]')`)
       result.maintenanceDialog = true
+    }
+    if (block.id.startsWith('agent-') && block.id.endsWith('-run')) {
+      if (['agent-report-run', 'agent-discount-run'].includes(block.id)) {
+        const selector = '[data-paste-test] button[aria-expanded]'
+        await click(selector)
+        await waitFor(`document.querySelector(${JSON.stringify(selector)}).getAttribute('aria-expanded') === 'false'`)
+        await click(selector)
+        await waitFor(`document.querySelector(${JSON.stringify(selector)}).getAttribute('aria-expanded') === 'true'`)
+        await click(`button[aria-label="${block.id === 'agent-report-run' ? 'Review' : 'View rule'}"]`)
+        await waitFor(`document.querySelector('[role=dialog]')?.textContent.includes(${JSON.stringify(block.id === 'agent-report-run' ? '2,420 above the review threshold' : 'maximum of 20%')})`)
+      } else {
+        await click('[data-paste-test] button')
+        await waitFor(`document.querySelector('[role=dialog]')?.textContent.includes('static example of an agent run')`)
+      }
+      assert.equal(await evaluate(`document.querySelectorAll('[role=dialog] input, [role=dialog] textarea').length`), 0, `${block.id}: details should not show an edit form`)
+      if (block.id === 'agent-billing-run') {
+        await click('button[aria-label="Export demo CSV"]')
+        const deadline = Date.now() + 10000
+        const csvPath = resolve(profile, 'run_62ca.csv')
+        while (!existsSync(csvPath)) {
+          assert.ok(Date.now() < deadline, 'CSV download timed out')
+          await new Promise(resolve => setTimeout(resolve, 50))
+        }
+        const csv = await readFile(csvPath, 'utf8')
+        assert.ok(csv.includes('run_62ca') && csv.includes('Validate monthly billing export') && !csv.includes('searchRunsOrIDs'), 'Export the selected run, not filter values')
+        result.activityCsv = true
+      }
+      await click('button[aria-label="Close run details"]')
+      await waitFor(`!document.querySelector('[role=dialog]')`)
     }
     result.pasteTests.push(block.id)
   }

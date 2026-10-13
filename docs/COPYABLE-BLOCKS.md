@@ -6,7 +6,7 @@ El piloto inicial está disponible en estas tres páginas:
 - `/developers/webhooks`: tabla con búsqueda, ordenación y copia de identificadores.
 - `/ai-chat/composer-1`: compositor con conversación de demostración.
 
-Las páginas adicionales se habilitan individualmente; consulta el [ToDo del README](../README.md#todo-por-página-261-páginas-de-contenido) para conocer el estado de validación y publicación. `/401`, `/403`, `/404` y `/503` añaden pantallas de estado como componentes independientes; mantenimiento incluye un modal informativo, no una integración con un servicio real.
+Las páginas adicionales se habilitan individualmente; consulta el [ToDo del README](../README.md#todo-por-página-261-páginas-de-contenido) para conocer el estado de validación y publicación. `/401`, `/403`, `/404` y `/503` añaden pantallas de estado como componentes independientes; mantenimiento incluye un modal informativo, no una integración con un servicio real. `/ai-chat/agent-activity` añade once tarjetas de ejecuciones con detalle, expansión y exportación local de CSV.
 
 Pasa el cursor sobre un bloque o enfócalo con Tab. Aparecerán el contorno y las acciones **Ver código**, **Copiar** y **Más opciones de copia**. El botón **N bloques copiables** permite elegir un bloque también desde el teclado o una pantalla táctil. Escape oculta las herramientas.
 
@@ -25,6 +25,8 @@ Los ocho bloques del piloto no necesitan recursos de `public/reference/`, el lay
 Este piloto conserva los componentes Nuxt UI directamente en las páginas existentes, sin introducir un renderizador de bloques. `data-copy-block` identifica el elemento exportable. Las regiones `@copy` delimitan explícitamente su script y CSS; `data-copy-fragment` identifica fragmentos auxiliares, como un modal utilizado por el bloque.
 
 Cada página habilitada tiene un archivo JSON en `app/data/copy-blocks/` con `path`, `file`, `key` y `blocks`. Cada bloque declara `id`, `title` y, cuando hacen falta, `script`, `style` y `fragments`. El JSON contiene solo metadatos; el contenido permanece en el archivo Vue.
+
+`script` puede ser una lista ordenada de regiones para combinar los datos y funciones compartidos sin duplicarlos manualmente en las páginas. Cada SFC exportado recibe sus dependencias y es independiente del catálogo. Las pruebas de `/ai-chat/agent-activity` incluyen filtros, los once componentes pegados, expansión y descarga del CSV de una ejecución.
 
 `scripts/block-catalog.mjs` extrae el marcado desde el AST Vue, elimina los atributos de herramientas y agrega solo las dependencias registradas. `modules/block-catalog.mjs` genera fuentes por página durante `dev`, `build` y `generate`, y las actualiza al editar las páginas. No hay una segunda copia manual del código ni un endpoint que exponga archivos arbitrarios. Reinicia `pnpm dev` después de añadir o modificar un registro JSON para incorporar sus bloques y chunks.
 

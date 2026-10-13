@@ -57,14 +57,14 @@ function templateFragment(ast, attribute, id) {
 }
 
 export async function buildPageBlocks(page, root = resolve('.')) {
-  const source = await readFile(resolve(root, page.file), 'utf8')
+  const source = (await readFile(resolve(root, page.file), 'utf8')).replaceAll('\r\n', '\n')
   const { descriptor, errors } = parse(source, { filename: page.file })
   assert.equal(errors.length, 0, `Invalid page: ${page.file}`)
   const ast = descriptor.template?.ast
   assert.ok(ast, `Missing template AST: ${page.file}`)
   return page.blocks.map(block => {
     const template = [templateFragment(ast, 'data-copy-block', block.id), ...(block.fragments || []).map(id => templateFragment(ast, 'data-copy-fragment', id))].join('\n\n')
-    const script = block.script ? region(descriptor.scriptSetup.content, block.script, 'script') : ''
+    const script = block.script ? [block.script].flat().map(name => region(descriptor.scriptSetup.content, name, 'script')).join('\n\n') : ''
     const style = block.style ? region(descriptor.styles.map(style => style.content).join('\n'), block.style, 'style') : ''
     const component = `<!-- ${block.title} | Requires Nuxt 4, Nuxt UI 4 and the Lucide icon collection. -->\n${script ? `<script setup lang="ts">\n${script}\n</script>\n\n` : ''}<template>\n${template.split('\n').map(line => line ? '  ' + line : '').join('\n')}\n</template>\n${style ? `\n<style scoped>\n${style}\n</style>\n` : ''}`
     assert.ok(!/data-copy-|BlockCopyTools|\/reference\/|blob:|useRoute\(|useHead\(|localStorage|navigateTo\(/.test(component), `Non-portable dependency in ${block.id}`)

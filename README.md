@@ -120,16 +120,16 @@ La casilla de una página representa **interfaz revisada + copia funcional + pru
 | --- | --- | --- | --- | --- | --- |
 | Documentación y cola de trabajo | No aplica | No aplica | Inventario comprobado: 261 entradas únicas + 2 rutas auxiliares; `git diff --check` aprobado | `c30377a`, push confirmado | Plan publicado |
 | Infraestructura compartida de copia | No aplica | Visor, portapapeles, extracción y registros independientes | `pnpm check:copy-blocks`, `pnpm check:pages` y `pnpm typecheck` aprobados | `8d40a3f`, push confirmado | Publicada |
-| `/ecommerce/dashboard-1` | Piloto revisado; finales de línea LF fijados para evitar discrepancias de hidratación de los SVG en Windows | 6 bloques | `check:pages`, tipos, exportación HTTP y `check:copy-browser --all` aprobados: 23 copias/pegados, sin avisos de hidratación | `ccacd15`, push confirmado; corrección LF lista para publicar | Publicar corrección |
+| `/ecommerce/dashboard-1` | Piloto revisado; finales de línea LF fijados para evitar discrepancias de hidratación de los SVG en Windows | 6 bloques | `check:pages`, tipos, exportación HTTP y `check:copy-browser --all` aprobados: 23 copias/pegados, sin avisos de hidratación | `ccacd15` y corrección `e57e496`, push confirmado | Terminada |
 | `/developers/webhooks` | Piloto revisado; copia de ID y enlaces corregidos | 1 bloque | Tipos, build, navegador, búsqueda y pegado aprobados; ruta/exportación repetida con `--page=/developers/webhooks --http` | `af80828`, push confirmado | Terminada |
 | `/ai-chat/composer-1` | Piloto revisado; formularios anidados, tokens CSS y recurso externo corregidos | 1 bloque | Tipos, build, envío de mensajes, navegador, teclado/móvil y pegado aprobados; ruta/exportación repetida con `--page=/ai-chat/composer-1 --http` | `d5a52e2`, push confirmado | Terminada |
 | `/401` | Escritorio, móvil y tema oscuro revisados; controles Nuxt UI nativos; vuelta atrás real; eliminados residuos del sitio original | 1 bloque autónomo, sin recursos externos | `check:pages`, `check:copy-blocks --page=/401 --http`, `typecheck` y `check:copy-browser --page=/401` aprobados; portapapeles, plantilla, fallback, pegado y navegación probados | `5b41fbc`, push confirmado e integrado en `main` | Terminada |
 | `/403` | Pantalla y texto revisados en escritorio/móvil y claro/oscuro; navegación atrás funcional; retirados residuos originales | 1 bloque autónomo | `check:pages`, `check:copy-blocks --page=/403 --http`, `typecheck`, `preview:copy-blocks --typecheck` y `check:copy-browser --page=/403` aprobados | `2195ad6`, push confirmado en `main` | Terminada |
 | `/404` | Composición, texto, botones nativos y navegación revisados; escritorio/móvil y claro/oscuro sin errores | 1 bloque autónomo | `check:pages`, `check:copy-blocks --page=/404 --http`, `typecheck`, `preview:copy-blocks --typecheck` y `check:copy-browser --page=/404` aprobados | `42a5e0b`, push confirmado en `main` | Terminada |
 | `/503` | Escritorio/móvil y claro/oscuro revisados; «Learn more» muestra información de mantenimiento, no un formulario de edición | 1 bloque autónomo con su modal y estado | `check:pages`, `check:copy-blocks --page=/503 --http`, `typecheck`, `preview:copy-blocks --typecheck` y `check:copy-browser --page=/503` aprobados; modal copiado probado | `c3a3db6`, push confirmado en `main` | Terminada |
-| `/ai-chat/agent-activity` | Búsqueda/período/estado funcionales; detalle expandible; diálogos informativos; CSV de la ejecución seleccionada; móvil y temas revisados | 11 tarjetas independientes, cada una con estado y modal necesarios | Pruebas individuales aprobadas; se repite la prueba conjunta después de corregir CRLF/LF en el dashboard | En curso; sin commit de página todavía | Terminar validación, guardar y publicar antes de continuar |
+| `/ai-chat/agent-activity` | Búsqueda/período/estado funcionales; detalle expandible; diálogos informativos; CSV de la ejecución seleccionada; móvil y temas revisados | 11 tarjetas independientes, cada una con estado y modal necesarios | `check:pages`, `check:copy-blocks --http`, tipos del catálogo/pegado, navegador individual y `check:copy-browser --all` aprobados; 11 copias/pegados, filtros, expansión, política/revisión y CSV real comprobados | Commit de página; push pendiente de confirmación | Publicar antes de continuar con `/ai-chat/agent-configuration` |
 
-Avance: **7 de 261 páginas de contenido guardadas; 254 pendientes**, además de las 2 rutas auxiliares. Las casillas reflejan páginas guardadas; la columna commit/push confirma su publicación. Actualiza esta tabla al terminar una página o encontrar un bloqueo; no dar a entender que la cola continúa ejecutándose en segundo plano cuando no hay una ejecución activa.
+Avance: **8 de 261 páginas de contenido guardadas; 253 pendientes**, además de las 2 rutas auxiliares. Las casillas reflejan páginas guardadas; la columna commit/push confirma su publicación. Actualiza esta tabla al terminar una página o encontrar un bloqueo; no dar a entender que la cola continúa ejecutándose en segundo plano cuando no hay una ejecución activa.
 
 ### ToDo por página (261 páginas de contenido)
 
@@ -139,7 +139,7 @@ Cada casilla exige las dos tareas solicitadas: **validar la coherencia de toda l
 - [x] [/403](app/pages/403.vue)
 - [x] [/404](app/pages/404.vue)
 - [x] [/503](app/pages/503.vue)
-- [ ] [/ai-chat/agent-activity](app/pages/ai-chat/agent-activity.vue)
+- [x] [/ai-chat/agent-activity](app/pages/ai-chat/agent-activity.vue)
 - [ ] [/ai-chat/agent-configuration](app/pages/ai-chat/agent-configuration.vue)
 - [ ] [/ai-chat/agent-detail](app/pages/ai-chat/agent-detail.vue)
 - [ ] [/ai-chat/agent-factory-1](app/pages/ai-chat/agent-factory-1.vue)

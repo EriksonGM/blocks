@@ -1,0 +1,18 @@
+{
+  "path": "/ai-chat/agent-activity",
+  "file": "app/pages/ai-chat/agent-activity.vue",
+  "key": "agent-activity",
+  "blocks": [
+    { "id": "agent-refund-run", "title": "Refund run", "script": ["activity-run-data", "activity-run-actions"], "fragments": ["activity-run-dialog"] },
+    { "id": "agent-report-run", "title": "Report run with review steps", "script": ["activity-run-data", "activity-run-actions"], "fragments": ["activity-run-dialog"] },
+    { "id": "agent-discount-run", "title": "Discount run with policy steps", "script": ["activity-run-data", "activity-run-actions"], "fragments": ["activity-run-dialog"] },
+    { "id": "agent-reconcile-run", "title": "Payout reconciliation run", "script": ["activity-run-data", "activity-run-actions"], "fragments": ["activity-run-dialog"] },
+    { "id": "agent-renewal-run", "title": "Renewal forecast run", "script": ["activity-run-data", "activity-run-actions"], "fragments": ["activity-run-dialog"] },
+    { "id": "agent-archive-run", "title": "Ticket archive run", "script": ["activity-run-data", "activity-run-actions"], "fragments": ["activity-run-dialog"] },
+    { "id": "agent-purchase-run", "title": "Purchase order run", "script": ["activity-run-data", "activity-run-actions"], "fragments": ["activity-run-dialog"] },
+    { "id": "agent-digest-run", "title": "Weekly digest run", "script": ["activity-run-data", "activity-run-actions"], "fragments": ["activity-run-dialog"] },
+    { "id": "agent-support-run", "title": "Support routing run", "script": ["activity-run-data", "activity-run-actions"], "fragments": ["activity-run-dialog"] },
+    { "id": "agent-vendor-run", "title": "Vendor review run", "script": ["activity-run-data", "activity-run-actions"], "fragments": ["activity-run-dialog"] },
+    { "id": "agent-billing-run", "title": "Billing export run", "script": ["activity-run-data", "activity-run-actions"], "fragments": ["activity-run-dialog"] }
+  ]
+}
