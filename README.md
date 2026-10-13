@@ -82,7 +82,7 @@ Las secciones incluyen comentarios `Card`, `Table`, `Chart`, `Form`, `Chat compo
 - **Fuente única:** el código que se muestra y el que se copia provienen del mismo archivo en `app/pages/`. No se copia HTML del navegador ni se mantienen cadenas de código duplicadas.
 - **Bloques:** `data-copy-block="id-unico"` identifica la raíz del bloque. `tabindex="0"` permite seleccionarlo con el teclado.
 - **Dependencias explícitas:** las regiones `// @copy:nombre:start/end` delimitan el script; `/* @copy:nombre:start/end */` delimita el CSS. `data-copy-fragment="nombre"` identifica piezas auxiliares como un modal. Incluye solo estado, funciones y estilos que utiliza ese bloque.
-- **Registro y extracción:** `scripts/block-catalog.mjs` registra las páginas y dependencias de cada bloque, analiza el AST Vue, extrae el código original y elimina los atributos de las herramientas.
+- **Registro y extracción:** cada página tiene un registro JSON independiente en `app/data/copy-blocks/`, con ruta, archivo fuente, clave y dependencias de sus bloques. `scripts/block-catalog.mjs` lee esos registros, analiza el AST Vue, extrae el código original y elimina los atributos de las herramientas. Los JSON contienen metadatos, no una copia del contenido de los bloques.
 - **Build y carga diferida:** `modules/block-catalog.mjs` genera las fuentes por página en Nuxt; el cliente las carga al seleccionar un bloque. No existe un endpoint para leer archivos arbitrarios.
 - **Controles del catálogo:** `app/components/BlockCopyTools.vue` usa componentes Nuxt UI y herramientas flotantes, sin cambiar el layout ni incluirse en el código copiado. Incluye visor, selección con teclado/móvil y alternativa manual si falla el portapapeles. La copia automática requiere HTTPS o localhost.
 - **Portabilidad:** excluye navegación y estado del catálogo, recursos internos y herramientas de copia. Si una nueva página necesita imágenes, fuentes o documentos, deben eliminarse las dependencias innecesarias o documentarse los recursos necesarios; no declarar un bloque autónomo si todavía depende de ellos.
@@ -117,7 +117,8 @@ La casilla de una página representa **interfaz revisada + copia funcional + pru
 
 | Página / tarea | Interfaz | Copia | Pruebas | Commit / push | Siguiente acción |
 | --- | --- | --- | --- | --- | --- |
-| Documentación y cola de trabajo | No aplica | No aplica | Inventario comprobado: 261 entradas únicas + 2 rutas auxiliares; `git diff --check` aprobado | Commit de documentación; push pendiente de confirmación | Publicar este plan antes de continuar |
+| Documentación y cola de trabajo | No aplica | No aplica | Inventario comprobado: 261 entradas únicas + 2 rutas auxiliares; `git diff --check` aprobado | `c30377a`, push confirmado | Plan publicado |
+| Infraestructura compartida de copia | No aplica | Visor, portapapeles, extracción y registros independientes | Piloto aprobado; registros separados comprobados con `pnpm check:copy-blocks` | Commit de infraestructura; push pendiente de confirmación | Publicar antes de guardar cada página |
 | `/ecommerce/dashboard-1` | Piloto revisado | 6 bloques | Tipos, build, navegador y pegado aprobados | Pendiente | Guardar y publicar la página |
 | `/developers/webhooks` | Piloto revisado | 1 bloque | Tipos, build, navegador y pegado aprobados | Pendiente | Guardar y publicar la página |
 | `/ai-chat/composer-1` | Piloto revisado | 1 bloque | Tipos, build, navegador y pegado aprobados | Pendiente | Guardar y publicar la página |
