@@ -96,9 +96,11 @@ async function navigate(url, selector) {
 }
 async function click(selector) {
   await waitFor(`document.querySelector(${JSON.stringify(selector)}) && !document.querySelector(${JSON.stringify(selector)}).disabled`)
+  await evaluate(`(() => { const element = document.activeElement; if (element?.matches('input, textarea')) element.blur(); })()`)
   await evaluate(`document.querySelector(${JSON.stringify(selector)}).scrollIntoView({ block: 'nearest' })`)
   // Like Playwright's stable-element check: allow the toolbar to finish layout.
   await evaluate('new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)))')
+  await evaluate(`(async () => { const element = document.querySelector(${JSON.stringify(selector)}); let previous; let stable = 0; const deadline = Date.now() + 5000; while (stable < 3) { if (Date.now() > deadline) throw new Error('Element did not settle: ' + ${JSON.stringify(selector)}); await new Promise(resolve => requestAnimationFrame(resolve)); const r = element.getBoundingClientRect(); const current = [r.left, r.top, r.width, r.height]; stable = previous && current.every((value, index) => Math.abs(value - previous[index]) < 0.5) ? stable + 1 : 0; previous = current; } })()`)
   const point = await evaluate(`(() => { const element = document.querySelector(${JSON.stringify(selector)}); const r = element.getBoundingClientRect(); return { x: r.left + r.width / 2, y: r.top + r.height / 2 }; })()`)
   await send('Input.dispatchMouseEvent', { type: 'mouseMoved', ...point })
   await send('Input.dispatchMouseEvent', { type: 'mousePressed', button: 'left', clickCount: 1, ...point })
@@ -132,7 +134,7 @@ async function chooseOption(selector, label) {
 }
 
 async function setInput(selector, value) {
-  await evaluate(`(() => { const input = document.querySelector(${JSON.stringify(selector)}); input.value = ${JSON.stringify(value)}; input.dispatchEvent(new Event('input', { bubbles: true })); })()`)
+  await evaluate(`(() => { const input = document.querySelector(${JSON.stringify(selector)}); input.focus({ preventScroll: true }); input.value = ${JSON.stringify(value)}; input.dispatchEvent(new Event('input', { bubbles: true })); })()`)
 }
 async function chooseTab(root, label) {
   await evaluate(`(() => { document.querySelectorAll('[data-browser-tab]').forEach(tab => tab.removeAttribute('data-browser-tab')); const tab = [...document.querySelectorAll(${JSON.stringify(root + ' [role=tab]')})].find(tab => tab.textContent.trim() === ${JSON.stringify(label)}); if (!tab) throw new Error('Missing tab: ' + ${JSON.stringify(label)}); tab.setAttribute('data-browser-tab', 'selected'); })()`)
@@ -488,6 +490,86 @@ async function checkPlanningMilestones(root) {
   result.planningMilestones = true
 }
 
+async function checkCustomerCreation(root) {
+  const text = `document.querySelector(${JSON.stringify(root)}).textContent`
+  await click(root + ' button[aria-label="Submit demo customer"]')
+  await waitFor(`${text}.includes('Enter a first name.')`)
+  await setInput(root + ' input[name="customerFirstName"]', 'Portable')
+  await setInput(root + ' input[name="customerLastName"]', 'Customer')
+  await setInput(root + ' input[name="customerContactEmail0"]', 'invalid-email')
+  await click(root + ' button[aria-label="Submit demo customer"]')
+  await waitFor(`${text}.includes('Enter a valid example email address.')`)
+  await setInput(root + ' input[name="customerContactEmail0"]', 'portable@example.com')
+  await click(root + ' button[aria-label="Add customer contact"]')
+  await waitFor(`document.querySelectorAll(${JSON.stringify(root + ' [data-customer-contact]')}).length === 2`)
+  await setInput(root + ' input[name="customerContactEmail1"]', 'secondary@example.com')
+  const contactId = await evaluate(`document.querySelectorAll(${JSON.stringify(root + ' [data-customer-contact]')})[1].dataset.customerContact`)
+  await click(root + ` button[aria-label="Remove customer contact ${contactId}"]`)
+  assert.equal(await evaluate(`document.querySelector(${JSON.stringify(root + ' button[aria-label="Remove customer contact 1"]')}).disabled`), true)
+  await chooseOption(root + ' [aria-label="Customer preferred channel"]', 'SMS')
+  await click(root + ' button[aria-label="Submit demo customer"]')
+  await waitFor(`${text}.includes('A phone number is required for SMS or Phone.')`)
+  await setInput(root + ' input[name="customerContactPhone0"]', '+1 206 555 0198')
+  await chooseOption(root + ' [aria-label="Customer preferred channel"]', 'Email')
+  await setInput(root + ' input[name="customerBillingstreet"]', '123 Demo Street')
+  await click(root + ' button[aria-label="Submit demo customer"]')
+  await waitFor(`${text}.includes('Complete this address field')`)
+  await setInput(root + ' input[name="customerBillingcity"]', 'Seattle')
+  await setInput(root + ' input[name="customerBillingpostalCode"]', '98102')
+  await click(root + ' button[aria-label="Add customer shipping"]')
+  const shippingId = await evaluate(`document.querySelectorAll(${JSON.stringify(root + ' [data-customer-shipping]')})[1].dataset.customerShipping`)
+  await click(root + ` button[aria-label="Remove customer shipping ${shippingId}"]`)
+  await setInput(root + ' input[name="customerShipping0street"]', '456 Example Avenue')
+  await setInput(root + ' input[name="customerShipping0city"]', 'Seattle')
+  await setInput(root + ' input[name="customerShipping0postalCode"]', '98102')
+  await click(root + ' button[aria-label="Add customer demo card"]')
+  await setInput(root + ' input[name="customerCardLast40"]', 'abcd')
+  await setInput(root + ' input[name="customerCardExpiry0"]', '13/28')
+  await setInput(root + ' input[name="customerCardHolder0"]', 'Portable Customer')
+  await click(root + ' button[aria-label="Submit demo customer"]')
+  await waitFor(`${text}.includes('Enter exactly four demonstration digits.') && ${text}.includes('Use MM/YY with a valid month.')`)
+  await setInput(root + ' input[name="customerCardLast40"]', '4242')
+  await setInput(root + ' input[name="customerCardExpiry0"]', '08/28')
+  await click(root + ' button[aria-label="Add customer demo card"]')
+  await setInput(root + ' input[name="customerCardLast41"]', '1034')
+  await setInput(root + ' input[name="customerCardExpiry1"]', '03/29')
+  await setInput(root + ' input[name="customerCardHolder1"]', 'Portable Customer')
+  const cardId = await evaluate(`document.querySelectorAll(${JSON.stringify(root + ' [data-customer-card]')})[1].dataset.customerCard`)
+  await click(root + ` button[aria-label="Set customer card ${cardId} default"]`)
+  assert.equal(await evaluate(`document.querySelector(${JSON.stringify(root + ` button[aria-label="Set customer card ${cardId} default"]`)}).disabled`), true)
+  await click(root + ` button[aria-label="Remove customer card ${cardId}"]`)
+  assert.equal(await evaluate(`document.querySelector(${JSON.stringify(root + ' [data-customer-card] button[aria-label^="Set customer card"]')}).disabled`), true, 'Removing the preferred card selects the remaining card')
+  await click(root + ' button[aria-label="Go to customer preferences"]')
+  await waitFor(`document.activeElement?.id.endsWith('-preferences')`)
+  await setInput(root + ' input[name="customerSegment"]', 'VIP')
+  await click(root + ' button[aria-label="Add customer segment"]')
+  await setInput(root + ' input[name="customerSegment"]', 'vip')
+  await click(root + ' button[aria-label="Add customer segment"]')
+  await waitFor(`${text}.includes('This segment already exists.')`)
+  await click(root + ' button[aria-label="Remove customer segment VIP"]')
+  await setInput(root + ' input[name="customerSegment"]', 'High retention')
+  await click(root + ' button[aria-label="Add customer segment"]')
+  await click(root + ' button[role="switch"]')
+  await click(root + ' button[aria-label="Save customer draft"]')
+  await setInput(root + ' input[name="customerFirstName"]', 'Unsaved change')
+  await click(root + ' button[aria-label="Reset customer form"]')
+  await waitFor(`document.querySelector(${JSON.stringify(root + ' input[name="customerFirstName"]')}).value === ''`)
+  await click(root + ' button[aria-label="Restore customer draft"]')
+  await waitFor(`document.querySelector(${JSON.stringify(root + ' input[name="customerFirstName"]')}).value === 'Portable'`)
+  await click(root + ' button[aria-label="Submit demo customer"]')
+  await waitFor(`document.querySelector(${JSON.stringify(root + ' [data-customer-snapshot]')})`)
+  const customer = JSON.parse(await evaluate(`document.querySelector(${JSON.stringify(root + ' [data-customer-snapshot]')}).textContent`))
+  assert.equal(customer.firstName, 'Portable')
+  assert.equal(customer.contacts.length, 1)
+  assert.equal(customer.shipping.length, 1)
+  assert.equal(customer.cards.length, 1)
+  assert.equal(customer.defaultCardId, customer.cards[0].id)
+  assert.equal(customer.marketingOptIn, true)
+  assert.deepEqual(customer.segments, ['High retention'])
+  assert.equal(await evaluate(`document.querySelectorAll(${JSON.stringify(root + ' form form')}).length`), 0, 'Customer editor must not nest forms')
+  result.customerCreation = { validation: true, contacts: true, addresses: true, cardMetadata: true, singleDefaultCard: true, segments: true, navigation: true, draft: true, reset: true, localPreview: true }
+}
+
 let previousClipboard
 const normalize = value => value.replaceAll('\r\n', '\n')
 const result = { copied: [], pasteTests: [], screenshots: profile }
@@ -574,6 +656,16 @@ try {
       assert.ok(await evaluate(`document.querySelector('[data-copy-block="project-milestone-tracker"]').textContent.includes('Portable milestone')`))
       assert.ok(await evaluate(`document.querySelector('[data-copy-block="project-planning-status"]').textContent.includes('7 issues')`))
       await selectBlock('project-planning-status')
+    }
+    if (page.path === '/ecommerce/add-customer') {
+      await checkCustomerCreation('[data-copy-block="ecommerce-add-customer-editor"]')
+      await click('button[aria-label="Go to customer account"]')
+      await screenshot(page.key + '-account.png')
+      await click('button[aria-label="Go to customer cards"]')
+      await screenshot(page.key + '-cards.png')
+      await click('button[aria-label="Go to customer preferences"]')
+      await screenshot(page.key + '-preferences.png')
+      await selectBlock('ecommerce-add-customer-editor')
     }
     assert.deepEqual(errors, [], `${page.path}: browser errors`)
     await screenshot(page.key + '.png')
@@ -683,6 +775,14 @@ try {
       await screenshot(page.key + '-mobile-members.png')
       assert.equal(await evaluate('document.documentElement.scrollWidth <= window.innerWidth'), true, 'Planning timeline scrolls internally, not the entire page')
     }
+    if (page.path === '/ecommerce/add-customer') {
+      await click('button[aria-label="Go to customer contacts"]')
+      await screenshot(page.key + '-mobile-contacts.png')
+      await click('button[aria-label="Go to customer cards"]')
+      await click('button[aria-label="Add customer demo card"]')
+      await screenshot(page.key + '-mobile-cards.png')
+      assert.equal(await evaluate('document.documentElement.scrollWidth <= window.innerWidth'), true, 'Customer fields and navigation must fit mobile')
+    }
     assert.deepEqual(errors, [], `${page.path}: mobile browser errors`)
   }
   result.mobileSelector = true
@@ -730,6 +830,7 @@ try {
     if (block.id === 'project-time-tracker') await checkWorkspaceTimer('[data-paste-test]')
     if (block.id === 'project-my-issues') await checkWorkspaceIssues('[data-paste-test]')
     if (block.id === 'project-workspace-panel') await checkWorkspacePanel('[data-paste-test]')
+    if (block.id === 'ecommerce-add-customer-editor') await checkCustomerCreation('[data-paste-test]')
     if (block.id === 'project-planning-actions') await checkPlanningActions('[data-paste-test]')
     if (block.id === 'project-issue-map') await checkPlanningMap('[data-paste-test]')
     if (block.id === 'project-current-projects') await checkCurrentProjects('[data-paste-test]')

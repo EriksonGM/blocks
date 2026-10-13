@@ -1,486 +1,116 @@
-<!-- Page: /ecommerce/add-customer | All content, state and styles live in this file. -->
+<!-- Page: /ecommerce/add-customer | Portable customer editor; all data stays in memory. -->
 <script setup lang="ts">
-const route = useRoute()
+useHead({ title: 'Add Customer · Blocks Admin' })
 
-useHead({ title: "Add Customer · Blocks Admin" })
+// @copy:customer-editor:start
+import { reactive, ref, useId } from 'vue'
+import type { FormError, FormErrorEvent } from '@nuxt/ui'
 
-const toast = useToast()
-
-// Page-local form values. Edit these defaults when copying the page.
-
-const form = reactive({
-  "field1": "",
-  "field2": "",
-  "field3": "CUS-2418",
-  "field4": "",
-  "active": "Active",
-  "onlineStore": "Online store",
-  "averyHall": "Avery Hall",
-  "eMAIL": "EMAIL",
-  "enabled": true,
-  "field10": "Primary",
-  "field11": "",
-  "field12": "",
-  "billingContactName": "",
-  "streetAddress": "",
-  "suiteBuildingFloor": "",
-  "city": "",
-  "state": "",
-  "zIPCode": "",
-  "country": "United States",
-  "label": "Primary shipping",
-  "recipient": "",
-  "streetAddress2": "",
-  "suiteBuildingFloor2": "",
-  "city2": "",
-  "state2": "",
-  "zIPCode2": "",
-  "country2": "United States",
-  "visa": "Visa",
-  "last4": "",
-  "mMYY": "",
-  "cardholder": "",
-  "enabled2": false,
-  "addSegment": "",
-  "internalNotes": ""
-})
-
-const activeOptions = [
-  "Active",
-  "VIP",
-  "At risk"
-]
-
-const onlineStoreOptions = [
-  "Online store",
-  "Subscription",
-  "Marketplace",
-  "Retail partner"
-]
-
-const averyHallOptions = [
-  "Avery Hall",
-  "Riley Chen",
-  "Jordan Lee",
-  "Mina Patel"
-]
-
-const eMAILOptions = [
-  "EMAIL",
-  "SMS",
-  "PHONE"
-]
-
-const visaOptions = [
-  "Visa",
-  "Mastercard",
-  "Amex",
-  "Discover"
-]
-
-// Restore drafts after hydration; the first client render matches SSR.
-onMounted(() => {
-  const key = 'nuxt-ui-page:' + route.path
-  try {
-    const draft = localStorage.getItem(key)
-    if (draft) Object.assign(form, JSON.parse(draft))
-  } catch { /* Use the defaults when no draft exists. */ }
-  watch(form, value => localStorage.setItem(key, JSON.stringify(value)), { deep: true, flush: 'sync' })
-})
-
-const actionDialog = reactive({ open: false, title: '', mode: 'edit', name: '', description: '', recordId: '', table: 0 })
-function openAction(label: string, recordId = '', table = 0) {
-  Object.assign(actionDialog, { open: true, title: label, mode: /delete|remove|archive/i.test(label) ? 'delete' : 'edit', recordId, table })
+type Address = { id: number, label: string, recipient: string, street: string, unit: string, city: string, state: string, postalCode: string, country: string }
+type Contact = { id: number, label: string, email: string, phone: string }
+type DemoCard = { id: number, brand: string, last4: string, expiry: string, holder: string }
+function emptyAddress(id: number, label: string): Address { return { id, label, recipient: '', street: '', unit: '', city: '', state: '', postalCode: '', country: 'United States' } }
+function initialCustomer() {
+  return {
+    firstName: '', lastName: '', customerId: 'CUS-2418', company: '', status: 'Active', source: 'Online store', owner: 'Avery Hall',
+    channel: 'Email', marketingOptIn: false,
+    contacts: [{ id: 1, label: 'Primary', email: '', phone: '' }] as Contact[],
+    billing: emptyAddress(1, 'Billing'), shipping: [emptyAddress(1, 'Primary shipping')],
+    cards: [] as DemoCard[], defaultCardId: 0, segments: [] as string[], notes: '',
+  }
 }
-function confirmAction() {
-  toast.add({ title: actionDialog.mode === 'delete' ? 'Item removed' : 'Changes saved', color: 'success', icon: 'i-lucide-check' })
-  actionDialog.open = false
+type CustomerDraft = ReturnType<typeof initialCustomer>
+const customer = reactive(initialCustomer())
+const editorId = useId()
+const formVersion = ref(0)
+let nextItemId = 2
+const sections = [{ key: 'account', label: 'Account' }, { key: 'contacts', label: 'Contacts' }, { key: 'billing', label: 'Billing' }, { key: 'shipping', label: 'Shipping' }, { key: 'cards', label: 'Cards' }, { key: 'preferences', label: 'Preferences' }]
+const addressFields = [{ key: 'recipient', label: 'Recipient' }, { key: 'street', label: 'Street address' }, { key: 'unit', label: 'Suite, building, floor' }, { key: 'city', label: 'City' }, { key: 'state', label: 'State / region' }, { key: 'postalCode', label: 'Postal code' }, { key: 'country', label: 'Country' }] as const
+const feedback = ref('Demo only. Use example details; changes, drafts and previews are not persisted or sent to a server.')
+const draft = ref<CustomerDraft | null>(null)
+const submitted = ref<CustomerDraft | null>(null)
+function snapshot(): CustomerDraft { return JSON.parse(JSON.stringify(customer)) }
+function saveDraft() { draft.value = snapshot(); feedback.value = 'Draft saved in memory. Reloading this component loses it.' }
+function restoreDraft() { if (!draft.value) return; Object.assign(customer, JSON.parse(JSON.stringify(draft.value))); formVersion.value += 1; submitted.value = null; segmentText.value = ''; segmentError.value = ''; feedback.value = 'In-memory draft restored.' }
+function resetCustomer() { Object.assign(customer, initialCustomer()); submitted.value = null; formVersion.value += 1; segmentText.value = ''; segmentError.value = ''; feedback.value = 'Customer form reset. A saved in-memory draft can still be restored.' }
+function jumpToSection(key: string) { const element = document.getElementById(`${editorId}-${key}`); element?.scrollIntoView({ block: 'start' }); element?.focus({ preventScroll: true }) }
+function addContact() { customer.contacts.push({ id: nextItemId++, label: `Contact ${customer.contacts.length + 1}`, email: '', phone: '' }) }
+function removeContact(id: number) { if (customer.contacts.length > 1) customer.contacts = customer.contacts.filter(contact => contact.id !== id) }
+function addShipping() { customer.shipping.push(emptyAddress(nextItemId++, `Shipping ${customer.shipping.length + 1}`)) }
+function addCard() { const id = nextItemId++; customer.cards.push({ id, brand: 'Visa', last4: '', expiry: '', holder: '' }); if (!customer.defaultCardId) customer.defaultCardId = id }
+function removeCard(id: number) { customer.cards = customer.cards.filter(card => card.id !== id); if (customer.defaultCardId === id) customer.defaultCardId = customer.cards[0]?.id || 0 }
+const segmentText = ref('')
+const segmentError = ref('')
+function addSegment() {
+  const value = segmentText.value.trim()
+  if (!value) { segmentError.value = 'Enter a segment name.'; return }
+  if (customer.segments.some(segment => segment.toLowerCase() === value.toLowerCase())) { segmentError.value = 'This segment already exists.'; return }
+  customer.segments.push(value); segmentText.value = ''; segmentError.value = ''
 }
+function addressStarted(address: Address) { return [address.recipient, address.street, address.unit, address.city, address.state, address.postalCode].some(value => value.trim()) }
+function validateCustomer(state: Partial<CustomerDraft>): FormError[] {
+  const errors: FormError[] = []
+  if (!state.firstName?.trim()) errors.push({ name: 'firstName', message: 'Enter a first name.' })
+  if (!state.lastName?.trim()) errors.push({ name: 'lastName', message: 'Enter a last name.' })
+  for (const [index, contact] of (state.contacts || []).entries()) {
+    if (!contact.label.trim()) errors.push({ name: `contacts.${index}.label`, message: 'Enter a contact label.' })
+    if (contact.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contact.email)) errors.push({ name: `contacts.${index}.email`, message: 'Enter a valid example email address.' })
+    else if ((index === 0 && state.channel === 'Email' || !contact.phone.trim()) && !contact.email.trim()) errors.push({ name: `contacts.${index}.email`, message: 'Enter a contact email or phone number.' })
+    if (index === 0 && state.channel !== 'Email' && !contact.phone.trim()) errors.push({ name: `contacts.${index}.phone`, message: 'A phone number is required for SMS or Phone.' })
+    else if (contact.phone && (!/^\+?[\d ().-]+$/.test(contact.phone) || contact.phone.replace(/\D/g, '').length < 6 || contact.phone.replace(/\D/g, '').length > 15)) errors.push({ name: `contacts.${index}.phone`, message: 'Enter an example phone number with 6–15 digits.' })
+  }
+  function checkAddress(address: Address, prefix: string) {
+    if (!addressStarted(address)) return
+    for (const key of ['street', 'city', 'postalCode', 'country'] as const) {
+      if (!address[key].trim()) errors.push({ name: `${prefix}.${key}`, message: 'Complete this address field or clear the optional address.' })
+    }
+  }
+  if (state.billing) checkAddress(state.billing, 'billing')
+  state.shipping?.forEach((address, index) => checkAddress(address, `shipping.${index}`))
+  state.cards?.forEach((card, index) => {
+    if (!/^\d{4}$/.test(card.last4)) errors.push({ name: `cards.${index}.last4`, message: 'Enter exactly four demonstration digits.' })
+    if (!/^(0[1-9]|1[0-2])\/\d{2}$/.test(card.expiry)) errors.push({ name: `cards.${index}.expiry`, message: 'Use MM/YY with a valid month.' })
+    if (!card.holder.trim()) errors.push({ name: `cards.${index}.holder`, message: 'Enter a demo cardholder name.' })
+  })
+  return errors
+}
+function onCustomerError(event: FormErrorEvent) { feedback.value = 'Correct the highlighted fields before creating the demo customer.'; const id = event.errors[0]?.id; if (id) { const element = document.getElementById(id); element?.focus(); element?.scrollIntoView({ block: 'center' }) } }
+function createCustomer() {
+  if (validateCustomer(customer).length) return
+  const result = snapshot()
+  result.firstName = result.firstName.trim(); result.lastName = result.lastName.trim()
+  result.shipping = result.shipping.filter(addressStarted)
+  submitted.value = result
+  feedback.value = `Demo customer ${result.customerId} created in memory. No account, payment method or marketing subscription was created externally.`
+}
+// @copy:customer-editor:end
 </script>
 
 <template>
   <div class="page-content flex h-full min-h-0 w-full flex-col text-default" data-page="/ecommerce/add-customer">
-    <div class="flex h-full flex-col overflow-hidden">
-      <div class="flex min-h-0 flex-1 flex-col overflow-hidden">
-        <div class="flex min-h-0 flex-1 flex-col">
-          <header class="bg-default hidden shrink-0 border-b px-4 py-4 sm:px-6 md:block border-default">
-            <div class="flex flex-col gap-4 xl:flex-row xl:items-center xl:gap-6">
-              <div class="flex min-w-0 flex-wrap items-center gap-3 text-sm">
-                <span class="text-highlighted font-medium">Shadcnblocks Admin Kit</span>
-                <span class="text-muted">/</span>
-                <span class="text-highlighted font-medium">Customers</span>
-                <span class="text-muted">/</span>
-                <span class="text-muted">Add Customer</span>
-              </div>
-              <div class="relative xl:mx-auto xl:w-full xl:max-w-md">
-                <UButton color="neutral" variant="outline" class="inline-flex items-center gap-2 whitespace-nowrap text-sm transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-default py-2 bg-(--ui-bg-muted)/70 text-muted hover:bg-(--ui-bg-muted)/90 hover:text-highlighted h-10 w-full justify-start rounded-full border-none px-3 font-normal shadow-none" aria-label="Search pages or run commands⌘K" type="button" @click="openAction(&quot;Search pages or run commands⌘K&quot;)">
-                  <UIcon name="i-lucide-search" class="size-4 shrink-0" />
-                  <span class="min-w-0 flex-1 truncate text-left">Search pages or run commands</span>
-                  <UKbd class="bg-default pointer-events-none hidden h-6 shrink-0 items-center gap-1 rounded-full border px-2 font-mono text-[10px] font-medium opacity-100 select-none sm:inline-flex border-default">⌘K</UKbd>
-                </UButton>
+    <div class="min-h-0 flex-1 overflow-y-auto">
+      <main class="mx-auto w-full max-w-7xl space-y-6 p-4 sm:p-6">
+        <header class="space-y-1"><h1 class="text-2xl font-semibold text-highlighted">Add New Customer</h1><p class="text-sm text-muted">Build an example customer record with contacts, addresses and preferences.</p></header>
+        <section data-copy-block="ecommerce-add-customer-editor" tabindex="0" aria-label="Demo customer creation editor" class="min-w-0 space-y-5">
+          <UForm :key="formVersion" :state="customer" :validate="validateCustomer" class="space-y-5" @submit="createCustomer" @error="onCustomerError">
+            <div class="flex flex-wrap gap-2"><UButton label="Reset form" aria-label="Reset customer form" color="neutral" variant="outline" @click="resetCustomer" /><UButton label="Save draft" aria-label="Save customer draft" color="neutral" variant="outline" @click="saveDraft" /><UButton label="Restore draft" aria-label="Restore customer draft" color="neutral" variant="outline" :disabled="!draft" @click="restoreDraft" /><UButton label="Create demo customer" aria-label="Submit demo customer" type="submit" /></div>
+            <div class="grid min-w-0 items-start gap-6 lg:grid-cols-[180px_minmax(0,1fr)]">
+              <nav aria-label="Customer editor sections" class="flex gap-2 overflow-x-auto lg:sticky lg:top-4 lg:flex-col"><UButton v-for="section in sections" :key="section.key" :label="section.label" :aria-label="`Go to customer ${section.key}`" color="neutral" variant="ghost" class="shrink-0 justify-start" @click="jumpToSection(section.key)" /></nav>
+              <div class="min-w-0 space-y-6">
+                <UCard :id="`${editorId}-account`" tabindex="-1" class="scroll-mt-4"><template #header><h2 class="font-semibold text-highlighted">Account</h2><p class="mt-1 text-sm text-muted">Customer identity, source and ownership.</p></template><div class="grid gap-4 sm:grid-cols-2"><UFormField label="First name" name="firstName" required><UInput v-model="customer.firstName" name="customerFirstName" class="w-full" /></UFormField><UFormField label="Last name" name="lastName" required><UInput v-model="customer.lastName" name="customerLastName" class="w-full" /></UFormField><UFormField label="Demo customer ID" name="customerId"><UInput v-model="customer.customerId" readonly class="w-full" /></UFormField><UFormField label="Company" name="company"><UInput v-model="customer.company" name="customerCompany" class="w-full" /></UFormField><UFormField label="Status" name="status"><USelect v-model="customer.status" :items="['Active', 'VIP', 'At risk']" aria-label="Customer account status" class="w-full" /></UFormField><UFormField label="Source" name="source"><USelect v-model="customer.source" :items="['Online store', 'Subscription', 'Marketplace', 'Retail partner']" aria-label="Customer source" class="w-full" /></UFormField><UFormField label="Account owner" name="owner" class="sm:col-span-2"><USelect v-model="customer.owner" :items="['Avery Hall', 'Riley Chen', 'Jordan Lee', 'Mina Patel']" aria-label="Customer account owner" class="w-full" /></UFormField></div></UCard>
+                <UCard :id="`${editorId}-contacts`" tabindex="-1" class="scroll-mt-4"><template #header><h2 class="font-semibold text-highlighted">Contacts</h2></template><div class="space-y-5"><UFormField label="Preferred channel" name="channel"><USelect v-model="customer.channel" :items="['Email', 'SMS', 'Phone']" aria-label="Customer preferred channel" class="w-full sm:max-w-xs" /></UFormField><USwitch v-model="customer.marketingOptIn" label="Marketing opt-in (demo)" description="Local preference only; no campaign or consent is submitted." /><div v-for="(contact, index) in customer.contacts" :key="contact.id" :data-customer-contact="contact.id" class="space-y-4 rounded-lg border border-default p-4"><div class="flex items-center justify-between gap-2"><h3 class="text-sm font-medium">Contact {{ index + 1 }}</h3><UButton icon="i-lucide-trash-2" :aria-label="`Remove customer contact ${contact.id}`" :disabled="customer.contacts.length === 1" color="neutral" variant="ghost" @click="removeContact(contact.id)" /></div><div class="grid gap-4 sm:grid-cols-2"><UFormField label="Label" :name="`contacts.${index}.label`"><UInput v-model="contact.label" class="w-full" /></UFormField><UFormField label="Email" :name="`contacts.${index}.email`"><UInput v-model="contact.email" :name="`customerContactEmail${index}`" class="w-full" /></UFormField><UFormField label="Phone" :name="`contacts.${index}.phone`"><UInput v-model="contact.phone" :name="`customerContactPhone${index}`" type="tel" class="w-full" /></UFormField></div></div><UButton label="Add contact" aria-label="Add customer contact" icon="i-lucide-plus" color="neutral" variant="outline" @click="addContact" /></div></UCard>
+                <UCard :id="`${editorId}-billing`" tabindex="-1" class="scroll-mt-4"><template #header><h2 class="font-semibold text-highlighted">Billing address</h2><p class="mt-1 text-sm text-muted">Optional. Complete the address when entering any address details.</p></template><div class="grid gap-4 sm:grid-cols-2"><UFormField v-for="field in addressFields" :key="field.key" :label="field.label" :name="`billing.${field.key}`"><UInput v-model="customer.billing[field.key]" :name="`customerBilling${field.key}`" class="w-full" /></UFormField></div></UCard>
+                <UCard :id="`${editorId}-shipping`" tabindex="-1" class="scroll-mt-4"><template #header><h2 class="font-semibold text-highlighted">Shipping addresses</h2></template><div class="space-y-4"><div v-for="(address, index) in customer.shipping" :key="address.id" :data-customer-shipping="address.id" class="space-y-4 rounded-lg border border-default p-4"><div class="flex items-center justify-between gap-2"><h3 class="text-sm font-medium">Shipping {{ index + 1 }}</h3><UButton icon="i-lucide-trash-2" :aria-label="`Remove customer shipping ${address.id}`" color="neutral" variant="ghost" @click="customer.shipping = customer.shipping.filter(entry => entry.id !== address.id)" /></div><UFormField label="Label" :name="`shipping.${index}.label`"><UInput v-model="address.label" class="w-full" /></UFormField><div class="grid gap-4 sm:grid-cols-2"><UFormField v-for="field in addressFields" :key="field.key" :label="field.label" :name="`shipping.${index}.${field.key}`"><UInput v-model="address[field.key]" :name="`customerShipping${index}${field.key}`" class="w-full" /></UFormField></div></div><UButton label="Add shipping address" aria-label="Add customer shipping" icon="i-lucide-plus" color="neutral" variant="outline" @click="addShipping" /></div></UCard>
+                <UCard :id="`${editorId}-cards`" tabindex="-1" class="scroll-mt-4"><template #header><h2 class="font-semibold text-highlighted">Demo card metadata</h2><p class="mt-1 text-sm text-muted">Use fictional last-four digits only. No full card number, CVC, tokenization or payment processing.</p></template><div class="space-y-4"><p v-if="!customer.cards.length" class="text-sm text-muted">No demo cards added.</p><div v-for="(card, index) in customer.cards" :key="card.id" :data-customer-card="card.id" class="space-y-4 rounded-lg border border-default p-4"><div class="flex flex-wrap items-center justify-between gap-2"><p class="text-sm font-medium">{{ card.brand }} ending in {{ card.last4 || '—' }}</p><div class="flex items-center gap-2"><UButton :label="customer.defaultCardId === card.id ? 'Default' : 'Set default'" :aria-label="`Set customer card ${card.id} default`" :disabled="customer.defaultCardId === card.id" color="neutral" variant="outline" size="xs" @click="customer.defaultCardId = card.id" /><UButton icon="i-lucide-trash-2" :aria-label="`Remove customer card ${card.id}`" color="neutral" variant="ghost" @click="removeCard(card.id)" /></div></div><div class="grid gap-4 sm:grid-cols-2"><UFormField label="Brand"><USelect v-model="card.brand" :items="['Visa', 'Mastercard', 'Amex', 'Discover']" :aria-label="`Customer card ${index} brand`" class="w-full" /></UFormField><UFormField label="Demo last four digits" :name="`cards.${index}.last4`"><UInput v-model="card.last4" :name="`customerCardLast4${index}`" maxlength="4" class="w-full" /></UFormField><UFormField label="Expiry (MM/YY)" :name="`cards.${index}.expiry`"><UInput v-model="card.expiry" :name="`customerCardExpiry${index}`" placeholder="08/28" class="w-full" /></UFormField><UFormField label="Demo cardholder" :name="`cards.${index}.holder`"><UInput v-model="card.holder" :name="`customerCardHolder${index}`" class="w-full" /></UFormField></div></div><UButton label="Add demo card" aria-label="Add customer demo card" icon="i-lucide-plus" color="neutral" variant="outline" @click="addCard" /></div></UCard>
+                <UCard :id="`${editorId}-preferences`" tabindex="-1" class="scroll-mt-4"><template #header><h2 class="font-semibold text-highlighted">Preferences &amp; notes</h2></template><div class="space-y-4"><div class="flex flex-wrap gap-2"><UBadge v-for="segment in customer.segments" :key="segment" color="neutral" variant="subtle">{{ segment }}<UButton icon="i-lucide-x" :aria-label="`Remove customer segment ${segment}`" color="neutral" variant="ghost" size="xs" @click="customer.segments = customer.segments.filter(value => value !== segment)" /></UBadge></div><UFormField label="New segment" :error="segmentError || undefined"><div class="flex flex-wrap gap-2"><UInput v-model="segmentText" name="customerSegment" class="min-w-0 flex-1" @keydown.enter.prevent="addSegment" /><UButton label="Add segment" aria-label="Add customer segment" color="neutral" variant="outline" @click="addSegment" /></div></UFormField><UFormField label="Internal notes" name="notes"><UTextarea v-model="customer.notes" name="customerNotes" :rows="4" class="w-full" /></UFormField></div></UCard>
               </div>
             </div>
-          </header>
-          <div class="min-h-0 flex-1 overflow-auto">
-            <div class="flex h-full min-h-0 flex-1 overflow-hidden">
-              <div class="bg-default flex min-h-0 flex-1 flex-col overflow-hidden">
-                <div data-orientation="vertical" class="flex min-h-0 flex-1 overflow-hidden">
-                  <div class="flex min-h-0 flex-1 flex-col overflow-hidden p-4 sm:p-6 md:p-8">
-                    <div class="mx-auto flex min-h-0 w-full max-w-[1360px] flex-1 flex-col gap-6">
-                      <header class="grid gap-4 xl:grid-cols-[minmax(0,1fr)_auto] xl:items-center">
-                        <div class="flex max-w-4xl flex-col gap-3">
-                          <div class="flex items-center gap-3 text-sm md:hidden">
-                            <span class="text-highlighted font-medium">Customers</span>
-                            <span class="text-muted">/</span>
-                            <span class="text-muted">Add Customer</span>
-                          </div>
-                          <div class="flex flex-col gap-1">
-                            <h1 class="text-3xl font-semibold tracking-tight text-highlighted">Add New Customer</h1>
-                            <p class="text-muted max-w-2xl text-sm">Add the account, contacts, addresses, and payment methods the team needs to operate this customer.</p>
-                          </div>
-                        </div>
-                        <div class="flex shrink-0 items-center gap-2 self-start xl:self-center">
-                          <UButton color="neutral" variant="outline" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-default bg-default shadow-xs hover:bg-elevated hover:text-default py-2 h-10 rounded-full px-4" aria-label="Reset form" type="button" @click="openAction(&quot;Reset form&quot;)">
-                            Reset form
-                          </UButton>
-                          <UButton color="neutral" variant="outline" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-default bg-default shadow-xs hover:bg-elevated hover:text-default py-2 h-10 rounded-full px-4" aria-label="Save draft" type="button" @click="openAction(&quot;Save draft&quot;)">
-                            Save draft
-                          </UButton>
-                          <UButton color="primary" variant="solid" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-inverted shadow-sm hover:bg-primary/90 py-2 h-10 rounded-full px-5" aria-label="Create customer" type="button" @click="openAction(&quot;Create customer&quot;)">
-                            Create customer
-                          </UButton>
-                        </div>
-                      </header>
-                      <div class="grid min-h-0 flex-1 gap-8 lg:grid-cols-[240px_minmax(0,1fr)]">
-                        <aside class="hidden lg:block">
-                          <div class="sticky top-0">
-                            <div data-orientation="vertical" class="flex flex-col border-(--ui-border)/60 bg-default rounded-2xl border p-3 border-default">
-                              <UButton color="primary" variant="solid" class="rounded-xl border px-4 py-3 text-left transition-colors data-[state=active]:border-(--ui-text-highlighted) data-[state=active]:bg-(--ui-text-highlighted) data-[state=active]:text-(--ui-bg) data-[state=inactive]:text-(--ui-text-highlighted)/80 data-[state=inactive]:hover:border-(--ui-border)/60 data-[state=inactive]:hover:bg-(--ui-bg-muted)/35 data-[state=inactive]:hover:text-highlighted data-[state=inactive]:border-transparent border-default" aria-label="Account" type="button" @click="openAction(&quot;Account&quot;)">
-                                <p class="text-[15px] font-medium">Account</p>
-                              </UButton>
-                              <UButton color="primary" variant="solid" class="rounded-xl border px-4 py-3 text-left transition-colors data-[state=active]:border-(--ui-text-highlighted) data-[state=active]:bg-(--ui-text-highlighted) data-[state=active]:text-(--ui-bg) data-[state=inactive]:text-(--ui-text-highlighted)/80 data-[state=inactive]:hover:border-(--ui-border)/60 data-[state=inactive]:hover:bg-(--ui-bg-muted)/35 data-[state=inactive]:hover:text-highlighted data-[state=inactive]:border-transparent border-default" aria-label="Contacts" type="button" @click="openAction(&quot;Contacts&quot;)">
-                                <p class="text-[15px] font-medium">Contacts</p>
-                              </UButton>
-                              <UButton color="primary" variant="solid" class="rounded-xl border px-4 py-3 text-left transition-colors data-[state=active]:border-(--ui-text-highlighted) data-[state=active]:bg-(--ui-text-highlighted) data-[state=active]:text-(--ui-bg) data-[state=inactive]:text-(--ui-text-highlighted)/80 data-[state=inactive]:hover:border-(--ui-border)/60 data-[state=inactive]:hover:bg-(--ui-bg-muted)/35 data-[state=inactive]:hover:text-highlighted data-[state=inactive]:border-transparent border-default" aria-label="Billing" type="button" @click="openAction(&quot;Billing&quot;)">
-                                <p class="text-[15px] font-medium">Billing</p>
-                              </UButton>
-                              <UButton color="primary" variant="solid" class="rounded-xl border px-4 py-3 text-left transition-colors data-[state=active]:border-(--ui-text-highlighted) data-[state=active]:bg-(--ui-text-highlighted) data-[state=active]:text-(--ui-bg) data-[state=inactive]:text-(--ui-text-highlighted)/80 data-[state=inactive]:hover:border-(--ui-border)/60 data-[state=inactive]:hover:bg-(--ui-bg-muted)/35 data-[state=inactive]:hover:text-highlighted data-[state=inactive]:border-transparent border-default" aria-label="Shipping" type="button" @click="openAction(&quot;Shipping&quot;)">
-                                <p class="text-[15px] font-medium">Shipping</p>
-                              </UButton>
-                              <UButton color="primary" variant="solid" class="rounded-xl border px-4 py-3 text-left transition-colors data-[state=active]:border-(--ui-text-highlighted) data-[state=active]:bg-(--ui-text-highlighted) data-[state=active]:text-(--ui-bg) data-[state=inactive]:text-(--ui-text-highlighted)/80 data-[state=inactive]:hover:border-(--ui-border)/60 data-[state=inactive]:hover:bg-(--ui-bg-muted)/35 data-[state=inactive]:hover:text-highlighted data-[state=inactive]:border-transparent border-default" aria-label="Cards" type="button" @click="openAction(&quot;Cards&quot;)">
-                                <p class="text-[15px] font-medium">Cards</p>
-                              </UButton>
-                              <UButton color="primary" variant="solid" class="rounded-xl border px-4 py-3 text-left transition-colors data-[state=active]:border-(--ui-text-highlighted) data-[state=active]:bg-(--ui-text-highlighted) data-[state=active]:text-(--ui-bg) data-[state=inactive]:text-(--ui-text-highlighted)/80 data-[state=inactive]:hover:border-(--ui-border)/60 data-[state=inactive]:hover:bg-(--ui-bg-muted)/35 data-[state=inactive]:hover:text-highlighted data-[state=inactive]:border-transparent border-default" aria-label="Preferences" type="button" @click="openAction(&quot;Preferences&quot;)">
-                                <p class="text-[15px] font-medium">Preferences</p>
-                              </UButton>
-                            </div>
-                          </div>
-                        </aside>
-                        <div class="min-h-0 overflow-hidden">
-                          <div class="mb-4 flex gap-2 overflow-x-auto pb-1 lg:hidden">
-                            <UButton color="primary" variant="solid" class="shrink-0 rounded-full border px-3 py-2 text-sm transition-colors data-[state=active]:border-(--ui-text-highlighted) data-[state=active]:bg-(--ui-text-highlighted) data-[state=active]:text-(--ui-bg) data-[state=inactive]:border-(--ui-border)/60 data-[state=inactive]:bg-default border-default" aria-label="Account" type="button" @click="openAction(&quot;Account&quot;)">
-                              Account
-                            </UButton>
-                            <UButton color="primary" variant="solid" class="shrink-0 rounded-full border px-3 py-2 text-sm transition-colors data-[state=active]:border-(--ui-text-highlighted) data-[state=active]:bg-(--ui-text-highlighted) data-[state=active]:text-(--ui-bg) data-[state=inactive]:border-(--ui-border)/60 data-[state=inactive]:bg-default border-default" aria-label="Contacts" type="button" @click="openAction(&quot;Contacts&quot;)">
-                              Contacts
-                            </UButton>
-                            <UButton color="primary" variant="solid" class="shrink-0 rounded-full border px-3 py-2 text-sm transition-colors data-[state=active]:border-(--ui-text-highlighted) data-[state=active]:bg-(--ui-text-highlighted) data-[state=active]:text-(--ui-bg) data-[state=inactive]:border-(--ui-border)/60 data-[state=inactive]:bg-default border-default" aria-label="Billing" type="button" @click="openAction(&quot;Billing&quot;)">
-                              Billing
-                            </UButton>
-                            <UButton color="primary" variant="solid" class="shrink-0 rounded-full border px-3 py-2 text-sm transition-colors data-[state=active]:border-(--ui-text-highlighted) data-[state=active]:bg-(--ui-text-highlighted) data-[state=active]:text-(--ui-bg) data-[state=inactive]:border-(--ui-border)/60 data-[state=inactive]:bg-default border-default" aria-label="Shipping" type="button" @click="openAction(&quot;Shipping&quot;)">
-                              Shipping
-                            </UButton>
-                            <UButton color="primary" variant="solid" class="shrink-0 rounded-full border px-3 py-2 text-sm transition-colors data-[state=active]:border-(--ui-text-highlighted) data-[state=active]:bg-(--ui-text-highlighted) data-[state=active]:text-(--ui-bg) data-[state=inactive]:border-(--ui-border)/60 data-[state=inactive]:bg-default border-default" aria-label="Cards" type="button" @click="openAction(&quot;Cards&quot;)">
-                              Cards
-                            </UButton>
-                            <UButton color="primary" variant="solid" class="shrink-0 rounded-full border px-3 py-2 text-sm transition-colors data-[state=active]:border-(--ui-text-highlighted) data-[state=active]:bg-(--ui-text-highlighted) data-[state=active]:text-(--ui-bg) data-[state=inactive]:border-(--ui-border)/60 data-[state=inactive]:bg-default border-default" aria-label="Preferences" type="button" @click="openAction(&quot;Preferences&quot;)">
-                              Preferences
-                            </UButton>
-                          </div>
-                          <div data-orientation="vertical" class="min-h-0 h-full overflow-y-auto pr-2">
-                            <div class="space-y-6 pb-24">
-                              <section data-orientation="vertical" class="scroll-mt-6">
-                                <div class="border-(--ui-border)/60 bg-default rounded-[24px] border p-6 shadow-[0_20px_45px_-34px_color-mix(in_oklab,_var(--ui-info)_16%,_transparent)] border-default">
-                                  <div class="mb-5 space-y-1">
-                                    <h2 class="text-lg font-semibold tracking-tight text-highlighted">Account</h2>
-                                    <p class="text-muted text-sm leading-6">Identity, source, and internal ownership for this customer record.</p>
-                                  </div>
-                                  <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-                                    <div class="grid gap-2">
-                                      <label class="text-muted text-[11px] font-medium tracking-[0.18em] uppercase">First name</label>
-                                      <UInput v-model="form.field1" type="text" name="field1" class="flex w-full text-base md:text-sm h-11 rounded-xl bg-default" :ui="{ base: 'h-full' }" />
-                                    </div>
-                                    <div class="grid gap-2">
-                                      <label class="text-muted text-[11px] font-medium tracking-[0.18em] uppercase">Last name</label>
-                                      <UInput v-model="form.field2" type="text" name="field2" class="flex w-full text-base md:text-sm h-11 rounded-xl bg-default" :ui="{ base: 'h-full' }" />
-                                    </div>
-                                    <div class="grid gap-2">
-                                      <label class="text-muted text-[11px] font-medium tracking-[0.18em] uppercase">Customer ID</label>
-                                      <UInput v-model="form.field3" type="text" name="field3" class="flex w-full text-base md:text-sm h-11 rounded-xl bg-default" :ui="{ base: 'h-full' }" />
-                                    </div>
-                                    <div class="grid gap-2">
-                                      <label class="text-muted text-[11px] font-medium tracking-[0.18em] uppercase">Company</label>
-                                      <UInput v-model="form.field4" type="text" name="field4" class="flex w-full text-base md:text-sm h-11 rounded-xl bg-default" :ui="{ base: 'h-full' }" />
-                                    </div>
-                                    <div class="grid gap-2">
-                                      <label class="text-muted text-[11px] font-medium tracking-[0.18em] uppercase">Status</label>
-                                      <USelect v-model="form.active" :items="activeOptions" aria-label="Active" class="ring-offset-background placeholder:text-muted focus:ring-accented flex w-full items-center justify-between border px-3 py-2 text-sm whitespace-nowrap focus:ring-1 focus:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 [&amp;&gt;span]:line-clamp-1 h-11 rounded-xl border-(--ui-border)/60 bg-default shadow-none border-default" />
-                                    </div>
-                                    <div class="grid gap-2">
-                                      <label class="text-muted text-[11px] font-medium tracking-[0.18em] uppercase">Source</label>
-                                      <USelect v-model="form.onlineStore" :items="onlineStoreOptions" aria-label="Online store" class="ring-offset-background placeholder:text-muted focus:ring-accented flex w-full items-center justify-between border px-3 py-2 text-sm whitespace-nowrap focus:ring-1 focus:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 [&amp;&gt;span]:line-clamp-1 h-11 rounded-xl border-(--ui-border)/60 bg-default shadow-none border-default" />
-                                    </div>
-                                    <div class="grid gap-2 xl:col-span-3">
-                                      <label class="text-muted text-[11px] font-medium tracking-[0.18em] uppercase">Account owner</label>
-                                      <USelect v-model="form.averyHall" :items="averyHallOptions" aria-label="Avery Hall" class="ring-offset-background placeholder:text-muted focus:ring-accented flex w-full items-center justify-between border px-3 py-2 text-sm whitespace-nowrap focus:ring-1 focus:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 [&amp;&gt;span]:line-clamp-1 h-11 rounded-xl border-(--ui-border)/60 bg-default shadow-none border-default" />
-                                    </div>
-                                  </div>
-                                </div>
-                              </section>
-                              <section data-orientation="vertical" class="scroll-mt-6">
-                                <div class="border-(--ui-border)/60 bg-default rounded-[24px] border p-6 shadow-[0_20px_45px_-34px_color-mix(in_oklab,_var(--ui-info)_16%,_transparent)] border-default">
-                                  <div class="mb-5 space-y-1">
-                                    <h2 class="text-lg font-semibold tracking-tight text-highlighted">Contacts</h2>
-                                    <p class="text-muted text-sm leading-6">Keep the real people and preferred communication path attached to the account.</p>
-                                  </div>
-                                  <div class="border-(--ui-border)/60 bg-(--ui-bg-muted)/15 mb-5 grid gap-4 rounded-2xl border p-4 lg:grid-cols-[minmax(0,1fr)_220px_220px] border-default">
-                                    <div class="grid gap-1">
-                                      <p class="text-sm font-medium">Primary channel</p>
-                                      <p class="text-muted text-sm leading-6">Choose how the team usually reaches this customer.</p>
-                                    </div>
-                                    <div class="grid gap-2">
-                                      <label class="text-muted text-[11px] font-medium tracking-[0.18em] uppercase">Preferred channel</label>
-                                      <USelect v-model="form.eMAIL" :items="eMAILOptions" aria-label="EMAIL" class="ring-offset-background placeholder:text-muted focus:ring-accented flex w-full items-center justify-between border px-3 py-2 text-sm whitespace-nowrap focus:ring-1 focus:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 [&amp;&gt;span]:line-clamp-1 h-11 rounded-xl border-(--ui-border)/60 bg-default shadow-none border-default" />
-                                    </div>
-                                    <div class="border-(--ui-border)/60 bg-default flex items-center justify-between rounded-xl border px-4 py-3 border-default">
-                                      <div>
-                                        <p class="text-sm font-medium">Marketing opt-in</p>
-                                        <p class="text-muted text-xs">Include this customer in campaign sends</p>
-                                      </div>
-                                      <USwitch v-model="form.enabled" aria-label="Toggle setting" />
-                                    </div>
-                                  </div>
-                                  <div class="space-y-4">
-                                    <div class="border-(--ui-border)/60 bg-default rounded-2xl border p-4 border-default">
-                                      <div class="mb-4 flex items-center justify-between gap-3">
-                                        <div class="flex items-center gap-3">
-                                          <div class="border-(--ui-border)/60 bg-(--ui-bg-muted)/20 flex h-10 w-10 items-center justify-center rounded-2xl border border-default">
-                                            <UIcon name="i-lucide-user-round" class="size-4" />
-                                          </div>
-                                          <div>
-                                            <p class="text-sm font-medium">Primary</p>
-                                            <p class="text-muted text-xs">Customer contact</p>
-                                          </div>
-                                        </div>
-                                        <UButton color="neutral" variant="soft" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-elevated hover:text-default size-8 rounded-xl" aria-label="Actions" type="button" disabled @click="openAction(&quot;Actions&quot;)">
-                                          <UIcon name="i-lucide-trash-2" class="size-4" />
-                                        </UButton>
-                                      </div>
-                                      <div class="grid gap-4 md:grid-cols-[180px_minmax(0,1fr)_220px]">
-                                        <div class="grid gap-2">
-                                          <label class="text-muted text-[11px] font-medium tracking-[0.18em] uppercase">Label</label>
-                                          <UInput v-model="form.field10" type="text" name="field10" class="flex w-full text-base md:text-sm h-11 rounded-xl bg-default" :ui="{ base: 'h-full' }" />
-                                        </div>
-                                        <div class="grid gap-2">
-                                          <label class="text-muted text-[11px] font-medium tracking-[0.18em] uppercase">Email</label>
-                                          <div class="relative">
-                                            <UIcon name="i-lucide-mail" class="text-muted absolute top-1/2 left-3 size-4 -translate-y-1/2" />
-                                            <UInput v-model="form.field11" type="text" name="field11" class="flex w-full text-base md:text-sm h-11 rounded-xl bg-default pl-9" :ui="{ base: 'h-full' }" />
-                                          </div>
-                                        </div>
-                                        <div class="grid gap-2">
-                                          <label class="text-muted text-[11px] font-medium tracking-[0.18em] uppercase">Phone</label>
-                                          <div class="relative">
-                                            <UIcon name="i-lucide-phone" class="text-muted absolute top-1/2 left-3 size-4 -translate-y-1/2" />
-                                            <UInput v-model="form.field12" type="text" name="field12" class="flex w-full text-base md:text-sm h-11 rounded-xl bg-default pl-9" :ui="{ base: 'h-full' }" />
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <UButton color="neutral" variant="outline" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-default bg-default shadow-xs hover:bg-elevated hover:text-default h-9 px-4 py-2 rounded-full" aria-label="Add contact" type="button" @click="openAction(&quot;Add contact&quot;)">
-                                      <UIcon name="i-lucide-plus" class="size-4" />
-                                      Add contact
-                                    </UButton>
-                                  </div>
-                                </div>
-                              </section>
-                              <section data-orientation="vertical" class="scroll-mt-6">
-                                <div class="border-(--ui-border)/60 bg-default rounded-[24px] border p-6 shadow-[0_20px_45px_-34px_color-mix(in_oklab,_var(--ui-info)_16%,_transparent)] border-default">
-                                  <div class="mb-5 space-y-1">
-                                    <h2 class="text-lg font-semibold tracking-tight text-highlighted">Billing address</h2>
-                                    <p class="text-muted text-sm leading-6">Where invoices, statements, and account paperwork should land.</p>
-                                  </div>
-                                  <div class="grid gap-4 md:grid-cols-2">
-                                    <UInput v-model="form.billingContactName" type="text" placeholder="Billing contact name" name="billingContactName" class="flex w-full text-base md:text-sm h-11 rounded-xl bg-default" :ui="{ base: 'h-full' }" />
-                                    <div class="hidden md:block" />
-                                    <UInput v-model="form.streetAddress" type="text" placeholder="Street address" name="streetAddress" class="flex w-full text-base md:text-sm h-11 rounded-xl bg-default md:col-span-2" :ui="{ base: 'h-full' }" />
-                                    <UInput v-model="form.suiteBuildingFloor" type="text" placeholder="Suite, building, floor" name="suiteBuildingFloor" class="flex w-full text-base md:text-sm h-11 rounded-xl bg-default md:col-span-2" :ui="{ base: 'h-full' }" />
-                                    <UInput v-model="form.city" type="text" placeholder="City" name="city" class="flex w-full text-base md:text-sm h-11 rounded-xl bg-default" :ui="{ base: 'h-full' }" />
-                                    <UInput v-model="form.state" type="text" placeholder="State" name="state" class="flex w-full text-base md:text-sm h-11 rounded-xl bg-default" :ui="{ base: 'h-full' }" />
-                                    <UInput v-model="form.zIPCode" type="text" placeholder="ZIP code" name="zIPCode" class="flex w-full text-base md:text-sm h-11 rounded-xl bg-default" :ui="{ base: 'h-full' }" />
-                                    <UInput v-model="form.country" type="text" placeholder="Country" name="country" class="flex w-full text-base md:text-sm h-11 rounded-xl bg-default" :ui="{ base: 'h-full' }" />
-                                  </div>
-                                </div>
-                              </section>
-                              <section data-orientation="vertical" class="scroll-mt-6">
-                                <div class="border-(--ui-border)/60 bg-default rounded-[24px] border p-6 shadow-[0_20px_45px_-34px_color-mix(in_oklab,_var(--ui-info)_16%,_transparent)] border-default">
-                                  <div class="mb-5 space-y-1">
-                                    <h2 class="text-lg font-semibold tracking-tight text-highlighted">Shipping addresses</h2>
-                                    <p class="text-muted text-sm leading-6">Keep delivery points separate so repeat orders can route cleanly.</p>
-                                  </div>
-                                  <div class="space-y-4">
-                                    <div class="border-(--ui-border)/60 bg-default rounded-2xl border p-4 border-default">
-                                      <div class="mb-4 flex items-center justify-between gap-3">
-                                        <div class="flex items-center gap-3">
-                                          <div class="border-(--ui-border)/60 bg-(--ui-bg-muted)/20 flex h-10 w-10 items-center justify-center rounded-2xl border border-default">
-                                            <UIcon name="i-lucide-map-pin" class="size-4" />
-                                          </div>
-                                          <div>
-                                            <p class="text-sm font-medium">Primary shipping</p>
-                                            <p class="text-muted text-xs">Delivery destination</p>
-                                          </div>
-                                        </div>
-                                        <UButton color="neutral" variant="soft" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-elevated hover:text-default size-8 rounded-xl" aria-label="Actions" type="button" disabled @click="openAction(&quot;Actions&quot;)">
-                                          <UIcon name="i-lucide-trash-2" class="size-4" />
-                                        </UButton>
-                                      </div>
-                                      <div class="grid gap-4 md:grid-cols-2">
-                                        <UInput v-model="form.label" type="text" placeholder="Label" name="label" class="flex w-full text-base md:text-sm h-11 rounded-xl bg-default" :ui="{ base: 'h-full' }" />
-                                        <UInput v-model="form.recipient" type="text" placeholder="Recipient" name="recipient" class="flex w-full text-base md:text-sm h-11 rounded-xl bg-default" :ui="{ base: 'h-full' }" />
-                                        <UInput v-model="form.streetAddress2" type="text" placeholder="Street address" name="streetAddress2" class="flex w-full text-base md:text-sm h-11 rounded-xl bg-default md:col-span-2" :ui="{ base: 'h-full' }" />
-                                        <UInput v-model="form.suiteBuildingFloor2" type="text" placeholder="Suite, building, floor" name="suiteBuildingFloor2" class="flex w-full text-base md:text-sm h-11 rounded-xl bg-default md:col-span-2" :ui="{ base: 'h-full' }" />
-                                        <UInput v-model="form.city2" type="text" placeholder="City" name="city2" class="flex w-full text-base md:text-sm h-11 rounded-xl bg-default" :ui="{ base: 'h-full' }" />
-                                        <UInput v-model="form.state2" type="text" placeholder="State" name="state2" class="flex w-full text-base md:text-sm h-11 rounded-xl bg-default" :ui="{ base: 'h-full' }" />
-                                        <UInput v-model="form.zIPCode2" type="text" placeholder="ZIP code" name="zIPCode2" class="flex w-full text-base md:text-sm h-11 rounded-xl bg-default" :ui="{ base: 'h-full' }" />
-                                        <UInput v-model="form.country2" type="text" placeholder="Country" name="country2" class="flex w-full text-base md:text-sm h-11 rounded-xl bg-default" :ui="{ base: 'h-full' }" />
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <UButton color="neutral" variant="outline" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-default bg-default shadow-xs hover:bg-elevated hover:text-default h-9 px-4 py-2 mt-5 rounded-full" aria-label="Add shipping address" type="button" @click="openAction(&quot;Add shipping address&quot;)">
-                                    <UIcon name="i-lucide-plus" class="size-4" />
-                                    Add shipping address
-                                  </UButton>
-                                </div>
-                              </section>
-                              <section data-orientation="vertical" class="scroll-mt-6">
-                                <div class="border-(--ui-border)/60 bg-default rounded-[24px] border p-6 shadow-[0_20px_45px_-34px_color-mix(in_oklab,_var(--ui-info)_16%,_transparent)] border-default">
-                                  <div class="mb-5 space-y-1">
-                                    <h2 class="text-lg font-semibold tracking-tight text-highlighted">Saved cards</h2>
-                                    <p class="text-muted text-sm leading-6">Keep one default payment method visible, with backups underneath.</p>
-                                  </div>
-                                  <div class="space-y-4">
-                                    <div class="border-(--ui-border)/60 bg-default rounded-2xl border p-4 border-default">
-                                      <div class="mb-4 flex items-center justify-between gap-3">
-                                        <div class="flex items-center gap-3">
-                                          <div class="border-(--ui-border)/60 bg-(--ui-bg-muted)/20 flex h-10 w-10 items-center justify-center rounded-2xl border border-default">
-                                            <UIcon name="i-lucide-credit-card" class="size-4" />
-                                          </div>
-                                          <div>
-                                            <p class="text-sm font-medium">Visa ending in0000</p>
-                                            <p class="text-muted text-xs">Backup payment source</p>
-                                          </div>
-                                        </div>
-                                        <UButton color="neutral" variant="soft" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-elevated hover:text-default size-8 rounded-xl" aria-label="Actions" type="button" disabled @click="openAction(&quot;Actions&quot;)">
-                                          <UIcon name="i-lucide-trash-2" class="size-4" />
-                                        </UButton>
-                                      </div>
-                                      <div class="grid gap-4 md:grid-cols-[150px_120px_120px_minmax(0,1fr)]">
-                                        <USelect v-model="form.visa" :items="visaOptions" aria-label="Visa" class="ring-offset-background placeholder:text-muted focus:ring-accented flex w-full items-center justify-between border px-3 py-2 text-sm whitespace-nowrap focus:ring-1 focus:outline-hidden disabled:cursor-not-allowed disabled:opacity-50 [&amp;&gt;span]:line-clamp-1 h-11 rounded-xl border-(--ui-border)/60 bg-default shadow-none border-default" />
-                                        <UInput v-model="form.last4" type="text" placeholder="Last 4" name="last4" class="flex w-full text-base md:text-sm h-11 rounded-xl bg-default" :ui="{ base: 'h-full' }" />
-                                        <UInput v-model="form.mMYY" type="text" placeholder="MM/YY" name="mMYY" class="flex w-full text-base md:text-sm h-11 rounded-xl bg-default" :ui="{ base: 'h-full' }" />
-                                        <UInput v-model="form.cardholder" type="text" placeholder="Cardholder" name="cardholder" class="flex w-full text-base md:text-sm h-11 rounded-xl bg-default" :ui="{ base: 'h-full' }" />
-                                      </div>
-                                      <div class="border-(--ui-border)/60 bg-(--ui-bg-muted)/10 mt-4 flex items-center justify-between rounded-xl border px-4 py-3 border-default">
-                                        <div>
-                                          <p class="text-sm font-medium">Default card</p>
-                                          <p class="text-muted text-xs">Keep one preferred payment method pinned.</p>
-                                        </div>
-                                        <USwitch v-model="form.enabled2" aria-label="Toggle setting" />
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <UButton color="neutral" variant="outline" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-default bg-default shadow-xs hover:bg-elevated hover:text-default h-9 px-4 py-2 mt-5 rounded-full" aria-label="Add card" type="button" @click="openAction(&quot;Add card&quot;)">
-                                    <UIcon name="i-lucide-plus" class="size-4" />
-                                    Add card
-                                  </UButton>
-                                </div>
-                              </section>
-                              <section data-orientation="vertical" class="scroll-mt-6">
-                                <div class="border-(--ui-border)/60 bg-default rounded-[24px] border p-6 shadow-[0_20px_45px_-34px_color-mix(in_oklab,_var(--ui-info)_16%,_transparent)] border-default">
-                                  <div class="mb-5 space-y-1">
-                                    <h2 class="text-lg font-semibold tracking-tight text-highlighted">Preferences &amp; notes</h2>
-                                    <p class="text-muted text-sm leading-6">Segments, internal notes, and lightweight account context.</p>
-                                  </div>
-                                  <div class="grid gap-6">
-                                    <div class="grid gap-3">
-                                      <div class="grid gap-2">
-                                        <label class="text-muted text-[11px] font-medium tracking-[0.18em] uppercase">Segments</label>
-                                        <div class="flex flex-wrap gap-2" />
-                                      </div>
-                                      <div class="flex flex-col gap-3 sm:flex-row">
-                                        <UInput v-model="form.addSegment" type="text" placeholder="Add segment" name="addSegment" class="flex w-full text-base md:text-sm h-11 rounded-xl bg-default sm:flex-1" :ui="{ base: 'h-full' }" />
-                                        <UButton color="neutral" variant="outline" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-default bg-default shadow-xs hover:bg-elevated hover:text-default h-9 px-4 py-2 rounded-full" aria-label="Add segment" type="button" @click="openAction(&quot;Add segment&quot;)">
-                                          <UIcon name="i-lucide-plus" class="size-4" />
-                                          Add segment
-                                        </UButton>
-                                      </div>
-                                    </div>
-                                    <div class="grid gap-2">
-                                      <label class="text-muted text-[11px] font-medium tracking-[0.18em] uppercase">Notes</label>
-                                      <UTextarea v-model="form.internalNotes" :rows="4" placeholder="Internal notes" name="internalNotes" class="flex w-full text-base md:text-sm bg-default min-h-36 rounded-2xl" :ui="{ base: 'h-full' }" />
-                                    </div>
-                                  </div>
-                                </div>
-                              </section>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <footer class="border-(--ui-border)/70 bg-default border-t px-6 py-4 border-default">
-                  <div class="flex flex-wrap items-center justify-end gap-2">
-                    <NuxtLink class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-elevated hover:text-default h-9 px-4 py-2 rounded-full" to="/ecommerce/customer-list-1">
-                      Cancel
-                    </NuxtLink>
-                    <UButton color="primary" variant="solid" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-inverted shadow-sm hover:bg-primary/90 h-9 py-2 rounded-full px-6" aria-label="Create customer" type="button" @click="openAction(&quot;Create customer&quot;)">
-                      Create customer
-                    </UButton>
-                  </div>
-                </footer>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+          </UForm>
+          <p class="text-sm text-muted" role="status">{{ feedback }}</p>
+          <UCard v-if="submitted"><template #header><h2 class="font-semibold text-highlighted">Created demo customer preview</h2></template><pre data-customer-snapshot class="max-h-96 overflow-auto whitespace-pre-wrap break-words text-xs">{{ JSON.stringify(submitted, null, 2) }}</pre></UCard>
+        </section>
+      </main>
     </div>
-    <!-- Page-local action dialog -->
-    <UModal v-model:open="actionDialog.open" :title="actionDialog.title" description="Update the details below.">
-      <template #body>
-        <p v-if="actionDialog.mode === 'delete'" class="text-sm text-muted">Are you sure you want to remove this item?</p>
-        <div v-else class="space-y-4">
-          <UFormField label="Name"><UInput v-model="actionDialog.name" class="w-full" /></UFormField>
-          <UFormField label="Description"><UTextarea v-model="actionDialog.description" class="w-full" /></UFormField>
-        </div>
-      </template>
-      <template #footer>
-        <div class="flex w-full justify-end gap-2">
-          <UButton color="neutral" variant="outline" @click="actionDialog.open = false">Cancel</UButton>
-          <UButton :color="actionDialog.mode === 'delete' ? 'error' : 'primary'" @click="confirmAction">{{ actionDialog.mode === 'delete' ? 'Remove' : 'Save changes' }}</UButton>
-        </div>
-      </template>
-    </UModal>
+    <BlockCopyTools page="/ecommerce/add-customer" />
   </div>
 </template>
-
-<style scoped>
-
-.page-content { min-height: 0; color: var(--ui-text); --chart-1: var(--ui-primary); --chart-2: var(--ui-text-highlighted); --chart-3: var(--ui-text-muted); --chart-4: var(--ui-text-dimmed); --chart-5: var(--ui-border-accented); --chart-6: var(--ui-border); --radius: var(--ui-radius); }
-.page-content > div { min-height: 100%; }
-.page-content *, .page-content ::before, .page-content ::after { border-color: var(--ui-border); }
-.page-content [data-slot="scroll-area-viewport"] { overflow: auto !important; scrollbar-width: thin; }
-.page-content [data-slot="scroll-area-scrollbar"] { display: none; }
-.page-content pre { overflow: auto; }
-.page-content img { object-fit: cover; }
-</style>
