@@ -10,12 +10,33 @@ const toast = useToast()
 
 // Page-local form values. Edit these defaults when copying the page.
 
-const form = reactive({
-  "searchProjects": ""
-})
+// @copy:header:start
+// Block: Header/breadcrumb and search/actions toolbar
+const form = reactive({ searchProjects: '' })
+// @copy:header:end
+
+// @copy:project-health:start
+// Block: Project Health donut chart
+// @copy:project-health:end
+
+// @copy:critical-path:start
+// Block: Critical Path list
+// @copy:critical-path:end
+
+// @copy:needs-attention:start
+// Block: Needs Attention alert panel
+// @copy:needs-attention:end
+
+// @copy:actiondialog:start
+// Block: Action dialog (modal for add/edit/remove)
+const actionDialog = reactive({ open: false, title: '', mode: 'edit', name: '', description: '', recordId: '', table: 0 })
+function openAction(label: string, recordId = '', table = 0) {
+  Object.assign(actionDialog, { open: true, title: label, mode: /delete|remove|archive/i.test(label) ? 'delete' : 'edit', recordId, table })
+}
+// @copy:actiondialog:end
 
 // Table 1: edit the rows and column definitions here.
-
+// @copy:table1-rows:start
 const table1Rows = ref([
   {
     "_id": "1",
@@ -27,8 +48,6 @@ const table1Rows = ref([
     "statusClass3": "size-1.5 rounded-full bg-success",
     "priority": "High",
     "owner": "James Lee",
-    "ownerAlt5": "James Lee",
-    "ownerSrc6": "/reference/a99c47c2fa3dc656.png",
     "dueDate": "May 24, 2026"
   },
   {
@@ -41,8 +60,6 @@ const table1Rows = ref([
     "statusClass3": "size-1.5 rounded-full bg-error",
     "priority": "High",
     "owner": "Ava Reed",
-    "ownerAlt5": "Ava Reed",
-    "ownerSrc6": "/reference/146332adc3a2c901.png",
     "dueDate": "May 20, 2026"
   },
   {
@@ -55,8 +72,6 @@ const table1Rows = ref([
     "statusClass3": "size-1.5 rounded-full bg-success",
     "priority": "High",
     "owner": "Olivia Bennett",
-    "ownerAlt5": "Olivia Bennett",
-    "ownerSrc6": "/reference/5985a55c7498fe2e.png",
     "dueDate": "Jun 3, 2026"
   },
   {
@@ -69,8 +84,6 @@ const table1Rows = ref([
     "statusClass3": "size-1.5 rounded-full bg-(--ui-text-muted)",
     "priority": "Medium",
     "owner": "Kiara Laras",
-    "ownerAlt5": "Kiara Laras",
-    "ownerSrc6": "/reference/9310a24e0d573ddb.png",
     "dueDate": "May 29, 2026"
   },
   {
@@ -83,8 +96,6 @@ const table1Rows = ref([
     "statusClass3": "size-1.5 rounded-full bg-warning",
     "priority": "High",
     "owner": "Michael Chen",
-    "ownerAlt5": "Michael Chen",
-    "ownerSrc6": "/reference/247ac7c76922347b.png",
     "dueDate": "May 31, 2026"
   },
   {
@@ -97,8 +108,6 @@ const table1Rows = ref([
     "statusClass3": "size-1.5 rounded-full bg-warning",
     "priority": "Medium",
     "owner": "Sophia Martinez",
-    "ownerAlt5": "Sophia Martinez",
-    "ownerSrc6": "/reference/ac13c01a479a177b.png",
     "dueDate": "May 27, 2026"
   },
   {
@@ -111,8 +120,6 @@ const table1Rows = ref([
     "statusClass3": "size-1.5 rounded-full bg-(--ui-text-muted)",
     "priority": "Low",
     "owner": "Ben Lewis",
-    "ownerAlt5": "Ben Lewis",
-    "ownerSrc6": "/reference/ada84674117f0188.png",
     "dueDate": "Jun 7, 2026"
   }
 ])
@@ -150,6 +157,7 @@ const table1FilteredRows = computed(() => {
   const keys = ["projects","status","priority","owner","dueDate"] as const
   return table1Rows.value.filter(row => !query || keys.some(key => String(row[key]).toLowerCase().includes(query)))
 })
+// @copy:table1-rows:end
 
 // Restore drafts after hydration; the first client render matches SSR.
 onMounted(() => {
@@ -161,10 +169,6 @@ onMounted(() => {
   watch(form, value => localStorage.setItem(key, JSON.stringify(value)), { deep: true, flush: 'sync' })
 })
 
-const actionDialog = reactive({ open: false, title: '', mode: 'edit', name: '', description: '', recordId: '', table: 0 })
-function openAction(label: string, recordId = '', table = 0) {
-  Object.assign(actionDialog, { open: true, title: label, mode: /delete|remove|archive/i.test(label) ? 'delete' : 'edit', recordId, table })
-}
 function confirmAction() {
   if (actionDialog.mode === 'delete' && actionDialog.recordId) {
     if (actionDialog.table === 1) table1Rows.value = table1Rows.value.filter(row => row._id !== actionDialog.recordId)
@@ -184,6 +188,7 @@ function exportCsv() {
   URL.revokeObjectURL(url)
 }
 
+// @copy:workflow-canvas:start
 // Canvas interaction is local to this page; no graph renderer is imported.
 const canvasRoots = new Map<number, HTMLElement>()
 const canvasViews = new Map<number, { x: number, y: number, scale: number }>()
@@ -239,6 +244,7 @@ function canvasPointerMove(event: PointerEvent) {
   if (canvasDrag.element) canvasDrag.element.style.transform = 'translate(' + (canvasDrag.x + dx / view.scale) + 'px, ' + (canvasDrag.y + dy / view.scale) + 'px)'
   else { view.x = canvasDrag.x + dx; view.y = canvasDrag.y + dy; paintCanvas(canvasDrag.canvas) }
 }
+// @copy:workflow-canvas:end
 </script>
 
 <template>
@@ -247,7 +253,7 @@ function canvasPointerMove(event: PointerEvent) {
       <div class="flex min-h-0 flex-1 flex-col overflow-hidden">
         <div class="bg-default flex min-h-[calc(100dvh-1px)] w-full overflow-hidden">
           <div class="flex min-w-0 flex-1 flex-col">
-            <header class="bg-default min-w-0 border-b px-3 py-3 sm:px-4 lg:px-6 border-default">
+            <header class="bg-default min-w-0 border-b px-3 py-3 sm:px-4 lg:px-6 border-default" data-copy-block="project-toolbar" tabindex="-1">
               <div class="flex min-w-0 flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
                 <div class="flex min-w-0 items-center gap-2 text-sm">
                   <span class="text-muted">Projects</span>
@@ -295,7 +301,7 @@ function canvasPointerMove(event: PointerEvent) {
                   </div>
                 </div>
                 <div class="grid grid-cols-2 gap-2.5 sm:gap-3 xl:grid-cols-4">
-                  <section class="bg-default rounded-[8px] border shadow-sm shadow-zinc-200/40 dark:border-(--ui-text-inverted)/10 dark:bg-[var(--ui-bg-inverted)] dark:shadow-none p-3 sm:p-4 border-default" style="opacity: 1; transform: none;">
+                  <section class="bg-default rounded-[8px] border shadow-sm shadow-zinc-200/40 dark:bg-elevated dark:shadow-none p-3 sm:p-4 border-default" style="opacity: 1; transform: none;">
                     <div class="flex min-w-0 items-center gap-2.5 sm:gap-3">
                       <span class="bg-muted text-muted grid size-8 shrink-0 place-items-center rounded-[6px] sm:size-9">
                         <UIcon name="i-lucide-list-todo" class="size-4" />
@@ -303,7 +309,7 @@ function canvasPointerMove(event: PointerEvent) {
                       <span class="min-w-0 text-[13px] leading-tight font-medium sm:text-sm">Create issue</span>
                     </div>
                   </section>
-                  <section class="bg-default rounded-[8px] border shadow-sm shadow-zinc-200/40 dark:border-(--ui-text-inverted)/10 dark:bg-[var(--ui-bg-inverted)] dark:shadow-none p-3 sm:p-4 border-default" style="opacity: 1; transform: none;">
+                  <section class="bg-default rounded-[8px] border shadow-sm shadow-zinc-200/40 dark:bg-elevated dark:shadow-none p-3 sm:p-4 border-default" style="opacity: 1; transform: none;">
                     <div class="flex min-w-0 items-center gap-2.5 sm:gap-3">
                       <span class="bg-muted text-muted grid size-8 shrink-0 place-items-center rounded-[6px] sm:size-9">
                         <UIcon name="i-lucide-flag" class="size-4" />
@@ -311,7 +317,7 @@ function canvasPointerMove(event: PointerEvent) {
                       <span class="min-w-0 text-[13px] leading-tight font-medium sm:text-sm">Schedule milestone</span>
                     </div>
                   </section>
-                  <section class="bg-default rounded-[8px] border shadow-sm shadow-zinc-200/40 dark:border-(--ui-text-inverted)/10 dark:bg-[var(--ui-bg-inverted)] dark:shadow-none p-3 sm:p-4 border-default" style="opacity: 1; transform: none;">
+                  <section class="bg-default rounded-[8px] border shadow-sm shadow-zinc-200/40 dark:bg-elevated dark:shadow-none p-3 sm:p-4 border-default" style="opacity: 1; transform: none;">
                     <div class="flex min-w-0 items-center gap-2.5 sm:gap-3">
                       <span class="bg-muted text-muted grid size-8 shrink-0 place-items-center rounded-[6px] sm:size-9">
                         <UIcon name="i-lucide-calendar-plus" class="size-4" />
@@ -319,7 +325,7 @@ function canvasPointerMove(event: PointerEvent) {
                       <span class="min-w-0 text-[13px] leading-tight font-medium sm:text-sm">Plan sprint</span>
                     </div>
                   </section>
-                  <section class="bg-default rounded-[8px] border shadow-sm shadow-zinc-200/40 dark:border-(--ui-text-inverted)/10 dark:bg-[var(--ui-bg-inverted)] dark:shadow-none p-3 sm:p-4 border-default" style="opacity: 1; transform: none;">
+                  <section class="bg-default rounded-[8px] border shadow-sm shadow-zinc-200/40 dark:bg-elevated dark:shadow-none p-3 sm:p-4 border-default" style="opacity: 1; transform: none;">
                     <div class="flex min-w-0 items-center gap-2.5 sm:gap-3">
                       <span class="bg-muted text-muted grid size-8 shrink-0 place-items-center rounded-[6px] sm:size-9">
                         <UIcon name="i-lucide-plus" class="size-4" />
@@ -330,10 +336,10 @@ function canvasPointerMove(event: PointerEvent) {
                 </div>
                 <div class="grid min-w-0 gap-4 xl:grid-cols-[minmax(0,1fr)_360px]">
                   <div class="min-w-0 space-y-4">
-                    <section class="bg-default rounded-[8px] border shadow-sm shadow-zinc-200/40 dark:border-(--ui-text-inverted)/10 dark:bg-[var(--ui-bg-inverted)] dark:shadow-none p-3 sm:p-4 border-default" style="opacity: 1; transform: none;">
+                    <section class="bg-default rounded-[8px] border shadow-sm shadow-zinc-200/40 dark:bg-elevated dark:shadow-none p-3 sm:p-4 border-default" style="opacity: 1; transform: none;">
                       <div class="bg-default relative h-[360px] overflow-hidden rounded-[8px] border sm:h-[500px] lg:h-[620px] border-default">
                         <!-- Workflow canvas 1: local pointer and zoom handlers -->
-                        <div class="workflow-canvas !bg-default [&amp;_.workflow-canvas__controls-button]:!border-default [&amp;_.workflow-canvas__controls-button]:!bg-default [&amp;_.workflow-canvas__controls-button]:!text-highlighted [&amp;_.workflow-canvas__attribution]:hidden [&amp;_.workflow-canvas__panel]:!m-3 sm:[&amp;_.workflow-canvas__panel]:!m-5 light" style="width: 100%; height: 100%; overflow: hidden; position: relative; z-index: 0;" role="application" :ref="element => setCanvasRoot(1, element)" @pointerdown="canvasPointerDown(1, $event)" @pointermove="canvasPointerMove($event)" @pointerup="canvasDrag = undefined" @pointercancel="canvasDrag = undefined" @wheel.ctrl.prevent="zoomCanvas(1, $event.deltaY < 0 ? 1.1 : 1 / 1.1)">
+                        <div class="workflow-canvas !bg-default [&amp;_.workflow-canvas__controls-button]:!border-default [&amp;_.workflow-canvas__controls-button]:!bg-default [&amp;_.workflow-canvas__controls-button]:!text-highlighted [&amp;_.workflow-canvas__attribution]:hidden [&amp;_.workflow-canvas__panel]:!m-3 sm:[&amp;_.workflow-canvas__panel]:!m-5" style="width: 100%; height: 100%; overflow: hidden; position: relative; z-index: 0;" role="application" data-copy-block="project-workflow-canvas" tabindex="-1" :ref="element => setCanvasRoot(1, element)" @pointerdown="canvasPointerDown(1, $event)" @pointermove="canvasPointerMove($event)" @pointerup="canvasDrag = undefined" @pointercancel="canvasDrag = undefined" @wheel.ctrl.prevent="zoomCanvas(1, $event.deltaY < 0 ? 1.1 : 1 / 1.1)">
                           <div class="workflow-canvas__renderer" style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;">
                             <div class="workflow-canvas__pane draggable" style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;">
                               <div class="workflow-canvas__viewport workflow-canvas__viewport workflow-canvas__container" style="transform: translate(20.4353px, 121.65px) scale(0.64271);">
@@ -382,7 +388,7 @@ function canvasPointerMove(event: PointerEvent) {
                                 <div class="workflow-canvas__edgelabel-renderer" />
                                 <div class="workflow-canvas__nodes" style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;">
                                   <div class="workflow-canvas__node workflow-canvas__node-program nopan selectable draggable" data-id="mobile" role="group" style="z-index: 0; transform: translate(86px, 72px); pointer-events: all; visibility: visible; width: 230px;">
-                                    <div class="group relative rounded-[7px] border p-3 shadow-sm backdrop-blur transition-shadow dark:bg-[var(--ui-bg-inverted)]/95 border-success/80 bg-success/5">
+                                    <div class="group relative rounded-[7px] border p-3 shadow-sm backdrop-blur transition-shadow dark:bg-elevated/95 border-success/80 bg-success/5">
                                       <div data-nodeid="mobile" data-id="1-mobile-null-target" class="workflow-canvas__handle workflow-canvas__handle-top nodrag nopan !bg-(--ui-text-muted) !size-2 !border-0 !opacity-0 transition-opacity group-hover:!opacity-100 target connectable connectablestart connectableend connectionindicator" />
                                       <div data-nodeid="mobile" data-id="1-mobile-null-target" class="workflow-canvas__handle workflow-canvas__handle-left nodrag nopan !bg-(--ui-text-muted) !size-2 !border-0 !opacity-0 transition-opacity group-hover:!opacity-100 target connectable connectablestart connectableend connectionindicator" />
                                       <p class="truncate text-xs font-medium">Mobile App Redesign</p>
@@ -397,7 +403,7 @@ function canvasPointerMove(event: PointerEvent) {
                                     </div>
                                   </div>
                                   <div class="workflow-canvas__node workflow-canvas__node-program nopan selectable draggable" data-id="api" role="group" style="z-index: 0; transform: translate(46px, 250px); pointer-events: all; visibility: visible; width: 225px;">
-                                    <div class="group relative rounded-[7px] border p-3 shadow-sm backdrop-blur transition-shadow dark:bg-[var(--ui-bg-inverted)]/95 border-error/80 bg-error/5">
+                                    <div class="group relative rounded-[7px] border p-3 shadow-sm backdrop-blur transition-shadow dark:bg-elevated/95 border-error/80 bg-error/5">
                                       <div data-nodeid="api" data-id="1-api-null-target" class="workflow-canvas__handle workflow-canvas__handle-top nodrag nopan !bg-(--ui-text-muted) !size-2 !border-0 !opacity-0 transition-opacity group-hover:!opacity-100 target connectable connectablestart connectableend connectionindicator" />
                                       <div data-nodeid="api" data-id="1-api-null-target" class="workflow-canvas__handle workflow-canvas__handle-left nodrag nopan !bg-(--ui-text-muted) !size-2 !border-0 !opacity-0 transition-opacity group-hover:!opacity-100 target connectable connectablestart connectableend connectionindicator" />
                                       <p class="truncate text-xs font-medium">API Stabilization</p>
@@ -412,7 +418,7 @@ function canvasPointerMove(event: PointerEvent) {
                                     </div>
                                   </div>
                                   <div class="workflow-canvas__node workflow-canvas__node-program nopan selectable draggable" data-id="launch" role="group" style="z-index: 0; transform: translate(410px, 232px); pointer-events: all; visibility: visible; width: 245px;">
-                                    <div class="group relative rounded-[7px] border p-3 shadow-sm backdrop-blur transition-shadow dark:bg-[var(--ui-bg-inverted)]/95 border-success/80 bg-success/5">
+                                    <div class="group relative rounded-[7px] border p-3 shadow-sm backdrop-blur transition-shadow dark:bg-elevated/95 border-success/80 bg-success/5">
                                       <div data-nodeid="launch" data-id="1-launch-null-target" class="workflow-canvas__handle workflow-canvas__handle-top nodrag nopan !bg-(--ui-text-muted) !size-2 !border-0 !opacity-0 transition-opacity group-hover:!opacity-100 target connectable connectablestart connectableend connectionindicator" />
                                       <div data-nodeid="launch" data-id="1-launch-null-target" class="workflow-canvas__handle workflow-canvas__handle-left nodrag nopan !bg-(--ui-text-muted) !size-2 !border-0 !opacity-0 transition-opacity group-hover:!opacity-100 target connectable connectablestart connectableend connectionindicator" />
                                       <p class="truncate text-xs font-medium">Launch Readiness</p>
@@ -427,7 +433,7 @@ function canvasPointerMove(event: PointerEvent) {
                                     </div>
                                   </div>
                                   <div class="workflow-canvas__node workflow-canvas__node-program nopan selectable draggable" data-id="design-system" role="group" style="z-index: 0; transform: translate(730px, 72px); pointer-events: all; visibility: visible; width: 220px;">
-                                    <div class="group relative rounded-[7px] border p-3 shadow-sm backdrop-blur transition-shadow dark:bg-[var(--ui-bg-inverted)]/95 border-default bg-(--ui-bg-muted)/20">
+                                    <div class="group relative rounded-[7px] border p-3 shadow-sm backdrop-blur transition-shadow dark:bg-elevated/95 border-default bg-(--ui-bg-muted)/20">
                                       <div data-nodeid="design-system" data-id="1-design-system-null-target" class="workflow-canvas__handle workflow-canvas__handle-top nodrag nopan !bg-(--ui-text-muted) !size-2 !border-0 !opacity-0 transition-opacity group-hover:!opacity-100 target connectable connectablestart connectableend connectionindicator" />
                                       <div data-nodeid="design-system" data-id="1-design-system-null-target" class="workflow-canvas__handle workflow-canvas__handle-left nodrag nopan !bg-(--ui-text-muted) !size-2 !border-0 !opacity-0 transition-opacity group-hover:!opacity-100 target connectable connectablestart connectableend connectionindicator" />
                                       <p class="truncate text-xs font-medium">Design System Rollout</p>
@@ -442,7 +448,7 @@ function canvasPointerMove(event: PointerEvent) {
                                     </div>
                                   </div>
                                   <div class="workflow-canvas__node workflow-canvas__node-program nopan selectable draggable" data-id="qa" role="group" style="z-index: 0; transform: translate(790px, 250px); pointer-events: all; visibility: visible; width: 230px;">
-                                    <div class="group relative rounded-[7px] border p-3 shadow-sm backdrop-blur transition-shadow dark:bg-[var(--ui-bg-inverted)]/95 border-warning/80 bg-warning/5">
+                                    <div class="group relative rounded-[7px] border p-3 shadow-sm backdrop-blur transition-shadow dark:bg-elevated/95 border-warning/80 bg-warning/5">
                                       <div data-nodeid="qa" data-id="1-qa-null-target" class="workflow-canvas__handle workflow-canvas__handle-top nodrag nopan !bg-(--ui-text-muted) !size-2 !border-0 !opacity-0 transition-opacity group-hover:!opacity-100 target connectable connectablestart connectableend connectionindicator" />
                                       <div data-nodeid="qa" data-id="1-qa-null-target" class="workflow-canvas__handle workflow-canvas__handle-left nodrag nopan !bg-(--ui-text-muted) !size-2 !border-0 !opacity-0 transition-opacity group-hover:!opacity-100 target connectable connectablestart connectableend connectionindicator" />
                                       <p class="truncate text-xs font-medium">QA Regression Pass</p>
@@ -457,7 +463,7 @@ function canvasPointerMove(event: PointerEvent) {
                                     </div>
                                   </div>
                                   <div class="workflow-canvas__node workflow-canvas__node-program nopan selectable draggable" data-id="onboarding" role="group" style="z-index: 0; transform: translate(120px, 420px); pointer-events: all; visibility: visible; width: 270px;">
-                                    <div class="group relative rounded-[7px] border p-3 shadow-sm backdrop-blur transition-shadow dark:bg-[var(--ui-bg-inverted)]/95 border-warning/80 bg-warning/5">
+                                    <div class="group relative rounded-[7px] border p-3 shadow-sm backdrop-blur transition-shadow dark:bg-elevated/95 border-warning/80 bg-warning/5">
                                       <div data-nodeid="onboarding" data-id="1-onboarding-null-target" class="workflow-canvas__handle workflow-canvas__handle-top nodrag nopan !bg-(--ui-text-muted) !size-2 !border-0 !opacity-0 transition-opacity group-hover:!opacity-100 target connectable connectablestart connectableend connectionindicator" />
                                       <div data-nodeid="onboarding" data-id="1-onboarding-null-target" class="workflow-canvas__handle workflow-canvas__handle-left nodrag nopan !bg-(--ui-text-muted) !size-2 !border-0 !opacity-0 transition-opacity group-hover:!opacity-100 target connectable connectablestart connectableend connectionindicator" />
                                       <p class="truncate text-xs font-medium">Customer Onboarding Flow</p>
@@ -472,7 +478,7 @@ function canvasPointerMove(event: PointerEvent) {
                                     </div>
                                   </div>
                                   <div class="workflow-canvas__node workflow-canvas__node-program nopan selectable draggable" data-id="billing" role="group" style="z-index: 0; transform: translate(665px, 400px); pointer-events: all; visibility: visible; width: 225px;">
-                                    <div class="group relative rounded-[7px] border p-3 shadow-sm backdrop-blur transition-shadow dark:bg-[var(--ui-bg-inverted)]/95 border-default bg-(--ui-bg-muted)/20">
+                                    <div class="group relative rounded-[7px] border p-3 shadow-sm backdrop-blur transition-shadow dark:bg-elevated/95 border-default bg-(--ui-bg-muted)/20">
                                       <div data-nodeid="billing" data-id="1-billing-null-target" class="workflow-canvas__handle workflow-canvas__handle-top nodrag nopan !bg-(--ui-text-muted) !size-2 !border-0 !opacity-0 transition-opacity group-hover:!opacity-100 target connectable connectablestart connectableend connectionindicator" />
                                       <div data-nodeid="billing" data-id="1-billing-null-target" class="workflow-canvas__handle workflow-canvas__handle-left nodrag nopan !bg-(--ui-text-muted) !size-2 !border-0 !opacity-0 transition-opacity group-hover:!opacity-100 target connectable connectablestart connectableend connectionindicator" />
                                       <p class="truncate text-xs font-medium">Billing Migration</p>
@@ -542,20 +548,20 @@ function canvasPointerMove(event: PointerEvent) {
                         </div>
                       </div>
                     </section>
-                    <section class="bg-default rounded-[8px] border shadow-sm shadow-zinc-200/40 dark:border-(--ui-text-inverted)/10 dark:bg-[var(--ui-bg-inverted)] dark:shadow-none overflow-hidden p-0 border-default" style="opacity: 1; transform: none;">
+                    <section class="bg-default rounded-[8px] border shadow-sm shadow-zinc-200/40 dark:bg-elevated dark:shadow-none overflow-hidden p-0 border-default" style="opacity: 1; transform: none;">
                       <div class="grid gap-3 px-4 py-4 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center">
                         <h2 class="text-base font-semibold text-highlighted">Active Projects (7)</h2>
                         <div class="grid min-w-0 grid-cols-[minmax(0,1fr)_auto] items-center gap-2">
                           <div class="relative min-w-0 sm:w-[220px]">
                             <UIcon name="i-lucide-search" class="text-muted absolute top-1/2 left-3 size-4 -translate-y-1/2" />
-                            <UInput v-model="form.searchProjects" type="text" placeholder="Search projects..." name="searchProjects" class="flex w-full md:text-sm h-8 rounded-[6px] pl-9 text-xs" :ui="{ base: 'h-full' }" />
+                            <UInput v-model="form.searchProjects" type="text" placeholder="Search projects..." name="tableSearchProjects" class="flex w-full md:text-sm h-8 rounded-[6px] pl-9 text-xs" :ui="{ base: 'h-full' }" />
                           </div>
                           <UButton color="neutral" variant="outline" class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-default bg-default hover:bg-elevated hover:text-default h-8 rounded-[6px] px-3 text-xs shadow-none" aria-label="View all" type="button" @click="openAction(&quot;View all&quot;)">
                             View all
                           </UButton>
                         </div>
                       </div>
-                      <div class="horizontal-scrollbar overflow-x-auto border-t border-default">
+                      <div class="horizontal-scrollbar overflow-x-auto border-t border-default" data-copy-block="project-table-1" tabindex="-1">
                         <!-- Table 1: Projects / Status / Priority / Owner / Due date -->
                         <UTable v-model:sorting="table1Sorting" v-model:row-selection="table1Selection" :data="table1FilteredRows" :columns="table1Columns" class="bg-default w-full min-w-[980px] border-separate border-spacing-0" :ui="{ th: 'px-4 py-3 bg-muted text-muted', td: 'px-4 py-3 border-b border-default', tr: 'hover:bg-muted' }">
 <template #projects-header="{ column }">
@@ -597,8 +603,8 @@ function canvasPointerMove(event: PointerEvent) {
                           </template>
                           <template #owner-cell="{ row }">
                             <div class="inline-flex items-center gap-2">
-                              <span class="relative flex shrink-0 overflow-hidden rounded-full size-6">
-                                <img class="aspect-square h-full w-full" :alt="row.original.ownerAlt5" :src="row.original.ownerSrc6" loading="lazy" />
+                              <span class="grid size-6 shrink-0 place-items-center rounded-full bg-muted text-[9px] font-medium text-muted" :aria-label="row.original.owner">
+                                {{ row.original.owner.split(' ').map(part => part[0]).join('') }}
                               </span>
                               <span class="truncate text-[13px]">{{ row.original.owner }}</span>
                             </div>
@@ -617,7 +623,7 @@ function canvasPointerMove(event: PointerEvent) {
                     </section>
                   </div>
                   <div class="min-w-0 space-y-4">
-                    <section class="bg-default rounded-[8px] border shadow-sm shadow-zinc-200/40 dark:border-(--ui-text-inverted)/10 dark:bg-[var(--ui-bg-inverted)] dark:shadow-none p-4 border-default" style="opacity: 1; transform: none;">
+                    <section class="bg-default rounded-[8px] border shadow-sm shadow-zinc-200/40 dark:bg-elevated dark:shadow-none p-4 border-default" data-copy-block="project-health" tabindex="-1" style="opacity: 1; transform: none;">
                       <h2 class="text-base font-semibold text-highlighted">Project Health</h2>
                       <div class="mt-5 grid grid-cols-[112px_minmax(0,1fr)] items-center gap-4 sm:grid-cols-[132px_minmax(0,1fr)]">
                         <div class="relative size-28 sm:size-32">
@@ -658,7 +664,7 @@ function canvasPointerMove(event: PointerEvent) {
                         </div>
                       </div>
                     </section>
-                    <section class="bg-default rounded-[8px] border shadow-sm shadow-zinc-200/40 dark:border-(--ui-text-inverted)/10 dark:bg-[var(--ui-bg-inverted)] dark:shadow-none p-4 border-default" style="opacity: 1; transform: none;">
+                    <section class="bg-default rounded-[8px] border shadow-sm shadow-zinc-200/40 dark:bg-elevated dark:shadow-none p-4 border-default" data-copy-block="project-critical-path" tabindex="-1" style="opacity: 1; transform: none;">
                       <h2 class="text-base font-semibold text-highlighted">Critical Path</h2>
                       <div class="mt-5 space-y-2">
                         <div>
@@ -702,7 +708,7 @@ function canvasPointerMove(event: PointerEvent) {
                         </div>
                       </div>
                     </section>
-                    <section class="bg-default rounded-[8px] border shadow-sm shadow-zinc-200/40 dark:border-(--ui-text-inverted)/10 dark:bg-[var(--ui-bg-inverted)] dark:shadow-none p-4 border-default" style="opacity: 1; transform: none;">
+                    <section class="bg-default rounded-[8px] border shadow-sm shadow-zinc-200/40 dark:bg-elevated dark:shadow-none p-4 border-default" data-copy-block="project-needs-attention" tabindex="-1" style="opacity: 1; transform: none;">
                       <h2 class="text-base font-semibold text-highlighted">Needs Attention</h2>
                       <div class="mt-5 rounded-[7px] border border-error/20 bg-error/5 p-3">
                         <p class="text-sm font-medium text-error dark:text-error">API Stabilization is blocked</p>
@@ -737,6 +743,7 @@ function canvasPointerMove(event: PointerEvent) {
         </div>
       </template>
     </UModal>
+    <BlockCopyTools page="/project-management/dashboard-4" />
   </div>
 </template>
 
@@ -744,7 +751,6 @@ function canvasPointerMove(event: PointerEvent) {
 
 .page-content { min-height: 0; color: var(--ui-text); --chart-1: var(--ui-primary); --chart-2: var(--ui-text-highlighted); --chart-3: var(--ui-text-muted); --chart-4: var(--ui-text-dimmed); --chart-5: var(--ui-border-accented); --chart-6: var(--ui-border); --radius: var(--ui-radius); }
 .page-content > div { min-height: 100%; }
-.page-content *, .page-content ::before, .page-content ::after { border-color: var(--ui-border); }
 .page-content [data-slot="scroll-area-viewport"] { overflow: auto !important; scrollbar-width: thin; }
 .page-content [data-slot="scroll-area-scrollbar"] { display: none; }
 .page-content pre { overflow: auto; }
