@@ -1,436 +1,196 @@
-<!-- Page: /payment-processor/customers-list-2 | All content, state and styles live in this file. -->
+<!-- Page: /payment-processor/customers-list-2 | Local example payment accounts, never live risk or payment operations. -->
 <script setup lang="ts">
-import type { TableColumn } from '@nuxt/ui'
+useHead({ title: 'Customers List 2 · Blocks Admin' })
 
-const route = useRoute()
-
-useHead({ title: "Customers List 2 · Blocks Admin" })
-
-const toast = useToast()
-
-// Page-local form values. Edit these defaults when copying the page.
-
-const form = reactive({
-  "searchCustomerIDMethod": ""
-})
-
-const tabs1Active = ref("0")
-
-const tabs1Items = [
-  {
-    "label": "All Customers",
-    "value": "0"
-  },
-  {
-    "label": "Payment Methods",
-    "value": "1"
-  },
-  {
-    "label": "Risk & KYC",
-    "value": "2"
-  }
+// @copy:payment-accounts-data:start
+import { computed, reactive, ref } from 'vue'
+type PaymentAccount = {
+  id: string, name: string, email: string, account: string, spend: number, openInvoices: number,
+  lastPayment: string, method: 'Card' | 'ACH' | 'Wire', methodLabel: string,
+  status: 'Active' | 'Review' | 'Blocked', kyc: 'Verified' | 'Pending' | 'Rejected'
+}
+// Fictional companies, amounts in USD, dates in UTC. Card metadata is not a usable payment method.
+const paymentAccounts: PaymentAccount[] = [
+  { id: 'cus_9Kx41L', name: 'Northstar Supply Co.', email: 'billing.northstar@example.com', account: 'Business account', spend: 128420, openInvoices: 12000, lastPayment: '2026-06-12', method: 'Card', methodLabel: 'Visa ending 4242', status: 'Active', kyc: 'Verified' },
+  { id: 'cus_8Vn20P', name: 'Aster Labs', email: 'finance.aster@example.com', account: 'Startup account', spend: 84750, openInvoices: 8500, lastPayment: '2026-06-10', method: 'ACH', methodLabel: 'ACH verified', status: 'Review', kyc: 'Pending' },
+  { id: 'cus_7Qs88B', name: 'Meridian Health', email: 'ap.meridian@example.com', account: 'Enterprise account', spend: 210300, openInvoices: 21000, lastPayment: '2026-06-09', method: 'Card', methodLabel: 'Amex ending 3005', status: 'Active', kyc: 'Verified' },
+  { id: 'cus_6Bd19Q', name: 'Rivergate Studios', email: 'ops.rivergate@example.com', account: 'Creator account', spend: 32180, openInvoices: 3200, lastPayment: '2026-06-07', method: 'Card', methodLabel: 'Mastercard ending 1881', status: 'Blocked', kyc: 'Rejected' },
+  { id: 'cus_5Zp62T', name: 'Kite Retail Group', email: 'payments.kite@example.com', account: 'Business account', spend: 96040, openInvoices: 9600, lastPayment: '2026-06-04', method: 'ACH', methodLabel: 'ACH verified', status: 'Active', kyc: 'Verified' },
+  { id: 'cus_4Ta73R', name: 'Bluebird Events', email: 'accounts.bluebird@example.com', account: 'Seasonal account', spend: 58600, openInvoices: 5800, lastPayment: '2026-06-01', method: 'Card', methodLabel: 'Visa ending 9021', status: 'Review', kyc: 'Pending' },
+  { id: 'cus_3Lm44D', name: 'Prairie Foods', email: 'ar.prairie@example.com', account: 'Marketplace seller', spend: 141980, openInvoices: 14000, lastPayment: '2026-05-29', method: 'Card', methodLabel: 'Mastercard ending 6409', status: 'Active', kyc: 'Verified' },
+  { id: 'cus_2Er35N', name: 'Nomad Robotics', email: 'billing.nomad@example.com', account: 'Enterprise account', spend: 301220, openInvoices: 30100, lastPayment: '2026-05-27', method: 'Wire', methodLabel: 'Wire enabled', status: 'Active', kyc: 'Verified' },
+  { id: 'cus_1Cb90W', name: 'Harbor Fleet', email: 'payables.harbor@example.com', account: 'Business account', spend: 73450, openInvoices: 7300, lastPayment: '2026-05-24', method: 'Card', methodLabel: 'Visa ending 1155', status: 'Review', kyc: 'Pending' },
+  { id: 'cus_0Aj27K', name: 'Luma Learning', email: 'admin.luma@example.com', account: 'Nonprofit account', spend: 45760, openInvoices: 4500, lastPayment: '2026-05-21', method: 'ACH', methodLabel: 'ACH verified', status: 'Active', kyc: 'Verified' },
 ]
+const accountMoney = (amount: number) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(amount)
+// @copy:payment-accounts-data:end
 
-// Table 1: edit the rows and column definitions here.
-
-const table1Rows = ref([
-  {
-    "_id": "1",
-    "customer": "Northstar Supply Co.billing@northstarsupply.com",
-    "customerText4": "Northstar Supply Co.",
-    "customerText6": "billing@northstarsupply.com",
-    "account": "cus_9Kx41LBusiness account",
-    "accountText3": "cus_9Kx41L",
-    "accountText5": "Business account",
-    "lifetimeSpend": "$128,420Visa ending 4242",
-    "lifetimeSpendText3": "$128,420",
-    "lifetimeSpendText5": "Visa ending 4242",
-    "lastPayment": "06/12/2026",
-    "riskStatus": "Active",
-    "riskStatusClass2": "inline-flex h-6 items-center gap-1.5 rounded-md border px-2 text-[11px] font-medium border-success/20 bg-success/10 text-success dark:bg-success/30 dark:text-success dark:border-success/20",
-    "riskStatusName3": "i-lucide-circle-check"
-  },
-  {
-    "_id": "2",
-    "customer": "Aster Labsfinance@asterlabs.io",
-    "customerText4": "Aster Labs",
-    "customerText6": "finance@asterlabs.io",
-    "account": "cus_8Vn20PStartup account",
-    "accountText3": "cus_8Vn20P",
-    "accountText5": "Startup account",
-    "lifetimeSpend": "$84,750ACH verified",
-    "lifetimeSpendText3": "$84,750",
-    "lifetimeSpendText5": "ACH verified",
-    "lastPayment": "06/10/2026",
-    "riskStatus": "Review",
-    "riskStatusClass2": "inline-flex h-6 items-center gap-1.5 rounded-md border px-2 text-[11px] font-medium border-warning/20 bg-warning/10 text-warning dark:bg-warning/30 dark:text-warning dark:border-warning/20",
-    "riskStatusName3": "i-lucide-clock-3"
-  },
-  {
-    "_id": "3",
-    "customer": "Meridian Healthap@meridianhealth.com",
-    "customerText4": "Meridian Health",
-    "customerText6": "ap@meridianhealth.com",
-    "account": "cus_7Qs88BEnterprise account",
-    "accountText3": "cus_7Qs88B",
-    "accountText5": "Enterprise account",
-    "lifetimeSpend": "$210,300Amex ending 3005",
-    "lifetimeSpendText3": "$210,300",
-    "lifetimeSpendText5": "Amex ending 3005",
-    "lastPayment": "06/09/2026",
-    "riskStatus": "Active",
-    "riskStatusClass2": "inline-flex h-6 items-center gap-1.5 rounded-md border px-2 text-[11px] font-medium border-success/20 bg-success/10 text-success dark:bg-success/30 dark:text-success dark:border-success/20",
-    "riskStatusName3": "i-lucide-circle-check"
-  },
-  {
-    "_id": "4",
-    "customer": "Rivergate Studiosops@rivergate.studio",
-    "customerText4": "Rivergate Studios",
-    "customerText6": "ops@rivergate.studio",
-    "account": "cus_6Bd19QCreator account",
-    "accountText3": "cus_6Bd19Q",
-    "accountText5": "Creator account",
-    "lifetimeSpend": "$32,180Mastercard ending 1881",
-    "lifetimeSpendText3": "$32,180",
-    "lifetimeSpendText5": "Mastercard ending 1881",
-    "lastPayment": "06/07/2026",
-    "riskStatus": "Blocked",
-    "riskStatusClass2": "inline-flex h-6 items-center gap-1.5 rounded-md border px-2 text-[11px] font-medium border-error/20 bg-error/10 text-error dark:bg-error/30 dark:text-error dark:border-error/20",
-    "riskStatusName3": "i-lucide-circle-x"
-  },
-  {
-    "_id": "5",
-    "customer": "Kite Retail Grouppayments@kiteretail.com",
-    "customerText4": "Kite Retail Group",
-    "customerText6": "payments@kiteretail.com",
-    "account": "cus_5Zp62TBusiness account",
-    "accountText3": "cus_5Zp62T",
-    "accountText5": "Business account",
-    "lifetimeSpend": "$96,040ACH verified",
-    "lifetimeSpendText3": "$96,040",
-    "lifetimeSpendText5": "ACH verified",
-    "lastPayment": "06/04/2026",
-    "riskStatus": "Active",
-    "riskStatusClass2": "inline-flex h-6 items-center gap-1.5 rounded-md border px-2 text-[11px] font-medium border-success/20 bg-success/10 text-success dark:bg-success/30 dark:text-success dark:border-success/20",
-    "riskStatusName3": "i-lucide-circle-check"
-  },
-  {
-    "_id": "6",
-    "customer": "Bluebird Eventsaccounts@bluebirdevents.co",
-    "customerText4": "Bluebird Events",
-    "customerText6": "accounts@bluebirdevents.co",
-    "account": "cus_4Ta73RSeasonal account",
-    "accountText3": "cus_4Ta73R",
-    "accountText5": "Seasonal account",
-    "lifetimeSpend": "$58,600Visa ending 9021",
-    "lifetimeSpendText3": "$58,600",
-    "lifetimeSpendText5": "Visa ending 9021",
-    "lastPayment": "06/01/2026",
-    "riskStatus": "Review",
-    "riskStatusClass2": "inline-flex h-6 items-center gap-1.5 rounded-md border px-2 text-[11px] font-medium border-warning/20 bg-warning/10 text-warning dark:bg-warning/30 dark:text-warning dark:border-warning/20",
-    "riskStatusName3": "i-lucide-clock-3"
-  },
-  {
-    "_id": "7",
-    "customer": "Prairie Foodsar@prairiefoods.com",
-    "customerText4": "Prairie Foods",
-    "customerText6": "ar@prairiefoods.com",
-    "account": "cus_3Lm44DMarketplace seller",
-    "accountText3": "cus_3Lm44D",
-    "accountText5": "Marketplace seller",
-    "lifetimeSpend": "$141,980Mastercard ending 6409",
-    "lifetimeSpendText3": "$141,980",
-    "lifetimeSpendText5": "Mastercard ending 6409",
-    "lastPayment": "05/29/2026",
-    "riskStatus": "Active",
-    "riskStatusClass2": "inline-flex h-6 items-center gap-1.5 rounded-md border px-2 text-[11px] font-medium border-success/20 bg-success/10 text-success dark:bg-success/30 dark:text-success dark:border-success/20",
-    "riskStatusName3": "i-lucide-circle-check"
-  },
-  {
-    "_id": "8",
-    "customer": "Nomad Roboticsbilling@nomadrobotics.ai",
-    "customerText4": "Nomad Robotics",
-    "customerText6": "billing@nomadrobotics.ai",
-    "account": "cus_2Er35NEnterprise account",
-    "accountText3": "cus_2Er35N",
-    "accountText5": "Enterprise account",
-    "lifetimeSpend": "$301,220Wire enabled",
-    "lifetimeSpendText3": "$301,220",
-    "lifetimeSpendText5": "Wire enabled",
-    "lastPayment": "05/27/2026",
-    "riskStatus": "Active",
-    "riskStatusClass2": "inline-flex h-6 items-center gap-1.5 rounded-md border px-2 text-[11px] font-medium border-success/20 bg-success/10 text-success dark:bg-success/30 dark:text-success dark:border-success/20",
-    "riskStatusName3": "i-lucide-circle-check"
-  },
-  {
-    "_id": "9",
-    "customer": "Harbor Fleetpayables@harborfleet.com",
-    "customerText4": "Harbor Fleet",
-    "customerText6": "payables@harborfleet.com",
-    "account": "cus_1Cb90WBusiness account",
-    "accountText3": "cus_1Cb90W",
-    "accountText5": "Business account",
-    "lifetimeSpend": "$73,450Visa ending 1155",
-    "lifetimeSpendText3": "$73,450",
-    "lifetimeSpendText5": "Visa ending 1155",
-    "lastPayment": "05/24/2026",
-    "riskStatus": "Review",
-    "riskStatusClass2": "inline-flex h-6 items-center gap-1.5 rounded-md border px-2 text-[11px] font-medium border-warning/20 bg-warning/10 text-warning dark:bg-warning/30 dark:text-warning dark:border-warning/20",
-    "riskStatusName3": "i-lucide-clock-3"
-  },
-  {
-    "_id": "10",
-    "customer": "Luma Learningadmin@lumalearning.org",
-    "customerText4": "Luma Learning",
-    "customerText6": "admin@lumalearning.org",
-    "account": "cus_0Aj27KNonprofit account",
-    "accountText3": "cus_0Aj27K",
-    "accountText5": "Nonprofit account",
-    "lifetimeSpend": "$45,760ACH verified",
-    "lifetimeSpendText3": "$45,760",
-    "lifetimeSpendText5": "ACH verified",
-    "lastPayment": "05/21/2026",
-    "riskStatus": "Active",
-    "riskStatusClass2": "inline-flex h-6 items-center gap-1.5 rounded-md border px-2 text-[11px] font-medium border-success/20 bg-success/10 text-success dark:bg-success/30 dark:text-success dark:border-success/20",
-    "riskStatusName3": "i-lucide-circle-check"
-  }
+// @copy:payment-accounts-summary:start
+const accountMetrics = computed(() => [
+  { label: 'Active customers', value: String(paymentAccounts.filter(account => account.status === 'Active').length), icon: 'i-lucide-users' },
+  { label: 'Lifetime spend (USD)', value: accountMoney(paymentAccounts.reduce((sum, account) => sum + account.spend, 0)), icon: 'i-lucide-badge-dollar-sign' },
+  { label: 'Open invoices (USD)', value: accountMoney(paymentAccounts.reduce((sum, account) => sum + account.openInvoices, 0)), icon: 'i-lucide-receipt-text' },
+  { label: 'Needs review', value: String(paymentAccounts.filter(account => account.status === 'Review').length), icon: 'i-lucide-shield-alert' },
 ])
-type Table1Row = (typeof table1Rows.value)[number]
+// @copy:payment-accounts-summary:end
 
-const table1Columns: TableColumn<Table1Row>[] = [
-  {
-    "accessorKey": "customer",
-    "header": "Customer"
-  },
-  {
-    "accessorKey": "account",
-    "header": "Account"
-  },
-  {
-    "accessorKey": "lifetimeSpend",
-    "header": "Lifetime Spend"
-  },
-  {
-    "accessorKey": "lastPayment",
-    "header": "Last Payment"
-  },
-  {
-    "accessorKey": "riskStatus",
-    "header": "Risk Status"
-  }
+// @copy:payment-accounts-directory:start
+import type { TableColumn } from '@nuxt/ui'
+type AccountView = 'customers' | 'methods' | 'risk'
+type AccountSort = 'name' | 'id' | 'spend' | 'lastPayment' | 'method' | 'status' | 'kyc' | 'openInvoices'
+const accountView = ref<AccountView>('customers')
+const accountTabs = [
+  { label: 'All Customers', value: 'customers', slot: 'directory' as const },
+  { label: 'Payment Methods', value: 'methods', slot: 'directory' as const },
+  { label: 'Risk & KYC', value: 'risk', slot: 'directory' as const },
 ]
-
-const table1Sorting = ref<{ id: string, desc: boolean }[]>([])
-
-const table1Selection = ref<Record<string, boolean>>({})
-
-const table1FilteredRows = computed(() => {
-  const query = String(form.searchCustomerIDMethod || '').toLowerCase()
-  const keys = ["customer","account","lifetimeSpend","lastPayment","riskStatus"] as const
-  return table1Rows.value.filter(row => !query || keys.some(key => String(row[key]).toLowerCase().includes(query)))
-})
-
-// Restore drafts after hydration; the first client render matches SSR.
-onMounted(() => {
-  const key = 'nuxt-ui-page:' + route.path
-  try {
-    const draft = localStorage.getItem(key)
-    if (draft) Object.assign(form, JSON.parse(draft))
-  } catch { /* Use the defaults when no draft exists. */ }
-  watch(form, value => localStorage.setItem(key, JSON.stringify(value)), { deep: true, flush: 'sync' })
-})
-
-const actionDialog = reactive({ open: false, title: '', mode: 'edit', name: '', description: '', recordId: '', table: 0 })
-function openAction(label: string, recordId = '', table = 0) {
-  Object.assign(actionDialog, { open: true, title: label, mode: /delete|remove|archive/i.test(label) ? 'delete' : 'edit', recordId, table })
+const accountFilters = reactive({ search: '', status: 'All statuses', method: 'All methods', period: 'All dates', from: '2026-05-01', to: '2026-06-30' })
+function validAccountDate(value: string) {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return false
+  const date = new Date(value + 'T00:00:00Z')
+  return Number.isFinite(date.getTime()) && date.toISOString().slice(0, 10) === value
 }
-function confirmAction() {
-  if (actionDialog.mode === 'delete' && actionDialog.recordId) {
-    if (actionDialog.table === 1) table1Rows.value = table1Rows.value.filter(row => row._id !== actionDialog.recordId)
-  }
-  toast.add({ title: actionDialog.mode === 'delete' ? 'Item removed' : 'Changes saved', color: 'success', icon: 'i-lucide-check' })
-  actionDialog.open = false
+const accountDateError = computed(() => accountFilters.period !== 'Custom range' ? undefined
+  : !validAccountDate(accountFilters.from) || !validAccountDate(accountFilters.to) ? 'Choose both valid UTC dates.'
+  : accountFilters.from > accountFilters.to ? 'Start date must not be after end date.' : undefined)
+const accountSort = ref<AccountSort>('lastPayment')
+const accountDescending = ref(true)
+const accountSortItems = [
+  { label: 'Customer', value: 'name' }, { label: 'Account ID', value: 'id' }, { label: 'Lifetime spend', value: 'spend' },
+  { label: 'Last payment', value: 'lastPayment' }, { label: 'Method', value: 'method' },
+  { label: 'Risk status', value: 'status' }, { label: 'KYC', value: 'kyc' }, { label: 'Open invoices', value: 'openInvoices' },
+]
+const visibleAccounts = computed(() => {
+  if (accountDateError.value) return []
+  const query = accountFilters.search.trim().toLowerCase()
+  return paymentAccounts.filter(account => (!query || `${account.name} ${account.email} ${account.id} ${account.account} ${account.methodLabel}`.toLowerCase().includes(query))
+    && (accountFilters.status === 'All statuses' || account.status === accountFilters.status)
+    && (accountFilters.method === 'All methods' || account.method === accountFilters.method)
+    && (accountFilters.period === 'All dates' || (accountFilters.period === 'June 2026' ? account.lastPayment.startsWith('2026-06')
+      : accountFilters.period === 'May 2026' ? account.lastPayment.startsWith('2026-05') : account.lastPayment >= accountFilters.from && account.lastPayment <= accountFilters.to)))
+    .sort((a, b) => {
+      const left = a[accountSort.value], right = b[accountSort.value]
+      const order = typeof left === 'number' && typeof right === 'number' ? left - right : String(left).localeCompare(String(right), 'en')
+      return (order || a.id.localeCompare(b.id, 'en')) * (accountDescending.value ? -1 : 1)
+    })
+})
+const accountHeaders = computed<{ key: keyof PaymentAccount, label: string }[]>(() => [
+  { key: 'name', label: 'Customer' }, { key: 'id', label: 'Account' },
+  ...(accountView.value === 'customers' ? [{ key: 'spend' as const, label: 'Lifetime spend (USD)' }, { key: 'lastPayment' as const, label: 'Last payment (UTC)' }, { key: 'status' as const, label: 'Risk status' }]
+    : accountView.value === 'methods' ? [{ key: 'method' as const, label: 'Payment method' }, { key: 'lastPayment' as const, label: 'Last payment (UTC)' }, { key: 'spend' as const, label: 'Lifetime spend (USD)' }]
+    : [{ key: 'status' as const, label: 'Risk status' }, { key: 'kyc' as const, label: 'KYC' }, { key: 'openInvoices' as const, label: 'Open invoices (USD)' }]),
+])
+const accountColumns = computed<TableColumn<PaymentAccount>[]>(() => accountHeaders.value.map(header => ({ accessorKey: header.key, header: header.label })))
+function sortAccounts(key: keyof PaymentAccount) {
+  if (accountSort.value === key) accountDescending.value = !accountDescending.value
+  else { accountSort.value = key as AccountSort; accountDescending.value = false }
 }
-
-function exportCsv() {
-  const rows = table1FilteredRows.value.map(row => ["customer","account","lifetimeSpend","lastPayment","riskStatus"].map(key => String(row[key as keyof typeof row])))
-  const csv = rows.map(row => row.map(value => '"' + value.replaceAll('"', '""') + '"').join(',')).join('\n')
+function resetAccounts() {
+  Object.assign(accountFilters, { search: '', status: 'All statuses', method: 'All methods', period: 'All dates', from: '2026-05-01', to: '2026-06-30' })
+  accountSort.value = 'lastPayment'; accountDescending.value = true; accountExportNotice.value = ''
+}
+const accountStatusColor = (status: PaymentAccount['status']) => status === 'Active' ? 'success' as const : status === 'Review' ? 'warning' as const : 'error' as const
+const accountKycColor = (kyc: PaymentAccount['kyc']) => kyc === 'Verified' ? 'success' as const : kyc === 'Pending' ? 'warning' as const : 'error' as const
+const accountDate = (date: string) => new Intl.DateTimeFormat('en-US', { dateStyle: 'medium', timeZone: 'UTC' }).format(new Date(date + 'T00:00:00Z'))
+const selectedAccount = ref<PaymentAccount | null>(null)
+const accountDetailOpen = ref(false)
+function showAccount(account: PaymentAccount) { selectedAccount.value = account; accountDetailOpen.value = true }
+const accountExportNotice = ref('')
+function exportAccounts() {
+  if (!visibleAccounts.value.length || accountDateError.value) return
+  const headers = accountHeaders.value
+  const rows = [headers.map(header => header.label), ...visibleAccounts.value.map(account => headers.map(header =>
+    header.key === 'name' ? `${account.name} (${account.email})` : header.key === 'method' ? account.methodLabel : String(account[header.key])))]
+  const csv = rows.map(row => row.map(value => '"' + value.replaceAll('"', '""') + '"').join(',')).join('\r\n')
   const url = URL.createObjectURL(new Blob([csv], { type: 'text/csv;charset=utf-8' }))
   const anchor = document.createElement('a')
-  anchor.href = url
-  anchor.download = "payment-processor-customers-list-2.csv"
-  anchor.click()
-  URL.revokeObjectURL(url)
+  anchor.href = url; anchor.download = `payment-accounts-${accountView.value}.csv`; anchor.click()
+  setTimeout(() => URL.revokeObjectURL(url), 1000)
+  accountExportNotice.value = `CSV prepared: ${visibleAccounts.value.length} records from ${accountTabs.find(tab => tab.value === accountView.value)?.label}.`
 }
+// @copy:payment-accounts-directory:end
 </script>
 
 <template>
   <div class="page-content flex h-full min-h-0 w-full flex-col text-default" data-page="/payment-processor/customers-list-2">
-    <div class="flex min-h-0 flex-1 flex-col overflow-hidden">
-      <div class="flex min-h-0 flex-1 flex-col overflow-hidden">
-        <main class="bg-default text-highlighted flex min-h-0 flex-1 overflow-hidden">
-          <div class="min-h-0 w-full flex-1 overflow-y-auto">
-            <section class="bg-default">
-              <div class="border-default border-b px-4 pt-8 pb-4 sm:px-6 lg:px-8">
-                <div>
-                  <h1 class="text-highlighted text-[22px] leading-7 font-semibold tracking-normal text-highlighted">Customers</h1>
-                  <p class="text-muted mt-1.5 text-sm leading-5 font-medium">Monitor customer payment methods, processing volume, and risk status.</p>
-                </div>
-                <div class="mt-8 mb-4 grid gap-5 md:grid-cols-2 xl:grid-cols-4 xl:gap-10">
-                  <div class="flex items-center gap-3">
-                    <div class="bg-muted flex size-11 shrink-0 items-center justify-center rounded-[10px] border p-[3px] border-default">
-                      <div class="bg-default flex size-full items-center justify-center rounded-md border border-default">
-                        <UIcon name="i-lucide-users" class="text-highlighted size-[18px]" />
-                      </div>
-                    </div>
-                    <div class="min-w-0">
-                      <div class="text-highlighted text-lg leading-none font-semibold tracking-normal">8,214</div>
-                      <div class="text-muted mt-1.5 text-sm leading-none font-medium">Active Customers</div>
-                    </div>
-                  </div>
-                  <div class="flex items-center gap-3">
-                    <div class="bg-muted flex size-11 shrink-0 items-center justify-center rounded-[10px] border p-[3px] border-default">
-                      <div class="bg-default flex size-full items-center justify-center rounded-md border border-default">
-                        <UIcon name="i-lucide-badge-dollar-sign" class="text-highlighted size-[18px]" />
-                      </div>
-                    </div>
-                    <div class="min-w-0">
-                      <div class="text-highlighted text-lg leading-none font-semibold tracking-normal">$1.28M</div>
-                      <div class="text-muted mt-1.5 text-sm leading-none font-medium">Processed Volume</div>
-                    </div>
-                  </div>
-                  <div class="flex items-center gap-3">
-                    <div class="bg-muted flex size-11 shrink-0 items-center justify-center rounded-[10px] border p-[3px] border-default">
-                      <div class="bg-default flex size-full items-center justify-center rounded-md border border-default">
-                        <UIcon name="i-lucide-receipt-text" class="text-highlighted size-[18px]" />
-                      </div>
-                    </div>
-                    <div class="min-w-0">
-                      <div class="text-highlighted text-lg leading-none font-semibold tracking-normal">$84.2K</div>
-                      <div class="text-muted mt-1.5 text-sm leading-none font-medium">Open Invoices</div>
-                    </div>
-                  </div>
-                  <div class="flex items-center gap-3">
-                    <div class="bg-muted flex size-11 shrink-0 items-center justify-center rounded-[10px] border p-[3px] border-default">
-                      <div class="bg-default flex size-full items-center justify-center rounded-md border border-default">
-                        <UIcon name="i-lucide-shield-alert" class="text-highlighted size-[18px]" />
-                      </div>
-                    </div>
-                    <div class="min-w-0">
-                      <div class="text-highlighted text-lg leading-none font-semibold tracking-normal">12</div>
-                      <div class="text-muted mt-1.5 text-sm leading-none font-medium">Needs Review</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="border-default border-b">
-                <div data-orientation="horizontal">
-                  <UTabs v-model="tabs1Active" :items="tabs1Items" :content="false" color="primary" variant="link" class="text-muted inline-flex items-center justify-center p-1 h-11 gap-0 rounded-none bg-transparent px-4 py-0 sm:px-6 lg:px-8" data-orientation="horizontal" style="outline:none" />
-                </div>
-              </div>
-              <div class="p-4 sm:px-6 lg:px-8">
-                <div class="flex flex-col gap-3 xl:flex-row xl:items-center xl:justify-between">
-                  <div class="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-                    <div class="relative">
-                      <UIcon name="i-lucide-search" class="text-muted absolute top-1/2 left-4 size-4 -translate-y-1/2" />
-                      <UInput v-model="form.searchCustomerIDMethod" type="search" placeholder="Search customer, ID, method..." aria-label="Search customer" name="searchCustomerIDMethod" class="flex md:text-sm bg-(--ui-bg-muted)/40 h-9 w-full rounded-md pl-10 text-sm font-medium sm:w-[260px]" :ui="{ base: 'h-full' }" />
-                    </div>
-                    <UButton color="neutral" variant="outline" class="inline-flex items-center gap-2 whitespace-nowrap transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-default bg-default hover:bg-elevated hover:text-default py-2 h-9 justify-between rounded-md px-3 text-sm font-medium shadow-none" aria-label="Status" type="button" @click="openAction(&quot;Status&quot;)">
-                       Status
-                      <UIcon name="i-lucide-list-filter" class="size-4" />
-                    </UButton>
-                    <UButton color="neutral" variant="outline" class="inline-flex items-center justify-center gap-2 whitespace-nowrap transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-default bg-default hover:bg-elevated hover:text-default py-2 h-9 rounded-md px-3 text-sm font-medium shadow-none" aria-label="Date Range" type="button" @click="openAction(&quot;Date Range&quot;)">
-                      <UIcon name="i-lucide-calendar-days" class="size-4" />
-                      <span class="max-w-[220px] truncate">Date Range</span>
-                    </UButton>
-                  </div>
-                  <div class="flex items-center gap-4">
-                    <UButton color="primary" variant="solid" class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-inverted shadow-sm hover:bg-primary/90 h-9 px-4 py-2" aria-label="Export" type="button" @click="exportCsv()">
-                      <UIcon name="i-lucide-download" class="size-4" />
-                      Export
-                    </UButton>
-                  </div>
-                </div>
-                <div class="border-default mt-4 overflow-hidden rounded-lg border">
-                  <div class="relative w-full overflow-auto">
-                    <!-- Table 1: Customer / Account / Lifetime Spend / Last Payment / Risk Status -->
-                    <UTable v-model:sorting="table1Sorting" v-model:row-selection="table1Selection" :data="table1FilteredRows" :columns="table1Columns" class="w-full caption-bottom text-sm" :ui="{ th: 'px-4 py-3 bg-muted text-muted', td: 'px-4 py-3 border-b border-default', tr: 'hover:bg-muted' }">
-<template #customer-header="{ column }">
-                        <UButton color="neutral" variant="ghost" size="xs" label="Customer" :trailing-icon="column.getIsSorted() ? 'i-lucide-arrow-down' : undefined" @click="column.toggleSorting(column.getIsSorted() === 'asc')" />
-                      </template>
-                      <template #customer-cell="{ row }">
-                        <div class="flex items-start gap-3">
-                          <div>
-                            <div class="text-highlighted text-sm leading-5 font-semibold">{{ row.original.customerText4 }}</div>
-                            <div class="text-muted text-sm leading-4 font-medium">{{ row.original.customerText6 }}</div>
-                          </div>
-                          <UIcon name="i-lucide-arrow-up-right" class="mt-0.5 size-3.5 shrink-0 text-error opacity-0 transition-opacity group-focus-within:opacity-100 group-hover:opacity-100" />
-                        </div>
-                      </template>
-                      <template #account-header="{ column }">
-                        <UButton color="neutral" variant="ghost" size="xs" label="Account" :trailing-icon="column.getIsSorted() ? 'i-lucide-arrow-down' : undefined" @click="column.toggleSorting(column.getIsSorted() === 'asc')" />
-                      </template>
-                      <template #account-cell="{ row }">
-                        <div class="text-highlighted text-sm leading-5 font-semibold">{{ row.original.accountText3 }}</div>
-                        <div class="text-muted text-sm leading-4 font-medium">{{ row.original.accountText5 }}</div>
-                      </template>
-                      <template #lifetimeSpend-header="{ column }">
-                        <UButton color="neutral" variant="ghost" size="xs" label="Lifetime Spend" :trailing-icon="column.getIsSorted() ? 'i-lucide-arrow-down' : undefined" @click="column.toggleSorting(column.getIsSorted() === 'asc')" />
-                      </template>
-                      <template #lifetimeSpend-cell="{ row }">
-                        <div class="text-highlighted text-sm leading-5 font-semibold">{{ row.original.lifetimeSpendText3 }}</div>
-                        <div class="text-muted text-sm leading-4 font-medium">{{ row.original.lifetimeSpendText5 }}</div>
-                      </template>
-                      <template #lastPayment-header="{ column }">
-                        <UButton color="neutral" variant="ghost" size="xs" label="Last Payment" :trailing-icon="column.getIsSorted() ? 'i-lucide-arrow-down' : undefined" @click="column.toggleSorting(column.getIsSorted() === 'asc')" />
-                      </template>
-                      <template #lastPayment-cell="{ row }">
-                        {{ row.original.lastPayment }}
-                      </template>
-                      <template #riskStatus-header="{ column }">
-                        <UButton color="neutral" variant="ghost" size="xs" label="Risk Status" :trailing-icon="column.getIsSorted() ? 'i-lucide-arrow-down' : undefined" @click="column.toggleSorting(column.getIsSorted() === 'asc')" />
-                      </template>
-                      <template #riskStatus-cell="{ row }">
-                        <UBadge color="neutral" variant="subtle" :class="row.original.riskStatusClass2">
-                          <UIcon :name="row.original.riskStatusName3" class="size-3.5" />
-                          <span>{{ row.original.riskStatus }}</span>
-                        </UBadge>
-                      </template>
-                    </UTable>
-                  </div>
-                </div>
-              </div>
-            </section>
+    <div class="min-h-0 flex-1 overflow-y-auto">
+      <main class="mx-auto w-full max-w-7xl space-y-6 p-4 sm:p-6">
+        <section data-copy-block="payment-account-summary" tabindex="0" aria-label="Example customer payment account summary" class="space-y-5">
+          <header>
+            <h1 class="text-2xl font-semibold text-highlighted">Customers</h1>
+            <p class="mt-1 text-sm text-muted">{{ paymentAccounts.length }} fictional accounts · read-only local demo, not connected to a payment provider.</p>
+          </header>
+          <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+            <UCard v-for="metric in accountMetrics" :key="metric.label" :data-account-metric="metric.label">
+              <div class="flex items-center gap-3"><span class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-muted"><UIcon :name="metric.icon" class="size-5 text-highlighted" /></span><div><p class="text-lg font-semibold text-highlighted">{{ metric.value }}</p><p class="text-xs text-muted">{{ metric.label }}</p></div></div>
+            </UCard>
           </div>
-        </main>
-      </div>
+          <p class="text-xs text-muted">Totals cover all example accounts, not the filtered list. Lifetime spend is not volume processed this month.</p>
+        </section>
+
+        <section data-copy-block="payment-account-directory" tabindex="0" aria-label="Example customer payment accounts" class="min-w-0 space-y-5">
+          <h2 class="text-lg font-semibold text-highlighted">Payment accounts</h2>
+          <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            <UFormField label="Search customer, ID or method"><UInput v-model="accountFilters.search" name="paymentAccountSearch" type="search" icon="i-lucide-search" placeholder="Search accounts" class="w-full" /></UFormField>
+            <UFormField label="Risk status"><USelect v-model="accountFilters.status" :items="['All statuses', 'Active', 'Review', 'Blocked']" aria-label="Payment account status filter" class="w-full" /></UFormField>
+            <UFormField label="Payment method"><USelect v-model="accountFilters.method" :items="['All methods', 'Card', 'ACH', 'Wire']" aria-label="Payment account method filter" class="w-full" /></UFormField>
+            <UFormField label="Last payment (UTC)"><USelect v-model="accountFilters.period" :items="['All dates', 'June 2026', 'May 2026', 'Custom range']" aria-label="Payment account date range" class="w-full" /></UFormField>
+          </div>
+          <div v-if="accountFilters.period === 'Custom range'" class="grid gap-3 sm:grid-cols-2">
+            <UFormField label="From (UTC, inclusive)" :error="accountDateError"><UInput v-model="accountFilters.from" name="paymentAccountFrom" type="date" class="w-full" /></UFormField>
+            <UFormField label="To (UTC, inclusive)"><UInput v-model="accountFilters.to" name="paymentAccountTo" type="date" class="w-full" /></UFormField>
+          </div>
+          <div class="flex flex-wrap items-end justify-between gap-3">
+            <div class="flex flex-wrap items-end gap-2"><UFormField label="Sort by"><USelect v-model="accountSort" :items="accountSortItems" aria-label="Payment account sort field" class="min-w-36" /></UFormField><UButton :label="accountDescending ? 'Descending' : 'Ascending'" :icon="accountDescending ? 'i-lucide-arrow-down' : 'i-lucide-arrow-up'" aria-label="Toggle payment account sort direction" color="neutral" variant="outline" @click="accountDescending = !accountDescending" /></div>
+            <div class="flex flex-wrap gap-2"><UButton label="Reset filters" aria-label="Reset payment account filters" color="neutral" variant="ghost" @click="resetAccounts" /><UButton label="Export CSV" aria-label="Export filtered payment accounts" icon="i-lucide-download" :disabled="!visibleAccounts.length" @click="exportAccounts" /></div>
+          </div>
+          <p data-account-count class="text-sm text-muted" aria-live="polite">{{ visibleAccounts.length }} of {{ paymentAccounts.length }} accounts match. Filters and sort apply to every view.</p>
+          <p class="text-xs text-muted">Risk and KYC are demo labels, not live checks. Card details are fictional metadata, never PAN or CVC.</p>
+          <p v-if="accountExportNotice" role="status" class="text-sm text-muted">{{ accountExportNotice }}</p>
+
+          <UTabs v-model="accountView" :items="accountTabs" variant="link" :ui="{ list: 'w-full', trigger: 'min-h-11 flex-1 px-2 text-xs sm:text-sm', label: 'whitespace-normal text-center overflow-visible' }">
+            <template #directory>
+              <div class="hidden min-w-0 overflow-x-auto rounded-lg border border-default md:block">
+                <!-- Table: real per-view columns; computed order shared with mobile and CSV. -->
+                <UTable :data="visibleAccounts" :columns="accountColumns" :get-row-id="row => row.id" :ui="{ th: 'bg-muted', td: 'border-b border-default' }">
+                  <template v-for="header in accountHeaders" :key="header.key" #[`${header.key}-header`]><UButton :label="header.label" :aria-label="`Sort payment accounts by ${header.key}`" :trailing-icon="accountSort === header.key ? accountDescending ? 'i-lucide-arrow-down' : 'i-lucide-arrow-up' : undefined" color="neutral" variant="ghost" size="xs" @click="sortAccounts(header.key)" /></template>
+                  <template #name-cell="{ row }"><UButton :label="row.original.name" :aria-label="`View payment account ${row.original.id}`" color="neutral" variant="link" class="p-0 font-semibold text-highlighted" @click="showAccount(row.original)" /><p class="mt-1 text-xs text-muted">{{ row.original.email }}</p></template>
+                  <template #id-cell="{ row }"><code class="text-xs">{{ row.original.id }}</code><p class="mt-1 text-xs text-muted">{{ row.original.account }}</p></template>
+                  <template #spend-cell="{ row }"><span class="font-medium">{{ accountMoney(row.original.spend) }}</span></template>
+                  <template #lastPayment-cell="{ row }"><time :datetime="row.original.lastPayment + 'T00:00:00Z'">{{ accountDate(row.original.lastPayment) }}</time></template>
+                  <template #method-cell="{ row }">{{ row.original.methodLabel }}</template>
+                  <template #status-cell="{ row }"><UBadge :label="row.original.status" :color="accountStatusColor(row.original.status)" variant="subtle" /></template>
+                  <template #kyc-cell="{ row }"><UBadge :label="row.original.kyc" :color="accountKycColor(row.original.kyc)" variant="subtle" /></template>
+                  <template #openInvoices-cell="{ row }">{{ accountMoney(row.original.openInvoices) }}</template>
+                  <template #empty><p class="p-5 text-sm text-muted">No accounts match these filters.</p></template>
+                </UTable>
+              </div>
+              <div class="space-y-3 md:hidden">
+                <UCard v-for="account in visibleAccounts" :key="account.id" :data-account-mobile="account.id">
+                  <UButton :label="account.name" :aria-label="`View mobile payment account ${account.id}`" color="neutral" variant="link" class="p-0 font-semibold text-highlighted" @click="showAccount(account)" /><p class="mt-1 break-all text-xs text-muted">{{ account.email }}</p><code class="mt-2 block text-xs">{{ account.id }}</code><p class="text-xs text-muted">{{ account.account }}</p>
+                  <dl class="mt-4 space-y-3 text-sm">
+                    <template v-if="accountView === 'customers'"><div><dt class="text-xs text-muted">Lifetime spend (USD)</dt><dd>{{ accountMoney(account.spend) }}</dd></div><div><dt class="text-xs text-muted">Risk status</dt><dd class="mt-1"><UBadge :label="account.status" :color="accountStatusColor(account.status)" variant="subtle" /></dd></div></template>
+                    <template v-else-if="accountView === 'methods'"><div><dt class="text-xs text-muted">Payment method</dt><dd>{{ account.methodLabel }}</dd></div><div><dt class="text-xs text-muted">Lifetime spend (USD)</dt><dd>{{ accountMoney(account.spend) }}</dd></div></template>
+                    <template v-else><div><dt class="text-xs text-muted">Risk status</dt><dd class="mt-1"><UBadge :label="account.status" :color="accountStatusColor(account.status)" variant="subtle" /></dd></div><div><dt class="text-xs text-muted">KYC</dt><dd class="mt-1"><UBadge :label="account.kyc" :color="accountKycColor(account.kyc)" variant="subtle" /></dd></div><div><dt class="text-xs text-muted">Open invoices (USD)</dt><dd>{{ accountMoney(account.openInvoices) }}</dd></div></template>
+                    <div v-if="accountView !== 'risk'"><dt class="text-xs text-muted">Last payment (UTC)</dt><dd><time :datetime="account.lastPayment + 'T00:00:00Z'">{{ accountDate(account.lastPayment) }}</time></dd></div>
+                  </dl>
+                </UCard>
+                <p v-if="!visibleAccounts.length" class="rounded-lg border border-default p-5 text-sm text-muted">No accounts match these filters.</p>
+              </div>
+            </template>
+          </UTabs>
+
+          <UModal v-model:open="accountDetailOpen" :title="selectedAccount?.name || 'Example payment account'" description="Read-only fictional account. No payments, external identity checks or account updates.">
+            <template #body><dl v-if="selectedAccount" class="grid gap-4 text-sm sm:grid-cols-2">
+              <div><dt class="text-xs text-muted">Account ID</dt><dd class="font-mono">{{ selectedAccount.id }}</dd></div><div><dt class="text-xs text-muted">Account type</dt><dd>{{ selectedAccount.account }}</dd></div>
+              <div class="sm:col-span-2"><dt class="text-xs text-muted">Email</dt><dd class="break-all">{{ selectedAccount.email }}</dd></div><div><dt class="text-xs text-muted">Payment method</dt><dd>{{ selectedAccount.methodLabel }}</dd></div><div><dt class="text-xs text-muted">Last payment (UTC)</dt><dd>{{ accountDate(selectedAccount.lastPayment) }}</dd></div>
+              <div><dt class="text-xs text-muted">Lifetime spend (USD)</dt><dd>{{ accountMoney(selectedAccount.spend) }}</dd></div><div><dt class="text-xs text-muted">Open invoices (USD)</dt><dd>{{ accountMoney(selectedAccount.openInvoices) }}</dd></div><div><dt class="text-xs text-muted">Risk status</dt><dd class="mt-1"><UBadge :label="selectedAccount.status" :color="accountStatusColor(selectedAccount.status)" variant="subtle" /></dd></div><div><dt class="text-xs text-muted">KYC</dt><dd class="mt-1"><UBadge :label="selectedAccount.kyc" :color="accountKycColor(selectedAccount.kyc)" variant="subtle" /></dd></div>
+            </dl></template>
+            <template #footer><UButton label="Close" aria-label="Close payment account details" @click="accountDetailOpen = false" /></template>
+          </UModal>
+        </section>
+      </main>
     </div>
-    <!-- Page-local action dialog -->
-    <UModal v-model:open="actionDialog.open" :title="actionDialog.title" description="Update the details below.">
-      <template #body>
-        <p v-if="actionDialog.mode === 'delete'" class="text-sm text-muted">Are you sure you want to remove this item?</p>
-        <div v-else class="space-y-4">
-          <UFormField label="Name"><UInput v-model="actionDialog.name" class="w-full" /></UFormField>
-          <UFormField label="Description"><UTextarea v-model="actionDialog.description" class="w-full" /></UFormField>
-        </div>
-      </template>
-      <template #footer>
-        <div class="flex w-full justify-end gap-2">
-          <UButton color="neutral" variant="outline" @click="actionDialog.open = false">Cancel</UButton>
-          <UButton :color="actionDialog.mode === 'delete' ? 'error' : 'primary'" @click="confirmAction">{{ actionDialog.mode === 'delete' ? 'Remove' : 'Save changes' }}</UButton>
-        </div>
-      </template>
-    </UModal>
+    <BlockCopyTools page="/payment-processor/customers-list-2" />
   </div>
 </template>
-
-<style scoped>
-
-.page-content { min-height: 0; color: var(--ui-text); --chart-1: var(--ui-primary); --chart-2: var(--ui-text-highlighted); --chart-3: var(--ui-text-muted); --chart-4: var(--ui-text-dimmed); --chart-5: var(--ui-border-accented); --chart-6: var(--ui-border); --radius: var(--ui-radius); }
-.page-content > div { min-height: 100%; }
-.page-content *, .page-content ::before, .page-content ::after { border-color: var(--ui-border); }
-.page-content [data-slot="scroll-area-viewport"] { overflow: auto !important; scrollbar-width: thin; }
-.page-content [data-slot="scroll-area-scrollbar"] { display: none; }
-.page-content pre { overflow: auto; }
-.page-content img { object-fit: cover; }
-</style>

@@ -639,6 +639,100 @@ async function checkCustomerEditing(root) {
   result.customerEditing = { immutableId: true, validation: true, collections: true, singleDefaultCard: true, segments: true, draft: true, latestSavedReset: true, localSave: true }
 }
 
+async function checkPaymentAccountSummary(root) {
+  for (const [label, value] of [['Active customers', '6'], ['Lifetime spend (USD)', '$1,172,700'], ['Open invoices (USD)', '$116,000'], ['Needs review', '3']]) {
+    assert.ok(await evaluate(`document.querySelector(${JSON.stringify(root + ` [data-account-metric="${label}"]`)}).textContent.includes(${JSON.stringify(value)})`), `Computed account metric: ${label}`)
+  }
+  result.paymentAccountSummary = true
+}
+
+async function checkPaymentAccounts(root, standalone = false) {
+  const count = root + ' [data-account-count]'
+  const expectCount = async value => waitFor(`document.querySelector(${JSON.stringify(count)}).textContent.startsWith(${JSON.stringify(value)})`)
+  const firstRow = `document.querySelector(${JSON.stringify(root + ' tbody tr')}).textContent`
+  const headers = `document.querySelector(${JSON.stringify(root + ' thead')}).textContent`
+  const search = root + ' input[name="paymentAccountSearch"]'
+  const reset = root + ' button[aria-label="Reset payment account filters"]'
+  const exportButton = root + ' button[aria-label="Export filtered payment accounts"]'
+  await expectCount('10 of 10')
+  await waitFor(`document.querySelectorAll(${JSON.stringify(root + ' tbody tr')}).length === 10`)
+  await chooseOption(root + ' [aria-label="Payment account status filter"]', 'Review'); await expectCount('3 of 10')
+  await chooseTab(root, 'Risk & KYC')
+  await waitFor(`${headers}.includes('KYC') && !${headers}.includes('Lifetime spend')`)
+  assert.ok(await evaluate(`${firstRow}.includes('Aster Labs') && ${firstRow}.includes('Pending')`))
+  await chooseOption(root + ' [aria-label="Payment account method filter"]', 'ACH'); await expectCount('1 of 10')
+  await click(root + ' button[aria-label="View payment account cus_8Vn20P"]')
+  await waitFor(`document.querySelector('[role=dialog]').textContent.includes('finance.aster@example.com') && document.querySelector('[role=dialog]').textContent.includes('Pending')`)
+  assert.equal(await evaluate(`document.querySelectorAll('[role=dialog] input, [role=dialog] textarea').length`), 0)
+  await click('button[aria-label="Close payment account details"]'); await waitFor(`!document.querySelector('[role=dialog]')`)
+  await click(reset)
+  await chooseTab(root, 'Payment Methods')
+  await waitFor(`${headers}.includes('Payment method') && !${headers}.includes('KYC') && !${headers}.includes('Risk status')`)
+  await chooseOption(root + ' [aria-label="Payment account method filter"]', 'Wire'); await expectCount('1 of 10')
+  assert.ok(await evaluate(`${firstRow}.includes('Nomad Robotics') && ${firstRow}.includes('Wire enabled')`))
+  await click(reset)
+  await chooseTab(root, 'All Customers')
+  await chooseOption(root + ' [aria-label="Payment account date range"]', 'June 2026'); await expectCount('6 of 10')
+  await chooseOption(root + ' [aria-label="Payment account date range"]', 'May 2026'); await expectCount('4 of 10')
+  await chooseOption(root + ' [aria-label="Payment account date range"]', 'Custom range')
+  await setInput(root + ' input[name="paymentAccountFrom"]', '2026-06-09')
+  await setInput(root + ' input[name="paymentAccountTo"]', '2026-06-12'); await expectCount('3 of 10')
+  await setInput(root + ' input[name="paymentAccountFrom"]', '2026-06-13'); await expectCount('0 of 10')
+  await waitFor(`document.querySelector(${JSON.stringify(root)}).textContent.includes('Start date must not be after end date.')`)
+  assert.equal(await evaluate(`document.querySelector(${JSON.stringify(exportButton)}).disabled`), true)
+  await setInput(root + ' input[name="paymentAccountFrom"]', '')
+  await waitFor(`document.querySelector(${JSON.stringify(root)}).textContent.includes('Choose both valid UTC dates.')`)
+  await click(reset)
+  await click(root + ' button[aria-label="Sort payment accounts by spend"]')
+  await waitFor(`${firstRow}.includes('Rivergate Studios')`)
+  await click(root + ' button[aria-label="Sort payment accounts by spend"]')
+  await waitFor(`${firstRow}.includes('Nomad Robotics')`)
+  await click(reset)
+  await click(root + ' button[aria-label="Sort payment accounts by lastPayment"]')
+  await waitFor(`${firstRow}.includes('Luma Learning')`)
+  await chooseOption(root + ' [aria-label="Payment account sort field"]', 'Customer')
+  await waitFor(`${firstRow}.includes('Aster Labs')`)
+  await setInput(search, '  CUS_6bd19q  '); await expectCount('1 of 10')
+  await click(root + ' button[aria-label="View payment account cus_6Bd19Q"]')
+  await waitFor(`document.querySelector('[role=dialog]').textContent.includes('Rivergate Studios') && document.querySelector('[role=dialog]').textContent.includes('Rejected')`)
+  await screenshot(`payment-accounts-${standalone ? 'paste' : 'catalog'}-details.png`)
+  await click('button[aria-label="Close payment account details"]'); await waitFor(`!document.querySelector('[role=dialog]')`)
+  await setInput(search, 'not-present'); await expectCount('0 of 10')
+  assert.equal(await evaluate(`document.querySelector(${JSON.stringify(exportButton)}).disabled`), true)
+  await click(reset)
+  await chooseOption(root + ' [aria-label="Payment account method filter"]', 'ACH'); await expectCount('3 of 10')
+  await chooseOption(root + ' [aria-label="Payment account sort field"]', 'Customer')
+  await click(root + ' button[aria-label="Toggle payment account sort direction"]')
+  const downloadPath = resolve(profile, standalone ? 'paste-account-csv' : 'catalog-account-csv')
+  await mkdir(downloadPath, { recursive: true })
+  await send('Browser.setDownloadBehavior', { behavior: 'allow', downloadPath }, null)
+  for (const [tab, view, expectedHeader, firstCustomer] of [
+    ['All Customers', 'customers', 'Risk status', 'Aster Labs'],
+    ['Payment Methods', 'methods', 'Payment method', 'Aster Labs'],
+    ['Risk & KYC', 'risk', 'KYC', 'Aster Labs'],
+  ]) {
+    await chooseTab(root, tab)
+    await click(exportButton)
+    const csvPath = resolve(downloadPath, `payment-accounts-${view}.csv`)
+    const deadline = Date.now() + 10000
+    while (!existsSync(csvPath)) {
+      assert.ok(Date.now() < deadline, 'Account CSV download timed out')
+      await new Promise(resolve => setTimeout(resolve, 50))
+    }
+    const csv = await readFile(csvPath, 'utf8')
+    const lines = csv.split('\r\n')
+    assert.equal(lines.length, 4, 'Export headers plus all three filtered accounts')
+    assert.ok(lines[0].includes(expectedHeader) && lines[1].includes(firstCustomer))
+    assert.ok(csv.includes('cus_8Vn20P') && csv.includes('cus_5Zp62T') && csv.includes('cus_0Aj27K') && !csv.includes('Nomad'))
+    if (view === 'risk') assert.ok(!lines[0].includes('Last payment') && csv.includes('Pending') && csv.includes('8500'))
+    if (view === 'methods') assert.ok(csv.includes('ACH verified') && !lines[0].includes('KYC'))
+  }
+  await send('Browser.setDownloadBehavior', { behavior: 'allow', downloadPath: profile }, null)
+  await screenshot(`payment-accounts-${standalone ? 'paste' : 'catalog'}-risk.png`)
+  await click(reset); await chooseTab(root, 'All Customers')
+  result.paymentAccounts = { realTabs: true, combinedFilters: true, inclusiveUTC: true, invalidRange: true, numericSort: true, chronologicalSort: true, correctDetails: true, emptyResults: true, csvAllViews: true }
+}
+
 async function checkProcessorCustomers(root) {
   const count = root + ' [data-processor-count]'
   const pager = root + ' [data-processor-pagination]'
@@ -830,6 +924,18 @@ async function checkCustomerDirectory(root, metrics = false) {
 
 let previousClipboard
 const normalize = value => value.replaceAll('\r\n', '\n')
+// Visible geometry, including ancestor clipping: a hidden row's un-clipped
+// bounding box is not an interactive control above its internal scroll viewport.
+const visibleControlRect = `(element) => {
+  const rect = element.getBoundingClientRect()
+  let left = Math.max(0, rect.left), right = Math.min(innerWidth, rect.right), top = Math.max(64, rect.top), bottom = Math.min(innerHeight, rect.bottom)
+  for (let parent = element.parentElement; parent; parent = parent.parentElement) {
+    const style = getComputedStyle(parent), bounds = parent.getBoundingClientRect()
+    if (/auto|scroll|hidden|clip/.test(style.overflowX)) { left = Math.max(left, bounds.left); right = Math.min(right, bounds.right) }
+    if (/auto|scroll|hidden|clip/.test(style.overflowY)) { top = Math.max(top, bounds.top); bottom = Math.min(bottom, bounds.bottom) }
+  }
+  return { left, right, top, bottom, width: Math.max(0, right - left), height: Math.max(0, bottom - top) }
+}`
 const result = { copied: [], pasteTests: [], screenshots: profile }
 try {
   const target = await send('Target.createTarget', { url: 'about:blank' }, null)
@@ -848,8 +954,9 @@ try {
     await waitFor('document.querySelector("[role=toolbar]")')
     for (const block of exports.filter(block => block.page === page.path)) {
       await selectBlock(block.id)
-      const overlapsControls = await evaluate(`(() => { const toolbar = document.querySelector('[role=toolbar]').getBoundingClientRect(); return [...document.querySelector('[data-page]').querySelectorAll('button, a, input, textarea, select, [role=button], [role=combobox]')].some(element => { const r = element.getBoundingClientRect(); return r.width && r.height && toolbar.left < r.right && toolbar.right > r.left && toolbar.top < r.bottom && toolbar.bottom > r.top; }); })()`)
-      assert.equal(overlapsControls, false, `${block.id}: tools overlap native controls`)
+      const controlsClear = `(() => { const visibleRect = ${visibleControlRect}; const toolbar = document.querySelector('[role=toolbar]').getBoundingClientRect(); return ![...document.querySelector('[data-page]').querySelectorAll('button, a, input, textarea, select, [role=button], [role=combobox]'), document.querySelector('button[aria-label="Elegir un bloque para copiar"]')].some(element => { const r = visibleRect(element); return r.width && r.height && toolbar.left < r.right && toolbar.right > r.left && toolbar.top < r.bottom && toolbar.bottom > r.top; }); })()`
+      await waitFor(controlsClear)
+      assert.equal(await evaluate(controlsClear), true, `${block.id}: tools overlap native controls`)
       await click('button[aria-label="Copiar componente completo"]')
       await waitFor(`document.querySelector('button[aria-label="Copiar componente completo"]')?.textContent.includes('Copiado')`)
       const copied = normalize(await evaluate('navigator.clipboard.readText()'))
@@ -959,6 +1066,16 @@ try {
       await checkProcessorCustomers('[data-copy-block="processor-customer-directory"]')
       await selectBlock('processor-customer-directory')
     }
+    if (page.path === '/payment-processor/customers-list-2') {
+      await checkPaymentAccountSummary('[data-copy-block="payment-account-summary"]')
+      await evaluate(`document.querySelector('[data-copy-block="payment-account-summary"]').scrollIntoView({ block: 'start' })`)
+      await screenshot(page.key + '-summary.png')
+      await evaluate(`document.documentElement.classList.add('dark')`)
+      await screenshot(page.key + '-summary-dark.png')
+      await evaluate(`document.documentElement.classList.remove('dark')`)
+      await checkPaymentAccounts('[data-copy-block="payment-account-directory"]')
+      await selectBlock('payment-account-directory')
+    }
     assert.deepEqual(errors, [], `${page.path}: browser errors`)
     await screenshot(page.key + '.png')
     const lightColor = await evaluate(`getComputedStyle(document.querySelector('[data-page]')).color`)
@@ -1006,6 +1123,8 @@ try {
     await tap('[role="menuitem"]')
     await waitFor('document.querySelector("[role=toolbar]")')
     assert.equal(await evaluate(`(() => { const r = document.querySelector('[role=toolbar]').getBoundingClientRect(); return r.left >= 0 && r.right <= window.innerWidth; })()`), true)
+    // Menu closing, instant scrolling and the picker's new position settle asynchronously.
+    await waitFor(`!document.querySelector('[role=menuitem]') && (() => { const visibleRect = ${visibleControlRect}; const picker = document.querySelector('button[aria-label="Elegir un bloque para copiar"]').getBoundingClientRect(); return ![...document.querySelector('[data-page]').querySelectorAll('button, a, input, textarea, select, [role=button], [role=combobox]')].some(element => { const r = visibleRect(element); return r.width && r.height && picker.left < r.right && picker.right > r.left && picker.top < r.bottom && picker.bottom > r.top; }); })()`)
     await screenshot(page.key + '-mobile.png')
     if (page.path === '/developers/api-keys') {
       const root = '[data-copy-block="developer-api-key-manager"]'
@@ -1115,6 +1234,31 @@ try {
       await screenshot(page.key + '-mobile-filtered.png')
       assert.equal(await evaluate('document.documentElement.scrollWidth <= window.innerWidth'), true)
     }
+    if (page.path === '/payment-processor/customers-list-2') {
+      const root = '[data-copy-block="payment-account-directory"]'
+      await chooseOption(root + ' [aria-label="Payment account status filter"]', 'Blocked')
+      await waitFor(`document.querySelectorAll('[data-account-mobile]').length === 1`)
+      await chooseTab(root, 'Risk & KYC')
+      await waitFor(`document.querySelector('[data-account-mobile]').textContent.includes('Rejected')`)
+      await evaluate(`document.querySelector(${JSON.stringify(root + ' [role=tablist]')}).scrollIntoView({ block: 'start' })`)
+      await screenshot(page.key + '-mobile-risk.png')
+      await click('button[aria-label="View mobile payment account cus_6Bd19Q"]')
+      await waitFor(`document.querySelector('[role=dialog]').textContent.includes('Rivergate Studios')`)
+      await screenshot(page.key + '-mobile-details.png')
+      await click('button[aria-label="Close payment account details"]'); await waitFor(`!document.querySelector('[role=dialog]')`)
+      await click(root + ' button[aria-label="Reset payment account filters"]')
+      await chooseTab(root, 'Payment Methods')
+      await chooseOption(root + ' [aria-label="Payment account method filter"]', 'Wire')
+      await waitFor(`document.querySelector('[data-account-mobile]').textContent.includes('Wire enabled')`)
+      await evaluate(`document.querySelector(${JSON.stringify(root + ' [role=tablist]')}).scrollIntoView({ block: 'start' })`)
+      assert.ok(await evaluate(`[...document.querySelectorAll(${JSON.stringify(root + ' [role=tab] [data-slot=label]')})].every(label => label.scrollWidth <= label.clientWidth)`), 'Mobile account tab labels must not truncate')
+      await screenshot(page.key + '-mobile-methods.png')
+      await evaluate(`document.documentElement.classList.add('dark')`)
+      await screenshot(page.key + '-mobile-dark.png')
+      await evaluate(`document.documentElement.classList.remove('dark')`)
+      assert.equal(await evaluate('document.documentElement.scrollWidth <= window.innerWidth'), true)
+      result.paymentAccountMobile = true
+    }
     assert.deepEqual(errors, [], `${page.path}: mobile browser errors`)
   }
   result.mobileSelector = true
@@ -1169,6 +1313,8 @@ try {
     if (block.id === 'ecommerce-customer-history') await checkCustomerHistory('[data-paste-test]')
     if (block.id === 'ecommerce-customer-details') await checkCustomerDetails('[data-paste-test]')
     if (block.id === 'processor-customer-directory') await checkProcessorCustomers('[data-paste-test]')
+    if (block.id === 'payment-account-summary') await checkPaymentAccountSummary('[data-paste-test]')
+    if (block.id === 'payment-account-directory') await checkPaymentAccounts('[data-paste-test]', true)
     if (block.id === 'ecommerce-customer-metrics') {
       assert.equal(await evaluate('document.querySelectorAll("[data-customer-metric]").length'), 4)
       assert.ok(await evaluate(`document.querySelector('[data-customer-metric="count"]').textContent.includes('11') && document.querySelector('[data-customer-metric="repeat"]').textContent.includes('100.0%')`))

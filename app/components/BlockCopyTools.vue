@@ -11,10 +11,12 @@ const loading = ref(false)
 const activeId = ref('')
 const activeElement = shallowRef<HTMLElement>()
 const toolbar = useTemplateRef<HTMLElement>('toolbar')
+const picker = useTemplateRef<HTMLElement>('picker')
 const codeElement = useTemplateRef<HTMLElement>('codeElement')
 const source = computed(() => sources.value.find(block => block.id === activeId.value))
 const activeTitle = computed(() => pageBlocks.value.find(block => block.id === activeId.value)?.title)
 const menuOpen = ref(false)
+const pickerMenuOpen = ref(false)
 const viewerOpen = ref(false)
 const viewerSource = shallowRef<BlockSource>()
 const viewerMode = ref<'component' | 'template'>('component')
@@ -24,6 +26,7 @@ const copiedMode = ref<'component' | 'template'>('component')
 const visible = ref(false)
 const outlineStyle = ref<Record<string, string>>({})
 const toolbarStyle = ref<Record<string, string>>({})
+const pickerStyle = ref<Record<string, string>>({ bottom: '16px' })
 const displayedCode = computed(() => viewerSource.value?.[viewerMode.value] || '')
 let pendingLoad: Promise<void> | undefined
 let hideTimer: ReturnType<typeof setTimeout> | undefined
@@ -66,8 +69,48 @@ function scheduleHide() {
   }, 180)
 }
 
+function visibleControlRects(controls: Iterable<HTMLElement>) {
+  const ancestors = new Map<Element, { rect: DOMRect, clipX: boolean, clipY: boolean }>()
+  return [...controls].map(control => {
+    const rect = control.getBoundingClientRect()
+    let left = Math.max(0, rect.left), right = Math.min(window.innerWidth, rect.right)
+    let top = Math.max(64, rect.top), bottom = Math.min(window.innerHeight, rect.bottom)
+    // Off-screen rows in an internal scroller must not block empty space above it.
+    for (let parent = control.parentElement; parent; parent = parent.parentElement) {
+      let clip = ancestors.get(parent)
+      if (!clip) {
+        const style = getComputedStyle(parent)
+        clip = { rect: parent.getBoundingClientRect(), clipX: /auto|scroll|hidden|clip/.test(style.overflowX), clipY: /auto|scroll|hidden|clip/.test(style.overflowY) }
+        ancestors.set(parent, clip)
+      }
+      if (clip.clipX) { left = Math.max(left, clip.rect.left); right = Math.min(right, clip.rect.right) }
+      if (clip.clipY) { top = Math.max(top, clip.rect.top); bottom = Math.min(bottom, clip.rect.bottom) }
+    }
+    return new DOMRect(left, top, Math.max(0, right - left), Math.max(0, bottom - top))
+  }).filter(rect => rect.width && rect.height)
+}
+
+function updatePickerPosition() {
+  if (!picker.value || pickerMenuOpen.value || viewerOpen.value) return
+  const page = [...document.querySelectorAll<HTMLElement>('[data-page]')].find(element => element.dataset.page === props.page)
+  if (!page) return
+  const rect = picker.value.getBoundingClientRect()
+  const left = Math.max(12, window.innerWidth - rect.width - 16)
+  const controls = visibleControlRects(page.querySelectorAll<HTMLElement>('button, a, input, textarea, select, [role="button"], [role="combobox"]'))
+  const bottom = window.innerHeight - rect.height - 16
+  const candidates = [bottom, ...controls.flatMap(control => [control.top - rect.height - 4, control.bottom + 4])]
+    .filter(top => top >= 64 && top <= bottom).sort((a, b) => b - a)
+  const top = candidates.find(top => !controls.some(control => left < control.right && left + rect.width > control.left && top < control.bottom && top + rect.height > control.top)) ?? bottom
+  if (pickerStyle.value.top !== `${top}px`) {
+    pickerStyle.value = { top: `${top}px` }
+    // Reposition the toolbar after Vue applies the picker's new coordinates.
+    void nextTick(() => { if (!disposed) queuePosition() })
+  }
+}
+
 function updatePosition() {
   frame = 0
+  updatePickerPosition()
   const element = activeElement.value
   if (!element?.isConnected) { visible.value = false; return }
   const rect = element.getBoundingClientRect()
@@ -78,8 +121,11 @@ function updatePosition() {
   const width = toolbar.value?.offsetWidth || Math.min(320, window.innerWidth - 24)
   const height = toolbar.value?.offsetHeight || 38
   const left = Math.max(12, Math.min(rect.right - width, window.innerWidth - width - 12))
-  const nativeControls = [...(element.closest('[data-page]')?.querySelectorAll<HTMLElement>('button, a, input, textarea, select, [role="button"], [role="combobox"]') || [])]
-    .map(control => control.getBoundingClientRect()).filter(control => control.width && control.height)
+  // The fixed mobile/keyboard picker also occupies space outside the page.
+  // Long blocks can otherwise place the Copy button underneath that picker.
+  const nativeControls = visibleControlRects([...(element.closest('[data-page]')?.querySelectorAll<HTMLElement>('button, a, input, textarea, select, [role="button"], [role="combobox"]') || []),
+    ...document.querySelectorAll<HTMLElement>('[data-copy-tools] button')]
+    .filter(control => !control.closest('[role="toolbar"]')))
   const candidates = [rect.top - height - 4, rect.top + 4, rect.top + 48, rect.bottom + 4,
     ...nativeControls.flatMap(control => [control.top - height - 4, control.bottom + 4]), 64]
     .map(top => Math.max(64, Math.min(top, window.innerHeight - height - 12)))
@@ -192,10 +238,12 @@ const blockItems = computed<DropdownMenuItem[]>(() => pageBlocks.value.map(block
 })))
 
 watch(menuOpen, open => { if (open) keepVisible(); else scheduleHide() })
+watch(pickerMenuOpen, open => { if (!open) queuePosition() })
 watch(viewerOpen, open => { if (open) keepVisible(); else scheduleHide() })
 
 onMounted(() => {
   observer = new ResizeObserver(queuePosition)
+  void nextTick(queuePosition)
   // pointerover also fires when scrolling moves content beneath a stationary
   // cursor. Only real movement should replace a keyboard-selected block.
   document.addEventListener('pointermove', inspectTarget)
@@ -239,8 +287,8 @@ onBeforeUnmount(() => {
           </UDropdownMenu>
         </div>
       </div>
-      <div data-copy-tools class="fixed bottom-4 right-4 z-40">
-        <UDropdownMenu :items="blockItems" :content="{ side: 'top', align: 'end' }">
+      <div ref="picker" data-copy-tools class="fixed right-4 z-40" :style="pickerStyle">
+        <UDropdownMenu v-model:open="pickerMenuOpen" :items="blockItems" :content="{ side: 'top', align: 'end' }">
           <UButton icon="i-lucide-copy" color="neutral" variant="outline" size="sm" class="bg-default shadow-sm" :label="`${pageBlocks.length} ${pageBlocks.length === 1 ? 'bloque copiable' : 'bloques copiables'}`" aria-label="Elegir un bloque para copiar" />
         </UDropdownMenu>
       </div>
