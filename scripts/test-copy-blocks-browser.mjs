@@ -639,6 +639,141 @@ async function checkCustomerEditing(root) {
   result.customerEditing = { immutableId: true, validation: true, collections: true, singleDefaultCard: true, segments: true, draft: true, latestSavedReset: true, localSave: true }
 }
 
+async function checkCommandPortfolio(root) {
+  const selected = `document.querySelector(${JSON.stringify(root + ' [data-command-selected]')}).textContent`
+  assert.ok(await evaluate(`document.querySelector(${JSON.stringify(root + ' [data-command-summary]')}).textContent.includes('$8,700,000 / $14,100,000')`))
+  await click(root + ' [aria-label="Refresh command summary"]')
+  await waitFor(`document.querySelector(${JSON.stringify(root)}).textContent.includes('no server was contacted')`)
+  await chooseOption(root + ' [aria-label="Command selected project"]', 'Public API v1')
+  await waitFor(`${selected}.includes('Off Track') && ${selected}.includes('Ben Lewis')`)
+  await click(root + ' [aria-label="Browse command projects"]')
+  await waitFor(`document.querySelector('input[name="commandProjectSearch"]')`)
+  await setInput('input[name="commandProjectSearch"]', '  ONB-118  ')
+  await waitFor(`document.querySelector('[data-command-project-count]').textContent.startsWith('1 of 4')`)
+  await click('[aria-label="Select command project ONB-118"]')
+  await waitFor(`!document.querySelector('[role=dialog]') && ${selected}.includes('Onboarding flow launch') && ${selected}.includes('Riya Sharma')`)
+  await click(root + ' [aria-label="Browse command projects"]')
+  await waitFor(`document.querySelector('input[name="commandProjectSearch"]')`)
+  await setInput('input[name="commandProjectSearch"]', 'not-present')
+  await waitFor(`document.querySelector('[role=dialog]').textContent.includes('No projects match')`)
+  await click('[aria-label="Close command project browser"]'); await waitFor(`!document.querySelector('[role=dialog]')`)
+  result.commandPortfolio = { calculatedBudget: true, projectSelection: true, idSearch: true, emptyResults: true, localRefresh: true }
+}
+
+async function checkCommandSprint(root) {
+  const total = `document.querySelector(${JSON.stringify(root + ' [data-command-sprint-total]')}).textContent`
+  assert.ok(await evaluate(`${total}.includes('32 / 47 points · 68%')`))
+  const points = await evaluate(`document.querySelector(${JSON.stringify(root + ' polyline')}).getAttribute('points')`)
+  await chooseOption(root + ' [aria-label="Command sprint period"]', 'Previous sprint')
+  await waitFor(`${total}.includes('40 / 44 points · 91%')`)
+  assert.notEqual(await evaluate(`document.querySelector(${JSON.stringify(root + ' polyline')}).getAttribute('points')`), points)
+  await click(root + ' summary')
+  assert.equal(await evaluate(`document.querySelectorAll(${JSON.stringify(root + ' tbody tr')}).length`), 7)
+  assert.ok(await evaluate(`document.querySelector(${JSON.stringify(root + ' tbody tr:last-child')}).textContent.includes('40') && document.querySelector(${JSON.stringify(root + ' tbody tr:last-child')}).textContent.includes('44')`))
+  await chooseOption(root + ' [aria-label="Command sprint period"]', 'This sprint')
+  result.commandSprint = { periodSwitch: true, calculatedProgress: true, dynamicSvg: true, accessibleData: true, noPrinting: true }
+}
+
+async function checkCommandBudget(root) {
+  const total = `document.querySelector(${JSON.stringify(root + ' [data-command-budget-total]')}).textContent`
+  assert.ok(await evaluate(`${total}.includes('$8,700,000 / $14,100,000 USD · 62%')`))
+  const points = await evaluate(`document.querySelector(${JSON.stringify(root + ' polyline')}).getAttribute('points')`)
+  await chooseOption(root + ' [aria-label="Command fiscal year"]', 'FY2025')
+  await waitFor(`${total}.includes('$7,200,000 / $12,000,000 USD · 60%')`)
+  assert.notEqual(await evaluate(`document.querySelector(${JSON.stringify(root + ' polyline')}).getAttribute('points')`), points)
+  await click(root + ' summary')
+  assert.equal(await evaluate(`document.querySelectorAll(${JSON.stringify(root + ' tbody tr')}).length`), 9)
+  assert.ok(await evaluate(`document.querySelector(${JSON.stringify(root + ' tbody tr:last-child')}).textContent.includes('Forecast') && document.querySelector(${JSON.stringify(root + ' tbody tr:last-child')}).textContent.includes('$11,400,000')`))
+  await chooseOption(root + ' [aria-label="Command fiscal year"]', 'FY2026')
+  result.commandBudget = { fiscalYears: true, calculatedBurn: true, dynamicSvg: true, actualVsForecast: true, accessibleData: true }
+}
+
+async function checkCommandMilestones(root) {
+  const count = `document.querySelector(${JSON.stringify(root + ' [data-command-milestone-count]')}).textContent`
+  await waitFor(`${count}.startsWith('3 shown')`)
+  await click(root + ' [aria-label="Toggle all command milestones"]')
+  await waitFor(`${count}.startsWith('5 shown')`)
+  await chooseOption(root + ' [aria-label="Command milestone status"]', 'At Risk')
+  await waitFor(`${count}.startsWith('2 shown')`)
+  await click(root + ' [aria-label="View command milestone ONB-118"]')
+  await waitFor(`document.querySelector('[role=dialog]').textContent.includes('invite-step blocker')`)
+  await chooseOption('[aria-label="Command milestone draft status"]', 'Completed')
+  await click('[aria-label="Cancel command milestone edit"]'); await waitFor(`!document.querySelector('[role=dialog]')`)
+  assert.ok(await evaluate(`document.querySelector(${JSON.stringify(root + ' [data-command-milestone="ONB-118"]')}).textContent.includes('At Risk')`))
+  await click(root + ' [aria-label="View command milestone ONB-118"]')
+  await chooseOption('[aria-label="Command milestone draft status"]', 'Completed')
+  await click('[aria-label="Save command milestone status"]')
+  await waitFor(`!document.querySelector('[role=dialog]') && ${count}.startsWith('1 shown')`)
+  await chooseOption(root + ' [aria-label="Command milestone status"]', 'Completed')
+  await waitFor(`document.querySelector(${JSON.stringify(root + ' [data-command-milestone="ONB-118"]')})`)
+  await chooseOption(root + ' [aria-label="Command milestone status"]', 'All statuses')
+  result.commandMilestones = { filters: true, showAll: true, correctRecord: true, cancel: true, localStatusSave: true }
+}
+
+async function checkCommandTeam(root) {
+  const count = `document.querySelector(${JSON.stringify(root + ' [data-command-team-count]')}).textContent`
+  await waitFor(`${count}.startsWith('8 of 8')`)
+  await chooseOption(root + ' [aria-label="Command team status"]', 'Absent'); await waitFor(`${count}.startsWith('2 of 8')`)
+  await chooseOption(root + ' [aria-label="Command team status"]', 'Invited'); await waitFor(`${count}.startsWith('0 of 8')`)
+  await click(root + ' [aria-label="Open command invite preview"]')
+  await waitFor(`document.querySelector('input[name="commandInviteName"]')`)
+  await click('[aria-label="Save command invite preview"]')
+  await waitFor(`document.querySelector('[role=dialog]').textContent.includes('between 1 and 100')`)
+  await setInput('input[name="commandInviteName"]', 'Local Teammate')
+  await setInput('input[name="commandInviteEmail"]', 'invalid')
+  await click('[aria-label="Save command invite preview"]')
+  await waitFor(`document.querySelector('[role=dialog]').textContent.includes('valid example email')`)
+  await setInput('input[name="commandInviteEmail"]', 'KIARA@example.com')
+  await click('[aria-label="Save command invite preview"]')
+  await waitFor(`document.querySelector('[role=dialog]').textContent.includes('already in the team')`)
+  await click('[aria-label="Cancel command invite"]'); await waitFor(`!document.querySelector('[role=dialog]')`)
+  assert.equal(await evaluate(`document.querySelectorAll(${JSON.stringify(root + ' [data-command-member]')}).length`), 0)
+  await click(root + ' [aria-label="Open command invite preview"]')
+  await waitFor(`document.querySelector('input[name="commandInviteName"]')`)
+  await setInput('input[name="commandInviteName"]', 'Local Teammate')
+  await setInput('input[name="commandInviteEmail"]', 'local@example.com')
+  await click('[aria-label="Save command invite preview"]')
+  await waitFor(`!document.querySelector('[role=dialog]') && ${count}.startsWith('9 of 9')`)
+  assert.ok(await evaluate(`document.querySelector(${JSON.stringify(root)}).textContent.includes('no email was sent')`))
+  await chooseOption(root + ' [aria-label="Command team status"]', 'Invited'); await waitFor(`${count}.startsWith('1 of 9')`)
+  await chooseOption(root + ' [aria-label="Command team status"]', 'All statuses')
+  result.commandTeam = { statusFilters: true, nameEmailValidation: true, duplicateEmail: true, cancel: true, localInvite: true, noDelivery: true }
+}
+
+async function checkCommandActivity(root) {
+  const count = `document.querySelector(${JSON.stringify(root + ' [data-command-activity-count]')}).textContent`
+  await waitFor(`${count}.startsWith('3 shown')`)
+  await click(root + ' [aria-label="Toggle all command activity"]'); await waitFor(`${count}.startsWith('5 shown')`)
+  await chooseOption(root + ' [aria-label="Command activity filter"]', 'Unread only'); await waitFor(`${count}.startsWith('2 shown')`)
+  await click(root + ' [aria-label="View command activity RFC-112"]')
+  await waitFor(`document.querySelector('[role=dialog]').textContent.includes('review caching and query plans')`)
+  await click('[aria-label="Close command activity"]'); await waitFor(`!document.querySelector('[role=dialog]')`)
+  await click(root + ' [aria-label="View command activity RFC-112"]')
+  await click('[aria-label="Mark command activity read"]')
+  await waitFor(`!document.querySelector('[role=dialog]') && ${count}.startsWith('1 shown')`)
+  await click(root + ' [aria-label="View command activity RFC-126"]')
+  await click('[aria-label="Mark command activity read"]')
+  await waitFor(`!document.querySelector('[role=dialog]') && ${count}.startsWith('0 shown')`)
+  assert.ok(await evaluate(`document.querySelector(${JSON.stringify(root)}).textContent.includes('No activity matches')`))
+  await chooseOption(root + ' [aria-label="Command activity filter"]', 'All activity')
+  result.commandActivity = { showAll: true, correctEvent: true, readState: true, unreadFilter: true, emptyResults: true }
+}
+
+async function checkCommandThroughput(root) {
+  const total = `document.querySelector(${JSON.stringify(root + ' [data-command-throughput-total]')}).textContent`
+  assert.ok(await evaluate(`${total}.includes('100 completed / 118 planned issues · 85%')`))
+  assert.equal(await evaluate(`document.querySelectorAll(${JSON.stringify(root + ' svg rect')}).length`), 8)
+  await chooseOption(root + ' [aria-label="Command throughput range"]', 'Last 8 weeks')
+  await waitFor(`${total}.includes('180 completed / 208 planned issues · 87%')`)
+  assert.equal(await evaluate(`document.querySelectorAll(${JSON.stringify(root + ' svg rect')}).length`), 16)
+  await click(root + ' summary')
+  assert.equal(await evaluate(`document.querySelectorAll(${JSON.stringify(root + ' tbody tr')}).length`), 8)
+  await chooseOption(root + ' [aria-label="Command throughput range"]', 'Last 4 weeks')
+  result.commandThroughput = { actualChart: true, ranges: true, calculatedTotals: true, accessibleData: true }
+}
+
+const commandBlockChecks = { 'command-portfolio': checkCommandPortfolio, 'command-sprint': checkCommandSprint, 'command-budget': checkCommandBudget, 'command-milestones': checkCommandMilestones, 'command-team': checkCommandTeam, 'command-activity': checkCommandActivity, 'command-throughput': checkCommandThroughput }
+
 async function checkCustomerOverview(root) {
   const text = `document.querySelector(${JSON.stringify(root)}).textContent`
   const count = `document.querySelector(${JSON.stringify(root + ' [data-overview-count]')}).textContent`
@@ -1148,7 +1283,7 @@ try {
     await waitFor('document.querySelector("[role=toolbar]")')
     for (const block of exports.filter(block => block.page === page.path)) {
       await selectBlock(block.id)
-      const controlsClear = `(() => { const visibleRect = ${visibleControlRect}; const toolbar = document.querySelector('[role=toolbar]').getBoundingClientRect(); return ![...document.querySelector('[data-page]').querySelectorAll('button, a, input, textarea, select, [role=button], [role=combobox]'), document.querySelector('button[aria-label="Elegir un bloque para copiar"]')].some(element => { const r = visibleRect(element); return r.width && r.height && toolbar.left < r.right && toolbar.right > r.left && toolbar.top < r.bottom && toolbar.bottom > r.top; }); })()`
+      const controlsClear = `(() => { const visibleRect = ${visibleControlRect}; const toolbar = document.querySelector('[role=toolbar]').getBoundingClientRect(); return ![...document.querySelector('[data-page]').querySelectorAll('button, a, input, textarea, select, summary, [role=button], [role=combobox]'), document.querySelector('button[aria-label="Elegir un bloque para copiar"]')].some(element => { const r = visibleRect(element); return r.width && r.height && toolbar.left < r.right && toolbar.right > r.left && toolbar.top < r.bottom && toolbar.bottom > r.top; }); })()`
       await waitFor(controlsClear)
       assert.equal(await evaluate(controlsClear), true, `${block.id}: tools overlap native controls`)
       await click('button[aria-label="Copiar componente completo"]')
@@ -1285,6 +1420,17 @@ try {
       await checkCustomerOverview('[data-copy-block="processor-customer-overview"]')
       await selectBlock('processor-customer-overview')
     }
+    if (page.path === '/project-management/dashboard-3') {
+      for (const [id, check] of Object.entries(commandBlockChecks)) {
+        await check(`[data-copy-block="${id}"]`)
+        await evaluate(`document.querySelector('[data-copy-block="${id}"]').scrollIntoView({ block: 'start' })`)
+        await screenshot(page.key + '-' + id + '.png')
+        await evaluate(`document.documentElement.classList.add('dark')`)
+        await screenshot(page.key + '-' + id + '-dark.png')
+        await evaluate(`document.documentElement.classList.remove('dark')`)
+      }
+      await selectBlock('command-throughput')
+    }
     assert.deepEqual(errors, [], `${page.path}: browser errors`)
     await screenshot(page.key + '.png')
     const lightColor = await evaluate(`getComputedStyle(document.querySelector('[data-page]')).color`)
@@ -1333,7 +1479,7 @@ try {
     await waitFor('document.querySelector("[role=toolbar]")')
     assert.equal(await evaluate(`(() => { const r = document.querySelector('[role=toolbar]').getBoundingClientRect(); return r.left >= 0 && r.right <= window.innerWidth; })()`), true)
     // Menu closing, instant scrolling and the picker's new position settle asynchronously.
-    await waitFor(`!document.querySelector('[role=menuitem]') && (() => { const visibleRect = ${visibleControlRect}; const picker = document.querySelector('button[aria-label="Elegir un bloque para copiar"]').getBoundingClientRect(); return ![...document.querySelector('[data-page]').querySelectorAll('button, a, input, textarea, select, [role=button], [role=combobox]')].some(element => { const r = visibleRect(element); return r.width && r.height && picker.left < r.right && picker.right > r.left && picker.top < r.bottom && picker.bottom > r.top; }); })()`)
+    await waitFor(`!document.querySelector('[role=menuitem]') && (() => { const visibleRect = ${visibleControlRect}; const picker = document.querySelector('button[aria-label="Elegir un bloque para copiar"]').getBoundingClientRect(); return ![...document.querySelector('[data-page]').querySelectorAll('button, a, input, textarea, select, summary, [role=button], [role=combobox]')].some(element => { const r = visibleRect(element); return r.width && r.height && picker.left < r.right && picker.right > r.left && picker.top < r.bottom && picker.bottom > r.top; }); })()`)
     await screenshot(page.key + '-mobile.png')
     if (page.path === '/developers/api-keys') {
       const root = '[data-copy-block="developer-api-key-manager"]'
@@ -1510,6 +1656,22 @@ try {
       await evaluate(`document.documentElement.classList.remove('dark')`)
       assert.equal(await evaluate('document.documentElement.scrollWidth <= window.innerWidth'), true)
     }
+    if (page.path === '/project-management/dashboard-3') {
+      await chooseOption('[aria-label="Command sprint period"]', 'Previous sprint')
+      await screenshot(page.key + '-mobile-sprint.png')
+      await chooseOption('[aria-label="Command fiscal year"]', 'FY2025')
+      await screenshot(page.key + '-mobile-budget.png')
+      await click('[aria-label="Open command invite preview"]')
+      await waitFor(`document.querySelector('input[name="commandInviteName"]')`)
+      await screenshot(page.key + '-mobile-invite.png')
+      await click('[aria-label="Cancel command invite"]'); await waitFor(`!document.querySelector('[role=dialog]')`)
+      await evaluate(`document.querySelector('[data-copy-block="command-throughput"]').scrollIntoView({ block: 'start' })`)
+      await screenshot(page.key + '-mobile-throughput.png')
+      await evaluate(`document.documentElement.classList.add('dark')`)
+      await screenshot(page.key + '-mobile-dark.png')
+      await evaluate(`document.documentElement.classList.remove('dark')`)
+      assert.equal(await evaluate('document.documentElement.scrollWidth <= window.innerWidth'), true)
+    }
     assert.deepEqual(errors, [], `${page.path}: mobile browser errors`)
   }
   result.mobileSelector = true
@@ -1570,6 +1732,7 @@ try {
     if (block.id === 'processor-subscription-profile') await checkSubscriptionProfile('[data-paste-test]')
     if (block.id === 'processor-subscription-ledger') await checkSubscriptionLedger('[data-paste-test]', true)
     if (block.id === 'processor-customer-overview') await checkCustomerOverview('[data-paste-test]')
+    if (commandBlockChecks[block.id]) await commandBlockChecks[block.id]('[data-paste-test]')
     if (block.id === 'payment-account-summary') await checkPaymentAccountSummary('[data-paste-test]')
     if (block.id === 'payment-account-directory') await checkPaymentAccounts('[data-paste-test]', true)
     if (block.id === 'ecommerce-customer-metrics') {

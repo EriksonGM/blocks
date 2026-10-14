@@ -1,919 +1,218 @@
-<!-- Page: /project-management/dashboard-3 | All content, state and styles live in this file. -->
+<!-- Page: /project-management/dashboard-3 | Independent, local command-center examples. -->
 <script setup lang="ts">
-const route = useRoute()
+useHead({ title: 'Dashboard 3 · Blocks Admin' })
 
-useHead({ title: "Dashboard 3 · Blocks Admin" })
+// @copy:command-vue:start
+import { computed, reactive, ref, useId } from 'vue'
+// @copy:command-vue:end
 
-const toast = useToast()
+// @copy:command-portfolio:start
+const commandProjects = [
+  { id: 'SHD-001', name: 'Shadcnblocks', status: 'On Track', budget: 5000000, spent: 3000000, manager: 'Kiara Laras', lead: 'Joe Tesla', members: ['Kiara Laras', 'Joe Tesla', 'Tania Brooks', 'Ben Lewis'] },
+  { id: 'REV-241', name: 'Revenue dashboard v2', status: 'On Track', budget: 2800000, spent: 1500000, manager: 'Ava Reed', lead: 'Tania Brooks', members: ['Ava Reed', 'Tania Brooks', 'Maya Rao'] },
+  { id: 'ONB-118', name: 'Onboarding flow launch', status: 'At Risk', budget: 3300000, spent: 2200000, manager: 'Kiara Laras', lead: 'Riya Sharma', members: ['Kiara Laras', 'Riya Sharma', 'Cameron Williamson'] },
+  { id: 'API-092', name: 'Public API v1', status: 'Off Track', budget: 3000000, spent: 2000000, manager: 'Ben Lewis', lead: 'Joe Tesla', members: ['Ben Lewis', 'Joe Tesla'] },
+]
+const commandSearch = ref('')
+const commandMatches = computed(() => commandProjects.filter(project => `${project.name} ${project.id} ${project.manager}`.toLowerCase().includes(commandSearch.value.trim().toLowerCase())))
+const commandSelectedId = ref('SHD-001')
+const commandSelected = computed(() => commandProjects.find(project => project.id === commandSelectedId.value)!)
+const commandBudget = computed(() => commandProjects.reduce((sum, project) => sum + project.budget, 0))
+const commandSpent = computed(() => commandProjects.reduce((sum, project) => sum + project.spent, 0))
+const commandBurn = computed(() => Math.round(commandSpent.value / commandBudget.value * 100))
+const commandCounts = computed(() => ['On Track', 'At Risk', 'Off Track'].map(status => ({ status, count: commandProjects.filter(project => project.status === status).length })))
+const commandProjectColor = (status: string) => status === 'On Track' ? 'success' as const : status === 'At Risk' ? 'warning' as const : 'error' as const
+const commandMoney = (value: number) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(value)
+const commandDirectoryOpen = ref(false)
+const commandRefreshCount = ref(0)
+const commandNotice = ref('')
+function refreshCommandSummary() { commandRefreshCount.value++; commandNotice.value = `Local summary recalculated (${commandRefreshCount.value}). The fixed May 11, 2026 snapshot is unchanged; no server was contacted.` }
+function selectCommandProject(id: string) { commandSelectedId.value = id; commandDirectoryOpen.value = false; commandNotice.value = `Selected ${commandSelected.value.name}.` }
+// @copy:command-portfolio:end
 
-// Page-local form values. Edit these defaults when copying the page.
-
-const form = reactive({
-  "searchProjects": ""
-})
-
-// Restore drafts after hydration; the first client render matches SSR.
-onMounted(() => {
-  const key = 'nuxt-ui-page:' + route.path
-  try {
-    const draft = localStorage.getItem(key)
-    if (draft) Object.assign(form, JSON.parse(draft))
-  } catch { /* Use the defaults when no draft exists. */ }
-  watch(form, value => localStorage.setItem(key, JSON.stringify(value)), { deep: true, flush: 'sync' })
-})
-
-const actionDialog = reactive({ open: false, title: '', mode: 'edit', name: '', description: '', recordId: '', table: 0 })
-function openAction(label: string, recordId = '', table = 0) {
-  Object.assign(actionDialog, { open: true, title: label, mode: /delete|remove|archive/i.test(label) ? 'delete' : 'edit', recordId, table })
+// @copy:command-sprint:start
+const commandSprint = ref('current')
+const commandSprintSamples = {
+  current: { label: 'May 4–10, 2026', completed: [8, 12, 17, 20, 25, 29, 32], scope: [24, 32, 36, 40, 43, 45, 47] },
+  previous: { label: 'Apr 27–May 3, 2026', completed: [6, 14, 20, 27, 32, 38, 40], scope: [36, 36, 38, 40, 42, 44, 44] },
 }
-function confirmAction() {
-  toast.add({ title: actionDialog.mode === 'delete' ? 'Item removed' : 'Changes saved', color: 'success', icon: 'i-lucide-check' })
-  actionDialog.open = false
-}
+const commandSprintData = computed(() => commandSprintSamples[commandSprint.value as keyof typeof commandSprintSamples])
+const commandSprintDone = computed(() => commandSprintData.value.completed.at(-1)!)
+const commandSprintScope = computed(() => commandSprintData.value.scope.at(-1)!)
+const commandSprintPercent = computed(() => Math.round(commandSprintDone.value / commandSprintScope.value * 100))
+const commandDays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+const commandSprintRows = computed(() => commandDays.map((day, index) => ({ day, completed: commandSprintData.value.completed[index]!, scope: commandSprintData.value.scope[index]! })))
+const commandSprintPoints = computed(() => commandSprintRows.value.map((row, index) => `${40 + index * 45},${170 - row.scope * 3}`).join(' '))
+// @copy:command-sprint:end
 
-function printPage() { window.print() }
+// @copy:command-budget:start
+const commandFiscalYear = ref('FY2026')
+const commandBudgetSamples = {
+  FY2026: { budget: 14100000, actual: [0, 2700000, 4800000, 6900000, 8700000], forecast: [8700000, 10600000, 12600000, 13700000, 13900000] },
+  FY2025: { budget: 12000000, actual: [0, 2100000, 3900000, 5600000, 7200000], forecast: [7200000, 8500000, 9800000, 10800000, 11400000] },
+}
+const commandBudgetData = computed(() => commandBudgetSamples[commandFiscalYear.value as keyof typeof commandBudgetSamples])
+const commandBudgetActual = computed(() => commandBudgetData.value.actual.at(-1)!)
+const commandBudgetPercent = computed(() => Math.round(commandBudgetActual.value / commandBudgetData.value.budget * 100))
+const commandBudgetForecast = computed(() => commandBudgetData.value.forecast.at(-1)!)
+const commandBudgetMoney = (value: number) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 }).format(value)
+const commandMonths = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep']
+const commandBudgetRows = computed(() => commandMonths.map((month, index) => ({ month, amount: index < 5 ? commandBudgetData.value.actual[index]! : commandBudgetData.value.forecast[index - 4]!, type: index < 5 ? 'Actual' : 'Forecast' })))
+const commandBudgetY = (value: number) => 170 - value / 16000000 * 150
+const commandBudgetActualPoints = computed(() => commandBudgetData.value.actual.map((value, index) => `${45 + index * 38},${commandBudgetY(value)}`).join(' '))
+const commandBudgetForecastPoints = computed(() => commandBudgetData.value.forecast.map((value, index) => `${197 + index * 38},${commandBudgetY(value)}`).join(' '))
+// @copy:command-budget:end
+
+// @copy:command-milestones:start
+const commandMilestones = ref([
+  { id: 'REV-241', title: 'Revenue dashboard v2', due: '2026-05-14', status: 'On Track', owner: 'Ava Reed', detail: 'Validate revenue rollups and publish the new summary widgets.' },
+  { id: 'ONB-118', title: 'Onboarding flow launch', due: '2026-05-21', status: 'At Risk', owner: 'Kiara Laras', detail: 'Finish keyboard validation and resolve the invite-step blocker.' },
+  { id: 'MBL-304', title: 'Mobile app beta', due: '2026-05-28', status: 'On Track', owner: 'Tania Brooks', detail: 'Complete the device matrix before the internal beta handoff.' },
+  { id: 'API-092', title: 'Public API v1', due: '2026-06-04', status: 'At Risk', owner: 'Ben Lewis', detail: 'Review rate limits and confirm the migration guide.' },
+  { id: 'INF-072', title: 'Infrastructure audit', due: '2026-06-11', status: 'On Track', owner: 'Ben Lewis', detail: 'Document recovery procedures and run a local audit rehearsal.' },
+])
+const commandMilestoneStatus = ref('All statuses')
+const commandAllMilestones = ref(false)
+const commandMilestoneMatches = computed(() => commandMilestones.value.filter(item => commandMilestoneStatus.value === 'All statuses' || item.status === commandMilestoneStatus.value).sort((a, b) => a.due.localeCompare(b.due)))
+const commandShownMilestones = computed(() => commandAllMilestones.value ? commandMilestoneMatches.value : commandMilestoneMatches.value.slice(0, 3))
+const commandMilestoneOpen = ref(false)
+const commandMilestoneId = ref('')
+const commandMilestoneDraft = ref('On Track')
+const commandMilestoneSelected = computed(() => commandMilestones.value.find(item => item.id === commandMilestoneId.value))
+const commandMilestoneNotice = ref('')
+const commandMilestoneFormId = useId()
+function editCommandMilestone(id: string) { commandMilestoneId.value = id; commandMilestoneDraft.value = commandMilestoneSelected.value!.status; commandMilestoneOpen.value = true }
+function saveCommandMilestone() { if (!commandMilestoneSelected.value || !['On Track', 'At Risk', 'Completed'].includes(commandMilestoneDraft.value)) return; commandMilestoneSelected.value.status = commandMilestoneDraft.value; commandMilestoneNotice.value = `${commandMilestoneSelected.value.id} status updated locally. Other blocks use their own snapshots.`; commandMilestoneOpen.value = false }
+const commandMilestoneDate = (value: string) => new Intl.DateTimeFormat('en-US', { dateStyle: 'medium', timeZone: 'UTC' }).format(new Date(value + 'T00:00:00Z'))
+// @copy:command-milestones:end
+
+// @copy:command-team:start
+type CommandMember = { id: number, name: string, email: string, status: string, detail: string }
+const commandMembers = ref<CommandMember[]>([
+  { id: 1, name: 'Cameron Williamson', email: 'cameron@example.com', status: 'Absent', detail: 'Replaced by Kiara Laras' },
+  { id: 2, name: 'Maya Rao', email: 'maya@example.com', status: 'Absent', detail: 'Coverage by Ava Reed' },
+  { id: 3, name: 'Tania Brooks', email: 'tania@example.com', status: 'Away', detail: 'Synergy · 25 min at snapshot' },
+  { id: 4, name: 'Riya Sharma', email: 'riya@example.com', status: 'Away', detail: 'Discovery · 18 min at snapshot' },
+  { id: 5, name: 'Joe Tesla', email: 'joe@example.com', status: 'Away', detail: 'Apex · 12 min at snapshot' },
+  { id: 6, name: 'Ava Reed', email: 'ava@example.com', status: 'Away', detail: 'Console · 10 min at snapshot' },
+  { id: 7, name: 'Kiara Laras', email: 'kiara@example.com', status: 'Available', detail: 'Pulse' },
+  { id: 8, name: 'Ben Lewis', email: 'ben@example.com', status: 'Available', detail: 'Infrastructure' },
+])
+const commandMemberStatus = ref('All statuses')
+const commandMemberMatches = computed(() => commandMembers.value.filter(member => commandMemberStatus.value === 'All statuses' || member.status === commandMemberStatus.value))
+const commandInviteOpen = ref(false)
+const commandInviteDraft = reactive({ name: '', email: '' })
+const commandInviteError = ref('')
+const commandInviteNotice = ref('')
+const commandInviteFormId = useId()
+let commandNextMemberId = 9
+function openCommandInvite() { Object.assign(commandInviteDraft, { name: '', email: '' }); commandInviteError.value = ''; commandInviteOpen.value = true }
+function saveCommandInvite() {
+  const name = commandInviteDraft.name.trim(), email = commandInviteDraft.email.trim().toLowerCase()
+  if (!name || name.length > 100) { commandInviteError.value = 'Enter a name between 1 and 100 characters.'; return }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || email.length > 254) { commandInviteError.value = 'Enter a valid example email.'; return }
+  if (commandMembers.value.some(member => member.email.toLowerCase() === email)) { commandInviteError.value = 'This example email is already in the team.'; return }
+  commandMembers.value.push({ id: commandNextMemberId++, name, email, status: 'Invited', detail: 'Local invitation preview, not delivered' })
+  commandInviteNotice.value = `Invitation preview created for ${name}; no email was sent.`; commandMemberStatus.value = 'All statuses'; commandInviteOpen.value = false
+}
+// @copy:command-team:end
+
+// @copy:command-activity:start
+const commandActivity = ref([
+  { id: 'RFC-112', title: 'Commented on RFC-112', detail: 'Filters API performance improvements: review caching and query plans.', time: '2026-05-11T09:50:00Z', unread: true },
+  { id: 'RFC-126', title: 'Moved RFC-126 to Review', detail: 'Export module CSV support is ready for peer review.', time: '2026-05-11T09:00:00Z', unread: true },
+  { id: 'RFC-101', title: 'Closed RFC-101', detail: 'Timeline engine refactor passed the local validation suite.', time: '2026-05-11T08:00:00Z', unread: false },
+  { id: 'ONB-118', title: 'Updated ONB-118', detail: 'Onboarding stepper UI tweaks need keyboard testing.', time: '2026-05-11T07:00:00Z', unread: false },
+  { id: 'REV-241', title: 'Reviewed REV-241', detail: 'Revenue aggregation sample approved for the next milestone.', time: '2026-05-10T16:00:00Z', unread: false },
+])
+const commandActivityFilter = ref('All activity')
+const commandAllActivity = ref(false)
+const commandActivityUnread = computed(() => commandActivity.value.filter(item => item.unread).length)
+const commandActivityMatches = computed(() => commandActivity.value.filter(item => commandActivityFilter.value === 'All activity' || item.unread))
+const commandActivityShown = computed(() => commandAllActivity.value ? commandActivityMatches.value : commandActivityMatches.value.slice(0, 3))
+const commandActivitySelectedId = ref('')
+const commandActivitySelected = computed(() => commandActivity.value.find(item => item.id === commandActivitySelectedId.value))
+const commandActivityOpen = ref(false)
+const commandActivityNotice = ref('')
+function openCommandActivity(id: string) { commandActivitySelectedId.value = id; commandActivityOpen.value = true }
+function readCommandActivity() { if (commandActivitySelected.value) commandActivitySelected.value.unread = false; commandActivityOpen.value = false; commandActivityNotice.value = 'Marked as read locally.' }
+const commandActivityDate = (value: string) => new Intl.DateTimeFormat('en-US', { dateStyle: 'medium', timeStyle: 'short', timeZone: 'UTC' }).format(new Date(value))
+// @copy:command-activity:end
+
+// @copy:command-throughput:start
+const commandThroughputWeeks = [
+  { week: 'Mar 23', planned: 20, completed: 18 }, { week: 'Mar 30', planned: 24, completed: 22 },
+  { week: 'Apr 6', planned: 18, completed: 16 }, { week: 'Apr 13', planned: 28, completed: 24 },
+  { week: 'Apr 20', planned: 30, completed: 27 }, { week: 'Apr 27', planned: 26, completed: 25 },
+  { week: 'May 4', planned: 32, completed: 28 }, { week: 'May 11', planned: 30, completed: 20 },
+]
+const commandThroughputRange = ref('4')
+const commandThroughputData = computed(() => commandThroughputWeeks.slice(-Number(commandThroughputRange.value)))
+const commandThroughputPlanned = computed(() => commandThroughputData.value.reduce((sum, week) => sum + week.planned, 0))
+const commandThroughputDone = computed(() => commandThroughputData.value.reduce((sum, week) => sum + week.completed, 0))
+const commandThroughputPercent = computed(() => Math.round(commandThroughputDone.value / commandThroughputPlanned.value * 100))
+// @copy:command-throughput:end
 </script>
 
 <template>
   <div class="page-content flex h-full min-h-0 w-full flex-col text-default" data-page="/project-management/dashboard-3">
-    <div class="flex h-full flex-col overflow-hidden">
-      <div class="flex min-h-0 flex-1 flex-col overflow-hidden">
-        <div class="bg-default flex min-h-[calc(100dvh-1px)] w-full overflow-hidden">
-          <div class="flex min-w-0 flex-1 flex-col">
-            <header class="bg-default min-w-0 border-b px-3 py-3 sm:px-4 lg:px-6 border-default">
-              <div class="flex min-w-0 flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
-                <div class="flex min-w-0 items-center justify-between gap-3">
-                  <div class="flex min-w-0 items-center gap-2 text-sm">
-                    <span class="text-muted truncate">Shadcnblocks</span>
-                    <span class="text-muted">/</span>
-                    <span class="font-medium">Dashboard</span>
-                  </div>
-                  <div class="flex shrink-0 items-center gap-2 lg:hidden">
-                    <UButton color="neutral" variant="soft" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-elevated hover:text-default size-9 rounded-[6px]" aria-label="Notifications" type="button" @click="openAction(&quot;Notifications&quot;)">
-                      <UIcon name="i-lucide-bell" class="size-4" />
-                    </UButton>
-                    <UButton color="primary" variant="solid" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-inverted shadow-sm hover:bg-primary/90 py-2 h-9 rounded-[6px] px-3" aria-label="Invite" type="button" @click="openAction(&quot;Invite&quot;)">
-                      <UIcon name="i-lucide-users" class="size-4" />
-                      <span class="hidden min-[380px]:inline">Invite</span>
-                    </UButton>
-                  </div>
-                </div>
-                <div class="grid min-w-0 grid-cols-[minmax(0,1fr)_auto] items-center gap-2 lg:flex lg:items-center">
-                  <div class="relative min-w-0 lg:w-[240px]">
-                    <UIcon name="i-lucide-search" class="text-muted absolute top-1/2 left-3 size-4 -translate-y-1/2" />
-                    <UInput v-model="form.searchProjects" type="text" placeholder="Search projects..." name="searchProjects" class="flex w-full text-base md:text-sm h-9 rounded-[6px] pl-9" :ui="{ base: 'h-full' }" />
-                  </div>
-                  <div class="flex -space-x-2">
-                    <span class="relative flex shrink-0 overflow-hidden border-(--ui-bg) size-6 rounded-full border-2 sm:size-7">
-                      <img class="aspect-square h-full w-full" alt="Kiara Laras" src="/reference/5985a55c7498fe2e.png" loading="lazy" />
-                    </span>
-                    <span class="relative flex shrink-0 overflow-hidden border-(--ui-bg) size-6 rounded-full border-2 sm:size-7">
-                      <img class="aspect-square h-full w-full" alt="Joe Tesla" src="/reference/a99c47c2fa3dc656.png" loading="lazy" />
-                    </span>
-                    <span class="relative flex shrink-0 overflow-hidden border-(--ui-bg) size-6 rounded-full border-2 sm:size-7">
-                      <img class="aspect-square h-full w-full" alt="Tania Brooks" src="/reference/ac13c01a479a177b.png" loading="lazy" />
-                    </span>
-                    <span class="border-(--ui-bg) bg-muted grid size-6 place-items-center rounded-full border-2 text-[10px] font-medium sm:size-7 sm:text-[11px]">+2</span>
-                  </div>
-                  <UButton color="primary" variant="solid" class="items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-inverted shadow-sm hover:bg-primary/90 px-4 py-2 hidden h-9 rounded-[6px] lg:inline-flex" aria-label="Invite" type="button" @click="openAction(&quot;Invite&quot;)">
-                    <UIcon name="i-lucide-users" class="size-4" />
-                    Invite
-                  </UButton>
-                  <UButton color="neutral" variant="soft" class="items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-elevated hover:text-default hidden size-9 rounded-[6px] lg:inline-flex" aria-label="Notifications" type="button" @click="openAction(&quot;Notifications&quot;)">
-                    <UIcon name="i-lucide-bell" class="size-4" />
-                  </UButton>
-                </div>
-              </div>
-            </header>
-            <main class="dark:bg-default min-w-0 flex-1 overflow-auto bg-(--ui-bg-muted)/50 px-3 pt-3 pb-20 sm:px-4 sm:pt-4 md:px-6 md:pt-5 md:pb-24">
-              <div class="mx-auto max-w-[1700px] space-y-3 sm:space-y-4">
-                <div class="flex min-w-0 flex-wrap items-center justify-between gap-3">
-                  <div>
-                    <h1 class="text-xl font-semibold tracking-tight text-highlighted">Command Center</h1>
-                    <p class="text-muted mt-1 text-xs">Track delivery, focus on what matters, and ship with confidence.</p>
-                  </div>
-                  <div class="text-muted flex shrink-0 items-center gap-2 text-xs">
-                    <UIcon name="i-lucide-clock-3" class="size-3.5" />
-                    <span>3 min ago</span>
-                    <UButton color="neutral" variant="soft" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-elevated hover:text-default size-7 rounded-[6px]" aria-label="Refresh dashboard" type="button" @click="openAction(&quot;Refresh dashboard&quot;)">
-                      <UIcon name="i-lucide-refresh-cw" class="size-3.5" />
-                    </UButton>
-                  </div>
-                </div>
-                <div class="min-w-0 space-y-4">
-                  <section class="bg-default rounded-[8px] border shadow-sm shadow-zinc-200/40 dark:border-(--ui-text-inverted)/10 dark:bg-[var(--ui-bg-inverted)] dark:shadow-none overflow-hidden border-default" style="opacity: 1; transform: none;">
-                    <div class="grid grid-cols-2 lg:grid-cols-[1.2fr_repeat(5,1fr)]">
-                      <div class="col-span-2 min-w-0 border-b p-3.5 sm:p-4 lg:col-span-1 lg:border-r lg:border-b-0 border-default">
-                        <p class="text-muted text-xs font-medium">Portfolio Health</p>
-                        <div class="mt-2 flex min-w-0 items-end justify-between gap-4">
-                          <div class="min-w-0">
-                            <p class="text-xl leading-6 font-semibold text-success dark:text-success text-highlighted">Good</p>
-                            <p class="mt-1 text-xs font-medium text-success dark:text-success">On track</p>
-                          </div>
-                          <svg class="h-8 w-24 shrink-0 text-success" viewBox="0 0 96 32" fill="none" width="100%" height="100%">
-                            <path d="M3 21L14 18L25 22L36 13L47 17L58 9L69 20L80 11L93 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            <path d="M3 21L14 18L25 22L36 13L47 17L58 9L69 20L80 11L93 15" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
-                          </svg>
-                        </div>
-                      </div>
-                      <div class="min-w-0 border-b p-3.5 sm:p-4 lg:border-b-0 last:lg:border-r-0 border-r lg:border-r border-default">
-                        <p class="text-muted truncate text-xs font-medium">Projects</p>
-                        <p class="mt-1.5 text-xl leading-6 font-semibold tracking-tight sm:mt-2 text-highlighted">24</p>
-                        <p class="text-muted mt-1 truncate text-xs">Active</p>
-                      </div>
-                      <div class="min-w-0 border-b p-3.5 sm:p-4 lg:border-r lg:border-b-0 last:lg:border-r-0 border-default">
-                        <p class="text-muted truncate text-xs font-medium">On Track</p>
-                        <p class="mt-1.5 text-xl leading-6 font-semibold tracking-tight sm:mt-2 text-highlighted">17</p>
-                        <p class="text-muted mt-1 truncate text-xs">71%</p>
-                      </div>
-                      <div class="min-w-0 p-3.5 sm:p-4 lg:border-b-0 last:lg:border-r-0 border-r lg:border-r border-b-0 border-default">
-                        <p class="text-muted truncate text-xs font-medium">At Risk</p>
-                        <p class="mt-1.5 text-xl leading-6 font-semibold tracking-tight sm:mt-2 text-highlighted">5</p>
-                        <p class="text-muted mt-1 truncate text-xs">21%</p>
-                      </div>
-                      <div class="min-w-0 p-3.5 sm:p-4 lg:border-r lg:border-b-0 last:lg:border-r-0 border-b-0 border-default">
-                        <p class="text-muted truncate text-xs font-medium">Off Track</p>
-                        <p class="mt-1.5 text-xl leading-6 font-semibold tracking-tight sm:mt-2 text-highlighted">2</p>
-                        <p class="text-muted mt-1 truncate text-xs">8%</p>
-                      </div>
-                      <div class="min-w-0 p-3.5 sm:p-4 lg:border-b-0 last:lg:border-r-0 col-span-2 border-t border-r-0 lg:col-span-1 lg:border-t-0 lg:border-r border-b-0 border-default">
-                        <p class="text-muted truncate text-xs font-medium">Budget Burn</p>
-                        <p class="mt-1.5 text-xl leading-6 font-semibold tracking-tight sm:mt-2 text-highlighted">62%</p>
-                        <p class="text-muted mt-1 truncate text-xs">$8.7M / $14.1M</p>
-                      </div>
-                    </div>
-                  </section>
-                  <div class="grid items-stretch gap-4 xl:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)_minmax(300px,0.9fr)]">
-                    <section class="bg-default rounded-[8px] border shadow-sm shadow-zinc-200/40 dark:border-(--ui-text-inverted)/10 dark:bg-[var(--ui-bg-inverted)] dark:shadow-none flex min-h-[260px] flex-col p-4 border-default" style="opacity: 1; transform: none;">
-                      <div class="mb-3 flex flex-wrap items-start justify-between gap-3">
-                        <div>
-                          <h2 class="text-base font-semibold text-highlighted">Sprint health</h2>
-                          <div class="text-muted mt-3 flex items-center gap-4 text-[11px]">
-                            <span class="inline-flex items-center gap-1.5">
-                              <span class="size-2 rounded-full" style="background-color:var(--ui-primary)" />
-                              Completed
-                            </span>
-                            <span class="inline-flex items-center gap-1.5">
-                              <span class="size-2 rounded-full" style="background-color:color-mix(in oklch, var(--ui-primary) 46%, var(--ui-bg))" />
-                              Scope
-                            </span>
-                          </div>
-                        </div>
-                        <div class="flex items-center gap-2">
-                          <UButton color="neutral" variant="outline" class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-default bg-default hover:bg-elevated hover:text-default h-8 rounded-[6px] px-3 text-xs shadow-none" aria-label="This sprint" type="button" @click="printPage()">
-                            This sprint
-                          </UButton>
-                        </div>
-                      </div>
-                      <div class="grid min-h-0 gap-3 lg:grid-cols-[minmax(0,1fr)_92px]">
-                        <!-- Chart 1: SVG geometry and theme tokens are local to this page -->
-                        <div data-slot="chart" class="[&amp;_.chart-cartesian-axis-tick_text]:fill-(--ui-text-muted) [&amp;_.chart-cartesian-grid_line]:stroke-(--ui-border)/50 [&amp;_.chart-curve.chart-tooltip-cursor]:stroke-(--ui-border) [&amp;_.chart-polar-grid_]:stroke-(--ui-border) [&amp;_.chart-radial-bar-background-sector]:fill-(--ui-bg-muted) [&amp;_.chart-rectangle.chart-tooltip-cursor]:fill-(--ui-bg-muted) [&amp;_.chart-reference-line_]:stroke-(--ui-border) flex min-h-0 min-w-0 aspect-video justify-center text-xs [&amp;_.chart-dot]:stroke-transparent [&amp;_.chart-layer]:outline-hidden [&amp;_.chart-sector]:outline-hidden [&amp;_.chart-sector]:stroke-transparent [&amp;_.chart-surface]:outline-hidden [aspect-ratio:auto] h-[176px] w-full" style=";--color-closed:var(--ui-primary);--color-planned:color-mix(in oklch, var(--ui-text-highlighted) 46%, var(--ui-bg))" role="img" aria-label="Analytics chart">
-                          <!-- Chart 2: SVG geometry and theme tokens are local to this page -->
-                          <div class="chart-responsive-container" style="width:100%;height:100%;min-width:1px;min-height:1px;--color-closed:var(--ui-primary);--color-planned:color-mix(in oklch, var(--ui-text-highlighted) 46%, var(--ui-bg));width:100%;height:176px;min-width:0" role="img" aria-label="Analytics chart">
-                            <div style="width:0;height:0;overflow:visible">
-                              <div width="255" height="176" class="chart-wrapper" style="position: relative; cursor: default; width: 255px; height: 176px;">
-                                <svg role="application" class="chart-surface" width="100%" height="100%" viewBox="0 0 255 176" style="width: 100%; height: 100%; display: block;" preserveAspectRatio="none">
-                                  <title />
-                                  <desc />
-                                  <g class="chart-zIndex-layer_-100">
-                                    <g class="chart-cartesian-grid">
-                                      <g class="chart-cartesian-grid-horizontal">
-                                        <line stroke-dasharray="3 3" stroke="var(--ui-text-dimmed)" fill="none" x="5" y="5" width="245" height="136" x1="5" y1="141" x2="250" y2="141" />
-                                        <line stroke-dasharray="3 3" stroke="var(--ui-text-dimmed)" fill="none" x="5" y="5" width="245" height="136" x1="5" y1="107" x2="250" y2="107" />
-                                        <line stroke-dasharray="3 3" stroke="var(--ui-text-dimmed)" fill="none" x="5" y="5" width="245" height="136" x1="5" y1="73" x2="250" y2="73" />
-                                        <line stroke-dasharray="3 3" stroke="var(--ui-text-dimmed)" fill="none" x="5" y="5" width="245" height="136" x1="5" y1="5" x2="250" y2="5" />
-                                      </g>
-                                    </g>
-                                  </g>
-                                  <g class="chart-zIndex-layer_-50" />
-                                  <defs>
-                                    <clipPath id="recharts1-clip">
-                                      <rect x="5" y="5" height="136" width="245" />
-                                    </clipPath>
-                                  </defs>
-                                  <g class="chart-zIndex-layer_100" />
-                                  <g class="chart-zIndex-layer_200" />
-                                  <g class="chart-zIndex-layer_300">
-                                    <g class="chart-layer chart-bar" id="recharts-bar-_r_0_">
-                                      <g class="chart-layer chart-bar-rectangles">
-                                        <g class="chart-layer">
-                                          <g class="chart-layer chart-bar-rectangle">
-                                            <g class="chart-layer chart-inactive-bar">
-                                              <path fill="var(--color-closed)" name="undefined" x="15" y="104.7333" width="14" height="36.2667" class="chart-rectangle" d="M15,107.7333A 3,3,0,0,1,18,104.7333L 26,104.7333A 3,3,0,0,1,
-        29,107.7333L 29,141L 15,141Z" />
-                                            </g>
-                                          </g>
-                                          <g class="chart-layer chart-bar-rectangle">
-                                            <g class="chart-layer chart-inactive-bar">
-                                              <path fill="var(--color-closed)" name="undefined" x="50" y="84.3333" width="14" height="56.6667" class="chart-rectangle" d="M50,87.3333A 3,3,0,0,1,53,84.3333L 61,84.3333A 3,3,0,0,1,
-        64,87.3333L 64,141L 50,141Z" />
-                                            </g>
-                                          </g>
-                                          <g class="chart-layer chart-bar-rectangle">
-                                            <g class="chart-layer chart-inactive-bar">
-                                              <path fill="var(--color-closed)" name="undefined" x="85" y="73" width="14" height="68" class="chart-rectangle" d="M85,76A 3,3,0,0,1,88,73L 96,73A 3,3,0,0,1,
-        99,76L 99,141L 85,141Z" />
-                                            </g>
-                                          </g>
-                                          <g class="chart-layer chart-bar-rectangle">
-                                            <g class="chart-layer chart-inactive-bar">
-                                              <path fill="var(--color-closed)" name="undefined" x="120" y="63.9333" width="14" height="77.0667" class="chart-rectangle" d="M120,66.9333A 3,3,0,0,1,123,63.9333L 131,63.9333A 3,3,0,0,1,
-        134,66.9333L 134,141L 120,141Z" />
-                                            </g>
-                                          </g>
-                                          <g class="chart-layer chart-bar-rectangle">
-                                            <g class="chart-layer chart-inactive-bar">
-                                              <path fill="var(--color-closed)" name="undefined" x="155" y="48.0667" width="14" height="92.9333" class="chart-rectangle" d="M155,51.0667A 3,3,0,0,1,158,48.0667L 166,48.0667A 3,3,0,0,1,
-        169,51.0667L 169,141L 155,141Z" />
-                                            </g>
-                                          </g>
-                                          <g class="chart-layer chart-bar-rectangle">
-                                            <g class="chart-layer chart-inactive-bar">
-                                              <path fill="var(--color-closed)" name="undefined" x="190" y="41.2667" width="14" height="99.7333" class="chart-rectangle" d="M190,44.2667A 3,3,0,0,1,193,41.2667L 201,41.2667A 3,3,0,0,1,
-        204,44.2667L 204,141L 190,141Z" />
-                                            </g>
-                                          </g>
-                                          <g class="chart-layer chart-bar-rectangle">
-                                            <g class="chart-layer chart-inactive-bar">
-                                              <path fill="var(--color-closed)" name="undefined" x="225" y="29.9333" width="14" height="111.0667" class="chart-rectangle" d="M225,32.9333A 3,3,0,0,1,228,29.9333L 236,29.9333A 3,3,0,0,1,
-        239,32.9333L 239,141L 225,141Z" />
-                                            </g>
-                                          </g>
-                                        </g>
-                                      </g>
-                                    </g>
-                                  </g>
-                                  <g class="chart-zIndex-layer_400">
-                                    <g class="chart-layer chart-line">
-                                      <g class="chart-layer chart-shape">
-                                        <path stroke="var(--color-planned)" stroke-width="2" fill="none" id="recharts-line-_r_1_" height="136" width="245" class="chart-curve chart-line-curve" d="M22.5,86.6C34.167,79.8,45.833,73,57.5,68.467C69.167,63.933,80.833,63.933,92.5,59.4C104.167,54.867,115.833,45.8,127.5,41.267C139.167,36.733,150.833,34.467,162.5,32.2C174.167,29.933,185.833,29.933,197.5,27.667C209.167,25.4,220.833,22,232.5,18.6" />
-                                      </g>
-                                    </g>
-                                  </g>
-                                  <g class="chart-zIndex-layer_500">
-                                    <g class="chart-layer chart-cartesian-axis chart-xAxis xAxis">
-                                      <g class="chart-cartesian-axis-ticks chart-xAxis-ticks">
-                                        <g class="chart-cartesian-axis-tick-lines chart-xAxis-tick-lines">
-                                          <g class="chart-layer chart-cartesian-axis-tick" />
-                                          <g class="chart-layer chart-cartesian-axis-tick" />
-                                          <g class="chart-layer chart-cartesian-axis-tick" />
-                                          <g class="chart-layer chart-cartesian-axis-tick" />
-                                          <g class="chart-layer chart-cartesian-axis-tick" />
-                                          <g class="chart-layer chart-cartesian-axis-tick" />
-                                          <g class="chart-layer chart-cartesian-axis-tick" />
-                                        </g>
-                                      </g>
-                                    </g>
-                                  </g>
-                                  <g class="chart-zIndex-layer_600">
-                                    <g class="chart-layer chart-line-dots">
-                                      <circle r="3" stroke="var(--color-planned)" stroke-width="2" fill="var(--ui-bg)" height="136" width="245" cx="22.5" cy="86.6" class="chart-dot chart-line-dot" />
-                                      <circle r="3" stroke="var(--color-planned)" stroke-width="2" fill="var(--ui-bg)" height="136" width="245" cx="57.5" cy="68.46666666666667" class="chart-dot chart-line-dot" />
-                                      <circle r="3" stroke="var(--color-planned)" stroke-width="2" fill="var(--ui-bg)" height="136" width="245" cx="92.5" cy="59.400000000000006" class="chart-dot chart-line-dot" />
-                                      <circle r="3" stroke="var(--color-planned)" stroke-width="2" fill="var(--ui-bg)" height="136" width="245" cx="127.5" cy="41.26666666666667" class="chart-dot chart-line-dot" />
-                                      <circle r="3" stroke="var(--color-planned)" stroke-width="2" fill="var(--ui-bg)" height="136" width="245" cx="162.5" cy="32.19999999999999" class="chart-dot chart-line-dot" />
-                                      <circle r="3" stroke="var(--color-planned)" stroke-width="2" fill="var(--ui-bg)" height="136" width="245" cx="197.5" cy="27.666666666666664" class="chart-dot chart-line-dot" />
-                                      <circle r="3" stroke="var(--color-planned)" stroke-width="2" fill="var(--ui-bg)" height="136" width="245" cx="232.5" cy="18.599999999999994" class="chart-dot chart-line-dot" />
-                                    </g>
-                                  </g>
-                                  <g class="chart-zIndex-layer_1000" />
-                                  <g class="chart-zIndex-layer_1100" />
-                                  <g class="chart-zIndex-layer_1200" />
-                                  <g class="chart-zIndex-layer_2000">
-                                    <g class="chart-cartesian-axis-tick-labels chart-xAxis-tick-labels">
-                                      <g class="chart-layer chart-cartesian-axis-tick-label">
-                                        <text height="30" width="245" stroke="none" x="22.5" y="155" class="chart-text chart-cartesian-axis-tick-value" text-anchor="middle" fill="var(--ui-text-muted)">
-                                          <tspan x="22.5">Mon</tspan>
-                                        </text>
-                                      </g>
-                                      <g class="chart-layer chart-cartesian-axis-tick-label">
-                                        <text height="30" width="245" stroke="none" x="57.5" y="155" class="chart-text chart-cartesian-axis-tick-value" text-anchor="middle" fill="var(--ui-text-muted)">
-                                          <tspan x="57.5">Tue</tspan>
-                                        </text>
-                                      </g>
-                                      <g class="chart-layer chart-cartesian-axis-tick-label">
-                                        <text height="30" width="245" stroke="none" x="92.5" y="155" class="chart-text chart-cartesian-axis-tick-value" text-anchor="middle" fill="var(--ui-text-muted)">
-                                          <tspan x="92.5">Wed</tspan>
-                                        </text>
-                                      </g>
-                                      <g class="chart-layer chart-cartesian-axis-tick-label">
-                                        <text height="30" width="245" stroke="none" x="127.5" y="155" class="chart-text chart-cartesian-axis-tick-value" text-anchor="middle" fill="var(--ui-text-muted)">
-                                          <tspan x="127.5">Thu</tspan>
-                                        </text>
-                                      </g>
-                                      <g class="chart-layer chart-cartesian-axis-tick-label">
-                                        <text height="30" width="245" stroke="none" x="162.5" y="155" class="chart-text chart-cartesian-axis-tick-value" text-anchor="middle" fill="var(--ui-text-muted)">
-                                          <tspan x="162.5">Fri</tspan>
-                                        </text>
-                                      </g>
-                                      <g class="chart-layer chart-cartesian-axis-tick-label">
-                                        <text height="30" width="245" stroke="none" x="197.5" y="155" class="chart-text chart-cartesian-axis-tick-value" text-anchor="middle" fill="var(--ui-text-muted)">
-                                          <tspan x="197.5">Sat</tspan>
-                                        </text>
-                                      </g>
-                                      <g class="chart-layer chart-cartesian-axis-tick-label">
-                                        <text height="30" width="245" stroke="none" x="232.5" y="155" class="chart-text chart-cartesian-axis-tick-value" text-anchor="middle" fill="var(--ui-text-muted)">
-                                          <tspan x="232.5">Sun</tspan>
-                                        </text>
-                                      </g>
-                                    </g>
-                                  </g>
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="grid grid-cols-3 content-center gap-2 text-center lg:grid-cols-1 lg:text-right">
-                          <div>
-                            <p class="text-xl leading-6 font-semibold text-highlighted">68%</p>
-                            <p class="text-muted text-[11px]">Sprint progress</p>
-                          </div>
-                          <div>
-                            <p class="text-lg leading-6 font-semibold text-highlighted">32</p>
-                            <p class="text-muted text-[11px]">Completed</p>
-                          </div>
-                          <div>
-                            <p class="text-lg leading-6 font-semibold text-highlighted">47</p>
-                            <p class="text-muted text-[11px]">Total points</p>
-                          </div>
-                        </div>
-                      </div>
-                    </section>
-                    <section class="bg-default rounded-[8px] border shadow-sm shadow-zinc-200/40 dark:border-(--ui-text-inverted)/10 dark:bg-[var(--ui-bg-inverted)] dark:shadow-none flex min-h-[260px] flex-col p-4 border-default" style="opacity: 1; transform: none;">
-                      <div class="mb-3 flex flex-wrap items-start justify-between gap-3">
-                        <div>
-                          <h2 class="text-base font-semibold text-highlighted">Budget Burn</h2>
-                          <div class="text-muted mt-3 flex items-center gap-4 text-[11px]">
-                            <span class="inline-flex items-center gap-1.5">
-                              <span class="h-0.5 w-5 rounded-full" style="background-color:var(--ui-primary)" />
-                              Actual
-                            </span>
-                            <span class="inline-flex items-center gap-1.5">
-                              <span class="h-0.5 w-5 rounded-full border-t-2 border-dotted" style="border-color:color-mix(in oklch, var(--ui-primary) 72%, var(--ui-bg))" />
-                              Forecast
-                            </span>
-                          </div>
-                        </div>
-                        <UButton color="neutral" variant="outline" class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-default bg-default hover:bg-elevated hover:text-default h-8 rounded-[6px] px-3 text-xs shadow-none" aria-label="FY2026" type="button" @click="openAction(&quot;FY2026&quot;)">
-                          FY2026
-                          <UIcon name="i-lucide-chevron-down" class="size-3.5" />
-                        </UButton>
-                      </div>
-                      <div class="relative min-h-0">
-                        <!-- Chart 3: SVG geometry and theme tokens are local to this page -->
-                        <div data-slot="chart" class="[&amp;_.chart-cartesian-axis-tick_text]:fill-(--ui-text-muted) [&amp;_.chart-cartesian-grid_line]:stroke-(--ui-border)/50 [&amp;_.chart-curve.chart-tooltip-cursor]:stroke-(--ui-border) [&amp;_.chart-polar-grid_]:stroke-(--ui-border) [&amp;_.chart-radial-bar-background-sector]:fill-(--ui-bg-muted) [&amp;_.chart-rectangle.chart-tooltip-cursor]:fill-(--ui-bg-muted) [&amp;_.chart-reference-line_]:stroke-(--ui-border) flex min-h-0 min-w-0 aspect-video justify-center text-xs [&amp;_.chart-dot]:stroke-transparent [&amp;_.chart-layer]:outline-hidden [&amp;_.chart-sector]:outline-hidden [&amp;_.chart-sector]:stroke-transparent [&amp;_.chart-surface]:outline-hidden [aspect-ratio:auto] h-[176px] w-full" style=";--color-actual:var(--ui-primary);--color-forecast:color-mix(in oklch, var(--ui-text-highlighted) 72%, var(--ui-bg))" role="img" aria-label="Analytics chart">
-                          <!-- Chart 4: SVG geometry and theme tokens are local to this page -->
-                          <div class="chart-responsive-container" style="width:100%;height:100%;min-width:1px;min-height:1px;--color-actual:var(--ui-primary);--color-forecast:color-mix(in oklch, var(--ui-text-highlighted) 72%, var(--ui-bg));width:100%;height:176px;min-width:0" role="img" aria-label="Analytics chart">
-                            <div style="width:0;height:0;overflow:visible">
-                              <div width="340" height="176" class="chart-wrapper" style="position: relative; cursor: default; width: 340px; height: 176px;">
-                                <svg role="application" class="chart-surface" width="100%" height="100%" viewBox="0 0 340 176" style="width: 100%; height: 100%; display: block;" preserveAspectRatio="none">
-                                  <title />
-                                  <desc />
-                                  <g class="chart-zIndex-layer_-100">
-                                    <g class="chart-cartesian-grid">
-                                      <g class="chart-cartesian-grid-horizontal">
-                                        <line stroke-dasharray="3 3" stroke="var(--ui-text-dimmed)" fill="none" x="32" y="8" width="300" height="138" x1="32" y1="146" x2="332" y2="146" />
-                                        <line stroke-dasharray="3 3" stroke="var(--ui-text-dimmed)" fill="none" x="32" y="8" width="300" height="138" x1="32" y1="111.5" x2="332" y2="111.5" />
-                                        <line stroke-dasharray="3 3" stroke="var(--ui-text-dimmed)" fill="none" x="32" y="8" width="300" height="138" x1="32" y1="77" x2="332" y2="77" />
-                                        <line stroke-dasharray="3 3" stroke="var(--ui-text-dimmed)" fill="none" x="32" y="8" width="300" height="138" x1="32" y1="42.5" x2="332" y2="42.5" />
-                                        <line stroke-dasharray="3 3" stroke="var(--ui-text-dimmed)" fill="none" x="32" y="8" width="300" height="138" x1="32" y1="8" x2="332" y2="8" />
-                                      </g>
-                                    </g>
-                                  </g>
-                                  <g class="chart-zIndex-layer_-50" />
-                                  <defs>
-                                    <clipPath id="recharts2-clip">
-                                      <rect x="32" y="8" height="138" width="300" />
-                                    </clipPath>
-                                  </defs>
-                                  <defs>
-                                    <linearGradient id="budgetActualGradient" x1="0" y1="0" x2="0" y2="1">
-                                      <stop offset="0%" stop-color="var(--color-actual)" stop-opacity="0.36" />
-                                      <stop offset="100%" stop-color="var(--color-actual)" stop-opacity="0.08" />
-                                    </linearGradient>
-                                  </defs>
-                                  <g class="chart-zIndex-layer_100">
-                                    <g class="chart-layer chart-area">
-                                      <g class="chart-layer">
-                                        <path stroke-width="2" fill="url(#budgetActualGradient)" fill-opacity="0.6" height="138" stroke="none" width="300" id="recharts-area-_r_2_" class="chart-curve chart-area-area" d="M32,146C44.5,137.806,57,129.613,69.5,122.713C82,115.813,94.5,110.637,107,104.6C119.5,98.563,132,92.094,144.5,86.488C157,80.881,169.5,75.922,182,70.963L182,146C169.5,146,157,146,144.5,146C132,146,119.5,146,107,146C94.5,146,82,146,69.5,146C57,146,44.5,146,32,146Z" />
-                                        <path stroke-width="2" fill="none" fill-opacity="0.6" height="138" stroke="var(--color-actual)" width="300" class="chart-curve chart-area-curve" d="M32,146C44.5,137.806,57,129.613,69.5,122.713C82,115.813,94.5,110.637,107,104.6C119.5,98.563,132,92.094,144.5,86.488C157,80.881,169.5,75.922,182,70.963" />
-                                      </g>
-                                    </g>
-                                  </g>
-                                  <g class="chart-zIndex-layer_200" />
-                                  <g class="chart-zIndex-layer_300" />
-                                  <g class="chart-zIndex-layer_400">
-                                    <g class="chart-layer chart-line">
-                                      <g class="chart-layer chart-shape">
-                                        <path stroke="var(--color-forecast)" stroke-width="2" stroke-dasharray="3 3" fill="none" id="recharts-line-_r_3_" height="138" width="300" class="chart-curve chart-line-curve" d="M182,70.963C194.5,65.572,207,60.181,219.5,54.575C232,48.969,244.5,41.781,257,37.325C269.5,32.869,282,29.994,294.5,27.838C307,25.681,319.5,25.034,332,24.388" />
-                                      </g>
-                                    </g>
-                                  </g>
-                                  <g class="chart-zIndex-layer_500">
-                                    <g class="chart-layer chart-cartesian-axis chart-xAxis xAxis">
-                                      <g class="chart-cartesian-axis-ticks chart-xAxis-ticks">
-                                        <g class="chart-cartesian-axis-tick-lines chart-xAxis-tick-lines">
-                                          <g class="chart-layer chart-cartesian-axis-tick" />
-                                          <g class="chart-layer chart-cartesian-axis-tick" />
-                                          <g class="chart-layer chart-cartesian-axis-tick" />
-                                          <g class="chart-layer chart-cartesian-axis-tick" />
-                                          <g class="chart-layer chart-cartesian-axis-tick" />
-                                          <g class="chart-layer chart-cartesian-axis-tick" />
-                                          <g class="chart-layer chart-cartesian-axis-tick" />
-                                          <g class="chart-layer chart-cartesian-axis-tick" />
-                                          <g class="chart-layer chart-cartesian-axis-tick" />
-                                        </g>
-                                      </g>
-                                    </g>
-                                    <g class="chart-layer chart-cartesian-axis chart-yAxis yAxis">
-                                      <g class="chart-cartesian-axis-ticks chart-yAxis-ticks">
-                                        <g class="chart-cartesian-axis-tick-lines chart-yAxis-tick-lines">
-                                          <g class="chart-layer chart-cartesian-axis-tick" />
-                                          <g class="chart-layer chart-cartesian-axis-tick" />
-                                          <g class="chart-layer chart-cartesian-axis-tick" />
-                                          <g class="chart-layer chart-cartesian-axis-tick" />
-                                          <g class="chart-layer chart-cartesian-axis-tick" />
-                                        </g>
-                                      </g>
-                                    </g>
-                                  </g>
-                                  <g class="chart-zIndex-layer_600" />
-                                  <g class="chart-zIndex-layer_1000" />
-                                  <g class="chart-zIndex-layer_1100" />
-                                  <g class="chart-zIndex-layer_1200" />
-                                  <g class="chart-zIndex-layer_2000">
-                                    <g class="chart-cartesian-axis-tick-labels chart-xAxis-tick-labels">
-                                      <g class="chart-layer chart-cartesian-axis-tick-label">
-                                        <text height="30" width="300" stroke="none" x="32" y="162" class="chart-text chart-cartesian-axis-tick-value" text-anchor="middle" fill="var(--ui-text-muted)">
-                                          <tspan x="32">Jan</tspan>
-                                        </text>
-                                      </g>
-                                      <g class="chart-layer chart-cartesian-axis-tick-label">
-                                        <text height="30" width="300" stroke="none" x="69.5" y="162" class="chart-text chart-cartesian-axis-tick-value" text-anchor="middle" fill="var(--ui-text-muted)">
-                                          <tspan x="69.5">Feb</tspan>
-                                        </text>
-                                      </g>
-                                      <g class="chart-layer chart-cartesian-axis-tick-label">
-                                        <text height="30" width="300" stroke="none" x="107" y="162" class="chart-text chart-cartesian-axis-tick-value" text-anchor="middle" fill="var(--ui-text-muted)">
-                                          <tspan x="107">Mar</tspan>
-                                        </text>
-                                      </g>
-                                      <g class="chart-layer chart-cartesian-axis-tick-label">
-                                        <text height="30" width="300" stroke="none" x="144.5" y="162" class="chart-text chart-cartesian-axis-tick-value" text-anchor="middle" fill="var(--ui-text-muted)">
-                                          <tspan x="144.5">Apr</tspan>
-                                        </text>
-                                      </g>
-                                      <g class="chart-layer chart-cartesian-axis-tick-label">
-                                        <text height="30" width="300" stroke="none" x="182" y="162" class="chart-text chart-cartesian-axis-tick-value" text-anchor="middle" fill="var(--ui-text-muted)">
-                                          <tspan x="182">May</tspan>
-                                        </text>
-                                      </g>
-                                      <g class="chart-layer chart-cartesian-axis-tick-label">
-                                        <text height="30" width="300" stroke="none" x="219.5" y="162" class="chart-text chart-cartesian-axis-tick-value" text-anchor="middle" fill="var(--ui-text-muted)">
-                                          <tspan x="219.5">Jun</tspan>
-                                        </text>
-                                      </g>
-                                      <g class="chart-layer chart-cartesian-axis-tick-label">
-                                        <text height="30" width="300" stroke="none" x="257" y="162" class="chart-text chart-cartesian-axis-tick-value" text-anchor="middle" fill="var(--ui-text-muted)">
-                                          <tspan x="257">Jul</tspan>
-                                        </text>
-                                      </g>
-                                      <g class="chart-layer chart-cartesian-axis-tick-label">
-                                        <text height="30" width="300" stroke="none" x="294.5" y="162" class="chart-text chart-cartesian-axis-tick-value" text-anchor="middle" fill="var(--ui-text-muted)">
-                                          <tspan x="294.5">Aug</tspan>
-                                        </text>
-                                      </g>
-                                      <g class="chart-layer chart-cartesian-axis-tick-label">
-                                        <text height="30" width="300" stroke="none" x="330.8125" y="162" class="chart-text chart-cartesian-axis-tick-value" text-anchor="middle" fill="var(--ui-text-muted)">
-                                          <tspan x="330.8125">Sep</tspan>
-                                        </text>
-                                      </g>
-                                    </g>
-                                    <g class="chart-cartesian-axis-tick-labels chart-yAxis-tick-labels">
-                                      <g class="chart-layer chart-cartesian-axis-tick-label">
-                                        <text width="44" height="138" stroke="none" x="24" y="146" class="chart-text chart-cartesian-axis-tick-value" text-anchor="end" fill="var(--ui-text-muted)">
-                                          <tspan x="24">$0M</tspan>
-                                        </text>
-                                      </g>
-                                      <g class="chart-layer chart-cartesian-axis-tick-label">
-                                        <text width="44" height="138" stroke="none" x="24" y="111.5" class="chart-text chart-cartesian-axis-tick-value" text-anchor="end" fill="var(--ui-text-muted)">
-                                          <tspan x="24">$4M</tspan>
-                                        </text>
-                                      </g>
-                                      <g class="chart-layer chart-cartesian-axis-tick-label">
-                                        <text width="44" height="138" stroke="none" x="24" y="77" class="chart-text chart-cartesian-axis-tick-value" text-anchor="end" fill="var(--ui-text-muted)">
-                                          <tspan x="24">$8M</tspan>
-                                        </text>
-                                      </g>
-                                      <g class="chart-layer chart-cartesian-axis-tick-label">
-                                        <text width="44" height="138" stroke="none" x="24" y="42.5" class="chart-text chart-cartesian-axis-tick-value" text-anchor="end" fill="var(--ui-text-muted)">
-                                          <tspan x="24">$12M</tspan>
-                                        </text>
-                                      </g>
-                                      <g class="chart-layer chart-cartesian-axis-tick-label">
-                                        <text width="44" height="138" stroke="none" x="24" y="8" class="chart-text chart-cartesian-axis-tick-value" text-anchor="end" fill="var(--ui-text-muted)">
-                                          <tspan x="24">$16M</tspan>
-                                        </text>
-                                      </g>
-                                    </g>
-                                  </g>
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="bg-(--ui-bg)/90 absolute top-[72px] right-7 rounded-[6px] border px-3 py-2 shadow-sm dark:bg-[var(--ui-bg-inverted)]/95 border-default">
-                          <p class="text-base leading-5 font-semibold text-highlighted">$8.7M</p>
-                          <p class="text-muted mt-1 text-[11px]">62% of budget</p>
-                        </div>
-                      </div>
-                    </section>
-                    <section class="bg-default rounded-[8px] border shadow-sm shadow-zinc-200/40 dark:border-(--ui-text-inverted)/10 dark:bg-[var(--ui-bg-inverted)] dark:shadow-none flex min-h-[260px] flex-col p-4 border-default" style="opacity: 1; transform: none;">
-                      <div class="mb-3 flex items-center justify-between gap-3">
-                        <div class="flex min-w-0 items-center gap-2">
-                          <UIcon name="i-lucide-zap" class="text-muted size-4" />
-                          <h2 class="truncate text-base font-semibold text-highlighted">Current Project</h2>
-                        </div>
-                        <UButton color="neutral" variant="outline" class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-default bg-default hover:bg-elevated hover:text-default h-8 rounded-[6px] px-3 text-xs shadow-none" aria-label="See All" type="button" @click="openAction(&quot;See All&quot;)">
-                          See All
-                        </UButton>
-                      </div>
-                      <div class="min-h-0 flex-1 border-t pt-4 border-default">
-                        <p class="text-muted text-xs">Project Name</p>
-                        <div class="mt-2.5 flex min-w-0 items-center gap-2">
-                          <div class="bg-default grid size-6 shrink-0 place-items-center rounded-[6px] border border-default">
-                            <img alt="Shadcnblocks" width="16" height="16" class="size-4 dark:hidden" style="color:transparent" src="/reference/4eb49a7be0892386.svg" loading="lazy" />
-                          </div>
-                          <p class="truncate text-sm font-medium">Shadcnblocks</p>
-                          <div class="inline-flex items-center border transition-colors focus:outline-hidden focus:ring-2 focus:ring-accented focus:ring-offset-2 border-transparent shadow-sm rounded-[4px] bg-warning/10 px-1.5 py-0 text-[10px] font-medium text-warning hover:bg-warning/10 dark:bg-warning/50 dark:text-warning border-default">In Progress</div>
-                        </div>
-                        <div class="mt-4 grid grid-cols-2 gap-4">
-                          <div class="min-w-0">
-                            <p class="text-muted text-xs">Project Manager</p>
-                            <div class="mt-2 flex min-w-0 items-center gap-2">
-                              <span class="relative flex shrink-0 overflow-hidden rounded-full size-7">
-                                <img class="aspect-square h-full w-full" alt="Kiara Laras" src="/reference/5985a55c7498fe2e.png" loading="lazy" />
-                              </span>
-                              <span class="truncate text-sm font-medium">KiaraL.</span>
-                            </div>
-                          </div>
-                          <div class="min-w-0">
-                            <p class="text-muted text-xs">Design Lead</p>
-                            <div class="mt-2 flex min-w-0 items-center gap-2">
-                              <span class="relative flex shrink-0 overflow-hidden rounded-full size-7">
-                                <img class="aspect-square h-full w-full" alt="Joe Tesla" src="/reference/a99c47c2fa3dc656.png" loading="lazy" />
-                              </span>
-                              <span class="truncate text-sm font-medium">JoeT.</span>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="mt-5">
-                          <div class="min-w-0">
-                            <p class="text-muted text-xs">Team</p>
-                            <div class="mt-2 flex items-center gap-3">
-                              <div class="flex -space-x-2">
-                                <span class="relative flex shrink-0 overflow-hidden border-(--ui-bg) size-6 rounded-full border-2 sm:size-7">
-                                  <img class="aspect-square h-full w-full" alt="Kiara Laras" src="/reference/5985a55c7498fe2e.png" loading="lazy" />
-                                </span>
-                                <span class="relative flex shrink-0 overflow-hidden border-(--ui-bg) size-6 rounded-full border-2 sm:size-7">
-                                  <img class="aspect-square h-full w-full" alt="Joe Tesla" src="/reference/a99c47c2fa3dc656.png" loading="lazy" />
-                                </span>
-                                <span class="relative flex shrink-0 overflow-hidden border-(--ui-bg) size-6 rounded-full border-2 sm:size-7">
-                                  <img class="aspect-square h-full w-full" alt="Tania Brooks" src="/reference/ac13c01a479a177b.png" loading="lazy" />
-                                </span>
-                                <span class="relative flex shrink-0 overflow-hidden border-(--ui-bg) size-6 rounded-full border-2 sm:size-7">
-                                  <img class="aspect-square h-full w-full" alt="Cameron Williamson" src="/reference/82a5a2284fceeed0.png" loading="lazy" />
-                                </span>
-                                <span class="border-(--ui-bg) bg-muted grid size-6 place-items-center rounded-full border-2 text-[10px] font-medium sm:size-7 sm:text-[11px]">+8</span>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                  <div class="grid gap-4 xl:grid-cols-3">
-                    <section class="bg-default rounded-[8px] border shadow-sm shadow-zinc-200/40 dark:border-(--ui-text-inverted)/10 dark:bg-[var(--ui-bg-inverted)] dark:shadow-none flex h-[335px] flex-col p-4 border-default" style="opacity: 1; transform: none;">
-                      <div class="mb-4 flex items-start justify-between gap-3">
-                        <div>
-                          <h2 class="text-base font-semibold text-highlighted">Upcoming milestones</h2>
-                        </div>
-                      </div>
-                      <div class="min-h-0 flex-1 space-y-2 overflow-y-auto pr-1 [scrollbar-color:hsl(var(--ui-border))_transparent] [scrollbar-width:thin]">
-                        <div class="grid min-w-0 grid-cols-[minmax(0,1fr)_92px_70px] items-center gap-3 rounded-[6px] border p-3 border-default">
-                          <div class="min-w-0">
-                            <p class="truncate text-sm font-medium">Revenue dashboard v2</p>
-                            <p class="text-muted mt-1 text-xs">REV-241</p>
-                          </div>
-                          <span class="text-muted text-xs">May 14, 2026</span>
-                          <div class="inline-flex items-center border px-2.5 py-0.5 font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-accented focus:ring-offset-2 border-transparent shadow-sm hover:bg-primary/80 rounded-[4px] text-[11px] bg-success/10 text-success dark:bg-success/50 dark:text-success border-default">On Track</div>
-                        </div>
-                        <div class="grid min-w-0 grid-cols-[minmax(0,1fr)_92px_70px] items-center gap-3 rounded-[6px] border p-3 border-default">
-                          <div class="min-w-0">
-                            <p class="truncate text-sm font-medium">Onboarding flow launch</p>
-                            <p class="text-muted mt-1 text-xs">ONB-118</p>
-                          </div>
-                          <span class="text-muted text-xs">May 21, 2026</span>
-                          <div class="inline-flex items-center border px-2.5 py-0.5 font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-accented focus:ring-offset-2 border-transparent shadow-sm hover:bg-primary/80 rounded-[4px] text-[11px] bg-warning/10 text-warning dark:bg-warning/50 dark:text-warning border-default">At Risk</div>
-                        </div>
-                        <div class="grid min-w-0 grid-cols-[minmax(0,1fr)_92px_70px] items-center gap-3 rounded-[6px] border p-3 border-default">
-                          <div class="min-w-0">
-                            <p class="truncate text-sm font-medium">Mobile app beta</p>
-                            <p class="text-muted mt-1 text-xs">MBL-304</p>
-                          </div>
-                          <span class="text-muted text-xs">May 28, 2026</span>
-                          <div class="inline-flex items-center border px-2.5 py-0.5 font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-accented focus:ring-offset-2 border-transparent shadow-sm hover:bg-primary/80 rounded-[4px] text-[11px] bg-success/10 text-success dark:bg-success/50 dark:text-success border-default">On Track</div>
-                        </div>
-                        <div class="grid min-w-0 grid-cols-[minmax(0,1fr)_92px_70px] items-center gap-3 rounded-[6px] border p-3 border-default">
-                          <div class="min-w-0">
-                            <p class="truncate text-sm font-medium">Public API v1</p>
-                            <p class="text-muted mt-1 text-xs">API-092</p>
-                          </div>
-                          <span class="text-muted text-xs">Jun 4, 2026</span>
-                          <div class="inline-flex items-center border px-2.5 py-0.5 font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-accented focus:ring-offset-2 border-transparent shadow-sm hover:bg-primary/80 rounded-[4px] text-[11px] bg-warning/10 text-warning dark:bg-warning/50 dark:text-warning border-default">At Risk</div>
-                        </div>
-                      </div>
-                      <UButton color="neutral" variant="soft" class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-elevated hover:text-default mt-3 h-8 shrink-0 rounded-[6px] px-2 text-xs" aria-label="View all milestones" type="button" @click="openAction(&quot;View all milestones&quot;)">
-                        View all milestones
-                        <UIcon name="i-lucide-chevron-right" class="size-3.5" />
-                      </UButton>
-                    </section>
-                    <section class="bg-default rounded-[8px] border shadow-sm shadow-zinc-200/40 dark:border-(--ui-text-inverted)/10 dark:bg-[var(--ui-bg-inverted)] dark:shadow-none flex h-[335px] flex-col p-4 border-default" style="opacity: 1; transform: none;">
-                      <div class="mb-4 flex items-center justify-between gap-3">
-                        <div class="flex min-w-0 items-center gap-2">
-                          <UIcon name="i-lucide-monitor" class="text-muted size-4" />
-                          <h2 class="truncate text-base font-semibold text-highlighted">Status Tracker</h2>
-                        </div>
-                        <UButton color="neutral" variant="outline" class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-default bg-default hover:bg-elevated hover:text-default h-8 rounded-[6px] px-3 text-xs shadow-none" aria-label="See All" type="button" @click="openAction(&quot;See All&quot;)">
-                          See All
-                        </UButton>
-                      </div>
-                      <div class="min-h-0 flex-1 space-y-3 overflow-y-auto border-t pt-3 pr-1 [scrollbar-color:hsl(var(--ui-border))_transparent] [scrollbar-width:thin] border-default">
-                        <div class="space-y-2.5">
-                          <p class="text-muted text-xs">Absent</p>
-                          <div class="flex min-w-0 items-center justify-between gap-3">
-                            <div class="flex min-w-0 items-center gap-3">
-                              <div class="relative shrink-0">
-                                <span class="relative flex shrink-0 overflow-hidden size-8 rounded-full">
-                                  <img class="aspect-square h-full w-full" alt="Cameron Williamson" src="/reference/82a5a2284fceeed0.png" loading="lazy" />
-                                </span>
-                                <span class="border-(--ui-bg) absolute right-0 bottom-0 size-2.5 rounded-full border-2 bg-(--ui-text-muted)" />
-                              </div>
-                              <div class="min-w-0">
-                                <p class="truncate text-sm font-medium">Cameron Williamson</p>
-                                <p class="text-muted truncate text-xs">Replaced by Kiara L.</p>
-                              </div>
-                            </div>
-                            <div class="inline-flex items-center border transition-colors focus:outline-hidden focus:ring-2 focus:ring-accented focus:ring-offset-2 border-transparent hover:bg-primary/80 shrink-0 rounded-full px-2 py-0 text-[11px] font-medium shadow-none bg-muted text-muted border-default">
-                              <span class="bg-(--ui-text-muted) mr-1 size-1.5 rounded-full" />
-                              Absent
-                            </div>
-                          </div>
-                          <div class="flex min-w-0 items-center justify-between gap-3">
-                            <div class="flex min-w-0 items-center gap-3">
-                              <div class="relative shrink-0">
-                                <span class="relative flex shrink-0 overflow-hidden size-8 rounded-full">
-                                  <img class="aspect-square h-full w-full" alt="Maya Rao" src="/reference/62828bc2a489837e.png" loading="lazy" />
-                                </span>
-                                <span class="border-(--ui-bg) absolute right-0 bottom-0 size-2.5 rounded-full border-2 bg-(--ui-text-muted)" />
-                              </div>
-                              <div class="min-w-0">
-                                <p class="truncate text-sm font-medium">Maya Rao</p>
-                                <p class="text-muted truncate text-xs">Coverage by Ava R.</p>
-                              </div>
-                            </div>
-                            <div class="inline-flex items-center border transition-colors focus:outline-hidden focus:ring-2 focus:ring-accented focus:ring-offset-2 border-transparent hover:bg-primary/80 shrink-0 rounded-full px-2 py-0 text-[11px] font-medium shadow-none bg-muted text-muted border-default">
-                              <span class="bg-(--ui-text-muted) mr-1 size-1.5 rounded-full" />
-                              Absent
-                            </div>
-                          </div>
-                        </div>
-                        <div class="space-y-2.5 border-t pt-3 border-default">
-                          <p class="text-muted text-xs">Away</p>
-                          <div class="flex min-w-0 items-center justify-between gap-3">
-                            <div class="flex min-w-0 items-center gap-3">
-                              <div class="relative shrink-0">
-                                <span class="relative flex shrink-0 overflow-hidden size-8 rounded-full">
-                                  <img class="aspect-square h-full w-full" alt="Tania Brooks" src="/reference/ac13c01a479a177b.png" loading="lazy" />
-                                </span>
-                                <span class="border-(--ui-bg) absolute right-0 bottom-0 size-2.5 rounded-full border-2 bg-warning" />
-                              </div>
-                              <div class="min-w-0">
-                                <p class="truncate text-sm font-medium">Tania Brooks</p>
-                                <p class="text-muted truncate text-xs">Synergy</p>
-                              </div>
-                            </div>
-                            <div class="inline-flex items-center border transition-colors focus:outline-hidden focus:ring-2 focus:ring-accented focus:ring-offset-2 border-transparent hover:bg-primary/80 shrink-0 rounded-full px-2 py-0 text-[11px] font-medium shadow-none bg-warning/10 text-warning dark:bg-warning/50 dark:text-warning border-default">
-                              <UIcon name="i-lucide-clock-3" class="mr-1 size-3" />
-                              25m
-                            </div>
-                          </div>
-                          <div class="flex min-w-0 items-center justify-between gap-3">
-                            <div class="flex min-w-0 items-center gap-3">
-                              <div class="relative shrink-0">
-                                <span class="relative flex shrink-0 overflow-hidden size-8 rounded-full">
-                                  <img class="aspect-square h-full w-full" alt="Riya Sharma" src="/reference/9310a24e0d573ddb.png" loading="lazy" />
-                                </span>
-                                <span class="border-(--ui-bg) absolute right-0 bottom-0 size-2.5 rounded-full border-2 bg-warning" />
-                              </div>
-                              <div class="min-w-0">
-                                <p class="truncate text-sm font-medium">Riya Sharma</p>
-                                <p class="text-muted truncate text-xs">Discovery</p>
-                              </div>
-                            </div>
-                            <div class="inline-flex items-center border transition-colors focus:outline-hidden focus:ring-2 focus:ring-accented focus:ring-offset-2 border-transparent hover:bg-primary/80 shrink-0 rounded-full px-2 py-0 text-[11px] font-medium shadow-none bg-warning/10 text-warning dark:bg-warning/50 dark:text-warning border-default">
-                              <UIcon name="i-lucide-clock-3" class="mr-1 size-3" />
-                              18m
-                            </div>
-                          </div>
-                          <div class="flex min-w-0 items-center justify-between gap-3">
-                            <div class="flex min-w-0 items-center gap-3">
-                              <div class="relative shrink-0">
-                                <span class="relative flex shrink-0 overflow-hidden size-8 rounded-full">
-                                  <img class="aspect-square h-full w-full" alt="Joe Tesla" src="/reference/a99c47c2fa3dc656.png" loading="lazy" />
-                                </span>
-                                <span class="border-(--ui-bg) absolute right-0 bottom-0 size-2.5 rounded-full border-2 bg-warning" />
-                              </div>
-                              <div class="min-w-0">
-                                <p class="truncate text-sm font-medium">Joe Tesla</p>
-                                <p class="text-muted truncate text-xs">Apex</p>
-                              </div>
-                            </div>
-                            <div class="inline-flex items-center border transition-colors focus:outline-hidden focus:ring-2 focus:ring-accented focus:ring-offset-2 border-transparent hover:bg-primary/80 shrink-0 rounded-full px-2 py-0 text-[11px] font-medium shadow-none bg-warning/10 text-warning dark:bg-warning/50 dark:text-warning border-default">
-                              <UIcon name="i-lucide-clock-3" class="mr-1 size-3" />
-                              12m
-                            </div>
-                          </div>
-                          <div class="flex min-w-0 items-center justify-between gap-3">
-                            <div class="flex min-w-0 items-center gap-3">
-                              <div class="relative shrink-0">
-                                <span class="relative flex shrink-0 overflow-hidden size-8 rounded-full">
-                                  <img class="aspect-square h-full w-full" alt="Ava Reed" src="/reference/146332adc3a2c901.png" loading="lazy" />
-                                </span>
-                                <span class="border-(--ui-bg) absolute right-0 bottom-0 size-2.5 rounded-full border-2 bg-warning" />
-                              </div>
-                              <div class="min-w-0">
-                                <p class="truncate text-sm font-medium">Ava Reed</p>
-                                <p class="text-muted truncate text-xs">Console</p>
-                              </div>
-                            </div>
-                            <div class="inline-flex items-center border transition-colors focus:outline-hidden focus:ring-2 focus:ring-accented focus:ring-offset-2 border-transparent hover:bg-primary/80 shrink-0 rounded-full px-2 py-0 text-[11px] font-medium shadow-none bg-warning/10 text-warning dark:bg-warning/50 dark:text-warning border-default">
-                              <UIcon name="i-lucide-clock-3" class="mr-1 size-3" />
-                              10m
-                            </div>
-                          </div>
-                          <div class="flex min-w-0 items-center justify-between gap-3">
-                            <div class="flex min-w-0 items-center gap-3">
-                              <div class="relative shrink-0">
-                                <span class="relative flex shrink-0 overflow-hidden size-8 rounded-full">
-                                  <img class="aspect-square h-full w-full" alt="Kiara Laras" src="/reference/5985a55c7498fe2e.png" loading="lazy" />
-                                </span>
-                                <span class="border-(--ui-bg) absolute right-0 bottom-0 size-2.5 rounded-full border-2 bg-warning" />
-                              </div>
-                              <div class="min-w-0">
-                                <p class="truncate text-sm font-medium">Kiara Laras</p>
-                                <p class="text-muted truncate text-xs">Pulse</p>
-                              </div>
-                            </div>
-                            <div class="inline-flex items-center border transition-colors focus:outline-hidden focus:ring-2 focus:ring-accented focus:ring-offset-2 border-transparent hover:bg-primary/80 shrink-0 rounded-full px-2 py-0 text-[11px] font-medium shadow-none bg-warning/10 text-warning dark:bg-warning/50 dark:text-warning border-default">
-                              <UIcon name="i-lucide-clock-3" class="mr-1 size-3" />
-                              8m
-                            </div>
-                          </div>
-                          <div class="flex min-w-0 items-center justify-between gap-3">
-                            <div class="flex min-w-0 items-center gap-3">
-                              <div class="relative shrink-0">
-                                <span class="relative flex shrink-0 overflow-hidden size-8 rounded-full">
-                                  <img class="aspect-square h-full w-full" alt="Ben Lewis" src="/reference/ada84674117f0188.png" loading="lazy" />
-                                </span>
-                                <span class="border-(--ui-bg) absolute right-0 bottom-0 size-2.5 rounded-full border-2 bg-warning" />
-                              </div>
-                              <div class="min-w-0">
-                                <p class="truncate text-sm font-medium">Ben Lewis</p>
-                                <p class="text-muted truncate text-xs">Infra</p>
-                              </div>
-                            </div>
-                            <div class="inline-flex items-center border transition-colors focus:outline-hidden focus:ring-2 focus:ring-accented focus:ring-offset-2 border-transparent hover:bg-primary/80 shrink-0 rounded-full px-2 py-0 text-[11px] font-medium shadow-none bg-warning/10 text-warning dark:bg-warning/50 dark:text-warning border-default">
-                              <UIcon name="i-lucide-clock-3" class="mr-1 size-3" />
-                              6m
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </section>
-                    <section class="bg-default rounded-[8px] border shadow-sm shadow-zinc-200/40 dark:border-(--ui-text-inverted)/10 dark:bg-[var(--ui-bg-inverted)] dark:shadow-none flex h-[335px] flex-col p-4 border-default" style="opacity: 1; transform: none;">
-                      <div class="mb-4 flex items-start justify-between gap-3">
-                        <div>
-                          <h2 class="text-base font-semibold text-highlighted">Recent activity</h2>
-                        </div>
-                        <UIcon name="i-lucide-ellipsis" class="text-muted size-4" />
-                      </div>
-                      <div class="min-h-0 flex-1 space-y-2 overflow-y-auto pr-1 [scrollbar-color:hsl(var(--ui-border))_transparent] [scrollbar-width:thin]">
-                        <div class="grid min-w-0 grid-cols-[28px_minmax(0,1fr)_44px] items-center gap-3 rounded-[6px] border p-2.5 border-default">
-                          <span class="bg-muted grid size-7 place-items-center rounded-[5px]">
-                            <UIcon name="i-lucide-bell" class="size-3.5 text-info" />
-                          </span>
-                          <div class="min-w-0">
-                            <p class="truncate text-xs font-medium">commented on RFC-112</p>
-                            <p class="text-muted truncate text-[11px]">Filters API performance improvements</p>
-                          </div>
-                          <span class="text-muted text-right text-[11px]">10m ago</span>
-                        </div>
-                        <div class="grid min-w-0 grid-cols-[28px_minmax(0,1fr)_44px] items-center gap-3 rounded-[6px] border p-2.5 border-default">
-                          <span class="bg-muted grid size-7 place-items-center rounded-[5px]">
-                            <UIcon name="i-lucide-circle-dot" class="size-3.5 text-secondary" />
-                          </span>
-                          <div class="min-w-0">
-                            <p class="truncate text-xs font-medium">moved RFC-126 to Review</p>
-                            <p class="text-muted truncate text-[11px]">Export module CSV support</p>
-                          </div>
-                          <span class="text-muted text-right text-[11px]">1h ago</span>
-                        </div>
-                        <div class="grid min-w-0 grid-cols-[28px_minmax(0,1fr)_44px] items-center gap-3 rounded-[6px] border p-2.5 border-default">
-                          <span class="bg-muted grid size-7 place-items-center rounded-[5px]">
-                            <UIcon name="i-lucide-circle-check" class="size-3.5 text-success" />
-                          </span>
-                          <div class="min-w-0">
-                            <p class="truncate text-xs font-medium">closed RFC-101</p>
-                            <p class="text-muted truncate text-[11px]">Timeline engine refactor</p>
-                          </div>
-                          <span class="text-muted text-right text-[11px]">2h ago</span>
-                        </div>
-                        <div class="grid min-w-0 grid-cols-[28px_minmax(0,1fr)_44px] items-center gap-3 rounded-[6px] border p-2.5 border-default">
-                          <span class="bg-muted grid size-7 place-items-center rounded-[5px]">
-                            <UIcon name="i-lucide-file-text" class="size-3.5 text-info" />
-                          </span>
-                          <div class="min-w-0">
-                            <p class="truncate text-xs font-medium">updated ONB-118</p>
-                            <p class="text-muted truncate text-[11px]">Onboarding stepper UI tweaks</p>
-                          </div>
-                          <span class="text-muted text-right text-[11px]">3h ago</span>
-                        </div>
-                      </div>
-                      <UButton color="neutral" variant="soft" class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-elevated hover:text-default mt-3 h-8 shrink-0 rounded-[6px] px-2 text-xs" aria-label="View all activity" type="button" @click="openAction(&quot;View all activity&quot;)">
-                        View all activity
-                        <UIcon name="i-lucide-chevron-right" class="size-3.5" />
-                      </UButton>
-                    </section>
-                  </div>
-                  <div class="grid gap-4 xl:hidden">
-                    <section class="bg-default rounded-[8px] border shadow-sm shadow-zinc-200/40 dark:border-(--ui-text-inverted)/10 dark:bg-[var(--ui-bg-inverted)] dark:shadow-none p-4 sm:p-5 border-default" style="opacity: 1; transform: none;">
-                      <div class="mb-5 flex items-start justify-between gap-3">
-                        <div>
-                          <h2 class="text-base font-semibold text-highlighted">Delivery throughput</h2>
-                          <p class="text-muted mt-1 text-xs">Weekly planned vs completed issues</p>
-                        </div>
-                        <UIcon name="i-lucide-ellipsis" class="text-muted size-4" />
-                      </div>
-                      <!-- Chart 5: SVG geometry and theme tokens are local to this page -->
-                      <div data-slot="chart" class="[&amp;_.chart-cartesian-axis-tick_text]:fill-(--ui-text-muted) [&amp;_.chart-cartesian-grid_line]:stroke-(--ui-border)/50 [&amp;_.chart-curve.chart-tooltip-cursor]:stroke-(--ui-border) [&amp;_.chart-polar-grid_]:stroke-(--ui-border) [&amp;_.chart-radial-bar-background-sector]:fill-(--ui-bg-muted) [&amp;_.chart-rectangle.chart-tooltip-cursor]:fill-(--ui-bg-muted) [&amp;_.chart-reference-line_]:stroke-(--ui-border) flex min-h-0 min-w-0 aspect-video justify-center text-xs [&amp;_.chart-dot]:stroke-transparent [&amp;_.chart-layer]:outline-hidden [&amp;_.chart-sector]:outline-hidden [&amp;_.chart-sector]:stroke-transparent [&amp;_.chart-surface]:outline-hidden h-[220px] w-full" style="" role="img" aria-label="Analytics chart">
-                        <!-- Chart 6: SVG geometry and theme tokens are local to this page -->
-                        <div class="chart-responsive-container" style="width:100%;height:100%;min-width:1px;min-height:1px;;width:100%;height:120px;min-width:0" role="img" aria-label="Analytics chart">
-                          <div style="width:0;height:0;overflow:visible" />
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </div>
-              </div>
-            </main>
-          </div>
-        </div>
+    <div class="min-h-0 flex-1 overflow-y-auto bg-muted/30"><main class="mx-auto max-w-7xl space-y-5 p-4 sm:p-6 lg:p-8">
+      <section data-copy-block="command-portfolio" tabindex="0" aria-label="Portfolio health and current project" class="space-y-4">
+        <header class="flex flex-wrap items-start justify-between gap-3"><div><h1 class="text-2xl font-semibold text-highlighted">Command Center</h1><p class="mt-1 text-sm text-muted">Local example snapshots · May 11, 2026, 10:00 UTC. No live project or presence service.</p></div><UButton label="Refresh local summary" aria-label="Refresh command summary" icon="i-lucide-refresh-cw" color="neutral" variant="outline" @click="refreshCommandSummary" /></header>
+        <UCard><dl data-command-summary class="grid gap-4 sm:grid-cols-2 lg:grid-cols-6"><div><dt class="text-xs text-muted">Portfolio health</dt><dd class="mt-1 font-semibold text-warning">Needs attention</dd><p class="mt-1 text-xs text-muted">At-risk or off-track samples</p></div><div><dt class="text-xs text-muted">Projects</dt><dd class="mt-1 text-xl font-semibold">{{ commandProjects.length }}</dd><p class="text-xs text-muted">Example portfolio only</p></div><div v-for="item in commandCounts" :key="item.status"><dt class="text-xs text-muted">{{ item.status }}</dt><dd class="mt-1 text-xl font-semibold">{{ item.count }}</dd><p class="text-xs text-muted">{{ Math.round(item.count / commandProjects.length * 100) }}%</p></div><div><dt class="text-xs text-muted">Budget burn</dt><dd class="mt-1 text-xl font-semibold">{{ commandBurn }}%</dd><p class="mt-1 text-xs text-muted">{{ commandMoney(commandSpent) }} / {{ commandMoney(commandBudget) }} USD</p></div></dl></UCard>
+        <UCard><template #header><div class="flex flex-wrap items-center justify-between gap-2"><h2 class="font-semibold text-highlighted">Current project</h2><UButton label="Browse projects" aria-label="Browse command projects" color="neutral" variant="outline" @click="commandDirectoryOpen = true" /></div></template><div class="space-y-4"><UFormField label="Selected project"><USelect v-model="commandSelectedId" :items="commandProjects.map(project => ({ label: project.name, value: project.id }))" aria-label="Command selected project" class="w-full sm:max-w-sm" /></UFormField><div data-command-selected class="space-y-3"><div class="flex flex-wrap items-center gap-2"><h3 class="font-semibold">{{ commandSelected.name }}</h3><UBadge :label="commandSelected.status" :color="commandProjectColor(commandSelected.status)" variant="subtle" /></div><dl class="grid gap-4 text-sm sm:grid-cols-3"><div><dt class="text-xs text-muted">Project manager</dt><dd>{{ commandSelected.manager }}</dd></div><div><dt class="text-xs text-muted">Design lead</dt><dd>{{ commandSelected.lead }}</dd></div><div><dt class="text-xs text-muted">Spent / budget (USD)</dt><dd>{{ commandMoney(commandSelected.spent) }} / {{ commandMoney(commandSelected.budget) }}</dd></div></dl><p class="text-sm text-muted">{{ commandSelected.members.length }} members: {{ commandSelected.members.join(', ') }}.</p></div></div></UCard>
+        <p v-if="commandNotice" role="status" class="text-sm text-muted">{{ commandNotice }}</p>
+        <UModal v-model:open="commandDirectoryOpen" title="Browse example projects" description="Search by name, project ID or manager. Selecting a row changes the current-project card only."><template #body><UFormField label="Search projects"><UInput v-model="commandSearch" name="commandProjectSearch" type="search" icon="i-lucide-search" class="w-full" /></UFormField><p data-command-project-count class="my-3 text-sm text-muted" aria-live="polite">{{ commandMatches.length }} of {{ commandProjects.length }} projects match.</p><ul class="space-y-3"><li v-for="project in commandMatches" :key="project.id" class="rounded-lg border border-default p-3"><h3 class="font-semibold">{{ project.name }}</h3><p class="my-2 text-sm text-muted">{{ project.id }} · {{ project.manager }} · {{ project.status }}</p><UButton label="Select project" :aria-label="`Select command project ${project.id}`" color="neutral" variant="outline" @click="selectCommandProject(project.id)" /></li></ul><p v-if="!commandMatches.length" class="text-sm text-muted">No projects match this search.</p></template><template #footer><UButton label="Close" aria-label="Close command project browser" @click="commandDirectoryOpen = false" /></template></UModal>
+      </section>
+
+      <div class="grid min-w-0 gap-5 lg:grid-cols-2">
+        <section data-copy-block="command-sprint" tabindex="0" aria-label="Sprint point progress" class="min-w-0"><UCard class="h-full"><template #header><h2 class="font-semibold text-highlighted">Sprint health</h2><p class="mt-1 text-xs text-muted">Cumulative story points, not issue counts.</p></template><UFormField label="Sprint"><USelect v-model="commandSprint" :items="[{ label: 'This sprint', value: 'current' }, { label: 'Previous sprint', value: 'previous' }]" aria-label="Command sprint period" class="w-full" /></UFormField><p data-command-sprint-total class="my-4 text-sm">{{ commandSprintDone }} / {{ commandSprintScope }} points · {{ commandSprintPercent }}% · {{ commandSprintData.label }} UTC.</p><figure><svg viewBox="0 0 350 210" role="img" aria-label="Cumulative completed bars and scope line, in story points" class="block w-full"><title>Sprint health in story points</title><g v-for="tick in [0, 25, 50]" :key="tick"><line x1="25" x2="330" :y1="170 - tick * 3" :y2="170 - tick * 3" stroke="var(--ui-border)" /><text x="20" :y="174 - tick * 3" text-anchor="end" fill="var(--ui-text-muted)" font-size="10">{{ tick }}</text></g><g v-for="(row, index) in commandSprintRows" :key="row.day"><rect :x="30 + index * 45" :y="170 - row.completed * 3" width="20" :height="row.completed * 3" rx="3" fill="var(--ui-primary)" /><text :x="40 + index * 45" y="190" text-anchor="middle" fill="var(--ui-text-muted)" font-size="10">{{ row.day }}</text></g><polyline :points="commandSprintPoints" fill="none" stroke="var(--ui-text-highlighted)" stroke-width="2" stroke-dasharray="4 3" /></svg><figcaption class="text-xs text-muted">Solid bars: completed · dashed line: scope. Scope changes during the sprint.</figcaption></figure><details class="mt-4 text-sm"><summary class="cursor-pointer">View daily point data</summary><div class="mt-2 overflow-x-auto"><table class="w-full text-left text-xs"><caption class="sr-only">Cumulative sprint points</caption><thead><tr><th scope="col" class="p-2">Day</th><th scope="col" class="p-2">Completed</th><th scope="col" class="p-2">Scope</th></tr></thead><tbody><tr v-for="row in commandSprintRows" :key="row.day"><th scope="row" class="p-2">{{ row.day }}</th><td class="p-2">{{ row.completed }}</td><td class="p-2">{{ row.scope }}</td></tr></tbody></table></div></details></UCard></section>
+
+        <section data-copy-block="command-budget" tabindex="0" aria-label="Budget actual and forecast" class="min-w-0">
+          <UCard class="h-full">
+            <template #header><h2 class="font-semibold text-highlighted">Budget Burn</h2><p class="mt-1 text-xs text-muted">Jan–May actual (May is month-to-date); Jun–Sep forecast, not recorded spend.</p></template>
+            <UFormField label="Fiscal year"><USelect v-model="commandFiscalYear" :items="['FY2026', 'FY2025']" aria-label="Command fiscal year" class="w-full" /></UFormField>
+            <p data-command-budget-total class="my-4 text-sm">{{ commandBudgetMoney(commandBudgetActual) }} / {{ commandBudgetMoney(commandBudgetData.budget) }} USD · {{ commandBudgetPercent }}% at the May 11 sample ({{ commandFiscalYear }}).</p>
+            <figure>
+              <svg viewBox="0 0 380 210" role="img" aria-label="Actual and forecast cumulative spend in millions of US dollars" class="block w-full">
+                <title>Budget actual and forecast, millions USD</title>
+                <g v-for="tick in [0, 8, 16]" :key="tick"><line x1="45" x2="350" :y1="commandBudgetY(tick * 1000000)" :y2="commandBudgetY(tick * 1000000)" stroke="var(--ui-border)" /><text x="40" :y="commandBudgetY(tick * 1000000) + 4" text-anchor="end" fill="var(--ui-text-muted)" font-size="10">${{ tick }}M</text></g>
+                <polyline :points="commandBudgetActualPoints" fill="none" stroke="var(--ui-primary)" stroke-width="3" />
+                <polyline :points="commandBudgetForecastPoints" fill="none" stroke="var(--ui-text-highlighted)" stroke-width="2" stroke-dasharray="4 3" />
+                <g v-for="(row, index) in commandBudgetRows" :key="row.month"><text :x="45 + index * 38" y="190" text-anchor="middle" fill="var(--ui-text-muted)" font-size="10">{{ row.month }}</text></g>
+              </svg>
+              <figcaption class="text-xs text-muted">Solid: actual · dashed: forecast. September forecast: {{ commandBudgetMoney(commandBudgetForecast) }} USD.</figcaption>
+            </figure>
+            <details class="mt-4 text-sm"><summary class="cursor-pointer">View monthly budget data</summary><div class="mt-2 overflow-x-auto"><table class="w-full text-left text-xs"><caption class="sr-only">Budget actual and forecast USD</caption><thead><tr><th scope="col" class="p-2">Month</th><th scope="col" class="p-2">Type</th><th scope="col" class="p-2">USD</th></tr></thead><tbody><tr v-for="row in commandBudgetRows" :key="row.month"><th scope="row" class="p-2">{{ row.month }}</th><td class="p-2">{{ row.type }}</td><td class="p-2">{{ commandBudgetMoney(row.amount) }}</td></tr></tbody></table></div></details>
+          </UCard>
+        </section>
       </div>
-    </div>
-    <!-- Page-local action dialog -->
-    <UModal v-model:open="actionDialog.open" :title="actionDialog.title" description="Update the details below.">
-      <template #body>
-        <p v-if="actionDialog.mode === 'delete'" class="text-sm text-muted">Are you sure you want to remove this item?</p>
-        <div v-else class="space-y-4">
-          <UFormField label="Name"><UInput v-model="actionDialog.name" class="w-full" /></UFormField>
-          <UFormField label="Description"><UTextarea v-model="actionDialog.description" class="w-full" /></UFormField>
-        </div>
-      </template>
-      <template #footer>
-        <div class="flex w-full justify-end gap-2">
-          <UButton color="neutral" variant="outline" @click="actionDialog.open = false">Cancel</UButton>
-          <UButton :color="actionDialog.mode === 'delete' ? 'error' : 'primary'" @click="confirmAction">{{ actionDialog.mode === 'delete' ? 'Remove' : 'Save changes' }}</UButton>
-        </div>
-      </template>
-    </UModal>
+
+      <div class="grid min-w-0 items-start gap-5 xl:grid-cols-3">
+        <section data-copy-block="command-milestones" tabindex="0" aria-label="Local upcoming milestone tracker" class="min-w-0"><UCard><template #header><h2 class="font-semibold text-highlighted">Upcoming milestones</h2><p class="mt-1 text-xs text-muted">Snapshot May 11, 2026 · local status edits only.</p></template><UFormField label="Milestone status"><USelect v-model="commandMilestoneStatus" :items="['All statuses', 'On Track', 'At Risk', 'Completed']" aria-label="Command milestone status" class="w-full" /></UFormField><p data-command-milestone-count class="my-3 text-sm text-muted" aria-live="polite">{{ commandShownMilestones.length }} shown · {{ commandMilestoneMatches.length }} matching of {{ commandMilestones.length }} samples.</p><ul class="space-y-3"><li v-for="item in commandShownMilestones" :key="item.id" :data-command-milestone="item.id" class="space-y-2 rounded-lg border border-default p-3"><h3 class="font-medium">{{ item.title }}</h3><p class="text-xs text-muted">{{ item.id }} · {{ commandMilestoneDate(item.due) }} UTC</p><div class="flex flex-wrap items-center justify-between gap-2"><UBadge :label="item.status" :color="item.status === 'At Risk' ? 'warning' : 'success'" variant="subtle" /><UButton label="Details" :aria-label="`View command milestone ${item.id}`" color="neutral" variant="outline" size="xs" @click="editCommandMilestone(item.id)" /></div></li></ul><p v-if="!commandMilestoneMatches.length" class="text-sm text-muted">No milestones match this status.</p><UButton :label="commandAllMilestones ? 'Show fewer milestones' : 'View all milestones'" aria-label="Toggle all command milestones" color="neutral" variant="ghost" class="mt-3" @click="commandAllMilestones = !commandAllMilestones" /><p v-if="commandMilestoneNotice" role="status" class="mt-3 text-xs text-muted">{{ commandMilestoneNotice }}</p></UCard><UModal v-model:open="commandMilestoneOpen" :title="commandMilestoneSelected?.title || 'Milestone'" description="Edit only this milestone snapshot. Dates and owners are read-only; no external project is changed."><template #body><form :id="commandMilestoneFormId" class="space-y-4" @submit.prevent="saveCommandMilestone"><p class="text-sm">{{ commandMilestoneSelected?.id }} · {{ commandMilestoneSelected?.owner }}</p><p class="text-sm text-muted">{{ commandMilestoneSelected?.detail }}</p><UFormField label="Milestone demo status"><USelect v-model="commandMilestoneDraft" :items="['On Track', 'At Risk', 'Completed']" aria-label="Command milestone draft status" class="w-full" /></UFormField></form></template><template #footer><UButton label="Cancel" aria-label="Cancel command milestone edit" color="neutral" variant="outline" @click="commandMilestoneOpen = false" /><UButton label="Save locally" aria-label="Save command milestone status" type="submit" :form="commandMilestoneFormId" /></template></UModal></section>
+
+        <section data-copy-block="command-team" tabindex="0" aria-label="Local team status and invitation preview" class="min-w-0"><UCard><template #header><div class="flex flex-wrap items-center justify-between gap-2"><h2 class="font-semibold text-highlighted">Status Tracker</h2><UButton label="Invite preview" aria-label="Open command invite preview" icon="i-lucide-user-plus" color="neutral" variant="outline" size="xs" @click="openCommandInvite" /></div><p class="mt-2 text-xs text-muted">Fictional presence at May 11, 2026, 10:00 UTC. Away durations are fixed samples, not timers.</p></template><UFormField label="Team status"><USelect v-model="commandMemberStatus" :items="['All statuses', 'Absent', 'Away', 'Available', 'Invited']" aria-label="Command team status" class="w-full" /></UFormField><p data-command-team-count class="my-3 text-sm text-muted" aria-live="polite">{{ commandMemberMatches.length }} of {{ commandMembers.length }} members match.</p><ul class="space-y-3"><li v-for="member in commandMemberMatches" :key="member.id" :data-command-member="member.id" class="rounded-lg border border-default p-3"><div class="flex flex-wrap items-center justify-between gap-2"><h3 class="font-medium">{{ member.name }}</h3><UBadge :label="member.status" :color="member.status === 'Available' ? 'success' : member.status === 'Away' ? 'warning' : 'neutral'" variant="subtle" /></div><p class="mt-2 text-xs text-muted">{{ member.detail }}</p></li></ul><p v-if="!commandMemberMatches.length" class="text-sm text-muted">No members match this status.</p><p v-if="commandInviteNotice" role="status" class="mt-3 text-xs text-muted">{{ commandInviteNotice }}</p></UCard><UModal v-model:open="commandInviteOpen" title="Create invitation preview" description="Adds a fictional member locally. No email or workspace invitation is sent."><template #body><form :id="commandInviteFormId" class="space-y-4" novalidate @submit.prevent="saveCommandInvite"><UFormField label="Example member name"><UInput v-model="commandInviteDraft.name" name="commandInviteName" maxlength="100" class="w-full" /></UFormField><UFormField label="Example member email"><UInput v-model="commandInviteDraft.email" name="commandInviteEmail" type="email" maxlength="254" class="w-full" /></UFormField><p v-if="commandInviteError" role="alert" class="text-sm text-error">{{ commandInviteError }}</p></form></template><template #footer><UButton label="Cancel" aria-label="Cancel command invite" color="neutral" variant="outline" @click="commandInviteOpen = false" /><UButton label="Create local preview" aria-label="Save command invite preview" type="submit" :form="commandInviteFormId" /></template></UModal></section>
+
+        <section data-copy-block="command-activity" tabindex="0" aria-label="Local activity and notifications" class="min-w-0"><UCard><template #header><h2 class="font-semibold text-highlighted">Recent activity</h2><p class="mt-1 text-xs text-muted">{{ commandActivityUnread }} unread notifications in this snapshot.</p></template><UFormField label="Activity filter"><USelect v-model="commandActivityFilter" :items="['All activity', 'Unread only']" aria-label="Command activity filter" class="w-full" /></UFormField><p data-command-activity-count class="my-3 text-sm text-muted" aria-live="polite">{{ commandActivityShown.length }} shown · {{ commandActivityMatches.length }} matching of {{ commandActivity.length }} samples.</p><ol class="space-y-3"><li v-for="item in commandActivityShown" :key="item.id" :data-command-activity="item.id" class="space-y-2 rounded-lg border border-default p-3"><h3 class="font-medium">{{ item.title }}</h3><p class="text-xs text-muted"><time :datetime="item.time">{{ commandActivityDate(item.time) }} UTC</time></p><div class="flex flex-wrap items-center justify-between gap-2"><UBadge :label="item.unread ? 'Unread' : 'Read'" color="neutral" variant="subtle" /><UButton label="Details" :aria-label="`View command activity ${item.id}`" color="neutral" variant="outline" size="xs" @click="openCommandActivity(item.id)" /></div></li></ol><p v-if="!commandActivityMatches.length" class="text-sm text-muted">No activity matches this filter.</p><UButton :label="commandAllActivity ? 'Show fewer activities' : 'View all activity'" aria-label="Toggle all command activity" color="neutral" variant="ghost" class="mt-3" @click="commandAllActivity = !commandAllActivity" /><p v-if="commandActivityNotice" role="status" class="mt-3 text-xs text-muted">{{ commandActivityNotice }}</p></UCard><UModal v-model:open="commandActivityOpen" :title="commandActivitySelected?.title || 'Activity'" description="A fictional workspace event; marking it read changes this local block only."><template #body><p class="text-sm">{{ commandActivitySelected?.detail }}</p></template><template #footer><UButton label="Close" aria-label="Close command activity" color="neutral" variant="outline" @click="commandActivityOpen = false" /><UButton label="Mark as read" aria-label="Mark command activity read" :disabled="!commandActivitySelected?.unread" @click="readCommandActivity" /></template></UModal></section>
+      </div>
+
+      <section data-copy-block="command-throughput" tabindex="0" aria-label="Weekly delivery throughput" class="min-w-0">
+        <UCard>
+          <template #header><h2 class="font-semibold text-highlighted">Delivery throughput</h2><p class="mt-1 text-xs text-muted">Weekly issue counts · separate from sprint story points. May 11 is a partial-week snapshot, not a forecast.</p></template>
+          <UFormField label="Week range"><USelect v-model="commandThroughputRange" :items="[{ label: 'Last 4 weeks', value: '4' }, { label: 'Last 8 weeks', value: '8' }]" aria-label="Command throughput range" class="w-full sm:max-w-xs" /></UFormField>
+          <p data-command-throughput-total class="my-4 text-sm">{{ commandThroughputDone }} completed / {{ commandThroughputPlanned }} planned issues · {{ commandThroughputPercent }}% for the selected range.</p>
+          <figure class="max-w-3xl">
+            <svg viewBox="0 0 500 200" role="img" aria-label="Planned and completed weekly issue counts" class="block w-full">
+              <title>Delivery throughput, weekly issue counts</title>
+              <g v-for="tick in [0, 20, 40]" :key="tick"><line x1="25" x2="490" :y1="160 - tick * 3.5" :y2="160 - tick * 3.5" stroke="var(--ui-border)" /><text x="20" :y="164 - tick * 3.5" text-anchor="end" fill="var(--ui-text-muted)" font-size="10">{{ tick }}</text></g>
+              <g v-for="(week, index) in commandThroughputData" :key="week.week"><rect :x="35 + index * 450 / commandThroughputData.length" :y="160 - week.planned * 3.5" width="16" :height="week.planned * 3.5" fill="var(--ui-bg-accented)" stroke="var(--ui-text-muted)" /><rect :x="53 + index * 450 / commandThroughputData.length" :y="160 - week.completed * 3.5" width="16" :height="week.completed * 3.5" fill="var(--ui-primary)" /><text :x="52 + index * 450 / commandThroughputData.length" y="180" text-anchor="middle" fill="var(--ui-text-muted)" font-size="10">{{ week.week }}</text></g>
+            </svg>
+            <figcaption class="text-xs text-muted">Outlined bars: planned · solid bars: completed. Week-start labels in 2026 (UTC).</figcaption>
+          </figure>
+          <details class="mt-4 text-sm"><summary class="cursor-pointer">View weekly issue data</summary><div class="mt-2 overflow-x-auto"><table class="w-full text-left text-xs"><caption class="sr-only">Weekly issue counts for selected range</caption><thead><tr><th scope="col" class="p-2">Week</th><th scope="col" class="p-2">Planned</th><th scope="col" class="p-2">Completed</th></tr></thead><tbody><tr v-for="week in commandThroughputData" :key="week.week"><th scope="row" class="p-2">{{ week.week }}</th><td class="p-2">{{ week.planned }}</td><td class="p-2">{{ week.completed }}</td></tr></tbody></table></div></details>
+        </UCard>
+      </section>
+    </main></div>
+    <BlockCopyTools page="/project-management/dashboard-3" />
   </div>
 </template>
-
-<style scoped>
-
-.page-content { min-height: 0; color: var(--ui-text); --chart-1: var(--ui-primary); --chart-2: var(--ui-text-highlighted); --chart-3: var(--ui-text-muted); --chart-4: var(--ui-text-dimmed); --chart-5: var(--ui-border-accented); --chart-6: var(--ui-border); --radius: var(--ui-radius); }
-.page-content > div { min-height: 100%; }
-.page-content *, .page-content ::before, .page-content ::after { border-color: var(--ui-border); }
-.page-content [data-slot="scroll-area-viewport"] { overflow: auto !important; scrollbar-width: thin; }
-.page-content [data-slot="scroll-area-scrollbar"] { display: none; }
-.page-content pre { overflow: auto; }
-.page-content img { object-fit: cover; }
-
-.chart-container { min-width: 0; }
-.chart-wrapper { width: 100% !important; }
-.chart-responsive-container > div { width: 100% !important; height: 100% !important; }
-svg.chart-surface { width: 100%; overflow: visible; }
-.chart-cartesian-axis-tick text { fill: var(--ui-text-muted); font-size: 11px; }
-.chart-cartesian-grid line { stroke: var(--ui-border); }
-</style>

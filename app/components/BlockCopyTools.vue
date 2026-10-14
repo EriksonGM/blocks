@@ -96,7 +96,7 @@ function updatePickerPosition() {
   if (!page) return
   const rect = picker.value.getBoundingClientRect()
   const left = Math.max(12, window.innerWidth - rect.width - 16)
-  const controls = visibleControlRects(page.querySelectorAll<HTMLElement>('button, a, input, textarea, select, [role="button"], [role="combobox"]'))
+  const controls = visibleControlRects(page.querySelectorAll<HTMLElement>('button, a, input, textarea, select, summary, [role="button"], [role="combobox"]'))
   const bottom = window.innerHeight - rect.height - 16
   const candidates = [bottom, ...controls.flatMap(control => [control.top - rect.height - 4, control.bottom + 4])]
     .filter(top => top >= 64 && top <= bottom).sort((a, b) => b - a)
@@ -123,7 +123,7 @@ function updatePosition() {
   const left = Math.max(12, Math.min(rect.right - width, window.innerWidth - width - 12))
   // The fixed mobile/keyboard picker also occupies space outside the page.
   // Long blocks can otherwise place the Copy button underneath that picker.
-  const nativeControls = visibleControlRects([...(element.closest('[data-page]')?.querySelectorAll<HTMLElement>('button, a, input, textarea, select, [role="button"], [role="combobox"]') || []),
+  const nativeControls = visibleControlRects([...(element.closest('[data-page]')?.querySelectorAll<HTMLElement>('button, a, input, textarea, select, summary, [role="button"], [role="combobox"]') || []),
     ...document.querySelectorAll<HTMLElement>('[data-copy-tools] button')]
     .filter(control => !control.closest('[role="toolbar"]')))
   const candidates = [rect.top - height - 4, rect.top + 4, rect.top + 48, rect.bottom + 4,
