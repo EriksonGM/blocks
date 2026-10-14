@@ -1,16 +1,144 @@
 # Blocks Admin — páginas Nuxt UI
 
+## Relevo para una nueva sesión — leer primero
+
+Este apartado permite continuar **sin el historial del chat**. Estado comprobado el **14 de octubre de 2026**; al retomar, contrastarlo con Git antes de editar. Las instrucciones actuales sustituyen el antiguo plan del piloto/MR.
+
+### Objetivo, prioridad y punto exacto de continuación
+
+- **Solicitud vigente:** completar todas las páginas faltantes, revisando y corrigiendo **toda su interfaz** y habilitando **bloques Vue copiables y autónomos**, con pruebas, commit y push **por página**. No es solo añadir botones ni convertir archivos masivamente.
+- **Rama de trabajo:** `main`, publicación directa en `origin/main`; el piloto ya está integrado. No crear otra rama/MR ni un PR de `main` hacia sí misma salvo nueva instrucción del usuario.
+- **Avance:** 23/261 páginas de contenido revisadas y publicadas, 238 pendientes; 23 registros de copia y 70 bloques exportables. Además hay 2 rutas auxiliares pendientes. Tener un archivo Vue o figurar en el menú **no** significa estar validada.
+- **Fase actual:** clientes terminados (9/9); gestión de proyectos en curso (3/32). **Próxima ruta: `/project-management/dashboard-4`**, archivo [`app/pages/project-management/dashboard-4.vue`](app/pages/project-management/dashboard-4.vue). No se ha empezado su revisión ni su implementación de copia.
+- **Después:** recorrer las casillas pendientes de `/project-management/*` en el orden del inventario; luego las demás pendientes fuera de `/ai-chat/*`, también en el orden del inventario; IA al final. La lista general es alfabética, no una instrucción para empezar por IA.
+- **Última página publicada:** `/project-management/dashboard-3`, commit `498cf51390b4acfe1759415984c98731799bfd7f`. Confirmación documental posterior: `3dd2a54`. Estos SHA son referencias históricas, no se espera que sigan siendo el HEAD tras nuevos commits.
+- **Ejecución:** los servidores temporales 3030 (dev), 3031 (pegado), 3032/3033 (producción) se detuvieron al terminar. No hay implementación ni prueba continuando en segundo plano; una sesión nueva debe iniciar sus propios procesos.
+
+El [procedimiento obligatorio](#procedimiento-obligatorio-por-página) y la [lista de pendientes](#todo-por-página-261-páginas-de-contenido) gobiernan la cola. El [registro de avance](#registro-de-avance) contiene resultados históricos por página; su columna «siguiente acción» no sustituye el punto de continuación de este apartado.
+
+### Antes de tocar archivos: preservar trabajo y comprobar publicación
+
+Desde la raíz del repositorio (entorno anterior: Windows/PowerShell, `D:\Code\blocks`):
+
+```sh
+git status --short
+git diff
+git diff --cached
+git log -8 --oneline --decorate
+git stash list --format="%H %gd %s"
+git ls-remote origin refs/heads/main
+```
+
+No hacer `reset --hard`, `checkout --`, descartar archivos, borrar stashes ni sobrescribir cambios desconocidos. Si el remoto avanzó o el árbol tiene cambios distintos del snapshot, investigarlos y reconciliarlos antes de continuar; no asumir que son residuos.
+
+**Cambio local previo que debe conservarse:** `scripts/test-copy-blocks-browser.mjs`, dentro de `setInput`, tiene esta línea adicional **sin commit**:
+
+```js
+await waitFor(`document.querySelector(${JSON.stringify(selector)})`)
+```
+
+Es independiente de las páginas nuevas; no retirarla ni incluirla silenciosamente en un commit. Al ampliar las pruebas de una página, preparar únicamente los nuevos hunks con `git add -p scripts/test-copy-blocks-browser.mjs` y comprobar ambos diffs. Evitar `git add .`. La última regresión de producción también se ejecutó con una copia temporal del **script del índice**, sin esta línea; validar la versión que se va a publicar si difiere de la utilizada al probar. Para hacerlo sin tocar el árbol, se puede exportar `git show :scripts/test-copy-blocks-browser.mjs` a un `.mjs` temporal, sustituyendo su import relativo de `./block-catalog.mjs` por la URL absoluta del archivo del repositorio, y ejecutar esa copia con los mismos argumentos/variables de entorno.
+
+**WIP aplazado de IA:** stash `1474bce9569566d438973ec4f62f671e25f86d5c` (actualmente `stash@{0}`), con `app/pages/ai-chat/agent-configuration.vue`, cambios en pruebas y el JSON no rastreado `app/data/copy-blocks/agent-configuration.json`. Inspección sin aplicar:
+
+```sh
+git stash show --stat 1474bce9569566d438973ec4f62f671e25f86d5c
+git stash show -p 1474bce9569566d438973ec4f62f671e25f86d5c
+git ls-tree -r --name-only '1474bce9569566d438973ec4f62f671e25f86d5c^3'
+git show '1474bce9569566d438973ec4f62f671e25f86d5c^3:app/data/copy-blocks/agent-configuration.json'
+```
+
+El tercer padre conserva los archivos no rastreados, que no aparecen en el `stash show` normal. Recuperar y reconciliar este WIP **solo en la fase de IA**, sin hacer `stash pop` a ciegas: las pruebas compartidas han cambiado. No marcar esa página terminada ni activar su registro ahora.
+
+La línea local y el stash **no están publicados en el remoto**: una nueva sesión sobre este mismo árbol debe preservarlos; un clon limpio puede no tenerlos. Si no existen, registrar esa diferencia, no reconstruirlos de memoria ni considerar completado el WIP de IA.
+
+### Mapa técnico mínimo para implementar la siguiente página
+
+| Archivo / referencia | Uso al continuar |
+| --- | --- |
+| `app/pages/project-management/dashboard-4.vue` | Leer completo primero; revisar diseño y cada interacción. Todo contenido/estado específico permanece en la página. |
+| `app/pages/project-management/dashboard-3.vue` + `app/data/copy-blocks/project-command-center.json` | Referencia reciente de 7 bloques autónomos, regiones compartidas, gráficas SVG/tablas y modales incluidos en la copia. No sustituir una página por otra sin revisarla. |
+| `app/pages/project-management/dashboard-2.vue` + `app/data/copy-blocks/project-dashboard-2.json` | Referencia de estado compartido entre bloques de la página y fragmentos de modales exportados. |
+| `app/data/copy-blocks/*.json` | Un registro por página: `path`, `file`, `key`, `blocks`; IDs de bloque y claves únicos. Contiene metadatos, no una segunda implementación del contenido. |
+| `scripts/block-catalog.mjs`, `modules/block-catalog.mjs` | Extracción AST/regiones y generación/carga de las fuentes. No editar a mano `.nuxt/`, `.output/` ni las exportaciones temporales. |
+| `scripts/test-copy-blocks-browser.mjs` | Añadir pruebas de negocio de la ruta en catálogo, móvil y pegado. Registrar un bloque **no añade automáticamente** pruebas de sus filtros/formularios. Usar las funciones `checkCommand*` y `commandBlockChecks` como ejemplo. |
+| `app/components/BlockCopyTools.vue` | Herramientas comunes; deben evitar controles, incluidos `summary`, y respetar scrollers/viewport. Cualquier cambio aquí exige regresión `--all`. |
+| `app/data/pages.json`, `docs/PAGES.md` | Inventario de archivos/rutas. El estado de revisión se mantiene en este README, no en los conteos históricos de tarjetas de `docs/PAGES.md`. |
+| `docs/COPYABLE-BLOCKS.md`, `docs/THEMING.md` | Contrato de portabilidad, pruebas y tokens de tema. |
+
+**Límites de implementación:** conservar la composición y el propósito de cada página; corregir controles engañosos, valores incoherentes y gráficos vacíos. Usar datos ficticios, acciones locales y mensajes honestos; no añadir APIs reales, cobros, emails enviados ni persistencia de datos sensibles. Los SFC copiados deben incluir sus imports/estado/estilos/modales, funcionar fuera del catálogo y no depender de sus rutas/layout/recursos internos. Si varios fragmentos necesitan reglas comunes para funcionar, copiarlos como un bloque coherente en vez de campos aislados. Usar tokens semánticos Nuxt UI y mantener los `.vue` con LF (`.gitattributes`). No ejecutar scripts históricos de regeneración: pueden borrar trabajo revisado; el guard de `materialize-pages.mjs` protege las páginas registradas, no justifica regenerar las demás.
+
+### Receta de pruebas reproducible (PowerShell)
+
+Requisitos: dependencias de `pnpm-lock.yaml`, Node con `fetch`/`WebSocket` global (última ejecución con Node 24), pnpm y Chrome/Edge para CDP. Desde la raíz:
+
+```powershell
+pnpm install
+pnpm check:pages
+pnpm check:copy-blocks --page=/project-management/dashboard-4
+pnpm typecheck
+pnpm preview:copy-blocks --typecheck
+```
+
+La comprobación `--page` solo funciona **después de registrar** la nueva página. Usar estos comandos tras implementar, no interpretar «Unregistered page» en una pendiente como fallo de la infraestructura.
+
+Abrir dos terminales y esperar a que cada servidor esté listo:
+
+```powershell
+# Terminal A: catálogo de desarrollo (puerto explícito, distinto de pnpm dev = 3020)
+pnpm exec nuxt dev --port 3030 --host 0.0.0.0
+```
+
+```powershell
+# Terminal B: aplicación independiente de pegado, puerto 3031
+pnpm preview:copy-blocks
+```
+
+```powershell
+# Terminal C: definir ambas URLs para no depender de defaults distintos
+$env:BLOCKS_BASE_URL = 'http://127.0.0.1:3030'
+$env:BLOCKS_PASTE_URL = 'http://127.0.0.1:3031'
+pnpm check:copy-blocks --page=/project-management/dashboard-4 --http
+pnpm check:copy-browser --page=/project-management/dashboard-4
+# Regresión conjunta (obligatoria al cambiar herramientas o pruebas compartidas)
+pnpm check:copy-blocks --http
+pnpm check:copy-browser --all
+node scripts/verify-pages.mjs --http
+```
+
+`check:copy-browser` **sin argumentos solo prueba el piloto**, no todo el catálogo. Los scripts HTTP usan 3020 por defecto; el de navegador usa 3030, y pegado 3031. `CHROME_PATH` permite especificar el ejecutable si no se detecta Chrome/Edge. En shell POSIX, usar `export BLOCKS_BASE_URL=...` / `export BLOCKS_PASTE_URL=...` en vez de `$env:`.
+
+**Regenerar fixtures:** reiniciar el catálogo tras añadir/cambiar registros JSON. Reiniciar `preview:copy-blocks` tras cambiar registros **o código exportado**: crea un snapshot de todos los SFC al arrancar, no se sincroniza con los cambios posteriores de la página. `--typecheck` crea otra fixture y sale, no actualiza el servidor de pegado que ya esté abierto. Las fixtures Windows están bajo `node_modules/.cache/copy-blocks-preview/`; no son archivos para commitear.
+
+**Producción:** detener el dev del catálogo antes del build para evitar competir por `.nuxt/`; ejecutar `pnpm build` y, en otra terminal, iniciar:
+
+```powershell
+$env:PORT = '3032'
+$env:HOST = '0.0.0.0'
+node .output/server/index.mjs
+```
+
+En la terminal de pruebas cambiar `BLOCKS_BASE_URL` a `http://127.0.0.1:3032` y repetir las comprobaciones HTTP/navegador; mantener pegado en 3031. Si se reconstruye, reiniciar el servidor de producción. Revisar capturas (claro/oscuro, escritorio, 390 y 320 px), teclado/foco, consola, eventos `window`, enlaces/recursos e interacciones; no basta el resultado automático. El script imprime la carpeta de capturas, en Windows bajo `C:\Users\erikm\AppData\Local\Temp\opencode\blocks-browser-*` en este entorno. Terminar únicamente los procesos iniciados para estas pruebas (Ctrl+C o sus PID registrados), sin detener servidores ajenos.
+
+### Última evidencia, incidencias y cierre de sesión
+
+- **Última validación de código:** `498cf51`: build, tipos del catálogo y pegado, compilación/exportación HTTP de 70 SFC, navegador `--all` con 70 copias/pegados usando el script preparado para commit, y HTTP de las 261 rutas aprobados. Capturas de producción: `C:\Users\erikm\AppData\Local\Temp\opencode\blocks-browser-RKZj7n` (artefactos locales opcionales; regenerarlos si no existen). La verificación adicional de dashboard-3 probó 320 px, Tab/Escape/foco, navegación/limpieza y pegado móvil. No se ha probado dashboard-4.
+- **Incidencia global abierta:** `ResizeObserver loop completed with undelivered notifications` aparece en logs de desarrollo del catálogo/pegado durante redimensionado e interacciones. CDP captura excepciones, `console.error` y avisos de hidratación, pero no todos los eventos `window.error`/`unhandledrejection`. Las capturas adicionales con listeners fueron comprobaciones puntuales, **no una corrección global** ni prueba de consola siempre limpia. Investigar origen y ampliar captura por separado; no ocultar errores para hacer pasar las pruebas.
+- **Enlaces pendientes:** `app/pages/original/users.vue` contiene diez detalles `/original/users/*` sin ruta. La prueba HTTP recorre el inventario, **no valida esos destinos de enlaces**. Corregirlos al revisar esa página; no declararlos resueltos ni inventar rutas para silenciar avisos.
+- **Sin bloqueo de publicación conocido:** los commits anteriores se publicaron. Si las nuevas pruebas, recursos o el push fallan, registrar el fallo exacto y detener el avance de esa página; no saltar validaciones ni marcarla completa.
+- **Al terminar cada página:** actualizar casilla, conteos, fila de avance y este relevo (última página, siguiente ruta, cambios locales/WIP, evidencia, incidencias y procesos activos). Hacer el commit/push indicado abajo y confirmar el remoto; una confirmación documental posterior puede citar el SHA, sin mezclar la próxima implementación. Al pausar, indicar qué queda pendiente y no afirmar continuación en segundo plano.
+
 ## Bloques copiables y seguimiento
 
-En las páginas marcadas en el ToDo, pasa el cursor sobre un bloque para **copiar su componente Vue**, copiar solo su plantilla o ver el código. También hay un selector de bloques accesible desde teclado y móvil. El piloto comprende `/ecommerce/dashboard-1`, `/developers/webhooks` y `/ai-chat/composer-1`; también están habilitadas `/401`, `/403`, `/404` y `/503`. Consulta [docs/COPYABLE-BLOCKS.md](docs/COPYABLE-BLOCKS.md).
+En las páginas marcadas en el ToDo, pasa el cursor sobre un bloque para **copiar su componente Vue**, copiar solo su plantilla o ver el código. También hay un selector de bloques accesible desde teclado y móvil. El piloto histórico comprende `/ecommerce/dashboard-1`, `/developers/webhooks` y `/ai-chat/composer-1`; las 23 páginas habilitadas actualmente figuran en el registro de avance. Consulta [docs/COPYABLE-BLOCKS.md](docs/COPYABLE-BLOCKS.md).
 
 `pnpm check:copy-blocks` valida todos los bloques registrados. `--page=/401` limita la comprobación a una página.
 
 La ampliación se realiza **una página a la vez sobre `main`**, según la instrucción actual del usuario. La rama `feat/copyable-blocks-pilot` ya se integró y publicó en `main` mediante `0bf9584`. El ToDo de este README es el registro de pendientes; no se marcará una página como terminada solo por añadir un botón de copia.
 
-La aplicación contiene **261 páginas completas**, escritas directamente con **Nuxt 4 y Nuxt UI 4**, y conserva las **219 entradas del menú original** de [Shadcnblocks Admin](https://shadcnblocks-admin.vercel.app).
+La aplicación contiene archivos para **261 páginas de contenido**, escritos directamente con **Nuxt 4 y Nuxt UI 4**, y conserva las **219 entradas del menú original** de [Shadcnblocks Admin](https://shadcnblocks-admin.vercel.app). Son las páginas de la conversión original; solo las casillas marcadas han completado la revisión funcional/visual y de copia actual.
 
-Cada ruta tiene su propio archivo `.vue` dentro de **`app/pages/`** (el directorio de páginas de Nuxt 4). La plantilla, los datos de ejemplo, el estado, las acciones y los estilos específicos están en ese archivo. No se utilizan componentes de bloques, renderizadores genéricos ni contenido JSON en tiempo de ejecución.
+Cada ruta tiene su propio archivo `.vue` dentro de **`app/pages/`** (el directorio de páginas de Nuxt 4). La plantilla, los datos de ejemplo, el estado, las acciones y los estilos específicos están en ese archivo. No se utilizan renderizadores genéricos ni JSON histórico para renderizar el contenido de las páginas; los metadatos de navegación y copia son infraestructura separada.
 
 ## Ejecutar
 
@@ -148,11 +276,11 @@ La casilla de una página representa **interfaz revisada + copia funcional + pru
 
 Avance: **23 de 261 páginas de contenido guardadas; 238 pendientes**, además de las 2 rutas auxiliares. Clientes: **9 de 9 páginas** (Ecommerce y Payment Processor completos). Gestión de proyectos: **3 de 32 páginas**. Las casillas reflejan páginas guardadas; la columna commit/push confirma su publicación. Actualiza esta tabla al terminar una página o encontrar un bloqueo; no dar a entender que la cola continúa ejecutándose en segundo plano cuando no hay una ejecución activa.
 
-**Avisos globales observados al cerrar la validación de la variante de clientes:** los registros de los servidores de desarrollo del catálogo y del pegado contienen `ResizeObserver loop completed with undelivered notifications` durante las pruebas de redimensionado/interacciones. El script CDP aprobó sus comprobaciones, pero no detectó estos eventos de `window`; falta investigar su origen y ampliar esa captura, sin afirmar que el entorno de desarrollo está libre de avisos. La comprobación HTTP de producción aprobó las 261 rutas del inventario, aunque el servidor avisó de diez enlaces de detalle inexistentes en `/original/users/*`; esa página sigue pendiente. Los servidores temporales se detuvieron deliberadamente después de las pruebas, por lo que su salida con código 1 no indica un fallo de build. El cambio local previo de `setInput` se conservó sin incluirlo en el commit; la prueba individual de producción también pasó con el script preparado para commit.
+Las incidencias abiertas y cambios locales que deben preservarse se detallan en [el relevo](#última-evidencia-incidencias-y-cierre-de-sesión). Las salidas con código 1 de servidores deliberadamente detenidos después de las pruebas no indican por sí mismas un fallo de build.
 
 ### ToDo por página (261 páginas de contenido)
 
-Cada casilla exige las dos tareas solicitadas: **validar la coherencia de toda la interfaz y corregir errores**, e **implementar y validar la copia de sus bloques**, además del flujo de commit/push anterior. El enlace abre el archivo fuente. Empezar por guardar las tres páginas del piloto y continuar en el orden de esta lista.
+Cada casilla exige las dos tareas solicitadas: **validar la coherencia de toda la interfaz y corregir errores**, e **implementar y validar la copia de sus bloques**, además del flujo de commit/push anterior. El enlace abre el archivo fuente. El piloto ya está publicado; continuar desde la ruta y fase del relevo, no reiniciar las páginas terminadas.
 
 **Orden de ejecución actualizado:** primero clientes (`add-customer`, `edit-customer`, `customer-list`/`customers` y `customer-detail` en Ecommerce/Payment Processor), después retomar `/project-management/*` y las demás pendientes fuera de `/ai-chat/*`, y finalmente IA. No deshacer las páginas ya terminadas. Al retomar configuración de IA, inspeccionar el stash indicado arriba y recuperar sus cambios con cuidado: incluye el SFC, su registro JSON y pruebas compartidas que pueden requerir reconciliación con las nuevas pruebas. La casilla sigue pendiente.
 
@@ -431,6 +559,6 @@ Las páginas utilizan componentes Nuxt UI, utilidades semánticas (`bg-default`,
 
 Los cambios de paleta y el modo claro/oscuro se aplican sin modificar las páginas. Consulta [docs/THEMING.md](docs/THEMING.md).
 
-Los contenidos y acciones de negocio utilizan datos de demostración. Las APIs de autenticación, pagos e IA se conectan en las funciones locales de cada página.
+Los contenidos y acciones de negocio utilizan datos de demostración. **No hay integraciones reales de autenticación, pagos o IA en el alcance de esta tarea**; las funciones locales son puntos de extensión para quien reutilice las páginas, no una instrucción para conectar APIs durante esta revisión.
 
 Los archivos de `app/data/reference/` y los scripts de migración se conservan únicamente como entradas históricas de la conversión. La aplicación no los importa ni los utiliza para renderizar las páginas.
