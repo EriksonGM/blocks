@@ -639,6 +639,89 @@ async function checkCustomerEditing(root) {
   result.customerEditing = { immutableId: true, validation: true, collections: true, singleDefaultCard: true, segments: true, draft: true, latestSavedReset: true, localSave: true }
 }
 
+async function checkBillingPlan(root) {
+  await click(root + ' [aria-label="Edit demo billing plan"]')
+  await setInput('input[name="billingMembers"]', '0')
+  await click('[aria-label="Save demo billing plan"]')
+  await waitFor(`document.querySelector('[role=dialog]').textContent.includes('between 1 and 100')`)
+  await setInput('input[name="billingMembers"]', '12.5')
+  await click('[aria-label="Save demo billing plan"]')
+  await waitFor(`document.querySelector('[role=dialog]').textContent.includes('whole number')`)
+  await chooseOption('[aria-label="Demo billing plan"]', 'Team Standard')
+  await chooseOption('[aria-label="Demo billing cycle"]', 'Annual')
+  await setInput('input[name="billingMembers"]', '20')
+  await click('[aria-label="Cancel demo billing plan"]')
+  await waitFor(`!document.querySelector('[role=dialog]')`)
+  assert.ok(await evaluate(`document.querySelector(${JSON.stringify(root + ' [data-billing-plan]')}).textContent.includes('Team Premium')`))
+  await click(root + ' [aria-label="Edit demo billing plan"]')
+  await chooseOption('[aria-label="Demo billing plan"]', 'Team Standard')
+  await chooseOption('[aria-label="Demo billing cycle"]', 'Annual')
+  await setInput('input[name="billingMembers"]', '20')
+  await click('[aria-label="Save demo billing plan"]')
+  await waitFor(`!document.querySelector('[role=dialog]') && document.querySelector(${JSON.stringify(root + ' [data-billing-price]')}).textContent.includes('$600.00')`)
+  assert.ok(await evaluate(`document.querySelector(${JSON.stringify(root)}).textContent.includes('20 members') && document.querySelector(${JSON.stringify(root)}).textContent.includes('December 20, 2027')`))
+  result.billingPlan = { validation: true, cancellation: true, localSave: true, computedPricing: true, datesUTC: true }
+}
+
+async function checkBillingCards(root) {
+  const rows = root + ' [data-billing-card]'
+  await click(root + ' [aria-label="Add demo billing card"]')
+  await setInput('input[name="billingCardLast4"]', '123')
+  await click('[aria-label="Save demo billing card"]')
+  await waitFor(`document.querySelector('[role=dialog]').textContent.includes('exactly four digits')`)
+  await setInput('input[name="billingCardLast4"]', '9862')
+  await click('[aria-label="Save demo billing card"]')
+  await waitFor(`document.querySelector('[role=dialog]').textContent.includes('already exists')`)
+  await setInput('input[name="billingCardLast4"]', '9000')
+  await setInput('input[name="billingCardExpiry"]', '2026-11')
+  await click('[aria-label="Save demo billing card"]')
+  await waitFor(`document.querySelector('[role=dialog]').textContent.includes('on or after December 2026')`)
+  await setInput('input[name="billingCardExpiry"]', '2031-01')
+  await click('[role=dialog] [role=checkbox]')
+  await click('[aria-label="Save demo billing card"]')
+  await waitFor(`!document.querySelector('[role=dialog]') && document.querySelectorAll(${JSON.stringify(rows)}).length === 4`)
+  assert.ok(await evaluate(`document.querySelector(${JSON.stringify(root + ' [data-billing-card="4"]')}).textContent.includes('Default')`))
+  assert.equal(await evaluate(`[...document.querySelectorAll(${JSON.stringify(rows)})].filter(row => row.textContent.includes('Default')).length`), 1)
+  await click(root + ' [aria-label="Manage demo billing card 2"]')
+  await waitFor(`document.querySelector('input[name="billingCardLast4"]').value === '7299'`)
+  await setInput('input[name="billingCardLast4"]', '1111')
+  await click('[aria-label="Cancel demo billing card"]'); await waitFor(`!document.querySelector('[role=dialog]')`)
+  assert.ok(await evaluate(`document.querySelector(${JSON.stringify(root + ' [data-billing-card="2"]')}).textContent.includes('7299')`))
+  await click(root + ' [aria-label="Manage demo billing card 4"]')
+  await click('[aria-label="Remove demo billing card"]')
+  await click('[aria-label="Cancel demo billing card"]'); await waitFor(`!document.querySelector('[role=dialog]')`)
+  assert.equal(await evaluate(`document.querySelectorAll(${JSON.stringify(rows)}).length`), 4)
+  await click(root + ' [aria-label="Manage demo billing card 4"]')
+  await click('[aria-label="Remove demo billing card"]')
+  await click('[aria-label="Confirm demo billing card removal"]')
+  await waitFor(`!document.querySelector('[role=dialog]') && document.querySelectorAll(${JSON.stringify(rows)}).length === 3`)
+  assert.ok(await evaluate(`document.querySelector(${JSON.stringify(root + ' [data-billing-card="1"]')}).textContent.includes('Default')`))
+  result.billingCards = { lastFourOnly: true, duplicateValidation: true, expiryValidation: true, uniqueDefault: true, correctCard: true, cancellation: true, confirmedRemoval: true }
+}
+
+async function checkBillingInvoices(root) {
+  const count = `document.querySelector(${JSON.stringify(root + ' [data-billing-invoice-count]')}).textContent`
+  await waitFor(`${count}.startsWith('5 of 5')`)
+  assert.ok(await evaluate(`document.querySelector(${JSON.stringify(root)}).textContent.includes('$520.00')`))
+  await chooseOption(root + ' [aria-label="Billing invoice status"]', 'Declined')
+  await waitFor(`${count}.startsWith('1 of 5')`)
+  await click(root + ' [aria-label="Toggle invoice SD862840-45-1"]')
+  await waitFor(`document.querySelector(${JSON.stringify(root + ' [role=region]')}).textContent.includes('No retry or charge')`)
+  await click(root + ' [aria-label="Reset billing invoice filters"]')
+  await chooseOption(root + ' [aria-label="Billing invoice sort"]', 'Amount')
+  await click(root + ' [aria-label="Toggle billing invoice order"]')
+  await waitFor(`document.querySelector(${JSON.stringify(root + ' [data-billing-invoice]')}).textContent.includes('$120.00')`)
+  await setInput(root + ' input[name="billingInvoiceSearch"]', '  SD862840-46  ')
+  await waitFor(`${count}.startsWith('1 of 5')`)
+  await click(root + ' [aria-label="Toggle invoice SD862840-46"]')
+  await waitFor(`document.querySelector(${JSON.stringify(root + ' [role=region]')}).textContent.includes('$120.00 + usage $20.00 = $140.00')`)
+  await setInput(root + ' input[name="billingInvoiceSearch"]', 'not-found')
+  await waitFor(`${count}.startsWith('0 of 5')`)
+  assert.ok(await evaluate(`document.querySelector(${JSON.stringify(root)}).textContent.includes('No invoices match')`))
+  await click(root + ' [aria-label="Reset billing invoice filters"]')
+  result.billingInvoices = { independentFilters: true, statusFilter: true, numericSort: true, amountBreakdown: true, expansion: true, noCharge: true, emptyResults: true }
+}
+
 async function checkPaymentAccountSummary(root) {
   for (const [label, value] of [['Active customers', '6'], ['Lifetime spend (USD)', '$1,172,700'], ['Open invoices (USD)', '$116,000'], ['Needs review', '3']]) {
     assert.ok(await evaluate(`document.querySelector(${JSON.stringify(root + ` [data-account-metric="${label}"]`)}).textContent.includes(${JSON.stringify(value)})`), `Computed account metric: ${label}`)
@@ -1076,6 +1159,12 @@ try {
       await checkPaymentAccounts('[data-copy-block="payment-account-directory"]')
       await selectBlock('payment-account-directory')
     }
+    if (page.path === '/payment-processor/customer-detail') {
+      await checkBillingPlan('[data-copy-block="processor-billing-plan"]')
+      await checkBillingCards('[data-copy-block="processor-billing-cards"]')
+      await checkBillingInvoices('[data-copy-block="processor-billing-invoices"]')
+      await selectBlock('processor-billing-invoices')
+    }
     assert.deepEqual(errors, [], `${page.path}: browser errors`)
     await screenshot(page.key + '.png')
     const lightColor = await evaluate(`getComputedStyle(document.querySelector('[data-page]')).color`)
@@ -1259,6 +1348,19 @@ try {
       assert.equal(await evaluate('document.documentElement.scrollWidth <= window.innerWidth'), true)
       result.paymentAccountMobile = true
     }
+    if (page.path === '/payment-processor/customer-detail') {
+      await click('[aria-label="Manage mobile demo billing card 2"]')
+      await waitFor(`document.querySelector('input[name="billingCardLast4"]').value === '7299'`)
+      await screenshot(page.key + '-mobile-card.png')
+      await click('[aria-label="Cancel demo billing card"]'); await waitFor(`!document.querySelector('[role=dialog]')`)
+      await chooseOption('[aria-label="Billing invoice status"]', 'Declined')
+      await click('[aria-label="Toggle invoice SD862840-45-1"]')
+      await screenshot(page.key + '-mobile-invoice.png')
+      await evaluate(`document.documentElement.classList.add('dark')`)
+      await screenshot(page.key + '-mobile-dark.png')
+      await evaluate(`document.documentElement.classList.remove('dark')`)
+      assert.equal(await evaluate('document.documentElement.scrollWidth <= window.innerWidth'), true)
+    }
     assert.deepEqual(errors, [], `${page.path}: mobile browser errors`)
   }
   result.mobileSelector = true
@@ -1313,6 +1415,9 @@ try {
     if (block.id === 'ecommerce-customer-history') await checkCustomerHistory('[data-paste-test]')
     if (block.id === 'ecommerce-customer-details') await checkCustomerDetails('[data-paste-test]')
     if (block.id === 'processor-customer-directory') await checkProcessorCustomers('[data-paste-test]')
+    if (block.id === 'processor-billing-plan') await checkBillingPlan('[data-paste-test]')
+    if (block.id === 'processor-billing-cards') await checkBillingCards('[data-paste-test]')
+    if (block.id === 'processor-billing-invoices') await checkBillingInvoices('[data-paste-test]')
     if (block.id === 'payment-account-summary') await checkPaymentAccountSummary('[data-paste-test]')
     if (block.id === 'payment-account-directory') await checkPaymentAccounts('[data-paste-test]', true)
     if (block.id === 'ecommerce-customer-metrics') {

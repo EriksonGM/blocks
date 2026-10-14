@@ -52,6 +52,8 @@ Cada página habilitada tiene un archivo JSON en `app/data/copy-blocks/` con `pa
 
 `scripts/block-catalog.mjs` extrae el marcado desde el AST Vue, elimina los atributos de herramientas y agrega solo las dependencias registradas. `modules/block-catalog.mjs` genera fuentes por página durante `dev`, `build` y `generate`, y las actualiza al editar las páginas. No hay una segunda copia manual del código ni un endpoint que exponga archivos arbitrarios. Reinicia `pnpm dev` después de añadir o modificar un registro JSON para incorporar sus bloques y chunks.
 
+`/payment-processor/customer-detail` exporta tres bloques de facturación. Editar plan cambia nombre/ciclo/miembros y calcula el precio local, sin alterar las facturas históricas ni cobrar. Las tarjetas solo contienen marca, cuatro dígitos y mes; se validan duplicados y expiración contra diciembre de 2026. Guardar mantiene una predeterminada; quitarla requiere confirmación y selecciona la primera restante, sin permitir vaciar la colección. Las facturas filtran exclusivamente el historial, no las tarjetas; el total pagado excluye el intento rechazado y los detalles desglosan base y uso. Cada SFC mantiene su propio estado, IDs de formularios/regiones generados con `useId` y componentes Nuxt UI; la tabla semántica de metadatos no requiere un motor de tabla ni recursos externos.
+
 `app/components/BlockCopyTools.vue` muestra herramientas flotantes sin modificar el layout y carga el código de esa página cuando se selecciona un bloque. No se incluye en las exportaciones. Los componentes copiados no requieren los módulos ni archivos del catálogo.
 
 ## Validar
