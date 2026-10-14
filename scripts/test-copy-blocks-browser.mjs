@@ -639,6 +639,56 @@ async function checkCustomerEditing(root) {
   result.customerEditing = { immutableId: true, validation: true, collections: true, singleDefaultCard: true, segments: true, draft: true, latestSavedReset: true, localSave: true }
 }
 
+async function checkCustomerOverview(root) {
+  const text = `document.querySelector(${JSON.stringify(root)}).textContent`
+  const count = `document.querySelector(${JSON.stringify(root + ' [data-overview-count]')}).textContent`
+  await waitFor(`${count}.startsWith('3 of 3')`)
+  assert.ok(await evaluate(`${text}.includes('$20,820.00') && ${text}.includes('$2,880.00') && ${text}.includes('$1,840.00')`))
+  assert.equal(await evaluate(`document.querySelectorAll(${JSON.stringify(root + ' [data-overview-subscription]')}).length`), 2)
+  await chooseOption(root + ' [aria-label="Overview transaction status"]', 'Declined')
+  await waitFor(`${count}.startsWith('1 of 3')`)
+  await setInput(root + ' input[name="overviewTransactionSearch"]', 'Visa')
+  await waitFor(`${count}.startsWith('0 of 3')`)
+  await chooseOption(root + ' [aria-label="Overview transaction status"]', 'All statuses')
+  await waitFor(`${count}.startsWith('1 of 3')`)
+  await setInput(root + ' input[name="overviewTransactionSearch"]', '')
+  await click(root + ' [aria-label="Edit overview customer profile"]')
+  await waitFor(`document.querySelector('input[name="overviewCustomerName"]')`)
+  await setInput('input[name="overviewCustomerName"]', '')
+  await click('[aria-label="Save overview customer profile"]')
+  await waitFor(`document.querySelector('[role=dialog]').textContent.includes('between 1 and 100')`)
+  await setInput('input[name="overviewCustomerName"]', 'Northstar Updated')
+  await setInput('input[name="overviewCustomerEmail"]', 'invalid')
+  await click('[aria-label="Save overview customer profile"]')
+  await waitFor(`document.querySelector('[role=dialog]').textContent.includes('valid example email')`)
+  await click('[aria-label="Cancel overview customer edit"]'); await waitFor(`!document.querySelector('[role=dialog]')`)
+  assert.ok(await evaluate(`${text}.includes('Northstar Supply Co.') && !${text}.includes('Northstar Updated')`))
+  await click(root + ' [aria-label="Edit overview customer profile"]')
+  await waitFor(`document.querySelector('input[name="overviewCustomerName"]')`)
+  await setInput('input[name="overviewCustomerName"]', 'Northstar Updated')
+  await setInput('input[name="overviewCustomerEmail"]', 'updated@example.com')
+  await click('[aria-label="Save overview customer profile"]')
+  await waitFor(`!document.querySelector('[role=dialog]') && ${text}.includes('Northstar Updated')`)
+  assert.ok(await evaluate(`${text}.includes('cus_0Nc5kjuQhtcEhS2p6SOxz') && ${text}.includes('updated@example.com') && ${text}.includes('$20,820.00')`))
+  await click(root + ' [aria-label="Remove overview demo customer"]')
+  await waitFor(`document.querySelector('input[name="overviewDeleteConfirmation"]')`)
+  assert.equal(await evaluate(`document.querySelector('[aria-label="Confirm overview customer removal"]').disabled`), true)
+  await setInput('input[name="overviewDeleteConfirmation"]', 'wrong-id')
+  assert.equal(await evaluate(`document.querySelector('[aria-label="Confirm overview customer removal"]').disabled`), true)
+  await click('[aria-label="Cancel overview customer removal"]'); await waitFor(`!document.querySelector('[role=dialog]')`)
+  assert.ok(await evaluate(`${text}.includes('Northstar Updated')`))
+  await click(root + ' [aria-label="Remove overview demo customer"]')
+  await waitFor(`document.querySelector('input[name="overviewDeleteConfirmation"]')`)
+  await setInput('input[name="overviewDeleteConfirmation"]', 'cus_0Nc5kjuQhtcEhS2p6SOxz')
+  await click('[aria-label="Confirm overview customer removal"]')
+  await waitFor(`!document.querySelector('[role=dialog]') && document.querySelector(${JSON.stringify(root + ' [data-overview-removed]')})`)
+  assert.equal(await evaluate(`document.querySelectorAll(${JSON.stringify(root + ' [data-overview-transaction], ' + root + ' [data-overview-subscription], ' + root + ' [data-overview-summary]')}).length`), 0)
+  await click(root + ' [aria-label="Restore overview customer demo"]')
+  await waitFor(`${count}.startsWith('3 of 3') && ${text}.includes('Northstar Supply Co.')`)
+  assert.equal(await evaluate(`${text}.includes('updated@example.com')`), false)
+  result.customerOverview = { accurateTotals: true, transactionFilters: true, validatedProfile: true, immutableId: true, cancellation: true, typedRemoval: true, coherentClearing: true, freshRestore: true }
+}
+
 async function checkSubscriptionProfile(root) {
   assert.ok(await evaluate(`document.querySelector(${JSON.stringify(root)}).textContent.includes('$40,800.00') && document.querySelector(${JSON.stringify(root)}).textContent.includes('$3,070.00')`))
   await click(root + ' [aria-label="Edit subscription customer profile"]')
@@ -1231,6 +1281,10 @@ try {
       await checkSubscriptionLedger('[data-copy-block="processor-subscription-ledger"]')
       await selectBlock('processor-subscription-ledger')
     }
+    if (page.path === '/payment-processor/customer-detail-3') {
+      await checkCustomerOverview('[data-copy-block="processor-customer-overview"]')
+      await selectBlock('processor-customer-overview')
+    }
     assert.deepEqual(errors, [], `${page.path}: browser errors`)
     await screenshot(page.key + '.png')
     const lightColor = await evaluate(`getComputedStyle(document.querySelector('[data-page]')).color`)
@@ -1443,6 +1497,19 @@ try {
       await evaluate(`document.documentElement.classList.remove('dark')`)
       assert.equal(await evaluate('document.documentElement.scrollWidth <= window.innerWidth'), true)
     }
+    if (page.path === '/payment-processor/customer-detail-3') {
+      await click('[aria-label="Edit overview customer profile"]')
+      await waitFor(`document.querySelector('input[name="overviewCustomerName"]')`)
+      await screenshot(page.key + '-mobile-profile.png')
+      await click('[aria-label="Cancel overview customer edit"]'); await waitFor(`!document.querySelector('[role=dialog]')`)
+      await chooseOption('[aria-label="Overview transaction status"]', 'Declined')
+      await evaluate(`document.querySelector('[data-overview-transaction]').scrollIntoView({ block: 'center' })`)
+      await screenshot(page.key + '-mobile-transaction.png')
+      await evaluate(`document.documentElement.classList.add('dark')`)
+      await screenshot(page.key + '-mobile-dark.png')
+      await evaluate(`document.documentElement.classList.remove('dark')`)
+      assert.equal(await evaluate('document.documentElement.scrollWidth <= window.innerWidth'), true)
+    }
     assert.deepEqual(errors, [], `${page.path}: mobile browser errors`)
   }
   result.mobileSelector = true
@@ -1502,6 +1569,7 @@ try {
     if (block.id === 'processor-billing-invoices') await checkBillingInvoices('[data-paste-test]')
     if (block.id === 'processor-subscription-profile') await checkSubscriptionProfile('[data-paste-test]')
     if (block.id === 'processor-subscription-ledger') await checkSubscriptionLedger('[data-paste-test]', true)
+    if (block.id === 'processor-customer-overview') await checkCustomerOverview('[data-paste-test]')
     if (block.id === 'payment-account-summary') await checkPaymentAccountSummary('[data-paste-test]')
     if (block.id === 'payment-account-directory') await checkPaymentAccounts('[data-paste-test]', true)
     if (block.id === 'ecommerce-customer-metrics') {

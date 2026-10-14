@@ -127,7 +127,8 @@ function updatePosition() {
     ...document.querySelectorAll<HTMLElement>('[data-copy-tools] button')]
     .filter(control => !control.closest('[role="toolbar"]')))
   const candidates = [rect.top - height - 4, rect.top + 4, rect.top + 48, rect.bottom + 4,
-    ...nativeControls.flatMap(control => [control.top - height - 4, control.bottom + 4]), 64]
+    // A two-pixel clearance also fits fractional-pixel gaps in production fonts.
+    ...nativeControls.flatMap(control => [control.top - height - 2, control.bottom + 2]), 64]
     .map(top => Math.max(64, Math.min(top, window.innerHeight - height - 12)))
   const top = candidates.find(top => !nativeControls.some(control => left < control.right && left + width > control.left && top < control.bottom && top + height > control.top)) ?? candidates[0]!
   outlineStyle.value = { top: `${rect.top}px`, left: `${rect.left}px`, width: `${rect.width}px`, height: `${rect.height}px` }
