@@ -639,6 +639,67 @@ async function checkCustomerEditing(root) {
   result.customerEditing = { immutableId: true, validation: true, collections: true, singleDefaultCard: true, segments: true, draft: true, latestSavedReset: true, localSave: true }
 }
 
+async function checkSubscriptionProfile(root) {
+  assert.ok(await evaluate(`document.querySelector(${JSON.stringify(root)}).textContent.includes('$40,800.00') && document.querySelector(${JSON.stringify(root)}).textContent.includes('$3,070.00')`))
+  await click(root + ' [aria-label="Edit subscription customer profile"]')
+  await waitFor(`document.querySelector('input[name="subscriptionCustomerName"]')`)
+  await setInput('input[name="subscriptionCustomerName"]', '')
+  await click('[aria-label="Save subscription customer profile"]')
+  await waitFor(`document.querySelector('[role=dialog]').textContent.includes('Enter a company name')`)
+  await setInput('input[name="subscriptionCustomerName"]', 'Northstar Local')
+  await setInput('input[name="subscriptionCustomerEmail"]', 'invalid')
+  await click('[aria-label="Save subscription customer profile"]')
+  await waitFor(`document.querySelector('[role=dialog]').textContent.includes('valid example email')`)
+  await setInput('input[name="subscriptionCustomerEmail"]', 'local@example.com')
+  await setInput('input[name="subscriptionCustomerPhone"]', 'abc')
+  await click('[aria-label="Save subscription customer profile"]')
+  await waitFor(`document.querySelector('[role=dialog]').textContent.includes('valid demo phone')`)
+  await click('[aria-label="Cancel subscription customer profile"]'); await waitFor(`!document.querySelector('[role=dialog]')`)
+  assert.ok(await evaluate(`document.querySelector(${JSON.stringify(root + ' [data-subscription-name]')}).textContent.includes('Northstar Supply Co.')`))
+  await click(root + ' [aria-label="Edit subscription customer profile"]')
+  await waitFor(`document.querySelector('input[name="subscriptionCustomerName"]')`)
+  await setInput('input[name="subscriptionCustomerName"]', 'Northstar Local')
+  await setInput('input[name="subscriptionCustomerEmail"]', 'local@example.com')
+  await setInput('input[name="subscriptionCustomerPhone"]', '')
+  await click('[aria-label="Save subscription customer profile"]')
+  await waitFor(`!document.querySelector('[role=dialog]') && document.querySelector(${JSON.stringify(root)}).textContent.includes('Northstar Local')`)
+  assert.ok(await evaluate(`document.querySelector(${JSON.stringify(root)}).textContent.includes('Not provided') && document.querySelector(${JSON.stringify(root)}).textContent.includes('cus_9Kx41L')`))
+  result.subscriptionProfile = { calculatedBalances: true, validatedEditing: true, cancellation: true, immutableId: true, optionalPhone: true, localSave: true }
+}
+
+async function checkSubscriptionLedger(root, standalone = false) {
+  const count = `document.querySelector(${JSON.stringify(root + ' [data-subscription-count]')}).textContent`
+  await waitFor(`${count}.startsWith('7 of 7')`)
+  await chooseOption(root + ' [aria-label="Subscription invoice status"]', 'Open'); await waitFor(`${count}.startsWith('2 of 7')`)
+  await chooseOption(root + ' [aria-label="Subscription invoice status"]', 'Paid'); await waitFor(`${count}.startsWith('4 of 7')`)
+  await chooseOption(root + ' [aria-label="Subscription invoice status"]', 'Overdue'); await waitFor(`${count}.startsWith('1 of 7')`)
+  await click(root + ' [aria-label="View subscription invoice INV-20198"]')
+  await waitFor(`document.querySelector('[role=dialog]').textContent.includes('$480.00 + $9,000.00 = $9,480.00')`)
+  assert.ok(await evaluate(`document.querySelector('[role=dialog]').textContent.includes('Product design sprint') && document.querySelector('[role=dialog]').textContent.includes('Jun 28, 2026')`))
+  await click('[aria-label="Close subscription invoice details"]'); await waitFor(`!document.querySelector('[role=dialog]')`)
+  const downloadPath = resolve(profile, standalone ? 'paste-subscription-csv' : 'catalog-subscription-csv')
+  await mkdir(downloadPath, { recursive: true }); await send('Browser.setDownloadBehavior', { behavior: 'allow', downloadPath }, null)
+  await click(root + ' [aria-label="Download demo CSV INV-20198"]')
+  const csvPath = resolve(downloadPath, 'INV-20198-demo.csv'), deadline = Date.now() + 10000
+  while (!existsSync(csvPath)) { assert.ok(Date.now() < deadline, 'Subscription CSV download timed out'); await new Promise(resolve => setTimeout(resolve, 50)) }
+  const csv = await readFile(csvPath, 'utf8')
+  assert.equal(csv.split('\r\n').length, 2)
+  assert.ok(csv.includes('INV-20198') && csv.includes('Product design sprint') && csv.includes('"9480"') && !csv.includes('INV-20486'))
+  await send('Browser.setDownloadBehavior', { behavior: 'allow', downloadPath: profile }, null)
+  await click(root + ' [aria-label="Reset subscription invoice filters"]')
+  await click(root + ' [aria-label="Sort subscription invoices by amount"]')
+  await waitFor(`document.querySelector(${JSON.stringify(root + ' [data-subscription-group="retainer"] [data-subscription-invoice]')}).textContent.includes('INV-19890')`)
+  await click(root + ' [aria-label="Sort subscription invoices by amount"]')
+  await waitFor(`document.querySelector(${JSON.stringify(root + ' [data-subscription-group="retainer"] [data-subscription-invoice]')}).textContent.includes('INV-20041')`)
+  await setInput(root + ' input[name="subscriptionInvoiceSearch"]', '  Brand identity  ')
+  await waitFor(`${count}.startsWith('2 of 7')`)
+  await setInput(root + ' input[name="subscriptionInvoiceSearch"]', 'not-present')
+  await waitFor(`${count}.startsWith('0 of 7')`)
+  assert.equal(await evaluate(`document.querySelectorAll(${JSON.stringify(root + ' [data-subscription-invoice]')}).length`), 0)
+  await click(root + ' [aria-label="Reset subscription invoice filters"]')
+  result.subscriptionLedger = { groups: true, filters: true, numericSort: true, correctInvoice: true, amountBreakdown: true, actualCsv: true, emptyResults: true }
+}
+
 async function checkBillingPlan(root) {
   await click(root + ' [aria-label="Edit demo billing plan"]')
   await setInput('input[name="billingMembers"]', '0')
@@ -1165,6 +1226,11 @@ try {
       await checkBillingInvoices('[data-copy-block="processor-billing-invoices"]')
       await selectBlock('processor-billing-invoices')
     }
+    if (page.path === '/payment-processor/customer-detail-2') {
+      await checkSubscriptionProfile('[data-copy-block="processor-subscription-profile"]')
+      await checkSubscriptionLedger('[data-copy-block="processor-subscription-ledger"]')
+      await selectBlock('processor-subscription-ledger')
+    }
     assert.deepEqual(errors, [], `${page.path}: browser errors`)
     await screenshot(page.key + '.png')
     const lightColor = await evaluate(`getComputedStyle(document.querySelector('[data-page]')).color`)
@@ -1361,6 +1427,22 @@ try {
       await evaluate(`document.documentElement.classList.remove('dark')`)
       assert.equal(await evaluate('document.documentElement.scrollWidth <= window.innerWidth'), true)
     }
+    if (page.path === '/payment-processor/customer-detail-2') {
+      await click('[aria-label="Edit subscription customer profile"]')
+      await waitFor(`document.querySelector('input[name="subscriptionCustomerEmail"]')`)
+      await screenshot(page.key + '-mobile-profile.png')
+      await click('[aria-label="Cancel subscription customer profile"]'); await waitFor(`!document.querySelector('[role=dialog]')`)
+      await chooseOption('[aria-label="Subscription invoice status"]', 'Overdue')
+      await waitFor(`document.querySelectorAll('[data-subscription-mobile]').length === 1`)
+      await click('[aria-label="View mobile subscription invoice INV-20198"]')
+      await waitFor(`document.querySelector('[role=dialog]').textContent.includes('Product design sprint')`)
+      await screenshot(page.key + '-mobile-invoice.png')
+      await click('[aria-label="Close subscription invoice details"]'); await waitFor(`!document.querySelector('[role=dialog]')`)
+      await evaluate(`document.documentElement.classList.add('dark')`)
+      await screenshot(page.key + '-mobile-dark.png')
+      await evaluate(`document.documentElement.classList.remove('dark')`)
+      assert.equal(await evaluate('document.documentElement.scrollWidth <= window.innerWidth'), true)
+    }
     assert.deepEqual(errors, [], `${page.path}: mobile browser errors`)
   }
   result.mobileSelector = true
@@ -1418,6 +1500,8 @@ try {
     if (block.id === 'processor-billing-plan') await checkBillingPlan('[data-paste-test]')
     if (block.id === 'processor-billing-cards') await checkBillingCards('[data-paste-test]')
     if (block.id === 'processor-billing-invoices') await checkBillingInvoices('[data-paste-test]')
+    if (block.id === 'processor-subscription-profile') await checkSubscriptionProfile('[data-paste-test]')
+    if (block.id === 'processor-subscription-ledger') await checkSubscriptionLedger('[data-paste-test]', true)
     if (block.id === 'payment-account-summary') await checkPaymentAccountSummary('[data-paste-test]')
     if (block.id === 'payment-account-directory') await checkPaymentAccounts('[data-paste-test]', true)
     if (block.id === 'ecommerce-customer-metrics') {

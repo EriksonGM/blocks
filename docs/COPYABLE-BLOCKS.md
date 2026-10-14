@@ -56,6 +56,8 @@ Cada página habilitada tiene un archivo JSON en `app/data/copy-blocks/` con `pa
 
 `app/components/BlockCopyTools.vue` muestra herramientas flotantes sin modificar el layout y carga el código de esa página cuando se selecciona un bloque. No se incluye en las exportaciones. Los componentes copiados no requieren los módulos ni archivos del catálogo.
 
+`/payment-processor/customer-detail-2` exporta perfil/resumen y un ledger de tres suscripciones. El saldo pendiente suma Open + Overdue ($40,800), no facturas pagadas; la cuota mensual base suma $3,070 y excluye uso. Los importes históricos desglosan base + uso para no confundirlos con el próximo precio de renovación. Búsqueda, estado y orden se aplican a los tres grupos y a sus tarjetas móviles. Cada botón de descarga genera un CSV con encabezados y únicamente la factura elegida, nunca un formulario de acciones ni un documento legal. Perfil/contactos/ubicación/ID fiscal ficticio se editan solo en memoria; el ID del cliente y el historial no cambian. No se oculta el perfil en pantallas pequeñas ni se usan imágenes internas.
+
 ## Validar
 
 ```sh
