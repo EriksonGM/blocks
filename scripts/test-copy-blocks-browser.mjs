@@ -1431,6 +1431,39 @@ try {
       }
       await selectBlock('command-throughput')
     }
+    if (page.path === '/project-management/dashboard-4') {
+      const rows = `document.querySelectorAll('[data-copy-block="project-table-1"] tbody tr').length`
+      await waitFor(`${rows} === 7`)
+      assert.ok(await evaluate(`document.querySelector('[data-copy-block="project-health"] svg[role="img"]').getAttribute('aria-label').includes('At Risk: 2')`), 'Health chart counts must match the project rows')
+      await chooseOption('[aria-label="Filter projects by status"]', 'Blocked')
+      await waitFor(`${rows} === 1 && document.querySelector('[data-copy-block="project-table-1"]').textContent.includes('API Stabilization')`)
+      await click('button[aria-label="View all projects"]')
+      await waitFor(`${rows} === 7`)
+
+      await click('button[aria-label="Change status for API Stabilization"]')
+      await waitFor(`[...document.querySelectorAll('[role="menuitem"]')].some(item => item.textContent.includes('Set status to On Track'))`)
+      await evaluate(`(() => { const item = [...document.querySelectorAll('[role="menuitem"]')].find(item => item.textContent.includes('Set status to On Track')); item.setAttribute('data-browser-choice', 'status'); })()`)
+      await click('[data-browser-choice="status"]')
+      await waitFor(`document.querySelector('[data-copy-block="project-table-1"]').textContent.includes('On Track') && document.querySelector('[data-copy-block="project-health"]').textContent.includes('3')`)
+
+      await click('button[aria-label="View options"]')
+      await waitFor(`[...document.querySelectorAll('[role="menuitem"]')].some(item => item.textContent.includes('Hide owner column'))`)
+      await evaluate(`(() => { const item = [...document.querySelectorAll('[role="menuitem"]')].find(item => item.textContent.includes('Hide owner column')); item.setAttribute('data-browser-choice', 'owner'); })()`)
+      await click('[data-browser-choice="owner"]')
+      await waitFor(`![...document.querySelectorAll('[data-copy-block="project-table-1"] thead th')].some(cell => cell.textContent.includes('Owner'))`)
+
+      await click('button[aria-label="Create issue"]')
+      await waitFor(`document.querySelector('[role="dialog"]')?.textContent.includes('Issue · local demo')`)
+      await setInput('[role="dialog"] input[name="quickActionName"]', 'Portable issue')
+      await click('[role="dialog"] button[type="submit"]')
+      await waitFor(`document.querySelector('[data-page]').textContent.includes('Issue “Portable issue” added to this local demo.')`)
+
+      await evaluate(`(() => { const original = URL.createObjectURL.bind(URL); URL.createObjectURL = blob => { window.__dashboard4CsvBlob = blob; return original(blob) } })()`)
+      await evaluate(`document.querySelector('button[aria-label="Export"]').click()`)
+      await waitFor(`window.__dashboard4CsvBlob instanceof Blob`)
+      assert.ok(await evaluate(`(async () => (await window.__dashboard4CsvBlob.text()).startsWith('"Project","Status","Priority","Owner","Due date"'))()`), 'CSV export must contain column headers')
+      result.dashboard4Interactions = true
+    }
     assert.deepEqual(errors, [], `${page.path}: browser errors`)
     await screenshot(page.key + '.png')
     const lightColor = await evaluate(`getComputedStyle(document.querySelector('[data-page]')).color`)
@@ -1440,6 +1473,7 @@ try {
     await screenshot(page.key + '-dark.png')
     await evaluate(`document.documentElement.classList.remove('dark')`)
   }
+  if (selectedPages.some(page => page.path === '/project-management/dashboard-4')) await selectBlock('project-needs-attention')
   await click('button[aria-label="Ver código del bloque"]')
   await waitFor('document.querySelector("[role=dialog] pre code")')
   assert.equal(await evaluate('document.querySelector("[role=dialog] pre code").textContent'), lastBlock.component)
@@ -1671,6 +1705,17 @@ try {
       await screenshot(page.key + '-mobile-dark.png')
       await evaluate(`document.documentElement.classList.remove('dark')`)
       assert.equal(await evaluate('document.documentElement.scrollWidth <= window.innerWidth'), true)
+    }
+    if (page.path === '/project-management/dashboard-4') {
+      await send('Emulation.setDeviceMetricsOverride', { width: 320, height: 740, deviceScaleFactor: 1, mobile: true })
+      assert.equal(await evaluate('document.documentElement.scrollWidth <= window.innerWidth'), true, `${page.path}: 320px horizontal overflow`)
+      await screenshot(page.key + '-mobile-320.png')
+      await tap('button[aria-label="Elegir un bloque para copiar"]')
+      await waitFor('document.querySelector("[role=menuitem]")')
+      await tap('[role="menuitem"]')
+      await waitFor(`(() => { const r = document.querySelector('[role=toolbar]').getBoundingClientRect(); return r.left >= 0 && r.right <= window.innerWidth; })()`)
+      result.mobile320 = true
+      await send('Emulation.setDeviceMetricsOverride', { width: 390, height: 844, deviceScaleFactor: 1, mobile: true })
     }
     assert.deepEqual(errors, [], `${page.path}: mobile browser errors`)
   }

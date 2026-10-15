@@ -8,11 +8,11 @@ Este apartado permite continuar **sin el historial del chat**. Estado comprobado
 
 - **Solicitud vigente:** completar todas las páginas faltantes, revisando y corrigiendo **toda su interfaz** y habilitando **bloques Vue copiables y autónomos**, con pruebas, commit y push **por página**. No es solo añadir botones ni convertir archivos masivamente.
 - **Rama de trabajo:** `main`, publicación directa en `origin/main`; el piloto ya está integrado. No crear otra rama/MR ni un PR de `main` hacia sí misma salvo nueva instrucción del usuario.
-- **Avance:** 23/261 páginas de contenido revisadas y publicadas, 238 pendientes; 23 registros de copia y 70 bloques exportables. Además hay 2 rutas auxiliares pendientes. Tener un archivo Vue o figurar en el menú **no** significa estar validada.
-- **Fase actual:** clientes terminados (9/9); gestión de proyectos en curso (3/32). **Próxima ruta: `/project-management/dashboard-4`**, archivo [`app/pages/project-management/dashboard-4.vue`](app/pages/project-management/dashboard-4.vue). No se ha empezado su revisión ni su implementación de copia.
+- **Avance:** 23/261 páginas de contenido completadas según el procedimiento, 238 pendientes; el catálogo local contiene 31 registros y 92 bloques exportables. Además hay 2 rutas auxiliares pendientes. Tener un archivo Vue o figurar en el menú **no** significa estar validada.
+- **Fase actual:** clientes terminados (9/9); gestión de proyectos en curso (3/32 páginas completadas). **Página en revisión: `/project-management/dashboard-4`**, archivo [`app/pages/project-management/dashboard-4.vue`](app/pages/project-management/dashboard-4.vue). Los seis bloques y sus interacciones pasan la verificación individual, incluido copiado/pegado, claro/oscuro y 320 px. Este WIP se publica en `main`, pero no se marca terminada: la regresión de navegador `--all` falló en `/ecommerce/dashboard-1`, el typecheck global falla en bloques de `inbox-1` y no se pudo arrancar el servidor de producción en Windows.
 - **Después:** recorrer las casillas pendientes de `/project-management/*` en el orden del inventario; luego las demás pendientes fuera de `/ai-chat/*`, también en el orden del inventario; IA al final. La lista general es alfabética, no una instrucción para empezar por IA.
-- **Última página publicada:** `/project-management/dashboard-3`, commit `498cf51390b4acfe1759415984c98731799bfd7f`. Confirmación documental posterior: `3dd2a54`. Estos SHA son referencias históricas, no se espera que sigan siendo el HEAD tras nuevos commits.
-- **Ejecución:** los servidores temporales 3030 (dev), 3031 (pegado), 3032/3033 (producción) se detuvieron al terminar. No hay implementación ni prueba continuando en segundo plano; una sesión nueva debe iniciar sus propios procesos.
+- **Última página completada según este ToDo:** `/project-management/dashboard-3`, commit `498cf51390b4acfe1759415984c98731799bfd7f`. La página siguiente ya tiene una implementación local pendiente de revisión y publicación. Estos SHA son referencias históricas, no se espera que sigan siendo el HEAD tras nuevos commits.
+- **Ejecución:** se detuvieron los servidores 3030 (dev) y 3031 (pegado) iniciados para esta validación. El servidor 3020 preexistente no se detuvo. No hay pruebas continuando en segundo plano.
 
 El [procedimiento obligatorio](#procedimiento-obligatorio-por-página) y la [lista de pendientes](#todo-por-página-261-páginas-de-contenido) gobiernan la cola. El [registro de avance](#registro-de-avance) contiene resultados históricos por página; su columna «siguiente acción» no sustituye el punto de continuación de este apartado.
 
@@ -31,13 +31,7 @@ git ls-remote origin refs/heads/main
 
 No hacer `reset --hard`, `checkout --`, descartar archivos, borrar stashes ni sobrescribir cambios desconocidos. Si el remoto avanzó o el árbol tiene cambios distintos del snapshot, investigarlos y reconciliarlos antes de continuar; no asumir que son residuos.
 
-**Cambio local previo que debe conservarse:** `scripts/test-copy-blocks-browser.mjs`, dentro de `setInput`, tiene esta línea adicional **sin commit**:
-
-```js
-await waitFor(`document.querySelector(${JSON.stringify(selector)})`)
-```
-
-Es independiente de las páginas nuevas; no retirarla ni incluirla silenciosamente en un commit. Al ampliar las pruebas de una página, preparar únicamente los nuevos hunks con `git add -p scripts/test-copy-blocks-browser.mjs` y comprobar ambos diffs. Evitar `git add .`. La última regresión de producción también se ejecutó con una copia temporal del **script del índice**, sin esta línea; validar la versión que se va a publicar si difiere de la utilizada al probar. Para hacerlo sin tocar el árbol, se puede exportar `git show :scripts/test-copy-blocks-browser.mjs` a un `.mjs` temporal, sustituyendo su import relativo de `./block-catalog.mjs` por la URL absoluta del archivo del repositorio, y ejecutar esa copia con los mismos argumentos/variables de entorno.
+**Pruebas compartidas:** los cambios en `scripts/test-copy-blocks-browser.mjs` añaden cobertura de interacciones y vista móvil para `dashboard-4`. La regresión global ejecutada con esta versión quedó bloqueada por el `<style>` inválido de `ecommerce/dashboard-9.vue:669` (detalles en el registro de validación).
 
 **WIP aplazado de IA:** stash `1474bce9569566d438973ec4f62f671e25f86d5c` (actualmente `stash@{0}`), con `app/pages/ai-chat/agent-configuration.vue`, cambios en pruebas y el JSON no rastreado `app/data/copy-blocks/agent-configuration.json`. Inspección sin aplicar:
 
@@ -122,7 +116,7 @@ En la terminal de pruebas cambiar `BLOCKS_BASE_URL` a `http://127.0.0.1:3032` y 
 
 ### Última evidencia, incidencias y cierre de sesión
 
-- **Última validación de código:** `498cf51`: build, tipos del catálogo y pegado, compilación/exportación HTTP de 70 SFC, navegador `--all` con 70 copias/pegados usando el script preparado para commit, y HTTP de las 261 rutas aprobados. Capturas de producción: `C:\Users\erikm\AppData\Local\Temp\opencode\blocks-browser-RKZj7n` (artefactos locales opcionales; regenerarlos si no existen). La verificación adicional de dashboard-3 probó 320 px, Tab/Escape/foco, navegación/limpieza y pegado móvil. No se ha probado dashboard-4.
+- **Última validación publicada:** `498cf51`: build, tipos catálogo/pegado, compilación/exportación HTTP de 70 SFC, navegador `--all` con 70 copias/pegados y HTTP de 261 rutas aprobados. Capturas históricas de producción: `C:\Users\erikm\AppData\Local\Temp\opencode\blocks-browser-RKZj7n`. Para `dashboard-4`, pasan `check:pages`, `check:copy-blocks` global (92 SFC), `check:copy-blocks --http` global (92), `verify-pages --http` (261 rutas) y `check:copy-browser --page` (seis bloques, interacciones, copiado/pegado, temas y 320 px). `pnpm build` terminó con `NUXT_IGNORE_LOCK=1`, pero el servidor generado no arranca en Windows (`ERR_INVALID_ARG_VALUE`, `createRequire('file:///_entry.js')`). `preview:copy-blocks --typecheck` informa TS2339 en `inbox-agent.vue`, `inbox-compose.vue` e `inbox-message.vue` (campo `status`). La regresión `check:copy-browser --all` falla al visitar `/ecommerce/dashboard-1`; Vite identifica como origen una etiqueta `<style>` en el template de `app/pages/ecommerce/dashboard-9.vue:669`. No se atribuyen estos bloqueos ajenos a dashboard-4 ni se declara completada.
 - **Incidencia global abierta:** `ResizeObserver loop completed with undelivered notifications` aparece en logs de desarrollo del catálogo/pegado durante redimensionado e interacciones. CDP captura excepciones, `console.error` y avisos de hidratación, pero no todos los eventos `window.error`/`unhandledrejection`. Las capturas adicionales con listeners fueron comprobaciones puntuales, **no una corrección global** ni prueba de consola siempre limpia. Investigar origen y ampliar captura por separado; no ocultar errores para hacer pasar las pruebas.
 - **Enlaces pendientes:** `app/pages/original/users.vue` contiene diez detalles `/original/users/*` sin ruta. La prueba HTTP recorre el inventario, **no valida esos destinos de enlaces**. Corregirlos al revisar esa página; no declararlos resueltos ni inventar rutas para silenciar avisos.
 - **Sin bloqueo de publicación conocido:** los commits anteriores se publicaron. Si las nuevas pruebas, recursos o el push fallan, registrar el fallo exacto y detener el avance de esa página; no saltar validaciones ni marcarla completa.
@@ -273,8 +267,167 @@ La casilla de una página representa **interfaz revisada + copia funcional + pru
 | `/payment-processor/customer-detail-2` | Perfil editable validado, visible también en móvil; saldo pendiente y cuota base calculados; tres grupos de facturas con filtros/orden y desglose; descarga real de CSV de la fila elegida | 2 bloques autónomos: perfil/resumen y ledger agrupado; fechas UTC explícitas; sin APIs, persistencia ni documentos internos | `check:pages`, exportación HTTP (62 SFC), tipos catálogo/pegado y navegador aprobados; 2 copias/pegados, CSV real, estados, orden numérico y cancelación; móvil/claro/oscuro; eventos `window` sin errores en comprobación adicional; fixture de pegado regenerado tras detectar registro anterior sin nuevas rutas | `44be0d2`, push confirmado en `main` | Terminada |
 | `/payment-processor/customer-detail-3` | Perfil validado con ID fijo; transacciones y filtros, totales calculados sin intentos rechazados; eliminación local con confirmación del ID, limpieza coherente y restauración fresca | 1 workspace autónomo: las colecciones dependientes permanecen juntas al copiar o retirar el cliente; sin imágenes internas, API o persistencia | Estructura, tipos catálogo/pegado, exportación y navegador individual aprobados; temas/móvil 320/390 px; regresión de producción con el script preparado para commit: 63 copias/pegados; build y HTTP de 261 rutas aprobados. Corregida colisión global de barra causada por un hueco fraccional en producción | `82861c2`, push confirmado en `main` | Terminada |
 | `/project-management/dashboard-3` | Resumen calculado de 4 proyectos; búsqueda/selección de registro correcto; sprint/FY/rango cambian gráficas y tablas; hitos editables, invitación local validada y notificaciones con estado leído; throughput real también en escritorio | 7 bloques autónomos: portfolio/proyecto, sprint, presupuesto, hitos, equipo, actividad y throughput; sin imágenes internas, servicios o persistencia | Estructura, tipos catálogo/pegado y build aprobados; navegador individual y regresión de producción con script preparado para commit: 70 copias/pegados; exportación HTTP y 261 rutas sin fallos; 320/390 px, temas, Tab/Escape/foco y limpieza al navegar; captura `window` adicional sin errores para ruta/pegado. Selector/barra y pruebas consideran controles `summary` | `498cf51`, push confirmado en `main` mediante `git ls-remote` | Terminada; siguiente: `/project-management/dashboard-4` |
+| `/project-management/dashboard-4` | Filtros/columnas y cambio de estado conectados; CSV con encabezados; acciones locales etiquetadas como demo; salud y lista crítica basadas en estados; canvas fijo identificado claramente; revisado claro/oscuro y móvil 320 px | 6 bloques autónomos; SFC incorporan scripts/regiones y estilos necesarios, sin APIs ni persistencia | Check estático global y HTTP (92 bloques), 261 rutas HTTP e individual de navegador/copiar/pegar aprobados; interacciones probadas: filtros, recuentos, estado, columnas, modal local y CSV. Incompleta: regresión `--all` falla por `<style>` en el template de `ecommerce/dashboard-9.vue:669`; typecheck del fixture falla en `inbox-1`; servidor `.output` no arranca en Windows. Build terminó, pero falta validar producción | WIP: commit y push incluidos en esta publicación; página no completada | Pendiente: resolver bloqueos globales y repetir regresión/validación de producción |
 
-Avance: **23 de 261 páginas de contenido guardadas; 238 pendientes**, además de las 2 rutas auxiliares. Clientes: **9 de 9 páginas** (Ecommerce y Payment Processor completos). Gestión de proyectos: **3 de 32 páginas**. Las casillas reflejan páginas guardadas; la columna commit/push confirma su publicación. Actualiza esta tabla al terminar una página o encontrar un bloqueo; no dar a entender que la cola continúa ejecutándose en segundo plano cuando no hay una ejecución activa.
+Avance: **23 de 261 páginas completadas según el procedimiento; 238 pendientes**, además de las 2 rutas auxiliares. Clientes: **9 de 9 páginas** (Ecommerce y Payment Processor completos). Gestión de proyectos: **3 de 32 páginas completadas**. `dashboard-4` está publicada como WIP, pero sigue pendiente hasta completar validaciones y corregir los bloqueos registrados. Las casillas reflejan páginas completadas; la columna commit/push confirma su publicación. Actualiza esta tabla al terminar una página o encontrar un bloqueo; no dar a entender que la cola continúa ejecutándose en segundo plano cuando no hay una ejecución activa.
+
+### Descripción de bloques copiables por página
+
+Este índice documenta los **92 bloques registrados en 31 páginas** en el momento de esta actualización. Cada descripción resume el contenido y el propósito del SFC exportado; las páginas sin registro en el catálogo aún no tienen bloques copiables documentados. Los identificadores entre `backticks` coinciden con los registros de `app/data/copy-blocks/`.
+
+#### `/401`
+- `unauthorized-screen` — Pantalla de acceso no autorizado con explicación del estado y navegación para volver a una ubicación válida.
+
+#### `/403`
+- `forbidden-screen` — Pantalla de permiso denegado con mensaje orientativo y salida de navegación.
+
+#### `/404`
+- `not-found-screen` — Estado de página no encontrada con explicación y acciones para regresar o continuar navegando.
+
+#### `/503`
+- `maintenance-screen` — Aviso de mantenimiento del servicio con información complementaria en un diálogo local.
+
+#### `/ai-chat/agent-activity`
+- `agent-refund-run` — Tarjeta de ejecución de reembolso con resumen del caso y su resultado de demostración.
+- `agent-report-run` — Ejecución de informe que presenta resultados y pasos de revisión antes de considerarlos listos.
+- `agent-discount-run` — Ejecución de descuento con comprobaciones de política y límites de aprobación.
+- `agent-reconcile-run` — Resumen de conciliación de pagos con importes y diferencias ficticias para revisar.
+- `agent-renewal-run` — Pronóstico de renovaciones con señales y datos de ejemplo de la ejecución.
+- `agent-archive-run` — Ejecución de archivo de tickets con recuento y estado de los elementos procesados.
+- `agent-purchase-run` — Resumen de generación de orden de compra y sus datos de demostración.
+- `agent-digest-run` — Ejecución de resumen semanal con actividad agrupada para consulta.
+- `agent-support-run` — Ejecución de enrutamiento de soporte con información del destino y resultado simulado.
+- `agent-vendor-run` — Revisión de proveedor con criterios y estado de la evaluación de ejemplo.
+- `agent-billing-run` — Resumen de exportación de facturación con periodo y resultado ficticio.
+
+#### `/ai-chat/composer-1`
+- `chat-composer` — Compositor de conversación con entrada de texto, controles auxiliares y envío local de mensajes de ejemplo.
+
+#### `/developers/api-keys`
+- `developer-api-version` — Resumen compacto de la versión de API y la información necesaria para identificarla.
+- `developer-api-key-manager` — Gestor de claves de demostración con listado, visibilidad, creación/rotación local y controles de estado; no usa secretos ni API reales.
+
+#### `/developers/events-&-logs`
+- `developer-log-explorer` — Explorador de eventos con búsqueda, filtros, selección de periodo y visualización/importación local de registros.
+- `developer-visitor-summary` — Desglose de visitantes por fuente para comparar su distribución.
+- `developer-referrer-summary` — Desglose de dominios de referencia con sus métricas de ejemplo.
+
+#### `/developers/overview`
+- `developer-request-metrics` — Métricas de solicitudes de API con periodo, valores agregados y visualización de tendencia.
+- `developer-response-metrics` — Tiempos de respuesta con distribución y evolución para el intervalo elegido.
+- `developer-visitor-metrics` — Métricas de visitantes segmentadas por tipo de dispositivo.
+- `developer-recent-activities` — Lista de actividad reciente de desarrollo con eventos, marcas temporales y estados.
+
+#### `/developers/webhooks`
+- `webhooks-table` — Tabla de endpoints webhook con sus datos de configuración/estado y acciones de consulta o copia.
+
+#### `/ecommerce/add-customer`
+- `ecommerce-add-customer-editor` — Editor integral para crear un cliente de muestra, con datos de contacto, direcciones, tarjetas ficticias, segmentos y validación local.
+
+#### `/ecommerce/customer-detail-1`
+- `ecommerce-customer-profile` — Perfil del cliente y borradores de mensajes asociados, editables localmente sin enviar comunicaciones.
+- `ecommerce-customer-history` — Historial del cliente que reúne compras, reseñas y actividad en una sola sección.
+- `ecommerce-customer-details` — Datos ampliados del cliente con editores locales de contacto, dirección y segmentos.
+
+#### `/ecommerce/customer-list-1`
+- `ecommerce-customer-metrics` — Indicadores agregados del directorio de clientes calculados a partir de sus registros.
+- `ecommerce-customer-directory` — Directorio con búsqueda, filtros, orden, columnas y acciones locales de alta, edición o retirada.
+
+#### `/ecommerce/dashboard-1`
+- `commerce-metrics` — Resumen de métricas comerciales para el periodo mostrado.
+- `commerce-revenue` — Indicador de ingresos totales con comparación respecto al periodo de referencia.
+- `commerce-channels` — Visualización comparativa de ingresos por canal de venta.
+- `commerce-order-value` — Indicador del valor medio de pedido y su variación.
+- `commerce-sales` — Métrica de ventas promedio con referencia temporal.
+- `commerce-categories` — Desglose visual de ventas por categoría de producto.
+
+#### `/ecommerce/edit-customer/cus-1742`
+- `ecommerce-edit-customer-editor` — Espacio de edición precargado para un cliente, con ID fijo, validación, borrador local y restauración de cambios.
+
+#### `/payment-processor/customer-detail`
+- `processor-billing-plan` — Plan de facturación ficticio con datos del plan, precio calculado y controles locales de edición.
+- `processor-billing-cards` — Metadatos de tarjetas de ejemplo con gestión local de predeterminada, duplicados, expiración y retirada; no contiene PAN ni CVC.
+- `processor-billing-invoices` — Historial de facturas de muestra con estados, búsqueda y consulta del detalle correspondiente.
+
+#### `/payment-processor/customer-detail-2`
+- `processor-subscription-profile` — Perfil de suscripción y balances calculados para el cliente de demostración.
+- `processor-subscription-ledger` — Libro de facturas agrupado por periodo, con estados, filtros, orden y desglose de importes.
+
+#### `/payment-processor/customer-detail-3`
+- `processor-customer-overview` — Resumen del cliente y sus datos/transacciones relacionados, con retirada local coherente y confirmación explícita.
+
+#### `/payment-processor/customers`
+- `processor-customer-directory` — Directorio paginado de clientes de pago con búsqueda, filtros de estado/fecha, orden y detalle de solo lectura.
+
+#### `/payment-processor/customers-list-2`
+- `payment-account-summary` — Resumen de métricas de cuentas de pago de clientes.
+- `payment-account-directory` — Directorio de cuentas con vistas, filtros combinables, orden, métodos de pago, señales de riesgo y exportación CSV por vista.
+
+#### `/project-management/dashboard-1`
+- `project-workspace-summary` — Resumen personal de incidencias y trabajo asignado.
+- `project-workspace-status` — Distribución de las incidencias por estado.
+- `project-work-hours` — Análisis de horas registradas con desglose visual.
+- `project-time-tracker` — Temporizador local de trabajo asociado a una incidencia, con controles de inicio, pausa y reinicio.
+- `project-my-issues` — Lista de incidencias personales con estado y controles de búsqueda/edición de muestra.
+- `project-workspace-panel` — Panel de perfil del espacio de trabajo y agenda local.
+
+#### `/project-management/dashboard-2`
+- `project-planning-actions` — Acciones rápidas de planificación que crean elementos locales de demostración.
+- `project-planning-metrics` — Totales y métricas agregadas del plan de proyectos.
+- `project-issue-map` — Mapa temporal de incidencias para situar trabajo y fechas en el periodo seleccionado.
+- `project-current-projects` — Lista de proyectos de muestra con consulta de sus detalles.
+- `project-milestone-tracker` — Seguimiento de hitos y sus fechas/estados.
+- `project-planning-notes` — Notas de planificación editables localmente.
+- `project-planning-activity` — Registro de actividad relacionada con la planificación.
+- `project-planning-members` — Lista de miembros ficticios del proyecto y su información de participación.
+- `project-planning-status` — Resumen de incidencias y su estado dentro del plan.
+
+#### `/project-management/dashboard-3`
+- `command-portfolio` — Resumen del portfolio y navegador de proyectos con búsqueda y selección del registro.
+- `command-sprint` — Estado del sprint con puntos de historia y datos del periodo seleccionado.
+- `command-budget` — Comparación de presupuesto real y pronosticado para el ejercicio elegido.
+- `command-milestones` — Próximos hitos con sus fechas y estado.
+- `command-team` — Estado del equipo y vista previa local de invitación.
+- `command-activity` — Actividad reciente y notificaciones locales con estado de lectura.
+- `command-throughput` — Volumen semanal de incidencias completadas, presentado como tendencia.
+
+#### `/project-management/dashboard-4`
+- `project-toolbar` — Breadcrumb, título, búsqueda y controles superiores del mapa de dependencias.
+- `project-workflow-canvas` — Canvas de dependencias de proyecto de muestra con nodos/relaciones arrastrables y controles de zoom; incluye sus estilos.
+- `project-table-1` — Tabla de proyectos con filtro por estado, visibilidad de columnas, orden y cambio local del estado.
+- `project-health` — Gráfico de anillo y leyenda que calculan la distribución de salud desde los estados de la tabla.
+- `project-critical-path` — Lista derivada de proyectos bloqueados o en riesgo con responsable y fecha.
+- `project-needs-attention` — Panel de proyectos bloqueados con indicaciones locales de seguimiento.
+
+#### `/project-management/inbox-1`
+- `inbox-message` — Vista de la conversación seleccionada con participantes, mensajes y marcas de tiempo.
+- `inbox-compose` — Compositor de respuesta para redactar y añadir una respuesta local al hilo.
+- `inbox-agent` — Panel de asistencia con señales del hilo y sugerencias/contexto para quien responde.
+
+#### `/project-management/issue-kanban-1`
+- `kanban-toolbar` — Barra del tablero con búsqueda y filtros locales para incidencias.
+- `kanban-counts` — Recuentos de incidencias por columna/estado.
+- `kanban-board` — Columnas Kanban con tarjetas de incidencias y sus datos principales.
+
+#### `/project-management/issue-list-1`
+- `issue-list-toolbar` — Barra del proyecto con búsqueda, filtros y acciones locales de creación.
+- `issue-list-board` — Incidencias agrupadas por estado para consultar el trabajo de cada grupo.
+
+#### `/project-management/issue-list-2`
+- `issue-list2-toolbar` — Barra de proyecto con controles de filtro y acciones locales de creación.
+- `issue-list2-board` — Lista agrupada de incidencias con sus atributos y estado.
+
+#### `/project-management/member-list-2`
+- `member2-toolbar` — Barra del directorio de miembros con búsqueda y controles de consulta.
+- `member2-grid` — Tarjetas de miembros con información de contacto.
+
+#### `/project-management/member-list-3`
+- `member3-invite` — Formulario local para preparar invitaciones de miembros por correo electrónico.
+- `member3-directory` — Directorio que reúne miembros, invitaciones y sugerencias de personas.
+
+#### `/project-management/project-list-1`
+- `project-list-toolbar` — Barra para buscar, filtrar y crear proyectos de muestra.
+- `project-list-directory` — Tarjetas de proyectos con detalles consultables en el estado local de demostración.
 
 Las incidencias abiertas y cambios locales que deben preservarse se detallan en [el relevo](#última-evidencia-incidencias-y-cierre-de-sesión). Las salidas con código 1 de servidores deliberadamente detenidos después de las pruebas no indican por sí mismas un fallo de build.
 

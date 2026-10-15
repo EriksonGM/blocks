@@ -1,6 +1,5 @@
 <!-- Page: /project-management/dashboard-4 | All content, state and styles live in this file. -->
 <script setup lang="ts">
-import type { TableColumn } from '@nuxt/ui'
 
 const route = useRoute()
 
@@ -12,31 +11,43 @@ const toast = useToast()
 
 // @copy:header:start
 // Block: Header/breadcrumb and search/actions toolbar
-const form = reactive({ searchProjects: '' })
+const form = reactive({ searchProjects: '', projectStatusFilter: 'All statuses' })
 // @copy:header:end
 
 // @copy:project-health:start
 // Block: Project Health donut chart
+const table1StatusCounts = computed(() => Object.fromEntries(projectStatuses.map(status => [status, table1Rows.value.filter(row => row.status === status).length])))
+const healthRingSegments = computed(() => {
+  const total = table1Rows.value.length || 1
+  let offset = 0
+  return projectStatuses.map(status => {
+    const length = ((table1StatusCounts.value[status] ?? 0) / total) * 264
+    const segment = { status, length, offset: -offset }
+    offset += length
+    return segment
+  })
+})
+function table1StatusColor(status: string) {
+  return status === 'On Track' ? 'var(--ui-success)' : status === 'At Risk' ? 'var(--ui-warning)' : status === 'Blocked' ? 'var(--ui-error)' : 'var(--ui-text-muted)'
+}
 // @copy:project-health:end
 
 // @copy:critical-path:start
 // Block: Critical Path list
+const criticalPathProjects = computed(() => table1Rows.value.filter(row => row.status === 'Blocked' || row.status === 'At Risk').slice(0, 4))
 // @copy:critical-path:end
 
 // @copy:needs-attention:start
 // Block: Needs Attention alert panel
+const blockedProjects = computed(() => table1Rows.value.filter(row => row.status === 'Blocked'))
 // @copy:needs-attention:end
 
-// @copy:actiondialog:start
-// Block: Action dialog (modal for add/edit/remove)
-const actionDialog = reactive({ open: false, title: '', mode: 'edit', name: '', description: '', recordId: '', table: 0 })
-function openAction(label: string, recordId = '', table = 0) {
-  Object.assign(actionDialog, { open: true, title: label, mode: /delete|remove|archive/i.test(label) ? 'delete' : 'edit', recordId, table })
-}
-// @copy:actiondialog:end
-
+const quickAction = reactive({ open: false, kind: '', name: '', description: '' })
+const quickActionRecords = ref<{ id: number, kind: string, name: string, description: string }[]>([])
+const quickActionStatus = ref('')
 // Table 1: edit the rows and column definitions here.
-// @copy:table1-rows:start
+// @copy:project-rows:start
+const projectStatuses = ['On Track', 'At Risk', 'Blocked', 'Dependency']
 const table1Rows = ref([
   {
     "_id": "1",
@@ -124,8 +135,33 @@ const table1Rows = ref([
   }
 ])
 type Table1Row = (typeof table1Rows.value)[number]
+function table1StatusDotClass(status: string) {
+  return status === 'On Track' ? 'bg-success' : status === 'At Risk' ? 'bg-warning' : status === 'Blocked' ? 'bg-error' : 'bg-muted'
+}
+// @copy:project-rows:end
 
-const table1Columns: TableColumn<Table1Row>[] = [
+// @copy:table1-rows:start
+const table1ShowOwner = ref(true)
+const table1ShowDueDate = ref(true)
+const table1ProjectMenu = (row: Table1Row) => projectStatuses.map(status => ({
+  label: `Set status to ${status}`,
+  icon: status === row.status ? 'i-lucide-check' : undefined,
+  disabled: status === row.status,
+  onSelect: () => { row.status = status },
+}))
+function table1StatusClass(status: string) {
+  return status === 'On Track' ? 'border-success/80 text-success bg-success/5' : status === 'At Risk' ? 'border-warning/80 text-warning bg-warning/5' : status === 'Blocked' ? 'border-error/80 text-error bg-error/5' : 'border-default text-muted bg-muted/20'
+}
+const table1ViewItems = computed(() => [[
+  { label: `${table1ShowOwner.value ? 'Hide' : 'Show'} owner column`, icon: table1ShowOwner.value ? 'i-lucide-eye-off' : 'i-lucide-eye', onSelect: () => { table1ShowOwner.value = !table1ShowOwner.value } },
+  { label: `${table1ShowDueDate.value ? 'Hide' : 'Show'} due date column`, icon: table1ShowDueDate.value ? 'i-lucide-eye-off' : 'i-lucide-eye', onSelect: () => { table1ShowDueDate.value = !table1ShowDueDate.value } },
+]])
+const table1VisibleColumns = computed(() => table1Columns.filter(column => {
+  const key = 'accessorKey' in column ? String(column.accessorKey) : ''
+  return (key !== 'owner' || table1ShowOwner.value) && (key !== 'dueDate' || table1ShowDueDate.value)
+}))
+
+const table1Columns = [
   {
     "accessorKey": "projects",
     "header": "Projects"
@@ -150,12 +186,10 @@ const table1Columns: TableColumn<Table1Row>[] = [
 
 const table1Sorting = ref<{ id: string, desc: boolean }[]>([])
 
-const table1Selection = ref<Record<string, boolean>>({})
-
 const table1FilteredRows = computed(() => {
   const query = String(form.searchProjects || '').toLowerCase()
   const keys = ["projects","status","priority","owner","dueDate"] as const
-  return table1Rows.value.filter(row => !query || keys.some(key => String(row[key]).toLowerCase().includes(query)))
+  return table1Rows.value.filter(row => (form.projectStatusFilter === 'All statuses' || row.status === form.projectStatusFilter) && (!query || keys.some(key => String(row[key]).toLowerCase().includes(query))))
 })
 // @copy:table1-rows:end
 
@@ -169,23 +203,28 @@ onMounted(() => {
   watch(form, value => localStorage.setItem(key, JSON.stringify(value)), { deep: true, flush: 'sync' })
 })
 
-function confirmAction() {
-  if (actionDialog.mode === 'delete' && actionDialog.recordId) {
-    if (actionDialog.table === 1) table1Rows.value = table1Rows.value.filter(row => row._id !== actionDialog.recordId)
-  }
-  toast.add({ title: actionDialog.mode === 'delete' ? 'Item removed' : 'Changes saved', color: 'success', icon: 'i-lucide-check' })
-  actionDialog.open = false
+function openQuickAction(kind: string) {
+  Object.assign(quickAction, { open: true, kind, name: '', description: '' })
+}
+
+function saveQuickAction() {
+  const name = quickAction.name.trim()
+  if (!name) return
+  quickActionRecords.value.unshift({ id: Date.now(), kind: quickAction.kind, name, description: quickAction.description.trim() })
+  quickActionStatus.value = `${quickAction.kind} “${name}” added to this local demo.`
+  toast.add({ title: 'Added to local demo', description: quickActionStatus.value, color: 'success', icon: 'i-lucide-check' })
+  quickAction.open = false
 }
 
 function exportCsv() {
   const rows = table1FilteredRows.value.map(row => ["projects","status","priority","owner","dueDate"].map(key => String(row[key as keyof typeof row])))
-  const csv = rows.map(row => row.map(value => '"' + value.replaceAll('"', '""') + '"').join(',')).join('\n')
+  const csv = [["Project", "Status", "Priority", "Owner", "Due date"], ...rows].map(row => row.map(value => '"' + value.replaceAll('"', '""') + '"').join(',')).join('\n')
   const url = URL.createObjectURL(new Blob([csv], { type: 'text/csv;charset=utf-8' }))
   const anchor = document.createElement('a')
   anchor.href = url
   anchor.download = "project-management-dashboard-4.csv"
   anchor.click()
-  URL.revokeObjectURL(url)
+  setTimeout(() => URL.revokeObjectURL(url), 0)
 }
 
 // @copy:workflow-canvas:start
@@ -265,9 +304,6 @@ function canvasPointerMove(event: PointerEvent) {
                     <UIcon name="i-lucide-search" class="text-muted absolute top-1/2 left-3 size-4 -translate-y-1/2" />
                     <UInput v-model="form.searchProjects" type="text" placeholder="Search projects..." name="searchProjects" class="flex w-full text-base md:text-sm h-9 rounded-[6px] pl-9" :ui="{ base: 'h-full' }" />
                   </div>
-                  <UButton color="neutral" variant="soft" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-elevated hover:text-default size-9 rounded-[6px]" aria-label="Actions" type="button" @click="openAction(&quot;Actions&quot;)">
-                    <UIcon name="i-lucide-bell" class="size-4" />
-                  </UButton>
                 </div>
               </div>
             </header>
@@ -283,17 +319,10 @@ function canvasPointerMove(event: PointerEvent) {
                     </div>
                     <h1 class="mt-2 text-2xl leading-tight font-semibold tracking-tight text-highlighted">Project Dependency Map</h1>
                     <p class="text-muted mt-1 max-w-2xl text-sm">Track delivery risk, owners, blockers, and dependent milestones across active projects.</p>
+                    <p class="text-muted mt-1 max-w-2xl text-xs">The map is a fixed sample snapshot; status edits in the table recalculate the health and critical-path panels.</p>
                   </div>
                   <div class="flex min-w-0 flex-wrap items-center gap-2">
-                    <UButton color="neutral" variant="outline" class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-default bg-default hover:bg-elevated hover:text-default h-9 rounded-[6px] px-3 text-xs shadow-none" aria-label="Filter" type="button" @click="openAction(&quot;Filter&quot;)">
-                      <UIcon name="i-lucide-funnel" class="size-4" />
-                      Filter
-                    </UButton>
-                    <UButton color="neutral" variant="outline" class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-default bg-default hover:bg-elevated hover:text-default h-9 rounded-[6px] px-3 text-xs shadow-none" aria-label="View options" type="button" @click="openAction(&quot;View options&quot;)">
-                      <UIcon name="i-lucide-sliders-horizontal" class="size-4" />
-                      View options
-                      <UIcon name="i-lucide-chevron-down" class="size-3.5" />
-                    </UButton>
+                    <USelect v-model="form.projectStatusFilter" :items="['All statuses', ...projectStatuses]" aria-label="Filter projects by status" class="w-36" size="sm" />
                     <UButton color="neutral" variant="outline" class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-default bg-default hover:bg-elevated hover:text-default h-9 rounded-[6px] px-3 text-xs shadow-none" aria-label="Export" type="button" @click="exportCsv()">
                       <UIcon name="i-lucide-download" class="size-4" />
                       Export
@@ -301,45 +330,46 @@ function canvasPointerMove(event: PointerEvent) {
                   </div>
                 </div>
                 <div class="grid grid-cols-2 gap-2.5 sm:gap-3 xl:grid-cols-4">
-                  <section class="bg-default rounded-[8px] border shadow-sm shadow-zinc-200/40 dark:bg-elevated dark:shadow-none p-3 sm:p-4 border-default" style="opacity: 1; transform: none;">
+                  <UButton color="neutral" variant="outline" class="h-auto justify-start rounded-[8px] border border-default bg-default p-3 text-left shadow-sm shadow-zinc-200/40 transition-colors hover:bg-elevated sm:p-4 dark:shadow-none" aria-label="Create issue" @click="openQuickAction('Issue')">
                     <div class="flex min-w-0 items-center gap-2.5 sm:gap-3">
                       <span class="bg-muted text-muted grid size-8 shrink-0 place-items-center rounded-[6px] sm:size-9">
                         <UIcon name="i-lucide-list-todo" class="size-4" />
                       </span>
                       <span class="min-w-0 text-[13px] leading-tight font-medium sm:text-sm">Create issue</span>
                     </div>
-                  </section>
-                  <section class="bg-default rounded-[8px] border shadow-sm shadow-zinc-200/40 dark:bg-elevated dark:shadow-none p-3 sm:p-4 border-default" style="opacity: 1; transform: none;">
+                  </UButton>
+                  <UButton color="neutral" variant="outline" class="h-auto justify-start rounded-[8px] border border-default bg-default p-3 text-left shadow-sm shadow-zinc-200/40 transition-colors hover:bg-elevated sm:p-4 dark:shadow-none" aria-label="Schedule milestone" @click="openQuickAction('Milestone')">
                     <div class="flex min-w-0 items-center gap-2.5 sm:gap-3">
                       <span class="bg-muted text-muted grid size-8 shrink-0 place-items-center rounded-[6px] sm:size-9">
                         <UIcon name="i-lucide-flag" class="size-4" />
                       </span>
                       <span class="min-w-0 text-[13px] leading-tight font-medium sm:text-sm">Schedule milestone</span>
                     </div>
-                  </section>
-                  <section class="bg-default rounded-[8px] border shadow-sm shadow-zinc-200/40 dark:bg-elevated dark:shadow-none p-3 sm:p-4 border-default" style="opacity: 1; transform: none;">
+                  </UButton>
+                  <UButton color="neutral" variant="outline" class="h-auto justify-start rounded-[8px] border border-default bg-default p-3 text-left shadow-sm shadow-zinc-200/40 transition-colors hover:bg-elevated sm:p-4 dark:shadow-none" aria-label="Plan sprint" @click="openQuickAction('Sprint')">
                     <div class="flex min-w-0 items-center gap-2.5 sm:gap-3">
                       <span class="bg-muted text-muted grid size-8 shrink-0 place-items-center rounded-[6px] sm:size-9">
                         <UIcon name="i-lucide-calendar-plus" class="size-4" />
                       </span>
                       <span class="min-w-0 text-[13px] leading-tight font-medium sm:text-sm">Plan sprint</span>
                     </div>
-                  </section>
-                  <section class="bg-default rounded-[8px] border shadow-sm shadow-zinc-200/40 dark:bg-elevated dark:shadow-none p-3 sm:p-4 border-default" style="opacity: 1; transform: none;">
+                  </UButton>
+                  <UButton color="neutral" variant="outline" class="h-auto justify-start rounded-[8px] border border-default bg-default p-3 text-left shadow-sm shadow-zinc-200/40 transition-colors hover:bg-elevated sm:p-4 dark:shadow-none" aria-label="Add project" @click="openQuickAction('Project')">
                     <div class="flex min-w-0 items-center gap-2.5 sm:gap-3">
                       <span class="bg-muted text-muted grid size-8 shrink-0 place-items-center rounded-[6px] sm:size-9">
                         <UIcon name="i-lucide-plus" class="size-4" />
                       </span>
                       <span class="min-w-0 text-[13px] leading-tight font-medium sm:text-sm">Add project</span>
                     </div>
-                  </section>
+                  </UButton>
+                  <p v-if="quickActionStatus" class="col-span-full text-xs text-muted" role="status" aria-live="polite">{{ quickActionStatus }}</p>
                 </div>
                 <div class="grid min-w-0 gap-4 xl:grid-cols-[minmax(0,1fr)_360px]">
                   <div class="min-w-0 space-y-4">
                     <section class="bg-default rounded-[8px] border shadow-sm shadow-zinc-200/40 dark:bg-elevated dark:shadow-none p-3 sm:p-4 border-default" style="opacity: 1; transform: none;">
                       <div class="bg-default relative h-[360px] overflow-hidden rounded-[8px] border sm:h-[500px] lg:h-[620px] border-default">
                         <!-- Workflow canvas 1: local pointer and zoom handlers -->
-                        <div class="workflow-canvas !bg-default [&amp;_.workflow-canvas__controls-button]:!border-default [&amp;_.workflow-canvas__controls-button]:!bg-default [&amp;_.workflow-canvas__controls-button]:!text-highlighted [&amp;_.workflow-canvas__attribution]:hidden [&amp;_.workflow-canvas__panel]:!m-3 sm:[&amp;_.workflow-canvas__panel]:!m-5" style="width: 100%; height: 100%; overflow: hidden; position: relative; z-index: 0;" role="application" data-copy-block="project-workflow-canvas" tabindex="-1" :ref="element => setCanvasRoot(1, element)" @pointerdown="canvasPointerDown(1, $event)" @pointermove="canvasPointerMove($event)" @pointerup="canvasDrag = undefined" @pointercancel="canvasDrag = undefined" @wheel.ctrl.prevent="zoomCanvas(1, $event.deltaY < 0 ? 1.1 : 1 / 1.1)">
+                        <div class="workflow-canvas !bg-default [&amp;_.workflow-canvas__controls-button]:!border-default [&amp;_.workflow-canvas__controls-button]:!bg-default [&amp;_.workflow-canvas__controls-button]:!text-highlighted [&amp;_.workflow-canvas__attribution]:hidden [&amp;_.workflow-canvas__panel]:!m-3 sm:[&amp;_.workflow-canvas__panel]:!m-5" style="width: 100%; height: 100%; overflow: hidden; position: relative; z-index: 0;" role="group" aria-label="Interactive project dependency map. Drag nodes or the canvas; use zoom controls to change scale." data-copy-block="project-workflow-canvas" tabindex="-1" :ref="element => setCanvasRoot(1, element)" @pointerdown="canvasPointerDown(1, $event)" @pointermove="canvasPointerMove($event)" @pointerup="canvasDrag = undefined" @pointercancel="canvasDrag = undefined" @wheel.ctrl.prevent="zoomCanvas(1, $event.deltaY < 0 ? 1.1 : 1 / 1.1)">
                           <div class="workflow-canvas__renderer" style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;">
                             <div class="workflow-canvas__pane draggable" style="position: absolute; width: 100%; height: 100%; top: 0px; left: 0px;">
                               <div class="workflow-canvas__viewport workflow-canvas__viewport workflow-canvas__container" style="transform: translate(20.4353px, 121.65px) scale(0.64271);">
@@ -550,20 +580,28 @@ function canvasPointerMove(event: PointerEvent) {
                     </section>
                     <section class="bg-default rounded-[8px] border shadow-sm shadow-zinc-200/40 dark:bg-elevated dark:shadow-none overflow-hidden p-0 border-default" style="opacity: 1; transform: none;">
                       <div class="grid gap-3 px-4 py-4 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center">
-                        <h2 class="text-base font-semibold text-highlighted">Active Projects (7)</h2>
+                        <h2 class="text-base font-semibold text-highlighted">Active Projects ({{ table1Rows.length }})</h2>
                         <div class="grid min-w-0 grid-cols-[minmax(0,1fr)_auto] items-center gap-2">
                           <div class="relative min-w-0 sm:w-[220px]">
                             <UIcon name="i-lucide-search" class="text-muted absolute top-1/2 left-3 size-4 -translate-y-1/2" />
                             <UInput v-model="form.searchProjects" type="text" placeholder="Search projects..." name="tableSearchProjects" class="flex w-full md:text-sm h-8 rounded-[6px] pl-9 text-xs" :ui="{ base: 'h-full' }" />
                           </div>
-                          <UButton color="neutral" variant="outline" class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-default bg-default hover:bg-elevated hover:text-default h-8 rounded-[6px] px-3 text-xs shadow-none" aria-label="View all" type="button" @click="openAction(&quot;View all&quot;)">
-                            View all
-                          </UButton>
+                          <div class="flex items-center gap-2">
+                            <UDropdownMenu :items="table1ViewItems" :content="{ align: 'end' }">
+                              <UButton color="neutral" variant="outline" class="inline-flex h-8 items-center justify-center gap-2 rounded-[6px] border border-default bg-default px-2 text-xs shadow-none transition-colors hover:bg-elevated" aria-label="View options" type="button">
+                                <UIcon name="i-lucide-sliders-horizontal" class="size-4" />
+                                <span class="sr-only sm:not-sr-only">Columns</span>
+                              </UButton>
+                            </UDropdownMenu>
+                            <UButton color="neutral" variant="outline" class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-default bg-default hover:bg-elevated hover:text-default h-8 rounded-[6px] px-3 text-xs shadow-none" aria-label="View all projects" type="button" @click="form.projectStatusFilter = 'All statuses'; form.searchProjects = ''">
+                              View all
+                            </UButton>
+                          </div>
                         </div>
                       </div>
                       <div class="horizontal-scrollbar overflow-x-auto border-t border-default" data-copy-block="project-table-1" tabindex="-1">
                         <!-- Table 1: Projects / Status / Priority / Owner / Due date -->
-                        <UTable v-model:sorting="table1Sorting" v-model:row-selection="table1Selection" :data="table1FilteredRows" :columns="table1Columns" class="bg-default w-full min-w-[980px] border-separate border-spacing-0" :ui="{ th: 'px-4 py-3 bg-muted text-muted', td: 'px-4 py-3 border-b border-default', tr: 'hover:bg-muted' }">
+                        <UTable v-model:sorting="table1Sorting" :data="table1FilteredRows" :columns="table1VisibleColumns" class="bg-default w-full min-w-[980px] border-separate border-spacing-0" :ui="{ th: 'px-4 py-3 bg-muted text-muted', td: 'px-4 py-3 border-b border-default', tr: 'hover:bg-muted' }">
 <template #projects-header="{ column }">
                             <UButton color="neutral" variant="ghost" size="xs" label="Projects" :trailing-icon="column.getIsSorted() ? 'i-lucide-arrow-down' : undefined" @click="column.toggleSorting(column.getIsSorted() === 'asc')" />
                           </template>
@@ -575,17 +613,19 @@ function canvasPointerMove(event: PointerEvent) {
                                   <span class="truncate text-[13px] font-medium text-highlighted dark:text-highlighted">{{ row.original.projectsText8 }}</span>
                                 </div>
                               </div>
-                              <UButton color="neutral" variant="soft" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-elevated hover:text-default text-muted size-7 rounded-md opacity-0 transition-opacity group-hover:opacity-100" aria-label="Actions" type="button" @click="openAction(&quot;Actions&quot;, row.original._id, 1)">
-                                <UIcon name="i-lucide-ellipsis" class="size-4" />
-                              </UButton>
+                              <UDropdownMenu :items="table1ProjectMenu(row.original)" :content="{ align: 'end' }">
+                                <UButton color="neutral" variant="soft" class="inline-flex size-8 items-center justify-center rounded-md text-muted transition-colors hover:bg-elevated hover:text-default focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented" :aria-label="`Change status for ${row.original.projectsText8}`" type="button">
+                                  <UIcon name="i-lucide-ellipsis" class="size-4" />
+                                </UButton>
+                              </UDropdownMenu>
                             </div>
                           </template>
                           <template #status-header="{ column }">
                             <UButton color="neutral" variant="ghost" size="xs" label="Status" :trailing-icon="column.getIsSorted() ? 'i-lucide-arrow-down' : undefined" @click="column.toggleSorting(column.getIsSorted() === 'asc')" />
                           </template>
                           <template #status-cell="{ row }">
-                            <UBadge color="neutral" variant="subtle" :class="row.original.statusClass2">
-                              <span :class="row.original.statusClass3" />
+                            <UBadge color="neutral" variant="subtle" :class="['inline-flex h-6 items-center gap-1.5 rounded-md border px-2 text-[11px] font-medium', table1StatusClass(row.original.status)]">
+                              <span :class="['size-1.5 rounded-full', table1StatusDotClass(row.original.status)]" />
                               <span>{{ row.original.status }}</span>
                             </UBadge>
                           </template>
@@ -627,97 +667,50 @@ function canvasPointerMove(event: PointerEvent) {
                       <h2 class="text-base font-semibold text-highlighted">Project Health</h2>
                       <div class="mt-5 grid grid-cols-[112px_minmax(0,1fr)] items-center gap-4 sm:grid-cols-[132px_minmax(0,1fr)]">
                         <div class="relative size-28 sm:size-32">
-                          <svg viewBox="0 0 120 120" class="size-full -rotate-90" width="100%" height="100%">
-                            <circle cx="60" cy="60" r="42" fill="none" stroke="var(--ui-primary)" stroke-width="18" />
-                            <circle cx="60" cy="60" r="42" fill="none" stroke="var(--ui-success)" stroke-width="18" stroke-dasharray="75 264" />
-                            <circle cx="60" cy="60" r="42" fill="none" stroke="var(--ui-warning)" stroke-width="18" stroke-dasharray="38 264" />
-                            <circle cx="60" cy="60" r="42" fill="none" stroke="var(--ui-error)" stroke-width="18" stroke-dasharray="38 264" />
+                          <svg viewBox="0 0 120 120" class="size-full -rotate-90" width="100%" height="100%" role="img" :aria-label="projectStatuses.map(status => `${status}: ${table1StatusCounts[status] || 0}`).join(', ')">
+                            <circle cx="60" cy="60" r="42" fill="none" stroke="var(--ui-bg-muted)" stroke-width="18" />
+                            <circle v-for="segment in healthRingSegments" :key="segment.status" cx="60" cy="60" r="42" fill="none" :stroke="table1StatusColor(segment.status)" stroke-width="18" :stroke-dasharray="`${segment.length} ${264 - segment.length}`" :stroke-dashoffset="segment.offset" />
                           </svg>
                           <div class="absolute inset-0 grid place-items-center text-center">
                             <div>
-                              <p class="text-2xl font-semibold text-highlighted">7</p>
+                                <p class="text-2xl font-semibold text-highlighted">{{ table1Rows.length }}</p>
                               <p class="text-muted text-[11px]">Total</p>
                             </div>
                           </div>
                         </div>
                         <div class="space-y-3">
-                          <div class="flex items-center gap-3 text-xs">
-                            <span class="size-2.5 rounded-full bg-success" />
-                            <span class="text-muted min-w-0 flex-1">On Track</span>
-                            <span class="font-medium">2</span>
-                          </div>
-                          <div class="flex items-center gap-3 text-xs">
-                            <span class="size-2.5 rounded-full bg-warning" />
-                            <span class="text-muted min-w-0 flex-1">At Risk</span>
-                            <span class="font-medium">1</span>
-                          </div>
-                          <div class="flex items-center gap-3 text-xs">
-                            <span class="size-2.5 rounded-full bg-error" />
-                            <span class="text-muted min-w-0 flex-1">Blocked</span>
-                            <span class="font-medium">1</span>
-                          </div>
-                          <div class="flex items-center gap-3 text-xs">
-                            <span class="size-2.5 rounded-full bg-(--ui-text-muted)" />
-                            <span class="text-muted min-w-0 flex-1">Dependency</span>
-                            <span class="font-medium">3</span>
+                          <div v-for="status in projectStatuses" :key="status" class="flex items-center gap-3 text-xs">
+                            <span :class="['size-2.5 rounded-full', table1StatusDotClass(status)]" />
+                            <span class="text-muted min-w-0 flex-1">{{ status }}</span>
+                            <span class="font-medium">{{ table1StatusCounts[status] || 0 }}</span>
                           </div>
                         </div>
                       </div>
                     </section>
                     <section class="bg-default rounded-[8px] border shadow-sm shadow-zinc-200/40 dark:bg-elevated dark:shadow-none p-4 border-default" data-copy-block="project-critical-path" tabindex="-1" style="opacity: 1; transform: none;">
                       <h2 class="text-base font-semibold text-highlighted">Critical Path</h2>
-                      <div class="mt-5 space-y-2">
-                        <div>
-                          <div class="flex gap-3">
-                            <span class="mt-1.5 size-2.5 rounded-full bg-error" />
-                            <div class="min-w-0">
-                              <p class="truncate text-xs">API Stabilization</p>
-                              <p class="mt-1 text-xs text-error dark:text-error">Error budget review · Blocked</p>
-                            </div>
+                      <ul v-if="criticalPathProjects.length" class="mt-5 space-y-3" aria-label="Projects on the critical path">
+                        <li v-for="(project, index) in criticalPathProjects" :key="project._id" class="flex gap-3">
+                          <span :class="['mt-1.5 size-2.5 shrink-0 rounded-full', table1StatusDotClass(project.status)]" />
+                          <div class="min-w-0">
+                            <p class="truncate text-xs">{{ project.projectsText8 }}</p>
+                            <p class="mt-1 text-xs text-muted">{{ project.status }} · {{ project.dueDate }} · {{ project.owner }}</p>
                           </div>
-                          <div class="text-muted ml-1 h-6 border-l border-default" />
-                        </div>
-                        <div>
-                          <div class="flex gap-3">
-                            <span class="mt-1.5 size-2.5 rounded-full bg-warning" />
-                            <div class="min-w-0">
-                              <p class="truncate text-xs">Customer Onboarding Flow</p>
-                              <p class="mt-1 text-xs text-warning dark:text-warning">Usability review · At Risk</p>
-                            </div>
-                          </div>
-                          <div class="text-muted ml-1 h-6 border-l border-default" />
-                        </div>
-                        <div>
-                          <div class="flex gap-3">
-                            <span class="mt-1.5 size-2.5 rounded-full bg-success" />
-                            <div class="min-w-0">
-                              <p class="truncate text-xs">Launch Readiness</p>
-                              <p class="mt-1 text-xs text-success dark:text-success">Beta release · On Track</p>
-                            </div>
-                          </div>
-                          <div class="text-muted ml-1 h-6 border-l border-default" />
-                        </div>
-                        <div>
-                          <div class="flex gap-3">
-                            <span class="mt-1.5 size-2.5 rounded-full bg-warning" />
-                            <div class="min-w-0">
-                              <p class="truncate text-xs">QA Regression Pass</p>
-                              <p class="mt-1 text-xs text-warning dark:text-warning">Regression freeze · At Risk</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                          <span v-if="index < criticalPathProjects.length - 1" class="sr-only">Next critical project follows</span>
+                        </li>
+                      </ul>
+                      <p v-else class="text-muted mt-5 text-sm">No at-risk or blocked projects in this sample.</p>
                     </section>
                     <section class="bg-default rounded-[8px] border shadow-sm shadow-zinc-200/40 dark:bg-elevated dark:shadow-none p-4 border-default" data-copy-block="project-needs-attention" tabindex="-1" style="opacity: 1; transform: none;">
                       <h2 class="text-base font-semibold text-highlighted">Needs Attention</h2>
-                      <div class="mt-5 rounded-[7px] border border-error/20 bg-error/5 p-3">
-                        <p class="text-sm font-medium text-error dark:text-error">API Stabilization is blocked</p>
-                        <p class="text-muted mt-2 text-xs leading-5">13 open issues are delaying Customer Onboarding Flow and the next launch readiness review.</p>
-                        <UButton color="neutral" variant="soft" class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-accented disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-elevated hover:text-default mt-3 h-8 rounded-[6px] px-2 text-xs text-error dark:text-error" aria-label="View details" type="button" @click="openAction(&quot;View details&quot;)">
-                          View details
-                          <UIcon name="i-lucide-chevron-right" class="size-3.5" />
-                        </UButton>
+                      <div v-if="blockedProjects.length" class="mt-5 space-y-3">
+                        <div v-for="project in blockedProjects" :key="project._id" class="rounded-[7px] border border-error/20 bg-error/5 p-3">
+                          <p class="text-sm font-medium text-error">{{ project.projectsText8 }} is blocked</p>
+                          <p class="text-muted mt-2 text-xs leading-5">Review the owner and dependencies for this project to identify the next step.</p>
+                          <p class="text-muted mt-2 text-xs">See the projects table to update this local sample.</p>
+                        </div>
                       </div>
+                      <p v-else class="text-muted mt-5 rounded-[7px] border border-default p-3 text-sm">No blocked projects in this sample.</p>
                     </section>
                   </div>
                 </div>
@@ -727,20 +720,20 @@ function canvasPointerMove(event: PointerEvent) {
         </div>
       </div>
     </div>
-    <!-- Page-local action dialog -->
-    <UModal v-model:open="actionDialog.open" :title="actionDialog.title" description="Update the details below.">
+    <UModal v-model:open="quickAction.open" :title="`${quickAction.kind} · local demo`" description="Save a local example only. No project service or external API is contacted.">
       <template #body>
-        <p v-if="actionDialog.mode === 'delete'" class="text-sm text-muted">Are you sure you want to remove this item?</p>
-        <div v-else class="space-y-4">
-          <UFormField label="Name"><UInput v-model="actionDialog.name" class="w-full" /></UFormField>
-          <UFormField label="Description"><UTextarea v-model="actionDialog.description" class="w-full" /></UFormField>
-        </div>
-      </template>
-      <template #footer>
-        <div class="flex w-full justify-end gap-2">
-          <UButton color="neutral" variant="outline" @click="actionDialog.open = false">Cancel</UButton>
-          <UButton :color="actionDialog.mode === 'delete' ? 'error' : 'primary'" @click="confirmAction">{{ actionDialog.mode === 'delete' ? 'Remove' : 'Save changes' }}</UButton>
-        </div>
+        <form class="space-y-4" @submit.prevent="saveQuickAction">
+          <UFormField label="Name" name="quickActionName" required>
+            <UInput v-model="quickAction.name" name="quickActionName" required autofocus class="w-full" />
+          </UFormField>
+          <UFormField label="Notes" name="quickActionNotes">
+            <UTextarea v-model="quickAction.description" name="quickActionNotes" class="w-full" />
+          </UFormField>
+          <div class="flex justify-end gap-2">
+            <UButton type="button" color="neutral" variant="outline" @click="quickAction.open = false">Cancel</UButton>
+            <UButton type="submit" :disabled="!quickAction.name.trim()">Add locally</UButton>
+          </div>
+        </form>
       </template>
     </UModal>
     <BlockCopyTools page="/project-management/dashboard-4" />
@@ -756,6 +749,7 @@ function canvasPointerMove(event: PointerEvent) {
 .page-content pre { overflow: auto; }
 .page-content img { object-fit: cover; }
 
+/* @copy:workflow-canvas:start */
 .workflow-canvas { position: relative; overflow: hidden; touch-action: none; }
 .workflow-canvas__renderer, .workflow-canvas__pane, .workflow-canvas__container { position: absolute; inset: 0; }
 .workflow-canvas__viewport { transform-origin: 0 0; z-index: 2; }
@@ -780,4 +774,5 @@ function canvasPointerMove(event: PointerEvent) {
 .workflow-canvas__controls button { padding: 8px; }
 .workflow-canvas__controls svg { width: 14px; height: 14px; }
 .workflow-canvas__attribution { font-size: 10px; opacity: 0.6; }
+/* @copy:workflow-canvas:end */
 </style>
